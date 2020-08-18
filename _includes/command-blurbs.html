@@ -2,7 +2,7 @@
   {% assign command_tag = command.title | downcase | slugify %}
   <h2 id="{{ command_tag }}"> 
     <a href="#{{ command_tag }}" aria-labelledby="{{ command_tag }}" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
-    <a href="{{ command.url }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a> 
+    <a href="{{ site.baseurl}}{{ command.url }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a> 
   </h2> 
   <blockquote> {{ command.blurb | markdownify }} </blockquote>
 {% endfor %}

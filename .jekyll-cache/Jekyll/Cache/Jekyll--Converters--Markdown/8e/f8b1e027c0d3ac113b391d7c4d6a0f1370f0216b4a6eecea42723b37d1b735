@@ -1,0 +1,89 @@
+I"|<h1 id="element-commands">Element commands</h1>
+
+<p>Used within a trial to manipulate elements.</p>
+
+<!-- Command TOC -->
+<div class="d-flex">
+
+  <div class="pl-4 pr-2 pb-4" style="flex:1">
+    <p><strong>Action commands</strong></p>
+    <ul class="nav-list">
+    <li><a href="#audio-pause"><code class="language-plaintext highlighter-rouge">audio.pause</code></a></li>
+    <li><a href="#audio-play"><code class="language-plaintext highlighter-rouge">audio.play</code></a></li>
+    <li><a href="#button-callback"><code class="language-plaintext highlighter-rouge">button.callback</code></a></li>
+    <li><a href="#button-click"><code class="language-plaintext highlighter-rouge">button.click</code></a></li>
+    <li><a href="#button-once"><code class="language-plaintext highlighter-rouge">button.once</code></a></li>
+    <li><a href="#button-wait"><code class="language-plaintext highlighter-rouge">button.wait</code></a></li></ul>
+  </div>
+  
+  <div class="pl-4 pr-2 pb-4" style="flex:1">
+    <p><strong>Test commands</strong></p>
+
+    <ul class="nav-list">
+    <li><a href="#button-test-pressed"><code class="language-plaintext highlighter-rouge">button.test.pressed</code></a></li></ul>
+  </div>
+
+</div>
+
+<hr />
+
+<h2 id="action-commands">Action commands</h2>
+
+<!-- Command blurbs -->
+
+<h2 id="audio-pause"> 
+    <a href="#audio-pause" aria-labelledby="audio-pause" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/action-commands/audio-pause/"><code class="language-plaintext highlighter-rouge">audio.pause</code></a> 
+  </h2>
+<blockquote> 
+ </blockquote>
+
+<h2 id="audio-play"> 
+    <a href="#audio-play" aria-labelledby="audio-play" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/action-commands/audio-play/"><code class="language-plaintext highlighter-rouge">audio.play</code></a> 
+  </h2>
+<blockquote> 
+ </blockquote>
+
+<h2 id="button-callback"> 
+    <a href="#button-callback" aria-labelledby="button-callback" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/action-commands/button-callback/"><code class="language-plaintext highlighter-rouge">button.callback</code></a> 
+  </h2>
+<blockquote> 
+ </blockquote>
+
+<h2 id="button-click"> 
+    <a href="#button-click" aria-labelledby="button-click" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/action-commands/button-click/"><code class="language-plaintext highlighter-rouge">button.click</code></a> 
+  </h2>
+<blockquote> 
+ </blockquote>
+
+<h2 id="button-once"> 
+    <a href="#button-once" aria-labelledby="button-once" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/action-commands/button-once/"><code class="language-plaintext highlighter-rouge">button.once</code></a> 
+  </h2>
+<blockquote> 
+ </blockquote>
+
+<h2 id="button-wait"> 
+    <a href="#button-wait" aria-labelledby="button-wait" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/action-commands/button-wait/"><code class="language-plaintext highlighter-rouge">button.wait</code></a> 
+  </h2>
+<blockquote> 
+ </blockquote>
+
+<hr />
+
+<h2 id="test-commands">Test commands</h2>
+
+<!-- Command blurbs -->
+
+<h2 id="button-test-pressed"> 
+    <a href="#button-test-pressed" aria-labelledby="button-test-pressed" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/test-commands/button-test-pressed/"><code class="language-plaintext highlighter-rouge">button.test.pressed</code></a> 
+  </h2>
+<blockquote> 
+ </blockquote>
+
+:ET

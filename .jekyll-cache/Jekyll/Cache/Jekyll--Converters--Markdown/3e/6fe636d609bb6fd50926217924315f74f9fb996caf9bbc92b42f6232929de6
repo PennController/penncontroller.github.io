@@ -1,0 +1,9 @@
+I"¿<p>PennController is a JavaScript module. It is standard practice to add a specific prefix to every command added by a JavaScript module in order to avoid naming conflicts with commands from other modules. By default all PennController global commands begin with the prefix <code class="language-plaintext highlighter-rouge">PennController.</code>, and all PennController element commands begin with the prefix <code class="language-plaintext highlighter-rouge">PennController.Elements.</code>.</p>
+
+<hr />
+
+<h2 id="example">Example</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// example</span>
+</code></pre></div></div>
+:ET

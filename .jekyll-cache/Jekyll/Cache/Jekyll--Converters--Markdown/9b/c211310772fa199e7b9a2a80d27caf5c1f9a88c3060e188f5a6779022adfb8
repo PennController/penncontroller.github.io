@@ -1,0 +1,39 @@
+I"”
+<!-- Set collection used for [command-type] variable -->
+
+<h1 id="global-commands">Global commands</h1>
+
+<p>Used outside of a trial.</p>
+
+<!-- Command TOC -->
+<ul class="nav-list">
+    <li><a href="#penncontroller-addhost"><code class="language-plaintext highlighter-rouge">PennController.AddHost</code></a></li>
+    <li><a href="#penncontroller-addtable"><code class="language-plaintext highlighter-rouge">PennController.AddTable</code></a></li>
+    <li><a href="#penncontroller-resetprefix"><code class="language-plaintext highlighter-rouge">PennController.ResetPrefix</code></a></li></ul>
+
+<hr />
+
+<!-- Command blurbs -->
+
+<h2 id="penncontroller-addhost"> 
+    <a href="#penncontroller-addhost" aria-labelledby="penncontroller-addhost" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/global-commands/addhost/"><code class="language-plaintext highlighter-rouge">PennController.AddHost</code></a> 
+  </h2>
+<blockquote> <p>Specifies a host URL to use as a source file for when calling <code class="language-plaintext highlighter-rouge">newAudio</code>, <code class="language-plaintext highlighter-rouge">newVideo</code>, or <code class="language-plaintext highlighter-rouge">newImage</code>. URL must end with <code class="language-plaintext highlighter-rouge">"/"</code>.</p>
+ </blockquote>
+
+<h2 id="penncontroller-addtable"> 
+    <a href="#penncontroller-addtable" aria-labelledby="penncontroller-addtable" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/global-commands/addtable/"><code class="language-plaintext highlighter-rouge">PennController.AddTable</code></a> 
+  </h2>
+<blockquote> <p>Defines a table to use with <code class="language-plaintext highlighter-rouge">PennController.Template</code>. As of PennController beta 0.4, you can directly upload a CSV file to the <strong>Resources</strong> or <strong>chunk_includes</strong> folders.</p>
+ </blockquote>
+
+<h2 id="penncontroller-resetprefix"> 
+    <a href="#penncontroller-resetprefix" aria-labelledby="penncontroller-resetprefix" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+    <a href="/docs/commands/global-commands/resetprefix/"><code class="language-plaintext highlighter-rouge">PennController.ResetPrefix</code></a> 
+  </h2>
+<blockquote> <p>Resets the required global command prefix <code class="language-plaintext highlighter-rouge">PennController.</code> to a desired string, typically <code class="language-plaintext highlighter-rouge">null</code> for no prefix.</p>
+ </blockquote>
+
+:ET

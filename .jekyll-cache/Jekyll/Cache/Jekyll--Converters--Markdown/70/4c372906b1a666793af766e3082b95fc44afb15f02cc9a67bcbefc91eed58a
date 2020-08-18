@@ -1,0 +1,27 @@
+I"h	<h2 id="example">Example</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">helloworld</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">smiley</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ya.png</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">newButton</span><span class="p">(</span><span class="dl">"</span><span class="s2">erase</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Erase</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">clear</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">newButton</span><span class="p">(</span><span class="dl">"</span><span class="s2">void</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Enough with the emptiness</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ol>
+    <li>Prints a line of <strong>Text</strong>, an <strong>Image</strong> and a <strong>Button</strong> with the text <code class="language-plaintext highlighter-rouge">"erase"</code> to the screen.</li>
+    <li>Remove the three elements from the screen when the <code class="language-plaintext highlighter-rouge">"erase"</code> <strong>Button</strong> is clicked.</li>
+    <li>Print a new <strong>Button</strong> that is waiting to be clicked to the screen.</li>
+  </ol>
+</blockquote>
+:ET

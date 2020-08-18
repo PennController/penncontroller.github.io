@@ -1,0 +1,41 @@
+I" <p>The success of this command depends on the browser configuration. Most browsers will block fullscreen requests if they happen before the user has interacted with the page in any way.</p>
+
+<p>Call <code class="language-plaintext highlighter-rouge">exitFullscreen()</code> to quit fullscreen mode</p>
+
+<hr />
+
+<h2 id="example">Example</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">newTrial</span><span class="p">(</span>
+  <span class="nx">newButton</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start the experiment and go fullscreen!</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+  <span class="p">,</span>
+  <span class="nx">fullscreen</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="nx">newTrial</span><span class="p">(</span>
+  <span class="nx">newScale</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">before</span><span class="p">(</span> <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">It is cold here</span><span class="dl">"</span><span class="p">)</span> <span class="p">)</span>
+    <span class="p">.</span><span class="nx">after</span><span class="p">(</span>  <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">It is warm here</span><span class="dl">"</span><span class="p">)</span> <span class="p">)</span>
+    <span class="p">.</span><span class="nx">slider</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="nx">SendResults</span><span class="p">()</span>
+
+<span class="nx">newTrial</span><span class="p">(</span>
+   <span class="nx">exitFullscreen</span><span class="p">()</span>
+   <span class="p">,</span>
+   <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">Thank you for your participation!</span><span class="dl">"</span><span class="p">)</span>
+     <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+   <span class="p">,</span>
+   <span class="nx">newTimer</span><span class="p">().</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Through the Try-it interface, browsers usually deny fullscreen requests because the experiment is not run globally but instead from within the test page.</p>
+</blockquote>
+:ET

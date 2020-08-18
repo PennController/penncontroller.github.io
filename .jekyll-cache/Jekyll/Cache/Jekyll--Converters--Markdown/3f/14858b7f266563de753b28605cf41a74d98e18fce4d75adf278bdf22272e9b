@@ -1,0 +1,66 @@
+I"�<h1 id="elements">Elements</h1>
+
+<p><strong>Elements</strong> are the basic unit of a PennController experiment; experiments are trial sequences of elements and commands. For example, you can create an <strong>Image</strong> element and then use a command to print to the screen.</p>
+
+<p>To be technical, you create an <em>instance</em> of the <code class="language-plaintext highlighter-rouge">Image</code> type, and then use a command to print that instance to the screen.</p>
+
+<blockquote>
+  <p class="label label-yellow">Important!</p>
+  <p>This tutorial  uses the term “element” as shorthand for “instance of an element type”. For example “an <strong>Image</strong> element” is short for “an instance of the <code class="language-plaintext highlighter-rouge">Image</code> type”. If “element type” is intended, the  term “element type” will be used.</p>
+</blockquote>
+
+<p>Element types can represent visual content, interactive content, or some combination of the two:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Text</code>: Represents text content (visual).</li>
+  <li><code class="language-plaintext highlighter-rouge">Image</code>: Represents image content (visual)</li>
+  <li><code class="language-plaintext highlighter-rouge">Key</code>: Represents keyboard keypresses (interactive).</li>
+  <li><code class="language-plaintext highlighter-rouge">Button</code>: Represents clickable buttons (visual and interactive).</li>
+</ul>
+
+<p>For a list of all PennController element types, see the Elements page.</p>
+
+<h2 id="creating-an-element">Creating an element</h2>
+
+<p>Elements are objects returned by the function <code class="language-plaintext highlighter-rouge">newX(id, ...)</code>, where:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">X</code> is the element type.</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code> is the name of the element, and must be passed as a string.</li>
+  <li><code class="language-plaintext highlighter-rouge">...</code> is any other arguments required by the element type.</li>
+</ul>
+
+<p>Once an element is created, it can be referred back to by the function <code class="language-plaintext highlighter-rouge">getX(id)</code>, where:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">X</code> is the element type.</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code> is the name of the element, and must be passed as a string.</li>
+</ul>
+
+<p>Calls of the <code class="language-plaintext highlighter-rouge">newX()</code>or <code class="language-plaintext highlighter-rouge">getX()</code> functions are separated with a comma.</p>
+
+<hr />
+
+<p><strong>Important!</strong> It is not strictly necessary to name an element. However, it is highly recommended to name every element for general clarity and readability. Furthermore, if you want to refer back to an element with the <code class="language-plaintext highlighter-rouge">getX()</code> function, the element must have a name.</p>
+
+<hr />
+
+<p><strong>Example 1</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example 1</span>
+
+<span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-text</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">This is an example sentence.</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">,</span>
+<span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-image</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">image.png</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">,</span>
+<span class="nx">getText</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-text</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Example 1</strong> does the following:</p>
+
+<ol>
+  <li>Creates a <strong>Text</strong> element with the name <code class="language-plaintext highlighter-rouge">example-text</code> and the content <code class="language-plaintext highlighter-rouge">This is an example sentence.</code>.</li>
+  <li>Creates an <strong>Image</strong> element with the name <code class="language-plaintext highlighter-rouge">example-image</code>  and the source file  <code class="language-plaintext highlighter-rouge">image.png</code> (this file is hosted on…)</li>
+  <li>Refers back to the <strong>Text</strong> element <code class="language-plaintext highlighter-rouge">example-text</code>.</li>
+</ol>
+:ET

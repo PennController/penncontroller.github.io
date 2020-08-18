@@ -1,0 +1,62 @@
+I"�<h1 id="introduction">Introduction</h1>
+
+<ul>
+  <li>if you want to jump in, skip to “tutorial &gt; basic experiment”</li>
+  <li>otherwise, read on / go to “core concepts”</li>
+</ul>
+
+<hr />
+
+<h2 id="what-is-pcibex">What is PCIbex?</h2>
+
+<p><strong>PCIbex</strong> (“PennController for Ibex”), or PennController, is a free, open-source, versatile, and user-friendly online experiment builder. It provides tools to implement familiar paradigms like self-paced reading or rating studies, and has the flexibility to create custom experimental paradigms. PCIbex is developed by <a href="https://sites.google.com/site/jeremyezehr/home">Jeremy Zehr</a> within a project in <a href="https://www.florianschwarz.net/">Florian Schwarz</a>’s <a href="http://lab.florianschwarz.net/">lab</a>.</p>
+
+<p>PCIbex is an extension of <a href="https://github.com/addrummond/ibex/blob/master/docs/manual.md">Ibex</a> (“Internet Based EXperiments”), a JavaScript-based platform developed by <a href="https://adrummond.net/">Alex Drummond</a>. PCIbex uses a stream-lined code interface and requires no background in JavaScript. Experiment templates can be directly imported from GitHub, making it easy to share and post experiments.</p>
+
+<p>here’s a demo experiment (<a href="https://expt.pcibex.net/ibexexps/example/TimedPictureSelection/experiment.html">timed picture selection</a>)</p>
+
+<hr />
+
+<h2 id="browser-information">Browser information</h2>
+
+<p><em>Note: Update this section with compatibility for PennController 1.8</em></p>
+
+<p>PennController 1.2 is compatible with:</p>
+
+<ul>
+  <li><a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> (desktop)</li>
+  <li><a href="https://www.google.com/chrome/">Chrome</a> (desktop)</li>
+  <li><a href="https://www.apple.com/safari/">Safari</a> (desktop)</li>
+</ul>
+
+<p>PennController 1.2 is not compatible with:</p>
+
+<ul>
+  <li>Internet Explorer</li>
+  <li>Edge</li>
+</ul>
+
+<hr />
+
+<h2 id="creating-account">What is the PCIbex Farm?</h2>
+
+<p>The <a href="https://expt.pcibex.net/">PCIbex Farm</a> provides free hosting for PennController experiments.</p>
+
+<p>You can create and host experiments on the PCIbex Farm by creating an account:</p>
+
+<ol>
+  <li>Go to the <a href="https://expt.pcibex.net/login">PCIbex Farm account creation page</a>.</li>
+  <li>In the “New user” box, enter the following information:
+    <ul>
+      <li>In the “Username” field, enter the username that you want for your account.</li>
+      <li>In the “Password” field, enter the password that you want for your account.</li>
+      <li>In the “Verify password field”, re-enter the password that you used in the “Password” field.</li>
+      <li>(<em>Optional</em>) In the “Email” field, enter the email that you want to link your acccount to. PCIbex Farm does not share your email, and only sends emails for password retrieval purposes.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Create account</strong>.</li>
+</ol>
+
+<hr />
+
+:ET

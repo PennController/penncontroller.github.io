@@ -1,0 +1,36 @@
+I"‰<h2 id="example">Example</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="nx">newTrial</span><span class="p">(</span>
+    <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">instructions</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Press F to end the trial immediately, or press J to continue.</span><span class="dl">"</span><span class="p">)</span>
+    	<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="nx">newKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">fj</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">FJ</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="nx">getKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">fj</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">pressed</span><span class="p">(</span><span class="dl">"</span><span class="s2">F</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="nx">end</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">failure</span><span class="p">(</span>
+            <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">continue</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">The trial has continued! Press the spacebar to finish.</span><span class="dl">"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+            <span class="p">,</span>
+            <span class="nx">newKey</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+        <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ol>
+    <li>Prints the <code class="language-plaintext highlighter-rouge">"instructions"</code> <strong>Text</strong> element to the screen.</li>
+    <li>Creates the <code class="language-plaintext highlighter-rouge">"fj"</code> <strong>Key</strong> element and waits for the <code class="language-plaintext highlighter-rouge">F</code> or <code class="language-plaintext highlighter-rouge">J</code> key to be pressed.
+      <ul>
+        <li>If <code class="language-plaintext highlighter-rouge">F</code> was pressed, end the trial immediately.</li>
+        <li>Otherwise, print the <code class="language-plaintext highlighter-rouge">"continue"</code> <strong>Text</strong> element and wait for the <code class="language-plaintext highlighter-rouge">Spacebar</code> key to be pressed.</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+:ET

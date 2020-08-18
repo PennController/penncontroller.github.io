@@ -1,0 +1,2 @@
+I"e<p>Specifies a host URL to use as a source file for when calling <code class="language-plaintext highlighter-rouge">newAudio</code>, <code class="language-plaintext highlighter-rouge">newVideo</code>, or <code class="language-plaintext highlighter-rouge">newImage</code>. URL must end with <code class="language-plaintext highlighter-rouge">"/"</code>.</p>
+:ET

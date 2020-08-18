@@ -1,0 +1,5 @@
+I"Q
+<p>It is not strictly necessary to name an element. For example, <code class="language-plaintext highlighter-rouge">newImage("fish", "2fishRoundTank.png")</code> and <code class="language-plaintext highlighter-rouge">newImage("2fishRoundTank.png")</code> both contain the image <code class="language-plaintext highlighter-rouge">2fishRoundTank.png</code>.</p>
+
+<p>However, it is recommended to name every element for general clarity and readability. If you want to refer back to an existing element, as in <a href="#manipulate-layout">Manipulate layout</a>, the element must have a name.</p>
+:ET

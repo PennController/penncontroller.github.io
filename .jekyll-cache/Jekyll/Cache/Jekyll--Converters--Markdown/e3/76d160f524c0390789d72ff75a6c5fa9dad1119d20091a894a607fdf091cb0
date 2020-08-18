@@ -1,0 +1,106 @@
+I"8<h1 id="creating-experiment">Creating an experiment</h1>
+
+<p>After <a href="#creating-account">creating an account on the PCIbex Farm</a>, you can start creating experiments:</p>
+
+<ol>
+  <li>Go to the <a href="https://expt.pcibex.net/">PCIbex Farm home page</a>.</li>
+  <li>Click <strong>Design experiments</strong>.</li>
+  <li>Enter your login information and click <strong>login</strong>.</li>
+  <li>Click <strong>Create a new experiment</strong>.</li>
+  <li>In the “Name” field, enter the name of your experiment.</li>
+  <li>Click <strong>Create</strong>.</li>
+</ol>
+
+<p>You have now created a new experiment. Experiments are listed in the <strong>Experiments</strong> section on the <a href="https://expt.pcibex.net/myaccount">PCIbex “my account” page</a>. You can manage or edit an experiment by clicking its name.</p>
+
+<h2 id="managing-an-experiment">Managing an experiment</h2>
+
+<p>Each experiment is managed on a page with the following sections:</p>
+
+<ul>
+  <li><strong>URL</strong>: <code class="language-plaintext highlighter-rouge">https://expt.pcibex.net/ibexexps/USERNAME/EXPERIMENT_NAME/experiment.html</code>.
+    <ul>
+      <li>Launch the experiment by clicking the URL.</li>
+    </ul>
+  </li>
+  <li><strong>Experiment ‘EXPERIMENT_NAME’</strong>:
+    <ul>
+      <li>Edit your experiment.</li>
+      <li>This section has the folders:
+        <ul>
+          <li><strong>Script</strong>: Contains <code class="language-plaintext highlighter-rouge">main.js</code>, the code for an experiment.</li>
+          <li><strong>Resources</strong>: Contains any experiment stimuli, like PNG or WAV files.</li>
+          <li><strong>Results</strong>:</li>
+          <li><strong>Aesthetics</strong>:</li>
+          <li><strong>Controllers</strong>: Contains code for the <a href="https://github.com/addrummond/ibex/blob/master/docs/manual.md#controllers">native Ibex controllers</a>, which can be added to an experiment using the <a href="https://www.pcibex.net/wiki/controller-element/">Controller element</a>.</li>
+          <li><strong>Counter</strong>:</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Access</strong>
+    <ul>
+      <li>Set a password to protect your experiment.</li>
+    </ul>
+  </li>
+  <li><strong>Archive</strong>
+    <ul>
+      <li>Download a ZIP archive of your experiment files.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="editing-an-experiment">Editing an experiment</h2>
+
+<blockquote>
+  <p>To be filled in</p>
+</blockquote>
+
+<h3 id="script-editor">Script editor</h3>
+
+<p>The <strong>Script</strong> folder contains the file <code class="language-plaintext highlighter-rouge">main.js</code>, the code for your experiment. You can update your experiment by editing <code class="language-plaintext highlighter-rouge">main.js</code> in the script editor and saving your changes.</p>
+
+<p>Click <strong>main.js</strong> to open <code class="language-plaintext highlighter-rouge">main.js</code> in the script editor. By default, new experiments are initialized with a demo experiment. The <code class="language-plaintext highlighter-rouge">main.js</code> file of a newly-created experiment should start with the following lines:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This is a simple demo script, feel free to edit or delete it</span>
+<span class="c1">// Find a tutorial and the list of availalbe elements at:</span>
+<span class="c1">// https://www.pcibex.net/documentation/</span>
+
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span> <span class="c1">// Shorten command names (keep this line here)</span>
+</code></pre></div></div>
+
+<p>The script editor has the following features:</p>
+
+<ul>
+  <li>Two links at the top for easy access
+    <ul>
+      <li><a href="https://www.pcibex.net/documentation/"><strong>PennController docs</strong></a>: Links to PCIbex documentation.</li>
+      <li><a href="https://github.com/addrummond/ibex/blob/master/docs/manual.md"><strong>ibex docs</strong></a>: Links to the original Ibex documentation.</li>
+    </ul>
+  </li>
+  <li>Autocomplete
+    <ol>
+      <li>Start typing within the script editor.</li>
+      <li>A modular window with suggested command names for autocompletion will pop up.</li>
+      <li>Navigate the autocomplete suggestions with the <strong>Up</strong> and <strong>Down</strong> arrow keys, and press <strong>Enter/Return</strong> to select a suggestion.</li>
+    </ol>
+  </li>
+  <li>Four buttons at the bottom
+    <ul>
+      <li><strong>Discard changes</strong>: Close the script editor without saving any changes.</li>
+      <li><strong>Save changes</strong>: Save changes without closing the script editor.</li>
+      <li><strong>Save and close</strong>: Save changes and close the script editor.</li>
+      <li><strong>Save and test</strong>: Save changes and open the updated experiment in a new tab or window.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="uploading-files-directly">Uploading files directly</h3>
+
+<p>You can upload files directly to the PCIbex Farm. For example, as an alternative to the script editor, you can edit <code class="language-plaintext highlighter-rouge">main.js</code> in an external text editor and upload it to the PCIbex Farm.</p>
+
+<blockquote>
+  <p>To be filled in…</p>
+</blockquote>
+
+:ET

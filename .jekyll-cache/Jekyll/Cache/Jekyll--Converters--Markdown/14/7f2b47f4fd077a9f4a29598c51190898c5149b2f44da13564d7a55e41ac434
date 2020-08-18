@@ -1,0 +1,10 @@
+I"ø
+<p>Commands that manipulate elements begin with the prefix <code class="language-plaintext highlighter-rouge">standard.</code> or <code class="language-plaintext highlighter-rouge">X.</code></p>
+
+<ul>
+  <li>Commands that begin with <code class="language-plaintext highlighter-rouge">standard.</code> can be used on any element type, like <code class="language-plaintext highlighter-rouge">standard.print</code></li>
+  <li>Commands that begin with <code class="language-plaintext highlighter-rouge">X.</code> can only be used on <code class="language-plaintext highlighter-rouge">X</code> element types, like <code class="language-plaintext highlighter-rouge">text.unfold</code></li>
+</ul>
+
+<p>This guide omits the element command prefixes for simplicity.</p>
+:ET

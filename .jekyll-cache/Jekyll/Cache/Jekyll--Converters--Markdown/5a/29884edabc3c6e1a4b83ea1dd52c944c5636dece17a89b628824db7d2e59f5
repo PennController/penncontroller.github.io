@@ -1,0 +1,423 @@
+I"r<h1 class="no_toc" id="basic-tutorial">Basic tutorial</h1>
+
+<p class="fs-5 fw-300">This section… (<em>to be filled in</em>)</p>
+
+<hr />
+
+<h2 class="no_toc text-delta" id="table-of-contents">Table of contents</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#getting-started" id="markdown-toc-getting-started">Getting started</a></li>
+  <li><a href="#create-an-experiment" id="markdown-toc-create-an-experiment">Create an experiment</a></li>
+  <li><a href="#load-resource-files" id="markdown-toc-load-resource-files">Load resource files</a></li>
+  <li><a href="#edit-an-experiment" id="markdown-toc-edit-an-experiment">Edit an experiment</a></li>
+  <li><a href="#create-a-trial" id="markdown-toc-create-a-trial">Create a trial</a></li>
+  <li><a href="#add-elements" id="markdown-toc-add-elements">Add elements</a></li>
+  <li><a href="#add-commands" id="markdown-toc-add-commands">Add commands</a>    <ol>
+      <li><a href="#pause-experiment-execution" id="markdown-toc-pause-experiment-execution">Pause experiment execution</a></li>
+      <li><a href="#manipulate-element-aesthetics" id="markdown-toc-manipulate-element-aesthetics">Manipulate element aesthetics</a></li>
+      <li><a href="#manipulate-layout" id="markdown-toc-manipulate-layout">Manipulate layout</a></li>
+    </ol>
+  </li>
+  <li><a href="#log-data" id="markdown-toc-log-data">Log data</a></li>
+  <li><a href="#add-trials" id="markdown-toc-add-trials">Add trials</a>    <ol>
+      <li><a href="#instruction-trial" id="markdown-toc-instruction-trial">Instruction trial</a></li>
+      <li><a href="#second-experiment-trial" id="markdown-toc-second-experiment-trial">Second experiment trial</a></li>
+      <li><a href="#manipulate-trial-order" id="markdown-toc-manipulate-trial-order">Manipulate trial order</a></li>
+    </ol>
+  </li>
+  <li><a href="#examine-results" id="markdown-toc-examine-results">Examine results</a></li>
+</ol>
+
+<hr />
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>In this section, you will create the <strong>BasicTutorial</strong> experiment:</p>
+
+<ol>
+  <li>Welcome screen with instructions</li>
+  <li><em>To be filled in</em></li>
+</ol>
+
+<hr />
+<h2 id="create-an-experiment">Create an experiment</h2>
+
+<ol>
+  <li><a href="#creating-account">Create a PCIbex Farm account</a>.</li>
+  <li>Go to the <a href="https://expt.pcibex.net/">PCIbex Farm home page</a>.</li>
+  <li>Click <strong>Design experiments</strong>.</li>
+  <li>Enter your login information and click <strong>login</strong>.</li>
+  <li>Click <strong>Create a new experiment</strong>.</li>
+  <li>In the “Name” field, enter “BasicTutorial”.</li>
+  <li>Click <strong>Create</strong>.</li>
+</ol>
+
+<p>Click on the <strong>BasicTutorial</strong> experiment to begin editing.</p>
+
+<hr />
+
+<h2 id="load-resource-files">Load resource files</h2>
+
+<p>Option 1: Upload directly</p>
+
+<ul>
+  <li><em>To be filled in</em></li>
+</ul>
+
+<p>Option 2: Upload through GitHub</p>
+
+<ul>
+  <li><em>To be filled in</em></li>
+</ul>
+
+<hr />
+
+<h2 id="edit-an-experiment">Edit an experiment</h2>
+
+<p>The <strong>Script</strong> folder contains the file <code class="language-plaintext highlighter-rouge">main.js</code>, the experiment code. Update your experiment by editing <code class="language-plaintext highlighter-rouge">main.js</code> in the script editor and saving your changes.</p>
+
+<p>The script editor has the following features:</p>
+
+<ul>
+  <li>Two links at the top for easy access
+    <ul>
+      <li><a href="https://www.pcibex.net/documentation/">PennController docs</a>: Links to PCIbex documentation.</li>
+      <li><a href="https://github.com/addrummond/ibex/blob/master/docs/manual.md">ibex docs</a>: Links to the original Ibex documentation.</li>
+    </ul>
+  </li>
+  <li>Autocomplete
+    <ol>
+      <li>Start typing within the script editor.</li>
+      <li>A modular window with suggested command names for autocompletion will pop up.</li>
+      <li>Navigate the autocomplete suggestions with the <strong>Up</strong> and <strong>Down</strong> arrow keys, and press <strong>Enter/Return</strong> to select a suggestion.</li>
+    </ol>
+  </li>
+  <li>Four buttons at the bottom
+    <ul>
+      <li><strong>Discard changes</strong>: Close the script editor without saving any changes.</li>
+      <li><strong>Save changes</strong>: Save changes without closing the script editor.</li>
+      <li><strong>Save and close</strong>: Save changes and close the script editor.</li>
+      <li><strong>Save and test</strong>: Save changes and open the updated experiment in a new tab or window.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Click <strong>main.js</strong> to open <code class="language-plaintext highlighter-rouge">main.js</code> in the script editor.</p>
+
+<p>By default, new experiments are initialized with a demo experiment.  If you uploaded the resource files directly,  the original <code class="language-plaintext highlighter-rouge">main.js</code> file  should start with the following lines:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This is a simple demo script, feel free to edit or delete it</span>
+<span class="c1">// Find a tutorial and the list of availalbe elements at:</span>
+<span class="c1">// https://www.pcibex.net/documentation/</span>
+
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span> <span class="c1">// Shorten command names (keep this line here)</span>
+</code></pre></div></div>
+
+<p>If you uploaded the resource files through GitHub,  the newly uploaded <code class="language-plaintext highlighter-rouge">main.js</code> should contain only the following lines:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Shorten command names (keep this line here)</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<div class="px-4 py-4">
+  <div class="label label-yellow">note</div>
+  <div class="my-2 ml-2 mr-4 px-3 py-1 fw-300 fs-3 bg-grey-lt-100"> 
+<p>If you uploaded the resource files directly, delete all lines in <code class="language-plaintext highlighter-rouge">main.js</code> that follow <code class="language-plaintext highlighter-rouge">PennController.ResetPrefix(null) // Shorten command names (keep this line here)</code> before continuing the tutorial.</p>
+
+<p>If you uploaded the resource files through GitHub, you can continue the tutorial directly.</p>
+</div>
+</div>
+
+<hr />
+
+<h2 id="create-a-trial">Create a trial</h2>
+
+<p>PennController trials are created with the command <code class="language-plaintext highlighter-rouge">PennController.newTrial</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a Trial named "first-trial"</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">newTrial</span><span class="p">(</span><span class="dl">"</span><span class="s2">first-trial</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>All PennController commands begin with the prefix <code class="language-plaintext highlighter-rouge">PennController.</code>, in order to avoid naming conflicts with other JavaScript modules. However, adding this prefix for every command quickly becomes tiring.</p>
+
+<p>The tutorial uses the command <a href="./commands/global-commands/resetprefix/"><code class="language-plaintext highlighter-rouge">PennController.ResetPrefix</code></a>, which resets the <code class="language-plaintext highlighter-rouge">PennController.</code> prefix to the string of your choice, to remove the prefix:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Shorten command names (keep this line here)</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span> 
+
+<span class="c1">// Create a Trial named "first-trial"</span>
+<span class="nx">newTrial</span><span class="p">(</span><span class="dl">"</span><span class="s2">first-trial</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="px-4 py-4">
+  <div class="label label-green">recommended</div>
+  <div class="my-2 ml-2 mr-4 px-3 py-1 fw-300 fs-3 bg-grey-lt-100"> 
+<p>It is recommended to start every experiment with <code class="language-plaintext highlighter-rouge">PennController.ResetPrefix(null)</code>  for general clarity and readability.</p>
+</div>
+</div>
+
+<hr />
+
+<h2 id="add-elements">Add elements</h2>
+
+<p><strong>Elements</strong> are the basic unit of a PennController experiment.</p>
+
+<p>Element types can represent visual content, interactive content, or some combination of the two:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Text</code>: Represents text content (visual).</li>
+  <li><code class="language-plaintext highlighter-rouge">Image</code>: Represents image content (visual)</li>
+  <li><code class="language-plaintext highlighter-rouge">Key</code>: Represents keyboard keypresses (interactive).</li>
+  <li><code class="language-plaintext highlighter-rouge">Button</code>: Represents clickable buttons (visual and interactive).</li>
+</ul>
+
+<div class="px-4 py-4">
+  <div class="label label-yellow">note</div>
+  <div class="my-2 ml-2 mr-4 px-3 py-1 fw-300 fs-3 bg-grey-lt-100"> 
+<p>This tutorial uses the term “element” as shorthand for “instance of an element type”. For example “an <strong>Image</strong> element”  or “an <strong>Image</strong>” is short for “an instance of the <code class="language-plaintext highlighter-rouge">Image</code> type”. If “element type” is intended, the  term “element type” will be used.</p>
+</div>
+</div>
+
+<div class="px-4 py-4">
+  <div class="label label-purple">reference</div>
+  <div class="my-2 ml-2 mr-4 px-3 py-1 fw-300 fs-3 bg-grey-lt-100"> 
+<p>For a list of all PennController element types, see the <a href="./elements">Reference: Elements</a> page.</p>
+</div>
+</div>
+
+<p>Add two <strong>Text</strong> elements and an <strong>Image</strong> element:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Shorten command names (keep this line here)</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+<span class="c1">// Create a Trial named "first-trial"</span>
+<span class="nx">newTrial</span><span class="p">(</span><span class="dl">"</span><span class="s2">first-trial</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Create a Text element </span>
+    <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-description</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">The fish swim in a tank which is perfectly round.</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">,</span>
+    <span class="c1">// Create an Image element</span>
+    <span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-round</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2fishRoundTank.png</span><span class="dl">"</span><span class="p">)</span>    
+<span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>The <strong>Text</strong> element is named <code class="language-plaintext highlighter-rouge">"fish-description"</code>, and contains the string <code class="language-plaintext highlighter-rouge">The fish swim in a tank which is perfectly round.</code></li>
+    <li>The <strong>Image</strong> element is named <code class="language-plaintext highlighter-rouge">"fish"</code>, and contains the image <code class="language-plaintext highlighter-rouge">2fishRoundTank.png</code>, within the <strong>Resources</strong> folder.</li>
+  </ul>
+</blockquote>
+
+<div class="px-4 py-4">
+  <div class="label label-green">recommended</div>
+  <div class="my-2 ml-2 mr-4 px-3 py-1 fw-300 fs-3 bg-grey-lt-100"> 
+<p>It is not strictly necessary to name an element. For example, <code class="language-plaintext highlighter-rouge">newImage("fish", "2fishRoundTank.png")</code> and <code class="language-plaintext highlighter-rouge">newImage("2fishRoundTank.png")</code> both contain the image <code class="language-plaintext highlighter-rouge">2fishRoundTank.png</code>.</p>
+
+<p>However, it is recommended to name every element for general clarity and readability. If you want to refer back to an existing element, as in <a href="#manipulate-layout">Manipulate layout</a>, the element must have a name.</p>
+</div>
+</div>
+
+<hr />
+
+<h2 id="add-commands">Add commands</h2>
+
+<p>Elements contain content; <strong>commands</strong> do things with that content. For example, once you create an element, you can use a command to print it to the screen.</p>
+
+<div class="px-4 py-4">
+  <div class="label label-yellow">note</div>
+  <div class="my-2 ml-2 mr-4 px-3 py-1 fw-300 fs-3 bg-grey-lt-100"> 
+<p>Commands that manipulate elements begin with the prefix <code class="language-plaintext highlighter-rouge">standard.</code> or <code class="language-plaintext highlighter-rouge">X.</code></p>
+
+<ul>
+  <li>Commands that begin with <code class="language-plaintext highlighter-rouge">standard.</code> can be used on any element type, like <code class="language-plaintext highlighter-rouge">standard.print</code></li>
+  <li>Commands that begin with <code class="language-plaintext highlighter-rouge">X.</code> can only be used on <code class="language-plaintext highlighter-rouge">X</code> element types, like <code class="language-plaintext highlighter-rouge">text.unfold</code></li>
+</ul>
+
+<p>This guide omits the element command prefixes for simplicity.</p>
+</div>
+</div>
+
+<p>Print the <code class="language-plaintext highlighter-rouge">"fish-description"</code> and <code class="language-plaintext highlighter-rouge">"fish"</code> elements to the screen:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Shorten command names (keep this line here)</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+<span class="c1">// Create a Trial named "first-trial"</span>
+<span class="nx">newTrial</span><span class="p">(</span><span class="dl">"</span><span class="s2">first-trial</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Create a Text element and print it</span>
+    <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-description</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">The fish swim in a tank which is perfectly round.</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="c1">// Create an Image element and print it</span>
+    <span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-round</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2fishRoundTank.png</span><span class="dl">"</span><span class="p">)</span>    
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Click <strong>Save and test</strong> in the script editor to test your changes.</p>
+
+<p>You may be surprised by the results! As soon as you start the experiment, you see the message “The results were successfully sent to the server. Thanks!”.</p>
+
+<p>While it may seem like nothing happened, all of the commands were executed within a few milliseconds, and the experiment ended almost immediately.</p>
+
+<p>PennController executes experiment scripts sequentially:</p>
+
+<ol>
+  <li>
+    <p>Shorten command names.</p>
+  </li>
+  <li>
+    <p>Create a <strong>Trial</strong>.</p>
+  </li>
+  <li>
+    <p>Create a <strong>Text</strong> element and print it.</p>
+  </li>
+  <li>
+    <p>Create an <strong>Image</strong> element and print it.</p>
+  </li>
+</ol>
+
+<p>If there are no more commands, the trial ends. If there are no more trials, the experiment ends.</p>
+
+<h3 id="pause-experiment-execution">Pause experiment execution</h3>
+
+<p>Interactive elements and commands can pause experiment script execution, in order to give participants time to interact with the screen.</p>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">wait</code> command to pause experiment execution:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Shorten command names (keep this line here)</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+<span class="c1">// Create a Trial named "first-trial"</span>
+<span class="nx">newTrial</span><span class="p">(</span><span class="dl">"</span><span class="s2">first-trial</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Create a Text element and print it</span>
+    <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-description</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">The fish swim in a tank which is perfectly round.</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="c1">// Create an Image element and print it</span>
+    <span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-round</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2fishRoundTank.png</span><span class="dl">"</span><span class="p">)</span>    
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="c1">// Create a Key element and wait until the F or J key is pressed</span>
+    <span class="nx">newKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">keypress</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">FJ</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>Once the <code class="language-plaintext highlighter-rouge">wait</code> command on the <strong>Key</strong> element is reached, the experiment “waits” until the participant presses the <code class="language-plaintext highlighter-rouge">F</code> or <code class="language-plaintext highlighter-rouge">J</code> key.</li>
+    <li>After the <code class="language-plaintext highlighter-rouge">F</code> or <code class="language-plaintext highlighter-rouge">J</code> key is pressed, there are no more commands or trials, and the experiment ends.</li>
+  </ul>
+</blockquote>
+
+<div class="px-4 py-4">
+  <div class="label label-purple">reference</div>
+  <div class="my-2 ml-2 mr-4 px-3 py-1 fw-300 fs-3 bg-grey-lt-100"> 
+<p>Only interactive elements like <strong>Key</strong> or <strong>Button</strong> can have a defined <code class="language-plaintext highlighter-rouge">wait</code> command. To read more about element-specific commands, see…</p>
+</div>
+</div>
+
+<h3 id="manipulate-element-aesthetics">Manipulate element aesthetics</h3>
+
+<p>PennController has a variety of commands that manipulate aesthetic aspects of an element, for example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Shorten command names (keep this line here)</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+<span class="c1">// Create a Trial named "first-trial"</span>
+<span class="nx">newTrial</span><span class="p">(</span><span class="dl">"</span><span class="s2">first-trial</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Create a Text element, center it, and print it</span>
+    <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-description</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">The fish swim in a tank which is perfectly round.</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">center</span><span class="p">()</span>
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="c1">// Create an Image element, resize it to 200x200 px, and print it</span>
+    <span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-round</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2fishRoundTank.png</span><span class="dl">"</span><span class="p">)</span>    
+         <span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+   	<span class="c1">// Create another Image element, resize it 200x200 px, and print it</span>
+    <span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-square</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">1fishSquareTank.png</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="c1">// Create a Key element and wait until the F or J key is pressed</span>
+    <span class="nx">newKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">keypress</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">FJ</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="manipulate-layout">Manipulate layout</h3>
+
+<p>The <a href="./elements/canvas.html"><strong>Canvas</strong> element</a> creates a transparent surface that can be used to place elements at specific coordinates.</p>
+
+<p>Define a 450x200 px <strong>Canvas</strong> and print the <code class="language-plaintext highlighter-rouge">"fish-round"</code> and <code class="language-plaintext highlighter-rouge">"fish-square"</code> <strong>Image</strong> elements next to each other with a 50px gap:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Shorten command names (keep this line here)</span>
+<span class="nx">PennController</span><span class="p">.</span><span class="nx">ResetPrefix</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+<span class="c1">// Create a Trial named "first-trial"</span>
+<span class="nx">newTrial</span><span class="p">(</span><span class="dl">"</span><span class="s2">first-trial</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Create a Text element, center it, and print it</span>
+    <span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-description</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">The fish swim in a tank which is perfectly round.</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">center</span><span class="p">()</span>
+         <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="c1">// Create an Image element, resize it to 200x200 px, and print it</span>
+    <span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-round</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2fishRoundTank.png</span><span class="dl">"</span><span class="p">)</span>    
+         <span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+         <span class="c1">// .print()</span>
+    <span class="p">,</span>
+   	<span class="c1">// Create another Image element, resize it 200x200 px, and print it</span>
+    <span class="nx">newImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-square</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">1fishSquareTank.png</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+         <span class="c1">// .print()</span>
+    <span class="p">,</span>
+   	<span class="nx">newCanvas</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">add</span><span class="p">(</span>  <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">getImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-round</span><span class="dl">"</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">getImage</span><span class="p">(</span><span class="dl">"</span><span class="s2">fish-square</span><span class="dl">"</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+    <span class="p">,</span>
+    <span class="c1">// Create a Key element and wait until the F or J key is pressed</span>
+    <span class="nx">newKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">keypress</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">FJ</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>Existing elements must be named in order to use the <code class="language-plaintext highlighter-rouge">getX</code> function, where <code class="language-plaintext highlighter-rouge">X</code> is an element type.</li>
+    <li>If you call <code class="language-plaintext highlighter-rouge">print</code> on a <strong>Canvas</strong> element, do not call <code class="language-plaintext highlighter-rouge">print</code> directly on the elements that have been added to the <strong>Canvas</strong>.</li>
+  </ul>
+</blockquote>
+
+<h2 id="log-data">Log data</h2>
+
+<ul>
+  <li>add <code class="language-plaintext highlighter-rouge">log</code></li>
+</ul>
+
+<h2 id="add-trials">Add trials</h2>
+
+<h3 id="instruction-trial">Instruction trial</h3>
+
+<ul>
+  <li>add a new trial with instructions</li>
+</ul>
+
+<h3 id="second-experiment-trial">Second experiment trial</h3>
+
+<ul>
+  <li>add another experimental trial</li>
+</ul>
+
+<h3 id="manipulate-trial-order">Manipulate trial order</h3>
+
+<ul>
+  <li>use <code class="language-plaintext highlighter-rouge">Sequence</code> to manipulate trial order</li>
+</ul>
+
+<h2 id="examine-results">Examine results</h2>
+
+<ul>
+  <li>look at results</li>
+</ul>
+
+:ET

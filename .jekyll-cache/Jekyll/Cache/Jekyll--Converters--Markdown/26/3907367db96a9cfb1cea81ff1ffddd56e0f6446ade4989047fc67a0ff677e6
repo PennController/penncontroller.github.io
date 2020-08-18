@@ -1,0 +1,209 @@
+I"N<<h1 id="commands">Commands</h1>
+
+<p><strong>Commands</strong> manipulate <a href="#elements">elements</a> or other aspects of an experiment. For example, you can create an element and use the <code class="language-plaintext highlighter-rouge">.print</code> command to print it to the screen, or use the <code class="language-plaintext highlighter-rouge">Sequence()</code> command to order the <a href="#trials">trials</a> of an experiment.</p>
+
+<p>There are three types of commands:</p>
+
+<ul>
+  <li><strong>Element commands</strong>: Used within a trial to manipulate elements.</li>
+  <li><strong>Global commands</strong>: Used outside of a trial to</li>
+  <li><strong>Special commands</strong>: Used within a trial, but do not manipulate elements.</li>
+</ul>
+
+<p>For a list of all PennController commands, see the Commands page.</p>
+
+<blockquote>
+  <p>Note: create a <strong>Commands</strong> page</p>
+</blockquote>
+
+<h2 id="element-commands">Element commands</h2>
+
+<p><strong>Element commands</strong> are used within a trial to manipulate elements. There are two types of element commands: <strong>action commands</strong> directly manipulate elements, and <strong>test commands</strong> test an element against some conditional statement.</p>
+
+<p>Action and test commands are <strong>standard</strong> (can be called on any element type), or <strong>element-specific</strong> (can only be called on a certain element type).</p>
+
+<p><img src="/assets/images/command-types.png" alt="Types of element commands" /></p>
+
+<p><em>Figure 1: Types of element commands</em></p>
+
+<p>In addition, action and test commands can be called on a specific instance of an element type, or on the <a href="">default object</a> of an element type.</p>
+
+<blockquote>
+  <p>Note: create a section for default objects</p>
+</blockquote>
+
+<h3 id="action-commands">Action commands</h3>
+
+<p><strong>Action commands</strong> directly manipulate elements.</p>
+
+<p>Standard action commands begin with the prefix <code class="language-plaintext highlighter-rouge">standard.</code>, although the <code class="language-plaintext highlighter-rouge">standard</code> part of the prefix is generally omitted for simplicity. Standard commands can be called on any element type, but some standard commands only have an effect on visual element types, and some standard commands only have an effect on interactive element types.</p>
+
+<p>For example, the <code class="language-plaintext highlighter-rouge">standard.print</code> / <code class="language-plaintext highlighter-rouge">.print</code> command prints the contents of an element to the screen, but can only print visual element types like <code class="language-plaintext highlighter-rouge">Text</code> or<code class="language-plaintext highlighter-rouge">Image</code>. If it is called on an interactive type like <code class="language-plaintext highlighter-rouge">Key</code>, it has no effect.</p>
+
+<p>Element-specific action commands begin with the prefix <code class="language-plaintext highlighter-rouge">X.</code>, where <code class="language-plaintext highlighter-rouge">X</code> is the only element type the command can be called on. For example, the <code class="language-plaintext highlighter-rouge">text.unfold</code> command creates an unfolding effect as the content of a <strong>Text</strong> element is printed to the screen.</p>
+
+<blockquote>
+  <p>What happens if .unfold() is called on an <strong>Image</strong> element?</p>
+</blockquote>
+
+<p>Two (or more) element types may have element-specific commands that seem to be nearly identical in name and functionality. For example, the <code class="language-plaintext highlighter-rouge">button.wait</code> command waits until the <strong>Button</strong> element it is called on is clicked before evaluating the next commands; the <code class="language-plaintext highlighter-rouge">key.wait</code> command waits until the <strong>Key</strong> element it is called on is satisfied by a valid keypress before evaluating the next commands. However…</p>
+
+<blockquote>
+  <p>They are element-specific commands for technical reasons?</p>
+</blockquote>
+
+<hr />
+
+<p><strong>Example 2</strong></p>
+
+<blockquote>
+  <p>The <code class="language-plaintext highlighter-rouge">.print</code> command prints the contents of an element to the screen.</p>
+
+  <p>The <code class="language-plaintext highlighter-rouge">button.wait</code> command waits until the <strong>Button</strong> element is clicked before evaluating the next commands.</p>
+</blockquote>
+
+<p>Click <strong>Try it</strong> to see <strong>Example 2</strong> in action.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// **Should be an interactive code block**</span>
+<span class="c1">// Example 2</span>
+
+<span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-text</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">This is an example sentence</span><span class="dl">"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">newButton</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-button</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Click to continue</span><span class="dl">"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+	<span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">getText</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-text</span><span class="dl">"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>Example 2</strong> does the following:</p>
+
+<ol>
+  <li>Creates a <strong>Text</strong> element with the name <code class="language-plaintext highlighter-rouge">example-text</code> and the content <code class="language-plaintext highlighter-rouge">This is an example sentence</code>.</li>
+  <li>Prints the content of <code class="language-plaintext highlighter-rouge">example-text</code> to the screen.</li>
+  <li>Creates a <strong>Button</strong> element with the name <code class="language-plaintext highlighter-rouge">example-button</code>  and the content <code class="language-plaintext highlighter-rouge">Click to continue</code>.</li>
+  <li>Prints the content of <code class="language-plaintext highlighter-rouge">example-button</code> to the screen.</li>
+  <li>Waits until <code class="language-plaintext highlighter-rouge">example-button</code> is clicked.</li>
+  <li>Refers back to the <strong>Text</strong> element <code class="language-plaintext highlighter-rouge">example-text</code>.</li>
+  <li>Prints the content of <code class="language-plaintext highlighter-rouge">example-text</code> to the screen (again).</li>
+</ol>
+
+<hr />
+
+<p>For a list of all standard action commands, see the Standard Commands page.</p>
+
+<blockquote>
+  <p>Note: create a <strong>Standard Commands</strong> page.</p>
+
+</blockquote>
+
+<h3 id="test-commands">Test commands</h3>
+
+<p><strong>Test commands</strong> test an element against some conditional statement; they are the PCIbex equivalent of an <em>if-else</em> statement.</p>
+
+<p>Standard test commands begin with the prefix <code class="language-plaintext highlighter-rouge">standard.test.</code>, although the <code class="language-plaintext highlighter-rouge">standard</code> part of the prefix is generally omitted for simplicity. For example, the <code class="language-plaintext highlighter-rouge">standard.test.printed</code> / <code class="language-plaintext highlighter-rouge">test.printed</code> command tests whether an element has been printed to the screen at the time of evaluation.</p>
+
+<p>Element-specific test commands begin with the prefix <code class="language-plaintext highlighter-rouge">X.test.</code>, where <code class="language-plaintext highlighter-rouge">X</code> is the only element type the command can be called on. For example, the <code class="language-plaintext highlighter-rouge">key.test.pressed</code> command tests whether a <strong>Key</strong> element has been satisfied by a valid keypress at the time of evaluation.</p>
+
+<p>The consequences of a test command are defined by the <code class="language-plaintext highlighter-rouge">.success</code> and/or <code class="language-plaintext highlighter-rouge">.failure</code> helper functions:</p>
+
+<ul>
+  <li>If the test succeeded, evaluate the commands called within the <code class="language-plaintext highlighter-rouge">.success</code> function.</li>
+  <li>If the test failed, evaluate the comands called within the <code class="language-plaintext highlighter-rouge">.failure</code> function.</li>
+</ul>
+
+<hr />
+
+<p><strong>Example 3</strong></p>
+
+<blockquote>
+  <p>…</p>
+</blockquote>
+
+<p>Click <strong>Try it</strong> to see <strong>Example 3</strong> in action.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// **Should be an interactive code block**</span>
+<span class="c1">// Example 3</span>
+
+<span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">instructions</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Up to you - press the spacebar before clicking the button, or click the button immediately</span><span class="dl">"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">newKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-key</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span>
+<span class="p">,</span>
+<span class="nx">newButton</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-button</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Click to continue</span><span class="dl">"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+	<span class="p">.</span><span class="nx">wait</span><span class="p">()</span>
+<span class="p">,</span>
+<span class="nx">getKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">example-key</span><span class="dl">"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">pressed</span><span class="p">()</span>
+	<span class="p">.</span><span class="nx">success</span><span class="p">(</span>
+    	<span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">You pressed the spacebar before clicking the button.</span><span class="dl">"</span><span class="p">)</span>
+    		<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+	<span class="p">)</span>
+	<span class="p">.</span><span class="nx">failure</span><span class="p">(</span>
+    	<span class="nx">newText</span><span class="p">(</span><span class="dl">"</span><span class="s2">failure</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">You did not press the spacebar before clicking the button.</span><span class="dl">"</span><span class="p">)</span>
+    		<span class="p">.</span><span class="nx">print</span><span class="p">()</span>
+	<span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Example 3</strong> evaluation flow (simplified for clarity):</p>
+
+<ol>
+  <li>Create and print a <strong>Text</strong> element named <code class="language-plaintext highlighter-rouge">instructions</code>.</li>
+  <li>Create a <strong>Key</strong> element named <code class="language-plaintext highlighter-rouge">example-key</code> that “listens” for press of the spacebar.</li>
+  <li>Creates a <strong>Button</strong> element with the name <code class="language-plaintext highlighter-rouge">example-button</code>  and the content <code class="language-plaintext highlighter-rouge">Click to continue</code>.</li>
+  <li>Prints the content of <code class="language-plaintext highlighter-rouge">example-button</code> to the screen.</li>
+  <li>Waits until <code class="language-plaintext highlighter-rouge">example-button</code> is clicked.</li>
+  <li>Refers back to the <strong>Key</strong> element <code class="language-plaintext highlighter-rouge">example-key</code>.</li>
+  <li>Tests whether the <code class="language-plaintext highlighter-rouge">example-key</code> was satisfied by a valid keypress, aka whether the spacebar was pressed.
+    <ul>
+      <li>If</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<p>For a list of all test commands, see the Test commands page.</p>
+
+<blockquote>
+  <p>Note: create a <strong>Test commands</strong> page.</p>
+</blockquote>
+
+<h2 id="global-commands">Global commands</h2>
+
+<p><strong>Global commands</strong> are…</p>
+
+<p>Important global commands:</p>
+
+<ul>
+  <li><a href="https://www.pcibex.net/wiki/penncontroller-resetprefix/"><code class="language-plaintext highlighter-rouge">PennController.ResetPrefix(null)</code></a>:</li>
+  <li><a href="https://www.pcibex.net/wiki/penncontroller-debugoff/"><code class="language-plaintext highlighter-rouge">DebugOff()</code></a>:</li>
+  <li><a href="https://www.pcibex.net/wiki/penncontroller-addtable/"><code class="language-plaintext highlighter-rouge">AddTable()</code></a>:</li>
+  <li><a href="https://www.pcibex.net/wiki/penncontroller/"><code class="language-plaintext highlighter-rouge">newTrial()</code></a>:</li>
+  <li><a href="https://www.pcibex.net/wiki/penncontroller-sequence/"><code class="language-plaintext highlighter-rouge">Sequence()</code></a>:</li>
+</ul>
+
+<p>For a list of all global commands, see the Global commands page.</p>
+
+<blockquote>
+  <p>Note: create a <strong>Global commands</strong> page.</p>
+</blockquote>
+
+<h2 id="special-commands">Special commands</h2>
+
+<p><strong>Special commands</strong> are used within a trial, but do not manipulate elements.</p>
+
+<p>There are three special commands:</p>
+
+<ul>
+  <li><a href="https://www.pcibex.net/wiki/clear-command/"><code class="language-plaintext highlighter-rouge">clear()</code></a>: Removes all currently printed elements from the screen.</li>
+  <li><a href="https://www.pcibex.net/wiki/end-command/"><code class="language-plaintext highlighter-rouge">end()</code></a>: Ends a trial immediately.</li>
+  <li><a href="https://www.pcibex.net/wiki/fullscreen-command/"><code class="language-plaintext highlighter-rouge">fullscreen()</code></a>: Sends a fullscreen request to the participant’s browser.</li>
+</ul>
+
+<p><a href="https://www.pcibex.net/wiki/global-commands/#menuToc-23"><code class="language-plaintext highlighter-rouge">SendResults()</code></a> technically qualifies as a special command, since it can be used within a trial, but is generally classifed as a <a href="#global-commands">global command</a>.</p>
+
+:ET

@@ -1,0 +1,62 @@
+I"C<h1 id="uploading-files-through-github">Uploading files through GitHub</h1>
+
+<p>You can upload an entire GitHub repository to the PCIbex Farm. This is particularly useful if you would like to upload multiple files to the <strong>Resources</strong> folder, and do not want to upload each file one-by-one.</p>
+
+<p>The GitHub repository must have one or more of the following folders in the root directory:</p>
+
+<ul>
+  <li><strong>data_includes</strong>: Its contents will be copied into the <strong>Scripts</strong> folder.</li>
+  <li><strong>chunk_includes</strong>: Its contents will be copied into the <strong>Resources</strong> folder.</li>
+  <li><strong>js_includes</strong>: Its contents will be copied into the <strong>Controllers</strong> folder.</li>
+</ul>
+
+<p>Example of an appropriate GitHub repository structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>github-repository
+├── README.md
+├── data_includes
+│   └── main.js
+├── chunk_includes
+│   ├── image1.png
+│   └── image2.png
+└── js_includes
+    └── newController.js
+</code></pre></div></div>
+<p>Before uploading a GitHub repository, you should know that:</p>
+
+<ul>
+  <li>
+    <p>No Git repository is hosted on the PCIbex Farm server. The specified repository is checked out, and its files are uploaded to your experiment.</p>
+  </li>
+  <li>
+    <p><strong>Caution!</strong> Files with the same names will be replaced. Any file in a PCIbex experiment folder will be overwritten by a file with the same name in an uploaded GitHub repository.</p>
+  </li>
+  <li>
+    <p>Any file in a PCIbex experiment folder but not in an uploaded GitHub repository will not be affected.</p>
+  </li>
+  <li>
+    <p>No files are ever copied to the <strong>Results</strong> folder, to ensure that results are never overwritten by accident.</p>
+  </li>
+  <li>
+    <p>The repository checkout times out after 25 seconds. If this happens, just try again. If you are trying to check out a very large repository, you may have to reduce the size of the repository.</p>
+  </li>
+  <li>
+    <p>Currently, it is only possible to upload a publicly readable Git repository.</p>
+  </li>
+</ul>
+
+<p>To upload through Github:</p>
+
+<ol>
+  <li>Under <strong>Experiment ‘EXPERIMENT_NAME’</strong>, click <strong>Update from git repo »</strong>.</li>
+  <li>In the grey text input box, enter the following information:
+    <ul>
+      <li>In the “repo url” field, enter the URL of the GitHub repository that you are copying.</li>
+      <li>In the “branch/revision” field, enter the branch of the GitHub repository that you are copying.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Sync</strong>.</li>
+  <li>If the uploading was successful, the uploaded files will appear in the appropriate folder(s) and briefly flash red.</li>
+</ol>
+
+:ET

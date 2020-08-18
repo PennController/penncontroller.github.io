@@ -19,7 +19,7 @@ nav_order: 5
     {% assign children_list = pages_list | where: "parent", node.title %}
     {% for child in children_list -%}
     <div class="d-inline-block my-4" style="text-align:center; width:160px;">
-      <a href="{{ child.url | absolute_url }}"><img src="{{ child.thumbnail }}" alt="{{ child.title }}" width="100" height="100" /></a>
+      <a href="{{ child.url | absolute_url }}"><img src="{{ site.baseurl }}/assets/images/{{ child.thumbnail }}" alt="{{ child.title }}" width="100" height="100" /></a>
       <br>
       <a href="{{ child.url | absolute_url }}">{{ child.title }}</a>
     </div>  

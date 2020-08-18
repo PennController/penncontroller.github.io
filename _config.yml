@@ -27,7 +27,7 @@ baseurl: "/pcibex" # the subpath of your site, e.g. /blog
 url: "http://angelica-pan.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
-theme: "just-the-docs"
+remote_theme: pmarsceill/just-the-docs
 logo: "/assets/images/pcibex-logo.png"
 aux_links:
   "Go to the PCIbex Farm":

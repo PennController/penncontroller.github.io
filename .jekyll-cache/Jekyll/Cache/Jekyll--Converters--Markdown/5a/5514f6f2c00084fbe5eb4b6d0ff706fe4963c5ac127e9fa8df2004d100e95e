@@ -1,0 +1,5 @@
+I"¤
+<p>If you uploaded the resource files directly, delete all lines in <code class="language-plaintext highlighter-rouge">main.js</code> that follow <code class="language-plaintext highlighter-rouge">PennController.ResetPrefix(null) // Shorten command names (keep this line here)</code> before continuing the tutorial.</p>
+
+<p>If you uploaded the resource files through GitHub, you can continue the tutorial directly.</p>
+:ET
