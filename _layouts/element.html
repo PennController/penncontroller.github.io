@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<!-- VARIABLE ASSIGNMENT -->
+{% assign element-type = page.title | split: " " | first | downcase %}
+{% assign action-commands = site.action-commands | where_exp:"page", "page.title contains element-type" %}
+{% assign test-commands = site.test-commands | where_exp:"page", "page.title contains element-type" %}
+{% assign desc = page.description | markdownify %}
+
+<!-- LAYOUT -->
+<h1> <b> {{ page.title }} </b></h1>
+<blockquote> <code> {{ page.syntax }} </code></blockquote>
+
+{{ page.blurb | markdownify }}
+
+<!-- Element description and TOC -->
+{% include element-toc.html actionCommands=action-commands testCommands=test-commands extended-description=desc %}
+
+<hr>
+
+{{ content }}
+
+<hr>
+
+<h2> Action commands </h2>
+<!-- Action command blurbs -->
+{% include command-blurbs.html collection=action-commands %}
+
+<hr>
+
+<h2> Test commands </h2>
+<!-- Test command blurbs -->
+{% include command-blurbs.html collection=test-commands %}
