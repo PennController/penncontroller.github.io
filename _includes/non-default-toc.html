@@ -1,0 +1,19 @@
+<!-- TOC for pages with non-default layouts -->
+{% assign include.list_type == list_type %}
+<h2 class="text-delta">Table of contents</h2>
+{% if include.ordered %}
+<ol>
+{% else %}
+<ul>
+{% endif %}    
+{% for child in include.collection -%}
+{% assign child_tag = child.title | downcase | slugify %}
+  <li>
+    <a href="{{ relative_url }}#{{ child_tag }}">{{ child.title }}</a>
+  </li>
+{% endfor %}
+{% if include.ordered %}
+</ol>
+{% else %}
+</ul>
+{% endif %}  

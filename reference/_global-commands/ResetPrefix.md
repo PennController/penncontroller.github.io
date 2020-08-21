@@ -2,7 +2,7 @@
 layout: command
 title: PennController.ResetPrefix
 parent: Global commands
-grand_parent: Reference&#58; Command
+grand_parent: Commands
 syntax: PennController.ResetPrefix("*prefix*")
 blurb: Resets the required global command prefix `PennController.` to a desired string, typically `null` for no prefix.
 extended_description: true

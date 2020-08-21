@@ -1,490 +1,292 @@
 {"0": {
+    "doc": "Create an experiment",
+    "title": "Create an experiment",
+    "content": ". | Create a PCIbex Farm account. | Go to the PCIbex Farm home page. | Click Design experiments. | Enter your login information and click login. | Click Create a new experiment. | In the “Name” field, enter “BasicTutorial”. | Click Create. | . Click on the BasicTutorial experiment to begin editing. Load resource files . Option 1: Upload directly . | To be filled in | . Option 2: Upload through GitHub . | To be filled in | . Edit an experiment . The Script folder contains the file main.js, the experiment code. Update your experiment by editing main.js in the script editor and saving your changes. The script editor has the following features: . | Two links at the top for easy access . | PennController docs: Links to PCIbex documentation. | ibex docs: Links to the original Ibex documentation. | . | Autocomplete . | Start typing within the script editor. | A modular window with suggested command names for autocompletion will pop up. | Navigate the autocomplete suggestions with the Up and Down arrow keys, and press Enter/Return to select a suggestion. | . | Four buttons at the bottom . | Discard changes: Close the script editor without saving any changes. | Save changes: Save changes without closing the script editor. | Save and close: Save changes and close the script editor. | Save and test: Save changes and open the updated experiment in a new tab or window. | . | . Click main.js to open main.js in the script editor. By default, new experiments are initialized with a demo experiment. If you uploaded the resource files directly, the original main.js file should start with the following lines: . // This is a simple demo script, feel free to edit or delete it // Find a tutorial and the list of availalbe elements at: // https://www.pcibex.net/documentation/ PennController.ResetPrefix(null) // Shorten command names (keep this line here) . If you uploaded the resource files through GitHub, the newly uploaded main.js should contain only the following lines: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) . note If you uploaded the resource files directly, delete all lines in main.js that follow PennController.ResetPrefix(null) // Shorten command names (keep this line here) before continuing the tutorial. If you uploaded the resource files through GitHub, you can continue the tutorial directly. Create a trial . PennController trials are created with the command PennController.newTrial: . // Create a Trial named \"first-trial\" PennController.newTrial(\"first-trial\") . All PennController commands begin with the prefix PennController., in order to avoid naming conflicts with other JavaScript modules. However, adding this prefix for every command quickly becomes tiring. The tutorial uses the command PennController.ResetPrefix, which resets the PennController. prefix to the string of your choice, to remove the prefix entirely: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\") . recommended It is recommended to start every experiment with PennController.ResetPrefix(null) for readability and convenience. ",
+    "url": "http://localhost:4000/pcibex/docs/basic-tutorial/1_create-experiment.html",
+    "relUrl": "/docs/basic-tutorial/1_create-experiment.html"
+  },"1": {
+    "doc": "Add elements",
+    "title": "Add elements",
+    "content": "Elements are the basic unit of a PennController experiment. Element types can represent visual content, interactive content, or some combination of the two: . | Text: Represents text content (visual). | Image: Represents image content (visual) | Key: Represents keyboard keypresses (interactive). | Button: Represents clickable buttons (visual and interactive). | . note This tutorial uses the term “element” as shorthand for “instance of an element type”. For example “an Image element” or “an Image” is short for “an instance of the Image type”. If “element type” is intended, the term “element type” will be used. reference For a list of all PennController element types, see the Reference: Elements page. Add two Text elements and an Image element: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") , // Create an Image element newImage(\"fish-round\", \"2fishRoundTank.png\") ) . | The Text element is named \"fish-description\", and contains the string The fish swim in a tank which is perfectly round. | The Image element is named \"fish\", and contains the image 2fishRoundTank.png, within the Resources folder. | . recommended It is not strictly necessary to name an element. For example, newImage(\"fish\", \"2fishRoundTank.png\") and newImage(\"2fishRoundTank.png\") both contain the image 2fishRoundTank.png. However, it is recommended to name every element for general clarity. Furthermore, if you want to refer back to an existing element with the getX function, as in Manipulate layout, the element must have a name. ",
+    "url": "http://localhost:4000/pcibex/docs/basic-tutorial/2_add-elements.html",
+    "relUrl": "/docs/basic-tutorial/2_add-elements.html"
+  },"2": {
+    "doc": "Add commands",
+    "title": "Add commands",
+    "content": "Elements contain content; commands do things with that content. For example, once you create an element, you can use a command to print it to the screen. note Commands that manipulate elements begin with the prefix standard. or X. | Commands that begin with standard. can be used on any element type, like standard.print | Commands that begin with X. can only be used on X element types, like text.unfold | . This guide omits the element command prefixes for simplicity. Print the \"fish-description\" and \"fish\" elements to the screen: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .print() , // Create an Image element and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .print() ) . Click Save and test in the script editor to test your changes. You may be surprised by the results! As soon as you start the experiment, you see the message “The results were successfully sent to the server. Thanks!”. While it may seem like nothing happened, all of the commands were executed within a few milliseconds, and the experiment ended almost immediately. PennController executes experiment scripts sequentially: . | Shorten command names. | Create a Trial. | Create a Text element and print it. | Create an Image element and print it. | . If there are no more commands, the trial ends. If there are no more trials, the experiment ends. Pause experiment execution . Interactive elements and commands can pause experiment script execution, in order to give participants time to interact with the screen. Use a Key element and the wait command to pause experiment execution: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .print() , // Create an Image element and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . | Once the wait command on the Key element is reached, the experiment “waits” until the participant presses the F or J key. | After the F or J key is pressed, there are no more commands or trials, and the experiment ends. | . reference Only interactive elements like Key or Button can have a defined wait command. To read more about element-specific commands, see… . Manipulate element aesthetics . PennController has a variety of commands that manipulate aesthetic aspects of an element, for example: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . Manipulate layout . By default, every printed element is printed on a new line. The Canvas element creates a transparent surface that can be used to place elements at specific coordinates, for example next to each other. You can add an existing element to a Canvas by referring back to it with the getX(\"ELEMENT_NAME\") function, where X is any element type and \"ELEMENT_NAME\" is the name of the element. The getX function can only be used with named elements. Define a 450x200 px Canvas and print the \"fish-round\" and \"fish-square\" Image elements next to each other with a 50px gap: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) // .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) // .print() , newCanvas(\"side-by-side\", 450,200) .add( 0, 0, getImage(\"fish-round\")) .add(250, 0, getImage(\"fish-square\")) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . | The \"fish-round\" Image is added to the (x=0, y=0) coordinate of the \"side-by-side\" Canvas. | The \"fish-square\" Image is added to the (x=250, y=0) coordinate of the \"side-by-side\" Canvas. | If you call print on a Canvas element, do not call print directly on the elements that have been added to the Canvas. | . ",
+    "url": "http://localhost:4000/pcibex/docs/basic-tutorial/3_add-commands.html",
+    "relUrl": "/docs/basic-tutorial/3_add-commands.html"
+  },"3": {
+    "doc": "Add instructions",
+    "title": "Add instructions",
+    "content": "As the writers of the BasicTutorial experiment, we know that the \"first-trial\" Trial waits for the participant to press the F or J key before the experiment continues. However, a naive participant has no way of knowing this. There are two ways to add instructions: . | Option 1: Create a new Trial with instructions. | Option 2: Add instructions to the \"first-trial\" Trial. | . For reasons that will become obvious in the AdvancedTutorial experiment, we recommend using Option 1. However, we provide both options for completeness. Option 1: Create a new Trial with instructions: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a welcome Trial with instructions newTrial(\"welcome\", newText(\"instructions\", \"Welcome to the experiment! You will see a sentence and two images. Press the F key if the image on the left matches the sentences. Presss the K key if the image on the right matches the sentence.\") .print() ) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) // .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) // .print() , newCanvas(\"side-by-side\", 450,200) .add( 0, 0, getImage(\"fish-round\")) .add(250, 0, getImage(\"fish-square\")) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . As in the \"first-trial\" Trial, we need to pause the experiment execution so that participants have time to read the text in the \"welcome\" Trial. Add a Button that must be clicked to start the experiment: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial with instructions newTrial(\"welcome\", newText(\"instructions\", \"Welcome to the experiment! You will see a sentence and two images. Press the F key if the image on the left matches the sentences. Presss the K key if the image on the right matches the sentence.\") .center() .print() , newButton(\"start\", \"Click to start the experiment\") .print() .wait() ) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) // .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) // .print() , newCanvas(\"side-by-side\", 450,200) .add( 0, 0, getImage(\"fish-round\")) .add(250, 0, getImage(\"fish-square\")) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . Option 2: Add instructions to the \"first-trial\" Trial . Add a Text element with instructions and a Button that must be clicked to start the experiment: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Add instructions newText(\"instructions\", \"Welcome to the experiment! You will see a sentence and two images. Press the F key if the image on the left matches the sentences. Presss the K key if the image on the right matches the sentence.\") .center() .print() , newButton(\"start\", \"Click to start the experiment\") .print() .wait() , // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) // .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) // .print() , newCanvas(\"side-by-side\", 450,200) .add( 0, 0, getImage(\"fish-round\")) .add(250, 0, getImage(\"fish-square\")) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . By default, all printed elements in a Trial are printed sequentially on a new line, meaning that all printed elements will be printed onto the same screen. If you want to print the \"instructions\" Text and \"start\" Button on a screen separately from the \"fish-description\" Text and \"side-by-side\" Canvas, use the special command clear to clear the screen: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Add instructions newText(\"instructions\", \"Welcome to the experiment! You will see a sentence and two images. Press the F key if the image on the left matches the sentences. Presss the K key if the image on the right matches the sentence.\") .center() .print() , newButton(\"start\", \"Click to start the experiment\") .print() .wait() , // Clear all printed elements from the screen clear() , // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) // .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) // .print() , newCanvas(\"side-by-side\", 450,200) .add( 0, 0, getImage(\"fish-round\")) .add(250, 0, getImage(\"fish-square\")) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . ",
+    "url": "http://localhost:4000/pcibex/docs/basic-tutorial/4_add-instructions.html",
+    "relUrl": "/docs/basic-tutorial/4_add-instructions.html"
+  },"4": {
+    "doc": "Log data",
+    "title": "Log data",
+    "content": "PennController automatically logs when a trial starts and when it ends. Any other information that you want to collect must be explictly marked using the .log command. To be filled in with more information about .log . Use the .log command to record which key is pressed (F or J), and when: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial with instructions newTrial(\"welcome\", newText(\"instructions\", \"Welcome to the experiment! You will see a sentence and two images. Press the F key if the image on the left matches the sentences. Presss the K key if the image on the right matches the sentence.\") .center() .print() , newButton(\"start\", \"Click to start the experiment\") .print() .wait() ) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) // .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) // .print() , newCanvas(\"side-by-side\", 450,200) .add( 0, 0, getImage(\"fish-round\")) .add(250, 0, getImage(\"fish-square\")) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() .log() ) . Look at logged data . To be filled in . ",
+    "url": "http://localhost:4000/pcibex/docs/basic-tutorial/5_log-data.html",
+    "relUrl": "/docs/basic-tutorial/5_log-data.html"
+  },"5": {
+    "doc": "Examine results",
+    "title": "Examine results",
+    "content": ". | look at results | . ",
+    "url": "http://localhost:4000/pcibex/docs/basic-tutorial/6_examine-results.html",
+    "relUrl": "/docs/basic-tutorial/6_examine-results.html"
+  },"6": {
     "doc": "Advanced Tutorial",
     "title": "Coding an advanced experiment",
-    "content": "To be filled in . ",
+    "content": "To be filled in . Second experiment trial . | add another experimental trial | . Manipulate trial order . | use Sequence to manipulate trial order | . ",
     "url": "http://localhost:4000/pcibex/docs/advanced-tutorial.html#coding-an-advanced-experiment",
     "relUrl": "/docs/advanced-tutorial.html#coding-an-advanced-experiment"
-  },"1": {
+  },"7": {
     "doc": "Advanced Tutorial",
     "title": "Advanced Tutorial",
     "content": " ",
     "url": "http://localhost:4000/pcibex/docs/advanced-tutorial.html",
     "relUrl": "/docs/advanced-tutorial.html"
-  },"2": {
-    "doc": "Audio element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/audio.html#example",
-    "relUrl": "/docs/elements/audio.html#example"
-  },"3": {
-    "doc": "Audio element",
-    "title": "Audio element",
-    "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. ",
-    "url": "http://localhost:4000/pcibex/docs/elements/audio.html",
-    "relUrl": "/docs/elements/audio.html"
-  },"4": {
-    "doc": "Basic Tutorial",
-    "title": "Basic tutorial",
-    "content": "This section… (to be filled in) . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#basic-tutorial",
-    "relUrl": "/docs/basic-tutorial.html#basic-tutorial"
-  },"5": {
-    "doc": "Basic Tutorial",
-    "title": "Table of contents",
-    "content": ". | Getting started | Create an experiment | Load resource files | Edit an experiment | Create a trial | Add elements | Add commands . | Pause experiment execution | Manipulate element aesthetics | Manipulate layout | . | Log data | Add trials . | Instruction trial | Second experiment trial | Manipulate trial order | . | Examine results | . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#table-of-contents",
-    "relUrl": "/docs/basic-tutorial.html#table-of-contents"
-  },"6": {
-    "doc": "Basic Tutorial",
-    "title": "Getting started",
-    "content": "In this section, you will create the BasicTutorial experiment: . | Welcome screen with instructions | To be filled in | . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#getting-started",
-    "relUrl": "/docs/basic-tutorial.html#getting-started"
-  },"7": {
-    "doc": "Basic Tutorial",
-    "title": "Create an experiment",
-    "content": ". | Create a PCIbex Farm account. | Go to the PCIbex Farm home page. | Click Design experiments. | Enter your login information and click login. | Click Create a new experiment. | In the “Name” field, enter “BasicTutorial”. | Click Create. | . Click on the BasicTutorial experiment to begin editing. ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#create-an-experiment",
-    "relUrl": "/docs/basic-tutorial.html#create-an-experiment"
   },"8": {
     "doc": "Basic Tutorial",
-    "title": "Load resource files",
-    "content": "Option 1: Upload directly . | To be filled in | . Option 2: Upload through GitHub . | To be filled in | . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#load-resource-files",
-    "relUrl": "/docs/basic-tutorial.html#load-resource-files"
-  },"9": {
-    "doc": "Basic Tutorial",
-    "title": "Edit an experiment",
-    "content": "The Script folder contains the file main.js, the experiment code. Update your experiment by editing main.js in the script editor and saving your changes. The script editor has the following features: . | Two links at the top for easy access . | PennController docs: Links to PCIbex documentation. | ibex docs: Links to the original Ibex documentation. | . | Autocomplete . | Start typing within the script editor. | A modular window with suggested command names for autocompletion will pop up. | Navigate the autocomplete suggestions with the Up and Down arrow keys, and press Enter/Return to select a suggestion. | . | Four buttons at the bottom . | Discard changes: Close the script editor without saving any changes. | Save changes: Save changes without closing the script editor. | Save and close: Save changes and close the script editor. | Save and test: Save changes and open the updated experiment in a new tab or window. | . | . Click main.js to open main.js in the script editor. By default, new experiments are initialized with a demo experiment. If you uploaded the resource files directly, the original main.js file should start with the following lines: . // This is a simple demo script, feel free to edit or delete it // Find a tutorial and the list of availalbe elements at: // https://www.pcibex.net/documentation/ PennController.ResetPrefix(null) // Shorten command names (keep this line here) . If you uploaded the resource files through GitHub, the newly uploaded main.js should contain only the following lines: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) . note If you uploaded the resource files directly, delete all lines in main.js that follow PennController.ResetPrefix(null) // Shorten command names (keep this line here) before continuing the tutorial. If you uploaded the resource files through GitHub, you can continue the tutorial directly. ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#edit-an-experiment",
-    "relUrl": "/docs/basic-tutorial.html#edit-an-experiment"
-  },"10": {
-    "doc": "Basic Tutorial",
-    "title": "Create a trial",
-    "content": "PennController trials are created with the command PennController.newTrial: . // Create a Trial named \"first-trial\" PennController.newTrial(\"first-trial\") . All PennController commands begin with the prefix PennController., in order to avoid naming conflicts with other JavaScript modules. However, adding this prefix for every command quickly becomes tiring. The tutorial uses the command PennController.ResetPrefix, which resets the PennController. prefix to the string of your choice, to remove the prefix: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\") . recommended It is recommended to start every experiment with PennController.ResetPrefix(null) for general clarity and readability. ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#create-a-trial",
-    "relUrl": "/docs/basic-tutorial.html#create-a-trial"
-  },"11": {
-    "doc": "Basic Tutorial",
-    "title": "Add elements",
-    "content": "Elements are the basic unit of a PennController experiment. Element types can represent visual content, interactive content, or some combination of the two: . | Text: Represents text content (visual). | Image: Represents image content (visual) | Key: Represents keyboard keypresses (interactive). | Button: Represents clickable buttons (visual and interactive). | . note This tutorial uses the term “element” as shorthand for “instance of an element type”. For example “an Image element” or “an Image” is short for “an instance of the Image type”. If “element type” is intended, the term “element type” will be used. reference For a list of all PennController element types, see the Reference: Elements page. Add two Text elements and an Image element: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") , // Create an Image element newImage(\"fish-round\", \"2fishRoundTank.png\") ) . | The Text element is named \"fish-description\", and contains the string The fish swim in a tank which is perfectly round. | The Image element is named \"fish\", and contains the image 2fishRoundTank.png, within the Resources folder. | . recommended It is not strictly necessary to name an element. For example, newImage(\"fish\", \"2fishRoundTank.png\") and newImage(\"2fishRoundTank.png\") both contain the image 2fishRoundTank.png. However, it is recommended to name every element for general clarity and readability. If you want to refer back to an existing element, as in Manipulate layout, the element must have a name. ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#add-elements",
-    "relUrl": "/docs/basic-tutorial.html#add-elements"
-  },"12": {
-    "doc": "Basic Tutorial",
-    "title": "Add commands",
-    "content": "Elements contain content; commands do things with that content. For example, once you create an element, you can use a command to print it to the screen. note Commands that manipulate elements begin with the prefix standard. or X. | Commands that begin with standard. can be used on any element type, like standard.print | Commands that begin with X. can only be used on X element types, like text.unfold | . This guide omits the element command prefixes for simplicity. Print the \"fish-description\" and \"fish\" elements to the screen: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .print() , // Create an Image element and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .print() ) . Click Save and test in the script editor to test your changes. You may be surprised by the results! As soon as you start the experiment, you see the message “The results were successfully sent to the server. Thanks!”. While it may seem like nothing happened, all of the commands were executed within a few milliseconds, and the experiment ended almost immediately. PennController executes experiment scripts sequentially: . | Shorten command names. | Create a Trial. | Create a Text element and print it. | Create an Image element and print it. | . If there are no more commands, the trial ends. If there are no more trials, the experiment ends. Pause experiment execution . Interactive elements and commands can pause experiment script execution, in order to give participants time to interact with the screen. Use the wait command to pause experiment execution: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .print() , // Create an Image element and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . | Once the wait command on the Key element is reached, the experiment “waits” until the participant presses the F or J key. | After the F or J key is pressed, there are no more commands or trials, and the experiment ends. | . reference Only interactive elements like Key or Button can have a defined wait command. To read more about element-specific commands, see… . Manipulate element aesthetics . PennController has a variety of commands that manipulate aesthetic aspects of an element, for example: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . Manipulate layout . The Canvas element creates a transparent surface that can be used to place elements at specific coordinates. Define a 450x200 px Canvas and print the \"fish-round\" and \"fish-square\" Image elements next to each other with a 50px gap: . // Shorten command names (keep this line here) PennController.ResetPrefix(null) // Create a Trial named \"first-trial\" newTrial(\"first-trial\", // Create a Text element, center it, and print it newText(\"fish-description\", \"The fish swim in a tank which is perfectly round.\") .center() .print() , // Create an Image element, resize it to 200x200 px, and print it newImage(\"fish-round\", \"2fishRoundTank.png\") .size(200, 200) // .print() , // Create another Image element, resize it 200x200 px, and print it newImage(\"fish-square\", \"1fishSquareTank.png\") .size(200, 200) // .print() , newCanvas(450,200) .add( 0, 0, getImage(\"fish-round\")) .add(250, 0, getImage(\"fish-square\")) .print() , // Create a Key element and wait until the F or J key is pressed newKey(\"keypress\", \"FJ\") .wait() ) . | Existing elements must be named in order to use the getX function, where X is an element type. | If you call print on a Canvas element, do not call print directly on the elements that have been added to the Canvas. | . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#add-commands",
-    "relUrl": "/docs/basic-tutorial.html#add-commands"
-  },"13": {
-    "doc": "Basic Tutorial",
-    "title": "Log data",
-    "content": ". | add log | . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#log-data",
-    "relUrl": "/docs/basic-tutorial.html#log-data"
-  },"14": {
-    "doc": "Basic Tutorial",
-    "title": "Add trials",
-    "content": "Instruction trial . | add a new trial with instructions | . Second experiment trial . | add another experimental trial | . Manipulate trial order . | use Sequence to manipulate trial order | . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#add-trials",
-    "relUrl": "/docs/basic-tutorial.html#add-trials"
-  },"15": {
-    "doc": "Basic Tutorial",
-    "title": "Examine results",
-    "content": ". | look at results | . ",
-    "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html#examine-results",
-    "relUrl": "/docs/basic-tutorial.html#examine-results"
-  },"16": {
-    "doc": "Basic Tutorial",
     "title": "Basic Tutorial",
-    "content": " ",
+    "content": "This section is designed for people who prefer learning by doing. If you prefer to learn concept-by-concept, check out the Core Concepts section. You may find it useful to read both this tutorial and the Core Concepts section. ",
     "url": "http://localhost:4000/pcibex/docs/basic-tutorial.html",
     "relUrl": "/docs/basic-tutorial.html"
-  },"17": {
-    "doc": "Button element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/button.html#example",
-    "relUrl": "/docs/elements/button.html#example"
-  },"18": {
-    "doc": "Button element",
-    "title": "Button element",
+  },"9": {
+    "doc": "Commands",
+    "title": "Commands",
     "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/elements/button.html",
-    "relUrl": "/docs/elements/button.html"
-  },"19": {
-    "doc": "Canvas element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/canvas.html#example",
-    "relUrl": "/docs/elements/canvas.html#example"
-  },"20": {
-    "doc": "Canvas element",
-    "title": "Canvas element",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/elements/canvas.html",
-    "relUrl": "/docs/elements/canvas.html"
-  },"21": {
-    "doc": "Reference&#58; Commands",
-    "title": "Reference: Commands",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands.html#reference-commands",
-    "relUrl": "/docs/commands.html#reference-commands"
-  },"22": {
-    "doc": "Reference&#58; Commands",
+    "url": "http://localhost:4000/pcibex/docs/commands.html#commands",
+    "relUrl": "/docs/commands.html#commands"
+  },"10": {
+    "doc": "Commands",
     "title": "Element commands",
-    "content": "Action commands . Click to expand/collapse . | audio.pause | audio.play | button.callback | button.click | button.once | button.wait | . Test commands . Click to expand/collapse . | button.test.pressed | . ",
+    "content": "Used within a trial to manipulate elements. Action commands . Click to expand/collapse . | audio.once | audio.pause | audio.play | button.callback | button.click | button.once | button.wait | . Test commands . Click to expand/collapse . | audio.test.hasPlayed | audio.test.playing | button.test.pressed | . ",
     "url": "http://localhost:4000/pcibex/docs/commands.html#element-commands",
     "relUrl": "/docs/commands.html#element-commands"
-  },"23": {
-    "doc": "Reference&#58; Commands",
+  },"11": {
+    "doc": "Commands",
     "title": "Global commands",
-    "content": "Click to expand/collapse . | PennController.AddHost | PennController.AddTable | PennController.ResetPrefix | . ",
+    "content": "Used outside of a trial to manipulate the experiment as a whole. Click to expand/collapse . | PennController.AddHost | PennController.AddTable | PennController.ResetPrefix | . ",
     "url": "http://localhost:4000/pcibex/docs/commands.html#global-commands",
     "relUrl": "/docs/commands.html#global-commands"
-  },"24": {
-    "doc": "Reference&#58; Commands",
+  },"12": {
+    "doc": "Commands",
     "title": "Special commands",
-    "content": "Click to expand/collapse . | clear | end | fullscreen | . ",
+    "content": "Used within a trial, but do not manipulate elements. Click to expand/collapse . | clear | end | fullscreen | . ",
     "url": "http://localhost:4000/pcibex/docs/commands.html#special-commands",
     "relUrl": "/docs/commands.html#special-commands"
-  },"25": {
-    "doc": "Reference&#58; Commands",
-    "title": "Reference&#58; Commands",
+  },"13": {
+    "doc": "Commands",
+    "title": "Commands",
     "content": " ",
     "url": "http://localhost:4000/pcibex/docs/commands.html",
     "relUrl": "/docs/commands.html"
-  },"26": {
-    "doc": "Commands",
-    "title": "Commands",
-    "content": "Commands manipulate elements or other aspects of an experiment. For example, you can create an element and use the .print command to print it to the screen, or use the Sequence() command to order the trials of an experiment. There are three types of commands: . | Element commands: Used within a trial to manipulate elements. | Global commands: Used outside of a trial to | Special commands: Used within a trial, but do not manipulate elements. | . For a list of all PennController commands, see the Commands page. Note: create a Commands page . ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/commands.html",
-    "relUrl": "/docs/core-concepts/commands.html"
-  },"27": {
-    "doc": "Commands",
-    "title": "Element commands",
-    "content": "Element commands are used within a trial to manipulate elements. There are two types of element commands: action commands directly manipulate elements, and test commands test an element against some conditional statement. Action and test commands are standard (can be called on any element type), or element-specific (can only be called on a certain element type). Figure 1: Types of element commands . In addition, action and test commands can be called on a specific instance of an element type, or on the default object of an element type. Note: create a section for default objects . Action commands . Action commands directly manipulate elements. Standard action commands begin with the prefix standard., although the standard part of the prefix is generally omitted for simplicity. Standard commands can be called on any element type, but some standard commands only have an effect on visual element types, and some standard commands only have an effect on interactive element types. For example, the standard.print / .print command prints the contents of an element to the screen, but can only print visual element types like Text orImage. If it is called on an interactive type like Key, it has no effect. Element-specific action commands begin with the prefix X., where X is the only element type the command can be called on. For example, the text.unfold command creates an unfolding effect as the content of a Text element is printed to the screen. What happens if .unfold() is called on an Image element? . Two (or more) element types may have element-specific commands that seem to be nearly identical in name and functionality. For example, the button.wait command waits until the Button element it is called on is clicked before evaluating the next commands; the key.wait command waits until the Key element it is called on is satisfied by a valid keypress before evaluating the next commands. However… . They are element-specific commands for technical reasons? . Example 2 . The .print command prints the contents of an element to the screen. The button.wait command waits until the Button element is clicked before evaluating the next commands. Click Try it to see Example 2 in action. // **Should be an interactive code block** // Example 2 newText(\"example-text\", \"This is an example sentence\") .print() , newButton(\"example-button\", \"Click to continue\") .print() .wait() , getText(\"example-text\") .print() . Example 2 does the following: . | Creates a Text element with the name example-text and the content This is an example sentence. | Prints the content of example-text to the screen. | Creates a Button element with the name example-button and the content Click to continue. | Prints the content of example-button to the screen. | Waits until example-button is clicked. | Refers back to the Text element example-text. | Prints the content of example-text to the screen (again). | . For a list of all standard action commands, see the Standard Commands page. Note: create a Standard Commands page. Test commands . Test commands test an element against some conditional statement; they are the PCIbex equivalent of an if-else statement. Standard test commands begin with the prefix standard.test., although the standard part of the prefix is generally omitted for simplicity. For example, the standard.test.printed / test.printed command tests whether an element has been printed to the screen at the time of evaluation. Element-specific test commands begin with the prefix X.test., where X is the only element type the command can be called on. For example, the key.test.pressed command tests whether a Key element has been satisfied by a valid keypress at the time of evaluation. The consequences of a test command are defined by the .success and/or .failure helper functions: . | If the test succeeded, evaluate the commands called within the .success function. | If the test failed, evaluate the comands called within the .failure function. | . Example 3 . … . Click Try it to see Example 3 in action. // **Should be an interactive code block** // Example 3 newText(\"instructions\", \"Up to you - press the spacebar before clicking the button, or click the button immediately\") .print() , newKey(\"example-key\", \" \") , newButton(\"example-button\", \"Click to continue\") .print() .wait() , getKey(\"example-key\") .test.pressed() .success( newText(\"success\", \"You pressed the spacebar before clicking the button.\") .print() ) .failure( newText(\"failure\", \"You did not press the spacebar before clicking the button.\") .print() ) . Example 3 evaluation flow (simplified for clarity): . | Create and print a Text element named instructions. | Create a Key element named example-key that “listens” for press of the spacebar. | Creates a Button element with the name example-button and the content Click to continue. | Prints the content of example-button to the screen. | Waits until example-button is clicked. | Refers back to the Key element example-key. | Tests whether the example-key was satisfied by a valid keypress, aka whether the spacebar was pressed. | If | . | . For a list of all test commands, see the Test commands page. Note: create a Test commands page. ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/commands.html#element-commands",
-    "relUrl": "/docs/core-concepts/commands.html#element-commands"
-  },"28": {
-    "doc": "Commands",
-    "title": "Global commands",
-    "content": "Global commands are… . Important global commands: . | PennController.ResetPrefix(null): | DebugOff(): | AddTable(): | newTrial(): | Sequence(): | . For a list of all global commands, see the Global commands page. Note: create a Global commands page. ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/commands.html#global-commands",
-    "relUrl": "/docs/core-concepts/commands.html#global-commands"
-  },"29": {
-    "doc": "Commands",
-    "title": "Special commands",
-    "content": "Special commands are used within a trial, but do not manipulate elements. There are three special commands: . | clear(): Removes all currently printed elements from the screen. | end(): Ends a trial immediately. | fullscreen(): Sends a fullscreen request to the participant’s browser. | . SendResults() technically qualifies as a special command, since it can be used within a trial, but is generally classifed as a global command. ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/commands.html#special-commands",
-    "relUrl": "/docs/core-concepts/commands.html#special-commands"
-  },"30": {
-    "doc": "Controller element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/controller.html#example",
-    "relUrl": "/docs/elements/controller.html#example"
-  },"31": {
-    "doc": "Controller element",
-    "title": "Controller element",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/elements/controller.html",
-    "relUrl": "/docs/elements/controller.html"
-  },"32": {
+  },"14": {
     "doc": "Core concepts",
     "title": "Core concepts",
-    "content": "To be filled in… . ",
+    "content": "This section is designed for people who prefer learning concepts step by step. If you prefer to learn by doing, check out the Basic Tutorial. You may find it useful to read both this section and the tutorial. ",
     "url": "http://localhost:4000/pcibex/docs/core-concepts.html",
     "relUrl": "/docs/core-concepts.html"
-  },"33": {
-    "doc": "Debugger",
-    "title": "Debugger",
-    "content": "PennController comes with a built-in debugger. To be filled in . ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/debugger.html",
-    "relUrl": "/docs/core-concepts/debugger.html"
-  },"34": {
-    "doc": "DropDown element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/dropdown.html#example",
-    "relUrl": "/docs/elements/dropdown.html#example"
-  },"35": {
-    "doc": "DropDown element",
-    "title": "DropDown element",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/elements/dropdown.html",
-    "relUrl": "/docs/elements/dropdown.html"
-  },"36": {
+  },"15": {
+    "doc": "Core concepts",
+    "title": "Table of contents",
+    "content": ". | Elements | Commands | Debugger | Experiment | Trials | . ",
+    "url": "http://localhost:4000/pcibex/docs/core-concepts.html",
+    "relUrl": "/docs/core-concepts.html"
+  },"16": {
     "doc": "Element commands",
     "title": "Element commands",
-    "content": "Used within a trial to manipulate elements. Action commands . | audio.pause | audio.play | button.callback | button.click | button.once | button.wait | . Test commands . | button.test.pressed | . ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html",
-    "relUrl": "/docs/commands/element-commands.html"
-  },"37": {
+    "content": "Used within a trial to manipulate elements. Action commands . | audio.once | audio.pause | audio.play | button.callback | button.click | button.once | button.wait | . Test commands . | audio.test.hasPlayed | audio.test.playing | button.test.pressed | . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html",
+    "relUrl": "/docs/element-commands.html"
+  },"17": {
     "doc": "Element commands",
     "title": "Action commands",
     "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#action-commands",
-    "relUrl": "/docs/commands/element-commands.html#action-commands"
-  },"38": {
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#action-commands",
+    "relUrl": "/docs/element-commands.html#action-commands"
+  },"18": {
+    "doc": "Element commands",
+    "title": " \n    \n    audio.once \n  ",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#audio-once",
+    "relUrl": "/docs/element-commands.html#audio-once"
+  },"19": {
     "doc": "Element commands",
     "title": " \n    \n    audio.pause \n  ",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#audio-pause",
-    "relUrl": "/docs/commands/element-commands.html#audio-pause"
-  },"39": {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#audio-pause",
+    "relUrl": "/docs/element-commands.html#audio-pause"
+  },"20": {
     "doc": "Element commands",
     "title": " \n    \n    audio.play \n  ",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#audio-play",
-    "relUrl": "/docs/commands/element-commands.html#audio-play"
-  },"40": {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#audio-play",
+    "relUrl": "/docs/element-commands.html#audio-play"
+  },"21": {
     "doc": "Element commands",
     "title": " \n    \n    button.callback \n  ",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#button-callback",
-    "relUrl": "/docs/commands/element-commands.html#button-callback"
-  },"41": {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#button-callback",
+    "relUrl": "/docs/element-commands.html#button-callback"
+  },"22": {
     "doc": "Element commands",
     "title": " \n    \n    button.click \n  ",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#button-click",
-    "relUrl": "/docs/commands/element-commands.html#button-click"
-  },"42": {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#button-click",
+    "relUrl": "/docs/element-commands.html#button-click"
+  },"23": {
     "doc": "Element commands",
     "title": " \n    \n    button.once \n  ",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#button-once",
-    "relUrl": "/docs/commands/element-commands.html#button-once"
-  },"43": {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#button-once",
+    "relUrl": "/docs/element-commands.html#button-once"
+  },"24": {
     "doc": "Element commands",
     "title": " \n    \n    button.wait \n  ",
-    "content": ". ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#button-wait",
-    "relUrl": "/docs/commands/element-commands.html#button-wait"
-  },"44": {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#button-wait",
+    "relUrl": "/docs/element-commands.html#button-wait"
+  },"25": {
     "doc": "Element commands",
     "title": "Test commands",
     "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#test-commands",
-    "relUrl": "/docs/commands/element-commands.html#test-commands"
-  },"45": {
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#test-commands",
+    "relUrl": "/docs/element-commands.html#test-commands"
+  },"26": {
+    "doc": "Element commands",
+    "title": " \n    \n    audio.test.hasPlayed \n  ",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#audio-test-hasplayed",
+    "relUrl": "/docs/element-commands.html#audio-test-hasplayed"
+  },"27": {
+    "doc": "Element commands",
+    "title": " \n    \n    audio.test.playing \n  ",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#audio-test-playing",
+    "relUrl": "/docs/element-commands.html#audio-test-playing"
+  },"28": {
     "doc": "Element commands",
     "title": " \n    \n    button.test.pressed \n  ",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/element-commands.html#button-test-pressed",
-    "relUrl": "/docs/commands/element-commands.html#button-test-pressed"
-  },"46": {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/element-commands.html#button-test-pressed",
+    "relUrl": "/docs/element-commands.html#button-test-pressed"
+  },"29": {
     "doc": "Elements",
     "title": "Elements",
-    "content": "Elements are the basic unit of a PennController experiment; experiments are trial sequences of elements and commands. For example, you can create an Image element and then use a command to print to the screen. To be technical, you create an instance of the Image type, and then use a command to print that instance to the screen. Important! . This tutorial uses the term “element” as shorthand for “instance of an element type”. For example “an Image element” is short for “an instance of the Image type”. If “element type” is intended, the term “element type” will be used. Element types can represent visual content, interactive content, or some combination of the two: . | Text: Represents text content (visual). | Image: Represents image content (visual) | Key: Represents keyboard keypresses (interactive). | Button: Represents clickable buttons (visual and interactive). | . For a list of all PennController element types, see the Elements page. ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/elements.html",
-    "relUrl": "/docs/core-concepts/elements.html"
-  },"47": {
-    "doc": "Elements",
-    "title": "Creating an element",
-    "content": "Elements are objects returned by the function newX(id, ...), where: . | X is the element type. | id is the name of the element, and must be passed as a string. | ... is any other arguments required by the element type. | . Once an element is created, it can be referred back to by the function getX(id), where: . | X is the element type. | id is the name of the element, and must be passed as a string. | . Calls of the newX()or getX() functions are separated with a comma. Important! It is not strictly necessary to name an element. However, it is highly recommended to name every element for general clarity and readability. Furthermore, if you want to refer back to an element with the getX() function, the element must have a name. Example 1 . // Example 1 newText(\"example-text\", \"This is an example sentence.\") , newImage(\"example-image\", \"image.png\") , getText(\"example-text\") . Example 1 does the following: . | Creates a Text element with the name example-text and the content This is an example sentence.. | Creates an Image element with the name example-image and the source file image.png (this file is hosted on…) | Refers back to the Text element example-text. | . ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/elements.html#creating-an-element",
-    "relUrl": "/docs/core-concepts/elements.html#creating-an-element"
-  },"48": {
-    "doc": "Reference&#58; Elements",
-    "title": "Reference: Elements",
     "content": ". Audio element Button element Canvas element Controller element DropDown element EyeTracker element Function element HTML element . ",
-    "url": "http://localhost:4000/pcibex/docs/elements.html#reference-elements",
-    "relUrl": "/docs/elements.html#reference-elements"
-  },"49": {
-    "doc": "Reference&#58; Elements",
-    "title": "Reference&#58; Elements",
-    "content": " ",
     "url": "http://localhost:4000/pcibex/docs/elements.html",
     "relUrl": "/docs/elements.html"
-  },"50": {
-    "doc": "Experiment",
-    "title": "Creating an experiment",
-    "content": "After creating an account on the PCIbex Farm, you can start creating experiments: . | Go to the PCIbex Farm home page. | Click Design experiments. | Enter your login information and click login. | Click Create a new experiment. | In the “Name” field, enter the name of your experiment. | Click Create. | . You have now created a new experiment. Experiments are listed in the Experiments section on the PCIbex “my account” page. You can manage or edit an experiment by clicking its name. ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/experiment.html#creating-experiment",
-    "relUrl": "/docs/core-concepts/experiment.html#creating-experiment"
-  },"51": {
-    "doc": "Experiment",
-    "title": "Managing an experiment",
-    "content": "Each experiment is managed on a page with the following sections: . | URL: https://expt.pcibex.net/ibexexps/USERNAME/EXPERIMENT_NAME/experiment.html. | Launch the experiment by clicking the URL. | . | Experiment ‘EXPERIMENT_NAME’: . | Edit your experiment. | This section has the folders: . | Script: Contains main.js, the code for an experiment. | Resources: Contains any experiment stimuli, like PNG or WAV files. | Results: | Aesthetics: | Controllers: Contains code for the native Ibex controllers, which can be added to an experiment using the Controller element. | Counter: | . | . | Access . | Set a password to protect your experiment. | . | Archive . | Download a ZIP archive of your experiment files. | . | . ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/experiment.html#managing-an-experiment",
-    "relUrl": "/docs/core-concepts/experiment.html#managing-an-experiment"
-  },"52": {
-    "doc": "Experiment",
-    "title": "Editing an experiment",
-    "content": "To be filled in . Script editor . The Script folder contains the file main.js, the code for your experiment. You can update your experiment by editing main.js in the script editor and saving your changes. Click main.js to open main.js in the script editor. By default, new experiments are initialized with a demo experiment. The main.js file of a newly-created experiment should start with the following lines: . // This is a simple demo script, feel free to edit or delete it // Find a tutorial and the list of availalbe elements at: // https://www.pcibex.net/documentation/ PennController.ResetPrefix(null) // Shorten command names (keep this line here) . The script editor has the following features: . | Two links at the top for easy access . | PennController docs: Links to PCIbex documentation. | ibex docs: Links to the original Ibex documentation. | . | Autocomplete . | Start typing within the script editor. | A modular window with suggested command names for autocompletion will pop up. | Navigate the autocomplete suggestions with the Up and Down arrow keys, and press Enter/Return to select a suggestion. | . | Four buttons at the bottom . | Discard changes: Close the script editor without saving any changes. | Save changes: Save changes without closing the script editor. | Save and close: Save changes and close the script editor. | Save and test: Save changes and open the updated experiment in a new tab or window. | . | . Uploading files directly . You can upload files directly to the PCIbex Farm. For example, as an alternative to the script editor, you can edit main.js in an external text editor and upload it to the PCIbex Farm. To be filled in… . ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/experiment.html#editing-an-experiment",
-    "relUrl": "/docs/core-concepts/experiment.html#editing-an-experiment"
-  },"53": {
-    "doc": "Experiment",
-    "title": "Experiment",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/experiment.html",
-    "relUrl": "/docs/core-concepts/experiment.html"
-  },"54": {
-    "doc": "EyeTracker element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/eyetracker.html#example",
-    "relUrl": "/docs/elements/eyetracker.html#example"
-  },"55": {
-    "doc": "EyeTracker element",
-    "title": "EyeTracker element",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/elements/eyetracker.html",
-    "relUrl": "/docs/elements/eyetracker.html"
-  },"56": {
-    "doc": "Function element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/function.html#example",
-    "relUrl": "/docs/elements/function.html#example"
-  },"57": {
-    "doc": "Function element",
-    "title": "Function element",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/elements/function.html",
-    "relUrl": "/docs/elements/function.html"
-  },"58": {
-    "doc": "Upload files through GitHub",
-    "title": "Uploading files through GitHub",
-    "content": "You can upload an entire GitHub repository to the PCIbex Farm. This is particularly useful if you would like to upload multiple files to the Resources folder, and do not want to upload each file one-by-one. The GitHub repository must have one or more of the following folders in the root directory: . | data_includes: Its contents will be copied into the Scripts folder. | chunk_includes: Its contents will be copied into the Resources folder. | js_includes: Its contents will be copied into the Controllers folder. | . Example of an appropriate GitHub repository structure: . github-repository ├── README.md ├── data_includes │ └── main.js ├── chunk_includes │ ├── image1.png │ └── image2.png └── js_includes └── newController.js . Before uploading a GitHub repository, you should know that: . | No Git repository is hosted on the PCIbex Farm server. The specified repository is checked out, and its files are uploaded to your experiment. | Caution! Files with the same names will be replaced. Any file in a PCIbex experiment folder will be overwritten by a file with the same name in an uploaded GitHub repository. | Any file in a PCIbex experiment folder but not in an uploaded GitHub repository will not be affected. | No files are ever copied to the Results folder, to ensure that results are never overwritten by accident. | The repository checkout times out after 25 seconds. If this happens, just try again. If you are trying to check out a very large repository, you may have to reduce the size of the repository. | Currently, it is only possible to upload a publicly readable Git repository. | . To upload through Github: . | Under Experiment ‘EXPERIMENT_NAME’, click Update from git repo ». | In the grey text input box, enter the following information: . | In the “repo url” field, enter the URL of the GitHub repository that you are copying. | In the “branch/revision” field, enter the branch of the GitHub repository that you are copying. | . | Click Sync. | If the uploading was successful, the uploaded files will appear in the appropriate folder(s) and briefly flash red. | . ",
-    "url": "http://localhost:4000/pcibex/docs/guides/github.html#uploading-files-through-github",
-    "relUrl": "/docs/guides/github.html#uploading-files-through-github"
-  },"59": {
-    "doc": "Upload files through GitHub",
-    "title": "Upload files through GitHub",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/guides/github.html",
-    "relUrl": "/docs/guides/github.html"
-  },"60": {
+  },"30": {
     "doc": "Global commands",
     "title": "Global commands",
-    "content": "Used outside of a trial. | PennController.AddHost | PennController.AddTable | PennController.ResetPrefix | . ",
-    "url": "http://localhost:4000/pcibex/docs/commands/global-commands.html#global-commands",
-    "relUrl": "/docs/commands/global-commands.html#global-commands"
-  },"61": {
+    "content": "Used outside of a trial to manipulate the experiment as a whole. | PennController.AddHost | PennController.AddTable | PennController.ResetPrefix | . ",
+    "url": "http://localhost:4000/pcibex/docs/global-commands.html#global-commands",
+    "relUrl": "/docs/global-commands.html#global-commands"
+  },"31": {
     "doc": "Global commands",
     "title": " \n    \n    PennController.AddHost \n  ",
-    "content": "Specifies a host URL to use as a source file for when calling newAudio, newVideo, or newImage. URL must end with \"/\". ",
-    "url": "http://localhost:4000/pcibex/docs/commands/global-commands.html#penncontroller-addhost",
-    "relUrl": "/docs/commands/global-commands.html#penncontroller-addhost"
-  },"62": {
+    "content": "Specifies a host URL to use as a source file for when calling newAudio, newVideo, or newImage. URL must end with \"/\". You can pass multiple URLs (separated by comma) or use PennController.AddHost multiple times. PennController looks for audio/images at the specified host URLs in the order that they were provided, and stops looking as soon as an appropriate audio/image file is found. You can still directly specify URLs when creating a new element even if you specified a host URL with PennController.AddHost. Example . PennController.ResetPrefix(null); AddHost(\"https://files.lab.florianschwarz.net/test/\"); AddHost(\"http://spellout.net/ibexfarm/static/images/\"); newTrial( newImage(\"ibex\", \"ibex.jpg\") .print() , newImage(\"wait\", \"https://openclipart.org/image/300px/svg_to_png/23920/Anonymous-Sandglass.png\") .print() , newAudio(\"sentence\", \"test.mp3\") .play() .wait() ); . | Prints two images and plays one audio file. | . | When loading the \"ibex\" Image element, PennController sends a request for the file https://files.lab.florianschwarz.net/test/ibex.png. | If no such file is found, it sends a request for the file http://spellout.net/ibexfarm/static/images/ibex.png. | . | When loading the \"wait\" image element, PennController sends a request for the file https://openclipart.org/image/300px/svg_to_png/23920/Anonymous-Sandglass.png. | When loading the \"sentence\" Audio element, PennController sends a request for the file https://files.lab.florianschwarz.net/test/test.mp3. | If no such file is found, it sends a request for the file http://spellout.net/ibexfarm/static/images/test.mp3. | . | . ",
+    "url": "http://localhost:4000/pcibex/docs/global-commands.html#penncontroller-addhost",
+    "relUrl": "/docs/global-commands.html#penncontroller-addhost"
+  },"32": {
     "doc": "Global commands",
     "title": " \n    \n    PennController.AddTable \n  ",
-    "content": "Defines a table to use with PennController.Template. As of PennController beta 0.4, you can directly upload a CSV file to the Resources or chunk_includes folders. ",
-    "url": "http://localhost:4000/pcibex/docs/commands/global-commands.html#penncontroller-addtable",
-    "relUrl": "/docs/commands/global-commands.html#penncontroller-addtable"
-  },"63": {
+    "content": "Defines a table to use with PennController.Template. As of PennController beta 0.4, you can directly upload a CSV file to the Resources or chunk_includes folders. Example . AddTable( \"myTable\", // Name of the table \"Type,Sentence\\n\"+ // Column names (mind the \\n) \"practice,Hello world!\\n\"+ // First row (mind the \\n) \"test,Bye world!\" // Second row ); Template( \"myTable\" , row =&gt; newTrial( newText(\"type\", row.Type) .print() , newButton(\"sentence\", row.Sentence) .print() .wait() ) ); . ",
+    "url": "http://localhost:4000/pcibex/docs/global-commands.html#penncontroller-addtable",
+    "relUrl": "/docs/global-commands.html#penncontroller-addtable"
+  },"33": {
     "doc": "Global commands",
     "title": " \n    \n    PennController.ResetPrefix \n  ",
-    "content": "Resets the required global command prefix PennController. to a desired string, typically null for no prefix. ",
-    "url": "http://localhost:4000/pcibex/docs/commands/global-commands.html#penncontroller-resetprefix",
-    "relUrl": "/docs/commands/global-commands.html#penncontroller-resetprefix"
-  },"64": {
+    "content": "Resets the required global command prefix PennController. to a desired string, typically null for no prefix. PennController is a JavaScript module. It is standard practice to add a specific prefix to every command added by a JavaScript module in order to avoid naming conflicts with commands from other modules. By default all PennController global commands begin with the prefix PennController., and all PennController element commands begin with the prefix PennController.Elements.. Example . // example . ",
+    "url": "http://localhost:4000/pcibex/docs/global-commands.html#penncontroller-resetprefix",
+    "relUrl": "/docs/global-commands.html#penncontroller-resetprefix"
+  },"34": {
     "doc": "Global commands",
     "title": "Global commands",
     "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/global-commands.html",
-    "relUrl": "/docs/commands/global-commands.html"
-  },"65": {
+    "url": "http://localhost:4000/pcibex/docs/global-commands.html",
+    "relUrl": "/docs/global-commands.html"
+  },"35": {
     "doc": "How-to guides",
     "title": "Guides",
-    "content": "To be filled in… . ",
-    "url": "http://localhost:4000/pcibex/docs/guides.html#guides",
-    "relUrl": "/docs/guides.html#guides"
-  },"66": {
+    "content": " ",
+    "url": "http://localhost:4000/pcibex/docs/how-to-guides.html#guides",
+    "relUrl": "/docs/how-to-guides.html#guides"
+  },"36": {
+    "doc": "How-to guides",
+    "title": "Table of contents",
+    "content": ". | Upload files through GitHub | Test guide | . ",
+    "url": "http://localhost:4000/pcibex/docs/how-to-guides.html",
+    "relUrl": "/docs/how-to-guides.html"
+  },"37": {
     "doc": "How-to guides",
     "title": "How-to guides",
     "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/guides.html",
-    "relUrl": "/docs/guides.html"
-  },"67": {
-    "doc": "HTML element",
-    "title": "Example",
-    "content": "// example . ",
-    "url": "http://localhost:4000/pcibex/docs/elements/html.html#example",
-    "relUrl": "/docs/elements/html.html#example"
-  },"68": {
-    "doc": "HTML element",
-    "title": "HTML element",
-    "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/elements/html.html",
-    "relUrl": "/docs/elements/html.html"
-  },"69": {
+    "url": "http://localhost:4000/pcibex/docs/how-to-guides.html",
+    "relUrl": "/docs/how-to-guides.html"
+  },"38": {
     "doc": "Home",
     "title": "Introduction",
-    "content": ". | if you want to jump in, skip to “tutorial &gt; basic experiment” | otherwise, read on / go to “core concepts” | . ",
+    "content": " ",
     "url": "http://localhost:4000/pcibex/#introduction",
     "relUrl": "/#introduction"
-  },"70": {
+  },"39": {
     "doc": "Home",
     "title": "What is PCIbex?",
     "content": "PCIbex (“PennController for Ibex”), or PennController, is a free, open-source, versatile, and user-friendly online experiment builder. It provides tools to implement familiar paradigms like self-paced reading or rating studies, and has the flexibility to create custom experimental paradigms. PCIbex is developed by Jeremy Zehr within a project in Florian Schwarz’s lab. PCIbex is an extension of Ibex (“Internet Based EXperiments”), a JavaScript-based platform developed by Alex Drummond. PCIbex uses a stream-lined code interface and requires no background in JavaScript. Experiment templates can be directly imported from GitHub, making it easy to share and post experiments. here’s a demo experiment (timed picture selection) . ",
     "url": "http://localhost:4000/pcibex/#what-is-pcibex",
     "relUrl": "/#what-is-pcibex"
-  },"71": {
+  },"40": {
     "doc": "Home",
     "title": "Browser information",
     "content": "Note: Update this section with compatibility for PennController 1.8 . PennController 1.2 is compatible with: . | Firefox (desktop) | Chrome (desktop) | Safari (desktop) | . PennController 1.2 is not compatible with: . | Internet Explorer | Edge | . ",
     "url": "http://localhost:4000/pcibex/#browser-information",
     "relUrl": "/#browser-information"
-  },"72": {
+  },"41": {
     "doc": "Home",
     "title": "What is the PCIbex Farm?",
     "content": "The PCIbex Farm provides free hosting for PennController experiments. You can create and host experiments on the PCIbex Farm by creating an account: . | Go to the PCIbex Farm account creation page. | In the “New user” box, enter the following information: . | In the “Username” field, enter the username that you want for your account. | In the “Password” field, enter the password that you want for your account. | In the “Verify password field”, re-enter the password that you used in the “Password” field. | (Optional) In the “Email” field, enter the email that you want to link your acccount to. PCIbex Farm does not share your email, and only sends emails for password retrieval purposes. | . | Click Create account. | . ",
     "url": "http://localhost:4000/pcibex/#creating-account",
     "relUrl": "/#creating-account"
-  },"73": {
+  },"42": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "http://localhost:4000/pcibex/",
     "relUrl": "/"
-  },"74": {
+  },"43": {
     "doc": "Special commands",
     "title": "Special commands",
-    "content": "Used within a trial, but do not manipulate elements. ",
-    "url": "http://localhost:4000/pcibex/docs/commands/special-commands.html#special-commands",
-    "relUrl": "/docs/commands/special-commands.html#special-commands"
-  },"75": {
+    "content": "Used within a trial, but do not manipulate elements. | clear | end | fullscreen | . ",
+    "url": "http://localhost:4000/pcibex/docs/special-commands.html#special-commands",
+    "relUrl": "/docs/special-commands.html#special-commands"
+  },"44": {
     "doc": "Special commands",
     "title": " \n    \n    clear \n  ",
-    "content": "Removes from the screen any element that was previously added during the trial. ",
-    "url": "http://localhost:4000/pcibex/docs/commands/special-commands.html#clear",
-    "relUrl": "/docs/commands/special-commands.html#clear"
-  },"76": {
+    "content": "Removes from the screen any element that was previously added during the trial. Example . newText(\"helloworld\", \"Hello world!\") .print() , newImage(\"smiley\", \"ya.png\") .print() , newButton(\"erase\", \"Erase\") .print() .wait() , clear() , newButton(\"void\", \"Enough with the emptiness\") .print() .wait() . | Prints a line of Text, an Image and a Button with the text \"erase\" to the screen. | Remove the three elements from the screen when the \"erase\" Button is clicked. | Print a new Button that is waiting to be clicked to the screen. | . ",
+    "url": "http://localhost:4000/pcibex/docs/special-commands.html#clear",
+    "relUrl": "/docs/special-commands.html#clear"
+  },"45": {
     "doc": "Special commands",
     "title": " \n    \n    end \n  ",
-    "content": "Ends a trial immediately. ",
-    "url": "http://localhost:4000/pcibex/docs/commands/special-commands.html#end",
-    "relUrl": "/docs/commands/special-commands.html#end"
-  },"77": {
+    "content": "Ends a trial immediately. Example . PennController.ResetPrefix(null); newTrial( newText(\"instructions\", \"Press F to end the trial immediately, or press J to continue.\") .print() , newKey(\"fj\", \"FJ\") .wait() , getKey(\"fj\") .test.pressed(\"F\") .success(end()) .failure( newText(\"continue\", \"The trial has continued! Press the spacebar to finish.\") .print() , newKey(\" \") .wait() ) ) . | Prints the \"instructions\" Text element to the screen. | Creates the \"fj\" Key element and waits for the F or J key to be pressed. | If F was pressed, end the trial immediately. | Otherwise, print the \"continue\" Text element and wait for the Spacebar key to be pressed. | . | . ",
+    "url": "http://localhost:4000/pcibex/docs/special-commands.html#end",
+    "relUrl": "/docs/special-commands.html#end"
+  },"46": {
     "doc": "Special commands",
     "title": " \n    \n    fullscreen \n  ",
-    "content": "Sends a fullscreen request to the participant’s browser. ",
-    "url": "http://localhost:4000/pcibex/docs/commands/special-commands.html#fullscreen",
-    "relUrl": "/docs/commands/special-commands.html#fullscreen"
-  },"78": {
+    "content": "Sends a fullscreen request to the participant’s browser. The success of this command depends on the browser configuration. Most browsers will block fullscreen requests if they happen before the user has interacted with the page in any way. Call exitFullscreen() to quit fullscreen mode . Example . newTrial( newButton(\"Start the experiment and go fullscreen!\") .print() .wait() , fullscreen() ) newTrial( newScale(100) .before( newText(\"It is cold here\") ) .after( newText(\"It is warm here\") ) .slider() .print() .wait() ) SendResults() newTrial( exitFullscreen() , newText(\"Thank you for your participation!\") .print() , newTimer().wait() ) . note Through the Try-it interface, browsers usually deny fullscreen requests because the experiment is not run globally but instead from within the test page. ",
+    "url": "http://localhost:4000/pcibex/docs/special-commands.html#fullscreen",
+    "relUrl": "/docs/special-commands.html#fullscreen"
+  },"47": {
     "doc": "Special commands",
     "title": "Special commands",
     "content": " ",
-    "url": "http://localhost:4000/pcibex/docs/commands/special-commands.html",
-    "relUrl": "/docs/commands/special-commands.html"
-  },"79": {
-    "doc": "Trials",
-    "title": "Trials",
-    "content": "To be filled in . PennController trials are created by the global command newTrial. ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/trials.html",
-    "relUrl": "/docs/core-concepts/trials.html"
-  },"80": {
-    "doc": "Trials",
-    "title": "Code evaluation",
-    "content": "Flow of evaluation . https://www.pcibex.net/wiki/02-text-pictures-and-keys/ . ",
-    "url": "http://localhost:4000/pcibex/docs/core-concepts/trials.html#code-evaluation",
-    "relUrl": "/docs/core-concepts/trials.html#code-evaluation"
-  },"81": {
+    "url": "http://localhost:4000/pcibex/docs/special-commands.html",
+    "relUrl": "/docs/special-commands.html"
+  },"48": {
     "doc": "Troubleshooting",
     "title": "Troubleshooting",
     "content": "To be filled in . ",

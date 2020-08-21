@@ -2,7 +2,7 @@
 layout: command
 title: end
 parent: Special commands
-grand_parent: Reference&#58; Commands
+grand_parent: Commands
 syntax: end()
 blurb: Ends a trial immediately.
 ---

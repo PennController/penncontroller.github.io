@@ -2,7 +2,7 @@
 layout: command
 title: clear
 parent: Special commands
-grand_parent: Reference&#58; Commands
+grand_parent: Commands
 syntax: clear()
 blurb: Removes from the screen any element that was previously added during the trial.
 ---

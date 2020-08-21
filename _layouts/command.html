@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<!-- .hljs{display:block;overflow-x:auto;padding:.5em;color:#24292e;background:#fafbfc} -->
-
 <!-- VARIABLE ASSIGNMENT -->
 {% assign element-type = page.title | split: " " | first | downcase %}
 {% assign action-commands = site.action-commands | where_exp:"page", "page.title contains element-type" %}

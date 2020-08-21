@@ -1,0 +1,36 @@
+---
+layout: default
+has_toc: false
+html_tags: true
+---
+
+<!-- ASSIGN VARIABLES -->
+<!-- [pages_list] is an array of all html pages -->
+<!-- if the title of a [node] in [pages_list] matches {{ page.title }}, put its children pages in the array [children_list] -->
+{% assign pages_list = site.html_pages %}
+{% for node in pages_list -%}
+{% if node.title == page.title %}
+  {% assign children_list = pages_list | where: "parent", node.title %}
+{% endif %}
+{% endfor %}
+
+<!-- LAYOUT -->
+<h1> {{ page.title }} </h1>
+
+{{ page.content | markdownify }}
+
+<hr>
+
+<!-- TOC -->
+{% include non-default-toc.html collection=children_list ordered=true %}
+
+<!-- CONTENT -->
+<!-- for every [child] in [children_list], print a horizontal rule, {{ child.content }}, and then a link to the top of the page -->
+{% for child in children_list -%}
+  <hr>
+
+  {{ child.content }}
+
+  <a href="#">Back to top</a>
+{% endfor %}
+

@@ -6,29 +6,36 @@ layout: default
 {% assign element-type = page.title | split: " " | first | downcase %}
 {% assign action-commands = site.action-commands | where_exp:"page", "page.title contains element-type" %}
 {% assign test-commands = site.test-commands | where_exp:"page", "page.title contains element-type" %}
-{% assign desc = page.description | markdownify %}
 
 <!-- LAYOUT -->
 <h1> <b> {{ page.title }} </b></h1>
-<blockquote> <code> {{ page.syntax }} </code></blockquote>
 
-{{ page.blurb | markdownify }}
+<!-- Element creation, description, and command TOC -->
+<div style="display: flow-root;" markdown="1">
+  {% include element-toc.html actionCommands=action-commands testCommands=test-commands %}
 
-<!-- Element description and TOC -->
-{% include element-toc.html actionCommands=action-commands testCommands=test-commands extended-description=desc %}
+  <b>Creation: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
+    
+  {{ page.blurb | markdownify  }}
 
+  {{ page.extended_description | markdownify }}
+</div>
+
+{% unless page.extended_description %}
 <hr>
+{% endunless %}
 
+<!-- Rest of element content -->
 {{ content }}
 
 <hr>
 
-<h2> Action commands </h2>
 <!-- Action command blurbs -->
+<h2> Action commands </h2>
 {% include command-blurbs.html collection=action-commands %}
 
 <hr>
 
-<h2> Test commands </h2>
 <!-- Test command blurbs -->
+<h2> Test commands </h2>
 {% include command-blurbs.html collection=test-commands %}

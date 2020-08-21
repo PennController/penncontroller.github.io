@@ -3,9 +3,15 @@ layout: default
 title: Core concepts
 nav_order: 2
 has_children: true
+has_toc: false
+children_are_in_collection: true
 ---
 
-# Core concepts {#core-concepts}
+# Core concepts 
 
-*To be filled in...*
+This section is designed for people who prefer learning concepts step by step. If you prefer to learn by doing, check out the [Basic Tutorial]({{site.baseurl}}/docs/basic-tutorial). You may find it useful to read both this section and the tutorial.
+{: .fs-5 .fw-300 }
+
+<!-- TOC -->
+{% include non-default-toc.html collection=site.core-concepts ordered=true %}
 

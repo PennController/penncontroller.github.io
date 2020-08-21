@@ -1,12 +1,5 @@
-<div class="d-flex">
-  <!-- Extended description -->
-  <div class="pr-2" style="flex:0.75" markdown="1">
-  {{ include.extended-description }}
-  </div>
-  
-  <!-- TOC -->
-  <div class="py-4 pl-4 pr-2 bg-grey-lt-200" style="flex:0.25" markdown="1">
-  <!-- Print action commands -->
+ <!-- Element command TOC for [layout: element] pages -->
+<div class="float-right py-4 px-4 bg-grey-lt-200" markdown="1">
   <b>Action commands</b>
   <ul class="nav-list">
   {%- for command in include.actionCommands -%}
@@ -15,7 +8,6 @@
   {%- endfor -%}
   </ul>
 
-  <!-- Print test commands -->
   <b>Test commands</b>
   <ul class="nav-list">
   {%- for command in include.testCommands -%}
@@ -23,6 +15,4 @@
   <li><a href="#{{ command_tag }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a></li>
   {%- endfor -%}
   </ul>
-  </div>
-
 </div>

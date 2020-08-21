@@ -2,7 +2,7 @@
 layout: command
 title: PennController.AddHost
 parent: Global commands
-grand_parent: Reference&#58; Commands
+grand_parent: Commands
 syntax: PennController.AddHost("*URL*")
 blurb: Specifies a host URL to use as a source file for when calling `newAudio`, `newVideo`, or `newImage`. URL must end with `"/"`.
 extended_description: true

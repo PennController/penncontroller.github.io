@@ -8,3 +8,10 @@ nav_order: 4
 
 > To be filled in
 
+### Second experiment trial
+
++ add another experimental trial
+
+### Manipulate trial order
+
++ use `Sequence` to manipulate trial order

@@ -36,21 +36,30 @@ aux_links_new_tab: true
 plugins:
   - jekyll-feed
 
-# elements
+# Collections
 collections_dir: reference
 collections:
+  core-concepts:
+    output: true
+    permalink: /docs/:collection/:name/
+  elements:
+    output: true
+    permalink: /docs/:collection/:name/
   global-commands:
     output: true
-    permalink: /docs/commands/:collection/:name/
+    permalink: /docs/:collection/:name/
   special-commands:
     output: true
-    permalink: /docs/commands/:collection/:name/
+    permalink: /docs/:collection/:name/
   action-commands:
     output: true
-    permalink: /docs/commands/:collection/:name/
+    permalink: /docs/:collection/:name/
   test-commands:
     output: true
-    permalink: /docs/commands/:collection/:name/
+    permalink: /docs/:collection/:name/
+  how-to-guides:
+    output: true
+    permalink: /docs/:collection/:name/
 
 
 # Exclude from processing.
