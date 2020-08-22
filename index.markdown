@@ -4,9 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# Introduction {#introduction}
-
-## What is PCIbex?
+# What is PCIbex?
 
 **PCIbex** ("PennController for Ibex"), or PennController, is a free, open-source, versatile, and user-friendly online experiment builder. It provides tools to implement familiar paradigms like self-paced reading or rating studies, and has the flexibility to create custom experimental paradigms. PCIbex is developed by [Jeremy Zehr](https://sites.google.com/site/jeremyezehr/home) within a project in [Florian Schwarz](https://www.florianschwarz.net/)’s [lab](http://lab.florianschwarz.net/). 
 
@@ -33,7 +31,7 @@ PennController 1.2 is not compatible with:
 
 ---
 
-## What is the PCIbex Farm? {#creating-account}
+## The PCIbex Farm
 
 The [PCIbex Farm](https://expt.pcibex.net/) provides free hosting for PennController experiments. 
 

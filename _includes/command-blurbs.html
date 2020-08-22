@@ -7,5 +7,7 @@
   </h2> 
   <blockquote> {{ command.blurb | markdownify }} </blockquote>
 
-  <blockquote> {{ command.content | replace: "h2", "h3"}} </blockquote>
+  <blockquote> {{ command.content | replace: "h2", "h3" | markdownify }} </blockquote>
+
+  <h4><a href="#">Back to top</a></h4>
 {% endfor %}

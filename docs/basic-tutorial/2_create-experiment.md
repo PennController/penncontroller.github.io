@@ -30,6 +30,9 @@ Option 2: Upload through GitHub
 
 The **Script** folder contains the file `main.js`, the experiment code. Update your experiment by editing `main.js` in the script editor and saving your changes.
 
+View an experiment by clicking the link at the top of the experiment's page:
+`https://expt.pcibex.net/ibexexps/USER_NAME/EXPERIMENT_NAME/experiment.html`
+
 The script editor has the following features:
 
 + Two links at the top for easy access

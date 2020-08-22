@@ -22,4 +22,5 @@ newCanvas("shapes", 800, 400)
     .add( 400, 0, getImage("triangle"))
     .print()
 ```
-> Creates a 800x400px **Canvas** and places the **Image** `"square"` at the (x=0, y=0) coordinate and the **Image** `"triangle"` at the (x=400, y=0) coordinate.
+> 1. Creates a 800x400px **Canvas**.
+> 2. Places the **Image** `"square"` at the (x=0, y=0) coordinate and the **Image** `"triangle"` at the (x=400, y=0) coordinate.

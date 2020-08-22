@@ -1,0 +1,18 @@
+<!-- TOC that links to a section of the same page -->
+<h2 class="text-delta">Table of contents</h2>
+  {% if include.ordered %}
+  <ol>
+  {% else %}
+  <ul>
+  {% endif %}    
+  {% for child in include.collection -%}
+  {% assign child_tag = child.title | downcase | slugify %}
+    <li>
+      <a href="#{{ child_tag }}">{{ child.title }}</a>
+    </li>
+  {% endfor %}
+  {% if include.ordered %}
+  </ol>
+  {% else %}
+  </ul>
+  {% endif %}  

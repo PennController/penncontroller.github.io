@@ -4,7 +4,7 @@ title: button.wait
 parent: Button element
 grand_parent: Elements
 syntax: getButton("*NAME*").wait()
-blurb: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+blurb: Waits until the **Button** is clicked before evaluating and executing the next commands.
 extended_description: false
 ---
 

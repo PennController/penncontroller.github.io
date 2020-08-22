@@ -6,6 +6,4 @@ parent: Basic Tutorial
 
 ## Examine results
 
-+ look at results
-
-
+*To be filled in*

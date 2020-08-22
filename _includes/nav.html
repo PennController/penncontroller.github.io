@@ -16,9 +16,9 @@
           {%- if page.parent == node.title or page.grand_parent == node.title -%}
             {%- assign first_level_url = node.url | absolute_url -%}
           {%- endif -%}
-          {%- if node.has_children -%}
-            <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
-          {%- endif -%}
+          {% if node.has_children %}
+          <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
+          {% endif %}
           <a href="{{ node.url | absolute_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
           <!-- Navigation where children "pages" are html tag links -->
           {% if node.has_children and node.children_are_html_tags %}
@@ -28,7 +28,7 @@
               {%- unless child.nav_exclude -%}
               {% assign child_tag = child.title | downcase | slugify %}
                 <li class="nav-list-item {% if page.url == {{ relative_url }}#child_tag %} active{% endif %}">
-                  <a href="{{ relative_url }}#{{ child_tag }}" class="nav-list-link {% if page.url == {{ relative_url }}#child_tag %} active{% endif %}">{{ child.title }}</a>
+                  <a href="{{ node.url | prepend: site.baseurl }}#{{ child_tag }}" class="nav-list-link {% if page.url == {{ relative_url }}#child_tag %} active{% endif %}">{{ child.title }}</a>
                 </li>
               {%- endunless -%}
             {%- endfor -%}
