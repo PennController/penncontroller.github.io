@@ -6,6 +6,4 @@ parent: Core concepts
 
 # Debugger
 
-PennController comes with a built-in **debugger**.
-
-> To be filled in
+*To be filled in*

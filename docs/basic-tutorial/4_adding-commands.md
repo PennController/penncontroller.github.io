@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Add commands
+title: Adding commands
 parent: Basic Tutorial
 ---
 
@@ -20,7 +20,7 @@ There are three types of commands:
 + [Special commands]({{special_commands.url | prepend: site.baseurl }}) are {{ special_commands.blurb | downcase }}
 
 {% capture label %}
-Element commands are the most common type of command. This tutorial uses the term “command” as shorthand for “element command”. If a global or special command is intended, the term “global command” or "special command" will be used.
+This tutorial uses the term “command” as shorthand for “element command”. If a global or special command is intended, the term “global command” or "special command" will be used.
 {% endcapture %}
 {% include note-label.html label-body=label  %}
 
@@ -37,24 +37,24 @@ This tutorial omits the prefix `standard.` when referring to standard commands.
 The syntax for calling a command on an element is `newX("ELEMENT_NAME", ...).COMMAND()` or `getX("ELEMENT_NAME").COMMAND()`, where `COMMAND` is the name of a comment **without** its standard or element-specific prefix.
 
 {% capture label %}
-Successive commands can be called on the same line, as in `getX("ELEMENT_NAME").COMMAND_1().COMMAND_2().COMMAND_3()`. 
+Call each command on an indented new line for maximum readability.
 
-However, it is recommended to call each command on an indented new line for readability.
+However, successive commands can be called on the same line, as in `getX("ELEMENT_NAME").COMMAND_1().COMMAND_2().COMMAND_3()`
 {% endcapture %}
 {% include recommended-label.html label-body=label %}
 
 Use the `print` command to print the `"fish-description"` and `"fish"` elements to the screen:
 ```javascript
-// Shorten command names (keep this line here)
+// This is the BasicTutorial experiment.
+// Type code below this line.
+
+// Remove command prefix
 PennController.ResetPrefix(null)
 
-// Create a Trial named "first-trial"
 newTrial("first-trial",
-    // Create a Text element and print it
     newText("fish-description", "The fish swim in a tank which is perfectly round.")
          .print()
     ,
-    // Create an Image element and print it
     newImage("fish-round", "2fishRoundTank.png")    
          .print()
 )
@@ -78,11 +78,11 @@ PennController executes experiment scripts sequentially:
 
 If there are no more commands, the trial ends. If there are no more trials, the experiment ends. 
 
-### Pause experiment execution
+### Pausing experiment execution
 
 Interactive elements and commands can pause experiment script execution, in order to give participants time to interact with the screen.
 
-For example, all interactive element types have a `wait` command:
+For example:
 
 {% assign audio_wait = site.action-commands | where: "title", "audio.wait" | first %}
 {% assign button_wait = site.action-commands | where: "title", "button.wait" | first %}
@@ -92,25 +92,24 @@ For example, all interactive element types have a `wait` command:
 + [`key.wait`]({{ key_wait.url | prepend: site.baseurl }}): {{ key_wait.blurb }}
 + Also: `controller.wait`, `dropdown.wait`, `scale.wait`, and more.
 
-Although these commands are related in name and function, they are still considered element-specific commands for technical reasons.
+Although these commands are related in name and function, for technical reasons they are considered element-specific commands.
 
 Use a **Key** element and the `key.wait` command to pause experiment execution:
 
 ```javascript
-// Shorten command names (keep this line here)
+// This is the BasicTutorial experiment.
+// Type code below this line.
+
+// Remove command prefix
 PennController.ResetPrefix(null)
 
-// Create a Trial named "first-trial"
 newTrial("first-trial",
-    // Create a Text element and print it
     newText("fish-description", "The fish swim in a tank which is perfectly round.")
          .print()
     ,
-    // Create an Image element and print it
     newImage("fish-round", "2fishRoundTank.png")    
          .print()
     ,
-    // Create a Key element and wait until the F or J key is pressed
     newKey("keypress", "FJ")
          .wait()
 )
