@@ -14,7 +14,7 @@ To be technical, you create an *instance* of the `Image` type, and then use a co
 {% capture label %}
 This tutorial  uses the term "element" as shorthand for "instance of an element type". For example "an **Image** element" is short for "an instance of the `Image` type". If "element type" is intended, the  term "element type" will be used.
 {% endcapture %}
-{% include note-label.html label-body=label %}
+{% include label-note.html label-body=label %}
 
 Element types can represent visual content, interactive content, or some combination of the two:
 

@@ -20,10 +20,7 @@ There are three types of commands:
 + **Global commands**: {{ global_commands.blurb }}
 + **Special commands**: {{ special_commands.blurb }}
 
-{% capture label %}
 For a list of all PennController commands, see the [Commands]({{ site.baseurl }}/docs/commands) page.
-{% endcapture %}
-{% include reference-label.html label-body=label %}
 
 ## Element commands {#element-commands}
 

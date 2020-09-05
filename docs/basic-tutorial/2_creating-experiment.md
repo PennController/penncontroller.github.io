@@ -22,11 +22,11 @@ The **BasicTutorial** experiment uses the images `1fishSquareTank.png` and `2fis
 
 <div class="d-flex">
     <div style="text-align:center;">
-        <img src="{{site.baseurl}}/assets/BasicTutorial/1fishSquareTank.png" alt="1fishSquareTank" width="75%" height="auto">
+        <img src="{{site.baseurl}}/assets/images/1fishSquareTank.png" alt="1fishSquareTank" width="75%" height="auto">
         <code>1fishSquareTank.png</code>
     </div>
     <div style="text-align:center;">
-        <img src="{{site.baseurl}}/assets/BasicTutorial/2fishRoundTank.png" alt="2fishRoundTank" width="75%" height="auto">
+        <img src="{{site.baseurl}}/assets/images/2fishRoundTank.png" alt="2fishRoundTank" width="75%" height="auto">
         <code>2fishRoundTank.png</code>
     </div>
 </div>
@@ -91,7 +91,7 @@ newTrial("first-trial")
 {% capture label %}
 Start every experiment with `PennController.ResetPrefix(null)`  for readability and convenience. 
 {% endcapture %}
-{% include recommended-label.html label-body=label  %}
+{% include label-recommended.html label-body=label  %}
 
 ### Turning off the debugger
 

@@ -49,4 +49,4 @@ newTrial(
 {% capture label %}
 Through the Try-it interface, browsers usually deny fullscreen requests because the experiment is not run globally but instead from within the test page.
 {% endcapture %}
-{% include note-label.html label-body=label %}
+{% include label-note.html label-body=label %}

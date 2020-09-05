@@ -18,14 +18,11 @@ Element types can represent visual content, interactive content, or some combina
 {% capture label %}
 This tutorial uses the term "element" as shorthand for "instance of an element type". For example "an **Image** element"  or "an **Image**" is short for "an instance of the `Image` type". If "element type" is intended, the  term "element type" will be used.
 {% endcapture %}
-{% include note-label.html label-body=label  %}
+{% include label-note.html label-body=label  %}
 
 Elements are created with the `newX("ELEMENT_NAME", ...)` function, where `X` is an element type and `"ELEMENT_NAME"` is the name of the newly-created element. Any subsequent arguments depend on the element type. 
 
-{% capture label %}
 To learn which arguments a specific element type requires, visit that element type's reference page under [Elements](./elements).
-{% endcapture %}
-{% include reference-label.html label-body=label  %}
 
 Elements that have been created can be referred back to with the `getX("ELEMENT_NAME")` function, where `X` is an element type and `"ELEMENT_NAME"` is the name of the element.
 
@@ -57,5 +54,5 @@ Name every element for maximum clarity.
 
 However, it is not strictly necessary to name an element. For example, `newImage("fish", "2fishRoundTank.png")` and `newImage("2fishRoundTank.png")` both contain the image `2fishRoundTank.png`.
 {% endcapture %}
-{% include recommended-label.html label-body=label  %}
+{% include label-recommended.html label-body=label  %}
 

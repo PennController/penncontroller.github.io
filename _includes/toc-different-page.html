@@ -1,0 +1,17 @@
+<!-- TOC for pages with non-default layouts -->
+<h2 class="text-delta">Table of contents</h2>
+{% if include.ordered %}
+<ol>
+{% else %}
+<ul>
+{% endif %}    
+{% for child in include.collection -%}
+  <li>
+    {% if include.code-font %}<code class="language-plaintext highlighter-rouge">{% endif %}<a href="{{ child.url | prepend: site.baseurl }}">{{ child.title }}</a>{% if include.code-font%}</code>{%endif%}
+  </li>
+{% endfor %}
+{% if include.ordered %}
+</ol>
+{% else %}
+</ul>
+{% endif %}  

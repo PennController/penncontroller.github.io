@@ -2,21 +2,16 @@
 layout: default
 ---
 
-<!-- VARIABLE ASSIGNMENT -->
-{% assign element-type = page.title | split: " " | first | downcase %}
-{% assign action-commands = site.action-commands | where_exp:"page", "page.title contains element-type" %}
-{% assign test-commands = site.test-commands | where_exp:"page", "page.title contains element-type" %}
-{% assign desc = page.description | markdownify %}
-
-<!-- LAYOUT -->
 <h1> <b> {{ page.title }} </b></h1>
 
-<pre><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
+<b>Syntax: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
 
 {{ page.blurb | markdownify }}
 
-{% unless page.extended_description %}
+{% if page.extended_description %}
+{{ page.extended_description }}
+{% endif %}
+
 <hr>
-{% endunless %}
 
 {{ content }}

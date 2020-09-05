@@ -19,7 +19,7 @@ extended_description: >-
 {% capture label %}
 As of June 2019, some browsers prevent multimedia content from automatically playing before the user has interacted with the page. Do not assume playback will automatically start, if this is the first thing that should happen when your participants open the experiment page. You should have a screen that asks participants to interact with the page, for example by clicking a **Button**, before playing any audio.
 {% endcapture %}
-{% include note-label.html label-body=label %}
+{% include label-note.html label-body=label %}
 
 ---
 

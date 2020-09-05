@@ -22,7 +22,7 @@ There are three types of commands:
 {% capture label %}
 This tutorial uses the term “command” as shorthand for “element command”. If a global or special command is intended, the term “global command” or "special command" will be used.
 {% endcapture %}
-{% include note-label.html label-body=label  %}
+{% include label-note.html label-body=label  %}
 
 Commands are **standard** (can be called on any element type) or **element-specific** (can only be called on a specific element type):
 
@@ -32,7 +32,7 @@ Commands are **standard** (can be called on any element type) or **element-speci
 {% capture label %}
 This tutorial omits the prefix `standard.` when referring to standard commands.
 {% endcapture %}
-{% include note-label.html label-body=label %}
+{% include label-note.html label-body=label %}
 
 The syntax for calling a command on an element is `newX("ELEMENT_NAME", ...).COMMAND()` or `getX("ELEMENT_NAME").COMMAND()`, where `COMMAND` is the name of a comment **without** its standard or element-specific prefix.
 
@@ -41,7 +41,7 @@ Call each command on an indented new line for maximum readability.
 
 However, successive commands can be called on the same line, as in `getX("ELEMENT_NAME").COMMAND_1().COMMAND_2().COMMAND_3()`
 {% endcapture %}
-{% include recommended-label.html label-body=label %}
+{% include label-recommended.html label-body=label %}
 
 Use the `print` command to print the `"fish-description"` and `"fish"` elements to the screen:
 ```javascript
