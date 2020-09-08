@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h1> <b> {{ page.title }} </b></h1>
+
+<b>Syntax: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
+
+{{ page.blurb | markdownify }}
+
+{% if page.extended_description %}
+{{ page.extended_description }}
+{% endif %}
+
+<hr>
+
+{{ content }}
