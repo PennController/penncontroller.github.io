@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ./reference
+title: ~/reference/
 parent: Root directory
 grand_parent: Internal documentation
 ---

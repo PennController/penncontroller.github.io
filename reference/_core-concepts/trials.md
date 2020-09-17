@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Commands
+title: Trials
 parent: Core concepts
 nav_order: 2
 ---
@@ -8,3 +8,4 @@ nav_order: 2
 # {{ page.title }}
 
 *To be filled in*
+

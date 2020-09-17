@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ./assets
-parent: Root directory
+title: assets/
+parent: Directory structure
 grand_parent: Internal documentation
 ---
 
@@ -136,7 +136,7 @@ To use JS diff highlighting:
 ### Removing Prism
 Follow these steps to remove Prism and reenable Rouge:
 
-1. Remove the Prism CSS styling by deleting the line `<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">` from the file [`./_includes/head_custom.html`]({{site.baseurl}}/internal/root-directory/includes#head_customhtml). 
+1. Remove the Prism CSS styling by deleting the line `<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">` from the file [`./_includes/head_custom.html`]({{site.baseurl}}/internal/directory-structure/includes#head_customhtml). 
   + If `<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">` is the only line in `head_custom.html`, you can also just delete the file `head_custom.html`.
 2. Remove the Prism JS script by deleting the file `./_layouts/default.html`, which is an override of the original [Just the Docs `default` layout](https://github.com/pmarsceill/just-the-docs/blob/master/_layouts/default.html). Deleting the local copy of `./_layouts/default.html` will revert back to the original `default` layout. 
 3. Remove this section in `_config.yml` to reenable Rouge.

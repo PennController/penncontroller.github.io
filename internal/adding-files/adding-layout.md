@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Adding a `_layout` file
+title: Adding a custom layout
 parent: Adding files
 grand_parent: Internal documentation
 ---

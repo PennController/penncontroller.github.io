@@ -2,7 +2,7 @@
 layout: default
 title: Elements
 parent: Core concepts
-nav_order: 1
+nav_order: 3
 ---
 
 # Elements {#elements}

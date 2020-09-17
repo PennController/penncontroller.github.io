@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ./internal
-parent: Root directory
+title: internal/
+parent: Directory structure
 grand_parent: Internal documentation
 ---
 
@@ -20,10 +20,10 @@ Folder structure
 ```treeview
 internal/
 |-- adding-files/
-|-- root-directory/
+|-- directory-structure/
 |-- adding-files.md
 |-- internal-documentation.md
-|-- root-directory.md
+|-- directory-structure.md
 `-- style-guide.md
 ```
 

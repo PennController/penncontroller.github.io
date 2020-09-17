@@ -9,7 +9,7 @@ parent: Basic Tutorial
 {% capture instructions %}
 Create a new experiment: 
 
-1. [Create a PCIbex Farm account]({{site.baseurl}}#the-pcibex-farm)
+1. [Create a PCIbex Farm account]({{site.baseurl}}#the-pcibex-farm){:target="_blank"}
 2. Go to the [PCIbex Farm home page](https://expt.pcibex.net/){:target="_blank"}.
 3. Click **Design experiments**.
 4. Enter your login information and click **login**.
@@ -22,28 +22,34 @@ Create a new experiment:
 
 ### Importing resource files
 
-The **BasicTutorial** experiment uses the images `1fishSquareTank.png` and `2fishRoundTank.png`:
-
-<div class="d-flex mb-4">
-    <div style="text-align:center;">
-        <img src="{{site.baseurl}}/assets/images/1fishSquareTank.png" alt="1fishSquareTank" width="75%" height="auto">
-        <code>1fishSquareTank.png</code>
-    </div>
-    <div style="text-align:center;">
-        <img src="{{site.baseurl}}/assets/images/2fishRoundTank.png" alt="2fishRoundTank" width="75%" height="auto">
-        <code>2fishRoundTank.png</code>
-    </div>
-</div>
+The **BasicTutorial** experiment uses the images [`1fishSquareTank.png`]({{site.baseurl}}/assets/tutorials/1fishSquareTank.png){:target="_blank"} and [`2fishRoundTank.png`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.png){:target="_blank"}, the audio file [`2fishRoundTank.mp3`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.mp3){:target="_blank"}, and the starter experiment script [`main.js`]({{site.baseurl}}/assets/tutorials/main.js){:target="_blank"}.
 
 {% capture instructions %}
-Import these images and a starter experiment script:
+Import the resource files:
 
-1. Under **Experiment 'BasicTutorial'**, click **Update from git repo »**.
+1. Click **Update from git repo »**, under **Experiment 'BasicTutorial'**.
 2. In the “repo url” field, enter `https://github.com/angelica-pan/BasicTutorial`
 3. Click **Sync**.
-4. If the import was successful, the imported files will appear in the **Script** or **Resources** folder of the experiment project page, and briefly flash red.
+4. If the import was successful, the imported files will appear in the experiment project page's **Script** or **Resources** folders, and briefly flash red.
+
+To learn more about importing files from GitHub, see [Syncing with a GitHub repository]({{site.baseurl}}/docs/how-to-guides/github/){:target="_blank"}.
 {% endcapture %}
 {% include instructions.html text=instructions%}
+
+You can also manually upload the resource files to the PCIbex Farm. However, you can only upload one file at a time.
+
+1. Download a local copy of [`1fishSquareTank.png`]({{site.baseurl}}/assets/tutorials/1fishSquareTank.png){:target="_blank"}, [`2fishRoundTank.png`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.png){:target="_blank"}, [`2fishRoundTank.mp3`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.mp3){:target="_blank"}, and [`main.js`]({{site.baseurl}}/assets/tutorials/main.js){:target="_blank"}.
+2. Upload the multimedia files.
+  + Click the *Upload* icon (a white cross inside a black circle) in the experiment project page's **Resources** folder.
+  + Select the file that you wish to upload: `1fishSquareTank.png`, `2fishRoundTank.png`, or `2fishRoundTank.mp3` 
+  + Click *Open*.
+  + If the upload was successful, the uploaded file will appear in the **Resources** folder and briefly flash red.
+  + Repeat until all three multimedia files have been uploaded.
+3. Upload the experiment script.
+  + Click the *Upload* icon (a white cross inside a black circle) in the experiment project page's **Script** folder.
+  + Select `main.js`.
+  + Click *Open*.
+  + If the upload was successful, the uploaded file will appear in the **Script** folder and briefly flash red.
 
 ### Editing an experiment
 
@@ -82,17 +88,22 @@ Click **main.js** to open `main.js` in the script editor:
 **Trials** are objects created by the [`PennController.newTrial("TRIAL_LABEL,...")`]({{site.baseurl}}/docs/global-commands/newtrial){:target="_blank"} command:
 
 + `"TRIAL_LABEL"` is the label of the **Trial**, and an optional (but highly recommended) argument.
-+ Any subsequent arguments are sequences of [elements](#adding-elements) and [commands](#adding-commands) that define what happens in the **Trial**.
++ Any subsequent arguments are sequences of [elements](#adding-elements) and [commands](#adding-commands) that define what happens in the trial.
 
 {% capture instructions %}
-Create a **Trial** labeled `"first-trial"`:
+Create a **Trial** labeled `"experimental-trial"`:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
 *// Type code below this line.
 *
-*PennController.newTrial("first-trial")
+*PennController.newTrial("experimental-trial")
 </code></pre>
+
+{% capture label %}
+At this point, the `main.js` script is **incomplete**; we have created an empty trial that does not do or contain anything. If you run the experiment, it will end immediately with the message "The results were successfully sent to the server. Thanks!". 
+{% endcapture%}
+{% include label-note.html label-body=label %}
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
@@ -110,28 +121,40 @@ Remove the `PennController.` prefix:
 +// Remove command prefix
 +PennController.ResetPrefix(null)
 *
-*newTrial("first-trial")
+!newTrial("experimental-trial")
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
 {% capture label %}
-Start every experiment with `PennController.ResetPrefix(null)`  for readability and convenience. 
+Start every experiment with `PennController.ResetPrefix(null)` for readability and convenience. 
 {% endcapture %}
 {% include label-recommended.html label-body=label  %}
 
-### The debugger
+### Using the debugger
 
-PennController comes with a [built-in debugger]({{site.baseurl}}/docs/core-concepts/5-debugger){:target="_blank"} that helps detect typos and syntax errors. 
+PennController comes with a [built-in debugger]({{site.baseurl}}/docs/core-concepts/5-debugger){:target="_blank"} that helps detect typos, syntax errors, and other issues.
 
 It appears as a small window in the bottom-right corner of the screen when you run an experiment:
 
 ![debugger]({{site.baseurl}}/assets/images/debugger.png)
 
-You should use the debugger as you build and test an experiment, and only turn off the debugger with the [`PennController.DebugOff`]({{site.baseurl}}/docs/global-commands/debugoff){:target="_blank"} command when you are ready to collect experimental data.
+ The debugger window has five tabs:
+
++ **Info**: Displays information about the current **Trial**.
++ **Sequence**: Lists all **Trials**, and allows you to skip to any particular **Trial**.
++ **Tables**: Lists all tables.
++ **Errors**: Presents any error messages.
++ **Log**: Reports whenever a command is executed on an element, or whenever a resource is successfully preloaded.
+
+These tabs might not make sense until you learn more about PennController experiments, but the important part to know is that **you should use the debugger as you build and test an experiment**. You will inevitably face problems, and the debugger will make it easier to solve them.
+
+When you are ready to publish your experiment and collect experimental data, turn off the debugger with the [`PennController.DebugOff`]({{site.baseurl}}/docs/global-commands/debugoff){:target="_blank"} command.
+
+We recommend reading the [Debugger documentation page]({{site.baseurl}}/docs/core-concepts/debugger){:target="_blank"} after you have completed this tutorial and the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, and are more familiar with PennController experiments.
 
 {% capture instructions %}
-Call the `DebugOff` command, but comment it out (we will uncomment the command during the last part of the tutorial):
+Call the `DebugOff` command, but comment it out. We will uncomment the command only during the very last part of the tutorial:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -143,7 +166,7 @@ Call the `DebugOff` command, but comment it out (we will uncomment the command d
 +// Turn off debugger
 +// DebugOff()
 *
-*newTrial("first-trial")
+*newTrial("experimental-trial")
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}

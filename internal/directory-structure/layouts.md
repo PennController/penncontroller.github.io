@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ./_layouts
-parent: Root directory
+title: _layouts/
+parent: Directory structure
 grand_parent: Internal documentation
 ---
 
@@ -50,7 +50,7 @@ description
 
 Overrides the original [Just the Docs `./_layouts/default.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_layouts/default.html):
 
-+ As of September 3, 2020 the only modification is the line `<script src="{{ "/assets/prism/prism.js" | prepend: site.baseurl }}"></script>` in the footer, which is used for the [Prism syntax highlighter]({{site.baseurl}}/internal/root-directory/assets#prism).
+As of September 3, 2020 the only modification is the line `<script src="{{ "/assets/prism/prism.js" | prepend: site.baseurl }}"></script>` in the footer, which is used for the [Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism).
 
 ---
 

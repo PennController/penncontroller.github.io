@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ./docs
-parent: Root directory
+title: docs/
+parent: Directory structure
 grand_parent: Internal documentation
 ---
 

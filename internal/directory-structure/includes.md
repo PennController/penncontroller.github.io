@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ./_includes
-parent: Root directory
+title: _includes/
+parent: Directory structure
 grand_parent: Internal documentation
 ---
 
@@ -69,15 +69,12 @@ Creates blurbs for a Collection or array of PennController commands. Ends with a
 Adds custom content to the original [Just the Docs `./_includes/head.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/head.html){:target="_blank"}. 
 {: .mt-4 }
 
-As of September 3, 2020 `head_custom.html` only contains the line 
-> `<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">`
-
-which is used to style the [Prism syntax highlighter]({{site.baseurl}}/internal/root-directory/assets#prism){:target="_blank"}.
+As of September 3, 2020 `head_custom.html` only contains the line `<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">`, which is used to style the [Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism){:target="_blank"}.
 
 ---
 
 ## `include-example.html`
-See the documentation for adding a [New `_includes` file]({{site.baseurl}}/internal/adding-files/adding-includes){:target="_blank"}.
+Creates the <span class="text-delta">description</span> and <span class="text-delta">example</span> blocks used on this page. See the documentation for adding a [new `_includes` file]({{site.baseurl}}/internal/adding-files/adding-includes){:target="_blank"}.
 {: .mt-4 }
 
 ---

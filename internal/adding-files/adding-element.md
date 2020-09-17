@@ -25,7 +25,7 @@ nav_order: 2
     + `layout`: The page layout; use `layout: element`.
     + `title`: The name of the element type.
     + `parent`: The navigational parent page; use `parent: Elements`.
-    + `thumbnail`: The name of the element type thumbnail PNG. The PNG should be in the [`./assets/elements`]({% link internal/root-directory/reference.md %}) folder.
+    + `thumbnail`: The name of the element type thumbnail PNG. The PNG should be in the [`./assets/elements`]({{site.baseurl}}/{% link internal/directory-structure/reference.md %}) folder.
     + `syntax`: The syntax for calling the `newX` function, where `X` is an element type. 
     + `blurb`: One sentence description of the element type. 
     + `extended_description` (*optional*) : An extended description of the element type. 

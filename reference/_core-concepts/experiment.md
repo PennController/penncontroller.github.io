@@ -2,6 +2,7 @@
 layout: default
 title: Experiment
 parent: Core concepts
+nav_order: 1
 ---
 
 # Creating an experiment {#creating-experiment}
