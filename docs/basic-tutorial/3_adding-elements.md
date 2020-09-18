@@ -67,6 +67,7 @@ Add an **Audio** element, **Text** element and an **Image** element:
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 !newTrial("experimental-trial",
 +    newAudio("fish-audio", "2fishRoundTank.mp3")
 +    ,

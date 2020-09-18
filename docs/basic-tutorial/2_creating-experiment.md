@@ -97,7 +97,8 @@ Create a **Trial** labeled `"experimental-trial"`:
 *// This is the BasicTutorial experiment.
 *// Type code below this line.
 *
-*PennController.newTrial("experimental-trial")
++// Experimental trial
++PennController.newTrial("experimental-trial")
 </code></pre>
 
 {% capture label %}
@@ -121,6 +122,7 @@ Remove the `PennController.` prefix:
 +// Remove command prefix
 +PennController.ResetPrefix(null)
 *
+*// Experimental trial
 !newTrial("experimental-trial")
 </code></pre>
 {% endcapture %}
@@ -129,7 +131,7 @@ Remove the `PennController.` prefix:
 {% capture label %}
 Start every experiment with `PennController.ResetPrefix(null)` for readability and convenience. 
 {% endcapture %}
-{% include label-recommended.html label-body=label  %}
+{% include label-recommended.html label-body=label %}
 
 ### Using the debugger
 
@@ -166,6 +168,7 @@ Call the `DebugOff` command, but comment it out. We will uncomment the command o
 +// Turn off debugger
 +// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial")
 </code></pre>
 {% endcapture %}

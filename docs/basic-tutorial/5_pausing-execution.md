@@ -76,6 +76,7 @@ To stop audio playback, use the `getX` function to refer back to the `"fish-audi
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
@@ -114,6 +115,7 @@ To end the trial after audio playback finishes, instead of after a valid keypres
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
@@ -155,6 +157,7 @@ Call the `wait("first")` command on the `"fish-audio"` **Audio** element:
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
