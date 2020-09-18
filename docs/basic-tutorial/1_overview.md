@@ -49,7 +49,7 @@ newTrial("welcome",
 
 // Experimental trial
 newTrial("experimental-trial",
-    newAudio("description", "2fishRoundTank.mp3")
+    newAudio("fish-audio", "2fishRoundTank.mp3")
         .play()
     ,
     newText("fish-description", "The fish swim in a tank which is perfectly round.")
@@ -72,7 +72,7 @@ newTrial("experimental-trial",
         .wait()
         .log()
     ,
-    getAudio("description")
+    getAudio("fish-audio")
         .wait("first")
 )
 </code></pre>
