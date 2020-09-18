@@ -6,7 +6,7 @@ parent: Basic Tutorial
 
 ## {{ page.title }}
 
-In this tutorial, you'll learn how to create a picture matching experiment. In the experiment, the participant hears and reads a sentence, sees two images, and presses a key to match the sentence with an image.
+In the **Basic Tutorial**, you'll learn how to create a picture matching experiment. In the experiment, the participant hears and reads a sentence, sees two images, and presses a key to match the sentence with an image.
 
 <div class="border-grey-dk-000 px-4 pb-4" markdown="1">
 Preview the **BasicTutorial** experiment:
@@ -27,8 +27,8 @@ PennController.ResetPrefix(null)
 // Turn off debugger
 DebugOff()
 
-// Welcome screen
-newTrial("welcome",
+// Instructions
+newTrial("instructions",
     defaultText
         .center()
         .print()
@@ -49,7 +49,7 @@ newTrial("welcome",
 
 // Experimental trial
 newTrial("experimental-trial",
-    newAudio("description", "2fishRoundTank.mp3")
+    newAudio("fish-audio", "2fishRoundTank.mp3")
         .play()
     ,
     newText("fish-description", "The fish swim in a tank which is perfectly round.")
@@ -72,7 +72,7 @@ newTrial("experimental-trial",
         .wait()
         .log()
     ,
-    getAudio("description")
+    getAudio("fish-audio")
         .wait("first")
 )
 </code></pre>

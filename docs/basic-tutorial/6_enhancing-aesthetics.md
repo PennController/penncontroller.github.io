@@ -16,10 +16,10 @@ For example:
 {% capture instructions %}
 + Add a new **Image** element.
 + Center the `"fish-description"` **Text** element.
-+ Unfold the `"fish-description"` **Text** element in 2600ms, the length of `2fishRoundTank.mp3`.
++ Unfold the `"fish-description"` **Text** element in 2600ms, so that it unfolds as the `"fish-audio"` **Audio** element is playing. THe `2fishRoundTank.mp3` file is actually 2676ms long, but it is good to have a small buffer between the end of unfolding and the end of audio playback.
 + Resize the two **Image** elements to 200x200px.
 
-*If you are copy and pasting this code, delete the lines highlighted with a red background.*
+*If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
 *// Type code below this line.
@@ -29,6 +29,7 @@ For example:
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
@@ -67,7 +68,7 @@ By default, every printed element is printed on a new line. For other layouts:
 + Create a 450x200 px **Canvas** .
 + Place the `"fish-round"` and `"fish-square"` **Image** elements next to each other with a 50px gap.
 
-*If you are copy and pasting this code, delete the lines highlighted with a red background.*
+*If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
 *// Type code below this line.
@@ -78,6 +79,7 @@ By default, every printed element is printed on a new line. For other layouts:
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()

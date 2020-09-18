@@ -73,6 +73,7 @@ To learn about calling global or special commands, read the [Commands documentat
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 +        .play()

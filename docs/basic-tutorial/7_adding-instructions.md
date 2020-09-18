@@ -22,6 +22,7 @@ As the writers of the **BasicTutorial** experiment, we know that the participant
 *// Turn off debugger
 *// DebugOff()
 *
++// Instructions
 +newTrial("instructions",
 +    newText("instructions-1", "Welcome!")
 +        .center()
@@ -47,6 +48,7 @@ As the writers of the **BasicTutorial** experiment, we know that the participant
 +        .wait()
 +)
 *
+*// Experimental trial
 *newTrial("experimental-trial ",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
@@ -95,7 +97,7 @@ Any commands that are called on an element type's default object are called on a
 {% capture instructions%}
 Call the `center` and `print` commands on the `defaultText` object in the `"instructions"` **Trial**:
 
-*If you are copy and pasting this code, delete the lines highlighted with a red background.*
+*If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
 *// Type code below this line.
@@ -106,6 +108,7 @@ Call the `center` and `print` commands on the `defaultText` object in the `"inst
 *// Turn off debugger
 *// DebugOff()
 *
+*// Instructions
 *newTrial("instructions",
 +    defaultText
 +        .center()
@@ -135,6 +138,7 @@ Call the `center` and `print` commands on the `defaultText` object in the `"inst
 *        .wait()
 *)
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
@@ -184,6 +188,7 @@ We recommend creating a separate `"instructions"` **Trial** in preparation for t
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 +    defaultText
 +        .center()
@@ -251,6 +256,7 @@ Special commands are not called on an element. They are called within the openin
 *// Turn off debugger
 *// DebugOff()
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    defaultText
 *        .center()

@@ -24,6 +24,7 @@ The `log` command adds lines to the `results` file in the **Results** folder. Th
 *// Turn off debugger
 !DebugOff()
 *
+* // Instructions
 *newTrial("instructions",
 *    defaultText
 *        .center()
@@ -43,6 +44,7 @@ The `log` command adds lines to the `results` file in the **Results** folder. Th
 *        .wait()
 *)
 *
+*// Experimental trial
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
