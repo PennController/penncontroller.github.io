@@ -33,7 +33,7 @@ Use a **Key** element and the `wait` command to pause experiment execution:
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
@@ -57,7 +57,7 @@ However, you might want a different sequence of events:
 + **Option 2**: End trial after audio playback finishes, instead of after a valid keypress.
 + **Option 3**: End trial after audio playback finishes or after a valid keypress, whichever comes second.
 
-In this experiment we will use [**Option 3**](#option-3), but provide all options for reference.
+In this experiment we'll use [**Option 3**](#option-3), but provide all options for reference.
 
 <hr class="grey-lt-000">
 
@@ -81,7 +81,7 @@ To stop audio playback, use the `getX` function to refer back to the `"fish-audi
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
@@ -120,7 +120,7 @@ To end the trial after audio playback finishes, instead of after a valid keypres
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
@@ -162,7 +162,7 @@ Call the `wait("first")` command on the `"fish-audio"` **Audio** element:
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    

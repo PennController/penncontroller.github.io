@@ -34,14 +34,14 @@ Call each command on an indented new line for maximum readability:
 ```javascript
 PennController.ResetPrefix(null)
 
-newTrial("example-trial",
-    newX("example-element1", ...)
-        .COMMAND1()
-        .COMMAND2()
-        .COMMAND3()
+newTrial("TRIAL_LABEL",
+    newX("ELEMENT_1", ...)
+        .COMMAND_1()
+        .COMMAND_2()
+        .COMMAND_3()
     ,
-    newX("example-element2", ...)
-        .COMMAND4()
+    newX("ELEMENT_2", ...)
+        .COMMAND_4()
 )
 ```
 
@@ -50,10 +50,10 @@ However, it is also valid to call multiple commands on a single line:
 ```javascript
 PennController.ResetPrefix(null)
 
-newTrial("example-trial",
-  newX("example-element1", ...).COMMAND1().COMMAND2().COMMAND3()
+newTrial("TRIAL_LABEL",
+  newX("ELEMENT_1", ...).COMMAND_1().COMMAND_2().COMMAND_3()
   ,
-  newX("example-element2", ...).COMMAND4()
+  newX("ELEMENT_2", ...).COMMAND_4()
 )
 ```
 
@@ -61,7 +61,7 @@ To learn about calling global or special commands, read the [Commands documentat
 
 {% capture instructions %}
 + Use the [`play`]({{site.baseurl}}/docs/action-commands/audio-play){:target="_blank"} command to play the `"fish-audio"` **Audio** element. 
-+ Use the [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} command to print the `"fish-description"` **Text** element and `"fish-round"` **Image** element to the screen.
++ Use the [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} command to print the `"fish-sentence"` **Text** element and `"fish-round"` **Image** element to the screen.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -78,7 +78,7 @@ To learn about calling global or special commands, read the [Commands documentat
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 +        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 +        .print()
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
@@ -97,7 +97,7 @@ PennController executes experiment scripts sequentially. According to the curren
 1. Remove the command prefix for all commands.
 2. Start the `"experimental-trial"` **Trial**.
 3. Create the `"fish-audio`" **Audio** element and play it.
-4. Create the `"fish-description"` **Text** element and print it.
+4. Create the `"fish-sentence"` **Text** element and print it.
 5. Create the `"fish-round"` **Image** element and print it.
 6. End the `"experimental-trial"` **Trial**.
 7. (*Built-in*): Send experiment results to the server, the PCIbex Farm. An experiment's results are logged in its project page's **Results** folder. 

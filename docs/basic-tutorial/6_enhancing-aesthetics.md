@@ -15,8 +15,8 @@ For example:
 
 {% capture instructions %}
 + Add a new **Image** element.
-+ Center the `"fish-description"` **Text** element.
-+ Unfold the `"fish-description"` **Text** element in 2600ms, so that it unfolds as the `"fish-audio"` **Audio** element is playing. THe `2fishRoundTank.mp3` file is actually 2676ms long, but it is good to have a small buffer between the end of unfolding and the end of audio playback.
++ Center the `"fish-sentence"` **Text** element.
++ Unfold the `"fish-sentence"` **Text** element in 2676ms, the duration of `2fishRoundTank.mp3`.
 + Resize the two **Image** elements to 200x200px.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
@@ -34,9 +34,9 @@ For example:
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 +        .center()
-+        .unfold(2600)
++        .unfold(2676)
 -        .print()
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
@@ -84,9 +84,9 @@ By default, every printed element is printed on a new line. For other layouts:
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .center()
-*        .unfold(2600)
+*        .unfold(2676)
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
 *        .size(200, 200)

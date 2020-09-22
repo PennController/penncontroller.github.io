@@ -53,9 +53,9 @@ As the writers of the **BasicTutorial** experiment, we know that the participant
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .center()
-*        .unfold(2600)
+*        .unfold(2676)
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
 *        .size(200, 200)
@@ -143,9 +143,9 @@ Call the `center` and `print` commands on the `defaultText` object in the `"inst
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .center()
-*        .unfold(2600)
+*        .unfold(2676)
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
 *        .size(200, 200)
@@ -176,7 +176,7 @@ We recommend creating a separate `"instructions"` **Trial** in preparation for t
 <details markdown="block">
 <summary class="text-delta collapsible-block">Click to expand/collapse code block</summary>
 
-*Note: Even though the `print` command has been called on all **Text** elements via the `defaultText` object, the `"fish-description"` **Text** element will still unfold instead of being printed immediately.*
+*Note: Even though the `print` command has been called on all **Text** elements via the `defaultText` object, the `"fish-sentence"` **Text** element will still unfold instead of being printed immediately.*
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -210,9 +210,9 @@ We recommend creating a separate `"instructions"` **Trial** in preparation for t
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 -        .center()
--        .unfold(2600)
+-        .unfold(2676)
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
 *        .size(200, 200)
@@ -280,8 +280,8 @@ Special commands are not called on an element. They are called within the openin
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
-*        .unfold(2600)
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
+*        .unfold(2676)
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
 *        .size(200, 200)

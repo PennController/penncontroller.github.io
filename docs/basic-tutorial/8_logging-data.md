@@ -49,9 +49,9 @@ The `log` command adds lines to the `results` file in the **Results** folder. Th
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
 *        .play()
 *    ,
-*    newText("fish-description", "The fish swim in a tank which is perfectly round.")
+*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .center()
-*        .print()
+*        .unfold(2676)
 *    ,
 *    newImage("fish-round", "2fishRoundTank.png")    
 *        .size(200, 200)
