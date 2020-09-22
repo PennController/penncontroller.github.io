@@ -39,11 +39,11 @@ Call each instance of the `newX` function, `getX` function, or comma, on an inde
 PennController.ResetPrefix(null)
 
 newTrial("TRIAL_LABEL",
-    newX("ELEMENT1", ...)
+    newX("ELEMENT_1", ...)
     ,
-    newX("ELEMENT2", ...)
+    newX("ELEMENT_2", ...)
     ,
-    getX("ELEMENT1")
+    getX("ELEMENT_1")
 )
 ```
 
@@ -51,7 +51,7 @@ However, the following code is also valid:
 ```javascript
 PennController.ResetPrefix(null)
 
-newTrial("TRIAL_LABEL", newX("ELEMENT1", ...), newX("ELEMENT2", ...), getX("ELEMENT1"))
+newTrial("TRIAL_LABEL", newX("ELEMENT_1", ...), newX("ELEMENT_2", ...), getX("ELEMENT_1"))
 ```
 
 {% capture instructions %}
@@ -71,18 +71,18 @@ Add an **Audio** element, **Text** element and an **Image** element:
 !newTrial("experimental-trial",
 +    newAudio("fish-audio", "2fishRoundTank.mp3")
 +    ,
-+    newText("fish-description", "The fish swim in a tank which is perfectly round.")
++    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 +    ,
 +    newImage("fish-round", "2fishRoundTank.png")    
 +)
 </code></pre>
 
 + The **Audio** element is named `"fish-audio"`, and contains the audio file `2fishRoundTank.mp3`, which is inside the **Resources** folder.
-+ The **Text** element is named `"fish-description"`, and contains the string `The fish swim in a tank which is perfectly round.`
++ The **Text** element is named `"fish-sentence"`, and contains the string `The fish swim in a tank which is perfectly round.`
 + The **Image** element is named `"fish-round"`, and contains the image `2fishRoundTank.png`, which is inside the **Resources** folder.
 
 {% capture label %}
-At this point, the `main.js` script is **incomplete**; we have created a trial with several elements, but not yet done anything with the elements. If you run the experiment, it will end immediately with the message "The results were successfully sent to the server. Thanks!". 
+At this point, the `main.js` script is **incomplete**; we've created a trial with several elements, but not yet done anything with the elements. If you run the experiment, it'll end immediately with the message "The results were successfully sent to the server. Thanks!". 
 {% endcapture%}
 {% include label-note.html label-body=label %}
 

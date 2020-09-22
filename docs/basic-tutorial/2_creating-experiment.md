@@ -102,7 +102,7 @@ Create a **Trial** labeled `"experimental-trial"`:
 </code></pre>
 
 {% capture label %}
-At this point, the `main.js` script is **incomplete**; we have created an empty trial that does not do or contain anything. If you run the experiment, it will end immediately with the message "The results were successfully sent to the server. Thanks!". 
+At this point, the `main.js` script is **incomplete**; we've created an empty trial that does not do or contain anything. If you run the experiment, it'll end immediately with the message "The results were successfully sent to the server. Thanks!". 
 {% endcapture%}
 {% include label-note.html label-body=label %}
 {% endcapture %}
@@ -149,14 +149,14 @@ It appears as a small window in the bottom-right corner of the screen when you r
 + **Errors**: Presents any error messages.
 + **Log**: Reports whenever a command is executed on an element, or whenever a resource is successfully preloaded.
 
-These tabs might not make sense until you learn more about PennController experiments, but the important part to know is that **you should use the debugger as you build and test an experiment**. You will inevitably face problems, and the debugger will make it easier to solve them.
+These tabs might not make sense until you learn more about PennController experiments, but the important part to know is that **you should use the debugger as you build and test an experiment**. You'll inevitably face problems, and the debugger will make it easier to solve them.
 
-When you are ready to publish your experiment and collect experimental data, turn off the debugger with the [`PennController.DebugOff`]({{site.baseurl}}/docs/global-commands/debugoff){:target="_blank"} command.
+When you're ready to publish your experiment and collect experimental data, turn off the debugger with the [`PennController.DebugOff`]({{site.baseurl}}/docs/global-commands/debugoff){:target="_blank"} command.
 
-We recommend reading the [Debugger documentation page]({{site.baseurl}}/docs/core-concepts/debugger){:target="_blank"} after you have completed this tutorial and the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, and are more familiar with PennController experiments.
+We recommend reading the [Debugger documentation page]({{site.baseurl}}/docs/core-concepts/debugger){:target="_blank"} after you've completed this tutorial and the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, and are more familiar with PennController experiments.
 
 {% capture instructions %}
-Call the `DebugOff` command, but comment it out. We will uncomment the command only during the very last part of the tutorial:
+Call the `DebugOff` command, but comment it out. We'll uncomment the command only during the very last part of the tutorial:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
