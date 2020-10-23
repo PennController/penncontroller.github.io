@@ -7,7 +7,7 @@
   </h2> 
 
   <p class="text-delta mt-4">DESCRIPTION</p>
-  {{ command.blurb | | markdownify }}
+  {{ command.blurb | markdownify }}
 
   {{ command.content | replace: "h2", "h4" | markdownify }}
 

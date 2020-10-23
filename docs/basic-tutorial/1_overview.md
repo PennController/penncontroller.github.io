@@ -4,20 +4,49 @@ title: Overview
 parent: Basic Tutorial
 ---
 
+#### Table of contents
+
+1. [Creating an experiment](#creating-an-experiment): how to use PennController and the PCIbex Farm
+  + Using the debugger.
+2. [Adding elements](#adding-elements):  how to use elements, the basic unit of a PennController experiment
+  + Using multimedia and interactive elements.
+3. [Adding commands](#adding-commands): how to manipulate elements with commands
+  + Playing audio and printing text and images to the screen.
+4. [Pausing experiment execution](#pausing-experiment-execution): how to let participants interact with an experiment
+  + Pausing an experiment until audio playback finishes or a valid keypress.
+5. [Enhancing aesthetics](#enhancing-aesthetics): how to adjust the display of multimedia content
+  + Centering text and resizing images.
+  + Manipulating printed layouts.
+6. [Adding instructions](#adding-instructions): how to set trial-wide commands with default objects
+  + Modifying text with HTML tags.
+7. [Logging data](#logging-data): how to collect and examine experimental data
+  + Reading a PennController results file.
+  + Comparing timestamps to calculate response time.
+
+Each section ends with a <span class="text-delta"><a href="#">Back to top</a></span> link, and you can hover to the left of a section title for a shortcut link to that section.
+
+---
+
 ## {{ page.title }}
 
-In the **Basic Tutorial**, you'll learn how to create a picture matching experiment. In the experiment, the participant hears and reads a sentence, sees two images, and presses a key to match the sentence with an image.
+In the **Basic Tutorial**, you'll learn how to create a picture matching experiment with the following structure:
 
-<div class="border-grey-dk-000 px-4 pb-4" markdown="1">
+1. Instructions screen with button to start the experiment
+2. Experimental trial:
+    1. A sentence plays as audio and unfolds as text on the screen.
+    2. Two images are printed to the screen next to each other.
+    3. Participant presses a key to select an image.
+    4. Trial ends.
+
+<div class="dotted-grey-dk-000 px-4" markdown="1">
 Preview the **BasicTutorial** experiment:
 
-<p class="text-delta collapsible-block">
+<p class="text-delta collapsible-block-title">
   <a href="https://expt.pcibex.net/ibexexps/angelicapan/BasicTutorial/experiment.html" target="_blank">Click to take the experiment</a>
 </p> 
 
-<details markdown="block">
-<summary class="text-delta collapsible-block">Click to see the final experiment script</summary>
-<pre><code class="language-javascript"> 
+{% capture content %}
+```javascript
 // This is the BasicTutorial experiment.
 // Type code below this line.
 
@@ -33,17 +62,17 @@ newTrial("instructions",
         .center()
         .print()
     ,
-    newText("instructions-1", "&lt;p&gt;Welcome!&lt;/p&gt;")
+    newText("instructions-1", "Welcome!")
     ,
-    newText("instructions-2", "&lt;p&gt;In this experiment, you will match a sentence with an image. You will hear and read a sentence, and see two images.&lt;/p&gt;")
+    newText("instructions-2", "<p>In this experiment, you will hear and read a sentence, and see two images.</p>")
     ,
-    newText("instructions-3", "Press the &lt;b&gt;F&lt;/b&gt; key if the sentence matches the image on the left.")
+    newText("instructions-3", "<b>Select the image that better matches the sentence:</b>")
     ,
-    newText("instructions-4", "Press the &lt;b&gt;J&lt;/b&gt; key if the sentence matches the image on the right.")
+    newText("instructions-4", "<p>Press the <b>F</b> key to select the image on the left.<br>Press the <b>J</b> key to select the image on the right.</p>")
     ,
-    newText("instructions-5", "&lt;p&gt;Click the Spacebar to start the experiment.&lt;/p&gt;")
-    ,
-    newKey("wait", " ")
+    newButton("wait", "Click to start the experiment")
+        .center()
+        .print()
         .wait()
 )
 
@@ -56,63 +85,32 @@ newTrial("experimental-trial",
         .center()
         .unfold(2676)
     ,
-    newImage("fish-round", "2fishRoundTank.png")
+    newImage("fish-plural", "2fishRoundTank.png")
         .size(200, 200)
     ,
-    newImage("fish-square", "1fishSquareTank.png")
+    newImage("fish-singular", "1fishSquareTank.png")
         .size(200, 200)
     ,
    	newCanvas("side-by-side", 450,200)
-        .add(  0, 0, getImage("fish-round"))
-        .add(250, 0, getImage("fish-square"))
+        .add(  0, 0, getImage("fish-plural"))
+        .add(250, 0, getImage("fish-singular"))
         .center()
         .print()
+        .log()
     ,
     newKey("keypress", "FJ")
-        .wait()
         .log()
+        .wait()
     ,
     getAudio("fish-audio")
         .wait("first")
 )
-</code></pre>
-</details>
+```
+{% endcapture %}
+{% include collapsible-block.html content=content summary="Click to see the final experiment script" inner-border=true %}
 </div>
 
-This tutorial is divided into several sections:
-
-+ [Creating an experiment](#creating-an-experiment): how to use PennController and the PCIbex Farm.
-  + Creating experiments and trials.
-  + Using the debugger.
-+ [Adding elements](#adding-elements): how to use elements, the basic unit of a PennController experiment.
-  + Using multimedia and interactive elements.
-+ [Adding commands](#adding-commands): how to manipulate elements with commands.
-  + Displaying multimedia content; playing audio and printing text and images to the screen.
-+ [Pausing experiment execution](#pausing-experiment-execution): how to let participants interact with an experiment.
-  + Combining interactive elements; pausing an experiment until audio playback finishes or a valid keypress.
-+ [Enhancing aesthetics](#enhancing-aesthetics): how to adjust the display of multimedia content.
-  + Changing elements visually; centering text and resizing images.
-  + Manipulating printed layouts.
-+ [Adding instructions](#adding-instructions): how to set trial-wide commands with default objects.
-  + Modifying text with HTML tags.
-+ [Logging data](#logging-data): how to collect and examine experimental data.
-  + Reading a PennController results file.
-  + Comparing timestamps to calculate response time.
-
-Each section ends with a <span class="text-delta"><a href="#">Back to top</a></span> link, and you can hover to the left of a section title for a shortcut link to that section.
-
-{% capture label %}
-Features that are not covered in this tutorial but that are covered in the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}:
-
-+ Making selections with mouse clicks.
-+ Creating timeout tasks.
-+ Including HTML documents.
-+ Using CSVs or other tables to fill in trial templates.
-+ Collecting metadata, for example participant information.
-+ Manipulating trial sequencing and trial randomization.
-+ Analyzing data in R.
-{% endcapture %}
-{% include label-note.html label-body=label %}
+#### Instructions
 
 Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span> blocks:
 

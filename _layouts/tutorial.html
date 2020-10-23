@@ -17,11 +17,6 @@ has_toc: false
 
 {{ page.content | markdownify }}
 
-<hr>
-
-<!-- TOC -->
-{% include toc-same-page.html collection=children_list ordered=true %}
-
 <!-- CONTENT -->
 <!-- for every [child] in [children_list], print a horizontal rule, {{ child.content }}, and then a link to the top of the page -->
 {% for child in children_list -%}

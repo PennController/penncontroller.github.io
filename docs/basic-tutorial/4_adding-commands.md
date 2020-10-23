@@ -4,23 +4,20 @@ title: Adding commands
 parent: Basic Tutorial
 ---
 
-{% assign element_commands = site.html_pages | where: "title", "Element commands" | first %}
-{% assign global_commands = site.html_pages | where: "title", "Global commands" | first %}
-{% assign special_commands = site.html_pages | where: "title", "Special commands" | first %}
-
-
 ## {{ page.title }}
 
-Elements contain content; element **commands** do things with that content. For example, once you create an element, you can use the element command [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} to print it to the screen.
+Elements contain content; element commands do things with that content. For example, once you create an element, you can use the element command [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} to print it to the screen.
 
-There are three types of commands: 
+The command types:
 
-+ [Element commands]({{ element_commands.url | prepend: site.baseurl }}) are {{ element_commands.blurb | downcase }}
-+ [Global commands]({{global_commands.url | prepend: site.baseurl }}) are {{ global_commands.blurb | downcase }}
-+ [Special commands]({{special_commands.url | prepend: site.baseurl }}) are {{ special_commands.blurb | downcase }}
++ [Element commands]({{site.baseurl}}/docs/core-concepts/commands#element-commands){:target="_blank"}: used within a trial and called on an element
+  + [Action commands]({{site.baseurl}}/docs/core-concepts/commands#action-commands){:target="_blank"}: directly manipulates an element
+  + [Test commmands]({{site.baseurl}}/docs/core-concepts/commands#test-commands){:target="_blank"}: runs some test on an element
++ [Global commands]({{site.baseurl}}/docs/core-concepts/commands#global-commands){:target="_blank"}: used outside of a trial
++ [Special commands]({{site.baseurl}}/docs/core-concepts/commands#special-commands){:target="_blank"}: used within a trial, but not called on an element
 
 {% capture label %}
-This tutorial uses the term “command” as shorthand for “element command”. If a global or special command is intended, the term “global command” or "special command" will be used.
+This tutorial uses the term “command” as shorthand for “action command”. If a test, global or special command is intended, the term "test command", “global command”, or "special command" will be used.
 {% endcapture %}
 {% include label-note.html label-body=label  %}
 
@@ -57,11 +54,11 @@ newTrial("TRIAL_LABEL",
 )
 ```
 
-To learn about calling global or special commands, read the [Commands documentation page]({{site.baseurl}}/docs/core-concepts/commands){:target="_blank"}.
+To learn about calling other types of commands, read the [Commands documentation page]({{site.baseurl}}/docs/core-concepts/commands){:target="_blank"}.
 
 {% capture instructions %}
-+ Use the [`play`]({{site.baseurl}}/docs/action-commands/audio-play){:target="_blank"} command to play the `"fish-audio"` **Audio** element. 
-+ Use the [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} command to print the `"fish-sentence"` **Text** element and `"fish-round"` **Image** element to the screen.
++ Call the [`play`]({{site.baseurl}}/docs/action-commands/audio-play){:target="_blank"} command on the `"fish-audio"` **Audio** to start audio playback.
++ Call the [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} command on the `"fish-sentence"` **Text** and `"fish-plural"` **Image** to print them to the screen.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -81,7 +78,7 @@ To learn about calling global or special commands, read the [Commands documentat
 *    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 +        .print()
 *    ,
-*    newImage("fish-round", "2fishRoundTank.png")    
+*    newImage("fish-plural", "2fishRoundTank.png")    
 +        .print()
 *)
 </code></pre>
@@ -96,12 +93,12 @@ PennController executes experiment scripts sequentially. According to the curren
 
 1. Remove the command prefix for all commands.
 2. Start the `"experimental-trial"` **Trial**.
-3. Create the `"fish-audio`" **Audio** element and play it.
-4. Create the `"fish-sentence"` **Text** element and print it.
-5. Create the `"fish-round"` **Image** element and print it.
+3. Create the `"fish-audio`" **Audio** and play it.
+4. Create the `"fish-sentence"` **Text** and print it.
+5. Create the `"fish-plural"` **Image** and print it.
 6. End the `"experimental-trial"` **Trial**.
 7. (*Built-in*): Send experiment results to the server, the PCIbex Farm. An experiment's results are logged in its project page's **Results** folder. 
   + PennController automatically sends results after all other trials have ended. To control when results are sent, see the global command [`SendResults`]({{site.baseurl}}/docs/global-commands/sendresults){:target="_blank"}.
   + PennController automatically logs when a **Trial** starts and ends. To log other information, see [Logging data](#logging-data).
   
-As the `"fish-audio"` **Audio** element is playing, all of the other commands are executed. When there are no more commands to execute, the trial ends. When there are no more trials to start, the experiment sends its results and ends. And all of this occurred within a few milliseconds!
+As the `"fish-audio"` **Audio** is playing, all of the other commands are executed. When there are no more commands to execute, the trial ends. When there are no more trials to start, the experiment sends its results and ends. And all of this occurred within a few milliseconds!

@@ -1,0 +1,114 @@
+#
+# Results on...
+# USER...
+# Design number...
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. Comments.
+1603397484,SOME_MD5_HASH,PennController,0,0,consent,NULL,PennController,0,_Trial_,Start,1603397442160,NULL
+1603397484,SOME_MD5_HASH,PennController,0,0,consent,NULL,PennController,0,_Trial_,End,1603397445207,NULL
+1603397484,SOME_MD5_HASH,PennController,1,0,instructions,NULL,PennController,1,_Trial_,Start,1603397445211,NULL
+1603397484,SOME_MD5_HASH,PennController,1,0,instructions,NULL,PennController,1,_Trial_,End,1603397450139,NULL
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. group.
+# 14. item.
+# 15. condition.
+# 16. ID.
+# 17. Comments.
+1603397484,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,PennController,6,_Trial_,Start,1603397450141,B,4,plural,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603397451156,B,4,plural,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,Selector,selection,Selection,plural,1603397453036,B,4,plural,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,PennController,6,_Trial_,End,1603397453047,B,4,plural,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,PennController,4,_Trial_,Start,1603397453051,B,2,plural,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603397454060,B,2,plural,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,Selector,selection,Selection,NA,Never,B,2,plural,SOME_ID,No selection happened
+1603397484,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,PennController,4,_Trial_,End,1603397456710,B,2,plural,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,PennController,5,_Trial_,Start,1603397456712,B,3,singular,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603397457722,B,3,singular,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,Selector,selection,Selection,singular,1603397459321,B,3,singular,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,PennController,5,_Trial_,End,1603397459323,B,3,singular,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,PennController,3,_Trial_,Start,1603397459325,B,1,singular,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603397460332,B,1,singular,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,Selector,selection,Selection,singular,1603397461856,B,1,singular,SOME_ID,NULL
+1603397484,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,PennController,3,_Trial_,End,1603397461860,B,1,singular,SOME_ID,NULL
+#
+# Results on...
+# USER...
+# Design number...
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. Comments.
+1603398737,SOME_MD5_HASH,PennController,0,0,consent,NULL,PennController,0,_Trial_,Start,1603398692783,NULL
+1603398737,SOME_MD5_HASH,PennController,0,0,consent,NULL,PennController,0,_Trial_,End,1603398698812,NULL
+1603398737,SOME_MD5_HASH,PennController,1,0,instructions,NULL,PennController,1,_Trial_,Start,1603398698816,NULL
+1603398737,SOME_MD5_HASH,PennController,1,0,instructions,NULL,PennController,1,_Trial_,End,1603398703445,NULL
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. group.
+# 14. item.
+# 15. condition.
+# 16. ID.
+# 17. Comments.
+1603398737,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,PennController,3,_Trial_,Start,1603398703448,B,1,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603398704462,B,1,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,Selector,selection,Selection,singular,1603398706007,B,1,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,2,0,experimental-trial,NULL,PennController,3,_Trial_,End,1603398706011,B,1,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,PennController,6,_Trial_,Start,1603398706013,B,4,plural,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603398707019,B,4,plural,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,Selector,selection,Selection,plural,1603398708549,B,4,plural,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,5,0,experimental-trial,NULL,PennController,6,_Trial_,End,1603398708551,B,4,plural,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,PennController,5,_Trial_,Start,1603398708553,B,3,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603398709562,B,3,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,Selector,selection,Selection,plural,1603398711692,B,3,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,PennController,5,_Trial_,End,1603398711695,B,3,singular,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,PennController,4,_Trial_,Start,1603398711696,B,2,plural,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603398712705,B,2,plural,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,Selector,selection,Selection,plural,1603398714189,B,2,plural,ANOTHER_ID,NULL
+1603398737,SOME_MD5_HASH,PennController,3,0,experimental-trial,NULL,PennController,4,_Trial_,End,1603398714191,B,2,plural,ANOTHER_ID,NULL

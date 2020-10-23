@@ -13,7 +13,7 @@ Static resource files.
 
 ---
 
-(*Last updated: September 3, 2020*)
+(*Last updated: October 23, 2020*)
 
 Folder structure
 {: .text-delta}
@@ -22,9 +22,10 @@ Folder structure
 assets/
 |-- elements/
 |-- images/
-└── prism/
+|-- prism/
     |-- prism.css
-    └── prism.js
+    `-- prism.js
+`-- tutorials/
 ```
 
 ---
@@ -35,7 +36,7 @@ assets/
 + TOC
 {:toc}
 
---
+---
 
 ## `elements`
 Contains the element type thumbnail PNG files.
@@ -44,7 +45,7 @@ Contains the element type thumbnail PNG files.
 ---
 
 ## `images`
-Contains all other images files.
+Contains miscellaneous image files.
 {: .mt-4 }
 
 ---
@@ -98,40 +99,38 @@ To use JS diff highlighting:
 
 <p class="text-delta mb-2">example</p>
 
-<div class="px-3 pt-1 pb-4">
-<p class="text-delta"><b>code</b></p> 
-<div class="border-grey-dk-000 px-4 pt-4 pb-1">
-<code>·</code> represents a space.
-<script type="text/plain" class="language-markup">
-<pre><code class="language-diff-javascript diff-highlight"> 
-*PennController.ResetPrefix(null)
-*
-+newTrial("first-trial",
-*····newText("instructions", "Press the F key if the image on the left matches the sentence. Press the K key if the image on the right matches the sentence.")
--········.center()
-*········.italic()
-*········.print()
-*)
-</code></pre>
-</script>
-</div>
+<div class="px-3 pt-1 pb-4 dotted-grey-dk-000">
+  <p class="text-delta"><b>code</b></p> 
+  <div class="border-grey-dk-000 px-4 pt-4 pb-1">
+  <code>·</code> represents a space.
+  <script type="text/plain" class="language-markup">
+  <pre><code class="language-diff-javascript diff-highlight"> 
+  *PennController.ResetPrefix(null)
+  *
+  +newTrial("first-trial",
+  *····newText("instructions", "Press the F key if the image on the left matches the sentence. Press the K key if the image on the right matches the sentence.")
+  -········.center()
+  *········.italic()
+  *········.print()
+  *)
+  </code></pre>
+  </script>
+  </div>
 
-<p class="text-delta"><b>result</b></p>
-<div class="border-grey-dk-000 px-4 pt-4 pb-1">
-<pre><code class="language-diff-javascript diff-highlight"> 
-*PennController.ResetPrefix(null)
-*
-+newTrial("first-trial",
-*    newText("instructions", "Press the F key if the image on the left matches the sentence. Press the K key if the image on the right matches the sentence.")
--        .center()
-*        .italic()
-*        .print()
-*)
-</code></pre>
+  <p class="text-delta"><b>result</b></p>
+  <div class="border-grey-dk-000 px-4 pt-4 pb-1">
+  <pre><code class="language-diff-javascript diff-highlight"> 
+  *PennController.ResetPrefix(null)
+  *
+  +newTrial("first-trial",
+  *    newText("instructions", "Press the F key if the image on the left matches the sentence. Press the K key if the image on the right matches the sentence.")
+  -        .center()
+  *        .italic()
+  *        .print()
+  *)
+  </code></pre>
   </div>
 </div>
-
-
 
 ### Removing Prism
 Follow these steps to remove Prism and reenable Rouge:
@@ -147,3 +146,9 @@ Follow these steps to remove Prism and reenable Rouge:
       syntax_highlighter_opts:
           disable : true
     ```
+
+---
+
+## `tutorials`
+Contains the resource files used in the [**Basic Tutorial**]({{site.baseurl}}/docs/basic-tutorial){:target="_blank"} and [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}.
+{: .mt-4 }

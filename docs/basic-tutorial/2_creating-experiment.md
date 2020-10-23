@@ -38,6 +38,7 @@ To learn more about importing files from GitHub, see [Syncing with a GitHub repo
 
 You can also manually upload the resource files to the PCIbex Farm. However, you can only upload one file at a time.
 
+{% capture content %}
 1. Download a local copy of [`1fishSquareTank.png`]({{site.baseurl}}/assets/tutorials/1fishSquareTank.png){:target="_blank"}, [`2fishRoundTank.png`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.png){:target="_blank"}, [`2fishRoundTank.mp3`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.mp3){:target="_blank"}, and [`main.js`]({{site.baseurl}}/assets/tutorials/main.js){:target="_blank"}.
 2. Upload the multimedia files.
   + Click the *Upload* icon (a white cross inside a black circle) in the experiment project page's **Resources** folder.
@@ -50,6 +51,8 @@ You can also manually upload the resource files to the PCIbex Farm. However, you
   + Select `main.js`.
   + Click *Open*.
   + If the upload was successful, the uploaded file will appear in the **Script** folder and briefly flash red.
+{% endcapture %}
+{% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
 
 ### Editing an experiment
 
@@ -110,7 +113,9 @@ At this point, the `main.js` script is **incomplete**; we've created an empty tr
 
 All PennController commands begin with the prefix `PennController.`, in order to avoid naming conflicts with other JavaScript modules. However, adding this prefix for every command quickly becomes tiring.
 
-The command [`PennController.ResetPrefix`]({{site.baseurl}}/docs/global-commands/resetprefix){:target="_blank"} resets the `PennController.` prefix to the string of your choice, and only needs to be called once. The `null` argument to `PennController.ResetPrefix` removes the prefix entirely.
+The command [`PennController.ResetPrefix`]({{site.baseurl}}/docs/global-commands/resetprefix){:target="_blank"} resets the `PennController.` prefix to the string of your choice, and only needs to be called once. The `null` argument to `PennController.ResetPrefix` removes the prefix entirely. 
+
+**We recommend starting every experiment with `PennController.ResetPrefix(null)` for readabilty and convenience.**
 
 {% capture instructions %}
 Remove the `PennController.` prefix:
@@ -127,11 +132,6 @@ Remove the `PennController.` prefix:
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
-
-{% capture label %}
-Start every experiment with `PennController.ResetPrefix(null)` for readability and convenience. 
-{% endcapture %}
-{% include label-recommended.html label-body=label %}
 
 ### Using the debugger
 
@@ -153,7 +153,7 @@ These tabs might not make sense until you learn more about PennController experi
 
 When you're ready to publish your experiment and collect experimental data, turn off the debugger with the [`PennController.DebugOff`]({{site.baseurl}}/docs/global-commands/debugoff){:target="_blank"} command.
 
-We recommend reading the [Debugger documentation page]({{site.baseurl}}/docs/core-concepts/debugger){:target="_blank"} after you've completed this tutorial and the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, and are more familiar with PennController experiments.
+We recommend reading the [Debugger documentation]({{site.baseurl}}/docs/core-concepts/debugger){:target="_blank"} after you've completed this tutorial and the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, and are more familiar with PennController experiments.
 
 {% capture instructions %}
 Call the `DebugOff` command, but comment it out. We'll uncomment the command only during the very last part of the tutorial:

@@ -10,14 +10,14 @@ Interactive elements and commands can pause experiment script execution, in orde
 
 For example:
 
-{% assign audio_wait = site.action-commands | where: "title", "audio.wait" | first %}
-{% assign key_wait = site.action-commands | where: "title", "key.wait" | first %}
-+ [`audio.wait`]({{ audio_wait.url | prepend: site.baseurl }}): {{ audio_wait.blurb }}
-+ [`key.wait`]({{ key_wait.url | prepend: site.baseurl }}): {{ key_wait.blurb }}
++ [`audio.wait`]({{site.baseurl}}/docs/action-commands/audio-wait){:target="_blank"}: Pauses experiment script execution until audio playback finishes.
++ [`key.wait`]({{site.baseurl}}/docs/action-commands/key-wait){:target="_blank"}: Pauses experiment script execution until a valid keypress.
 + Also: `button.wait`, `controller.wait`, `dropdown.wait`, `scale.wait`, and more.
 
 {% capture instructions %}
-Use a **Key** element and the `wait` command to pause experiment execution:
++ Create a [**Key** element]({{site.baseurl}}/docs/elements/key){:target="_blank"} named `"keypress"` that "listens" for the `F` or `J` keys.
+  
+  Call the `wait` command to pause experiment script execution until the participant presses a valid key, in this case the `F` or `J` key.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -36,20 +36,17 @@ Use a **Key** element and the `wait` command to pause experiment execution:
 *    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
-*    newImage("fish-round", "2fishRoundTank.png")    
+*    newImage("fish-plural", "2fishRoundTank.png")    
 *        .print()
 +    ,
 +    newKey("keypress", "FJ")
 +        .wait()
 *)
 </code></pre>
-
-+ The `"keypress"` **Key** element and `wait` command pause experiment script execution until a valid key is pressed, in this example the `F` or `J` key. 
-+ After a valid keypress, there are no more commands or trials, so the experiment sends its results and ends.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-If you're testing this experiment, you may notice that if you press the `F` or `J` key while the audio file is playing, the trial ends and the experiment sends its results while the audio file continues playing. 
+If the participant presses the `F` or `J` key while the audio file is still playing, the trial ends and the experiment sends its results while the audio file continues playing. 
 
 However, you might want a different sequence of events:
 
@@ -59,13 +56,13 @@ However, you might want a different sequence of events:
 
 In this experiment we'll use [**Option 3**](#option-3), but provide all options for reference.
 
-<hr class="grey-lt-000">
+<div class="dotted-grey-dk-000 px-4 pt-3" markdown="1">
+{% capture content %}
 
-### Option 1: End trial and stop audio playback after a valid keypress {#option-1}
-To stop audio playback, use the `getX` function to refer back to the `"fish-audio"` **Audio** element and call the `stop` command on it:
+### Option 1: End trial and stop audio playback after a valid keypress.
 
-<details markdown="block">
-<summary class="text-delta collapsible-block">Click to expand/collapse code block</summary>
++ Call the `stop` command on the `"fish-audio"` **Audio** to stop audio playback.
+
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
 *// Type code below this line.
@@ -84,7 +81,7 @@ To stop audio playback, use the `getX` function to refer back to the `"fish-audi
 *    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
-*    newImage("fish-round", "2fishRoundTank.png")    
+*    newImage("fish-plural", "2fishRoundTank.png")    
 *        .print()
 *    ,
 *    newKey("keypress", "FJ")
@@ -94,17 +91,15 @@ To stop audio playback, use the `getX` function to refer back to the `"fish-audi
 +        .stop()
 *)
 </code></pre>
-</details>
+{% endcapture %}
+{% include collapsible-block.html content=content summary="Option 1: click for more details" %}
 
-The `wait` command on the `"keypress"` **Key** element pauses experiment script execution until a valid keypress. After a valid keypress, the next commands are executed and audio playback is stopped. If audio playback has already finished, then experiment script execution simply continues. In either case, there are no more commands and the trial ends.
+{% capture content %}
 
-<hr class="grey-lt-000">
+### Option 2: End trial after audio playback finishes, instead of after a valid keypress.
 
-### Option 2: End trial after audio playback finishes {#option-2}
-To end the trial after audio playback finishes, instead of after a valid keypress, call the `wait` command on the `"fish-audio"` **Audio** element instead of on the `"keypress"` **Key** element:
++ Call the `wait` command on the `"fish-audio"` **Audio** (instead of on the `"keypress"` **Key**) to pause experiment script execution until audio playback finishes.
 
-<details markdown="block">
-<summary class="text-delta collapsible-block">Click to expand/collapse code block</summary>
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
 *// Type code below this line.
@@ -123,7 +118,7 @@ To end the trial after audio playback finishes, instead of after a valid keypres
 *    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
-*    newImage("fish-round", "2fishRoundTank.png")    
+*    newImage("fish-plural", "2fishRoundTank.png")    
 *        .print()
 *    ,
 *    newKey("keypress", "FJ")
@@ -133,19 +128,16 @@ To end the trial after audio playback finishes, instead of after a valid keypres
 +        .wait()
 *)
 </code></pre>
-</details>
-
-The `wait` command on the `"fish-audio"` **Audio** element pauses experiment execution until audio playback finishes. After audio playback finishes, the experiment script execution continues and the trial ends.
-
-<hr class="grey-lt-100">
+{% endcapture %}
+{% include collapsible-block.html content=content summary="Option 2: click for more details" %}
+</div>
 
 ### Option 3: End trial after audio playback finishes or valid keypress {#option-3}
-To end the trial after audio playback finishes or after a valid keypress, whichever comes second, call the `wait` command on the `"keypress"` **Key** element *and* the `"fish-audio"` **Audio** element.
 
-Critically, the `wait` command on the `"fish-audio"` **Audio** element takes the `"first"` argument.
+To end the trial after audio playback finishes or after a valid keypress, whichever comes second, pause the experiment script execution at the `"keypress"` **Key** *and* at the `"fish-audio"` **Audio**.
 
 {% capture instructions %}
-Call the `wait("first")` command on the `"fish-audio"` **Audio** element:
++ Call the `wait("first")` command on the `"fish-audio"` **Audio** to pause experiment script execution until an end-of-audio-playback event.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -165,7 +157,7 @@ Call the `wait("first")` command on the `"fish-audio"` **Audio** element:
 *    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 *        .print()
 *    ,
-*    newImage("fish-round", "2fishRoundTank.png")    
+*    newImage("fish-plural", "2fishRoundTank.png")    
 *        .print()
 *    ,
 *    newKey("keypress", "FJ")
@@ -178,25 +170,21 @@ Call the `wait("first")` command on the `"fish-audio"` **Audio** element:
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-The `"fish-audio"` **Audio** element takes the `wait("first")` command in order to interact properly with the `"keypress"` **Key** element; if audio playback finishes before the participant presses a valid key, the basic `wait` command (without the `"first"` argument) will actually **pause experiment script execution indefinitely**:
+When called on an **Audio** element, the `wait("first")` command and the plain `wait` command differ in an important way:
 
-1. Audio playback finishes.
-2. The `wait` command on the `"keypress"` **Key** element pauses experiment script execution. The participant presses a valid key.
-2. The basic `wait` command on the `"fish-audio"` **Audio** element pauses experiment script execution until audio playback finishes. More specifically, PennController *starts* waiting for an end-of-audio-playback event.
-3. However, audio playback has already finished, and PennController will never detect an end-of-audio-playback event. The basic `wait` command cannot be satisfied, and experiment script execution pauses indefinitely.
++ `wait("first")`: tells PennController to wait for *any* end-of-audio-playback event.
++ `wait`: tells PennController to *start* waiting for an end-of-audio-playback event.
 
-In contrast, the `wait("first")` command tells PennController to detect *any* end-of-audio-playback event: 
+This difference is important in the situation where audio playback finishes before the participant presses a valid key:
 
-+ If audio playback finishes before the participant presses a valid key:
++ Using the `wait("first")` command:
   1. Audio playback finishes.
-  2. The `wait` command on the `"keypress"` **Key** element pauses experiment script execution. The participant presses a valid key.
-  3. The `wait("first")` command on the `"fish-audio"` **Audio** element pauses experiment script execution until PennController detects an end-of-audio-playback event.
-  4. Audio playback has already finished, so experiment script execution continues immediately and the trial ends.
-+ If the participant presses a valid key before audio playback finishes:
-  1. The `wait` command on the `"keypress"` **Key** element pauses experiment script execution. The participant presses a valid key.
-  2. The `wait("first")` command on the `"fish-audio"` **Audio** element pauses experiment script execution until PennController detects an end-of-audio-playback event.
-  3. Audio playback finishes.
-  4. Experiment script execution continues and the trial ends.
-
-In this way, the trial ends after audio playback finishes or after a valid keypress, whichever comes second.
+  2. The `wait` command on the `"keypress"` **Key** pauses experiment script execution. The participant presses a valid key.
+  3. The `wait("first")` command on the `"fish-audio"` **Audio** pauses experiment script execution. PennController waits for *any* end-of-audio-playback event.
+  4. Audio playback has already finished, which satisfies the `wait("first")` command. Experiment script execution continues immediately and the trial ends.
++ Using the plain `wait` command:
+  1. Audio playback finishes.
+  2. The `wait` command on the `"keypress"` **Key** pauses experiment script execution. The participant presses a valid key.
+  2. The basic `wait` command on the `"fish-audio"` **Audio** pauses experiment script execution. PennController *starts* waiting for an end-of-audio-playback event.
+  3. However, audio playback has already finished, and PennController will never detect an end-of-audio-playback event. The basic `wait` command cannot be satisfied, and **experiment script execution pauses indefinitely**.
   

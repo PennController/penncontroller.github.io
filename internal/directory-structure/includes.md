@@ -8,18 +8,19 @@ grand_parent: Internal documentation
 # `{{ page.title }}`
 {: .no_toc }
 
-Files that can be accessed with the Liquid `include` tag.
+Files that can be accessed by the [`include` tag](https://jekyllrb.com/docs/includes/){:target="_blank"}.
 {: .mt-4}
 
 ---
 
-(*Last updated: September 3, 2020*)
+(*Last updated: October 23, 2020*)
 
 Folder structure
 {: .text-delta}
 
 ```treeview
 _includes/
+|-- collapsible-block.html
 |-- command-blurbs.html
 |-- head_custom.html
 |-- include-example.html
@@ -44,6 +45,36 @@ _includes/
 
 ---
 
+## `collapsible-blocks.html`
+
+{% capture description %}
+Creates a expandable/collapsible block using the HTML tag [\<details\>](https://www.w3schools.com/tags/tag_details.asp){:target="_blank"} tag.
+{% endcapture %}
+
+{%- capture code -%}
+{% raw %}{% capture content %}
+Surprise!
+{% endcapture %}
+{% include collapsible-block.html content=content summary="Click for more details" inner-border=true outer-border=true %}
+{% endraw %}{%- endcapture -%}
+
+{% capture extra %}
++ Include `inner-border=true` argument to create a border inside the expanded block.
++ Include `outer-border=true` argument to create a border around the summary.
++ By default there are no borders.
+{% endcapture %}
+
+{% capture result %}
+{% capture content %}
+Surprise!
+{% endcapture %}
+{% include collapsible-block.html content=content summary="Click for more details" inner-border=true outer-border=true %}
+{% endcapture %}
+
+{% include include-example.html description=description code=code extra=extra result=result %}
+
+---
+
 ## `command-blurbs.html`
 
 {% capture description %}
@@ -54,7 +85,6 @@ Creates blurbs for a Collection or array of PennController commands. Ends with a
 {% raw %}{% assign clear-command = site.special-commands | where_exp:"page", "page.title contains 'clear'" %}
 {% include command-blurbs.html collection=clear-command %}
 {% endraw %}{%- endcapture -%}
-
 
 {% capture result %}
 {% assign clear-command = site.special-commands | where_exp:"page", "page.title contains 'clear'" %}
@@ -283,7 +313,6 @@ Creates a **Table of Contents** for a Collection or array.
 {%- endcapture -%}
 
 {% capture extra %}
-
 + TOC is an unordered list by default; include `ordered=true` argument for an ordered list.
 + TOC entries are text font by default; include `code-font=true` argument for code font.
 {% endcapture %}
