@@ -1,20 +1,20 @@
 ---
 layout: default
-title: Adding elements
+title: Creating elements
 parent: Basic Tutorial
 ---
 
 ## {{ page.title }}
 
-**Elements** are the basic unit of a PennController experiment. 
+**Elements** are the basic unit of a PennController experiment. They contain multimedia content, interactive content, or some combination of the two.
 
-Element types can represent multimedia content, interactive content, or some combination of the two:
+As of PennController 1.8, there are 21 element types, including: 
 
-+ [`Text`]({{site.baseurl}}/docs/elements/text){:target="_blank"}: Represents text content (multimedia).
-+ [`Image`]({{site.baseurl}}/docs/elements/image){:target="_blank"}: Represents image content (multimedia).
-+ [`Key`]({{site.baseurl}}/docs/elements/key){:target="_blank"}: Represents keyboard keypresses (interactive).
-+ [`Button`]({{site.baseurl}}/docs/elements/button){:target="_blank"}: Represents clickable buttons (multimedia and interactive).
-+ [`Audio`]({{site.baseurl}}/docs/elements/audio){:target="_blank"}: Represent audio content that can interact with the experiment script (multimedia and interactive).
++ [`Text`]({{site.baseurl}}/docs/elements/text){:target="_blank"}: Text content (multimedia).
++ [`Image`]({{site.baseurl}}/docs/elements/image){:target="_blank"}: Image content (multimedia).
++ [`Key`]({{site.baseurl}}/docs/elements/key){:target="_blank"}: Keyboard keypresses (interactive).
++ [`Button`]({{site.baseurl}}/docs/elements/button){:target="_blank"}: Clickable buttons (multimedia and interactive).
++ [`Audio`]({{site.baseurl}}/docs/elements/audio){:target="_blank"}: Audio content that can interact with the experiment script (multimedia and interactive).
 
 {% capture label %}
 This tutorial uses the term "element" as shorthand for "instance of an element type". For example "an **Image** element" or "an **Image**" is short for "an instance of the `Image` type". If "element type" is intended, the term "element type" will be used.
@@ -55,7 +55,9 @@ newTrial("TRIAL_LABEL", newX("ELEMENT_1", ...), newX("ELEMENT_2", ...), getX("EL
 ```
 
 {% capture instructions %}
-Add an **Audio** element, **Text** element and an **Image** element:
++ Create an [**Audio** element]({{site.baseurl}}/docs/elements/audio){:target="_blank"} named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
++ Create a [**Text** element]({{site.baseurl}}/docs/elements/text){:target="_blank"} named `"fish-sentence"` that contains the string `The fish swim in a tank which is perfectly round.`
++ Create an [**Image** element]({{site.baseurl}}/docs/elements/image){:target="_blank"} named `"fish-plural"` that contains the image `2fishRoundTank.png`.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -73,13 +75,9 @@ Add an **Audio** element, **Text** element and an **Image** element:
 +    ,
 +    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 +    ,
-+    newImage("fish-round", "2fishRoundTank.png")    
++    newImage("fish-plural", "2fishRoundTank.png")    
 +)
 </code></pre>
-
-+ The **Audio** element is named `"fish-audio"`, and contains the audio file `2fishRoundTank.mp3`, which is inside the **Resources** folder.
-+ The **Text** element is named `"fish-sentence"`, and contains the string `The fish swim in a tank which is perfectly round.`
-+ The **Image** element is named `"fish-round"`, and contains the image `2fishRoundTank.png`, which is inside the **Resources** folder.
 
 {% capture label %}
 At this point, the `main.js` script is **incomplete**; we've created a trial with several elements, but not yet done anything with the elements. If you run the experiment, it'll end immediately with the message "The results were successfully sent to the server. Thanks!". 

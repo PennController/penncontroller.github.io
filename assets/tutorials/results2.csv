@@ -1,0 +1,52 @@
+#
+# Results on Wednesday October 21 2020 00:15:17 UTC.
+# USER AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.80 Safari/537.36
+# Design number was non-random = 0
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. ID.
+# 14. Comments.
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,0,0,welcome,NULL,PennController,0,_Trial_,Start,1603239273066,id,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,0,0,welcome,NULL,PennController,0,_Trial_,End,1603239278559,id,NULL
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. ID.
+# 14. Item.
+# 15. Ending.
+# 16. Group.
+# 17. Comments.
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,3,0,experiment,NULL,PennController,4,_Trial_,Start,1603239278569,id,sheep,-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,3,0,experiment,NULL,Selector,unnamed-Selector,Selection,one,1603239284188,id,sheep,-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,3,0,experiment,NULL,PennController,4,_Trial_,End,1603239284700,id,sheep,-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,2,0,experiment,NULL,PennController,3,_Trial_,Start,1603239284705,id,deer,No-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,2,0,experiment,NULL,Selector,unnamed-Selector,Selection,two,1603239286991,id,deer,No-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,2,0,experiment,NULL,PennController,3,_Trial_,End,1603239288430,id,deer,No-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,4,0,experiment,NULL,PennController,5,_Trial_,Start,1603239288433,id,moose,No-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,4,0,experiment,NULL,Selector,unnamed-Selector,Selection,two,1603239292436,id,moose,No-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,4,0,experiment,NULL,PennController,5,_Trial_,End,1603239292954,id,moose,No-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,1,0,experiment,NULL,PennController,2,_Trial_,Start,1603239292957,id,fish,-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,1,0,experiment,NULL,Selector,unnamed-Selector,Selection,one,1603239298157,id,fish,-s,A,NULL
+1603239317,f77db62721efb1de1e6802d4bae9746f,PennController,1,0,experiment,NULL,PennController,2,_Trial_,End,1603239298666,id,fish,-s,A,NULL

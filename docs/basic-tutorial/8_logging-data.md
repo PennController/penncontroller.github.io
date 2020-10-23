@@ -6,13 +6,14 @@ parent: Basic Tutorial
 
 ## {{ page.title }}
 
-By default, PennController logs only when a trial starts and when it ends. You must use the [`log`]({{site.baseurl}}/docs/action-commands/standard-log){:target="_blank"} command to collect any other information. 
+By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/docs/action-commands/standard-log){:target="_blank"} command to collect any other information. 
 
-The `log` command adds lines to the `results` file in the **Results** folder. The information that is added depends on the element type that the `log` command is called on. To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/docs/elements){:target="_blank"}.
+The `log` command adds lines to the `results` file in the experiment project page's **Results** folder. The information that is added depends on the element type that the `log` command is called on. To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/docs/elements){:target="_blank"}.
 
 {% capture instructions %}
-+ Log information from the `"keypress"` **Key** element.
-+ Uncomment the `DebugOff` command, since we are now ready to collect data:
++ Uncomment the `DebugOff` command, since we are now ready to collect data.
++ Call the `log` command on the `"side-by_side"` **Canvas** to log when the images are printed to the screen.
++ Call the `log` command on the `"keypress"` **Key** to log information about the participant's keypress.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -24,25 +25,8 @@ The `log` command adds lines to the `results` file in the **Results** folder. Th
 *// Turn off debugger
 !DebugOff()
 *
-* // Instructions
-*newTrial("instructions",
-*    defaultText
-*        .center()
-*        .print()
-*    ,
-*    newText("instructions-1", "Welcome!")
-*    ,
-*    newText("instructions-2", "&lt;p&gt;In this experiment, you will match a sentence with an image. You will hear and read a sentence, and see two images.&lt;/p&gt;")
-*    ,
-*    newText("instructions-3", "Press the &lt;b&gt;F&lt;/b&gt; key if the sentence matches the image on the left.")
-*    ,
-*    newText("instructions-4", "Press the &lt;b&gt;J&lt;/b&gt; key if the sentence matches the image on the right.")
-*    ,
-*    newText("instructions-5", "&lt;p&gt;Press the Spacebar when you are ready to start the experiment.&lt;/p&gt;")
-*    ,
-*    newKey("wait", " ")
-*        .wait()
-*)
+*// Instructions
+*// code omitted in interest of space
 *
 *// Experimental trial
 *newTrial("experimental-trial",
@@ -53,21 +37,22 @@ The `log` command adds lines to the `results` file in the **Results** folder. Th
 *        .center()
 *        .unfold(2676)
 *    ,
-*    newImage("fish-round", "2fishRoundTank.png")    
+*    newImage("fish-plural", "2fishRoundTank.png")    
 *        .size(200, 200)
 *    ,
-*    newImage("fish-square", "1fishSquareTank.png")
+*    newImage("fish-singular", "1fishSquareTank.png")
 *        .size(200, 200)
 *    ,   
 *    newCanvas("side-by-side", 450,200)
-*        .add(  0, 0, getImage("fish-round"))
-*        .add(250, 0, getImage("fish-square"))
+*        .add(  0, 0, getImage("fish-plural"))
+*        .add(250, 0, getImage("fish-singular"))
 *        .center()
 *        .print()
++        .log()
 *    ,
 *    newKey("keypress", "FJ")
-*        .wait()
 +        .log()
+*        .wait()
 *    ,
 *    getAudio("fish-audio")
 *        .wait("first")
@@ -79,8 +64,7 @@ The `log` command adds lines to the `results` file in the **Results** folder. Th
 ### Examining results
 
 {% capture instructions %}
-+ Run the experiment to log data.
-+ Look at the logged data.
+Run the experiment to log data and look at the logged data:
 
 1. Save and close the `main.js` file.
 2. In the **Results** folder, delete any existing files.
@@ -116,11 +100,12 @@ The `results` file should look like the following:
 # 11. Value.
 # 12. EventTime.
 # 13. Comments.
-1600313870,SOME_MD5_HASH,PennController,0,0,instructions,NULL,PennController,0,_Trial_,Start,1600313848315,NULL
-1600313870,SOME_MD5_HASH,PennController,0,0,instructions,NULL,PennController,0,_Trial_,End,1600313849734,NULL
-1600313870,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,PennController,1,_Trial_,Start,1600313849737,NULL
-1600313870,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,Key,keypress,PressedKey,F,1600313851242,Wait success
-1600313870,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,PennController,1,Trial_,End,1600313852445,NULL
+1603390913,SOME_MD5_HASH,PennController,0,0,instructions,NULL,PennController,0,_Trial_,Start,1603390891064,NULL
+1603390913,SOME_MD5_HASH,PennController,0,0,instructions,NULL,PennController,0,_Trial_,End,1603390892111,NULL
+1603390913,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,PennController,1,_Trial_,Start,1603390892115,NULL
+1603390913,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,Canvas,side-by-side,Print,NA,1603390892122,NULL
+1603390913,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,Key,keypress,PressedKey,F,1603390893835,Wait success
+1603390913,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,PennController,1,_Trial_,End,1603390894815,NULL
 </code></pre>
 
 Rows that begin with the pound symbol `#` are either:
@@ -132,12 +117,17 @@ Rows that do not begin with the pound symbol are logged information.
 
 Relevant information contained in the five rows at the bottom:
 
-1. `"instructions"` **Trial**: started at the timestamp `1598318337952`.
-2. `"instructions"` **Trial**: ended at the timestamp `1600313849734`.
-3. `"experimental-trial"` **Trial**: started at the timetamp `1600313849737`.
-4. `"keypress"` **Key**: the participant pressed the `F` key at the timestamp `1600313851242`.
-5. `"experimental-trial"` **Trial**: ended at the timestamp `1600313852445`.
+1. `"instructions"` **Trial**: started at the timestamp `1603390891064`.
+2. `"instructions"` **Trial**: ended at the timestamp `1603390892111`.
+3. `"experimental-trial"` **Trial**: started at the timetamp `1603390892115`.
+4. `"side-by-side"` **Canvas** was printed at the timestamp `1603390892122`.
+5. `"keypress"` **Key**: the participant pressed the `F` key at the timestamp `1603390893835`.
+6. `"experimental-trial"` **Trial**: ended at the timestamp `1603390894815`.
 
 The timestamps are Unix timestamps in milliseconds, in other words the number of milliseconds since 00:00:00 UTC on January 1, 1970.
 
-You can compare timestamps to determine response times or event duration. For example, subtract the trial start timestamp from the keypress timestamp to determine how long it took for the participant to press a valid key: `1600313851242`-`1600313849737`=`1505` means that the participant took 1505ms to press the `F` key.
+### Calculating response times
+
+You can compare timestamps to determine response times or event duration. For example, subtract the canvas timestamp from the keypress timestamp to determine how long it took for the participant to press a valid key: `1603390893835`-`1603390892122`=`1713` means that the participant took 2753ms to press the `F` key.
+
+We recommend using the canvas and keypress timestamps to calculate response time, instead of using the trial start and keypress timestamp. We'll [add a one-second delay trial delay]({{site.baseurl}}/docs/advanced-tutorial#adding-a-trial-delay){:target="_blank"} in the **Advanced Tutorial**, meaning that using the trial start timestamp would artificially inflate the response time by at least 1000ms.

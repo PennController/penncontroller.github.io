@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ~/_sass/
-parent: Root directory
+title: _sass/
+parent: Directory structure
 grand_parent: Internal documentation
 ---
 
