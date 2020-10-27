@@ -2,7 +2,7 @@
 layout: element
 title: Timer element
 parent: Elements
-thumbnail: sample-element.png
+thumbnail: timer.png
 syntax: newTimer("*ELEMENT_NAME*", TIMER_LENGTH)
 blurb: To be filled in.
 ---

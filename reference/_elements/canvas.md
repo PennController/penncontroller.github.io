@@ -2,7 +2,7 @@
 layout: element
 title: Canvas element
 parent: Elements
-thumbnail: sample-element.png
+thumbnail: canvas.png
 syntax: newCanvas("*ELEMENT_NAME*", *WIDTH*, *HEIGHT*)
 blurb: Creates rectangular surfaces that you can place other elements onto.
 extended_description: >- 

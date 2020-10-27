@@ -3,7 +3,7 @@ layout: default
 title: Element commands
 parent: Commands
 nav_order: 1
-blurb: Used within a trial to manipulate elements.
+blurb: Used within a trial and called on an element.
 ---
 
 <!-- VARIABLE ASSIGNMENT -->

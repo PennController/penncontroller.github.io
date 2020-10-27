@@ -36,7 +36,7 @@
 }
 
 // flex container styles
-.container {
+.flex-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -96,3 +96,31 @@ td {
   min-width: 100px;
   background-color: inherit;
 }
+
+// element thumbnail display
+a.overlay-link:hover{
+  text-decoration: underline;
+}
+
+.underline{
+  text-decoration: underline;
+  text-decoration-color: rgba($link-color, 0.2);
+}
+
+.overlay-container{
+  position: relative;
+}
+
+// .overlay {
+//   transition: 1s ease;
+//   background-color: red;
+//   opacity: 1;
+// }
+
+.overlay-container:hover .image {
+  opacity: 0.4;
+}
+
+// .overlay-container:hover .overlay {
+//   opacity: 0.5;
+// }

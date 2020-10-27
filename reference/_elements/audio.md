@@ -2,7 +2,7 @@
 layout: element
 title: Audio element
 parent: Elements
-thumbnail: sample-element.png
+thumbnail: audio.png
 syntax: newAudio("ELEMENT_NAME", "AUDIO_FILE_NAME.MP3")
 blurb: Adds audio streams to an experiment.
 extended_description: >-   

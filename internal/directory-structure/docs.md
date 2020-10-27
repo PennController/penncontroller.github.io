@@ -11,7 +11,7 @@ Pages that appear in the main sidebar.
 
 ---
 
-(*Last updated: September 3, 2020*)
+(*Last updated: October 27, 2020*)
 
 Folder structure
 {: .text-delta}
@@ -20,14 +20,12 @@ Folder structure
 docs/
 |-- advanced-tutorial/
 |-- basic-tutorial/
+|-- commands/
 |-- advanced-tutorial.md
 |-- basic-tutorial.md
 |-- commands.md
 |-- core-concepts.md
-|-- element-commands.md
 |-- element.md
-|-- global-commands.md
 |-- how-to-guides.md
-|-- special-commands.md
 `-- troubleshooting.md
  ```

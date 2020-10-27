@@ -3,7 +3,7 @@ layout: default
 title: Special commands
 parent: Commands
 nav_order: 3
-blurb: Used within a trial, but do not manipulate elements.
+blurb: Used within a trial, but not called on an element.
 ---
 
 # {{ page.title }}

@@ -1,9 +1,9 @@
 ---
 layout: element
-title: Image element
+title: Text element
 parent: Elements
-thumbnail: image.png
-syntax: newImage("*ELEMENT_NAME*", "IMAGE_NAME")
+thumbnail: text.png
+syntax: to be filled in
 blurb: To be filled in.
 ---
 
@@ -11,4 +11,5 @@ blurb: To be filled in.
 ```javascript
 // To be filled in
 ```
+
 
