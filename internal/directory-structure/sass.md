@@ -3,6 +3,7 @@ layout: default
 title: _sass/
 parent: Directory structure
 grand_parent: Internal documentation
+last_modified_date: october 27 2020
 ---
 
 # `{{ page.title }}`

@@ -3,6 +3,7 @@ layout: default
 title: docs/
 parent: Directory structure
 grand_parent: Internal documentation
+last_modified_date: october 27 2020
 ---
 
 ## `{{ page.title}} `
@@ -10,8 +11,6 @@ Pages that appear in the main sidebar.
 {: .mt-4}
 
 ---
-
-(*Last updated: October 27, 2020*)
 
 Folder structure
 {: .text-delta}

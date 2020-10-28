@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Debugger
-parent: Core concepts
-nav_order: 5
+parent: Core Concepts
 ---
 
 # Debugger

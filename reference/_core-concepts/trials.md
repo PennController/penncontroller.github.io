@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Trials
-parent: Core concepts
-nav_order: 2
+parent: Core Concepts
 ---
 
 # {{ page.title }}

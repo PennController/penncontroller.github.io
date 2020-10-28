@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Commands
-parent: Core concepts
-nav_order: 4
+parent: Core Concepts
 ---
 
 # {{ page.title }}
