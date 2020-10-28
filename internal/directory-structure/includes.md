@@ -3,6 +3,7 @@ layout: default
 title: _includes/
 parent: Directory structure
 grand_parent: Internal documentation
+last_modified_date: october 27 2020
 ---
 
 # `{{ page.title }}`
@@ -13,8 +14,6 @@ Files that can be accessed by the [`include` tag](https://jekyllrb.com/docs/incl
 
 ---
 
-(*Last updated: October 23, 2020*)
-
 Folder structure
 {: .text-delta}
 
@@ -22,6 +21,7 @@ Folder structure
 _includes/
 |-- collapsible-block.html
 |-- command-blurbs.html
+|-- footer_custom.html
 |-- head_custom.html
 |-- include-example.html
 |-- instructions.html
@@ -92,6 +92,14 @@ Creates blurbs for a Collection or array of PennController commands. Ends with a
 {% endcapture %}
 
 {% include include-example.html description=description code=code result=result %}
+
+---
+
+## `footer_custom.html`
+
+Adds custom content to the original [Just the Docs `./_layouts/default.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_layouts/default.html){:target="_blank"}.
+
+As of October 27, 2020 `footer_custom.html` is the same as the original [Just the Docs `footer_custom.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/footer_custom.html){:target="_blank"} with the addition of the line `<script src="/pcibex/assets/prism/prism.js"></script>`, which is the source code for the [Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism){:target="_blank"}.
 
 ---
 
@@ -221,6 +229,7 @@ description
 {: .text-delta .mt-4}
 Overrides the original [Just the Docs `./_includes/nav.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/nav.html){:target="_blank"}:
 
++ Adds collection documents to the `pages_list` array with `concat: site.documents`
 + Includes navigation links for children "pages" that are sections of the parent page.
   + Example: [Basic Tutorial]({{site.baseurl}}/docs/basic-tutorial){:target="_blank"}
   + Parent page's front matter must include `has_children: true` and `children_are_html_tags: true`

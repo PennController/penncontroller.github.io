@@ -3,6 +3,7 @@ layout: default
 title: reference/
 parent: Directory structure
 grand_parent: Internal documentation
+last_modified_date: october 27 2020
 ---
 
 ## `{{ page.title}}`
@@ -12,8 +13,6 @@ Custom Jekyll [collections](https://jekyllrb.com/docs/step-by-step/09-collection
 {: .mt-4}
 
 ---
-
-(*Last updated: September 3, 2020*)
 
 Folder structure
 {: .text-delta}
