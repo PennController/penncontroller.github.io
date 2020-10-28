@@ -5,7 +5,7 @@ parent: Commands
 nav_order: 2
 has_children: false
 has_toc: false
-blurb: Used outside of a trial to manipulate the experiment as a whole.
+blurb: Used outside of a trial.
 --- 
 
 # {{ page.title }}

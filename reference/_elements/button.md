@@ -2,9 +2,10 @@
 layout: element
 title: Button element
 parent: Elements
-thumbnail: sample-element.png
+thumbnail: button.png
 syntax: newButton("*ELEMENT_NAME*", "*BUTTON_TEXT*")
 blurb: The `Button` element type creates a clickable button.
+has_children: true
 ---
 
 ## Example

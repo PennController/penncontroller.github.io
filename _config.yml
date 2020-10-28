@@ -11,35 +11,47 @@
 # If you need help with YAML syntax, here are some quick references for you: 
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
-#
+
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
 title: PCIbex Documentation
 description: >- # this means to ignore newlines until "baseurl:"
   PCIbex documentation
 baseurl: "/pcibex" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+excerpt_separator: <!--more-->
+
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
 # theme: just-the-docs
 logo: "/assets/images/pcibex-logo.png"
+# Aux links for the upper right navigation
 aux_links:
   "Go to the PCIbex Farm":
     - "https://expt.pcibex.net/"
+# Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: true
 plugins:
   - jekyll-feed
 
-# disable the Rouge syntax highlighter
+# Disable Rouge syntax highlighter
 markdown: kramdown
 kramdown:
    syntax_highlighter_opts:
       disable : true
+
+# Footer: appears at the bottom of every page's main content
+footer_content: "<b>Contact us</b>&#58; <a href=\"mailto&#58; admin@pcibex.net\">admin@pcibex.net</a>"
+
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+
 
 # Collections
 collections_dir: reference

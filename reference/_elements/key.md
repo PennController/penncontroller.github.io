@@ -2,7 +2,7 @@
 layout: element
 title: Key element
 parent: Elements
-thumbnail: sample-element.png
+thumbnail: key.png
 syntax: newKey("*ELEMENT_NAME*", "*VALID_KEY*")
 blurb: To be filled in.
 ---

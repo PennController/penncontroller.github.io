@@ -2,7 +2,7 @@
 layout: element
 title: Var element
 parent: Elements
-thumbnail: sample-element.png
+thumbnail: var.png
 syntax: to be filled in
 blurb: To be filled in.
 ---
