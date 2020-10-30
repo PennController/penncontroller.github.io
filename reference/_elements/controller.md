@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: controller
 title: Controller element
 parent: Elements
 thumbnail: controller.png

@@ -68,16 +68,75 @@ collections:
   special-commands:
     output: true
     permalink: /docs/:collection/:name/
-  action-commands:
-    output: true
-    permalink: /docs/:collection/:name/
-  test-commands:
-    output: true
-    permalink: /docs/:collection/:name/
   how-to-guides:
     output: true
     permalink: /docs/:collection/:name/
-
+  audio:
+    output: true
+    permalink: /docs/:collection/:name/
+  button:
+    output: true
+    permalink: /docs/:collection/:name/
+  canvas:
+    output: true
+    permalink: /docs/:collection/:name/
+  controller:
+    output: true
+    permalink: /docs/:collection/:name/
+  dropdown:
+    output: true
+    permalink: /docs/:collection/:name/
+  eyetracker:
+    output: true
+    permalink: /docs/:collection/:name/
+  function:
+    output: true
+    permalink: /docs/:collection/:name/
+  html:
+    output: true
+    permalink: /docs/:collection/:name/
+  image:
+    output: true
+    permalink: /docs/:collection/:name/
+  key:
+    output: true
+    permalink: /docs/:collection/:name/
+  mediarecorder:
+    output: true
+    permalink: /docs/:collection/:name/
+  mousetracker:
+    output: true
+    permalink: /docs/:collection/:name/
+  scale:
+    output: true
+    permalink: /docs/:collection/:name/
+  selector:
+    output: true
+    permalink: /docs/:collection/:name/
+  standard:
+    output: true
+    permalink: /docs/:collection/:name/
+  text:
+    output: true
+    permalink: /docs/:collection/:name/
+  textinput:
+    output: true
+    permalink: /docs/:collection/:name/
+  timer:
+    output: true
+    permalink: /docs/:collection/:name/
+  tooltip:
+    output: true
+    permalink: /docs/:collection/:name/
+  var:
+    output: true
+    permalink: /docs/:collection/:name/
+  video:
+    output: true
+    permalink: /docs/:collection/:name/           
+  youtube:
+    output: true
+    permalink: /docs/:collection/:name/
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: canvas
 title: Canvas element
 parent: Elements
 thumbnail: canvas.png

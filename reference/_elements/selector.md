@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: selector
 title: Selector element
 parent: Elements
 thumbnail: selector.png

@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: var
 title: Var element
 parent: Elements
 thumbnail: var.png

@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: mousetracker
 title: MouseTracker element
 parent: Elements
 thumbnail: mousetracker.png

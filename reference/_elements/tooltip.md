@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: tooltip
 title: Tooltip element
 parent: Elements
 thumbnail: tooltip.png

@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: mediarecorder
 title: MediaRecorder element
 parent: Elements
 thumbnail: mediarecorder.png

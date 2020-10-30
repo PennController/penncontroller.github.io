@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: image
 title: Image element
 parent: Elements
 thumbnail: image.png

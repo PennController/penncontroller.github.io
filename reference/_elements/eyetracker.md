@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: eyetracker
 title: EyeTracker element
 parent: Elements
 thumbnail: eyetracker.png

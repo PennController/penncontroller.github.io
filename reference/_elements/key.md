@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: key
 title: Key element
 parent: Elements
 thumbnail: key.png

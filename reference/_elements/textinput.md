@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: textinput
 title: TextInput element
 parent: Elements
 thumbnail: textinput.png

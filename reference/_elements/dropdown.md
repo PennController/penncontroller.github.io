@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: dropdown
 title: DropDown element
 parent: Elements
 thumbnail: dropdown.png

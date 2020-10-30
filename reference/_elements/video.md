@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: video
 title: Video element
 parent: Elements
 thumbnail: video.png

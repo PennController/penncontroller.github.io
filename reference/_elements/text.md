@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: text
 title: Text element
 parent: Elements
 thumbnail: text.png

@@ -13,7 +13,7 @@ has_toc: false
 {% assign children_list = pages_list | where: "parent", page.title %}
 
 <!-- LAYOUT -->
-<h1> {{ page.title }} </h1>
+<h1>{{ page.title }}</h1>
 
 {{ page.content | markdownify }}
 

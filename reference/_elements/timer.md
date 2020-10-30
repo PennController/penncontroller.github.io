@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: timer
 title: Timer element
 parent: Elements
 thumbnail: timer.png

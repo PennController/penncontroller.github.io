@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: youtube
 title: Youtube element
 parent: Elements
 thumbnail: youtube.png

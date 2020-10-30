@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: function
 title: Function element
 parent: Elements
 thumbnail: function.png

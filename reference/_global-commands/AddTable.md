@@ -1,13 +1,12 @@
 ---
 layout: command
+command_type: global
 title: PennController.AddTable
 parent: Global commands
 grand_parent: Commands
-syntax: PennController.AddTable("id", csv_string)
-blurb: Defines a table to use with `PennController.Template`. As of PennController beta 0.4, you can directly upload a CSV file to the **Resources** or **chunk_includes** folders.
+syntax: AddTable("id", csv_string)
+description: Defines a table to use with `PennController.Template`. As of PennController beta 0.4, you can directly upload a CSV file to the **Resources** or **chunk_includes** folders.
 ---
-
-## Example
 
 ```javascript
 AddTable( "myTable",             // Name of the table

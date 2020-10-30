@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: audio
 title: Audio element
 parent: Elements
 thumbnail: audio.png

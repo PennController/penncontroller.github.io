@@ -1,5 +1,6 @@
 ---
 layout: element
+element_type: html
 title: Html element
 parent: Elements
 thumbnail: html.png

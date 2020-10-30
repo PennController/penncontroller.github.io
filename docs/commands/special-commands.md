@@ -13,7 +13,5 @@ blurb: Used within a trial, but not called on an element.
 <!-- Command TOC -->
 {% include toc-same-page.html collection=site.special-commands code-font=true %}
 
----
-
 <!-- Command blurbs -->
 {% include command-blurbs.html collection=site.special-commands %}
