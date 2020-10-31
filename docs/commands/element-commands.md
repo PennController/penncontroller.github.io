@@ -11,8 +11,8 @@ blurb: Used within a trial and called on an element.
 <!-- VARIABLE ASSIGNMENT -->
 {% assign standard-action = site.standard | where: "command_type", "action" %}
 {% assign standard-test = site.standard | where: "command_type", "test" %}
-{% assign specific-action = site.documents | where_exp: "page", "page.command_type == 'action' and page.parent != 'Element commands'" %}
-{% assign specific-test = site.documents | where_exp: "page", "page.command_type == 'test' and page.parent != 'Element commands'" %}
+{% assign specific-action = site.documents | where: "command_type", "action" | where_exp: "page", "page.parent != 'Standard element commands'" %}
+{% assign specific-test = site.documents | where: "command_type", "test" | where_exp: "page", "page.parent != 'Standard element commands'" %}
 
 # {{ page.title }}
 

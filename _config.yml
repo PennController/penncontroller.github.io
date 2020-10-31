@@ -62,8 +62,6 @@ collections:
   elements:
     output: true
     permalink: /docs/:collection/:name/
-    order:
-      - standard.md
   global-commands:
     output: true
     permalink: /docs/:collection/:name/
