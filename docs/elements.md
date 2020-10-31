@@ -2,14 +2,13 @@
 layout: default
 title: Elements
 has_children: true
-children_are_in_collection: true
 has_toc: false
 nav_order: 5
 ---
 
 # {{ page.title }}
 
-<div class="flex-container mb-8">
+<div class="flex-row-wrap mb-8">
 {% for child in site.elements %}
   <div class="centered-25">
     <a href="{{ child.url | absolute_url }}" class="overlay-link" target="_blank">

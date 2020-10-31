@@ -13,21 +13,27 @@ layout: default
 <div style="display: flow-root;" markdown="1">
   {% include toc-element.html actionCommands=action-commands testCommands=test-commands %}
 
+  {% unless page.no_example %}
   <h4>syntax</h4>
   <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-    
+  {% endunless %} 
+  
   <h4>description</h4>
   {{ page.blurb | markdownify }} 
 
+  {% if page.extended_description %}
   {{ page.extended_description | markdownify }}
+  {% endif %}
 </div>
 
+{% unless page.no_example %}
 <hr>
 
 <!-- Rest of element content -->
 {{ content }}
 
 <hr>
+{% endunless %}
 
 <!-- Action command blurbs -->
 <h2 id="action-commands"> Action commands </h2>

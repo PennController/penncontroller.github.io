@@ -40,7 +40,7 @@
 }
 
 // flex container styles
-.flex-container {
+.flex-row-wrap {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -69,6 +69,28 @@
   width: 100%;
   height: 100%;
 }
+
+// element command "table"
+.command-table {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  // justify-content: space-between;
+  width: 100%;
+  border: 0.5px solid $grey-lt-100;
+}
+
+.command-table div {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-left: $sp-2;
+  padding-right: $sp-2;
+  height: 50px;
+  width: calc(100% / 3);
+  border: 0.5px solid $grey-lt-100;
+}
+
 
 // customized horizontal rules
 hr {

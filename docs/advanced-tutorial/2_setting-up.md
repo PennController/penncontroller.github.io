@@ -122,7 +122,7 @@ There are two conditions (singular verb inflection and plural verb inflection) a
 | 3    | The sheep roams in a pen which is strikingly red | The sheep roam in a pen which is strikingly blue        |
 | 4    | The moose walks in a park which is visibly new   | The moose walk in a park which is visibly old      |
 
-<div class="flex-container mb-4">
+<div class="flex-row-wrap mb-4">
   <div class="centered-eighth"><img src="{{site.baseurl}}/assets/tutorials/1fishSquareTank.png" alt="1fishSquareTank"></div>
   <div class="centered-eighth"><img src="{{site.baseurl}}/assets/tutorials/2fishRoundTank.png" alt="2fishRoundTank"></div>
   <div class="centered-eighth"><img src="{{site.baseurl}}/assets/tutorials/1deerDenseWood.png" alt="1deerDenseWood"></div>

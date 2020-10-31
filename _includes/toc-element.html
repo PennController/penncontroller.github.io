@@ -8,7 +8,7 @@
   {%- endfor -%}
   </ul>
 
-  <b>Test commands</b>
+  <span class="mt-2"><b>Test commands</b></span>
   <ul class="nav-list">
   {%- for command in include.testCommands -%}
   {% assign command_tag = command.title | downcase | slugify %}

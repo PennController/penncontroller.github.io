@@ -9,9 +9,12 @@ blurb: Used outside of a trial.
 # {{ page.title }}
 
 {{ page.blurb }}
+{: .fs-5 .fw-300 }
+
+---
 
 <!-- Command TOC -->
-{% include toc-same-page.html collection=site.global-commands code-font=true %}
+{% include toc-command.html collection=site.global-commands%}
 
 <!-- Command blurbs -->
 {% include command-blurbs.html collection=site.global-commands %}

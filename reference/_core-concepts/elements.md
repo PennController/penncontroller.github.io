@@ -4,6 +4,6 @@ title: Elements
 parent: Core Concepts
 ---
 
-# Elements {#elements}
+# {{ page.title }}
 
 *To be filled in*

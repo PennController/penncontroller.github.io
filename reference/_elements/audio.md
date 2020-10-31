@@ -3,6 +3,8 @@ layout: element
 element_type: audio
 title: Audio element
 parent: Elements
+has_children: true
+has_toc: false
 thumbnail: audio.png
 syntax: newAudio("ELEMENT_NAME", "AUDIO_FILE_NAME.MP3")
 blurb: Adds audio streams to an experiment.
