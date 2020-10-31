@@ -3,19 +3,18 @@ layout: default
 title: Global commands
 parent: Commands
 nav_order: 2
-has_children: false
-has_toc: false
 blurb: Used outside of a trial.
 --- 
 
 # {{ page.title }}
 
 {{ page.blurb }}
-
-<!-- Command TOC -->
-{% include toc-same-page.html collection=site.global-commands code-font=true %}
+{: .fs-5 .fw-300 }
 
 ---
+
+<!-- Command TOC -->
+{% include toc-command.html collection=site.global-commands%}
 
 <!-- Command blurbs -->
 {% include command-blurbs.html collection=site.global-commands %}

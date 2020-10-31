@@ -1,7 +1,10 @@
 ---
 layout: element
+element_type: canvas
 title: Canvas element
 parent: Elements
+has_children: true
+has_toc: false
 thumbnail: canvas.png
 syntax: newCanvas("*ELEMENT_NAME*", *WIDTH*, *HEIGHT*)
 blurb: Creates rectangular surfaces that you can place other elements onto.

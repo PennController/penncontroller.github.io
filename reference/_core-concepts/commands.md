@@ -6,11 +6,19 @@ parent: Core Concepts
 
 # {{ page.title }}
 
-Commands... *to be filled in*
+*To be filled in*
 
 ---
 
 ## Element commands
+
+*To be filled in*
+
+### Standard commands
+
+*To be filled in*
+
+### Element-specific commands
 
 *To be filled in*
 
@@ -21,6 +29,8 @@ Commands... *to be filled in*
 ### Test commands
 
 *To be filled in*
+
+
 
 ---
 

@@ -3,36 +3,41 @@ layout: default
 ---
 
 <!-- VARIABLE ASSIGNMENT -->
-{% assign element-type = page.title | split: " " | first | downcase %}
-{% assign action-commands = site.action-commands | where_exp:"page", "page.title contains element-type" %}
-{% assign test-commands = site.test-commands | where_exp:"page", "page.title contains element-type" %}
+{% assign action-commands = site[page.element_type] | where: "command_type", "action" %}
+{% assign test-commands = site[page.element_type] | where: "command_type", "test" %}
 
 <!-- LAYOUT -->
-<h1> <b> {{ page.title }} </b></h1>
+<h1>{{ page.title }}</h1>
 
 <!-- Element creation, description, and command TOC -->
 <div style="display: flow-root;" markdown="1">
   {% include toc-element.html actionCommands=action-commands testCommands=test-commands %}
 
-  <b>Creation: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
-    
-  {{ page.blurb | markdownify  }}
+  {% unless page.no_example %}
+  <h4>syntax</h4>
+  <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+  {% endunless %} 
+  
+  <h4>description</h4>
+  {{ page.blurb | markdownify }} 
 
+  {% if page.extended_description %}
   {{ page.extended_description | markdownify }}
+  {% endif %}
 </div>
 
+{% unless page.no_example %}
 <hr>
 
 <!-- Rest of element content -->
 {{ content }}
 
 <hr>
+{% endunless %}
 
 <!-- Action command blurbs -->
 <h2 id="action-commands"> Action commands </h2>
 {% include command-blurbs.html collection=action-commands %}
-
-<hr>
 
 <!-- Test command blurbs -->
 <h2 id="test-commands"> Test commands </h2>

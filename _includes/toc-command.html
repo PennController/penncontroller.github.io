@@ -1,0 +1,9 @@
+{% if include.title %}<h3>{{include.title}}</h3>{% endif %}
+<h4>table of contents</h4>
+<div class="command-table mt-2 mb-6">
+  {% for command in include.collection %}
+  <div>
+    <a href="{{ command.url | absolute_url }}" target="_blank"><code>{{command.title}}</code></a>
+  </div>
+  {% endfor %}
+</div>

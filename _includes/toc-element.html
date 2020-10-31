@@ -4,15 +4,15 @@
   <ul class="nav-list">
   {%- for command in include.actionCommands -%}
   {% assign command_tag = command.title | downcase | slugify %}
-  <li><a href="#{{ command_tag }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a></li>
+  <li><a href="#{{ command_tag }}"><code>{{ command.title }}</code></a></li>
   {%- endfor -%}
   </ul>
 
-  <b>Test commands</b>
+  <span class="mt-2"><b>Test commands</b></span>
   <ul class="nav-list">
   {%- for command in include.testCommands -%}
   {% assign command_tag = command.title | downcase | slugify %}
-  <li><a href="#{{ command_tag }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a></li>
+  <li><a href="#{{ command_tag }}"><code>{{ command.title }}</code></a></li>
   {%- endfor -%}
   </ul>
 </div>

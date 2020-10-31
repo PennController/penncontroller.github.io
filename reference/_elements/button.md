@@ -1,11 +1,13 @@
 ---
 layout: element
+element_type: button
 title: Button element
 parent: Elements
+has_children: true
+has_toc: false
 thumbnail: button.png
 syntax: newButton("*ELEMENT_NAME*", "*BUTTON_TEXT*")
 blurb: The `Button` element type creates a clickable button.
-has_children: true
 ---
 
 ## Example

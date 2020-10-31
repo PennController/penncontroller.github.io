@@ -3,7 +3,7 @@ layout: default
 title: _includes/
 parent: Directory structure
 grand_parent: Internal documentation
-last_modified_date: october 27 2020
+last_modified_date: october 29 2020
 ---
 
 # `{{ page.title }}`
@@ -30,7 +30,7 @@ _includes/
 |-- label.html
 |-- nav.html
 |-- toc-collapsible.html
-|-- toc-different-page.html
+|-- toc-collection.html
 |-- toc-element.html
 `-- toc-same-page.html
 ```
@@ -260,7 +260,7 @@ Creates an expandable/collapsible **Table of Contents** for a Collection or arra
 
 ---
 
-## `toc-different-page.html`
+## `toc-collection.html`
 
 {% capture description %}
 Creates a **Table of Contents** for a Collection or array. 
@@ -269,7 +269,7 @@ Creates a **Table of Contents** for a Collection or array.
 {% endcapture %}
 
 {% capture code %}
-{% raw %}{% include toc-different-page.html collection=site.core-concepts ordered=true %}{% endraw %}
+{% raw %}{% include toc-collection.html collection=site.core-concepts ordered=true %}{% endraw %}
 {% endcapture %}
 
 {% capture extra %}
@@ -279,7 +279,7 @@ Creates a **Table of Contents** for a Collection or array.
 {% endcapture %}
 
 {% capture result %}
-{% include toc-different-page.html collection=site.core-concepts ordered=true %}
+{% include toc-collection.html collection=site.core-concepts ordered=true %}
 {% endcapture %}
 
 {% include include-example.html description=description code=code extra=extra result=result %}

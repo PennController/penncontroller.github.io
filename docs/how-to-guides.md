@@ -11,4 +11,4 @@ children_are_in_collection: true
 ---
 
 <!-- TOC -->
-{% include toc-different-page.html collection=site.how-to-guides ordered=false %}
+{% include toc-collection.html collection=site.how-to-guides ordered=false %}

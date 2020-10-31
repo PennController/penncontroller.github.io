@@ -2,62 +2,35 @@
 layout: default
 title: Element commands
 parent: Commands
+has_children: true
+has_toc: false
 nav_order: 1
 blurb: Used within a trial and called on an element.
 ---
 
 <!-- VARIABLE ASSIGNMENT -->
-{% assign standard-actions = site.action-commands | where_exp:"page", "page.title contains 'standard'" %}
-{% assign standard-tests = site.test-commands | where_exp:"page", "page.title contains 'standard'" %}
-{% assign specific-actions = site.action-commands | where_exp:"page", "page.parent != 'Element commands'" %}
-{% assign specific-tests = site.test-commands | where_exp:"page", "page.parent != 'Element commands'" %}
-
+{% assign standard-action = site.standard | where: "command_type", "action" %}
+{% assign standard-test = site.standard | where: "command_type", "test" %}
+{% assign specific-action = site.documents | where_exp: "page", "page.command_type == 'action' and page.parent != 'Element commands'" %}
+{% assign specific-test = site.documents | where_exp: "page", "page.command_type == 'test' and page.parent != 'Element commands'" %}
 
 # {{ page.title }}
+
 {{ page.blurb }}
-
-<!-- Standard command TOC -->
-<div class="d-flex">
-  <div class="pl-4 pr-2 pb-4" style="flex:1" markdown="1">
-  [**Standard action commands**](#standard-action-commands)
-  {% include toc-same-page.html collection=standard-actions code-font=true %}
-  </div>
-  
-  <div class="pl-4 pr-2 pb-4" style="flex:1" markdown="1">
-  [**Standard test commands**](#standard-test-commands)
-  {% include toc-same-page.html collection=standard-tests code-font=true %}
-  </div>
-</div>
+{: .fs-5 .fw-300 }
 
 ---
 
-<!-- Element-specific command TOC -->
-<div class="d-flex">
-  <div class="pl-4 pr-2 pb-4" style="flex:1" markdown="1">
-  [**Element-specific action commands**](#element-specific-action-commands)
-  {% include toc-same-page.html collection=specific-actions code-font=true %}
-  </div>
-  
-  <div class="pl-4 pr-2 pb-4" style="flex:1" markdown="1">
-  [**Element-specific test commands**](#element-specific-test-commands) 
-  {% include toc-same-page.html collection=specific-tests code-font=true %}
-  </div>
-</div>
+## Standard commands
+Commands that are defined for all PennController elements. 
+
+{% include toc-command.html collection=standard-action title="Action commands" %}
+{% include toc-command.html collection=standard-test title="Test commands" %}
 
 ---
 
-## Standard action commands
-<!-- Command blurbs -->
-{% include command-blurbs.html collection=standard-actions %}
+## Element-specific commands
+Commands that are defined only for specific PennController elements, or that describe element-specific behavior.
 
-## Standard test commands
-<!-- Command blurbs -->
-{% include command-blurbs.html collection=standard-tests %}
-
-## Element-specific action commands
-<!-- Command blurbs -->
-{% include command-blurbs.html collection=specific-actions %}
-
-## Element-specific test commands
-<!-- Command blurbs -->
-{% include command-blurbs.html collection=specific-tests %}
+{% include toc-command.html collection=specific-action title="Action commands" %}
+{% include toc-command.html collection=specific-test title="Test commands" %}

@@ -2,16 +2,36 @@
 layout: default
 ---
 
-<h1> <b> {{ page.title }} </b></h1>
+<h1>{{ page.title }}</h1>
 
-<b>Syntax: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
+<h4>syntax</h4>
+<code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
 
-{{ page.blurb | markdownify }}
+<h4>description</h4>
+{{ page.description | markdownify }}
 
-{% if page.extended_description %}
-{{ page.extended_description }}
+{% if page.optional_arguments %}
+<div class="bg-grey-lt-100 pt-4 pb-1 px-5 my-4" markdown=1>
+  <h4><i>optional arguments</i></h4>
+  <ul>
+  {% for argument in page.optional_arguments %}
+  <li>
+  <p><code>{{ argument.syntax }}</code></p>
+  <p class="fw-300 fs-3">{{ argument.description }}</p>
+  </li>
+  {% endfor %}
+  </ul>
+</div>
 {% endif %}
 
-<hr>
+{% if page.notes %}
+<div class="dashed-grey-lt-300 pt-4 pb-2 px-5 my-4" markdown=1>
+  <h4><i>notes</i></h4>
+  <div class="fw-300 fs-3">{{ page.notes | markdownify }}</div>
+</div>
+{% endif %}
 
-{{ content }}
+<hr> 
+
+<h4>example</h4>
+{{ page.content }}
