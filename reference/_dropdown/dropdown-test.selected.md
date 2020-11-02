@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: dropdown
 title: dropdown.test.selected
 parent: Dropdown element
 grand_parent: Elements

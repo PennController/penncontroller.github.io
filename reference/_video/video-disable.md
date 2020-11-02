@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: video
 title: video.disable
 parent: Video element
 grand_parent: Elements

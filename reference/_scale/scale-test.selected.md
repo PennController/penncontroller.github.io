@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: scale
 title: scale.test.selected
 parent: Scale element
 grand_parent: Elements

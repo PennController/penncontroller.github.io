@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: dropdown
 title: dropdown.once
 parent: Dropdown element
 grand_parent: Elements

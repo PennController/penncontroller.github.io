@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: youtube
 title: youtube.test.playing
 parent: Youtube element
 grand_parent: Elements

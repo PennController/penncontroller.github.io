@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: standard
 title: standard.cssContainer
 parent: Standard element commands
 grand_parent: Elements

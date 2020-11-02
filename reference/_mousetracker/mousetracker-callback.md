@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: mousetracker
 title: mousetracker.callback
 parent: MouseTracker element
 grand_parent: Elements

@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: key
 title: key.log
 parent: Key element
 grand_parent: Elements

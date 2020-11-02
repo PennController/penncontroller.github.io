@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: eyetracker
 title: eyetracker.test.calibrated
 parent: EyeTracker element
 grand_parent: Elements

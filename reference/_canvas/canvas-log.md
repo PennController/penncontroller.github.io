@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: canvas
 title: canvas.log
 parent: Canvas element
 grand_parent: Elements

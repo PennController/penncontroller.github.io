@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: var
 title: var.test.is
 parent: Var element
 grand_parent: Elements

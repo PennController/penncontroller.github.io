@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: mediarecorder
 title: mediarecorder.test.recorded
 parent: MediaRecorder element
 grand_parent: Elements

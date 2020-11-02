@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: function
 title: function.test.is
 parent: Function element
 grand_parent: Elements

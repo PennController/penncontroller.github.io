@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: html
 title: html.log
 parent: Html element
 grand_parent: Elements

@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: text
 title: text.test.text
 parent: Text element
 grand_parent: Elements

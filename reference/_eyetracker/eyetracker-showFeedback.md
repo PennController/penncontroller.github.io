@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: eyetracker
 title: eyetracker.showFeedback
 parent: EyeTracker element
 grand_parent: Elements

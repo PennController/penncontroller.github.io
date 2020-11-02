@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: image
 title: image.log
 parent: Image element
 grand_parent: Elements

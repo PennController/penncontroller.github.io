@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: html
 title: html.test.complete
 parent: Html element
 grand_parent: Elements

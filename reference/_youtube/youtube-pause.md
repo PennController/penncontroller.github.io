@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: youtube
 title: youtube.pause
 parent: Youtube element
 grand_parent: Elements

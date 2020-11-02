@@ -3,6 +3,7 @@ layout: default
 title: Core Concepts
 has_children: true
 has_toc: false
+children_collection: core-concepts
 nav_order: 2
 ---
 

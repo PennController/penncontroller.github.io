@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: youtube
 title: youtube.wait
 parent: Youtube element
 grand_parent: Elements

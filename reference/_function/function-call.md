@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: function
 title: function.call
 parent: Function element
 grand_parent: Elements

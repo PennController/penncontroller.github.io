@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: timer
 title: timer.test.running
 parent: Timer element
 grand_parent: Elements

@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: textinput
 title: textinput.lines
 parent: TextInput element
 grand_parent: Elements

@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: tooltip
 title: tooltip.key
 parent: Tooltip element
 grand_parent: Elements

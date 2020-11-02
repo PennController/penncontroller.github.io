@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: mediarecorder
 title: mediarecorder.play
 parent: MediaRecorder element
 grand_parent: Elements

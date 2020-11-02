@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: selector
 title: selector.test.selected
 parent: Selector element
 grand_parent: Elements

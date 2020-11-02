@@ -2,6 +2,9 @@
 layout: default
 title: Special commands
 parent: Commands
+has_children: true
+has_toc: false
+children_collection: special-commands
 nav_order: 3
 blurb: Used within a trial, but not called on an element.
 ---

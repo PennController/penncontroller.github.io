@@ -3,6 +3,7 @@ layout: default
 title: Elements
 has_children: true
 has_toc: false
+children_collection: elements
 nav_order: 5
 ---
 

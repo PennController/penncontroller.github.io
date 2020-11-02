@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: key
 title: key.test.pressed
 parent: Key element
 grand_parent: Elements

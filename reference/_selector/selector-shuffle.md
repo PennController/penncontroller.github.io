@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: selector
 title: selector.shuffle
 parent: Selector element
 grand_parent: Elements

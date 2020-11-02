@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: scale
 title: scale.label
 parent: Scale element
 grand_parent: Elements

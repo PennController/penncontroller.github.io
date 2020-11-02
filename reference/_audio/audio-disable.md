@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: audio
 title: audio.disable
 parent: Audio element
 grand_parent: Elements

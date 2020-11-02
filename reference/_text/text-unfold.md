@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: text
 title: text.unfold
 parent: Text element
 grand_parent: Elements

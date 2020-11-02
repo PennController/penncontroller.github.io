@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: button
 title: button.test.clicked
 parent: Button element
 grand_parent: Elements

@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: textinput
 title: textinput.test.text
 parent: TextInput element
 grand_parent: Elements

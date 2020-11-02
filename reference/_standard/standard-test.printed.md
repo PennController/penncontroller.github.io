@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: standard
 title: standard.test.printed
 parent: Standard element commands
 grand_parent: Elements

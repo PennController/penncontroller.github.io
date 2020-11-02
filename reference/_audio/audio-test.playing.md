@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: test
+element_type: audio
 title: audio.test.playing
 parent: Audio element
 grand_parent: Elements

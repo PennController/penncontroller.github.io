@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: key
 title: key.wait
 parent: Key element
 grand_parent: Elements

@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: var
 title: var.local
 parent: Var element
 grand_parent: Elements

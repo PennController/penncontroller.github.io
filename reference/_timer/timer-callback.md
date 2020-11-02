@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: timer
 title: timer.callback
 parent: Timer element
 grand_parent: Elements

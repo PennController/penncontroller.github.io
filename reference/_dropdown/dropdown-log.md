@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: dropdown
 title: dropdown.log
 parent: Dropdown element
 grand_parent: Elements

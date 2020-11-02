@@ -1,6 +1,7 @@
 ---
 layout: command
 command_type: action
+element_type: controller
 title: controller.wait
 parent: Controller element
 grand_parent: Elements

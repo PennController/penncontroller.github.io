@@ -3,7 +3,7 @@ layout: default
 title: How-to guides
 has_children: true
 has_toc: false
-children_are_in_collection: true
+children_collection: how-to-guides
 ---
 
 # {{ page.title }}
