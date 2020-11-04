@@ -44,6 +44,7 @@ layout: default
 <h2 id="element-action"> Action commands </h2>
 {% include command-blurbs.html collection=element-action %}
 {% unless page.element_type == "standard" %}
+  <hr>
   {% include command-blurbs.html collection=standard-action %}
 {% endunless %}
 
@@ -51,5 +52,6 @@ layout: default
 <h2 id="element-test"> Test commands </h2>
 {% include command-blurbs.html collection=element-test %}
 {% unless page.element_type == "standard" %}
+  <hr>
   {% include command-blurbs.html collection=standard-test %}
 {% endunless %}

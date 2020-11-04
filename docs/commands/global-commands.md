@@ -16,9 +16,9 @@ blurb: Used outside of a trial.
 
 ---
 
-<!-- Command TOC -->
-{% include toc-command.html collection=site.global-commands%}
+{% include toc-command.html collection=site.global-commands same-page=true %}
 
-<!-- Command blurbs -->
+---
+
 {% include command-blurbs.html collection=site.global-commands %}
 

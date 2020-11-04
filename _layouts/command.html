@@ -4,6 +4,17 @@ layout: default
 
 <h1>{{ page.title }}</h1>
 
+{% if page.element_type contains "standard" %}
+  {% for type in page.element_type %}
+    {% for element in site.elements %}
+      {% if element.element_type contains type %}
+        <span class="label bg-grey-lt-100 mt-2 ml-0"><a href="{{ element.url | absolute_url }}" target="_blank">{{ element.title }}</a></span>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  <hr>
+{% endif %}
+
 <h4>syntax</h4>
 <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
 
