@@ -8,8 +8,6 @@ has_toc: false
 <!-- if the [parent] attribute of a page matches {{ page.title }}, put that page in the array [children_list] -->
 <!-- if the title of a [node] in [pages_list] matches {{ page.title }}, put its children pages in the array [children_list] -->
 {% assign pages_list = site.html_pages %}
-{% assign parent = pages_list | where: "title", page.title | first %}
-{%- capture parent_url -%} {{ parent.url }} {%- endcapture -%}
 {% assign children_list = pages_list | where: "parent", page.title %}
 
 <!-- LAYOUT -->
