@@ -14,31 +14,34 @@ layout: default
 <!-- Element creation, description, and command TOC -->
 <div style="display: flow-root;" markdown="1">
   {% if page.element_type == "standard" %}
-  {% include toc-element.html element-action=element-action element-test=element-test %}
+    {% include toc-element.html element-action=element-action element-test=element-test %}
   {% else %}
     {% include toc-element.html element-action=element-action element-test=element-test standard-action=standard-action standard-test=standard-test %}
   {% endif %}
 
-  {% unless page.no_example %}
   <h4>syntax</h4>
   <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-  {% endunless %} 
   
   <h4>description</h4>
-  {{ page.blurb | markdownify }} 
+  {{ page.description | markdownify }} 
 
-  {% if page.extended_description %}
-  {{ page.extended_description | markdownify }}
+  {% if page.notes %}
+    <h4>note(s)</h4>
+    {{ page.excerpt }}
   {% endif %}
 </div>
 
 {% unless page.no_example %}
-<hr>
-
-{{ content }}
-
-<hr>
+  <hr>
+  <h4>example</h4>
+  {% if page.notes %}
+    {{ page.content | remove: page.excerpt }}
+  {% else %}
+    {{ page.content }}
+  {% endif %}
 {% endunless %}
+
+<hr>
 
 <!-- Action command blurbs -->
 <h2 id="element-action"> Action commands </h2>

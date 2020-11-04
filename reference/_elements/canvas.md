@@ -7,12 +7,14 @@ has_children: true
 has_toc: false
 thumbnail: canvas.png
 syntax: newCanvas("*ELEMENT_NAME*", *WIDTH*, *HEIGHT*)
-blurb: Creates rectangular surfaces that you can place other elements onto.
-extended_description: >- 
-  Use the [CanvasCreation tool](http://files.lab.florianschwarz.net/ibexfiles/CanvasCreation/) to help visualize **Canvas** layouts and generate code that you can use directly in a PCIbex experiment.
+description: Creates rectangular surfaces that you can place other elements onto.
+notes: true
 ---
 
-## Example
++ Use the [CanvasCreation tool](http://files.lab.florianschwarz.net/ibexfiles/CanvasCreation/) to help visualize **Canvas** layouts and generate code that you can use directly in a PCIbex experiment.
+
+<!--more-->
+
 ```javascript
 newImage("square", "square.png")
   .size(400, 400)
