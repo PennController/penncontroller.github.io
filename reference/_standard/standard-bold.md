@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: action
-element_type: standard
+element_type: [standard, button, controller, dropdown, html, mediarecorder, scale, text, tooltip]
 title: standard.bold
 parent: Standard element commands
 grand_parent: Elements

@@ -1,6 +1,6 @@
-{% for command in include.collection %}
-  <hr>
-  
+{% assign last = include.collection | last %}
+
+{% for command in include.collection %}  
   {% assign command_tag = command.title | downcase | slugify %}
   <h2 id="{{ command_tag }}"> 
     <a href="#{{ command_tag }}" aria-labelledby="{{ command_tag }}" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
@@ -37,4 +37,8 @@
   </div>
 
   <h4><a href="#">Back to top</a></h4>
+
+  {% unless command == last %}
+  <hr>
+  {% endunless %}
 {% endfor %}

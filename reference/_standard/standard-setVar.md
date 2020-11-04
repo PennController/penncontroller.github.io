@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: action
-element_type: standard
+element_type: [standard, audio, button, canvas, controller, dropdown, function, html, image, key, mediarecorder, scale, seelctor, text, textinput, timer, tooltip, var, video, voicerecorder, youtube]
 title: standard.setVar
 parent: Standard element commands
 grand_parent: Elements

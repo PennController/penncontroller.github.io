@@ -3,15 +3,21 @@ layout: default
 ---
 
 <!-- VARIABLE ASSIGNMENT -->
-{% assign action-commands = site[page.element_type] | where: "command_type", "action" %}
-{% assign test-commands = site[page.element_type] | where: "command_type", "test" %}
+{% assign element-action = site[page.element_type] | where: "command_type", "action" %}
+{% assign element-test = site[page.element_type] | where: "command_type", "test" %}
+{% assign standard-action = site.standard | where: "command_type", "action" | where_exp: "command", "command.element_type contains page.element_type" %}
+{% assign standard-test = site.standard | where: "command_type", "test" | where_exp: "command", "command.element_type contains page.element_type" %}
 
 <!-- LAYOUT -->
 <h1>{{ page.title }}</h1>
 
 <!-- Element creation, description, and command TOC -->
 <div style="display: flow-root;" markdown="1">
-  {% include toc-element.html actionCommands=action-commands testCommands=test-commands %}
+  {% if page.element_type == "standard" %}
+  {% include toc-element.html element-action=element-action element-test=element-test %}
+  {% else %}
+    {% include toc-element.html element-action=element-action element-test=element-test standard-action=standard-action standard-test=standard-test %}
+  {% endif %}
 
   {% unless page.no_example %}
   <h4>syntax</h4>
@@ -29,16 +35,21 @@ layout: default
 {% unless page.no_example %}
 <hr>
 
-<!-- Rest of element content -->
 {{ content }}
 
 <hr>
 {% endunless %}
 
 <!-- Action command blurbs -->
-<h2 id="action-commands"> Action commands </h2>
-{% include command-blurbs.html collection=action-commands %}
+<h2 id="element-action"> Action commands </h2>
+{% include command-blurbs.html collection=element-action %}
+{% unless page.element_type == "standard" %}
+  {% include command-blurbs.html collection=standard-action %}
+{% endunless %}
 
 <!-- Test command blurbs -->
-<h2 id="test-commands"> Test commands </h2>
-{% include command-blurbs.html collection=test-commands %}
+<h2 id="element-test"> Test commands </h2>
+{% include command-blurbs.html collection=element-test %}
+{% unless page.element_type == "standard" %}
+  {% include command-blurbs.html collection=standard-test %}
+{% endunless %}

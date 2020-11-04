@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: action
-element_type: standard
+element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
 title: standard.visible
 parent: Standard element commands
 grand_parent: Elements

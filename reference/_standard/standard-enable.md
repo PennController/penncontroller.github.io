@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: action
-element_type: standard
+element_type: [standard, audio, button, controller, dropdown, key, mediarecorder, scale, selector, textinput, timer, tooltip, video, voicerecorder, youtube]
 title: standard.enable
 parent: Standard element commands
 grand_parent: Elements
