@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: action
-element_type: standard
+element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
 title: standard.after
 parent: Standard element commands
 grand_parent: Elements
@@ -10,5 +10,5 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 ---
 
 ```javascript
-// example
+// examples
 ```
