@@ -2,6 +2,7 @@
 layout: default
 title: Creating a trial template
 parent: Advanced Tutorial
+nav_order: 3
 ---
 ## {{ page.title }}
 

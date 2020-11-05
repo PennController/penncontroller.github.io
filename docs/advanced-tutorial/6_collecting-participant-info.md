@@ -2,6 +2,7 @@
 layout: default
 title: Collecting participant information
 parent: Advanced Tutorial
+nav_order: 6
 ---
 ## {{ page.title }}
 

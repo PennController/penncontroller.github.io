@@ -155,5 +155,8 @@
         {% endif %}
       {% endif %}
     {%- endif -%}
+    {%- if node.title == "Advanced Tutorial" or node.title == "Home" -%}
+      <hr class="mt-2 mb-2 ml-3 mr-3">
+    {%- endif -%}
   {%- endfor -%}
 </ul>

@@ -2,6 +2,7 @@
 layout: default
 title: Enhancing aesthetics
 parent: Basic Tutorial
+nav_order: 6
 ---
 
 ## {{ page.title }}

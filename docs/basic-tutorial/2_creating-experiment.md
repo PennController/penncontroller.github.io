@@ -2,6 +2,7 @@
 layout: default
 title: Creating an experiment
 parent: Basic Tutorial
+nav_order: 2
 ---
 
 ## {{ page.title }}

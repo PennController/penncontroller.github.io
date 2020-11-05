@@ -2,6 +2,7 @@
 layout: default
 title: Logging data
 parent: Basic Tutorial
+nav_order: 8
 ---
 
 ## {{ page.title }}

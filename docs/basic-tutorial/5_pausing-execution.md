@@ -2,6 +2,7 @@
 layout: default
 title: Pausing experiment execution
 parent: Basic Tutorial
+nav_order: 5
 ---
 
 ## {{page.title}}
