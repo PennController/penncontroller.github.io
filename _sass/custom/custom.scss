@@ -70,7 +70,7 @@
   height: 100%;
 }
 
-// element command "table"
+// element command toc "table"
 .command-table {
   display: flex;
   flex-flow: row wrap;
@@ -90,7 +90,6 @@
   width: calc(100% / 3);
   border: 0.5px solid $grey-lt-100;
 }
-
 
 // customized horizontal rules
 hr {
@@ -137,16 +136,6 @@ a.overlay-link:hover{
   position: relative;
 }
 
-// .overlay {
-//   transition: 1s ease;
-//   background-color: red;
-//   opacity: 1;
-// }
-
 .overlay-container:hover .image {
   opacity: 0.4;
 }
-
-// .overlay-container:hover .overlay {
-//   opacity: 0.5;
-// }

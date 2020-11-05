@@ -2,6 +2,7 @@
 layout: default
 title: Adding instructions
 parent: Basic Tutorial
+nav_order: 7
 ---
 
 ## {{ page.title }}

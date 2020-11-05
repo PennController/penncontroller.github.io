@@ -2,6 +2,7 @@
 layout: default
 title: Setting up
 parent: Advanced Tutorial
+nav_order: 2
 ---
 
 ## {{ page.title }}

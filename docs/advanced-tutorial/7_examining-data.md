@@ -2,6 +2,7 @@
 layout: default
 title: Examining data
 parent: Advanced Tutorial
+nav_order: 7
 ---
 
 ## {{ page.title }}

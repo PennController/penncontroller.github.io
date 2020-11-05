@@ -2,6 +2,7 @@
 layout: default
 title: Counterbalancing
 parent: Advanced Tutorial
+nav_order: 5
 ---
 
 ## {{ page.title }}

@@ -2,6 +2,7 @@
 layout: default
 title: Wrapping up
 parent: Advanced Tutorial
+nav_order: 8
 ---
 
 ## {{ page.title }}

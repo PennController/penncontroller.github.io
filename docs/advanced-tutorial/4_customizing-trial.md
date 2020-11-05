@@ -2,6 +2,7 @@
 layout: default
 title: Customizing the experimental trial
 parent: Advanced Tutorial
+nav_order: 4
 ---
 ## {{ page.title }}
 

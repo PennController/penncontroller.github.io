@@ -2,6 +2,7 @@
 layout: default
 title: Adding commands
 parent: Basic Tutorial
+nav_order: 4
 ---
 
 ## {{ page.title }}

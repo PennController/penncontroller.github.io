@@ -2,6 +2,7 @@
 layout: default
 title: Creating elements
 parent: Basic Tutorial
+nav_order: 3
 ---
 
 ## {{ page.title }}
