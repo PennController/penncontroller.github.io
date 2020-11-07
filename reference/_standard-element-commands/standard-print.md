@@ -1,16 +1,16 @@
 ---
 layout: command
 command_type: action
-element_type: audio
-title: audio.wait
-parent: Audio element
-grand_parent: Elements
-syntax: getAudio("ELEMENT_NAME").wait()
+element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
+title: standard.print
+parent: Element commands
+grand_parent: Commands
+syntax: getX("ELEMENT_NAME").print()
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 optional_arguments: 
-  - syntax: getAudio("ELEMENT_NAME").wait("first")
+  - syntax: getX("ELEMENT_NAME").print(X, Y)
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  - syntax: getAudio("ELEMENT_NAME").wait(TEST_COMMAND)
+  - syntax: getX("ELEMENT_NAME").print(X, Y, "CANVAS_NAME")
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ---
 

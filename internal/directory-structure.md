@@ -5,6 +5,7 @@ parent: Internal documentation
 has_children: true
 has_toc: false
 nav_order: 1
+last_modified_date: november 5 2020
 ---
 
 # {{ page.title}}
@@ -28,61 +29,10 @@ penncontroller.github.io/
 |-- Gemfile.lock
 |-- README.md
 |-- _config.yml
-`-- index.markdown
+|-- faq.md
+|-- index.md
+`-- pcibex-farm.md
 ```
-
-
-```treeview
-penncontroller.github.io/
-|-- ...
-|-- reference/
-    |-- _action-commands/
-        |-- audio.once.md
-        |-- audio-pause.md
-        |-- button-callback.md
-        |-- button-click.md
-        |-- standard-center.md
-        |-- standard-css.md
-        `-- ...
-    |-- _test-commands/
-        |-- audio-test.hasplayed.md
-        |-- button-test.pressed.md
-        |-- standard-test.printed.md
-        `-- ...
-    |-- _core-concepts/
-    |-- _elements/
-    |-- _global-commands/
-    |-- _how-to-guides/
-    `-- _special-commands/
-`-- ...
-```
-
-
-```treeview
-penncontroller.github.io/
-|-- ...
-|-- reference/
-    |-- _audio/
-        |-- audio.once.md
-        |-- audio-pause.md
-        `-- audio-test.hasplayed.md
-    |-- _button/
-        |-- button-callback.md
-        |-- button-click.md
-        `-- button-test.pressed.md
-    |-- _standard/
-        |-- standard-center.md
-        |-- standard-css.md
-        `-- standard-test.printed.md
-    |-- ...
-    |-- _core-concepts/
-    |-- _elements/
-    |-- _global-commands/
-    |-- _how-to-guides/
-    `-- _special-commands/
-`-- ...
-```
-
 
 ---
 

@@ -11,7 +11,7 @@ As the writers of the **BasicTutorial** experiment, we know that the participant
 
 {% capture instructions%}
 + Create a **Trial** labeled `"instructions"` with centered **Text** instructions. 
-+ Create a centered [**Button** element]({{site.baseurl}}/docs/element/button){:target="_blank"} named `"wait"` that pauses experiment script execution until the participant clicks it.
++ Create a centered [**Button**]({{site.baseurl}}/docs/elements/button){:target="_blank"} named `"wait"` that pauses experiment script execution until the participant clicks it.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -69,7 +69,7 @@ Every element type has a corresponding default object, for example `defaultText`
 Any commands that are called on an element type's default object are called on all subsequent instances of that element type **within the same trial**. Instances of that element type in other trials are not affected.
 
 {% capture instructions%}
-Call the `center` and `print` commands on the `defaultText` object in the `"instructions"` **Trial**:
+Call the [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-center){:target="_blank"} and [`print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"} commands on the `defaultText` object in the `"instructions"` **Trial**:
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 

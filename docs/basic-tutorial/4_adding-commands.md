@@ -7,20 +7,20 @@ nav_order: 4
 
 ## {{ page.title }}
 
-Elements contain content; element commands do things with that content. For example, once you create an element, you can use the element command [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} to print it to the screen.
+Elements contain content; element commands do things with that content. For example, once you create an element, you can use the element command [`print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"} to print it to the screen.
 
 The command types:
 
 + [Element commands]({{site.baseurl}}/docs/core-concepts/commands#element-commands){:target="_blank"}: used within a trial and called on an element
   + [Action commands]({{site.baseurl}}/docs/core-concepts/commands#action-commands){:target="_blank"}: directly manipulates an element
-  + [Test commmands]({{site.baseurl}}/docs/core-concepts/commands#test-commands){:target="_blank"}: runs some test on an element
+  + [Test commands]({{site.baseurl}}/docs/core-concepts/commands#test-commands){:target="_blank"}: runs some test on an element
 + [Global commands]({{site.baseurl}}/docs/core-concepts/commands#global-commands){:target="_blank"}: used outside of a trial
 + [Special commands]({{site.baseurl}}/docs/core-concepts/commands#special-commands){:target="_blank"}: used within a trial, but not called on an element
 
 {% capture label %}
 This tutorial uses the term “command” as shorthand for “action command”. If a test, global or special command is intended, the term "test command", “global command”, or "special command" will be used.
 {% endcapture %}
-{% include label-note.html label-body=label  %}
+{% include label-note.html label-body=label %}
 
 To call a command, the command:
 
@@ -58,8 +58,8 @@ newTrial("TRIAL_LABEL",
 To learn about calling other types of commands, read the [Commands documentation page]({{site.baseurl}}/docs/core-concepts/commands){:target="_blank"}.
 
 {% capture instructions %}
-+ Call the [`play`]({{site.baseurl}}/docs/action-commands/audio-play){:target="_blank"} command on the `"fish-audio"` **Audio** to start audio playback.
-+ Call the [`print`]({{site.baseurl}}/docs/action-commands/standard-print){:target="_blank"} command on the `"fish-sentence"` **Text** and `"fish-plural"` **Image** to print them to the screen.
++ Call the [`play`]({{site.baseurl}}/docs/audio/audio-play){:target="_blank"} command on the `"fish-audio"` **Audio** to start audio playback.
++ Call the [`print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"} command on the `"fish-sentence"` **Text** and `"fish-plural"` **Image** to print them to the screen.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.

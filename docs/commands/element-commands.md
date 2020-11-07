@@ -9,10 +9,10 @@ nav_order: 1
 blurb: Used within a trial and called on an element.
 ---
 
-{% assign standard-action = site.standard | where: "command_type", "action" %}
-{% assign standard-test = site.standard | where: "command_type", "test" %}
-{% assign element-action = site.documents | where: "command_type", "action" | where_exp: "page", "page.parent != 'Standard element commands'" %}
-{% assign element-test = site.documents | where: "command_type", "test" | where_exp: "page", "page.parent != 'Standard element commands'" %}
+{% assign standard-action = site.standard-element-commands | where: "command_type", "action" %}
+{% assign standard-test = site.standard-element-commands | where: "command_type", "test" %}
+{% assign element-action = site.documents | where: "command_type", "action" | where_exp: "page", "page.parent != 'Element commands'" %}
+{% assign element-test = site.documents | where: "command_type", "test" | where_exp: "page", "page.parent != 'Element commands'" %}
 
 # {{ page.title }}
 

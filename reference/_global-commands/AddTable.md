@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: global
-title: PennController.AddTable
+title: AddTable
 parent: Global commands
 grand_parent: Commands
 syntax: AddTable("id", csv_string)

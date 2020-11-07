@@ -65,10 +65,13 @@ collections:
   global-commands:
     output: true
     permalink: /docs/:collection/:name/
+  how-to-guides:
+    output: true
+    permalink: /docs/:collection/:name/
   special-commands:
     output: true
     permalink: /docs/:collection/:name/
-  how-to-guides:
+  standard-element-commands:
     output: true
     permalink: /docs/:collection/:name/
   audio:
@@ -111,9 +114,6 @@ collections:
     output: true
     permalink: /docs/:collection/:name/
   selector:
-    output: true
-    permalink: /docs/:collection/:name/
-  standard:
     output: true
     permalink: /docs/:collection/:name/
   text:

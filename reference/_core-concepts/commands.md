@@ -14,7 +14,7 @@ parent: Core Concepts
 
 *To be filled in*
 
-### Standard commands
+### Standard element commands
 
 *To be filled in*
 

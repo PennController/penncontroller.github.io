@@ -10,9 +10,9 @@ nav_order: 6
 PennController has a variety of commands that manipulate aesthetic aspects of element with multimedia content. 
 
 For example:
-+ [`center`]({{site.baseurl}}/docs/action-commands/standard-center){:target="_blank"}: Centers a printed element on its horizontal axis.
-+ [`unfold`]({{site.baseurl}}/docs/action-commands/text-unfold){:target="_blank"}: "Unfolds" a **Text** element in a specified number of milliseconds, instead of printing it to the screen immediately.
-+ [`size`]({{site.baseurl}}/docs/action-commands/standard-size){:target="_blank"}: Resizes a printed element to a specified width by height in pixels.
++ [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-center){:target="_blank"}: Centers a printed element on its horizontal axis.
++ [`unfold`]({{site.baseurl}}/docs/text/text-unfold){:target="_blank"}: "Unfolds" a **Text** element in a specified number of milliseconds, instead of printing it to the screen immediately.
++ [`size`]({{site.baseurl}}/docs/standard-element-commands/standard-size){:target="_blank"}: Resizes a printed element to a specified width by height in pixels.
 
 {% capture instructions %}
 + Center the `"fish-sentence"` **Text**, and unfold it in 2676ms (the duration of `2fishRoundTank.mp3`).
@@ -61,12 +61,12 @@ For example:
 
 By default, every printed element is printed on a new line. For other layouts:
 
-+ [Pass coordinates to the `print` command]({{site.baseurl}}/docs/action-commands/standard-print) to control where the element is printed on the screen; or
-+ Create a [**Canvas** element]({{site.baseurl}}/docs/elements/canvas){:target="_blank"}, which defines a transparent surface onto which elements can be placed at specific coordinates.
++ [Pass coordinates to the `print` command]({{site.baseurl}}/docs/standard-element-commands/standard-print#optional-arguments){:target="_blank"} to control where the element is printed on the screen; or
++ Create a [**Canvas**]({{site.baseurl}}/docs/elements/canvas){:target="_blank"}, which defines a transparent surface onto which elements can be placed at specific coordinates.
 
 {% capture instructions %}
-+ Create a centered **Canvas** element named `"side-by-side"` that is 450x200 px (width x height).
-  1. Call the `add` command to add the `"fish-plural"` and `"fish-singular"` **Image** elements at the `(x=0, y=0)` and `(x=250, y=0)` coordinates, respectively.
++ Create a centered **Canvas** named `"side-by-side"` that is 450x200 px (width x height).
+  1. Call the [`add`]({{site.baseurl}}/docs/canvas/canvas-add){:target="_blank"} command to add the `"fish-plural"` and `"fish-singular"` **Image** elements at the `(x=0, y=0)` and `(x=250, y=0)` coordinates, respectively.
   2. Print the **Canvas**. You do not need to call the `print` command on the `"fish-plural"` and `"fish-singular"` **Image** elements.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*

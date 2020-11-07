@@ -5,8 +5,8 @@ layout: default
 <!-- VARIABLE ASSIGNMENT -->
 {% assign element-action = site[page.element_type] | where: "command_type", "action" %}
 {% assign element-test = site[page.element_type] | where: "command_type", "test" %}
-{% assign standard-action = site.standard | where: "command_type", "action" | where_exp: "command", "command.element_type contains page.element_type" %}
-{% assign standard-test = site.standard | where: "command_type", "test" | where_exp: "command", "command.element_type contains page.element_type" %}
+{% assign standard-action = site.standard-element-commands | where: "command_type", "action" | where_exp: "command", "command.element_type contains page.element_type" %}
+{% assign standard-test = site.standard-element-commands | where: "command_type", "test" | where_exp: "command", "command.element_type contains page.element_type" %}
 
 <!-- LAYOUT -->
 <h1>{{ page.title }}</h1>
@@ -50,8 +50,6 @@ layout: default
   <hr>
   {% include command-blurbs.html collection=standard-action %}
 {% endunless %}
-
-<hr>
 
 <!-- Test command blurbs -->
 <h2 id="element-test"> Test commands </h2>
