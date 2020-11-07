@@ -27,8 +27,6 @@ nav_order: 1
 6. [Examining-data](#examining-data): how to use R to read in a results file
   + Using the [tidyverse](https://www.tidyverse.org/){:target="_blank"} to transform data (optional).
 
-Each section ends with a <span class="text-delta"><a href="#">Back to top</a></span> link, and you can hover to the left of a section title for a shortcut link to that section.
-
 ---
 
 ## {{ page.title }}

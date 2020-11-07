@@ -11,10 +11,28 @@ nav_order: 1
 A free, open-source, versatile, and user-friendly online experiment builder. 
 {: .fs-5 .fw-300 }
 
-<div class="flex-row-wrap" markdown=1>
-[TRY IT!](https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html){: .btn .btn-purple .mr-8 target="_blank" }
-[GET STARTED]({{site.baseurl}}/docs/core-concepts){: .btn .ml-8 .mr-8 target="_blank" }
-[TAKE THE TUTORIAL]({{site.baseurl}}/docs/basic-tutorial){: .btn .ml-8 target="_blank" }
+<div id="desktop-only" class="flex-row-wrap mt-4">
+  <div>
+    <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" class="btn btn-purple" target="_blank">TRY IT!</a>
+  </div>
+  <div>
+    <a href="{{site.baseurl}}/docs/core-concepts" class="btn" target="_blank">GET STARTED</a>
+  </div>
+  <div>
+    <a href="{{site.baseurl}}/docs/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+  </div>
+</div>
+
+<div id="mobile-only" class="flex-column-wrap">
+  <div class="centered-100 py-2">
+    <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" class="btn btn-purple" target="_blank">TRY IT!</a>
+  </div>
+  <div class="centered-100 py-2">
+    <a href="{{site.baseurl}}/docs/core-concepts" class="btn" target="_blank">GET STARTED</a>
+  </div>
+  <div class="centered-100 py-2">
+    <a href="{{site.baseurl}}/docs/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+  </div>
 </div>
 
 ---

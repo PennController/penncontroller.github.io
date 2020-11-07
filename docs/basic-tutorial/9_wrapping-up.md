@@ -91,4 +91,4 @@ Now that you've learned the basics of PennController, we recommend reading the [
 + Create obligatory checkboxes and global variables.
 + Examine PennController results files.
 
-You can also jump right in and [start creating your own experiments](https://expt.pcibex.net/){:target="_blank"}. If you have questions, visit the [**Troubleshooting**]({{site.baseurl}}/docs/troubleshooting){:target="_blank"} page, check out our [**how-to guides**]({{site.baseurl}}/docs/how-to-guides){:target="_blank"}, or post a question on our [support forum](https://www.pcibex.net/forums/){:target="_blank"}.
+You can also jump right in and [start creating your own experiments](https://expt.pcibex.net/){:target="_blank"}. If you have questions, visit the [**Troubleshooting**]({{site.baseurl}}/docs/troubleshooting){:target="_blank"} page, check out our [**How-to guides**]({{site.baseurl}}/docs/how-to-guides){:target="_blank"}, or post a question on our [support forum](https://www.pcibex.net/forums/){:target="_blank"}.

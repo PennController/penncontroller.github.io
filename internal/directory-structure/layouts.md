@@ -3,7 +3,7 @@ layout: default
 title: _layouts/
 parent: Directory structure
 grand_parent: Internal documentation
-last_modified_date: october 27 2020
+last_modified_date: november 5 2020
 ---
 
 ## `{{ page.title }}`
@@ -43,9 +43,15 @@ Layout for a command documentation page.
 ---
 
 ## `element.html`
+description
+{: .text-delta .mt-4}
+
 Layout for an element documentation page.
 
 ---
 
 ## `tutorial.html`
+description
+{: .text-delta .mt-4}
+
 Layout for the Basic/Advanced Tutorials.

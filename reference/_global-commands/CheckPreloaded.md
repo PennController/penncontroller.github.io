@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: global
-title: PennController.CheckPreloaded
+title: CheckPreloaded
 parent: Global commands
 grand_parent: Commands
 syntax: to be filled in

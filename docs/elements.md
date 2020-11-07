@@ -13,9 +13,9 @@ nav_order: 5
 {% for child in site.elements %}
   <div class="centered-25">
     <a href="{{ child.url | absolute_url }}" class="overlay-link" target="_blank">
-    <div class="overlay-container py-6">
-    <img src="{{ site.baseurl }}/assets/elements/{{ child.thumbnail }}" alt="{{ child.title }}" width="100" height="100" class="image"><br>
-    <span class="underline">{{ child.title }}</span>
+    <div class="overlay py-6">
+      <img src="{{ site.baseurl }}/assets/elements/{{ child.thumbnail }}" alt="{{ child.title }}" width="100" height="100" class="image"><br>
+      <div class="element-title">{{ child.title }}</div>
     </div>
     </a>
   </div>

@@ -20,7 +20,7 @@ In the current experimental design, the plural image is always printed on the le
 It's possible that participants are simply always faster at choosing images on the left (or on the right). This reaction time advantage would create a confound that could lead to an incorrect conclusion about morphological processing.
 
 {% capture instructions %}
-Call the `shuffle` command on the `"selection"` **Selector** to shuffle the horizontal position of the `"plural"` and `"singular"` **Image** elements. 
+Call the [`shuffle`]({{site.baseurl}}/docs/selector/selector-shuffle){:target="_blank"} command on the `"selection"` **Selector** to shuffle the horizontal position of the `"plural"` and `"singular"` **Image** elements. 
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// code omitted in interest of space
@@ -166,7 +166,7 @@ By default, PennController executes experiment scripts from top to bottom. The g
 
 A shuffle sequence is a way to sequence or randomize an array of items, in this case the PennController **Trial** objects. Randomizing the order of the experimental items is a way to control for order effects. 
 
-The `Sequence` global command can create a wide variety of shuffle sequences using type predicates (predicates, for short), and the functions `seq`, `randomize`, `shuffle`, and `rshuffle`. For more details, read the [`Sequence` documentation]({{site.baseurl}}/docs/global-commands/sequence){:target="_blank"}.
+The `Sequence` global command can create a wide variety of shuffle sequences using type predicates (predicates, for short), and the functions `seq`, `randomize`, `shuffle`, and `rshuffle`.
 
 For the **AdvancedTutorial** experiment, the important parts to know are that:
 
@@ -176,7 +176,7 @@ For the **AdvancedTutorial** experiment, the important parts to know are that:
 + **Trial** objects that do not match a `PREDICATE` are not run.
 
 {% capture instructions %}
-Use the `Sequence` global command to run the four `"experimental-trial"` **Trial** objects in a random order:
+Use the [`Sequence`]({{site.baseurl}}/docs/global-commands/sequence){:target="_blank"}` global command to run the four `"experimental-trial"` **Trial** objects in a random order:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the AdvancedTutorial experiment.

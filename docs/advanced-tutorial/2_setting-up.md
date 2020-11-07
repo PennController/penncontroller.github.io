@@ -7,7 +7,7 @@ nav_order: 2
 
 ## {{ page.title }}
 
-The **AdvancedTutorial** experiment continues directly from the [**BasicTutorial** experiment]({{site.baseurl}}/docs/basic-tutorial/#overview). 
+The **AdvancedTutorial** experiment continues directly from the [**BasicTutorial** experiment]({{site.baseurl}}/docs/basic-tutorial/#overview){:target="_blank"}. 
 
 {% capture instructions %}
 Modify the **BasicTutorial** experiment by importing new resource files, updating `main.js`, and renaming the experiment:

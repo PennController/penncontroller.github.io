@@ -1,7 +1,7 @@
 ---
 layout: command
 command_type: global
-title: PennController.AddHost
+title: AddHost
 parent: Global commands
 grand_parent: Commands
 syntax: AddHost("URL)

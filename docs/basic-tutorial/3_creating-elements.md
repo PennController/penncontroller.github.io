@@ -56,9 +56,9 @@ newTrial("TRIAL_LABEL", newX("ELEMENT_1", ...), newX("ELEMENT_2", ...), getX("EL
 ```
 
 {% capture instructions %}
-+ Create an [**Audio** element]({{site.baseurl}}/docs/elements/audio){:target="_blank"} named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
-+ Create a [**Text** element]({{site.baseurl}}/docs/elements/text){:target="_blank"} named `"fish-sentence"` that contains the string `The fish swim in a tank which is perfectly round.`
-+ Create an [**Image** element]({{site.baseurl}}/docs/elements/image){:target="_blank"} named `"fish-plural"` that contains the image `2fishRoundTank.png`.
++ Create an [**Audio**]({{site.baseurl}}/docs/elements/audio){:target="_blank"} named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
++ Create a [**Text**]({{site.baseurl}}/docs/elements/text){:target="_blank"} named `"fish-sentence"` that contains the string `The fish swim in a tank which is perfectly round.`
++ Create an [**Image**]({{site.baseurl}}/docs/elements/image){:target="_blank"} named `"fish-plural"` that contains the image `2fishRoundTank.png`.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -80,10 +80,7 @@ newTrial("TRIAL_LABEL", newX("ELEMENT_1", ...), newX("ELEMENT_2", ...), getX("EL
 +)
 </code></pre>
 
-{% capture label %}
 At this point, the `main.js` script is **incomplete**; we've created a trial with several elements, but not yet done anything with the elements. If you run the experiment, it'll end immediately with the message "The results were successfully sent to the server. Thanks!". 
-{% endcapture%}
-{% include label-note.html label-body=label %}
 
 {% endcapture %}
 {% include instructions.html text=instructions%}

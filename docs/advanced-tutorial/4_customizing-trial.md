@@ -16,18 +16,18 @@ This section describes ways to customize the `"experimental-trial"` **Trial**:
 
 ### Selecting an image with a mouse click
 
-In the **AdvancedTutorial** experiment, the participant selects an image by pressing the `F` or `J` key. We'll include the option of clicking on an image to select it by using a [**Selector** element]({{site.baseurl}}/docs/elements/selector){:target="_blank"}. 
+In the **AdvancedTutorial** experiment, the participant selects an image by pressing the `F` or `J` key. We'll include the option of clicking on an image to select it by using a [**Selector**]({{site.baseurl}}/docs/elements/selector){:target="_blank"}. 
 
 A **Selector** creates a group of elements, where (by default) each member can be selected with a mouse click. We can then associate a key to each member, so that a keypress will also select the desired element. 
 
 {% capture instructions %}
 + Remove the `"keypress"` **Key**.
-+ Create a **Selector** element named `"selection"`.
-  1. Call the `add` command to add the `"singular"` and `"plural"` **Image** elements
-  2. Call the `keys` command to associate the `F` and `J` keys to the singular image and plural image, respectively. 
-  3. Call the `log` command to log information about the participant's selection.
-  4. Call the `once` command so that only the first image selection is valid (without the `once` command, the participant can change the selected image, up until the trial ends).
-  5. Call the `wait` command to pause experiment script execution until the participant selects an element.
++ Create a [**Selector**]({{site.baseurl}}/docs/elements/selector){:target="_blank"} named `"selection"`.
+  1. Call the [`add`]({{site.baseurl}}/docs/selector/selector-add){:target="_blank"} command to add the `"singular"` and `"plural"` **Image** elements
+  2. Call the [`keys`]({{site.baseurl}}/docs/selector/selector-keys){:target="_blank"} command to associate the `F` and `J` keys to the singular image and plural image, respectively. 
+  3. Call the [`log`]({{site.baseurl}}/docs/selector/selector-log){:target="_blank"} command to log information about the participant's selection.
+  4. Call the [`once`]({{site.baseurl}}/docs/selector/selector-once){:target="_blank"} command so that only the first image selection is valid (without the `once` command, the participant can change the selected image, up until the trial ends).
+  5. Call the [`wait`]({{site.baseurl}}/docs/selector/selector-wait){:target="_blank"} command to pause experiment script execution until the participant selects an element.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 
@@ -89,10 +89,10 @@ In other words, the participant has until the audio playback finishes to press a
 
 {% capture instructions %}
 + Create a timeout:
-  1. Create and start a [**Timer** element]({{site.baseurl}}/docs/elements/timer){:target="_blank"} named `"timeout"` that is `row.duration` ms long.
-  2. Call the `callback` command on the `"selection"` **Selector**. When an image is selected, the `callback` command will stop the `"timeout"` **Timer**. Remove the `once` and `wait` commands.
-  3. Call the `wait` command on the `"timeout"` **Timer** to pause experiment script execution until the timer stops.
-  4. Call the `stop` command on the `"audio"` **Audio** to stop audio playback when the timer stops. Remove the `wait("first")` command.
+  1. Create and start a [**Timer**]({{site.baseurl}}/docs/elements/timer){:target="_blank"} named `"timeout"` that is `row.duration` ms long.
+  2. Call the [`callback`]({{site.baseurl}}/docs/selector/selector-callback){:target="_blank"} command on the `"selection"` **Selector**. When an image is selected, the `callback` command will stop the `"timeout"` **Timer**. Remove the `once` and `wait` commands.
+  3. Call the [`wait`]({{site.baseurl}}/docs/timer/timer-wait){:target="_blank"} command on the `"timeout"` **Timer** to pause experiment script execution until the timer stops.
+  4. Call the [`stop`]({{site.baseurl}}/docs/audio/audio-stop){:target="_blank"} command on the `"audio"` **Audio** to stop audio playback when the timer stops. Remove the `wait("first")` command.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 
@@ -165,7 +165,7 @@ The timeout is created as follows:
 Each trial begins as soon as the previous trial ends. This might be overwhelming for participants, so we'll create a one-second pause between trials. 
 
 {% capture instructions %}
-Create and start a **Timer** named `"break"` that is 1000ms long. Call the `wait` command to pause experiment script execution until the timer stops:
+Create and start a **Timer** named `"break"` that is 1000ms long. Call the [`wait`]({{site.baseurl}}/docs/timer/timer-wait){:target="_blank"} command to pause experiment script execution until the timer stops:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// code omitted in interest of space
@@ -222,11 +222,11 @@ Create and start a **Timer** named `"break"` that is 1000ms long. Call the `wait
 
 ### Using CSS styles
 
-The [`css`]({{site.baseurl}}/docs/action-commands/standard-css){:target=":blank"} and [`cssContainer`]({{site.baseurl}}/docs/action-commands/standard-csscontainer){:target=":blank"} commands are equivalent to using [inline CSS](https://www.w3schools.com/html/html_css.asp){:target="_blank"} to apply a style or styles. The `css` command applies the CSS style(s) to the specified element, and the `cssContainer` command applies the CSS style(s) to the container of the specified element.
+The [`css`]({{site.baseurl}}/docs/standard-element-commands/standard-css){:target=":blank"} and [`cssContainer`]({{site.baseurl}}/docs/standard-element-commands/standard-csscontainer){:target=":blank"} commands are equivalent to using [inline CSS](https://www.w3schools.com/html/html_css.asp){:target="_blank"} to apply a style or styles. The `css` command applies the CSS style(s) to the specified element, and the `cssContainer` command applies the CSS style(s) to the container of the specified element.
 
 {% capture instructions %}
 + Update the instructions to reflect the changes in the `"experimental-trial"` **Trial**.
-+ Call the `cssContainer` command on the `defaultText` object to add a 1em bottom margin to every **Text** element container. 
++ Call the [`cssContainer`]({{site.baseurl}}/docs/standard-element-commands/standard-csscontainer){:target=":blank"} command on the `defaultText` object to add a 1em bottom margin to every **Text** element container. 
 + Remove the `<p></p>` tags.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
@@ -323,10 +323,10 @@ We'll create a **Button** and call the `wait` command on it to pause experiment 
 However, there is no need for participants to go beyond this **Trial**; the experiment is already over, and the results have already been sent. Pause experiment script execution indefinitely by calling the `wait` command on the **Button** *without* printing it. The participant will never be able to click the button, and the `wait` command will never be satisfied.
 
 {% capture instructions %}
-+ Call the `SendResults` global command and label it `"send"`.
++ Call the [`SendResults`]({{site.baseurl}}/global-commands/sendresults){:target="_blank"} global command and label it `"send"`.
 + Create a new **Trial** labeled `"completion_screen"`.
   + Create and print a centered **Text** named `"thanks"`.
-  + Create a new **Button** named `"void"`. Call the `wait` command on it, but do *not* print it to the screen.
+  + Create a new **Button** named `"void"`. Call the [`wait`]({{site.baseurl}}/docs/button/button-wait){:target="_blank"} command on it, but do *not* print it to the screen.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// code omitted in interest of space

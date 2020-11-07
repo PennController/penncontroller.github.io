@@ -106,18 +106,18 @@ In the [**Basic Tutorial**]({{site.baseurl}}/docs/basic-tutorial), we recommende
 
 ### Logging trial details
 
-When we [analyze the collected data](#analyzing-data), it will be important to know which group was run, which lines in the `results` file belong to which items, and which verbal inflection condition each item had.
+When we [examine the collected data](#examining-data), it will be important to know which group was run, which lines in the `results` file belong to which items, and which verbal inflection condition each item had.
 
 Use the `log("COLUMN_NAME", VALUE)` method to add a column to an experiment's `results` file. The column is only added to rows that log information about the **Trial** that the `log` method is called on.
 + `"COLUMN_NAME"` is the name of the column that will be added to the `results` file.
 + `VALUE` is the value that will be added to each row of the `results` file, in the column created by `"COLUMN_NAME"`.
 
-The `log` method and the [`log` command]({{site.baseurl}}/docs/basic-tutorial/#logging-data) are similar, but differ in important ways:
+The [`log` method]({{site.baseurl}}/docs/global-commands/newtrial#methods){:target="_blank"} and the [`log` command]({{site.baseurl}}/docs/basic-tutorial/#logging-data) are similar, but differ in important ways:
 + The `log` method adds columns, the `log` command adds rows.
 + The `log` method is called on a **Trial**, the `log` command is called on an element.
 
 {% capture instructions %}
-Use the `log` method on the `"experimental-item"` **Trial** to record the group, item number, and verbal inflection condition.
+Use the [`log` method]({{site.baseurl}}/docs/global-commands/newtrial#methods){:target="_blank"} on the `"experimental-item"` **Trial** to record the group, item number, and verbal inflection condition.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// code omitted in interest of space
@@ -218,5 +218,5 @@ The sections that log information about the `"instructions"` and `"experimental-
 + The `"experimental-trial"` **Trial** section contains the default columns, as well as the `group`, `item`, and `condition` columns added by the `log` method.
 
 {% endcapture %}
-{% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
+{% include collapsible-block.html content=content summary="click to expand" inner-border=true %}
 

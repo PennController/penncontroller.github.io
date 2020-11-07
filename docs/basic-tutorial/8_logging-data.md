@@ -7,14 +7,14 @@ nav_order: 8
 
 ## {{ page.title }}
 
-By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/docs/action-commands/standard-log){:target="_blank"} command to collect any other information. 
+By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/docs/standard-element-commands/standard-log){:target="_blank"} command to collect any other information. 
 
 The `log` command adds lines to the `results` file in the experiment project page's **Results** folder. The information that is added depends on the element type that the `log` command is called on. To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/docs/elements){:target="_blank"}.
 
 {% capture instructions %}
-+ Uncomment the `DebugOff` command, since we are now ready to collect data.
-+ Call the `log` command on the `"side-by_side"` **Canvas** to log when the images are printed to the screen.
-+ Call the `log` command on the `"keypress"` **Key** to log information about the participant's keypress.
++ Uncomment the [`DebugOff`]({{site.baseurl}}/docs/global-commands/debugoff){:target="_blank"} command, since we are now ready to collect data.
++ Call the [`log`]({{site.baseurl}}/docs/canvas/canvas-log){:target="_blank"} command on the `"side-by_side"` **Canvas** to log when the images are printed to the screen.
++ Call the [`log`]({{site.baseurl}}/docs/key/key-log){:target="_blank"} command on the `"keypress"` **Key** to log information about the participant's keypress.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
