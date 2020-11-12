@@ -1,4 +1,4 @@
-// used inside an includes file
+// _includes/instructions.html
 .tutorial-instruction {
   border: 1px dashed $grey-dk-000;
   margin-top: $sp-4;
@@ -7,6 +7,7 @@
   padding-right: $sp-2;
 }
 
+// _includes/collapsible-block.html
 .collapsible-block-title{
   padding-top: $sp-1;
   padding-bottom: $sp-1;
@@ -26,20 +27,54 @@
   margin-bottom: $sp-4;
 }
 
-// div border styles
-.dotted-grey-dk-000 {
-  border: 1px dotted $grey-dk-000;
+// _includes/toc-command.html
+.command-table {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 100%;
+  border: 0.5px solid $grey-lt-100;
 }
 
-.dashed-grey-dk-000 {
-  border: 1px dashed $grey-dk-000;
+.command-table div {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-left: $sp-2;
+  padding-right: $sp-2;
+  height: 50px;
+  width: calc(100% / 3);
+  border: 0.5px solid $grey-lt-100;
 }
 
-.dashed-grey-lt-300 {
-  border: 1px dashed $grey-lt-300;
+// element thumbnail display
+a.overlay-link:hover{
+  text-decoration: underline;
 }
 
-// flex container styles
+.underline{
+  text-decoration: underline;
+  text-decoration-color: rgba($link-color, 0.2);
+}
+
+.overlay{
+  position: relative;
+}
+
+.overlay:hover .image {
+  opacity: 0.4;
+}
+
+.element-title{
+  text-decoration: underline;
+  padding-left: $sp-1;
+  padding-right: $sp-1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: no-wrap;
+}
+
+// flex container classes
 .flex-row-wrap {
   display: flex;
   flex-flow: row wrap;
@@ -81,33 +116,17 @@
   height: 100%;
 }
 
-// element command toc "table"
-.command-table {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  width: 100%;
-  border: 0.5px solid $grey-lt-100;
+// custom border styles
+.dotted-grey-dk-000 {
+  border: 1px dotted $grey-dk-000;
 }
 
-.command-table div {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  padding-left: $sp-2;
-  padding-right: $sp-2;
-  height: 50px;
-  width: calc(100% / 3);
-  border: 0.5px solid $grey-lt-100;
+.dashed-grey-dk-000 {
+  border: 1px dashed $grey-dk-000;
 }
 
-// customized horizontal rules
-hr {
-  background-color: $grey-lt-300;
-}
-
-hr.grey-lt-000 {
-  background-color: $grey-lt-000;
+.dashed-grey-lt-300 {
+  border: 1px dashed $grey-lt-300;
 }
 
 // customized tables
@@ -121,51 +140,19 @@ hr.grey-lt-000 {
   box-shadow: none;
 }
 
-// highlight a table row with <tr class="row-highlight"> 
-tr.row-highlight {
-  background-color: $grey-lt-000;
-}
-
-th,
-td {
-  min-width: 100px;
-  background-color: inherit;
-}
-
-// element thumbnail display
-a.overlay-link:hover{
-  text-decoration: underline;
-}
-
-.underline{
-  text-decoration: underline;
-  text-decoration-color: rgba($link-color, 0.2);
-}
-
-.overlay{
-  position: relative;
-}
-
-.overlay:hover .image {
-  opacity: 0.4;
-}
-
-.element-title{
-  text-decoration: underline;
-  padding-left: $sp-1;
-  padding-right: $sp-1;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: no-wrap;
+// custom label
+.label-grey-lt-200 {
+  background-color: $grey-lt-200;
+  color: black;
 }
 
 // desktop-only and mobile-only content
-#desktop-only {display: flex;}
-#mobile-only {display: none;}
+.desktop-only {display: flex;}
+.mobile-only {display: none;}
 
 @media only screen
   and (min-device-width : 320px)
   and (max-device-width : 480px){ 
-    #desktop-only {display: none;}
-    #mobile-only {display: flex;}
+    .desktop-only {display: none;}
+    .mobile-only {display: flex;}
 }

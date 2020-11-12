@@ -5,24 +5,27 @@ parent: Basic Tutorial
 nav_order: 1
 ---
 
-#### Table of contents
+Table of contents
+{: .text-delta }
 
-1. [Creating an experiment](#creating-an-experiment): how to use PennController and the PCIbex Farm
+1. [Overview](#overview)
+2. [Creating an experiment](#creating-an-experiment): how to use PennController and the PCIbex Farm
   + Using the debugger.
-2. [Adding elements](#adding-elements):  how to use elements, the basic unit of a PennController experiment
-  + Using multimedia and interactive elements.
-3. [Adding commands](#adding-commands): how to manipulate elements with commands
+3. [Adding elements](#adding-elements):  how to use elements, the basic unit of a PennController experiment
+ + Using multimedia and interactive elements.
+4. [Adding commands](#adding-commands): how to manipulate elements with commands
   + Playing audio and printing text and images to the screen.
-4. [Pausing experiment execution](#pausing-experiment-execution): how to let participants interact with an experiment
+5. [Pausing experiment execution](#pausing-experiment-execution): how to let participants interact with an experiment
   + Pausing an experiment until audio playback finishes or a valid keypress.
-5. [Enhancing aesthetics](#enhancing-aesthetics): how to adjust the display of multimedia content
+6. [Enhancing aesthetics](#enhancing-aesthetics): how to adjust the display of multimedia content
   + Centering text and resizing images.
   + Manipulating printed layouts.
-6. [Adding instructions](#adding-instructions): how to set trial-wide commands with default objects
+7. [Adding instructions](#adding-instructions): how to set trial-wide commands with default objects
   + Modifying text with HTML tags.
-7. [Logging data](#logging-data): how to collect and examine experimental data
+8. [Logging data](#logging-data): how to collect and examine experimental data
   + Reading a PennController results file.
   + Comparing timestamps to calculate response time.
+9. [Wrapping up](#wrapping-up)
 
 ---
 
@@ -109,7 +112,7 @@ newTrial("experimental-trial",
 {% include collapsible-block.html content=content summary="Click to see the final experiment script" inner-border=true %}
 </div>
 
-#### Instructions
+### Following the tutorial
 
 Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span> blocks:
 

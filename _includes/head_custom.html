@@ -1,1 +1,5 @@
-<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">
+<link rel="stylesheet" href="{{site.baseurl}}/assets/prism/prism.css">
+
+{% if page.numbered_headings %}
+<link rel="stylesheet" href="{{site.baseurl}}/assets/tutorials/numbered_headings.css">
+{% endif %}

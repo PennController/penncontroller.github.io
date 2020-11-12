@@ -7,7 +7,7 @@ nav_order: 3
 
 ## {{ page.title }}
 
-**Elements** are the basic unit of a PennController experiment. They contain multimedia content, interactive content, or some combination of the two.
+Elements are the basic unit of a PennController experiment. They contain multimedia content, interactive content, or some combination of the two.
 
 As of PennController 1.8, there are 21 element types, including: 
 

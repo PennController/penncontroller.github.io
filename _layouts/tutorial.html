@@ -3,25 +3,27 @@ layout: default
 has_toc: false
 ---
 
-<!-- ASSIGN VARIABLES -->
-<!-- [pages_list] is an array of all html pages -->
-<!-- if the [parent] attribute of a page matches {{ page.title }}, put that page in the array [children_list] -->
-<!-- if the title of a [node] in [pages_list] matches {{ page.title }}, put its children pages in the array [children_list] -->
 {% assign pages_list = site.html_pages %}
 {% assign children_list = pages_list | where: "parent", page.title %}
 
-<!-- LAYOUT -->
 <h1>{{ page.title }}</h1>
 
 {{ page.content | markdownify }}
 
-<!-- CONTENT -->
-<!-- for every [child] in [children_list], print a horizontal rule, {{ child.content }}, and then a link to the top of the page -->
 {% for child in children_list -%}
   <hr>
 
   {{ child.content }}
 
-  <h4><a href="#">Back to top</a></h4>
+  <div class="flex-row-wrap mt-6" style="justify-content: space-between;">
+    {% if forloop.index0 > 0 %}
+      {% assign previous_i = forloop.index0 | minus: 1 %}
+      {% assign previous = children_list[previous_i] %}
+      <div><span class="label label-grey-lt-200"><a href="#{{previous.title | downcase | slugify }}">← previous section ({{previous.title}})</a></span></div>
+    {% else %}
+      <div></div>
+    {% endif %}
+    <div><span class="label label-grey-lt-200"><a href="#">↑ back to top</a></span></div>
+  </div>
 {% endfor %}
 

@@ -10,7 +10,7 @@ nav_order: 7
 As the writers of the **BasicTutorial** experiment, we know that the participant must press the `F` or `J` key to select an image. However, a naive participant will need instructions.
 
 {% capture instructions%}
-+ Create a **Trial** labeled `"instructions"` with centered **Text** instructions. 
++ Create a trial labeled `"instructions"` with centered **Text** instructions. 
 + Create a centered [**Button**]({{site.baseurl}}/docs/elements/button){:target="_blank"} named `"wait"` that pauses experiment script execution until the participant clicks it.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
@@ -62,14 +62,14 @@ The `<p></p>`, `<b></b>`, and `<br>` are HTML tags that [define a paragraph](htt
 
 ### Setting default commands
 
-All of the **Text** elements in the `"instructions"` **Trial** are centered and printed to the screen. Instead of calling the `center` and `print` commands on every **Text** element, you can call the `center` and `print` commands once on the default `Text` element type object.
+All of the **Text** elements in the `"instructions"` trial are centered and printed to the screen. Instead of calling the `center` and `print` commands on every **Text** element, you can call the `center` and `print` commands once on the default `Text` element type object.
 
 Every element type has a corresponding default object, for example `defaultText`. An element type's default object is accessed by calling `defaultX`, where `X` is an element type.
 
 Any commands that are called on an element type's default object are called on all subsequent instances of that element type **within the same trial**. Instances of that element type in other trials are not affected.
 
 {% capture instructions%}
-Call the [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-center){:target="_blank"} and [`print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"} commands on the `defaultText` object in the `"instructions"` **Trial**:
+Call the [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-center){:target="_blank"} and [`print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"} commands on the `defaultText` object in the `"instructions"` trial:
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 
@@ -118,11 +118,11 @@ Call the [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-cen
 
 ### Adding instructions to the same trial (optional) 
 
-We recommend creating a separate `"instructions"` **Trial** in preparation for the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, but you can also add instructions to the `"experimental-trial"` **Trial**.
+We recommend creating a separate `"instructions"` trial in preparation for the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, but you can also add instructions to the `"experimental-trial"` trial.
 
 {% capture content %}
 
-Add instructions to the `"experimental-trial"` **Trial**:
+Add instructions to the `"experimental-trial"` trial:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.

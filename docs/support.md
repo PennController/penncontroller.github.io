@@ -1,7 +1,6 @@
 ---
 layout: default
-title: Commands
-nav_order: 6
+title: Support
 has_children: true
 has_toc: false
 exclude_permalink: true

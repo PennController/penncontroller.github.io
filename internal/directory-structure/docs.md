@@ -3,7 +3,7 @@ layout: default
 title: docs/
 parent: Directory structure
 grand_parent: Internal documentation
-last_modified_date: october 27 2020
+last_modified_date: november 11 2020
 ---
 
 ## `{{ page.title}} `
@@ -20,11 +20,13 @@ docs/
 |-- advanced-tutorial/
 |-- basic-tutorial/
 |-- commands/
+|-- core-concepts/
+|-- support/
 |-- advanced-tutorial.md
 |-- basic-tutorial.md
 |-- commands.md
 |-- core-concepts.md
-|-- element.md
+|-- elements.md
 |-- how-to-guides.md
-`-- troubleshooting.md
+`-- support.md
  ```
