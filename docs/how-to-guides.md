@@ -4,9 +4,7 @@ title: How-to guides
 has_children: true
 has_toc: false
 children_collection: how-to-guides
+exclude_permalink: true
 ---
 
 # {{ page.title }}
-
-<!-- TOC -->
-{% include toc-collection.html collection=site.how-to-guides ordered=false %}

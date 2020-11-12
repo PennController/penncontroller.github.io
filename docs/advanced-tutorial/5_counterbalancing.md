@@ -86,7 +86,7 @@ If you call the `keys` command before calling the `shuffle` command, it is possi
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-The `shuffle` command shuffles the image positions for every `"experimental-item"` **Trial** independently, meaning that within an iteration of the **AdvancedTutorial** experiment it's still possible for the plural image to be printed on the left for all four experimental items.
+The `shuffle` command shuffles the image positions for every `"experimental-item"` trial independently, meaning that within an iteration of the **AdvancedTutorial** experiment it's still possible for the plural image to be printed on the left for all four experimental items.
 
 Another way of counterbalancing is to explicitly set half of the items to display the plural image on the left, and the other half to display the plural image on the right. In this experiment, we use the `shuffle` command, but include the hardcoded counterbalancing for reference:
 
@@ -164,19 +164,19 @@ Another way of counterbalancing is to explicitly set half of the items to displa
 
 By default, PennController executes experiment scripts from top to bottom. The global command [`Sequence`]({{site.baseurl}}/docs/global-commands/sequence){:target="_blank"}, which is a handler for the Ibex [shuffleSequence variable](https://github.com/addrummond/ibex/blob/master/docs/manual.md#shuffle-sequences){:target="_blank"}, allows you to specify a shuffle sequence instead. 
 
-A shuffle sequence is a way to sequence or randomize an array of items, in this case the PennController **Trial** objects. Randomizing the order of the experimental items is a way to control for order effects. 
+A shuffle sequence is a way to sequence or randomize an array of items, in this case the PennController trials. Randomizing the order of the experimental items is a way to control for order effects. 
 
 The `Sequence` global command can create a wide variety of shuffle sequences using type predicates (predicates, for short), and the functions `seq`, `randomize`, `shuffle`, and `rshuffle`.
 
 For the **AdvancedTutorial** experiment, the important parts to know are that:
 
-+ Predicates can be **Trial** labels. 
-+ `Sequence(PREDICATE_1, PREDICATE_2, ...)` creates a sequence in which all **Trial** objects that match `PREDICATE_1` precede all **Trial** objects that match `PREDICATE_2`, and so on. 
-+ `randomize(PREDICATE)` creates a sequence in which all **Trial** objects that match `PREDICATE` are randomly ordered. 
-+ **Trial** objects that do not match a `PREDICATE` are not run.
++ Predicates can be trial labels. 
++ `Sequence(PREDICATE_1, PREDICATE_2, ...)` creates a sequence in which all trials that match `PREDICATE_1` precede all trials that match `PREDICATE_2`, and so on. 
++ `randomize(PREDICATE)` creates a sequence in which all trials that match `PREDICATE` are randomly ordered. 
++ Trials that do not match a `PREDICATE` are not run.
 
 {% capture instructions %}
-Use the [`Sequence`]({{site.baseurl}}/docs/global-commands/sequence){:target="_blank"}` global command to run the four `"experimental-trial"` **Trial** objects in a random order:
+Use the [`Sequence`]({{site.baseurl}}/docs/global-commands/sequence){:target="_blank"}` global command to run the four `"experimental-trial"` trials in a random order:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the AdvancedTutorial experiment.

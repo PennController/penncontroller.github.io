@@ -118,12 +118,12 @@ Rows that do not begin with the pound symbol are logged information.
 
 Relevant information contained in the five rows at the bottom:
 
-1. `"instructions"` **Trial**: started at the timestamp `1603390891064`.
-2. `"instructions"` **Trial**: ended at the timestamp `1603390892111`.
-3. `"experimental-trial"` **Trial**: started at the timetamp `1603390892115`.
+1. `"instructions"` trial: started at the timestamp `1603390891064`.
+2. `"instructions"` trial: ended at the timestamp `1603390892111`.
+3. `"experimental-trial"` trial: started at the timetamp `1603390892115`.
 4. `"side-by-side"` **Canvas** was printed at the timestamp `1603390892122`.
 5. `"keypress"` **Key**: the participant pressed the `F` key at the timestamp `1603390893835`.
-6. `"experimental-trial"` **Trial**: ended at the timestamp `1603390894815`.
+6. `"experimental-trial"` trial: ended at the timestamp `1603390894815`.
 
 The timestamps are Unix timestamps in milliseconds, in other words the number of milliseconds since 00:00:00 UTC on January 1, 1970.
 

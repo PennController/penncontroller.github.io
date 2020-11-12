@@ -6,7 +6,7 @@ nav_order: 4
 ---
 ## {{ page.title }}
 
-This section describes ways to customize the `"experimental-trial"` **Trial**:
+This section describes ways to customize the `"experimental-trial"` trial:
 
 + [Selecting an image with a mouse click](#selecting-an-image-with-a-mouse-click)
 + [Creating a trial timeout to end a trial early](#creating-a-timeout)
@@ -78,7 +78,7 @@ A **Selector** creates a group of elements, where (by default) each member can b
 
 ### Creating a timeout
 
-The `"experimental-trial"` **Trial** ends after audio playback finishes or a valid keypress, [whichever comes second]({{site.baseurl}}/docs/basic-tutorial/#option3){:target="_blank"}.
+The `"experimental-trial"` trial ends after audio playback finishes or a valid keypress, [whichever comes second]({{site.baseurl}}/docs/basic-tutorial/#option3){:target="_blank"}.
 
 We'll modify the trial so that it ends after whichever comes *first*:
 
@@ -158,7 +158,7 @@ The timeout is created as follows:
     
     If audio playback finishes before the participant selects an image:
     + The `"timeout"` **Timer** element stops naturally and validates the `wait` command.
-4. Experiment script execution continues. The `stop` command is called on the `"audio"` **Audio** element. There are no more commands, so the **Trial** "times out" and ends.
+4. Experiment script execution continues. The `stop` command is called on the `"audio"` **Audio** element. There are no more commands, so the trial "times out" and ends.
 
 ### Adding a trial delay
 
@@ -225,7 +225,7 @@ Create and start a **Timer** named `"break"` that is 1000ms long. Call the [`wai
 The [`css`]({{site.baseurl}}/docs/standard-element-commands/standard-css){:target=":blank"} and [`cssContainer`]({{site.baseurl}}/docs/standard-element-commands/standard-csscontainer){:target=":blank"} commands are equivalent to using [inline CSS](https://www.w3schools.com/html/html_css.asp){:target="_blank"} to apply a style or styles. The `css` command applies the CSS style(s) to the specified element, and the `cssContainer` command applies the CSS style(s) to the container of the specified element.
 
 {% capture instructions %}
-+ Update the instructions to reflect the changes in the `"experimental-trial"` **Trial**.
++ Update the instructions to reflect the changes in the `"experimental-trial"` trial.
 + Call the [`cssContainer`]({{site.baseurl}}/docs/standard-element-commands/standard-csscontainer){:target=":blank"} command on the `defaultText` object to add a 1em bottom margin to every **Text** element container. 
 + Remove the `<p></p>` tags.
 
@@ -314,17 +314,17 @@ With the `cssContainer` command:
 
 ### Adding a completion screen
 
-We'll add a completion screen **Trial** to the end of the experiment.
+We'll add a completion screen trial to the end of the experiment.
 
-By default, PennController sends the experiment results to the PCIbex Farm server after all the **Trial** objects have ended. Use the global command [`SendResults`]({{site.baseurl}}/docs/global-commands/sendresults){:target="_blank"} to manually control when PennController sends results, and send results *before* the completion screen **Trial** begins. This will help ensure that participants don't close their web browser before the experiment results are sent and saved.
+By default, PennController sends the experiment results to the PCIbex Farm server after all the trials have ended. Use the global command [`SendResults`]({{site.baseurl}}/docs/global-commands/sendresults){:target="_blank"} to manually control when PennController sends results, and send results *before* the completion screen trial begins. This will help ensure that participants don't close their web browser before the experiment results are sent and saved.
 
-We'll create a **Button** and call the `wait` command on it to pause experiment script execution, so that participants have time to read the completion screen **Trial**. 
+We'll create a **Button** and call the `wait` command on it to pause experiment script execution, so that participants have time to read the completion screen trial. 
 
-However, there is no need for participants to go beyond this **Trial**; the experiment is already over, and the results have already been sent. Pause experiment script execution indefinitely by calling the `wait` command on the **Button** *without* printing it. The participant will never be able to click the button, and the `wait` command will never be satisfied.
+However, there is no need for participants to go beyond this trial; the experiment is already over, and the results have already been sent. Pause experiment script execution indefinitely by calling the `wait` command on the **Button** *without* printing it. The participant will never be able to click the button, and the `wait` command will never be satisfied.
 
 {% capture instructions %}
 + Call the [`SendResults`]({{site.baseurl}}/global-commands/sendresults){:target="_blank"} global command and label it `"send"`.
-+ Create a new **Trial** labeled `"completion_screen"`.
++ Create a new trial labeled `"completion_screen"`.
   + Create and print a centered **Text** named `"thanks"`.
   + Create a new **Button** named `"void"`. Call the [`wait`]({{site.baseurl}}/docs/button/button-wait){:target="_blank"} command on it, but do *not* print it to the screen.
 

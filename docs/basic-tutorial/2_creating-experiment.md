@@ -87,15 +87,15 @@ Click **main.js** to open `main.js` in the script editor:
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Creating a Trial
+### Creating a trial
 
-**Trials** are objects created by the [`PennController.newTrial("TRIAL_LABEL,...")`]({{site.baseurl}}/docs/global-commands/newtrial){:target="_blank"} command:
+Create a trial by using the [`PennController.newTrial("TRIAL_LABEL,...")`]({{site.baseurl}}/docs/global-commands/newtrial){:target="_blank"} command:
 
-+ `"TRIAL_LABEL"` is the label of the **Trial**, and an optional (but highly recommended) argument.
++ `"TRIAL_LABEL"` is the label of the trial, and an optional (but highly recommended) argument.
 + Any subsequent arguments are sequences of [elements](#adding-elements) and [commands](#adding-commands) that define what happens in the trial.
 
 {% capture instructions %}
-Create a **Trial** labeled `"experimental-trial"`:
+Create a trial labeled `"experimental-trial"`:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -147,8 +147,8 @@ It appears as a small window in the bottom-right corner of the screen when you r
 
  The debugger window has five tabs:
 
-+ **Info**: Displays information about the current **Trial**.
-+ **Sequence**: Lists all **Trials**, and allows you to skip to any particular **Trial**.
++ **Info**: Displays information about the current trial.
++ **Sequence**: Lists all trials, and allows you to skip to any particular trial.
 + **Tables**: Lists all tables.
 + **Errors**: Presents any error messages.
 + **Log**: Reports whenever a command is executed on an element, or whenever a resource is successfully preloaded.

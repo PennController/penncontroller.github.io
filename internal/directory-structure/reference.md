@@ -3,7 +3,7 @@ layout: default
 title: reference/
 parent: Directory structure
 grand_parent: Internal documentation
-last_modified_date: november 5 2020
+last_modified_date: november 9 2020
 ---
 
 ## `{{ page.title}}`
@@ -19,7 +19,6 @@ Folder structure
 
 ```treeview
 reference/
-|-- _core-concepts/
 |-- _elements/
 |-- _global-commands/
 |-- _how-to-guides/
@@ -54,7 +53,6 @@ Table of contents
 {: .text-delta}
 
 <div class="command-table mt-2 mb-6">
-  <div><a href="#_core-concepts"><code>_core-concepts</code></a></div>
   <div><a href="#_elements"><code>_elements</code></a></div>
   <div><a href="#_global-commands"><code>_global-commands</code></a></div>
   <div><a href="#_how-to-guides"><code>_how-to-guides</code></a></div>
@@ -67,14 +65,6 @@ Table of contents
   </div>
   {% endfor %}
 </div>
-
----
-
-## `_core-concepts`
-description
-{: .text-delta .mt-4}
-
-Contains .md files for the [Core concepts]({{site.baseurl}}/docs/core-concepts){:target="_blank"} page.
 
 ---
 

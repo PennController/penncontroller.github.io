@@ -93,13 +93,13 @@ You may be surprised by the results. When you run the experiment, you hear the a
 PennController executes experiment scripts sequentially. According to the current script for the **BasicTutorial** experiment, the execution is as follows:
 
 1. Remove the command prefix for all commands.
-2. Start the `"experimental-trial"` **Trial**.
+2. Start the `"experimental-trial"` trial.
 3. Create the `"fish-audio`" **Audio** and play it.
 4. Create the `"fish-sentence"` **Text** and print it.
 5. Create the `"fish-plural"` **Image** and print it.
-6. End the `"experimental-trial"` **Trial**.
+6. End the `"experimental-trial"` trial.
 7. (*Built-in*): Send experiment results to the server, the PCIbex Farm. An experiment's results are logged in its project page's **Results** folder. 
   + PennController automatically sends results after all other trials have ended. To control when results are sent, see the global command [`SendResults`]({{site.baseurl}}/docs/global-commands/sendresults){:target="_blank"}.
-  + PennController automatically logs when a **Trial** starts and ends. To log other information, see [Logging data](#logging-data).
+  + PennController automatically logs when a trial starts and ends. To log other information, see [Logging data](#logging-data).
   
 As the `"fish-audio"` **Audio** is playing, all of the other commands are executed. When there are no more commands to execute, the trial ends. When there are no more trials to start, the experiment sends its results and ends. And all of this occurred within a few milliseconds!

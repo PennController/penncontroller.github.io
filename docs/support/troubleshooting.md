@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Troubleshooting
+parent: Support
 ---
 
-# Troubleshooting
-
-*To be filled in* 
+# {{ page.title }}

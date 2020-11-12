@@ -160,8 +160,8 @@ See problems(...) for more details.
 </code></pre>
 
 Don't worry! You can ignore this message. The [`readr::read_csv()`](https://readr.tidyverse.org/reference/read_delim.html){:target="_blank"} function throws a warning because some rows have different number of columns:
-+ The rows that log the `"consent"` and `"instructions"` **Trial** objects have the default 13 columns.
-+ The rows that log the `"experimental-trial"` **Trial** objects have the default 13 columns plus 4 columns added by the `log` method (`group`, `item`, `condition` and `ID`).
++ The rows that log the `"consent"` and `"instructions"` trials have the default 13 columns.
++ The rows that log the `"experimental-trial"` trials have the default 13 columns plus 4 columns added by the `log` method (`group`, `item`, `condition` and `ID`).
 
 If you're using base R, the pre-installed [`utils::read.csv()`](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table){:target="_blank"} function won't throw such a warning.
 
@@ -179,7 +179,7 @@ Tidyverse functions are designed to work with [tidy data](https://r4ds.had.co.nz
 + Each observation must have its own row.
 + Each value must have its own cell.
 
-The `results` tibble is not tidy, because every `"experimental-trial"` **Trial** is split into 4 rows:
+The `results` tibble is not tidy, because every `"experimental-trial"` trial is split into 4 rows:
 1. Trial start
 2. Information logged from the `"side-by-side"` **Canvas**
 3. Information logged from the `"selection"` **Selector**

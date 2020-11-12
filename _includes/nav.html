@@ -64,10 +64,13 @@
         {% if node.has_children -%}
           <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
         {%- endif -%}
-        <a href="{{ node.url | absolute_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
+        {%- if node.exclude_permalink -%}
+          <span class="nav-list-link text-purple-000">{{ node.title }}</span>
+        {%- else -%}
+          <a href="{{ node.url | absolute_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
+        {%- endif -%}
         {%- if node.has_children -%}
           {%- if node.children_collection -%}
-            <!-- include children pages that are in a collection -->
             {%- assign children_list = site[node.children_collection] | where: "parent", node.title -%}
           {%- else -%}
             {%- assign children_list = pages_list | where: "parent", node.title -%}
@@ -79,7 +82,6 @@
               {%- if child.has_children -%}
                 <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
               {%- endif -%}
-              <!-- modify main navigation if children "pages" are html tag links -->
               {%- if node.children_are_html_tags -%}
                 {% assign child_tag = child.title | downcase | slugify %}
                 <a href="{{ node.url | prepend: site.baseurl }}#{{child_tag}}" class="nav-list-link {% if page.url == {{relative_url}}#child_tag %} active{% endif %}">{{ child.title }}</a>
@@ -117,7 +119,6 @@
       </li>
       {%- endunless -%}
       {% if node.nav_exclude %}
-      <!-- display [nav_exclude = true] pages if you're on that page or any of its (grand)children -->
         {% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %}
         <li class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
           {% if node.has_children %}

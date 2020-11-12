@@ -9,6 +9,11 @@ nav_order: 5
 
 # {{ page.title }}
 
+Elements are the basic unit of a PennController experiment. 
+{: .fs-5 .fw-300 }
+
+---
+
 <div class="flex-row-wrap mb-8">
 {% for child in site.elements %}
   <div class="centered-25">

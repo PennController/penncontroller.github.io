@@ -1,5 +1,3 @@
-{% assign last = include.collection | last %}
-
 {% for command in include.collection %}  
   {% assign command_tag = command.title | downcase | slugify %}
   <h2 id="{{ command_tag }}"> 
@@ -38,7 +36,7 @@
 
   <h4><a href="#">Back to top</a></h4>
 
-  {% unless command == last %}
+  {% if forloop.last == false %}
   <hr>
-  {% endunless %}
+  {% endif %}
 {% endfor %}

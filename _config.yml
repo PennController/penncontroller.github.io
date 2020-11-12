@@ -56,9 +56,6 @@ last_edit_time_format: "%b %e %Y" # uses ruby's time format: https://ruby-doc.or
 # Collections
 collections_dir: reference
 collections:
-  core-concepts:
-    output: true
-    permalink: /docs/:collection/:name/
   elements:
     output: true
     permalink: /docs/:collection/:name/

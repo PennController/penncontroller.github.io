@@ -5,7 +5,7 @@ parent: Internal documentation
 has_children: true
 has_toc: false
 nav_order: 1
-last_modified_date: november 5 2020
+last_modified_date: november 11 2020
 ---
 
 # {{ page.title}}
@@ -29,9 +29,9 @@ penncontroller.github.io/
 |-- Gemfile.lock
 |-- README.md
 |-- _config.yml
-|-- faq.md
+|-- announcements.md
 |-- index.md
-`-- pcibex-farm.md
+`-- versions.md
 ```
 
 ---

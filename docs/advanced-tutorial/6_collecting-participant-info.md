@@ -47,7 +47,7 @@ newTrial("TRIAL_LABEL",
 You can express the negation of a test by replacing the `test.` prefix with `testNot.`, and you can use the keywords `and` and `or` to combine tests. For more information, read the [Test commands documentation]({{site.baseurl}}/docs/core-concepts/commands#test-commands){:target="_blank"}.
 
 Test commands are used in two ways:
-+ Within a **Trial** object to define conditional branching; or
++ Within a trial to define conditional branching; or
 + Within a `wait` command to modify its success condition(s).
 
 We'll pass the test command `test.complete` as an argument to a `wait` command on a **Button** element. 
@@ -57,7 +57,7 @@ Normally, if the `wait` command is called on a **Button**, experiment script exe
 The test is run when the participant clicks the button, and experiment script execution is paused until the participant clicks the button *and* the test succeeds. If the participant clicks the button and the test fails, then experiment script execution remains paused. The test is run again the next time the participant clicks the button.
 
 {% capture instructions %}
-+ Create a new **Trial** labeled `"consent"`. Modify the `Sequence` global command to include the `"consent"` **Trial**.
++ Create a new trial labeled `"consent"`. Modify the `Sequence` global command to include the `"consent"` trial.
 + Create and print an **Html** named `"consent_form"`.
   1. Call the [`cssContainer`]({{site.baseurl}}/docs/standard-element-commands/standard-csscontainer){:target="_blank"} command to set the container width to 720px.
   2. Call the [`checkboxWarning`]({{site.baseurl}}/docs/html/html-checkboxwarning){:target="_blank"} command to define an error message for an unfilled obligatory checkbox.
@@ -98,7 +98,7 @@ A [**TextInput** element]({{site.baseurl}}/docs/elements/textinput){:target="_bl
 
 We'll ask participants to enter a name or ID number before they start the experiment, and use the `log` method to record the content of the **TextInput** as a new column in the `results` file. 
 
-However, you cannot directly pass the content of a **TextInput** as an argument to the `log` method. Create a [**Var** element]({{site.baseurl}}/docs/elements/var){:target="_blank"}, make it a global variable, and set its value to the content of the **TextInput**. A global variable can be accessed in subsequent **Trial** objects; a non-global variable can only be accessed in the **Trial** that it's created in. Then, you can pass the **Var** as an argument to the `log` method.
+However, you cannot directly pass the content of a **TextInput** as an argument to the `log` method. Create a [**Var** element]({{site.baseurl}}/docs/elements/var){:target="_blank"}, make it a global variable, and set its value to the content of the **TextInput**. A global variable can be accessed in subsequent trial objects; a non-global variable can only be accessed in the trial that it's created in. Then, you can pass the **Var** as an argument to the `log` method.
 
 {% capture instructions %}
 + Update the instructions.
@@ -106,7 +106,7 @@ However, you cannot directly pass the content of a **TextInput** as an argument 
 + Create a [**Var**]({{site.baseurl}}/docs/elements/var){:target="_blank"} named `"ID"`.
   + Call the [`global`]({{site.baseurl}}/docs/var/var-global){:target="_blank"} command to make it a global variable.
   + Call the [`set`]({{site.baseurl}}/docs/var/var-set){:target="_blank"} command to set its value to the content of the `"input_ID"` **TextInput**.
-+ Use the [`log` method]({{site.baseurl}}/docs/global-commands/newtrial#methods){:target="_blank"} on the `"experimental-item"` **Trial** to record the participant ID.
++ Use the [`log` method]({{site.baseurl}}/docs/global-commands/newtrial#methods){:target="_blank"} on the `"experimental-item"` trial to record the participant ID.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// code omitted in interest of space
