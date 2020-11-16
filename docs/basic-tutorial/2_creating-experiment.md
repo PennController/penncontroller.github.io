@@ -91,8 +91,8 @@ Click **main.js** to open `main.js` in the script editor:
 
 Create a trial by using the [`PennController.newTrial("TRIAL_LABEL,...")`]({{site.baseurl}}/docs/global-commands/newtrial){:target="_blank"} command:
 
-+ `"TRIAL_LABEL"` is the label of the trial, and an optional (but highly recommended) argument.
-+ Any subsequent arguments are sequences of [elements](#adding-elements) and [commands](#adding-commands) that define what happens in the trial.
++ `"TRIAL_LABEL"` is the label of the trial, and an optional (but highly recommended) parameter.
++ Any subsequent parameters are sequences of [elements](#adding-elements) and [commands](#adding-commands) that define what happens in the trial.
 
 {% capture instructions %}
 Create a trial labeled `"experimental-trial"`:
@@ -105,21 +105,18 @@ Create a trial labeled `"experimental-trial"`:
 +PennController.newTrial("experimental-trial")
 </code></pre>
 
-At this point, the `main.js` script is **incomplete**; we've created an empty trial that does not do or contain anything. If you run the experiment, it'll end immediately with the message "The results were successfully sent to the server. Thanks!". 
+At this point, we've created an empty trial that does not do or contain anything. If you run the experiment, it'll end immediately with the message "The results were successfully sent to the server. Thanks!". 
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-All PennController commands begin with the prefix `PennController.`, in order to avoid naming conflicts with other JavaScript modules. However, adding this prefix for every command quickly becomes tiring.
-
-The command [`PennController.ResetPrefix`]({{site.baseurl}}/docs/global-commands/resetprefix){:target="_blank"} resets the `PennController.` prefix to the string of your choice, and only needs to be called once. The `null` argument to `PennController.ResetPrefix` removes the prefix entirely. 
+All PennController commands begin with the prefix `PennController.`, in order to avoid naming conflicts with other JavaScript modules. The command [`PennController.ResetPrefix(null)`]({{site.baseurl}}/docs/global-commands/resetprefix){:target="_blank"} removes the prefix for all subsequent commands. You can also pass a string instead of `null` as an argument, which will reset the `PennController.` prefix to the aforementioned string for all subsequent commands.
 
 {% capture label %}
-**We recommend starting every experiment with `PennController.ResetPrefix(null)` for readabilty and convenience.**
+**We recommend calling `PennController.ResetPrefix(null)` at the start of every experiment script for readability and convenience.**
 
 This tutorial assumes that the `PennController.` prefix has already been removed when referencing any command.
 {% endcapture %}
 {% include label-note.html label-body=label %}
-
 
 {% capture instructions %}
 Remove the `PennController.` prefix:

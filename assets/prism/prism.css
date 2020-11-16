@@ -17,6 +17,7 @@ pre[class*="language-"] {
   background-color: var(--code-background-color);
 	text-shadow: none;
   font-family: "SFMono-Regular", Menlo, Consolas, Monospace;
+  font-size: 12px;
 	text-align: left;
 	white-space: pre-wrap;
 	word-spacing: normal;

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h1><code>{{ page.title }}</code></h1>
 
 {% if page.element_type contains "standard" %}
   {% for type in page.element_type %}
@@ -21,14 +21,14 @@ layout: default
 {% include heading-link.html header="description" h4=true %}
 {{ page.description | markdownify }}
 
-{% if page.optional_arguments %}
-{% include heading-link.html header="optional arguments" h4=true %}
+{% if page.optional_parameters %}
+{% include heading-link.html header="optional parameters" h4=true %}
 <div class="bg-grey-lt-100 py-2 px-5 mt-2 mb-4" markdown=1>
   <ul>
-    {% for argument in page.optional_arguments %}
+    {% for parameter in page.optional_parameters %}
     <li>
-    <p><code>{{ argument.syntax }}</code></p>
-    <p class="fw-300 fs-3">{{ argument.description }}</p>
+    <p><code>{{ parameter.syntax }}</code></p>
+    <p class="fw-300 fs-3">{{ parameter.description }}</p>
     </li>
     {% endfor %}
   </ul>

@@ -4,6 +4,7 @@ title: Elements
 has_children: true
 has_toc: false
 children_collection: elements
+children_code_font: true
 nav_order: 5
 ---
 
@@ -16,13 +17,13 @@ Elements are the basic unit of a PennController experiment.
 
 <div class="flex-row-wrap mb-8">
 {% for child in site.elements %}
-  <div class="centered-25">
+  <div class="centered-25 pb-4">
     <a href="{{ child.url | absolute_url }}" class="overlay-link" target="_blank">
-    <div class="overlay py-6">
+    <div class="overlay">
       <img src="{{ site.baseurl }}/assets/elements/{{ child.thumbnail }}" alt="{{ child.title }}" width="100" height="100" class="image"><br>
-      <div class="element-title">{{ child.title }}</div>
-    </div>
-    </a>
+      <div class="element-title"><code>{{ child.title }}</code> element</div>
+    </div></a>
+    <div class="element-description">{{ child.description }}</div>
   </div>
 {% endfor %}
 </div>

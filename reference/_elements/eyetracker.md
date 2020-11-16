@@ -1,10 +1,11 @@
 ---
 layout: element
 element_type: eyetracker
-title: EyeTracker element
+title: EyeTracker
 parent: Elements
 has_children: true
 has_toc: false
+children_code_font: true
 thumbnail: eyetracker.png
 syntax: to be filled in
 description: To be filled in.

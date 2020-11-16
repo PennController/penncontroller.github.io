@@ -1,11 +1,18 @@
 ---
 layout: default
-title: 3. PCIbex Farm
+title: PCIbex Farm
 parent: Core Concepts
-nav_order: 3
+nav_order: 4
+numbered_headings: true
 ---
 
 # {{ page.title }}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+{: .fs-5 .fw-300 }
+
+---
+
 
 The easiest way to use PCIbex, or PennController, is to use the [PCIbex Farm](https://expt.pcibex.net/){:target="_blank"} server, which provides free hosting for PennController experiments. The PCIbex hosts and builds PennController experiments automatically, meaning that you don't have to worry about set up, and can focus on writing your experiment scripts. 
 
