@@ -58,6 +58,7 @@ a.overlay-link:hover{
 }
 
 .overlay{
+  padding-top: $sp-4;
   position: relative;
 }
 
@@ -66,12 +67,16 @@ a.overlay-link:hover{
 }
 
 .element-title{
-  text-decoration: underline;
   padding-left: $sp-1;
   padding-right: $sp-1;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
+}
+
+.element-description{
+  margin-top: $sp-3;
+  white-space: pre-wrap;
 }
 
 // flex container classes
@@ -129,7 +134,7 @@ a.overlay-link:hover{
   border: 1px dashed $grey-lt-300;
 }
 
-// customized tables
+// modify spacing of tables
 .table-wrapper {
   white-space: pre;
   padding-top: $sp-1;

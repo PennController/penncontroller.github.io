@@ -7,7 +7,7 @@ layout: default
 {% assign standard-action = site.standard-element-commands | where: "command_type", "action" | where_exp: "command", "command.element_type contains page.element_type" %}
 {% assign standard-test = site.standard-element-commands | where: "command_type", "test" | where_exp: "command", "command.element_type contains page.element_type" %}
 
-<h1>{{ page.title }}</h1>
+<h1><code>{{ page.title }}</code> element</h1>
 
 <div style="display: flow-root;" markdown="1">
   {% if page.element_type == "standard" %}

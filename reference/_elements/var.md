@@ -1,7 +1,7 @@
 ---
 layout: element
 element_type: var
-title: Var element
+title: Var
 parent: Elements
 has_children: true
 has_toc: false

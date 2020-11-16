@@ -12,16 +12,16 @@
   <h4>description</h4>
   {{ command.description | markdownify }} 
 
-  {% if command.optional_arguments %}
-  <h4>optional arguments</h4>
+  {% if command.optional_parameters %}
+  <h4>optional parameters</h4>
   <details markdown="block">
   <summary class="text-delta collapsible-block-title">click to expand</summary>
   <div class="dashed-grey-lt-300 collapsible-block-inside">
     <ul>
-      {% for argument in command.optional_arguments %}
+      {% for parameter in command.optional_parameters %}
       <li>
-      <p><code>{{ argument.syntax }}</code></p>
-      <p class="fw-300 fs-3">{{ argument.description }}</p>
+      <p><code>{{ parameter.syntax }}</code></p>
+      <p class="fw-300 fs-3">{{ parameter.description }}</p>
       </li>
       {% endfor %}
       </ul>

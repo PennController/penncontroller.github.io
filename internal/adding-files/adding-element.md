@@ -25,7 +25,7 @@ nav_order: 2
     + `layout`: The page layout; use `layout: element`.
     + `title`: The name of the element type.
     + `parent`: The navigational parent page; use `parent: Elements`.
-    + `thumbnail`: The name of the element type thumbnail PNG. The PNG should be in the [`./assets/elements`]({{site.baseurl}}/{% link internal/directory-structure/reference.md %}) folder.
+    + `thumbnail`: The name of the element type thumbnail PNG. The PNG should be in the [`./assets/elements`]({{site.baseurl}}/internal/director-structure/assets#elements) folder.
     + `syntax`: The syntax for calling the `newX` function, where `X` is an element type. 
     + `blurb`: One sentence description of the element type. 
     + `extended_description` (*optional*) : An extended description of the element type. 
@@ -52,7 +52,7 @@ nav_order: 2
     ---
     ```
 3. (*optional*) Add any additional information about the element type. Unlike the `extended_description`, this content is printed as a full-width section under the element command TOC. 
-  <img class="d-block mx-auto" src="{% link assets/images/internal/add-elements.png %}" alt="text-placement" width="75%" height="auto">
+  <img class="d-block mx-auto" src="{% link assets/images/add-elements.png %}" alt="text-placement" width="75%" height="auto">
 
 4. Add an example of the element type:
     ````markdown
