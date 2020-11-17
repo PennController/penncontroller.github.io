@@ -72,68 +72,71 @@ collections:
     output: true
     permalink: /docs/:collection/:name/
   audio:
+    element: true
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   button:
+    element: true
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   canvas:
+    element: true
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   controller:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   dropdown:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   eyetracker:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   function:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   html:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   image:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   key:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   mediarecorder:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   mousetracker:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   scale:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   selector:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   text:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   textinput:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   timer:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   tooltip:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   var:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
   video:
     output: true
-    permalink: /docs/:collection/:name/           
+    permalink: /docs/elements/:collection/:name/           
   youtube:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /docs/elements/:collection/:name/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
