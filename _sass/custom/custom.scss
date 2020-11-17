@@ -161,3 +161,17 @@ a.overlay-link:hover{
     .desktop-only {display: none;}
     .mobile-only {display: flex;}
 }
+
+// construction header
+.construction{
+  padding-left: $sp-8;
+  padding-right: $sp-8;
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  background-color: $grey-lt-100;
+  text-align: center;
+  position: -webkit-sticky; 
+  position: sticky; 
+  top:0;
+  z-index: 4;
+}
