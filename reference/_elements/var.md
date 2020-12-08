@@ -7,7 +7,7 @@ has_children: true
 has_toc: false
 thumbnail: var.png
 syntax: to be filled in
-description: To be filled in.
+description: Creates a variable that can be manipulated during script evaluation.
 ---
 
 ```javascript

@@ -72,15 +72,12 @@ collections:
     output: true
     permalink: /docs/:collection/:name/
   audio:
-    element: true
     output: true
     permalink: /docs/elements/:collection/:name/
   button:
-    element: true
     output: true
     permalink: /docs/elements/:collection/:name/
   canvas:
-    element: true
     output: true
     permalink: /docs/elements/:collection/:name/
   controller:

@@ -8,7 +8,7 @@ has_toc: false
 children_code_font: true
 thumbnail: canvas.png
 syntax: newCanvas("*ELEMENT_NAME*", *WIDTH*, *HEIGHT*)
-description: Creates rectangular surfaces that you can place other elements onto.
+description: Creates a rectangular surface to place elements onto.
 notes: true
 ---
 

@@ -2,8 +2,8 @@
 layout: default
 title: ⚠ Deprecated commands
 parent: Commands
-nav_order: 4
-blurb: No longer used
+nav_order: 5
+blurb: Commands that are ro longer used.
 --- 
 
 # {{ page.title }}

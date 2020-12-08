@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Setting up
+layout: tutorial-child
+title: 1. Setting up
 parent: Advanced Tutorial
-nav_order: 2
+nav_order: 1
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 The **AdvancedTutorial** experiment continues directly from the [**BasicTutorial** experiment]({{site.baseurl}}/docs/basic-tutorial/#overview){:target="_blank"}. 
 
@@ -106,7 +107,7 @@ newTrial("experimental-trial",
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
 
-### Refining the experimental design
+## Refining the experimental design
 
 The **AdvancedTutorial** experiment uses the **BasicTutorial** picture matching design and adds a research question:
 

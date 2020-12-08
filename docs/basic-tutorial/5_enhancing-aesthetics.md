@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Enhancing aesthetics
+layout: tutorial-child
+title: 5. Enhancing aesthetics
 parent: Basic Tutorial
-nav_order: 6
+nav_order: 5
+numbered_headings: true 
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 PennController has a variety of commands that manipulate aesthetic aspects of element with multimedia content. 
 
@@ -57,7 +58,7 @@ For example:
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Manipulating layout
+## Manipulating layout
 
 By default, every printed element is printed on a new line. For other layouts:
 
@@ -112,4 +113,3 @@ By default, every printed element is printed on a new line. For other layouts:
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
-

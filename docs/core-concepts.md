@@ -2,7 +2,6 @@
 layout: default
 title: Core Concepts
 has_children: true
-has_toc: false
 nav_order: 2
 ---
 
@@ -25,3 +24,15 @@ This guide is designed for people who prefer learning concepts step by step. If 
 ## Overview
 
 The **Core Concepts** guide teaches you how to build a PCIbex experiment, from writing the actual experiment script to running the experiment on the PCIbex Farm server. Each section builds on information introduced in the previous section, so it's recommended to read the four sections in order. 
+
+## Knowledge prerequisites
+
+PCIbex does not require any knowledge of JavaScript or background in programming. However, you should have a basic understanding of the following terms and concepts: 
++ Terms
+  + Command
+  + [Script](https://techterms.com/definition/script){:target="_blank"}
+  + 
++ Concepts
+  + Calling a command; calling a command with parameters/arguments
+  + Running an experiment
+

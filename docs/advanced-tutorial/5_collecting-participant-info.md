@@ -1,17 +1,19 @@
 ---
-layout: default
-title: Collecting participant information
+layout: tutorial-child
+title: 5. Collecting participant information
 parent: Advanced Tutorial
-nav_order: 6
+nav_order: 5
+numbered_headings: true
 ---
-## {{ page.title }}
+
+# {{ page.title }}
 
 This section describes ways of collecting participant responses:
 
 + [Creating an obligatory checkbox for a consent form](#obtaining-participant-consent)
 + [Logging participant IDs with a global variable](#recording-participant-ids)
 
-### Obtaining participant consent
+## Obtaining participant consent
 
 An [**Html** element]({{site.baseurl}}/docs/elements/html){:target="_blank"} lets you insert an existing HTML document in a PennController experiment. This can be useful for displaying an informed consent form; instead of creating and printing many **Text** elements, you can print a single **Html**.
 
@@ -92,7 +94,7 @@ The test is run when the participant clicks the button, and experiment script ex
 {% endcapture %}
 {% include instructions.html text=instructions %}
 
-### Recording participant IDs
+## Recording participant IDs
 
 A [**TextInput** element]({{site.baseurl}}/docs/elements/textinput){:target="_blank"} creates a text input box that can collect participant input, like an ID number or experiment feedback. 
 

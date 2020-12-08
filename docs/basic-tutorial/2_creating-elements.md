@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Creating elements
+layout: tutorial-child
+title: 2. Creating elements
 parent: Basic Tutorial
-nav_order: 3
+nav_order: 2
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 Elements are the basic unit of a PennController trial. They contain multimedia content, interactive content, or some combination of the two.
 

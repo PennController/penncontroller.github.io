@@ -34,6 +34,8 @@
   justify-content: flex-start;
   width: 100%;
   border: 0.5px solid $grey-lt-100;
+  margin-top: $sp-2;
+  margin-bottom: $sp-6;
 }
 
 .command-table div {
@@ -45,6 +47,35 @@
   height: 50px;
   width: calc(100% / 3);
   border: 0.5px solid $grey-lt-100;
+}
+
+.command-table .command-table-title {
+  width: 100%;
+  background-color: $grey-lt-200;
+}
+
+// _layouts/test.html
+.previous-section {
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  padding-left: $sp-6;
+  padding-right: $sp-2;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.next-section {
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  padding-left: $sp-2;
+  padding-right: $sp-6;
+  text-align: right;
+  white-space: pre-line;
+}
+
+.back-to-top {
+  padding-top: $sp-4;
+  text-align: center;
 }
 
 // element thumbnail display
@@ -162,7 +193,7 @@ a.overlay-link:hover{
     .mobile-only {display: flex;}
 }
 
-// construction header
+// under construction header
 .construction{
   padding-left: $sp-8;
   padding-right: $sp-8;

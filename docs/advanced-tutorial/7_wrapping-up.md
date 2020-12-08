@@ -1,62 +1,22 @@
 ---
-layout: default
-title: Overview
+layout: tutorial-child
+title: 7. Wrapping up
 parent: Advanced Tutorial
-nav_order: 1
+nav_order: 7
+numbered_headings: true
 ---
 
-Table of contents
-{: .text-delta }
+# {{ page.title }}
 
+Congratulations! You’ve learned how to:
 
-1. [Overview](#overview)
-2. [Setting up](#setting-up): how to import resource files
-  + Planning an experiment.
-3. [Creating trial template](#creating-trial-template): how to reuse PennController code
-  + Using a CSV (comma-separated values) file to organize experimental items.
-4. [Customizing the experimental trial](#customizing-the-experimental-trial): how to increase the complexity of a trial
-  + Selecting an image with a mouse click.
-  + Creating a timeout to end a trial early.
-  + Adding a delay to the start of a trial.
-  + Manipulating multimedia content visually with CSS styles
-  + Saving experiment results before the end of an experiment
-5. [Counterbalancing](#counterbalancing): how to include counterbalancing in the experimental design 
-  + Shuffling image position.
-  + Manipulating trial sequence to randomize experimental item order.
-  + Modifying the experiment URL to manually control group assignment.
-6. [Collecting participant info](#collecting-participant-info): how to elicit and log participant responses
-  + Creating an obligatory checkbox for a consent form.
-  + Creating a global variable to record participant IDs.
-7. [Examining-data](#examining-data): how to use R to read in a results file
-  + Using the [tidyverse](https://www.tidyverse.org/){:target="_blank"} to transform data (optional).
-8. [Wrapping up](#wrapping-up)
-
----
-
-## {{ page.title }}
-
-In the **Advanced Tutorial**, you'll learn how to make a picture matching experiment with the following structure:
-
-1. Consent form with:
-    + Checkbox to indicate consent
-    + Button to continue
-2. Instructions screen with:
-    + Text input box for participants to enter their ID
-    + Button to start the experiment
-2. Four experimental trials:
-    1. One-second delay
-    2. A sentence plays as audio and unfolds as text on the screen.
-    3. Two images are printed to the screen next to each other.
-    4. Participant clicks on an image or presses a key to select an image.
-    5. Trial timeout (trial ends if the participant does not select an image before audio playback finishes).
-3. Exit screen
-
-<div class="dotted-grey-dk-000 px-4" markdown="1">
-Preview the **AdvancedTutorial** experiment:
-
-<p class="text-delta collapsible-block-title">
-  <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" target="_blank">Click to take the experiment</a>
-</p> 
++ Create a trial template and use tables.
++ Implement a trial timeout and trial delay.
++ Manipulate content with CSS styles.
++ Randomize experimental item order.
++ Control group assignment.
++ Create obligatory checkboxes and global variables.
++ Examine PennController results files.
 
 {% capture content %}
 ```js
@@ -183,19 +143,6 @@ newTrial("completion_screen",
         .wait()
 )
 ```
+
 {% endcapture %}
-{% include collapsible-block.html content=content summary="Click to see the final experiment script" inner-border=true %}
-</div>
-
-### Following the tutorial
-
-Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span> blocks:
-
-{% capture instructions %}
-Code blocks inside an instruction indicate `main.js`, the [experiment script](#editing-an-experiment).
-
-```javascript
-// This is a comment.
-```
-{% endcapture %}
-{% include instructions.html text=instructions%}
+{% include collapsible-block.html content=content summary="Click to see the final experiment script" outer-border=true %}

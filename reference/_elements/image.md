@@ -8,7 +8,7 @@ has_toc: false
 children_code_font: true
 thumbnail: image.png
 syntax: newImage("*ELEMENT_NAME*", "IMAGE_NAME")
-description: To be filled in.
+description: Creates an image.
 ---
 
 ```javascript

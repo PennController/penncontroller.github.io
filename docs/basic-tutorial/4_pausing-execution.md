@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Pausing experiment execution
+layout: tutorial-child
+title: 4. Pausing experiment execution
 parent: Basic Tutorial
-nav_order: 5
+nav_order: 4
+numbered_headings: true
 ---
 
-## {{page.title}}
+# {{page.title}}
 
 Interactive elements and commands can pause experiment script execution, in order to give participants time to interact with the screen.
 
@@ -72,7 +73,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 <div class="dotted-grey-dk-000 px-4 pt-3" markdown="1">
 {% capture content %}
 
-### Option 1: End trial and stop audio playback after a valid keypress.
+## Option 1: End trial and stop audio playback after a valid keypress.
 
 + Call the [`stop`]({{site.baseurl}}/docs/audio/audio-stop){:target="_blank"} command on the `"fish-audio"` **Audio** to stop audio playback.
 
@@ -109,7 +110,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 
 {% capture content %}
 
-### Option 2: End trial after audio playback finishes, instead of after a valid keypress.
+## Option 2: End trial after audio playback finishes, instead of after a valid keypress.
 
 + Call the [`wait`]({{site.baseurl}}/docs/audio/audio-wait){:target="_blank"} command on the `"fish-audio"` **Audio** (instead of on the `"keypress"` **Key**) to pause experiment script execution until audio playback finishes.
 
@@ -145,7 +146,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 {% include collapsible-block.html content=content summary="Option 2: click for more details" %}
 </div>
 
-### Option 3: End trial after audio playback finishes or valid keypress {#option-3}
+## Option 3: End trial after audio playback finishes or valid keypress {#option-3}
 
 To end the trial after audio playback finishes or after a valid keypress, whichever comes second, pause the experiment script execution at the `"keypress"` **Key** *and* at the `"fish-audio"` **Audio**.
 

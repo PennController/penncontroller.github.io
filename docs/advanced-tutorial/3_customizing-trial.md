@@ -1,10 +1,12 @@
 ---
-layout: default
-title: Customizing the experimental trial
+layout: tutorial-child
+title: 3. Customizing the experimental trial
 parent: Advanced Tutorial
-nav_order: 4
+nav_order: 3
+numbered_headings: true
 ---
-## {{ page.title }}
+
+# {{ page.title }}
 
 This section describes ways to customize the `"experimental-trial"` trial:
 
@@ -14,7 +16,7 @@ This section describes ways to customize the `"experimental-trial"` trial:
 + [Manipulating multimedia content visually with CSS styles](#using-css-styles)
 + [Saving experiment results before the end of an experiment](#adding-a-completion-screen)
 
-### Selecting an image with a mouse click
+## Selecting an image with a mouse click
 
 In the **AdvancedTutorial** experiment, the participant selects an image by pressing the `F` or `J` key. We'll include the option of clicking on an image to select it by using a [**Selector**]({{site.baseurl}}/docs/elements/selector){:target="_blank"}. 
 
@@ -76,7 +78,7 @@ A **Selector** creates a group of elements, where (by default) each member can b
 {% endcapture %}
 {% include instructions.html text=instructions %}
 
-### Creating a timeout
+## Creating a timeout
 
 The `"experimental-trial"` trial ends after audio playback finishes or a valid keypress, [whichever comes second]({{site.baseurl}}/docs/basic-tutorial/#option3){:target="_blank"}.
 
@@ -160,7 +162,7 @@ The timeout is created as follows:
     + The `"timeout"` **Timer** element stops naturally and validates the `wait` command.
 4. Experiment script execution continues. The `stop` command is called on the `"audio"` **Audio** element. There are no more commands, so the trial "times out" and ends.
 
-### Adding a trial delay
+## Adding a trial delay
 
 Each trial begins as soon as the previous trial ends. This might be overwhelming for participants, so we'll create a one-second pause between trials. 
 
@@ -220,7 +222,7 @@ Create and start a **Timer** named `"break"` that is 1000ms long. Call the [`wai
 {% endcapture %}
 {% include instructions.html text=instructions %}
 
-### Using CSS styles
+## Using CSS styles
 
 The [`css`]({{site.baseurl}}/docs/standard-element-commands/standard-css){:target=":blank"} and [`cssContainer`]({{site.baseurl}}/docs/standard-element-commands/standard-csscontainer){:target=":blank"} commands are equivalent to using [inline CSS](https://www.w3schools.com/html/html_css.asp){:target="_blank"} to apply a style or styles. The `css` command applies the CSS style(s) to the specified element, and the `cssContainer` command applies the CSS style(s) to the container of the specified element.
 
@@ -312,7 +314,7 @@ With the `cssContainer` command:
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
 
-### Adding a completion screen
+## Adding a completion screen
 
 We'll add a completion screen trial to the end of the experiment.
 

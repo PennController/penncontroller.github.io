@@ -1,14 +1,37 @@
-{% if include.title %}<h3>{{include.title}}</h3>{% endif %}
 <h4>table of contents</h4>
-<div class="command-table mt-2 mb-6">
-  {% for command in include.collection %}
-  <div>
-    {% if include.same-page %}
-      {% assign command_tag = command.title | downcase | slugify %}
-      <a href="#{{ command_tag }}"><code>{{command.title}}</code></a>
-    {% else %}
-      <a href="{{ command.url | absolute_url }}" target="_blank"><code>{{command.title}}</code></a>
-    {% endif %}
-  </div>
-  {% endfor %}
+<div class="command-table">
+  {% if include.collection %}
+    {% for command in include.collection %}
+    <div>
+      {% if include.same_page %}
+        {% assign command_tag = command.title | downcase | slugify %}
+        <a href="#{{ command_tag }}"><code>{{command.title}}</code></a>
+      {% else %}
+        <a href="{{ command.url | absolute_url }}" target="_blank"><code>{{command.title}}</code></a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  {% endif %}
+  {% if include.all_element_types %}
+    {% assign element_types = site.elements | map: "title" %}
+    {% for element in element_types %}
+      {% assign collection_name = element | downcase | slugify %}
+      {% if include.action %}
+        {% assign commands = site[collection_name] | where: "command_type", "action" %}
+      {% endif %}
+      {% if include.test %}
+        {% assign commands = site[collection_name] | where: "command_type", "test" %}
+      {% endif %}
+      {% if commands.size > 0 %}
+        <div class="command-table-title">
+          <a href="{{site.baseurl}}/docs/elements/{{collection_name}}" target="_blank"><code>{{element}}</code> element</a> 
+        </div>
+        {% for command in commands %}
+          <div>
+          <a href="{{ command.url | absolute_url }}" target="_blank"><code>{{command.title}}</code></a> 
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 </div>
