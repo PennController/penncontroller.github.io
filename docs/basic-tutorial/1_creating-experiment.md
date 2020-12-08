@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Creating an experiment
+layout: tutorial-child
+title: 1. Creating an experiment
 parent: Basic Tutorial
-nav_order: 2
+nav_order: 1
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 {% capture instructions %}
 Create a new experiment: 
@@ -21,7 +22,7 @@ Create a new experiment:
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Importing resource files
+## Importing resource files
 
 The **BasicTutorial** experiment uses the images [`1fishSquareTank.png`]({{site.baseurl}}/assets/tutorials/1fishSquareTank.png){:target="_blank"} and [`2fishRoundTank.png`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.png){:target="_blank"}, the audio file [`2fishRoundTank.mp3`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.mp3){:target="_blank"}, and the starter experiment script [`main.js`]({{site.baseurl}}/assets/tutorials/main.js){:target="_blank"}.
 
@@ -55,7 +56,7 @@ You can also manually upload the resource files to the PCIbex Farm. However, you
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
 
-### Editing an experiment
+## Editing an experiment
 
 The **Script** folder contains the file `main.js`, the experiment script. Update your experiment by editing `main.js` in the script editor and saving your changes.
 
@@ -87,7 +88,7 @@ Click **main.js** to open `main.js` in the script editor:
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Creating a trial
+## Creating a trial
 
 Create a trial by using the [`PennController.newTrial("TRIAL_LABEL,...")`]({{site.baseurl}}/docs/global-commands/newtrial){:target="_blank"} command:
 
@@ -134,7 +135,7 @@ Remove the `PennController.` prefix:
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Using the debugger
+## Using the debugger
 
 PennController comes with a [built-in debugger]({{site.baseurl}}/docs/core-concepts/debugger){:target="_blank"} that helps detect typos, syntax errors, and other issues.
 

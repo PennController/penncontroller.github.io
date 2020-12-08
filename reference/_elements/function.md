@@ -8,7 +8,7 @@ has_toc: false
 children_code_font: true
 thumbnail: function.png
 syntax: to be filled in
-description: To be filled in.
+description: Executes a JavaScript function.
 ---
 
 ```javascript

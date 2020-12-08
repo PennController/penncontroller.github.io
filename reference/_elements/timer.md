@@ -8,7 +8,7 @@ has_toc: false
 children_code_font: true
 thumbnail: timer.png
 syntax: newTimer("*ELEMENT_NAME*", TIMER_LENGTH)
-description: To be filled in.
+description: Creates a timer.
 ---
 
 ```javascript

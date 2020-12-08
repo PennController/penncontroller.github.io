@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Logging data
-parent: Basic Tutorial
-nav_order: 8
+layout: tutorial-child
+title: 7. Logging data
+parent: Test Tutorial
+nav_order: 7
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/docs/standard-element-commands/standard-log){:target="_blank"} command to collect any other information. 
 
@@ -62,7 +63,7 @@ The `log` command adds lines to the `results` file in the experiment project pag
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Examining results
+## Examining results
 
 {% capture instructions %}
 Run the experiment to log data and look at the logged data:
@@ -127,7 +128,7 @@ Relevant information contained in the five rows at the bottom:
 
 The timestamps are Unix timestamps in milliseconds, in other words the number of milliseconds since 00:00:00 UTC on January 1, 1970.
 
-### Calculating response times
+## Calculating response times
 
 You can compare timestamps to determine response times or event duration. For example, subtract the canvas timestamp from the keypress timestamp to determine how long it took for the participant to press a valid key: `1603390893835`-`1603390892122`=`1713` means that the participant took 2753ms to press the `F` key.
 

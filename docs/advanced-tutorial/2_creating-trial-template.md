@@ -1,10 +1,12 @@
 ---
-layout: default
-title: Creating a trial template
+layout: tutorial-child
+title: 2. Creating a trial template
 parent: Advanced Tutorial
-nav_order: 3
+nav_order: 2
+numbered_headings: true
 ---
-## {{ page.title }}
+
+# {{ page.title }}
 
 The **AdvancedTutorial** experiment has four items and thus four trials. We could copy-and-paste the `"experimental-trial"` trial code multiple times and change variable names as necessary, but this method is not recommended for several reasons:
 
@@ -38,7 +40,7 @@ Template("TABLE_NAME", row =>
   + `row.COLUMN_NAME` is a placeholder for the value in the specified column, for a given iteration/row.
   + Use `row["COLUMN_NAME"]` instead of `row.COLUMN_NAME` if the column name contains special characters like spaces, commas, periods, or dashes.
 
-### Using a table
+## Using a table
 
 We imported various resource files in the [Setting up](#setting-up) section, including the `items.csv` table:
 
@@ -104,7 +106,7 @@ Create a trial template using the `items.csv` table:
 
 In the [**Basic Tutorial**]({{site.baseurl}}/docs/basic-tutorial), we recommended placing the instructions in a [separate `"instructions"` trial]({{site.baseurl}}/docs/basic-tutorial/#adding-instructions). If we had placed the instructions within the `"experimental-trial"` trial, then after creating the trial template, the instructions would have been printed four times, once at the start of each trial. 
 
-### Logging trial details
+## Logging trial details
 
 When we [examine the collected data](#examining-data), it will be important to know which group was run, which lines in the `results` file belong to which items, and which verbal inflection condition each item had.
 

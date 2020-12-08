@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Adding commands
+layout: tutorial-child
+title: 3. Adding commands
 parent: Basic Tutorial
-nav_order: 4
+nav_order: 3
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 Elements contain content; element commands do things with that content. For example, once you create an element, you can use the element command [`print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"} to print it to the screen.
 

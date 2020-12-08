@@ -5,36 +5,36 @@
     <a href="{{ site.baseurl}}{{ command.url }}" target="_blank"><code>{{ command.title }}</code></a> 
   </h2> 
 
-  <div class="dotted-grey-dk-000 mt-4 px-4 pt-2">
-  <h4>syntax</h4>
-  <code>{{ command.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+  <div class="mt-4 mb-6 pt-2">
+    <h4>syntax</h4>
+    <code>{{ command.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
 
-  <h4>description</h4>
-  {{ command.description | markdownify }} 
+    <h4>description</h4>
+    {{ command.description | markdownify }} 
 
-  {% if command.optional_parameters %}
-  <h4>optional parameters</h4>
-  <details markdown="block">
-  <summary class="text-delta collapsible-block-title">click to expand</summary>
-  <div class="dashed-grey-lt-300 collapsible-block-inside">
-    <ul>
-      {% for parameter in command.optional_parameters %}
-      <li>
-      <p><code>{{ parameter.syntax }}</code></p>
-      <p class="fw-300 fs-3">{{ parameter.description }}</p>
-      </li>
-      {% endfor %}
-      </ul>
+    {% if command.optional_parameters %}
+    <h4>optional parameters</h4>
+    <details markdown="block">
+    <summary class="text-delta collapsible-block-title">click to expand</summary>
+    <div class="dashed-grey-lt-300 collapsible-block-inside">
+      <ul>
+        {% for parameter in command.optional_parameters %}
+        <li>
+        <p><code>{{ parameter.syntax }}</code></p>
+        <p class="fw-300 fs-3">{{ parameter.description }}</p>
+        </li>
+        {% endfor %}
+        </ul>
+    </div>
+    </details>
+    {% endif %}
+
+    <h4>example</h4>
+    {% capture content %}{{ command.content | markdownify }}{% endcapture %}
+    {% include collapsible-block.html content=content summary="click to expand" %}
   </div>
-  </details>
-  {% endif %}
 
-  <h4>example</h4>
-  {% capture content %}{{ command.content | markdownify }}{% endcapture %}
-  {% include collapsible-block.html content=content summary="click to expand" inner-border=true %}
-  </div>
-
-  <h4><a href="#">Back to top</a></h4>
+  <h4><a href="#">↑ back to top</a></h4>
 
   {% if forloop.last == false %}
   <hr>

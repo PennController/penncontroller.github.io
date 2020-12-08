@@ -8,7 +8,7 @@ has_toc: false
 children_code_font: true
 thumbnail: audio.png
 syntax: newAudio("ELEMENT_NAME", "AUDIO_FILE_NAME.MP3")
-description: Adds an audio stream to an experiment.
+description: Creates an audio stream.
 notes: true
 ---
 

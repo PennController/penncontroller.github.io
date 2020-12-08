@@ -22,7 +22,15 @@ The most basic PennController experiment script contains a single line:
 PennController.newTrial()
 ```
 
-When this experiment is run, the [`PennController.newTrial`]({{site.baseurl}}/docs/global-commands/newtrial){:target="_blank"} command creates and starts a trial. However, the trial is "empty", and ends almost immediately. The experiment also ends almost immediately, because the script's only command has finished executing.
+When you run a PennController script, its commands are evaluated and executed in sequential order, from top to bottom. In this basic script, the only command is the [`PennController.newTrial`]({{site.baseurl}}/docs/global-commands/newtrial){:target="_blank"} command, which creates and starts a trial. 
+
+Once a trial starts, it ends when all of the commands within the trial finish being executed. In this basic script, the trial does not have commands, meaning that it starts and then ends almost immediately.
+
+A PennController script ends when it finishes executing all of its commands. In this
+
+A PennController experiment ends when it finishes executing all of its commands. In this example, the only command created a trial that 
+
+The experiment itself also ends almost immediately; 
 
 ### Trial structure
 Trials have the following (simplified) structure:

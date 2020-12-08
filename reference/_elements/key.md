@@ -8,7 +8,7 @@ has_toc: false
 children_code_font: true
 thumbnail: key.png
 syntax: newKey("*ELEMENT_NAME*", "*VALID_KEY*")
-description: To be filled in.
+description: Detects presses on keyboard keys.
 ---
 
 ```javascript

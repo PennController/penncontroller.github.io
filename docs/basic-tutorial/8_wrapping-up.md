@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Wrapping up
+layout: tutorial-child
+title: 8. Wrapping up
 parent: Basic Tutorial
-nav_order: 9
+nav_order: 8
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 Congratulations! You’ve learned how to:
 
@@ -80,6 +81,8 @@ newTrial("experimental-trial",
 ```
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click to see the final experiment script" outer-border=true %}
+
+## Next steps
 
 Now that you've learned the basics of PennController, we recommend reading the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, where you'll learn how to do things like:
 

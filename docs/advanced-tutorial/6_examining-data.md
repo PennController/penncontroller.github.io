@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Examining data
+layout: tutorial-child
+title: 6. Examining data
 parent: Advanced Tutorial
-nav_order: 7
+nav_order: 6
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 We'll run the experiment to collect data that we can examine.
 
@@ -34,7 +35,7 @@ We'll run the experiment to collect data that we can examine.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Reading in results
+## Reading in results
 
 {% capture label %}
 This section assumes prior knowledge of R.
@@ -165,7 +166,7 @@ Don't worry! You can ignore this message. The [`readr::read_csv()`](https://read
 
 If you're using base R, the pre-installed [`utils::read.csv()`](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table){:target="_blank"} function won't throw such a warning.
 
-### Tidying and analyzing data (optional) {#tidying-data}
+## Tidying and analyzing data (optional) {#tidying-data}
 
 {% capture label %}
 This section uses the tidyverse to transform and analyze data (prior knowledge of the tidyverse assumed). The code blocks in this section are suggestions that can be modified as desired.

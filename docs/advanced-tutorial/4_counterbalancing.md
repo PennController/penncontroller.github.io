@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Counterbalancing
+layout: tutorial-child
+title: 4. Counterbalancing
 parent: Advanced Tutorial
-nav_order: 5
+nav_order: 4
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 This section discusses ways of adding counterbalancing to the experimental design:
 
@@ -13,7 +14,7 @@ This section discusses ways of adding counterbalancing to the experimental desig
 + [Manipulating trial sequence to randomize experimental item order](#randomizing-item-order)
 + [Modifying the experiment URL to manually control group assignmen](#controlling-group-assignment)
 
-### Shuffling image position
+## Shuffling image position
 
 In the current experimental design, the plural image is always printed on the left and the singular image is always printed on the right. 
 
@@ -160,7 +161,7 @@ Another way of counterbalancing is to explicitly set half of the items to displa
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
 
-### Randomizing item order
+## Randomizing item order
 
 By default, PennController executes experiment scripts from top to bottom. The global command [`Sequence`]({{site.baseurl}}/docs/global-commands/sequence){:target="_blank"}, which is a handler for the Ibex [shuffleSequence variable](https://github.com/addrummond/ibex/blob/master/docs/manual.md#shuffle-sequences){:target="_blank"}, allows you to specify a shuffle sequence instead. 
 
@@ -196,7 +197,7 @@ Use the [`Sequence`]({{site.baseurl}}/docs/global-commands/sequence){:target="_b
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Controlling group assignment
+## Controlling group assignment
 
 PennController uses an internal counter to counterbalance group assignment. By default, the counter increases by one at the end of an experiment, which rotates which experimental item group is run.
 

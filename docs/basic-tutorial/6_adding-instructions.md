@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Adding instructions
+layout: tutorial-child
+title: 6. Adding instructions
 parent: Basic Tutorial
-nav_order: 7
+nav_order: 6
+numbered_headings: true
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 As the writers of the **BasicTutorial** experiment, we know that the participant must press the `F` or `J` key to select an image. However, a naive participant will need instructions.
 
@@ -60,7 +61,7 @@ The `<p></p>`, `<b></b>`, and `<br>` are HTML tags that [define a paragraph](htt
 {% endcapture %}
 {% include instructions.html text=instructions %}
 
-### Setting default commands
+## Setting default commands
 
 All of the **Text** elements in the `"instructions"` trial are centered and printed to the screen. Instead of calling the `center` and `print` commands on every **Text** element, you can call the `center` and `print` commands once on the default `Text` element type object.
 
@@ -116,7 +117,7 @@ Call the [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-cen
 {% endcapture %}
 {% include instructions.html text=instructions %}
 
-### Adding instructions to the same trial (optional) 
+## Adding instructions to the same trial (optional) 
 
 We recommend creating a separate `"instructions"` trial in preparation for the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, but you can also add instructions to the `"experimental-trial"` trial.
 
