@@ -4,9 +4,17 @@ title: 3. Customizing the experimental trial
 parent: Advanced Tutorial
 nav_order: 3
 numbered_headings: true
+blurb: How to increase the complexity of a trial.
 ---
 
-# {{ page.title }}
++ Selecting an image with a mouse click.
++ Creating a timeout to end a trial early.
++ Adding a delay to the start of a trial.
++ Manipulating multimedia content visually with CSS styles
++ Saving experiment results before the end of an experiment
+{: .h1-blurb }
+
+---
 
 This section describes ways to customize the `"experimental-trial"` trial:
 

@@ -4,34 +4,23 @@ title: 4. Pausing experiment execution
 parent: Basic Tutorial
 nav_order: 4
 numbered_headings: true
+blurb: How to let participants interact with an experiment.
 ---
 
-# {{page.title}}
-
 Interactive elements and commands can pause experiment script execution, in order to give participants time to interact with the screen.
+{: .h1-blurb }
 
-For example:
+---
+
+## Some h2
 
 + [`audio.wait`]({{site.baseurl}}/docs/audio/audio-wait){:target="_blank"}: Pauses experiment script execution until audio playback finishes.
 + [`key.wait`]({{site.baseurl}}/docs/key/key-wait){:target="_blank"}: Pauses experiment script execution until a valid keypress.
 + Also: [`button.wait`]({{site.baseurl}}/docs/button/button-wait){:target="_blank"}, [`controller.wait`]({{site.baseurl}}/docs/controller/controller-wait){:target="_blank"}, [`dropdown.wait`]({{site.baseurl}}/docs/dropdown/dropdown-wait){:target="_blank"}, and more.
 
-{% capture label %}
-The `X.` prefix, where `X` is an element type, refers to the fact that there is actually no singular "`wait` command". Instead, there are multiple `wait` commands that behave similarly ("pause experiment script execution until..."), but are considered separate commands with element-specific behavior, like `audio.wait` and `key.wait`.  
-
-This is contrast to standard element commands, like [`standard.print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"}. The `standard.` prefix indicates the command can be called on any element type.
-
-The `X.` and `standard.` prefixes are only for illustrative reference, and are **not used in PennController scripts**. This tutorial also drops the `X.` or `standard.` prefix when referring to a command in prose.
-
-For more information, read the [Element commands]({{site.baseurl}}/docs/core-concepts#element-commands){:target="_blank"} documentation page.
-{% endcapture %}
-{% include label-note.html label-body=label %}
-
-
 {% capture instructions %}
-+ Create a [**Key**]({{site.baseurl}}/docs/elements/key){:target="_blank"} named `"keypress"` that "listens" for the `F` or `J` keys.
-  
-  Call the [`wait`]({{site.baseurl}}/docs/key/key-wait){:target="_blank"} command to pause experiment script execution until the participant presses a valid key, in this case the `F` or `J` key.
+1. Create a [**Key**]({{site.baseurl}}/docs/elements/key){:target="_blank"} named `"keypress"` that "listens" for a press of the `F` or `J` key.
+2. Call the [`wait`]({{site.baseurl}}/docs/key/key-wait){:target="_blank"} command on the `"keypress"` **Key** to pause experiment script execution until the participant presses a valid key, in this case the `F` or `J` key.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -39,9 +28,6 @@ For more information, read the [Element commands]({{site.baseurl}}/docs/core-con
 *
 *// Remove command prefix
 *PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
 *
 *newTrial("experimental-trial",
 *    newAudio("fish-audio", "2fishRoundTank.mp3")
@@ -73,7 +59,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 <div class="dotted-grey-dk-000 px-4 pt-3" markdown="1">
 {% capture content %}
 
-## Option 1: End trial and stop audio playback after a valid keypress.
+**Option 1: End trial and stop audio playback after a valid keypress**
 
 + Call the [`stop`]({{site.baseurl}}/docs/audio/audio-stop){:target="_blank"} command on the `"fish-audio"` **Audio** to stop audio playback.
 
@@ -83,9 +69,6 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 *
 *// Remove command prefix
 *PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
 *
 *// Experimental trial
 *newTrial("experimental-trial",
@@ -110,7 +93,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 
 {% capture content %}
 
-## Option 2: End trial after audio playback finishes, instead of after a valid keypress.
+**Option 2: End trial after audio playback finishes, instead of after a valid keypress**
 
 + Call the [`wait`]({{site.baseurl}}/docs/audio/audio-wait){:target="_blank"} command on the `"fish-audio"` **Audio** (instead of on the `"keypress"` **Key**) to pause experiment script execution until audio playback finishes.
 
@@ -120,9 +103,6 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 *
 *// Remove command prefix
 *PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
 *
 *// Experimental trial
 *newTrial("experimental-trial",
@@ -146,12 +126,14 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 {% include collapsible-block.html content=content summary="Option 2: click for more details" %}
 </div>
 
-## Option 3: End trial after audio playback finishes or valid keypress {#option-3}
+---
+
+## End trial after audio playback finishes or valid keypress {#option-3}
 
 To end the trial after audio playback finishes or after a valid keypress, whichever comes second, pause the experiment script execution at the `"keypress"` **Key** *and* at the `"fish-audio"` **Audio**.
 
 {% capture instructions %}
-+ Call the [`wait("first")`]]({{site.baseurl}}/docs/audio/audio-wait#optional-arguments){:target="_blank"} command on the `"fish-audio"` **Audio** to pause experiment script execution until an end-of-audio-playback event.
++ Call the [`wait("first")`]({{site.baseurl}}/docs/audio/audio-wait#optional-arguments){:target="_blank"} command on the `"fish-audio"` **Audio** to pause experiment script execution until an end-of-audio-playback event.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 *// This is the BasicTutorial experiment.
@@ -159,9 +141,6 @@ To end the trial after audio playback finishes or after a valid keypress, whiche
 *
 *// Remove command prefix
 *PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
 *
 *// Experimental trial
 *newTrial("experimental-trial",
@@ -183,6 +162,8 @@ To end the trial after audio playback finishes or after a valid keypress, whiche
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
+
+### Some h3
 
 When called on an **Audio** element, the `wait("first")` command and the plain `wait` command differ in an important way:
 

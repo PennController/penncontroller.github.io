@@ -4,9 +4,13 @@ title: 2. Creating a trial template
 parent: Advanced Tutorial
 nav_order: 2
 numbered_headings: true
+blurb: How to reuse PennController code.
 ---
 
-# {{ page.title }}
+Using a CSV (comma-separated values) file to organize experimental items.
+{: .h1-blurb }
+
+---
 
 The **AdvancedTutorial** experiment has four items and thus four trials. We could copy-and-paste the `"experimental-trial"` trial code multiple times and change variable names as necessary, but this method is not recommended for several reasons:
 

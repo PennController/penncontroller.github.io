@@ -4,9 +4,13 @@ title: 6. Examining data
 parent: Advanced Tutorial
 nav_order: 6
 numbered_headings: true
+blurb: How to use R to read in a results file.
 ---
 
-# {{ page.title }}
++ Using the tidyverse to transform data (optional).
+{: .h1-blurb }
+
+---
 
 We'll run the experiment to collect data that we can examine.
 

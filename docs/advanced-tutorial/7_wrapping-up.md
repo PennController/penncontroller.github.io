@@ -6,9 +6,14 @@ nav_order: 7
 numbered_headings: true
 ---
 
-# {{ page.title }}
+Congratulations, you're done!
+{: .h1-blurb }
 
-Congratulations! You’ve learned how to:
+---
+
+## Summary
+
+In the **Advanced Tutorial** you’ve learned how to:
 
 + Create a trial template and use tables.
 + Implement a trial timeout and trial delay.

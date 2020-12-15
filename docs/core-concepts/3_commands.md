@@ -3,13 +3,12 @@ layout: default
 title: Commands
 parent: Core Concepts
 nav_order: 3
-numbered_headings: true
 ---
 
 # {{ page.title }}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-{: .fs-5 .fw-300 }
+{: .h1-blurb }
 
 ---
 
@@ -68,6 +67,17 @@ newTrial("TRIAL_LABEL",
   newX("ELEMENT_2", ...).COMMAND_4()
 )
 ```
+
+{% capture label %}
+The `X.` prefix, where `X` is an element type, refers to the fact that there is actually no singular "`wait` command". Instead, there are multiple `wait` commands that behave similarly ("pause experiment script execution until..."), but are considered separate commands with element-specific behavior, like `audio.wait` and `key.wait`.  
+
+This is contrast to standard element commands, like [`standard.print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"}. The `standard.` prefix indicates the command can be called on any element type.
+
+The `X.` and `standard.` prefixes are only for illustrative reference, and are **not used in PennController scripts**. This tutorial also drops the `X.` or `standard.` prefix when referring to a command in prose.
+
+For more information, read the [Element commands]({{site.baseurl}}/docs/core-concepts#element-commands){:target="_blank"} documentation page.
+{% endcapture %}
+{% include label-note.html label-body=label %}
 
 ---
 
