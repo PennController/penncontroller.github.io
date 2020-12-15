@@ -1,14 +1,20 @@
 ---
 layout: tutorial-child
-title: 8. Wrapping up
+title: 7. Wrapping up
 parent: Basic Tutorial
-nav_order: 8
+nav_order: 7
 numbered_headings: true
+blurb: Summary of tutorial, and next steps.
 ---
 
-# {{ page.title }}
+Congratulations, you're done!
+{: .h1-blurb }
 
-Congratulations! You’ve learned how to:
+---
+
+## Summary
+
+In the **Basic Tutorial**, you learned how to:
 
 + Create experiments and trials on the PCIbex Farm.
 + Use multimedia and interactive elements.
@@ -81,6 +87,8 @@ newTrial("experimental-trial",
 ```
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click to see the final experiment script" outer-border=true %}
+
+---
 
 ## Next steps
 

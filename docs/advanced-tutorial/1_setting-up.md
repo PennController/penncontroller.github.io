@@ -4,11 +4,13 @@ title: 1. Setting up
 parent: Advanced Tutorial
 nav_order: 1
 numbered_headings: true
+blurb: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
 
-# {{ page.title }}
-
 The **AdvancedTutorial** experiment continues directly from the [**BasicTutorial** experiment]({{site.baseurl}}/docs/basic-tutorial/#overview){:target="_blank"}. 
+{: .h1-blurb }
+
+---
 
 {% capture instructions %}
 Modify the **BasicTutorial** experiment by importing new resource files, updating `main.js`, and renaming the experiment:

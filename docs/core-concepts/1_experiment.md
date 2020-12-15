@@ -3,14 +3,12 @@ layout: default
 title: Experiment structure
 parent: Core Concepts
 nav_order: 1
-numbered_headings: true
-numbered_examples: true
 ---
 
 # {{ page.title }}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-{: .fs-5 .fw-300 }
+{: .h1-blurb }
 
 ---
 

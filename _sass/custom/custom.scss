@@ -55,7 +55,7 @@
 }
 
 // _layouts/test.html
-.previous-section {
+.previous-page {
   padding-top: $sp-4;
   padding-bottom: $sp-4;
   padding-left: $sp-6;
@@ -64,7 +64,7 @@
   white-space: pre-line;
 }
 
-.next-section {
+.next-page {
   padding-top: $sp-4;
   padding-bottom: $sp-4;
   padding-left: $sp-2;
@@ -83,12 +83,12 @@ a.overlay-link:hover{
   text-decoration: underline;
 }
 
-.underline{
+.underline {
   text-decoration: underline;
   text-decoration-color: rgba($link-color, 0.2);
 }
 
-.overlay{
+.overlay {
   padding-top: $sp-4;
   position: relative;
 }
@@ -97,7 +97,7 @@ a.overlay-link:hover{
   opacity: 0.4;
 }
 
-.element-title{
+.element-title {
   padding-left: $sp-1;
   padding-right: $sp-1;
   text-overflow: ellipsis;
@@ -105,9 +105,15 @@ a.overlay-link:hover{
   white-space: no-wrap;
 }
 
-.element-description{
+.element-description {
   margin-top: $sp-3;
   white-space: pre-wrap;
+}
+
+// blurb styling
+.h1-blurb {
+  font-size: $font-size-6;
+  font-weight: 300;
 }
 
 // flex container classes

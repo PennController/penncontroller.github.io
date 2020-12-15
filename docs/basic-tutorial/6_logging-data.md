@@ -1,12 +1,19 @@
 ---
 layout: tutorial-child
-title: 7. Logging data
-parent: Test Tutorial
-nav_order: 7
+title: 6. Logging data
+parent: Basic Tutorial
+nav_order: 6
 numbered_headings: true
+blurb: How to collect and examine experimental data.
 ---
 
-# {{ page.title }}
+ how to collect and examine experimental data
+  + Reading a PennController results file.
+  + Comparing timestamps to calculate response time.
+
+---
+
+## Some h2
 
 By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/docs/standard-element-commands/standard-log){:target="_blank"} command to collect any other information. 
 
@@ -63,7 +70,7 @@ The `log` command adds lines to the `results` file in the experiment project pag
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-## Examining results
+### Collecting data
 
 {% capture instructions %}
 Run the experiment to log data and look at the logged data:
@@ -79,6 +86,8 @@ Run the experiment to log data and look at the logged data:
    + Right-click on the eye icon, click *Save Link As...*, enter `"results.csv"` in the "Save As:" field, and click **Save** to save the `results` file as a comma-separated value (CSV) file.
 {% endcapture %}
 {% include instructions.html text=instructions%}
+
+### Examining experimental results
 
 The `results` file should look like the following:
 
@@ -127,6 +136,8 @@ Relevant information contained in the five rows at the bottom:
 6. `"experimental-trial"` trial: ended at the timestamp `1603390894815`.
 
 The timestamps are Unix timestamps in milliseconds, in other words the number of milliseconds since 00:00:00 UTC on January 1, 1970.
+
+---
 
 ## Calculating response times
 

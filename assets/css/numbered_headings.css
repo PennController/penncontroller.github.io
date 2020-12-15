@@ -16,9 +16,9 @@ h4 {
   font-weight: 500 !important;
 }
 
-/* h1:before {
+h1:before {
   content: counter(h1counter) ".\0000a0\0000a0";
-} */
+}
 
 h2:before {
   counter-increment: h2counter;

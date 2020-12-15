@@ -1,24 +1,32 @@
 ---
 layout: tutorial-child
-title: 5. Enhancing aesthetics
+title: 5. tbd
 parent: Basic Tutorial
 nav_order: 5
 numbered_headings: true 
+blurb: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
 
-# {{ page.title }}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+{: .h1-blurb }
 
-PennController has a variety of commands that manipulate aesthetic aspects of element with multimedia content. 
+---
+
+## Displaying multimedia content
+
+PennController has a variety of commands that manipulate the display of multimedia content.
 
 For example:
 + [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-center){:target="_blank"}: Centers a printed element on its horizontal axis.
 + [`unfold`]({{site.baseurl}}/docs/text/text-unfold){:target="_blank"}: "Unfolds" a **Text** element in a specified number of milliseconds, instead of printing it to the screen immediately.
 + [`size`]({{site.baseurl}}/docs/standard-element-commands/standard-size){:target="_blank"}: Resizes a printed element to a specified width by height in pixels.
 
+### Enhancing aesthetics
+
 {% capture instructions %}
-+ Center the `"fish-sentence"` **Text**, and unfold it in 2676ms (the duration of `2fishRoundTank.mp3`).
-+ Create an **Image** named `"fish-singular"` that contains the image `1fishSquareTank.png`.
-+ Resize the `"fish-plural"` and `"fish-singular"` **Image** elements to 200x200 px.
+1. Center the `"fish-sentence"` **Text**, and unfold it in 2676ms (the duration of `2fishRoundTank.mp3`).
+2. Create an **Image** named `"fish-singular"` that contains the image `1fishSquareTank.png`.
+3. Resize the `"fish-plural"` and `"fish-singular"` **Image** elements to 200x200 px.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 
@@ -26,9 +34,6 @@ For example:
 *// Type code below this line.
 *// Remove command prefix
 *PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
 *
 *// Experimental trial
 *newTrial("experimental-trial",
@@ -58,7 +63,7 @@ For example:
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-## Manipulating layout
+### Manipulating layout
 
 By default, every printed element is printed on a new line. For other layouts:
 
@@ -77,9 +82,6 @@ By default, every printed element is printed on a new line. For other layouts:
 *
 *// Remove command prefix
 *PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
 *
 *// Experimental trial
 *newTrial("experimental-trial",
@@ -113,3 +115,114 @@ By default, every printed element is printed on a new line. For other layouts:
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
+
+---
+
+## Adding instructions
+
+As the writers of the **BasicTutorial** experiment, we know that the participant must press the `F` or `J` key to select an image. However, a naive participant will need instructions.
+
+### Using HTML tags
+
+You can use some HTML tags to style text inside a **Text** element.
+
+For example, the `<p></p>`, `<b></b>`, and `<br>` are HTML tags that [define a paragraph](https://www.w3schools.com/tags/tag_p.asp){:target="_blank"}, [define bolded text](https://www.w3schools.com/tags/tag_b.asp){:target="_blank"}, and [define a line break](https://www.w3schools.com/tags/tag_br.asp){:target="_blank"}, respectively.
+
++ With HTML tags:
+  <img class="mt-2 dotted-grey-dk-000" src="{{site.baseurl}}/assets/tutorials/with-html.png">
++ Without HTML tags:
+  <img class="mt-2 dotted-grey-dk-000" src="{{site.baseurl}}/assets/tutorials/without-html.png">
+
+{% capture instructions%}
+1. Create a trial labeled `"instructions"` with centered **Text** instructions. 
+2. Create a centered [**Button**]({{site.baseurl}}/docs/elements/button){:target="_blank"} named `"wait"` that pauses experiment script execution until the participant clicks it.
+
+<pre><code class="language-diff-javascript diff-highlight"> 
+*// This is the BasicTutorial experiment.
+*// Type code below this line.
+*
+*// Remove command prefix
+*PennController.ResetPrefix(null)
+*
++// Instructions
++newTrial("instructions",
++    newText("instructions-1", "Welcome!")
++        .center()
++        .print()
++    ,
++    newText("instructions-2", "&lt;p&gt;In this experiment, you will hear and read a sentence, and see two images.&lt;/p&gt;")
++        .center()
++        .print()
++    ,
++    newText("instructions-3", "&lt;b&gt;Select the image that better matches the sentence:&lt;/b&gt;")
++        .center()
++        .print()
++    ,
++    newText("instructions-4", "&lt;p&gt;Press the &lt;b&gt;F&lt;/b&gt; key to select the image on the left.&lt;br&gt;Press the &lt;b&gt;J&lt;/b&gt; key to select the image on the right.&lt;/p&gt;")
++        .center()
++        .print()
++    ,
++    newButton("wait", "Click to start the experiment")
++        .center()
++        .print()
++        .wait()
++)
+*
+*// Experimental trial
+*// code omitted in interest of space
+</code></pre>
+{% endcapture %}
+{% include instructions.html text=instructions %}
+
+### Setting default commands
+
+All of the **Text** elements in the `"instructions"` trial are centered and printed to the screen. Instead of calling the `center` and `print` commands on every **Text** element, you can call the `center` and `print` commands once on the default `Text` element type object.
+
+Every element type has a corresponding default object, for example `defaultText`. An element type's default object is accessed by calling `defaultX`, where `X` is an element type.
+
+Any commands that are called on an element type's default object are called on all subsequent instances of that element type **within the same trial**. Instances of that element type in other trials are not affected.
+
+{% capture instructions%}
+Call the [`center`]({{site.baseurl}}/docs/standard-element-commands/standard-center){:target="_blank"} and [`print`]({{site.baseurl}}/docs/standard-element-commands/standard-print){:target="_blank"} commands on the `defaultText` object in the `"instructions"` trial:
+
+*If you are copy and pasting this code, delete any lines highlighted with a red background.*
+<pre><code class="language-diff-javascript diff-highlight"> 
+*// This is the BasicTutorial experiment.
+*// Type code below this line.
+*
+*// Remove command prefix
+*PennController.ResetPrefix(null)
+*
+*// Instructions
+*newTrial("instructions",
++    defaultText
++        .center()
++        .print()
++    ,
++    newText("instructions-1", "Welcome!")
+-        .center()
+-        .print()
++    ,
++    newText("instructions-2", "&lt;p&gt;In this experiment, you will hear and read a sentence, and see two images.&lt;/p&gt;")
+-        .center()
+-        .print()
++    ,
++    newText("instructions-3", "&lt;b&gt;Select the image that better matches the sentence:&lt;/b&gt;")
+-        .center()
+-        .print()
++    ,
++    newText("instructions-4", "&lt;p&gt;Press the &lt;b&gt;F&lt;/b&gt; key to select the image on the left.&lt;br&gt;Press the &lt;b&gt;J&lt;/b&gt; key to select the image on the right.&lt;/p&gt;")
+-        .center()
+-        .print()
+*    ,
+*    newButton("wait", "Click to start the experiment")
+*        .center()
+*        .print()
+*        .wait()
+*)
+*
+*// Experimental trial
+*// code omitted in interest of space
+</code></pre>
+{% endcapture %}
+{% include instructions.html text=instructions %}

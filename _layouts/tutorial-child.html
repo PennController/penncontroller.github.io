@@ -8,27 +8,31 @@ layout: default
   <div class="initialize" style="--h1counter-value: {{page.nav_order}};"></div>
 {% endif %}
 
+{% assign modified_title = page.title | split: ". " | last %}
+
+<h1>{{modified_title}}</h1>
+
 {{ content }}
 
 {% assign children_list = site.html_pages | where: "parent", page.parent %}
 {% assign next_index = page.nav_order | plus: 1 %}
-{% assign next_section = children_list | where: "nav_order", next_index | first %}
+{% assign next_page = children_list | where: "nav_order", next_index | first %}
 {% assign previous_index = page.nav_order | minus: 1 %}
-{% assign previous_section = children_list | where: "nav_order", previous_index | first %}
+{% assign previous_page = children_list | where: "nav_order", previous_index | first %}
 
 <div class ="flex-row-wrap mt-6 bg-grey-lt-200">
   {% if page.nav_order > 1 %}
-    <a href="{{ previous_section.url | prepend: site.baseurl }}" style="width: calc(100% / 3);">
-      <div class="previous-section">
-        <span class="text-delta">← previous section</span><br>
-        <b>{{previous_section.title}}</b>
+    <a href="{{ previous_page.url | prepend: site.baseurl }}" style="width: calc(100% / 3);">
+      <div class="previous-page">
+        <span class="text-delta">← previous page</span><br>
+        <b>{{previous_page.title}}</b>
       </div>
     </a>
   {% else %}
     {% assign parent = site.html_pages | where: "title", page.parent | first %}
     <a href="{{ parent.url | prepend: site.baseurl }}" style="width: calc(100% / 3);">
-      <div class="previous-section">
-        <span class="text-delta">← previous section</span><br>
+      <div class="previous-page">
+        <span class="text-delta">← previous page</span><br>
         <b>{{parent.title}}</b>
       </div>
     </a>
@@ -39,10 +43,10 @@ layout: default
     </div>
   </a>
   {% unless page.nav_order == children_list.size %}
-    <a href="{{ next_section.url | prepend: site.baseurl }}" style="width: calc(100% / 3)">
-      <div class="next-section">
-        <span class="text-delta">next section →</span><br>
-        <b>{{ next_section.title }}</b>
+    <a href="{{ next_page.url | prepend: site.baseurl }}" style="width: calc(100% / 3)">
+      <div class="next-page">
+        <span class="text-delta">next page →</span><br>
+        <b>{{ next_page.title }}</b>
       </div>
     </a>
   {% else %}

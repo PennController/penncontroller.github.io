@@ -3,13 +3,12 @@ layout: default
 title: Elements
 parent: Core Concepts
 nav_order: 2
-numbered_headings: true
 ---
 
 # {{ page.title }}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-{: .fs-5 .fw-300 }
+{: .h1-blurb }
 
 ---
 

@@ -4,9 +4,15 @@ title: 4. Counterbalancing
 parent: Advanced Tutorial
 nav_order: 4
 numbered_headings: true
+blurb: How to include counterbalancing in the experimental design.
 ---
 
-# {{ page.title }}
++ Shuffling image position.
++ Manipulating trial sequence to randomize experimental item order.
++ Modifying the experiment URL to manually control group assignment.
+{: .h1-blurb }
+
+---
 
 This section discusses ways of adding counterbalancing to the experimental design:
 

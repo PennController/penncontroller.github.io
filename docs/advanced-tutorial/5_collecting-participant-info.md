@@ -4,9 +4,14 @@ title: 5. Collecting participant information
 parent: Advanced Tutorial
 nav_order: 5
 numbered_headings: true
+blurb: How to elicit and log participant responses.
 ---
 
-# {{ page.title }}
++ Creating an obligatory checkbox for a consent form.
++ Creating a global variable to record participant IDs.
+{: .h1-blurb }
+
+--- 
 
 This section describes ways of collecting participant responses:
 
