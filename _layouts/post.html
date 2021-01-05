@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list"></ol>
+    <li class="breadcrumb-nav-list-item"><a href="{{site.baseurl}}/announcements">Announcements</a></li>
+    <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
+  </ol>
+</nav>
+
+<h1>{{ page.title }}</h1>
+
+<div class="text-delta">
+  Posted on {{ page.date | date: "%B %-d, %Y" }}{% if post.author %} by {{ post.author }}{% endif %}
+  <br>
+
+  tagged: 
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="{{site.baseurl}}/tag/{{ tag_name }}"><code>{{ tag_name }}</code></a>
+  {% endfor %}
+</div>
+
+<hr>
+
+{{ content }}
+
+{% if page.previous.url %}
+  {% assign previous_page = page.previous %}
+{% else %}
+  {% assign previous_page = false %}
+{% endif %}
+
+{% if page.next.url %}
+  {% assign next_page = page.next %}
+{% else %}
+  {% assign next_page = false %}
+{% endif %}
+
+{% include bottom-navbar.html previous=previous_page next=next_page %}

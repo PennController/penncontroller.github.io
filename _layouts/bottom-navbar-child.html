@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% if page.start_heading %}
+  <div class="initialize" style="--h1counter-value: {{page.start_heading}};"></div>
+{% else %}
+  <div class="initialize" style="--h1counter-value: {{page.nav_order}};"></div>
+{% endif %}
+
+{% assign modified_title = page.title | split: ". " | last %}
+
+<h1>{{modified_title}}</h1>
+
+{{ content }}
+
+{% assign children_list = site.html_pages | where: "parent", page.parent %}
+
+{% assign previous_index = page.nav_order | minus: 1 %}
+{% if page.previous_page %}
+  {% assign previous_page = site.html_pages | where: "title", page.previous_page | first %}
+{% else %}
+  {% assign previous_page = children_list | where: "nav_order", previous_index | first %}
+{% endif %}
+
+{% assign next_index = page.nav_order | plus: 1 %}
+{% if page.next_page %}
+  {% assign next_page = site.html_pages | where: "title", page.next_page | first %}
+{% else %}
+  {% assign next_page = children_list | where: "nav_order", next_index | first %}
+{% endif %}
+
+{% include bottom-navbar.html previous=previous_page next=next_page %}

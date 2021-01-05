@@ -1,9 +1,10 @@
 ---
-layout: tutorial-parent
+layout: bottom-navbar-parent
 title: Advanced Tutorial
+permalink: /advanced-tutorial/
 has_children: true
 has_toc: false
-nav_order: 4
+nav_order: 5
 ---
 
 # {{ page.title }}
@@ -13,7 +14,7 @@ This tutorial assumes familiarity with the knowledge introduced in the [**Basic 
 
 ---
 
-## Overview
+## Goal
 
 In the **Advanced Tutorial**, you'll learn how to make a picture matching experiment with the following structure:
 
@@ -40,7 +41,6 @@ Preview the **AdvancedTutorial** experiment:
 
 {% capture content %}
 ```js
-// This is the AdvancedTutorial experiment.
 // Type code below this line.
 
 // Remove command prefix
@@ -171,40 +171,58 @@ newTrial("completion_screen",
 
 ## Table of contents
 
-1. [Overview](#overview)
-2. [Setting up](#setting-up): how to import resource files
-  + Planning an experiment.
-3. [Creating trial template](#creating-trial-template): how to reuse PennController code
-  + Using a CSV (comma-separated values) file to organize experimental items.
-4. [Customizing the experimental trial](#customizing-the-experimental-trial): how to increase the complexity of a trial
-  + Selecting an image with a mouse click.
-  + Creating a timeout to end a trial early.
-  + Adding a delay to the start of a trial.
-  + Manipulating multimedia content visually with CSS styles
-  + Saving experiment results before the end of an experiment
-5. [Counterbalancing](#counterbalancing): how to include counterbalancing in the experimental design 
-  + Shuffling image position.
-  + Manipulating trial sequence to randomize experimental item order.
-  + Modifying the experiment URL to manually control group assignment.
-6. [Collecting participant info](#collecting-participant-info): how to elicit and log participant responses
-  + Creating an obligatory checkbox for a consent form.
-  + Creating a global variable to record participant IDs.
-7. [Examining-data](#examining-data): how to use R to read in a results file
-  + Using the [tidyverse](https://www.tidyverse.org/){:target="_blank"} to transform data (optional).
-8. [Wrapping up](#wrapping-up)
+{% assign children_list = site.html_pages | where: "parent", page.title %}
+<ol start="8">
+{% for child in children_list %}
+  <li>
+  {% assign modified_title = child.title | split: ". " | last %}
+    <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">{{ modified_title }}</a>: {{ child.blurb }}
+  </li>
+{% endfor %}
+</ol>
 
 ---
 
-### Following the tutorial
+## How to follow the tutorial
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+### Prerequisites
+
+PennController does not require any background in JavaScript. However, you should have some general knowledge of programming and experimental design.
+
+In particular, you should be familiar with the following terms and concepts:
++ Calling a command, command parameters
++ Strings, integers, truth values, code comments,
++ Experimental items, trials, 
+
+### Technical notes
+
+Blocks that are labeled with <span class="label">technical notes</span> contain extra information about PennController. 
+
+{% capture label %}
+This is an example of a technical note.
+{% endcapture %}
+{% include label-technical.html label-body=label %}
+
+**Reading technical notes is optional**, but you 
+
+### Instruction blocks
 
 Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span> blocks:
 
 {% capture instructions %}
-Code blocks inside an instruction indicate `main.js`, the [experiment script](#editing-an-experiment).
+1. *Step one*
+2. *Step two*
+3. *Step three*
 
 ```javascript
-// This is a comment.
+// Lines that begin with a + sign and that have a green background indicate newly-added lines.
+
+// Lines that begin with a - sign and that have a red background indicate newly-deleted lines.
+
+// Lines that begin with a ! sign and that have a yellow background indicate lines that have been modified.
 ```
 {% endcapture %}
-{% include instructions.html text=instructions%}
+{% include instructions.html text=instructions %}
 

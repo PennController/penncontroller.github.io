@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+
+<h1>Tag: <code>{{ page.tag }}</code></h1>
+
+<hr>
+
+{% assign posts=site.tags[page.tag] %}
+{% include post-excerpt.html collection=posts %}
