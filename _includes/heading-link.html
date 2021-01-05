@@ -1,4 +1,5 @@
 {% assign tag = include.header | downcase | slugify %}
 {% if include.h3 %}<h3 id="{{tag}}">{% elsif include.h4 %}<h4 id="{{tag}}">{% endif %}
-<a href="#{{tag}}" class="anchor-heading" aria-labelledby="{{tag}}"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>{{include.header}}
+<a href="#{{tag}}" class="anchor-heading" aria-labelledby="{{tag}}"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
+{{include.header}}
 {% if include.h3 %}</h3>{% elsif include.h4 %}</h4>{% endif %}

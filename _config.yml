@@ -38,6 +38,10 @@ aux_links:
 aux_links_new_tab: true
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/announcements/page/:num/"
 
 # Disable Rouge syntax highlighter
 markdown: kramdown
@@ -56,85 +60,94 @@ last_edit_time_format: "%b %e %Y" # uses ruby's time format: https://ruby-doc.or
 # Collections
 collections_dir: reference
 collections:
+  deprecated:
+    output: true
+    permalink: /:collection/:name/
   elements:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /:collection/:name/
   global-commands:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /commands/:collection/:name/
   how-to-guides:
     output: true
     permalink: /docs/:collection/:name/
   special-commands:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /commands/:collection/:name/
   standard-element-commands:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /commands/:collection/:name/
   audio:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   button:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   canvas:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   controller:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   dropdown:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   eyetracker:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   function:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   html:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   image:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   key:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   mediarecorder:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   mousetracker:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
+  pages:
+    output: true
+    permalink: /:name/
+  posts:
+    output: true
+    permalink: /announcements/:name/
   scale:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   selector:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   text:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   textinput:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   timer:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   tooltip:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   var:
     output: true
-    permalink: /docs/elements/:collection/:name/
+    permalink: /elements/:collection/:name/
   video:
     output: true
-    permalink: /docs/elements/:collection/:name/           
+    permalink: /elements/:collection/:name/           
   youtube:
     output: true
-    permalink: /docs/elements/:collection/:name/
-
+    permalink: /elements/:collection/:name/
+      
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

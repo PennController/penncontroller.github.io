@@ -4,19 +4,21 @@ command_type: global
 title: AddHost
 parent: Global commands
 grand_parent: Commands
-syntax: AddHost("URL)
-description: Specifies a host URL to use as a source file for when calling `newAudio`, `newVideo`, or `newImage`. URL must end with `"/"`.
-notes: >-
-  You can pass multiple URLs (separated by comma) or use `PennController.AddHost` multiple times. PennController looks for audio/images at the specified host URLs in the order that they were provided, and stops looking as soon as an appropriate audio/image file is found.
-
-  You can still directly specify URLs when creating a new element even if you specified a host URL with  `PennController.AddHost`.
+syntax: AddHost("*URL*")
+description: Specifies a host URL to use as a source file for when calling creating a new **Audio**, **Image**, or **Video** element. The `"URL"` argument must end in `"/"`.
+notes: true
 ---
 
-```javascript
-PennController.ResetPrefix(null);
++ You can pass multiple URLs (separated by commas) to the `AddHost` command, or call `AddHost` multiple times. PennController looks for multimedia files at the specified host URLs in the order that they were provided, and stops looking as soon as an appropriate file is found.
++ You can still directly pass a multimedia file URL when creating a new element, even if a host URL has already been specified by `AddHost`.
 
-AddHost("https://files.lab.florianschwarz.net/test/");
-AddHost("http://spellout.net/ibexfarm/static/images/");
+<!--more-->
+
+```javascript
+PennController.ResetPrefix(null)
+
+AddHost("https://files.lab.florianschwarz.net/test/")
+AddHost("http://spellout.net/ibexfarm/static/images/")
 
 newTrial(
     newImage("ibex", "ibex.jpg")
@@ -28,7 +30,7 @@ newTrial(
     newAudio("sentence", "test.mp3")
         .play()
         .wait()
-);
+)
 ```
 Prints two images and plays one audio file. 
 + When loading the `"ibex"` **Image** element, PennController sends a request for the file `https://files.lab.florianschwarz.net/test/ibex.png`. 

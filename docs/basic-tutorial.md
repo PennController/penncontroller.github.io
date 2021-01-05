@@ -1,9 +1,10 @@
 ---
-layout: tutorial-parent
+layout: bottom-navbar-parent
 title: Basic Tutorial
+permalink: /basic-tutorial/
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 4
 ---
 
 # {{ page.title }}
@@ -15,7 +16,7 @@ This tutorial is designed for people who prefer learning by doing. If you prefer
 
 ## Goal
 
-In the **Basic Tutorial**, you'll learn how to create a picture matching experiment with the following structure:
+In the **Basic Tutorial**, you'll learn how to create a simple picture matching experiment with the following structure:
 
 1. Instructions screen with button to start the experiment
 2. Experimental trial:
@@ -33,7 +34,6 @@ Preview the **BasicTutorial** experiment:
 
 {% capture content %}
 ```javascript
-// This is the BasicTutorial experiment.
 // Type code below this line.
 
 // Remove command prefix

@@ -2,9 +2,14 @@
 layout: default
 ---
 
-<h1><code>{{ page.title }}</code></h1>
+{% if page.command_type == "global" and page.title != "PennController.ResetPrefix" %}
+  <h1><code>(PennController.){{ page.title }}</code></h1> 
+{% else %}
+  <h1><code>{{ page.title }}</code></h1>
+{% endif %}
 
 {% if page.element_type contains "standard" %}
+  <h4>Element types that this command <a href="{{site.baseurl}}/docs/core-concepts/3_commands#standard-and-element-specific-commands" target="_blank">has an effect on</a></h4>
   {% for type in page.element_type %}
     {% for element in site.elements %}
       {% if element.element_type contains type %}
@@ -12,11 +17,15 @@ layout: default
       {% endif %}
     {% endfor %}
   {% endfor %}
-  <hr>
 {% endif %}
 
 {% include heading-link.html header="syntax" h4=true %}
-<code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+{% if page.command_type == "global" and page.title != "PennController.ResetPrefix" %}
+  <code>(PennController.){{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+  <p class="text-delta">↳ See <a href="{{site.baseurl}}/docs/support/faq#penncontroller-prefix" target="_blank">What does <code>(PennController.)</code> mean?</a></p>
+{% else %}
+  <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+{% endif %}
 
 {% include heading-link.html header="description" h4=true %}
 {{ page.description | markdownify }}
@@ -27,8 +36,8 @@ layout: default
   <ul>
     {% for parameter in page.optional_parameters %}
     <li>
-    <p><code>{{ parameter.syntax }}</code></p>
-    <p class="fw-300 fs-3">{{ parameter.description }}</p>
+      <code>{{ parameter.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+      <p class="fw-300 fs-3">{{ parameter.description | markdownify | remove: '<p>' | remove: '</p>'}}</p>
     </li>
     {% endfor %}
   </ul>
@@ -50,13 +59,13 @@ layout: default
 {% endif %}
 
 {% if page.notes %}
-{%- include heading-link.html header="notes" h4=true -%}
-<div class="dashed-grey-lt-300 py-2 px-5 mt-2 mb-4" markdown=1>
-  <div class="fw-300 fs-3">{{ page.notes | markdownify }}</div>
-</div>
+  {%- include heading-link.html header="note(s)" h4=true -%}
+  {{ page.excerpt }}
+  {% assign content = page.content | remove: page.excerpt %}
+{% else %}
+  {% assign content = page.content %}  
 {% endif %}
 
-<hr> 
-
+<hr>
 {%- include heading-link.html header="example" h4=true -%}
-{{ page.content }}
+{{ content }}

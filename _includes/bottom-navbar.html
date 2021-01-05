@@ -1,0 +1,45 @@
+<div class ="bottom-navbar">
+  {% if include.previous %}
+    <div class="previous-page">
+      {% if include.paginator %}
+        <a href="{{ include.previous | prepend: site.baseurl }}">
+          <span class="text-delta">← older posts</span>
+        </a>
+      {% else %}
+        <a href="{{ include.previous.url | prepend: site.baseurl }}">
+          <span class="text-delta">← previous page</span>
+            <br>
+            <b class="page-title">{{ include.previous.title }}</b>
+        </a>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="centered-third"></div>
+  {% endif %}
+  <div class="back-to-top">
+    {% if include.paginator %}
+      <span class="text-delta">page {{include.page}} of {{include.total}}</span>
+    {% else %}
+      <a href="#">
+        <span class="text-delta">↑ back to top</span> 
+      </a>
+    {% endif %}
+  </div>
+  {% if include.next %}
+    <div class="next-page">
+      {% if include.paginator %}
+        <a href="{{ include.next | prepend: site.baseurl }}">
+          <span class="text-delta"> newer posts →</span>
+        </a>
+      {% else %}
+        <a href="{{ include.next.url | prepend: site.baseurl }}">
+          <span class="text-delta">next page →</span>
+            <br>
+            <b class="page-title">{{ include.next.title }}</b>
+        </a>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="centered-third"></div>
+  {% endif %}
+</div>

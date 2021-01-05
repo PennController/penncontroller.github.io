@@ -7,3 +7,7 @@
 {% if page.numbered_headings %}
 <link rel="stylesheet" href="{{site.baseurl}}/assets/css/numbered_headings.css">
 {% endif %}
+
+{% if site.tags != "" %}
+  {% include collect-tags.html %}
+{% endif %}

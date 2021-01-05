@@ -1,9 +1,10 @@
 ---
-layout: tutorial-parent
+layout: bottom-navbar-parent
 title: Advanced Tutorial
+permalink: /advanced-tutorial/
 has_children: true
 has_toc: false
-nav_order: 4
+nav_order: 5
 ---
 
 # {{ page.title }}
@@ -40,7 +41,6 @@ Preview the **AdvancedTutorial** experiment:
 
 {% capture content %}
 ```js
-// This is the AdvancedTutorial experiment.
 // Type code below this line.
 
 // Remove command prefix
@@ -171,27 +171,15 @@ newTrial("completion_screen",
 
 ## Table of contents
 
-1. [Overview](#overview)
-2. [Setting up](#setting-up): how to import resource files
-  + Planning an experiment.
-3. [Creating trial template](#creating-trial-template): how to reuse PennController code
-  + Using a CSV (comma-separated values) file to organize experimental items.
-4. [Customizing the experimental trial](#customizing-the-experimental-trial): how to increase the complexity of a trial
-  + Selecting an image with a mouse click.
-  + Creating a timeout to end a trial early.
-  + Adding a delay to the start of a trial.
-  + Manipulating multimedia content visually with CSS styles
-  + Saving experiment results before the end of an experiment
-5. [Counterbalancing](#counterbalancing): how to include counterbalancing in the experimental design 
-  + Shuffling image position.
-  + Manipulating trial sequence to randomize experimental item order.
-  + Modifying the experiment URL to manually control group assignment.
-6. [Collecting participant info](#collecting-participant-info): how to elicit and log participant responses
-  + Creating an obligatory checkbox for a consent form.
-  + Creating a global variable to record participant IDs.
-7. [Examining-data](#examining-data): how to use R to read in a results file
-  + Using the [tidyverse](https://www.tidyverse.org/){:target="_blank"} to transform data (optional).
-8. [Wrapping up](#wrapping-up)
+{% assign children_list = site.html_pages | where: "parent", page.title %}
+<ol start="8">
+{% for child in children_list %}
+  <li>
+  {% assign modified_title = child.title | split: ". " | last %}
+    <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">{{ modified_title }}</a>: {{ child.blurb }}
+  </li>
+{% endfor %}
+</ol>
 
 ---
 

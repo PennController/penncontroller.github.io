@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Elements
+permalink: /elements/
 has_children: true
 has_toc: false
 children_collection: elements
 children_code_font: true
-nav_order: 5
+nav_order: 6
 ---
 
 # {{ page.title }}

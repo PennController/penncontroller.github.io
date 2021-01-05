@@ -12,7 +12,7 @@ notes: >-
   Call `exitFullscreen()` to quit fullscreen mode.
 ---
 
- ```javascript
+```javascript
 newTrial(
   newButton("Start the experiment and go fullscreen!")
     .print()
@@ -40,4 +40,4 @@ newTrial(
    ,
    newTimer().wait()
 )
- ```
+```

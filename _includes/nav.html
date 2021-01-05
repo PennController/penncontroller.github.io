@@ -59,7 +59,7 @@
   
   {%- for node in pages_list -%}
     {%- if node.parent == nil -%}
-      {%- unless node.nav_exclude -%}
+      {%- unless node.nav_exclude or node.nav_hide -%}
       <li class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
         {% if node.has_children -%}
           <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
@@ -118,7 +118,7 @@
         {%- endif -%}
       </li>
       {%- endunless -%}
-      {% if node.nav_exclude %}
+      {% if node.nav_hide %}
         {% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %}
         <li class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
           {% if node.has_children %}
@@ -156,7 +156,7 @@
         {% endif %}
       {% endif %}
     {%- endif -%}
-    {%- if node.title == "Advanced Tutorial" or node.title == "Home" -%}
+    {%- if node.title == "Announcements" or node.title == "Advanced Tutorial" or node.title == "Commands" -%}
       <hr class="mt-2 mb-2 ml-3 mr-3">
     {%- endif -%}
   {%- endfor -%}

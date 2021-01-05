@@ -1,0 +1,27 @@
+<div class="flex-row-wrap">
+	<div>
+		{% if site.posts.size > 0 %}
+			{% for post in include.collection %}
+        <div class="my-4">
+          <h2>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
+          </h2>
+          {{ post.content | strip_html | truncate: 180 }}
+          <div class="pt-4 text-delta">
+            Posted on <time datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}{{ post.date | date: date_format }}</time>
+            {% if post.tags.size >=1 %}
+              <br>
+              tagged:
+              {% for tag in post.tags %}
+                <a href="{{ site.baseurl }}/tag/{{ tag }}"><code class="mr-2">{{ tag }}</code></a>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        {% if forloop.last == false %}
+          <hr>
+        {% endif %}
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>

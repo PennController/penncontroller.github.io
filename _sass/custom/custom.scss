@@ -54,30 +54,6 @@
   background-color: $grey-lt-200;
 }
 
-// _layouts/test.html
-.previous-page {
-  padding-top: $sp-4;
-  padding-bottom: $sp-4;
-  padding-left: $sp-6;
-  padding-right: $sp-2;
-  text-align: left;
-  white-space: pre-line;
-}
-
-.next-page {
-  padding-top: $sp-4;
-  padding-bottom: $sp-4;
-  padding-left: $sp-2;
-  padding-right: $sp-6;
-  text-align: right;
-  white-space: pre-line;
-}
-
-.back-to-top {
-  padding-top: $sp-4;
-  text-align: center;
-}
-
 // element thumbnail display
 a.overlay-link:hover{
   text-decoration: underline;
@@ -158,6 +134,11 @@ a.overlay-link:hover{
   height: 100%;
 }
 
+.left-100 {
+  width: 100%;
+  height: 100%;
+}
+
 // custom border styles
 .dotted-grey-dk-000 {
   border: 1px dotted $grey-dk-000;
@@ -200,7 +181,7 @@ a.overlay-link:hover{
 }
 
 // under construction header
-.construction{
+.construction {
   padding-left: $sp-8;
   padding-right: $sp-8;
   padding-top: $sp-4;
@@ -211,4 +192,40 @@ a.overlay-link:hover{
   position: sticky; 
   top:0;
   z-index: 4;
+}
+
+// bottom navbar
+.bottom-navbar {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: $sp-6;
+  background-color: $grey-lt-200;
+}
+
+.previous-page {
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  padding-left: $sp-6;
+  padding-right: $sp-2;
+  text-align: left;
+  width: calc(100% / 3);
+}
+
+.next-page {
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  padding-left: $sp-2;
+  padding-right: $sp-6;
+  text-align: right;
+  width: calc(100% / 3);
+}
+
+.back-to-top {
+  padding-top: $sp-4;
+  text-align: center;
+  width: calc(100% / 3);
+}
+
+.page-title {
+  white-space: pre-line;
 }
