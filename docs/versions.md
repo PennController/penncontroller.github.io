@@ -1,9 +1,6 @@
 ---
 layout: default
 title: Versions
+redirect: tag/versions
 nav_order: 12
 ---
-
-# {{ page.title }}
-
-*To be filled in*

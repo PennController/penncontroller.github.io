@@ -30,4 +30,4 @@ layout: default
   {% assign next_page = children_list | where: "nav_order", next_index | first %}
 {% endif %}
 
-{% include bottom-navbar.html previous=previous_page next=next_page %}
+{% include bottom-navbar.html previous=previous_page next=next_page current=page.title %}

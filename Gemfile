@@ -33,3 +33,6 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # "Just the Docs" theme
 gem "just-the-docs"
+
+# update for additional security
+gem "nokogiri", ">= 1.11.0.rc4"
