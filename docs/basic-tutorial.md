@@ -9,14 +9,18 @@ nav_order: 4
 
 # {{ page.title }}
 
-This tutorial is designed for people who prefer learning by doing. If you prefer to learn concept-by-concept, check out the [**Core Concepts**](./core-concepts){:target="_blank"} section. You may find it useful to read both this tutorial and the **Core Concepts** section.
+This tutorial is designed for people who prefer learning by doing. If you prefer
+to learn concept-by-concept, check out the[**Core Concepts**](./core-concepts){:target="_blank"}
+section. You may find it useful to read both this tutorial and the
+**Core Concepts** section.
 {: .h1-blurb }
 
 ---
 
 ## Goal
 
-In the **Basic Tutorial**, you'll learn how to create a simple picture matching experiment with the following structure:
+In the **Basic Tutorial**, you'll learn how to create a simple picture matching
+experiment with the following structure:
 
 1. Instructions screen with button to start the experiment
 2. Experimental trial:
@@ -29,8 +33,10 @@ In the **Basic Tutorial**, you'll learn how to create a simple picture matching 
 Preview the **BasicTutorial** experiment:
 
 <p class="text-delta collapsible-block-title">
-  <a href="https://expt.pcibex.net/ibexexps/angelicapan/BasicTutorial/experiment.html" target="_blank">Click to take the experiment</a>
-</p> 
+  <a href="https://expt.pcibex.net/ibexexps/angelicapan/BasicTutorial/experiment.html" target="_blank">
+    Click to take the experiment
+  </a>
+</p>
 
 {% capture content %}
 ```javascript
@@ -93,7 +99,8 @@ newTrial("experimental-trial",
 )
 ```
 {% endcapture %}
-{% include collapsible-block.html content=content summary="Click to see the final experiment script" %}
+{% include collapsible-block.html content=content
+summary="Click to see the final experiment script" %}
 </div>
 
 ---
@@ -105,7 +112,10 @@ newTrial("experimental-trial",
 {% for child in children_list %}
   <li>
   {% assign modified_title = child.title | split: ". " | last %}
-    <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">{{ modified_title }}</a>: {{ child.blurb }}
+    <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">
+      {{ modified_title }}
+    </a>
+    : {{ child.blurb }}
   </li>
 {% endfor %}
 </ol>
@@ -114,31 +124,36 @@ newTrial("experimental-trial",
 
 ## How to follow the tutorial
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. 
 
 ### Prerequisites
 
-PennController does not require any background in JavaScript. However, you should have some general knowledge of programming and experimental design.
+PennController does not require any background in JavaScript. However, you should
+have some general knowledge of programming and experimental design.
 
 In particular, you should be familiar with the following terms and concepts:
+
 + Calling a command, command parameters
 + Strings, integers, truth values, code comments,
 + Experimental items, trials, 
 
 ### Technical notes
 
-Blocks that are labeled with <span class="label">technical notes</span> contain extra information about PennController. 
+Blocks that are labeled with <span class="label">technical notes</span> contain extra
+information about PennController. 
 
 {% capture label %}
 This is an example of a technical note.
 {% endcapture %}
 {% include label-technical.html label-body=label %}
 
-**Reading technical notes is optional**, but you 
+**Reading technical notes is optional**, but you..
 
 ### Instruction blocks
 
-Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span> blocks:
+Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span>
+blocks:
 
 {% capture instructions %}
 1. *Step one*

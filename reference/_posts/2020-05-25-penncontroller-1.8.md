@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  PennController 1.8
-tags: [update]
+tags: [versions]
 ---
 
 [PennController 1.8](https://github.com/PennController/penncontroller/tree/master/releases/1.8){:target="_blank"} is now available!

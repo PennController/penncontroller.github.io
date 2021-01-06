@@ -1,0 +1,5 @@
+{% assign replacement = site.documents | where: "title", include.replacement | first %}
+{%- capture label -%}
+This feature is deprecated since {{include.since}}. See <a href="{{site.baseurl}}{{replacement.url}}" target="_blank"><code>{{replacement.title}}</code></a>.
+{%- endcapture -%}
+{% include label.html label-color="red" label-title="warning" label-body=label %}

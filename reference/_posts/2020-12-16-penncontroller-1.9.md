@@ -2,7 +2,7 @@
 layout: post
 title: PennController 1.9
 author: Jeremy
-tags: [update]
+tags: [versions]
 ---
 
 [PennController 1.9](https://github.com/PennController/penncontroller/tree/master/releases/1.9){:target="_blank"} is now available!

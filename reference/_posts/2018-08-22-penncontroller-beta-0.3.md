@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  PennController beta 0.3
-tags: [update]
+tags: [versions]
 ---
 
 [PennController 1.0](https://github.com/PennController/penncontroller/tree/master/releases/1.0){:target="_blank"} is now available! This is the first public release of a non-beta version.

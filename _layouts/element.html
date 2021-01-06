@@ -2,10 +2,20 @@
 layout: default
 ---
 
-{% assign element-action = site[page.element_type] | where: "command_type", "action" %}
-{% assign element-test = site[page.element_type] | where: "command_type", "test" %}
+{% if page.deprecated %}
+  {% assign element-action = site.deprecated | where: "command_type", "action" | where: "parent", page.title %}
+  {% assign element-test = site.deprecated | where: "command_type", "test" | where: "parent", page.title %}
+{% else %}
+  {% assign element-action = site[page.element_type] | where: "command_type", "action" %}
+  {% assign element-test = site[page.element_type] | where: "command_type", "test" %}
+{% endif %}
+
 {% assign standard-action = site.standard-element-commands | where: "command_type", "action" | where_exp: "command", "command.element_type contains page.element_type" %}
 {% assign standard-test = site.standard-element-commands | where: "command_type", "test" | where_exp: "command", "command.element_type contains page.element_type" %}
+
+{% if page.deprecated %}
+  {% include label-deprecated.html since=page.deprecated replacement=page.replacement %}
+{% endif %}
 
 <h1><code>{{ page.title }}</code> element</h1>
 
@@ -40,16 +50,26 @@ layout: default
 
 <hr>
 
-<h2 id="element-action"> Action commands </h2>
-{% include command-blurbs.html collection=element-action %}
-{% unless page.element_type == "standard" %}
-  <hr>
-  {% include command-blurbs.html collection=standard-action %}
-{% endunless %}
+<h2 id="element-action">Action commands</h2>
+{% if page.deprecated %}
+  {% include command-blurbs.html collection=element-action deprecated=true %}
+{% else %}
+  {% include command-blurbs.html collection=element-action %}
+  {% unless page.element_type == "standard" %}
+    <hr>
+    {% include command-blurbs.html collection=standard-action %}
+  {% endunless %}
+{% endif %}
 
-<h2 id="element-test"> Test commands </h2>
-{% include command-blurbs.html collection=element-test %}
-{% unless page.element_type == "standard" %}
-  <hr>
-  {% include command-blurbs.html collection=standard-test %}
-{% endunless %}
+<hr>
+
+<h2 id="element-test">Test commands</h2>
+{% if page.deprecated %}
+  {% include command-blurbs.html collection=element-test deprecated=true %}
+{% else %}  
+  {% include command-blurbs.html collection=element-test %}
+  {% unless page.element_type == "standard" %}
+    <hr>
+    {% include command-blurbs.html collection=standard-test %}
+  {% endunless %}
+{% endif %}

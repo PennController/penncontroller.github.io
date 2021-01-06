@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Element commands (standard)
+title: Standard element commands
 has_children: true
 has_toc: false
 children_collection: standard-element-commands
 children_code_font: true
 parent: Commands
-nav_order: 1
+nav_order: 2
 blurb: Commands that are defined for all PennController element types. 
 ---
 
