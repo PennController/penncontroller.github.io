@@ -3,11 +3,7 @@ layout: default
 ---
 
 {% if page.deprecated %}
-  {% assign replacement = site.documents | where: "title", page.replacement | first %}
-  {% capture label %}
-  This feature is deprecated since {{page.deprecated}}. See <a href="{{site.baseurl}}/{{replacement.url}}" target="_blank"><code>{{replacement.title}}</code></a>.
-  {% endcapture %}
-  {% include label.html label-color="red" label-title="warning" label-body=label  %}
+  {% include label-deprecated.html since=page.deprecated replacement=page.replacement %}
 {% endif %}
 
 {% if page.command_type == "global" and page.title != "PennController.ResetPrefix" %}
@@ -17,11 +13,19 @@ layout: default
 {% endif %}
 
 {% if page.element_type contains "standard" %}
-  <h4>Element types that this command <a href="{{site.baseurl}}/docs/core-concepts/3_commands#standard-and-element-specific-commands" target="_blank">has an effect on</a></h4>
+  <h4>Element types that this command
+    <a href="{{site.baseurl}}/core-concepts/3_commands#standard-and-element-specific-commands" target="_blank">
+      has an effect on
+    </a>
+  </h4>
   {% for type in page.element_type %}
     {% for element in site.elements %}
       {% if element.element_type contains type %}
-        <span class="label bg-grey-lt-100 mt-2 ml-0"><a href="{{ element.url | absolute_url }}" target="_blank">{{ element.title }}</a></span>
+        <span class="label bg-grey-lt-100 mt-2 ml-0">
+          <a href="{{ element.url | absolute_url }}" target="_blank">
+            {{ element.title }}
+          </a>
+        </span>
       {% endif %}
     {% endfor %}
   {% endfor %}
@@ -30,7 +34,18 @@ layout: default
 {% include heading-link.html header="syntax" h4=true %}
 {% if page.command_type == "global" and page.title != "PennController.ResetPrefix" %}
   <code>(PennController.){{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-  <p class="text-delta">↳ See <a href="{{site.baseurl}}/docs/support/faq#penncontroller-prefix" target="_blank">What does <code>(PennController.)</code> mean?</a></p>
+  <p class="text-delta">
+    ↳ <a href="{{site.baseurl}}/docs/faqs#penncontroller-prefix" target="_blank">
+    What does <code>(PennController.)</code> mean?
+    </a>
+  </p>
+{% elsif page.element_type contains "standard" %}
+<code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+  <p class="text-delta">
+    ↳ <a href="{{site.baseurl}}/docs/faqs#get-x" target="_blank">
+    What does <code>getX()</code> mean?
+    </a>
+  </p>
 {% else %}
   <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
 {% endif %}
@@ -45,7 +60,9 @@ layout: default
     {% for parameter in page.optional_parameters %}
     <li>
       <code>{{ parameter.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-      <p class="fw-300 fs-3">{{ parameter.description | markdownify | remove: '<p>' | remove: '</p>'}}</p>
+      <p class="fw-300 fs-3">
+        {{ parameter.description | markdownify | remove: '<p>' | remove: '</p>'}}
+      </p>
     </li>
     {% endfor %}
   </ul>

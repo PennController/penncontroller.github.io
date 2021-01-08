@@ -7,11 +7,6 @@ numbered_headings: true
 previous_page: Core Concepts
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-{: .h1-blurb }
-
 ---
 
 ## Basic experiment script
@@ -41,7 +36,7 @@ the `PennController.newTrial` command, ends.
 
 Trials have the following (simplified) structure, where:
 
-+ The first parameter is a string and the trial's label, or the trial has no label
++ The first parameter is a string and the trial's label, or the trial has no label.
 
     <pre><code class="language-diff-javascript diff-highlight">
     *// Trial has the label "TRIAL_LABEL"
@@ -73,7 +68,7 @@ Trials have the following (simplified) structure, where:
     $        <var>.ELEMENT_COMMAND</var>()
     *)
     </code></pre>
-+ Trial parameters are separated by a comma; see [Syntax](#syntax) for more details.
++ Trial parameters are separated by a comma.
 
 We'll talk about elements and commands more in upcoming sections,
 but for now the important parts to know are that:
@@ -83,7 +78,9 @@ but for now the important parts to know are that:
 + `getX()` is a function that refers back to an element that has been created.
 + <code><var>.ELEMENT_COMMAND()</var></code> is a placeholder for an element command.
 
-**We recommend giving every trial a label**. Although trial labels are technically
+**We recommend giving every trial a label**.
+
+Although trial labels are technically
 optional in most cases, they are obligatory when calling a command like
 [`Sequence`]({{site.baseurl}}/commands/global-commands/sequence){:target="_blank"},
 which manually defines an experiment's trial order. Trial labels are also useful
@@ -99,22 +96,21 @@ PennController has three types of
 + Special commands: Used within a trial, but not called on an element.
 
 By default, all global commands begin with the prefix `PennController.` in order
-to avoid naming conflicts with other JavaScript modules, and the `newX()` and
-`getX()` functions have the prefix `PennController.Elements.`
-For example,
+to avoid naming conflicts with other JavaScript modules. In addition, the `newX()`
+and `getX()` functions have the prefix `PennController.Elements.` For example,
 [`PennController.newTrial`]({{site.baseurl}}/commands/global-commands/newtrial){:target="_blank"}
 is a global command that creates a trial.
 
 The global command
 [`PennController.ResetPrefix(null)`]({{site.baseurl}}/commands/global-commands/resetprefix){:target="_blank"}
-removes this `PennController.(Elements.)` prefix for all subsequent calls
+removes the `PennController.(Elements.)` prefix for all subsequent calls
 of a global command and instances of the `newX` or `getX()` functions.
 You can also pass a string instead of `null`, which resets the prefix to
 the given string.
 
 **We recommend calling**
 [`PennController.ResetPrefix(null)`]({{site.baseurl}}/commands/global-commands/resetprefix){:target="_blank"}
-**at the start of every experiment script** for readability and convenience.
+**at the start of every experiment script for readability and convenience**.
 
 + Without removing the prefix
     <pre><code class="language-javascript">
@@ -153,9 +149,9 @@ the given string.
 
 The difference may not seem that large in these toy examples,
 but not having to type the `PennController.(Elements.)` prefix quickly adds up
-once you start writing a script with multiple trials and tens of elements!
+once you start writing a script with multiple trials and elements!
 
-From this point on, this documentation assumes that
+From this point on, this guide assumes that
 [`PennController.ResetPrefix(null)`]({{site.baseurl}}/commands/global-commands/resetprefix){:target="_blank"}
 has been called, and the `PennController.(Elements.)` prefix removed.
 
@@ -164,9 +160,9 @@ For example, in prose we'll say "the `newTrial` command" instead of
 an explicit call to `PennController.ResetPrefix`, but may include such a call
 for additional clarity.
 
-The exception is when referring to the
+However, the `PennController.` prefix will always be included when referring to the
 [`PennController.ResetPrefix`]({{site.baseurl}}/commands/global-commands/resetprefix){:target="_blank"}
-command itself, which will always have the `PennController.` prefix.
+command itself.
 
 ---
 
@@ -245,7 +241,7 @@ newTrial("TRIAL_ONE",
         <var>.ELEMENT_COMMAND</var>()
 )
 
-newTrial("TRIAL_TWO", 
+newTrial("TRIAL_TWO",
     newX()
         <var>.ELEMENT_COMMAND</var>()
 )

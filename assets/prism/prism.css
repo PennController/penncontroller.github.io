@@ -330,7 +330,8 @@ pre > code.diff-highlight .token.diff:not(.prefix) {
 /* create a line highlight without any symbol */
 pre.diff-highlight > code .token.highlighted:not(.prefix),
 pre > code.diff-highlight .token.highlighted:not(.prefix) {
-  background-color: rgba(44, 132, 250, 0.1); /* $blue-000 */
+  background-color: rgba(114, 83, 237, 0.1); /* $purple-000 */
+  /* rgba(44, 132, 250, 0.1);  */ /* $blue-000 */
 	color: inherit;
 	display: block;
 }

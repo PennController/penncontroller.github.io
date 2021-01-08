@@ -66,14 +66,16 @@
         {%- endif -%}
         {%- if node.exclude_permalink -%}
           <span class="nav-list-link text-purple-000">{{ node.title }}</span>
-        {% elsif node.redirect %}
-          <a href="{{ node.redirect | absolute_url }}" 
-          class="nav-list-link{% if page.url == node.url %} active{% endif %}">
+        {% elsif node.redirect_internal %}
+          <a href="{{ node.redirect_internal | absolute_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">
+            {{ node.title }}
+          </a>
+        {%- elsif node.redirect_external -%}
+          <a href="{{ node.redirect_external }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">
             {{ node.title }}
           </a>
         {%- else -%}
-          <a href="{{ node.url | absolute_url }}" 
-          class="nav-list-link{% if page.url == node.url %} active{% endif %}">
+          <a href="{{ node.url | absolute_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">
             {{ node.title }}
           </a>
         {%- endif -%}
@@ -92,13 +94,13 @@
               {%- endif -%}
               {%- if node.children_are_html_tags -%}
                 {% assign child_tag = child.title | downcase | slugify %}
-                <a href="{{ node.url | prepend: site.baseurl }}#{{child_tag}}" 
-                class="nav-list-link {% if page.url == {{relative_url}}#child_tag %} active{% endif %}">
+                <a href="{{ node.url | prepend: site.baseurl }}#{{child_tag}}" class="nav-list-link {% if page.url == {{relative_url}}#child_tag %} active{% endif %}">
                   {{ child.title }}
                 </a>
+              {%- elsif child.exclude_permalink -%}
+                  <span class="nav-list-link text-purple-000">{{ child.title }}</span>
               {%- else -%}
-                <a href="{{ child.url | absolute_url }}" 
-                class="nav-list-link{% if page.url == child.url %} active{% endif %}">
+                <a href="{{ child.url | absolute_url }}" class="nav-list-link{% if page.url == child.url %} active{% endif %}">
                   {%- if node.children_code_font -%}<code class="fs-2">{%- endif -%}
                   {{ child.title }}
                   {%- if node.children_code_font -%}</code>{%- endif -%}
@@ -184,7 +186,7 @@
         {% endif %}
       {% endif %}
     {%- endif -%}
-    {%- if node.title == "Announcements" or node.title == "Advanced Tutorial" or node.title == "Commands" -%}
+    {%- if  node.title == "Announcements" or node.title == "Advanced Tutorial" or node.title == "Commands" -%}
       <hr class="mt-2 mb-2 ml-3 mr-3">
     {%- endif -%}
   {%- endfor -%}

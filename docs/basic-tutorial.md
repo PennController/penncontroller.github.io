@@ -10,7 +10,8 @@ nav_order: 4
 # {{ page.title }}
 
 This tutorial is designed for people who prefer learning by doing. If you prefer
-to learn concept-by-concept, check out the[**Core Concepts**](./core-concepts){:target="_blank"}
+to learn concept-by-concept, check out the
+[**Core Concepts**]({{site.baseurl}}/core-concepts){:target="_blank"}
 section. You may find it useful to read both this tutorial and the
 **Core Concepts** section.
 {: .h1-blurb }
@@ -125,7 +126,7 @@ summary="Click to see the final experiment script" %}
 ## How to follow the tutorial
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. 
+incididunt ut labore et dolore magna aliqua.
 
 ### Prerequisites
 
@@ -134,21 +135,9 @@ have some general knowledge of programming and experimental design.
 
 In particular, you should be familiar with the following terms and concepts:
 
-+ Calling a command, command parameters
-+ Strings, integers, truth values, code comments,
-+ Experimental items, trials, 
-
-### Technical notes
-
-Blocks that are labeled with <span class="label">technical notes</span> contain extra
-information about PennController. 
-
-{% capture label %}
-This is an example of a technical note.
-{% endcapture %}
-{% include label-technical.html label-body=label %}
-
-**Reading technical notes is optional**, but you..
++ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
++ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
++ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
 
 ### Instruction blocks
 
@@ -161,11 +150,7 @@ blocks:
 3. *Step three*
 
 ```javascript
-// Lines that begin with a + sign and that have a green background indicate newly-added lines.
-
-// Lines that begin with a - sign and that have a red background indicate newly-deleted lines.
-
-// Lines that begin with a ! sign and that have a yellow background indicate lines that have been modified.
+// Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ```
 {% endcapture %}
 {% include instructions.html text=instructions %}
