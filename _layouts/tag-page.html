@@ -2,9 +2,14 @@
 layout: default
 ---
 
-<h1>Tag: <code>{{ page.tag }}</code></h1>
+{% if page.tag %}
+  <h1>Tag: <code>{{ page.tag }}</code></h1>
+  {% assign posts=site.tags[page.tag] %}
+{% else %}
+  <h1>Author: {{ page.name }} </h1>
+  {% assign posts=site.posts | where: "author", page.name %}
+{% endif %}
 
 <hr>
 
-{% assign posts=site.tags[page.tag] %}
 {% include post-excerpt.html collection=posts %}

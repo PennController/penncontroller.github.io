@@ -4,7 +4,7 @@ title: ⚠ Deprecated features
 permalink: /deprecated/
 has_children: true
 has_toc: false
-nav_order: 9
+nav_order: 11
 blurb: This page lists deprecated elements and commands.
 ---
 

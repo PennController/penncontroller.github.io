@@ -3,12 +3,16 @@ layout: command
 command_type: action
 element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
 title: standard.center
-parent: Element commands (standard)
+parent: Standard element commands
 grand_parent: Commands
-syntax: getX("ELEMENT_NAME").center()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+syntax: getX("*ELEMENT_NAME*").center()
+description: Horizontally centers the element.
 ---
 
-```javascript
-// example
-```
+<pre><code class="language-diff-javascript diff-highlight">
+*newButton("centered-button", "Hello, button!")
+$    .center()
+*    .print()
+</code></pre>
+
+↳ Prints a horizontally centered button that says `Hello, button!`.

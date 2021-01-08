@@ -1,6 +1,6 @@
 ---
 layout: default
 title: Versions
-redirect: tag/versions
+redirect_internal: tag/versions
 nav_order: 12
 ---

@@ -4,9 +4,13 @@ title:  PennController 1.7
 tags: [versions]
 ---
 
-[PennController 1.7](https://github.com/PennController/penncontroller/tree/master/releases/1.7){:target="_blank"} is now available!
+[PennController 1.7](https://github.com/PennController/penncontroller/tree/master/releases/1.7){:target="_blank"}
+is now available!
 
-Newly created experiments on the PCIbex Farm come with it, and you can sync your existing projects with the [master branch](https://github.com/PennController/Sync){:target="_blank"} to update your version of PennController.
+Newly created experiments on the PCIbex Farm come with it, and you can sync your
+existing projects with the
+[master branch](https://github.com/PennController/Sync){:target="_blank"}
+to update your version of PennController.
 
 ## Major changes from 1.6**
 

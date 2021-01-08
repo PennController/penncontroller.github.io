@@ -4,11 +4,13 @@ title:  PennController beta 0.3
 tags: [versions]
 ---
 
-[PennController 1.0](https://github.com/PennController/penncontroller/tree/master/releases/1.0){:target="_blank"} is now available! This is the first public release of a non-beta version.
+[PennController 1.0](https://github.com/PennController/penncontroller/tree/master/releases/1.0){:target="_blank"}
+is now available! This is the first public release of a non-beta version.
 
 Changelog
 
 Fixes
+
 + Proceeded to complete engine overhaul
 + Default prefix is now ‘Elements’ (e.g. PennController.Elements.newText("myText", "hello") )
 + Fixed ResetPrefix (was testing type with “text” insteand of “string”)

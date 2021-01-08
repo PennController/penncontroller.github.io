@@ -3,12 +3,28 @@ layout: command
 command_type: action
 element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
 title: standard.before
-parent: Element commands (standard)
+parent: Standard element commands
 grand_parent: Commands
-syntax: getX("ELEMENT_NAME").before()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+syntax: getX("*ELEMENT_NAME*").before(getX("*ARGUMENT_NAME*"))
+description: Takes an element as an argument, and adds that element's content to the left of the element that the command is called on.
 ---
 
-```javascript
-// example
-```
+<pre><code class="language-diff-javascript diff-highlight">
+*// Option 1: Pass a new element as an argument
+*newText("center", "BANANA")
+$    .before(newText("left", "apple"))
+*    .after(newText("right", "orange"))
+*    .print()
+*
+*// Option 2: Pass an existing element as an argument
+*newText("left", "apple")
+*,
+*newText("right", "orange")
+*,
+*newText("center", "BANANA")
+$    .before(getText("left"))
+*    .after(getText("right"))
+*    .print()
+</code></pre>
+
+↳ Prints `appleBANANAorange` to the screen.
