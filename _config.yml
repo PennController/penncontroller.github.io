@@ -19,6 +19,7 @@ aux_links_new_tab: true
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-include-cache
 
 # Announcements
 paginate: 10

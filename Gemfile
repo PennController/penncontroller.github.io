@@ -36,3 +36,6 @@ gem "just-the-docs"
 
 # update for additional security
 gem "nokogiri", ">= 1.11.0.rc4"
+
+# cache plugin
+gem "jekyll-include-cache"
