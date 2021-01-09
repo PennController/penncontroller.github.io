@@ -1,18 +1,8 @@
 ---
-<<<<<<< HEAD:docs/basic-tutorial/7_wrapping-up.md
-layout: tutorial-child
-=======
-layout: bottom-navbar-child
->>>>>>> by-element:basic-tutorial/7_wrapping-up.md
 title: 7. Wrapping up
-parent: Basic Tutorial
 nav_order: 7
-numbered_headings: true
 blurb: Summary of tutorial, and next steps.
-<<<<<<< HEAD:docs/basic-tutorial/7_wrapping-up.md
-=======
 next_page: Advanced Tutorial
->>>>>>> by-element:basic-tutorial/7_wrapping-up.md
 ---
 
 Congratulations, you're done!

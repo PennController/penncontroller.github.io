@@ -1,7 +1,5 @@
 ---
-layout: how-to-guide
 title: Collecting eye tracking data
-parent: How-to guides
 ---
 
 [Lorem ipsum](https://www.pcibex.net/wiki/collecting-eye-tracking-data/){:target="_blank"}

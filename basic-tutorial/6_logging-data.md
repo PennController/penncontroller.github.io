@@ -1,26 +1,12 @@
 ---
-<<<<<<< HEAD:docs/basic-tutorial/6_logging-data.md
-layout: tutorial-child
-=======
-layout: bottom-navbar-child
->>>>>>> by-element:basic-tutorial/6_logging-data.md
 title: 6. Logging data
-parent: Basic Tutorial
 nav_order: 6
-numbered_headings: true
 blurb: How to collect and examine experimental data.
 ---
 
  how to collect and examine experimental data
   + Reading a PennController results file.
   + Comparing timestamps to calculate response time.
-<<<<<<< HEAD:docs/basic-tutorial/6_logging-data.md
-
----
-
-## Some h2
-=======
->>>>>>> by-element:basic-tutorial/6_logging-data.md
 
 ---
 

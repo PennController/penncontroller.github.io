@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 11. Collecting participant information
-parent: Advanced Tutorial
 nav_order: 4
-numbered_headings: true
 start_heading: 11
 blurb: How to elicit and log participant responses.
 ---

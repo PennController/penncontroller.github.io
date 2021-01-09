@@ -1,7 +1,5 @@
 ---
-layout: how-to-guide
 title: Managing resources
-parent: How-to guides
 ---
 
 [Lorem ipsum](https://www.pcibex.net/wiki/preloading-resources/){:target="_blank"}

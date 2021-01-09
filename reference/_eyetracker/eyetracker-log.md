@@ -1,10 +1,6 @@
 ---
-layout: command
-command_type: action
-element_type: eyetracker
 title: eyetracker.log
-parent: EyeTracker
-grand_parent: Elements
+command_type: action
 syntax: getEyeTracker("ELEMENT_NAME").log()
 description: This describes element-specific behavior of the standard command `standard.log`.
 ---

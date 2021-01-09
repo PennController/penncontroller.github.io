@@ -1,9 +1,5 @@
 ---
-layout: command
-command_type: global
 title: AddHost
-parent: Global commands
-grand_parent: Commands
 syntax: AddHost("*URL*")
 description: Specifies a host URL to use as a source file for when calling creating a new **Audio**, **Image**, or **Video** element. The `"URL"` argument must end in `"/"`.
 notes: true

@@ -1,7 +1,5 @@
 ---
-layout: how-to-guide
 title: Adding custom CSS
-parent: How-to guides
 ---
 
 [Lorem ipsum](https://www.pcibex.net/wiki/aesthetics/){:target="_blank"}

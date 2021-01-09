@@ -1,10 +1,7 @@
 ---
-layout: command
+title: standard.bold
 command_type: action
 element_type: [standard, button, controller, dropdown, html, mediarecorder, scale, text, tooltip]
-title: standard.bold
-parent: Standard element commands
-grand_parent: Commands
 syntax: getX("*ELEMENT_NAME*").bold()
 description: Bolds any text that appears in the element.
 ---

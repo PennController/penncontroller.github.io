@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 2. Creating elements
-parent: Basic Tutorial
 nav_order: 2
-numbered_headings: true
 blurb: How to use elements, the basic unit of a PennController experiment.
 ---
 

@@ -1,10 +1,7 @@
 ---
-layout: command
+title: standard.center
 command_type: action
 element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
-title: standard.center
-parent: Standard element commands
-grand_parent: Commands
 syntax: getX("*ELEMENT_NAME*").center()
 description: Horizontally centers the element.
 ---

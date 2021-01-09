@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  PennController 1.6
 tags: [version]
 ---

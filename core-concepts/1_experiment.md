@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 1. Experiment structure
-parent: Core Concepts
 nav_order: 1
-numbered_headings: true
 previous_page: Core Concepts
 ---
 

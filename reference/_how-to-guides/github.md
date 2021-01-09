@@ -1,7 +1,5 @@
 ---
-layout: how-to-guide
 title: Syncing with a GitHub repository
-parent: How-to guides
 nav_exclude: true
 ---
 

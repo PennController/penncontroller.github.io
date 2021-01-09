@@ -1,10 +1,9 @@
 ---
-deprecated: PennController 1.8
-replacement: MediaRecorder
 layout: element
 title: VoiceRecorder
 parent: ⚠ Elements
-grand_parent: ⚠ Deprecated features
+deprecated: PennController 1.8
+replacement: MediaRecorder
 syntax: to be filled in
 description: Collects audio and/or video samples.
 ---

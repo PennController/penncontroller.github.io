@@ -1,10 +1,7 @@
 ---
-layout: command
+title: standard.before
 command_type: action
 element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
-title: standard.before
-parent: Standard element commands
-grand_parent: Commands
 syntax: getX("*ELEMENT_NAME*").before(getX("*ARGUMENT_NAME*"))
 description: Takes an element as an argument, and adds that element's content to the left of the element that the command is called on.
 ---

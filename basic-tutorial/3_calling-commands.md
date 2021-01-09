@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 3. Calling commands
-parent: Basic Tutorial
 nav_order: 3
-numbered_headings: true
 blurb: How to manipulate elements with commands.
 ---
 

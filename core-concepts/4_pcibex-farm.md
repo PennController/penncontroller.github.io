@@ -1,7 +1,5 @@
 ---
-layout: bottom-navbar-child
 title: 4. PCIbex Farm
-parent: Core Concepts
 nav_order: 4
 ---
 

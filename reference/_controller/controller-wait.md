@@ -1,10 +1,6 @@
 ---
-layout: command
-command_type: action
-element_type: controller
 title: controller.wait
-parent: Controller
-grand_parent: Elements
+command_type: action
 syntax: getController("ELEMENT_NAME").wait()
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ---

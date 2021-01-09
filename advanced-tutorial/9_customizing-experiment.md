@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 9. Customizing an experiment
-parent: Advanced Tutorial
 nav_order: 2
-numbered_headings: true
 start_heading: 9
 blurb: How to increase the complexity of a trial.
 ---

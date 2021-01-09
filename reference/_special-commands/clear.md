@@ -1,9 +1,5 @@
 ---
-layout: command
-command_type: special
 title: clear
-parent: Special commands
-grand_parent: Commands
 syntax: clear()
 description: Removes from the screen any element that was previously added during the trial.
 ---
