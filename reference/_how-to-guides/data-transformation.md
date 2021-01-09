@@ -1,7 +1,5 @@
 ---
-layout: how-to-guide
 title: Transforming data in R
-parent: How-to guides
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

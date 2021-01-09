@@ -1,9 +1,5 @@
 ---
-layout: command
-command_type: special
 title: end
-parent: Special commands
-grand_parent: Commands
 syntax: end()
 description: Ends a trial immediately.
 ---

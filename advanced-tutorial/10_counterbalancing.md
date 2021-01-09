@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 10. Counterbalancing
-parent: Advanced Tutorial
 nav_order: 3
-numbered_headings: true
 start_heading: 10
 blurb: How to include counterbalancing in the experimental design.
 ---

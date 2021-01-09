@@ -2,7 +2,13 @@
   {% assign command_tag = command.title | downcase | slugify %}
   <h2 class="mt-2" id="{{ command_tag }}"> 
     <a href="#{{ command_tag }}" aria-labelledby="{{ command_tag }}" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
-    <a href="{{ site.baseurl}}{{ command.url }}" target="_blank"><code>{{ command.title }}</code></a> 
+    {% unless include.deprecated %}
+      <a href="{{ site.baseurl}}{{ command.url }}" target="_blank">
+    {% endunless %}
+      <code>{{ command.title }}</code>
+    {% unless include.deprecated %}
+    </a> 
+    {% endunless %}
   </h2> 
 
   {% if include.deprecated %}
@@ -33,11 +39,9 @@
     </details>
     {% endif %}
 
-    {% unless include.deprecated %}
-      <h4>example</h4>
-      {% capture content %}{{ command.content | markdownify }}{% endcapture %}
-      {% include collapsible-block.html content=content summary="click to expand" %}
-    {% endunless %}
+    <h4>example</h4>
+    {% capture content %}{{ command.content | markdownify }}{% endcapture %}
+    {% include collapsible-block.html content=content summary="click to expand" %}
   </div>
 
   <h4><a href="#">↑ back to top</a></h4>

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  PennController beta 0.3
 tags: [versions]
 ---

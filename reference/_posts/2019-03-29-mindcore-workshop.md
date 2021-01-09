@@ -1,5 +1,4 @@
 ---
-layout: post
 title: MindCORE Workshop
 tags: [workshop]
 ---

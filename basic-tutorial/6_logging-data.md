@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 6. Logging data
-parent: Basic Tutorial
 nav_order: 6
-numbered_headings: true
 blurb: How to collect and examine experimental data.
 ---
 

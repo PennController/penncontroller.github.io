@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 2. Elements
-parent: Core Concepts
 nav_order: 2
-numbered_headings: true
 ---
 
 Elements are the basic unit of a PennController trial. They contain multimedia content,

@@ -1,7 +1,5 @@
 ---
-layout: how-to-guide
 title: Recording audio or video
-parent: How-to guides
 ---
 
 [Lorem ipsum](https://www.pcibex.net/wiki/recording-and-collecting-audio-samples/){:target="_blank"}

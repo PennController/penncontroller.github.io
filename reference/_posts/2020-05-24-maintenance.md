@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  Maintenance - servers to go down Monday 05/25/2020 6-7pm EST
 tags: [maintenance]
 ---

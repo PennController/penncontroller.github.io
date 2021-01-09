@@ -129,6 +129,229 @@ collections:
     output: true
     permalink: /elements/:collection/:name/
 
+# Front matter defaults
+defaults:
+  - scope:
+      path: "advanced-tutorial"
+    values:
+      layout: "bottom-navbar-child"
+      parent: "Advanced Tutorial"
+      numbered_headings: true
+  - scope:
+      path: "basic-tutorial"
+    values:
+      layout: "bottom-navbar-child"
+      parent: "Basic Tutorial"
+      numbered_headings: true
+  - scope:
+      path: "core-concepts"
+    values:
+      layout: "bottom-navbar-child"
+      parent: "Core Concepts"
+      numbered_headings: true
+  - scope:
+      path: "deprecated"
+    values:
+      layout: "default"
+      parent: "⚠ Deprecated features"
+      exclude_permalink: true
+      has_children: true
+      has_toc: false
+      children_collection: deprecated
+      children_code_font: true
+  - scope:
+      path: "reference/_author"
+    values:
+      layout: "tag"
+      nav_exclude: true
+      tag: false
+  - scope:
+      path: "reference/_deprecated"
+    values:
+      layout: "command"
+      grand_parent: "⚠ Deprecated features"    
+  - scope:
+      path: "reference/_how-to-guides"
+    values:
+      layout: "how-to-guide"
+      parent: "How-to guides"
+  - scope:
+      path: "reference/_global-commands"
+    values:
+      layout: "command"
+      command_type: "global"
+      parent: "Global commands"
+      grand_parent: "Commands"
+  - scope:
+      path: "reference/_posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "reference/_special-commands"
+    values:
+      layout: "command"
+      command_type: "special"
+      parent: "Special commands"
+      grand_parent: "Commands"
+  - scope:
+      path: "reference/_standard-element-commands"
+    values:
+      layout: "command"
+      parent: "Standard element commands"
+      grand_parent: "Commands"
+  - scope:
+      path: "reference/_tag"
+    values:
+      layout: "tag"
+      nav_exclude: true
+  - scope:
+      path: "reference/_audio"
+    values:
+      layout: "command"
+      element_type: "audio"
+      parent: "Audio"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_button"
+    values:
+      layout: "command"
+      element_type: "button"
+      parent: "Button"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_canvas"
+    values:
+      layout: "command"
+      element_type: "canvas"
+      parent: "Canvas"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_controller"
+    values:
+      layout: "command"
+      element_type: "controller"
+      parent: "Controller"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_dropdown"
+    values:
+      layout: "command"
+      element_type: "dropdown"
+      parent: "DropDown"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_eyetracker"
+    values:
+      layout: "command"
+      element_type: "eyetracker"
+      parent: "EyeTracker"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_function"
+    values:
+      layout: "command"
+      element_type: "function"
+      parent: "Function"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_html"
+    values:
+      layout: "command"
+      element_type: "html"
+      parent: "Html"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_image"
+    values:
+      layout: "command"
+      element_type: "image"
+      parent: "Image"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_key"
+    values:
+      layout: "command"
+      element_type: "key"
+      parent: "Key"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_mediarecorder"
+    values:
+      layout: "command"
+      element_type: "mediarecorder"
+      parent: "MediaRecorder"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_mousetracker"
+    values:
+      layout: "command"
+      element_type: "mousetracker"
+      parent: "MouseTracker"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_scale"
+    values:
+      layout: "command"
+      element_type: "scale"
+      parent: "Scale"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_selector"
+    values:
+      layout: "command"
+      element_type: "selector"
+      parent: "Selector"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_text"
+    values:
+      layout: "command"
+      element_type: "text"
+      parent: "Text"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_textinput"
+    values:
+      layout: "command"
+      element_type: "textinput"
+      parent: "TextInput"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_timer"
+    values:
+      layout: "command"
+      element_type: "timer"
+      parent: "Timer"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_tooltip"
+    values:
+      layout: "command"
+      element_type: "tooltip"
+      parent: "Tooltip"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_var"
+    values:
+      layout: "command"
+      element_type: "var"
+      parent: "Var"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_video"
+    values:
+      layout: "command"
+      element_type: "video"
+      parent: "Video"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_youtube"
+    values:
+      layout: "command"
+      element_type: "youtube"
+      parent: "Youtube"
+      grand_parent: "Elements"
+      
 # Exclude from processing.
 exclude:
   - .sass-cache/

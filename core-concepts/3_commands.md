@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 3. Commands
-parent: Core Concepts
 nav_order: 3
-numbered_headings: true
 ---
 
 PennController has three types of commands:

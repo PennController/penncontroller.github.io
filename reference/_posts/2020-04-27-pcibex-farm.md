@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Ibex Farm performance - slowdowns, workarounds, future plans
 author: Jeremy
 tags: [general]

@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 12. Examining data
-parent: Advanced Tutorial
 nav_order: 5
-numbered_headings: true
 start_heading: 12
 blurb: How to use R to read in a results file.
 ---

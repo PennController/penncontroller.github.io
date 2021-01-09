@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  Discussion at ELM conference
 author: Jeremy
 tags: [workshop]

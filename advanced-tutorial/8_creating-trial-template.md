@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 8. Creating a trial template
-parent: Advanced Tutorial
 nav_order: 1
-numbered_headings: true
 start_heading: 8
 blurb: How to reuse PennController code.
 previous_page: Advanced Tutorial

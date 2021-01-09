@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 1. Setting up
-parent: Basic Tutorial
 nav_order: 1
-numbered_headings: true
 blurb: How to use PennController and the PCIbex Farm.
 previous_page: Basic Tutorial
 ---

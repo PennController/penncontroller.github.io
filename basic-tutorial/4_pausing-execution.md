@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 4. Pausing experiment execution
-parent: Basic Tutorial
 nav_order: 4
-numbered_headings: true
 blurb: How to let participants interact with an experiment.
 ---
 

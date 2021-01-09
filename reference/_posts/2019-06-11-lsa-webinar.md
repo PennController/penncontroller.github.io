@@ -1,5 +1,4 @@
 ---
-layout: post
 title: LSA webinar on June 14
 tags: [webinar, workshop]
 ---

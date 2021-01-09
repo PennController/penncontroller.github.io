@@ -1,10 +1,7 @@
 ---
-layout: command
+title: standard.cssContainer
 command_type: action
 element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
-title: standard.cssContainer
-parent: Standard element commands
-grand_parent: Commands
 syntax: getX("*ELEMENT_NAME*").cssContainer("*CSS_PROPERTY*", "*VALUE*")
 description: Applies the specified CSS property and value pair to the container of the element.
 optional_parameters: 

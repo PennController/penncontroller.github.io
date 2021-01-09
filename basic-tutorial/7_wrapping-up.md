@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 7. Wrapping up
-parent: Basic Tutorial
 nav_order: 7
-numbered_headings: true
 blurb: Summary of tutorial, and next steps.
 next_page: Advanced Tutorial
 ---

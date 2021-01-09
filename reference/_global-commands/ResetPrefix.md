@@ -1,9 +1,5 @@
 ---
-layout: command
-command_type: global
 title: PennController.ResetPrefix
-parent: Global commands
-grand_parent: Commands
 syntax: PennController.ResetPrefix(null)
 description: Removes the default global command prefix `PennController.`
 optional_parameters: 

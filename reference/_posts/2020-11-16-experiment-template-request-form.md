@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  Experiment template request form
 author: Florian
 tags: [general]

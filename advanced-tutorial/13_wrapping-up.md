@@ -1,10 +1,7 @@
 ---
-layout: bottom-navbar-child
 title: 13. Wrapping up
-parent: Advanced Tutorial
 nav_order: 6
 start_heading: 13
-numbered_headings: true
 ---
 
 Congratulations, you're done!

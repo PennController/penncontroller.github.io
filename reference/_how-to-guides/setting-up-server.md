@@ -1,7 +1,5 @@
 ---
-layout: how-to-guide
 title: Using an external server
-parent: How-to guides
 ---
 
 [Lorem ipsum](https://www.pcibex.net/forums/topic/running-penncontroller-locally/){:target="_blank"}

@@ -1,9 +1,6 @@
 ---
-layout: bottom-navbar-child
 title: 5. Adding experiment details
-parent: Basic Tutorial
 nav_order: 5
-numbered_headings: true 
 blurb: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
 
