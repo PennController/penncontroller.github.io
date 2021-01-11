@@ -10,10 +10,7 @@ By default, PennController logs only when a trial starts and when it ends. You m
 
 The `log` command adds lines to the `results` file in the **Results** folder. The information that is added depends on the element type that the `log` command is called on.
 
-{% capture label %}
 To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/docs/elements).
-{% endcapture %}
-{% include reference-label.html label-body=label %}
 
 Log information from the `"keypress"` **Key** element:
 

@@ -8,18 +8,15 @@ has_toc: false
 blurb: Used outside of a trial to manipulate the experiment as a whole.
 --- 
 
-<!-- Set collection used for [command-type] variable -->
-{% assign command-type = site.global-commands %}
-
 # {{ page.title }}
 
 {{ page.blurb }}
 
 <!-- Command TOC -->
-{% include command-toc.html collection=command-type id=global-commands %}
+{% include toc-same-page.html collection=site.global-commands code-font=true %}
 
 ---
 
 <!-- Command blurbs -->
-{% include command-blurbs.html collection=command-type %}
+{% include command-blurbs.html collection=site.global-commands %}
 

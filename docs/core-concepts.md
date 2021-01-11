@@ -15,5 +15,5 @@ This section is designed for people who prefer learning concepts step by step. I
 ---
 
 <!-- TOC -->
-{% include collections-toc.html collection=site.core-concepts ordered=true %}
+{% include toc-different-page.html collection=site.core-concepts ordered=true %}
 

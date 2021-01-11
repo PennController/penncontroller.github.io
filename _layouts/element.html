@@ -12,7 +12,7 @@ layout: default
 
 <!-- Element creation, description, and command TOC -->
 <div style="display: flow-root;" markdown="1">
-  {% include element-toc.html actionCommands=action-commands testCommands=test-commands %}
+  {% include toc-element.html actionCommands=action-commands testCommands=test-commands %}
 
   <b>Creation: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
     
@@ -21,9 +21,7 @@ layout: default
   {{ page.extended_description | markdownify }}
 </div>
 
-{% unless page.extended_description %}
 <hr>
-{% endunless %}
 
 <!-- Rest of element content -->
 {{ content }}
@@ -31,11 +29,11 @@ layout: default
 <hr>
 
 <!-- Action command blurbs -->
-<h2> Action commands </h2>
+<h2 id="action-commands"> Action commands </h2>
 {% include command-blurbs.html collection=action-commands %}
 
 <hr>
 
 <!-- Test command blurbs -->
-<h2> Test commands </h2>
+<h2 id="test-commands"> Test commands </h2>
 {% include command-blurbs.html collection=test-commands %}

@@ -16,19 +16,19 @@ has_toc: false
 {{ element_commands.blurb }}
 
 ### Action commands
-{% include command-navigation.html collection=site.action-commands id=action-commands %}
+{% include toc-collapsible.html collection=site.action-commands id=action-commands %}
 
 ### Test commands
-{% include command-navigation.html collection=site.test-commands id=test-commands %}
+{% include toc-collapsible.html collection=site.test-commands id=test-commands %}
 
 ---
 
 ## [Global commands]({{ site.baseurl }}{{ global_commands.url }})
 {{ global_commands.blurb }}
-{% include command-navigation.html collection=site.global-commands id=global-commands %}
+{% include toc-collapsible.html collection=site.global-commands id=global-commands %}
 
 ---
 
 ## [Special commands]({{ site.baseurl }}{{ special_commands.url }})
 {{ special_commands.blurb }}
-{% include command-navigation.html collection=site.special-commands id=special-commands %}
+{% include toc-collapsible.html collection=site.special-commands id=special-commands %}
