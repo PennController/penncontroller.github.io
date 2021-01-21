@@ -11,13 +11,13 @@ A free, open-source, versatile, and user-friendly online experiment builder.
 
 <div class="desktop-only flex-row-wrap mt-4">
   <div>
-    <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" class="btn btn-purple" target="_blank">TRY A DEMO!</a>
+    <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" class="btn btn-purple" target="_blank">TRY A DEMO</a>
   </div>
   <div>
-    <a href="{{site.baseurl}}/docs/core-concepts" class="btn" target="_blank">GET STARTED</a>
+    <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
   </div>
   <div>
-    <a href="{{site.baseurl}}/docs/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+    <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
   </div>
 </div>
 
@@ -26,10 +26,10 @@ A free, open-source, versatile, and user-friendly online experiment builder.
     <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" class="btn btn-purple" target="_blank">TRY IT!</a>
   </div>
   <div class="centered-100 py-2">
-    <a href="{{site.baseurl}}/docs/core-concepts" class="btn" target="_blank">GET STARTED</a>
+    <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
   </div>
   <div class="centered-100 py-2">
-    <a href="{{site.baseurl}}/docs/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+    <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
   </div>
 </div>
 
@@ -37,10 +37,11 @@ A free, open-source, versatile, and user-friendly online experiment builder.
 
 ## About
 
-PennController for Internet Based Experiments ("PennController" or "PCIbex" for short)
-provides the tools to build and run online experiments, from familiar paradigms
-like self-paced reading to completely custom-designed paradigms. Experiments can be
-uploaded to or imported from GitHub, making it easy to collaborate and share experiments.
+**PennController for Internet Based Experiments** ("PennController" or "PCIbex"
+for short) provides the tools to build and run online experiments, from familiar
+paradigms like self-paced reading to completely custom-designed paradigms.
+Experiments can be uploaded to or imported from GitHub, making it easy to
+collaborate and share experiments.
 
 PennController was developed and is maintained by
 [Jeremy Zehr](https://sites.google.com/site/jeremyezehr/home){:target="_blank"}

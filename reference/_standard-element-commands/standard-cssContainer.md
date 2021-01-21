@@ -8,6 +8,9 @@ optional_parameters:
   - syntax: getX("*ELEMENT_NAME*").cssContainer({"*CSS_PROPERTY_1*":"*VALUE_1*", "*CSS_PROPERTY_2*":"*VALUE_2*"})
     description: Apply multiple CSS property and value pairs by using curly brackets and colons.
 notes: true
+related:
+  - name: standard.css
+    collection: standard-element-commands
 ---
 
 This command affects the *container* of the element that it is called on,

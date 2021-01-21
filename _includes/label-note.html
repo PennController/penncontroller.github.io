@@ -1,1 +1,5 @@
-{% include label.html label-color="yellow" label-title="note" label-body=label  %}
+{% if include.indent %}
+  {% include label.html label-color="blue" label-title="note" label-body=label indent=true %}
+{% else %}
+  {% include label.html label-color="blue" label-title="note" label-body=label %}
+{% endif %}

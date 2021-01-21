@@ -65,6 +65,9 @@ collections:
   standard-element-commands:
     output: true
     permalink: /commands/:collection/:name/
+  tag:
+    output: true
+    permalink: /:collection/:name/
   audio:
     output: true
     permalink: /elements/:collection/:name/
@@ -165,6 +168,14 @@ defaults:
       layout: "tag"
       nav_exclude: true
       tag: false
+  - scope:
+      path: "reference/_elements"
+    values:
+      layout: "element"
+      parent: "Elements"
+      has_children: true
+      has_toc: false
+      children_code_font: true
   - scope:
       path: "reference/_deprecated"
     values:

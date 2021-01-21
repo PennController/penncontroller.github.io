@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: image
 title: Image
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: image
 thumbnail: image.png
-syntax: newImage("*ELEMENT_NAME*", "IMAGE_NAME")
-description: Creates an image.
+parameters:
+  - name: "IMAGE_FILE_NAME"
+    description: The image file name, including the image file format.
+description: Represents an image.
 ---
 
 ```javascript

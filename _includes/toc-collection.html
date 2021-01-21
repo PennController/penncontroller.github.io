@@ -1,17 +1,22 @@
-<!-- TOC for children pages that are in a collection -->
 <h2 class="text-delta">Table of contents</h2>
 {% if include.ordered %}
-<ol>
+  <ol>
 {% else %}
-<ul>
+  <ul>
 {% endif %}    
 {% for child in include.collection -%}
-  <li>
-    {% if include.code-font %}<code>{% endif %}<a href="{{ child.url | prepend: site.baseurl }}" target="_blank">{{ child.title }}</a>{% if include.code-font%}</code>{%endif%}
-  </li>
+  {% unless child.nav_exclude %}
+    <li>
+      {% if include.code-font %}<code>{% endif %}
+      <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">
+        {{ child.title }}
+      </a>
+      {% if include.code-font%}</code>{%endif%}
+    </li>
+  {% endunless %}
 {% endfor %}
 {% if include.ordered %}
-</ol>
+  </ol>
 {% else %}
-</ul>
+  </ul>
 {% endif %}  

@@ -19,15 +19,15 @@ to update your version of PennController.
   + [`standard.scaling`]({{site.baseurl}}/commands/standard-element-commands/standard-scaling){:target="_blank"}:
   Zooms an element in or out as needed to fit the passed argument(s).
   + [`canvas.color`]({{site.baseurl}}/elements/canvas/canvas-color){:target="_blank"}:
-  Changes the background color of the **Canvas** element it is called on.
+  Changes the background color of the `Canvas` element it is called on.
   + [`scale.checkbox`]({{site.baseurl}}/elements/scale/scale-checkbox){:target="_blank"}:
   Adds checkbox options to the **Scale** element it is called on.
   + [`timer.pause`]({{site.baseurl}}/elements/timer/timer-pause){:target="_blank"}:
-  Something something
+  *To be filled in*
   + [`timer.resume`]({{site.baseurl}}/elements/timer/timer-resume){:target="_blank"}:
-  Something something
+  *To be filled in*
   + [`timer.set`]({{site.baseurl}}/elements/timer/timer-set){:target="_blank"}:
-  Something something
+  *To be filled in*
 + New test commands
   + [`eyetracker.test.score`]({{site.baseurl}}/elements/eyetracker/eyetracker-test-score){:target="_blank"}:
   Succeeds when the **EyeTracker** element it is called on calibrates with a score
@@ -41,29 +41,31 @@ and test commands
 
 + Elements
   + Most elements are now displayed as
-[flex](https://www.w3schools.com/css/css3_flexbox.asp){:target="_blank"}
-by default, instead of as
-[(inline-)block](https://www.w3schools.com/css/css_inline-block.asp){:target="_blank"}.
+  [flex](https://www.w3schools.com/css/css3_flexbox.asp){:target="_blank"}
+  by default, instead of as
+  [(inline-)block](https://www.w3schools.com/css/css_inline-block.asp){:target="_blank"}.
   + [`Selector` element]({{site.baseurl}}/elements/selector){:target="_blank"}:
-  Now reports the order of its element in the “Comments” column of its lines in
+  Reports the order of its element in the “Comments” column of its lines in
   the results file.
   + [`MouseTracker` element]({{site.baseurl}}/elements/mousetracker){:target="_blank"}:
-  Can now detect clicks.
+  Detects clicks.
 + Element commands
   + [`audio.stop`]({{site.baseurl}}/elements/audio/audio-stop){:target="_blank"}:
-  Now releases the command [`audio.wait`]({{site.baseurl}}/elements/audio/audio-wait){:target="_blank"}.
+  Releases the command [`audio.wait`]({{site.baseurl}}/elements/audio/audio-wait){:target="_blank"}.
   + [`standard.left`]({{site.baseurl}}/commands/standard-element-commands/standard-left){:target="_blank"},
-  [`standard.center`]({{site.baseurl}}/commands/standard-element-commands/standard-center){:target="_blank"}, and
+  [`standard.center`]({{site.baseurl}}/commands/standard-element-commands/standard-center){:target="_blank"}
+  , and
   [`standard.right`]({{site.baseurl}}/commands/standard-element-commands/standard-center){:target="_blank"}:
-  Now aligns the whole element, instead of just the text.
+  Aligns the whole element, instead of just the text.
   + [`standard.print`]({{site.baseurl}}/commands/standard-element-commands/standard-print){:target="_blank"}:
-  Can now accept an element as an argument.
+  Accepts an element as an argument.
 + Global commands
   + [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults){:target="_blank"}:
-  Can now be used multiple times during an experiment to send results in multiple steps.
-  + [`InitiateRecorder`]({{site.baseurl}}/commands/global-commands/initiaterecorder){:target="_blank"} and
+  Can be used multiple times during an experiment to send results in multiple steps.
+  + [`InitiateRecorder`]({{site.baseurl}}/commands/global-commands/initiaterecorder){:target="_blank"}
+  and
   [`UploadRecordings`]({{site.baseurl}}/commands/global-commands/uploadrecordings){:target="_blank"}:
-  Can now be used inside trials, similar to [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults){:target="_blank"}.
+  Can be used inside trials, similar to [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults){:target="_blank"}.
 
 ### Fixed
 
@@ -71,15 +73,3 @@ by default, instead of as
 No longer requires the special upload of `PennElement_eyetracker.js`.
 + [`fullscreen`]({{site.baseurl}}/commands/special-commands/fullscreen){:target="_blank"}:
 No longer makes Safari crash.
-
----
-
-* Fixed buffer-event detection in audio & video resources
-* Labels of Scale element no longer systematically show up with radio display
-* Revised CSS (now mostly flex based)
-* Partial revision of MediaRecorder.stop
-* The commands .left, .center and .right no longer align the text itself, but the whole element instead
-* Made the fullscreen commands compatible across browsers
-+ Passing an element reference as the single argument of .print now inserts the element as inline inside the referenced one
-+ Added self keyword referring to current element
-+ Added commands timer.pause and timer.resume

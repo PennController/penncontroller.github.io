@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: function
 title: Function
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: function
 thumbnail: function.png
-syntax: to be filled in
-description: Executes a JavaScript function.
+parameters:
+  - name: FUNCTION
+    description: A JavaScript function.
+description: Embeds a JavaScript function.
 ---
 
 ```javascript

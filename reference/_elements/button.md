@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: button
 title: Button
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: button
 thumbnail: button.png
-syntax: newButton("*ELEMENT_NAME*", "*BUTTON_TEXT*")
-description: Creates a clickable button.
+parameters:
+  - name: '"BUTTON_TEXT"'
+    description: The text that appears on the button.
+description: Represents a clickable button.
 ---
 
 ```javascript
@@ -16,4 +14,4 @@ newButton("click", "Click me!")
     .print()
     .wait()
 ```
-Prints a **Button** to the screen and waits for it to be clicked.
+Prints a `Button` to the screen and waits for it to be clicked.

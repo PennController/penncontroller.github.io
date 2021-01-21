@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: textinput
 title: TextInput
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: textinput
 thumbnail: textinput.png
-syntax: to be filled in
-description: Creates a text input box.
+parameters:
+  - name: '"DEFAULT_TEXT"'
+    description: The default text that appears in the text input box.
+description: Represents a text input box.
 ---
 
 ```javascript

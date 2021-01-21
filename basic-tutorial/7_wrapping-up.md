@@ -89,7 +89,7 @@ newTrial("experimental-trial",
 
 ## Next steps
 
-Now that you've learned the basics of PennController, we recommend reading the [**Advanced Tutorial**]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}, where you'll learn how to do things like:
+Now that you've learned the basics of PennController, we recommend reading the [**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial){:target="_blank"}, where you'll learn how to do things like:
 
 + Create a trial template and use tables.
 + Implement a trial timeout and trial delay.

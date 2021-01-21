@@ -7,9 +7,9 @@ description: Horizontally centers the element.
 ---
 
 <pre><code class="language-diff-javascript diff-highlight">
-*newButton("centered-button", "Hello, button!")
+@newButton("centered-button", "Hello, button!")
 $    .center()
-*    .print()
+@    .print()
 </code></pre>
 
 ↳ Prints a horizontally centered button that says `Hello, button!`.

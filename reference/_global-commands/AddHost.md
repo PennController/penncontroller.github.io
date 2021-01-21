@@ -1,7 +1,7 @@
 ---
 title: AddHost
 syntax: AddHost("*URL*")
-description: Specifies a host URL to use as a source file for when calling creating a new **Audio**, **Image**, or **Video** element. The `"URL"` argument must end in `"/"`.
+description: Specifies a host URL to use as a source file for when calling creating a new `Audio`, `Image`, or **Video** element. The `"URL"` argument must end in `"/"`.
 notes: true
 ---
 
@@ -29,10 +29,10 @@ newTrial(
 )
 ```
 Prints two images and plays one audio file. 
-+ When loading the `"ibex"` **Image** element, PennController sends a request for the file `https://files.lab.florianschwarz.net/test/ibex.png`. 
++ When loading the `"ibex"` `Image` element, PennController sends a request for the file `https://files.lab.florianschwarz.net/test/ibex.png`. 
 
     If no such file is found, it sends a request for the file `http://spellout.net/ibexfarm/static/images/ibex.png`.
-+ When loading the `"wait"` **image** element, PennController sends a request for the file `https://openclipart.org/image/300px/svg_to_png/23920/Anonymous-Sandglass.png`.
-+ When loading the `"sentence"` **Audio** element, PennController sends a request for the file `https://files.lab.florianschwarz.net/test/test.mp3`. 
++ When loading the `"wait"` `image` element, PennController sends a request for the file `https://openclipart.org/image/300px/svg_to_png/23920/Anonymous-Sandglass.png`.
++ When loading the `"sentence"` `Audio` element, PennController sends a request for the file `https://files.lab.florianschwarz.net/test/test.mp3`. 
     
     If no such file is found, it sends a request for the file `http://spellout.net/ibexfarm/static/images/test.mp3`.

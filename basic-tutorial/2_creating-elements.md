@@ -28,7 +28,7 @@ We distinguish between the terms "element type" and "element":
 
 We use `code font` when referring to element types, and use **bold font** when referring to elements. 
 
-For example, "a **Text** element" or "a **Text**" means "an instance of the `Text` element type".
+For example, "a `Text` element" or "a `Text`" means "an instance of the `Text` element type".
 {% endcapture %}
 {% include label-technical.html label-body=label %}
 
@@ -50,20 +50,20 @@ Naming an element is technically optional, but **we recommend giving every eleme
 
 {% capture instructions %}
 
-+ Create an [**Audio**]({{site.baseurl}}/elements/audio){:target="_blank"} named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
-+ Create a [**Text**]({{site.baseurl}}/elements/text){:target="_blank"} named `"fish-sentence"` that contains the string `"The fish swim in a tank which is perfectly round."`
-+ Create an [**Image**]({{site.baseurl}}/elements/image){:target="_blank"} named `"fish-plural"` that contains the image `2fishRoundTank.png`.
++ Create an [`Audio`]({{site.baseurl}}/elements/audio){:target="_blank"} named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
++ Create a [`Text`]({{site.baseurl}}/elements/text){:target="_blank"} named `"fish-sentence"` that contains the string `"The fish swim in a tank which is perfectly round."`
++ Create an [`Image`]({{site.baseurl}}/elements/image){:target="_blank"} named `"fish-plural"` that contains the image `2fishRoundTank.png`.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
-*// Type code below this line.
-*
-*// Remove command prefix
-*PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
-*
-*// Experimental trial
+@// Type code below this line.
+@
+@// Remove command prefix
+@*PennController.ResetPrefix(null)
+@
+@// Turn off debugger
+@// DebugOff()
+@
+@// Experimental trial
 !newTrial("experimental-trial",
 +    newAudio("fish-audio", "2fishRoundTank.mp3")
 +    ,

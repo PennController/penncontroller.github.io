@@ -91,7 +91,7 @@ Detects if a page belongs to an element (`layout: element`). If so,
 adds the string `" element"` to the page's title.
 
 + Example: The listed title of the "**`Audio` element**" page (`~/reference/elements/audio.md`)
-should be just **Audio**, because its title tag is `title: Audio`.
+should be just `Audio`, because its title tag is `title: Audio`.
 
   However, the `children_code_font` tag on the parent page **Elements** (`~/docs/elements.md`)
   changes the `"Audio"` string to `code font`, and the `layout: element`

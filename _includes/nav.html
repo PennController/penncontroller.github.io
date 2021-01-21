@@ -71,7 +71,7 @@
             {{ node.title }}
           </a>
         {%- elsif node.redirect_external -%}
-          <a href="{{ node.redirect_external }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">
+          <a href="{{ node.redirect_external }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}" target="_blank">
             {{ node.title }}
           </a>
         {%- else -%}
@@ -104,7 +104,6 @@
                   {%- if node.children_code_font -%}<code class="fs-2">{%- endif -%}
                   {{ child.title }}
                   {%- if node.children_code_font -%}</code>{%- endif -%}
-                  {% if child.layout == "element" %} element{% endif %}
                 </a>
               {%- endif -%}
               {%- if child.has_children -%}
@@ -129,7 +128,6 @@
                         {%- if child.children_code_font -%}<code class="fs-2">{%- endif -%}
                         {{ grand_child.title }}
                         {%- if child.children_code_font -%}</code>{%- endif -%}
-                        {% if grand_child.layout == "element" %} element{% endif %}
                         </a>
                     {%- endif -%}
                   </li>

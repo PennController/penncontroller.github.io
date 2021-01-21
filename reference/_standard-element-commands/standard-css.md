@@ -7,16 +7,19 @@ description: Applies the specified CSS property and value pair to the element.
 optional_parameters: 
   - syntax: getX("*ELEMENT_NAME*").css({"*CSS_PROPERTY_1*":"*VALUE_1*", "*CSS_PROPERTY_2*":"*VALUE_2*"})
     description: Apply multiple CSS property and value pairs by using curly brackets and colons.
+related:
+  - name: standard.cssContainer
+    collection: standard-element-commands
 ---
 
 <pre><code class="language-diff-javascript diff-highlight">
-*newText("framed-text", "Hello, text!")
+@newText("framed-text", "Hello, text!")
 $    .css("border", "solid 1px red")
-*    .print()
+@    .print()
 *,
-*newButton("orchid-smallcaps-button", "Hello, button!")
+@newButton("orchid-smallcaps-button", "Hello, button!")
 $    .css({"background-color":"orchid", "font-variant":"small-caps"})
-*    .print()
+@    .print()
 </code></pre>
 
 ↳ Prints `Hello, text!` surrounded by a 1px solid red

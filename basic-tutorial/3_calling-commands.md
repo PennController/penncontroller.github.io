@@ -13,19 +13,26 @@ Elements contain content that can be manipulated with commands.
 
 There are three main types of commands:
 
-+ [Element commands](){:target="_blank"}: Used within a trial and called on an element
-+ [Global commands](){:target="_blank"}: Used outside of a trial
-+ [Special commands](){:target="_blank"}: Used within a trial, but not called on an element
++ [Element commands]({{site.baseurl}}/core-concepts/3_commands#element-commands){:target="_blank"}:
+Used within a trial and called on an element.
++ [Global commands]({{site.baseurl}}/core-concepts/3_commands#global-commands){:target="_blank"}:
+Used outside of a trial.
++ [Special commands]({{site.baseurl}}/core-concepts/3_commands#special-commands){:target="_blank"}:
+Used within a trial, but not called on an element.
 
 Element commands can be further categorized as an action command or test command:
-+ Element commands
-  + [Action command](){:target="_blank"}: Directly manipulates an element
-  + [Test command](){:target="_blank"}: Runs a test on an element, and used to execute different code blocks depending on the success or failure of the test (the PennController equivalent of a conditional statement).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
++ Element commands
+  + Action command:
+  Directly manipulates an element
+  + Test command (PennController equivalent of a conditional statement):
+  Runs a test on an element, and executes different code blocks depending on
+  the success or failure of the test.
 
 {% capture label %}
-**This tutorial uses the term “command” as shorthand for “action command”.** If a test, global or special command is intended, the term "test command", “global command”, or "special command" will be used.
+**This tutorial uses the term “command” as shorthand for “action command”.**
+If a test, global or special command is intended, the term "test command",
+“global command”, or "special command" will be used.
 {% endcapture %}
 {% include label-note.html label-body=label %}
 
@@ -75,46 +82,56 @@ To learn about calling other types of commands, read the [Commands documentation
 ### Calling a command
 
 {% capture instructions %}
-+ Call the [`play`]({{site.baseurl}}/elements/audio/audio-play){:target="_blank"} command on the `"fish-audio"` **Audio** to start audio playback.
-+ Call the [`print`]({{site.baseurl}}/commands/standard-element-commands/standard-print){:target="_blank"} command on the `"fish-sentence"` **Text** and `"fish-plural"` **Image** to print them to the screen.
++ Call the [`play`]({{site.baseurl}}/elements/audio/audio-play){:target="_blank"} command on the `"fish-audio"` `Audio` to start audio playback.
++ Call the [`print`]({{site.baseurl}}/commands/standard-element-commands/standard-print){:target="_blank"} command on the `"fish-sentence"` `Text` and `"fish-plural"` `Image` to print them to the screen.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
-*// Type code below this line.
-*
-*// Remove command prefix
-*PennController.ResetPrefix(null)
-*
-*// Experimental trial
-*newTrial("experimental-trial",
-*    newAudio("fish-audio", "2fishRoundTank.mp3")
+<pre><code class="language-diff-javascript diff-highlight">
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
+@// Experimental trial
+@newTrial("experimental-trial",
+@    newAudio("fish-audio", "2fishRoundTank.mp3
 +        .play()
-*    ,
-*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
+@    ,
+@    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 +        .print()
-*    ,
-*    newImage("fish-plural", "2fishRoundTank.png")    
+@    ,
+@    newImage("fish-plural", "2fishRoundTank.png")
 +        .print()
-*)
+@)
 </code></pre>
 
-Click **Save and test** in the script editor to run the experiment. 
+Click **Save and test** in the script editor to run the experiment.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
 ### Evaluating an experiment script
 
-You may be surprised by the results. When you run the experiment, you hear the audio file, but only see the message "The results were successfully sent to the server. Thanks!". 
+You may be surprised by the results. When you run the experiment, you hear the
+audio file, but only see the message
+`"The results were successfully sent to the server. Thanks!".`
 
-PennController executes experiment scripts sequentially. According to the current experiment script, the execution is as follows:
+PennController executes experiment scripts sequentially. According to the current
+experiment script, the execution is as follows:
 
 1. Remove the command prefix for all commands.
 2. Start the `"experimental-trial"` trial.
-3. Create the `"fish-audio`" **Audio** and play it.
-4. Create the `"fish-sentence"` **Text** and print it.
-5. Create the `"fish-plural"` **Image** and print it.
+3. Create the `"fish-audio`" `Audio` and play it.
+4. Create the `"fish-sentence"` `Text` and print it.
+5. Create the `"fish-plural"` `Image` and print it.
 6. End the `"experimental-trial"` trial.
-7. (*Built-in*): Send experiment results to the server, the PCIbex Farm. An experiment's results are logged in its project page's **Results** folder.
-  + PennController automatically sends results after all other trials have ended. To control when results are sent, see the global command [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults){:target="_blank"}.
-  + PennController automatically logs when a trial starts and ends. To log other information, see [Logging data](#logging-data).
+7. (*Default*): Send experiment results to the server, the PCIbex Farm. An experiment's
+results are logged in its project page's **Results** folder.
+  + PennController automatically sends results after all other trials have ended.
+  To control when results are sent, see the global command
+  [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults){:target="_blank"}.
+  + PennController automatically logs when a trial starts and ends.
+  To log other information, see [6. Logging data]({{site.baseurl}}/basic-tutorial/6_logging-data).
   
-As the `"fish-audio"` **Audio** is playing, all of the other commands are executed. When there are no more commands to execute, the trial ends. When there are no more trials to start, the experiment sends its results and ends. And all of this occurred within a few milliseconds!
+As the `"fish-audio"` `Audio` is playing, all of the other commands are executed.
+When there are no more commands to execute, the trial ends. When there are no more
+trials to start, the experiment sends its results and ends. And all of this occurred
+within a few milliseconds!
