@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: video
 title: Video
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.4
+element_type: video
 thumbnail: video.png
-syntax: to be filled in
-description: Creates a video stream.
+parameters:
+  - name: '"VIDEO_FILE_NAME"'
+    description: The video file name, including the video file format.
+description: Creates a media player that supports video playback.
 ---
 
 ```javascript

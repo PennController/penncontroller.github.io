@@ -1,14 +1,9 @@
 ---
-layout: element
-element_type: selector
 title: Selector
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: selector
 thumbnail: selector.png
-syntax: to be filled in
-description: Adds elements into a group that can be selected from.
+description: Creates a group that elements can be added to and selected from.
 ---
 
 ```javascript

@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: scale
 title: Scale
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: scale
 thumbnail: scale.png
-syntax: to be filled in
-description: Creates a scale (by default, a radio button scale).
+parameters:
+  - name: NUMBER_OF_BUTTONS
+    description: Adds the specified number of radio buttons to the element.
+description: Represents a horizontal scale.
 ---
 
 ```javascript

@@ -17,30 +17,52 @@ layout: default
   {% include label-deprecated.html since=page.deprecated replacement=page.replacement %}
 {% endif %}
 
-<h1><code>{{ page.title }}</code> element</h1>
+<h1 id="{{page.title}}"><code>{{ page.title }}</code> element</h1>
 
-<div style="display: flow-root;" markdown="1">
+<div id="command-table-of-contents" style="display: flow-root;" markdown="1">
   {% if page.element_type == "standard" %}
     {% include toc-element.html element-action=element-action element-test=element-test %}
   {% else %}
     {% include toc-element.html element-action=element-action element-test=element-test standard-action=standard-action standard-test=standard-test %}
   {% endif %}
 
-  <h4>syntax</h4>
-  <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-  
-  <h4>description</h4>
+  <h4 id="since">since</h4>
+  {{ page.since }} 
+
+  <h4 id="description">description</h4>
   {{ page.description | markdownify }} 
 
+  <h4 id="syntax">syntax</h4>
+  <code>
+    new{{- page.title -}}("<var>ELEMENT_NAME</var>"
+    {%- for parameter in page.parameters -%}
+      , {%- if parameter.optional -%}[{%- endif -%}<var>{{ parameter.name -}}</var>{%- if parameter.optional -%}]{%- endif -%}
+    {%- endfor -%}
+    )
+  </code>
+  <ul>
+    <li>
+      <code>"<var>ELEMENT_NAME</var>"</code>: The name of the newly-created element.
+    </li>
+    {%- for parameter in page.parameters -%}
+      <li>
+        <code>{%- if parameter.optional -%}[{%- endif -%}<var>
+          {{- parameter.name -}}
+        </var>{%- if parameter.optional -%}]{%- endif -%}</code>
+        {% if parameter.optional %} (optional){% endif %}: {{ parameter.description | markdownify | remove: '<p>' | remove: '</p>' }}
+      </li>
+    {%- endfor -%}
+  </ul>
+
   {% if page.notes %}
-    <h4>note(s)</h4>
+    <h4 id="notes">note(s)</h4>
     {{ page.excerpt }}
   {% endif %}
 </div>
 
 {% unless page.no_example %}
   <hr>
-  <h4>example</h4>
+  <h4 id="example">example</h4>
   {% if page.notes %}
     {{ page.content | remove: page.excerpt }}
   {% else %}

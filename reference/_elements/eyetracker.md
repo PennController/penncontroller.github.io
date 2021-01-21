@@ -1,14 +1,16 @@
 ---
-layout: element
-element_type: eyetracker
 title: EyeTracker
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: PennController 1.8
+element_type: eyetracker
 thumbnail: eyetracker.png
-syntax: to be filled in
-description: Collects eye-tracking data.
+parameters:
+  - name: OUT_OF
+    optional: true
+    description: To be filled in.
+  - name: LOOKED_AT
+    optional: true
+    description: To be filled in.
+description: Creates an eye-tracking data collector.
 ---
 
 ```javascript

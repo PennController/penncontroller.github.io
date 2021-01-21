@@ -13,11 +13,11 @@ layout: default
 {% endif %}
 
 {% if page.element_type contains "standard" %}
-  <h4>Element types that this command
+  <!-- <h4>Element types that this command
     <a href="{{site.baseurl}}/core-concepts/3_commands#standard-and-element-specific-commands" target="_blank">
       has an effect on
     </a>
-  </h4>
+  </h4> -->
   {% for type in page.element_type %}
     {% for element in site.elements %}
       {% if element.element_type contains type %}
@@ -29,6 +29,11 @@ layout: default
       {% endif %}
     {% endfor %}
   {% endfor %}
+{% endif %}
+
+{% if page.since %}
+<h4>since</h4>
+  {{ page.since }}
 {% endif %}
 
 {% include heading-link.html header="syntax" h4=true %}
@@ -75,8 +80,8 @@ layout: default
   <ul>
     {% for method in page.methods %}
     <li>
-    <p><code>{{ method.syntax }}</code></p>
-    <p class="fw-300 fs-3">{{ method.description }}</p>
+      <p><code>{{ method.syntax }}</code></p>
+      <p class="fw-300 fs-3">{{ method.description }}</p>
     </li>
     {% endfor %}
   </ul>
@@ -91,6 +96,21 @@ layout: default
   {% assign content = page.content %}  
 {% endif %}
 
+{% if page.related %}
+{% include heading-link.html header="related" h4=true %}
+  <ul>
+  {% for related in page.related %}
+    {% assign related_command = site[related.collection] | where: "title", related.command | first %}
+    <li>
+      <a href="{{ related_command.url | prepend: site.baseurl }}" target="_blank">
+        <code>{{ related_command.title }}</code>
+      </a>: {{ related_command.description }}
+    </li>
+  {% endfor %}  
+  </ul>
+{% endif %}
+
 <hr>
+
 {%- include heading-link.html header="example" h4=true -%}
 {{ content }}

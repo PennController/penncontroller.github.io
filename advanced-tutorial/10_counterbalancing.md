@@ -17,60 +17,60 @@ In the current experimental design, the plural image is always printed on the le
 It's possible that participants are simply always faster at choosing images on the left (or on the right). This reaction time advantage would create a confound that could lead to an incorrect conclusion about morphological processing.
 
 {% capture instructions %}
-Call the [`shuffle`]({{site.baseurl}}/elements/selector/selector-shuffle){:target="_blank"} command on the `"selection"` **Selector** to shuffle the horizontal position of the `"plural"` and `"singular"` **Image** elements. 
+Call the [`shuffle`]({{site.baseurl}}/elements/selector/selector-shuffle){:target="_blank"} command on the `"selection"` **Selector** to shuffle the horizontal position of the `"plural"` and `"singular"` `Image` elements. 
 
 <pre><code class="language-diff-javascript diff-highlight"> 
-*// code omitted in interest of space
-*
-*// Experimental trial
+@// code omitted in interest of space
+@
+@// Experimental trial
 *Template("items.csv", row => 
-*    newTrial("experimental-trial",
-*        newTimer("break", 1000)
-*            .start()
-*            .wait()
-*        ,
-*        newAudio("audio", row.audio)
-*            .play()
-*        ,
-*        newTimer("timeout", row.duration)
-*            .start()
-*        ,
-*        newText("sentence", row.sentence)
-*            .center()
-*            .unfold(row.duration)
-*        ,
-*        newImage("plural", row.plural_image)
-*            .size(200, 200)
-*        ,
-*        newImage("singular", row.singular_image)
-*            .size(200, 200)
-*        ,
-*        newCanvas("side-by-side", 450,200)
-*            .add(  0, 0, getImage("plural"))
-*            .add(250, 0, getImage("singular"))
-*            .center()
-*            .print()
-*            .log()
-*        ,
-*        newSelector("selection")
-*            .add(getImage("plural"), getImage("singular"))
+@    newTrial("experimental-trial",
+@        newTimer("break", 1000)
+@            .start()
+@            .wait()
+@        ,
+@        newAudio("audio", row.audio)
+@            .play()
+@        ,
+@        newTimer("timeout", row.duration)
+@            .start()
+@        ,
+@        newText("sentence", row.sentence)
+@            .center()
+@            .unfold(row.duration)
+@        ,
+@        newImage("plural", row.plural_image)
+@            .size(200, 200)
+@        ,
+@        newImage("singular", row.singular_image)
+@            .size(200, 200)
+@        ,
+@        newCanvas("side-by-side", 450,200)
+@            .add(  0, 0, getImage("plural"))
+@            .add(250, 0, getImage("singular"))
+@            .center()
+@            .print()
+@            .log()
+@        ,
+@        newSelector("selection")
+@            .add(getImage("plural"), getImage("singular"))
 +            .shuffle()
-*            .keys("F", "J")
-*            .log()
-*            .callback(getTimer("timeout").stop())
-*        ,
-*        getTimer("timeout")
-*            .wait()
-*        ,
-*        getAudio("audio")
-*            .stop()
-*    )
-*    .log("group", row.group)
-*    .log("item", row.item)
-*    .log("condition", row.inflection)
-*)
-*
-*// code omitted in interest of space
+@            .keys("F", "J")
+@            .log()
+@            .callback(getTimer("timeout").stop())
+@        ,
+@        getTimer("timeout")
+@            .wait()
+@        ,
+@        getAudio("audio")
+@            .stop()
+@    )
+@    .log("group", row.group)
+@    .log("item", row.item)
+@    .log("condition", row.inflection)
+@)
+@
+@// code omitted in interest of space
 </code></pre>
 
 {% capture label %}
@@ -103,56 +103,56 @@ Another way of counterbalancing is to explicitly set half of the items to displa
 | B     | 4    | The moose walk in a park which is visibly old      | plural     | 2mooseOldPark.mp3   | 2441     | 1mooseNewPark.png   | 2mooseOldPark.png   |
 
 <pre><code class="language-diff-javascript diff-highlight"> 
-*// code omitted in interest of space
-*
-*// Experimental trial
+@// code omitted in interest of space
+@
+@// Experimental trial
 *Template("items.csv", row => 
-*    newTrial("experimental-trial",
-*        newTimer("break", 1000)
-*            .start()
-*            .wait()
-*        ,
-*        newAudio("audio", row.audio)
-*            .play()
-*        ,
-*        newTimer("timeout", row.duration)
-*            .start()
-*        ,
-*        newText("sentence", row.sentence)
-*            .center()
-*            .unfold(row.duration)
-*        ,
+@    newTrial("experimental-trial",
+@        newTimer("break", 1000)
+@            .start()
+@            .wait()
+@        ,
+@        newAudio("audio", row.audio)
+@            .play()
+@        ,
+@        newTimer("timeout", row.duration)
+@            .start()
+@        ,
+@        newText("sentence", row.sentence)
+@            .center()
+@            .unfold(row.duration)
+@        ,
 !        newImage("left", row.left_image)
-*            .size(200, 200)
-*        ,
+@            .size(200, 200)
+@        ,
 !        newImage("right", row.right_image)
-*            .size(200, 200)
-*        ,
-*        newCanvas("side-by-side", 450,200)
+@            .size(200, 200)
+@        ,
+@        newCanvas("side-by-side", 450,200)
 !            .add(  0, 0, getImage("left"))
 !            .add(250, 0, getImage("right"))
-*            .center()
-*            .print()
-*            .log()
-*        ,
-*        newSelector("selection")
+@            .center()
+@            .print()
+@            .log()
+@        ,
+@        newSelector("selection")
 !            .add(getImage("left"), getImage("right"))
-*            .keys("F", "J")
-*            .log()
-*            .callback(getTimer("timeout").stop())
-*        ,
-*        getTimer("timeout")
-*            .wait()
-*        ,
-*        getAudio("audio")
-*            .stop()
-*    )
-*    .log("group", row.group)
-*    .log("item", row.item)
-*    .log("condition", row.inflection)
-*)
-*
-*// code omitted in interest of space
+@            .keys("F", "J")
+@            .log()
+@            .callback(getTimer("timeout").stop())
+@        ,
+@        getTimer("timeout")
+@            .wait()
+@        ,
+@        getAudio("audio")
+@            .stop()
+@    )
+@    .log("group", row.group)
+@    .log("item", row.item)
+@    .log("condition", row.inflection)
+@)
+@
+@// code omitted in interest of space
 </code></pre>
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
@@ -178,18 +178,18 @@ For the **AdvancedTutorial** experiment, the important parts to know are that:
 Use the [`Sequence`]({{site.baseurl}}/commands/global-commands/sequence){:target="_blank"}` global command to run the four `"experimental-trial"` trials in a random order:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
-*// Type code below this line.
-*
-*// Remove command prefix
-*PennController.ResetPrefix(null)
-*
-*// Turn off debugger
-*// DebugOff()
-*
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
+@// Turn off debugger
+@// DebugOff()
+@
 +// Control trial sequence
 +Sequence("instructions", randomize("experimental-trial"), "send", "completion_screen")
-*
-*// code omitted in the interest of space
+@
+@// code omitted in the interest of space
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}

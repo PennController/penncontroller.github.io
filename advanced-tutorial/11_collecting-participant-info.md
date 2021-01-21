@@ -16,7 +16,7 @@ incididunt ut labore et dolore magna aliqua.
 An [**Html** element]({{site.baseurl}}/elements/html){:target="_blank"} lets you
 insert an existing HTML document in a PennController experiment. This can be useful
 for displaying an informed consent form; instead of creating and printing many
-**Text** elements, you can print a single **Html**.
+`Text` elements, you can print a single **Html**.
 
 We'll use the mock consent form [`consent.html`]({{site.baseurl}}/assets/tutorials/consent.html){:target="_blank"}.
 
@@ -73,9 +73,9 @@ Test commands are used in two ways:
 + Within a `wait` command to modify its success condition(s).
 
 We'll pass the test command `test.complete` as an argument to a `wait` command
-on a **Button** element. 
+on a `Button` element. 
 
-Normally, if the `wait` command is called on a **Button**, experiment script execution
+Normally, if the `wait` command is called on a `Button`, experiment script execution
 pauses until the `wait` command's success condition is fulfilled, in other words
 until the participant clicks the button. When a test command is passed as an argument,
 the `wait` command's success condition is modified. 
@@ -94,9 +94,9 @@ clicks the button.
   command to set the container width to 720px.
   2. Call the [`checkboxWarning`]({{site.baseurl}}/elements/html/html-checkboxwarning){:target="_blank"}
   command to define an error message for an unfilled obligatory checkbox.
-+ Create and print a centered **Button** named `"continue"`.
++ Create and print a centered `Button` named `"continue"`.
   1. Call the [`wait`]({{site.baseurl}}/elements/button/button-wait){:target="_blank"}
-  command on the `"continue"` **Button** and pass the `test.complete` test command
+  command on the `"continue"` `Button` and pass the `test.complete` test command
   on the `"consent_form"` **Html** as an argument. This pauses experiment script
   execution until the participant clicks the button *and* all obligatory fields
   are filled out.
@@ -107,11 +107,11 @@ clicks the button.
   by the `checkboxWarning` command.
 
 <pre><code class="language-diff-javascript diff-highlight">
-*// code omitted in the interest of space
-*
-*// Control trial sequence
+@// code omitted in the interest of space
+@
+@// Control trial sequence
 !Sequence("consent", "instructions", randomize("experimental-trial"), "send", "completion_screen")
-*
+@
 +// Consent form
 +newTrial("consent",
 +    newHtml("consent_form", "consent.html")
@@ -126,9 +126,9 @@ clicks the button.
 +                  .failure(getHtml("consent_form").warn())
 +        )
 +)
-*
-*// Instructions
-*// code omitted in the interest of space
+@
+@// Instructions
+@// code omitted in the interest of space
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions %}
@@ -165,24 +165,24 @@ named `"input_ID"` that is centered and has a 1em bottom margin.
 on the `"experimental-item"` trial to record the participant ID.
 
 <pre><code class="language-diff-javascript diff-highlight">
-*// code omitted in interest of space
-*
-*// Instructions
-*newTrial("instructions",
-*    defaultText
+@// code omitted in interest of space
+@
+@// Instructions
+@newTrial("instructions",
+@    defaultText
 +        .cssContainer({"margin-bottom":"1em"})
-*        .center()
-*        .print()
-*    ,
-*    newText("instructions-1", "Welcome!")
-*    ,
-*    newText("instructions-2", "In this experiment, you will hear and read a sentence, and see two images.")
-*    ,
-*    newText("instructions-3", "&lt;b&gt;Select the image that better matches the sentence:&lt;/b&gt;")
-*    ,
-*    newText("instructions-4", "Press the &lt;b&gt;F&lt;/b&gt; key to select the image on the left.&lt;br&gt;Press the &lt;b&gt;J&lt;/b&gt; key to select the image on the right.&lt;br&gt;You can also click on an image to select it.")
-*    ,
-*    newText("instructions-5", "If you do not select an image by the time the audio finishes playing,&lt;br&gt;the experiment will skip to the next sentence.")
+@        .center()
+@        .print()
+@    ,
+@    newText("instructions-1", "Welcome!")
+@    ,
+@    newText("instructions-2", "In this experiment, you will hear and read a sentence, and see two images.")
+@    ,
+@    newText("instructions-3", "&lt;b&gt;Select the image that better matches the sentence:&lt;/b&gt;")
+@    ,
+@    newText("instructions-4", "Press the &lt;b&gt;F&lt;/b&gt; key to select the image on the left.&lt;br&gt;Press the &lt;b&gt;J&lt;/b&gt; key to select the image on the right.&lt;br&gt;You can also click on an image to select it.")
+@    ,
+@    newText("instructions-5", "If you do not select an image by the time the audio finishes playing,&lt;br&gt;the experiment will skip to the next sentence.")
 +    ,
 +    newText("instructions-6", "Please enter your ID and then click the button below to start the experiment.")
 +    ,
@@ -190,29 +190,29 @@ on the `"experimental-item"` trial to record the participant ID.
 +        .cssContainer({"margin-bottom":"1em"})
 +        .center()
 +        .print()
-*    ,
-*    newButton("wait", "Click to start the experiment")
-*        .center()
-*        .print()
-*        .wait()
+@    ,
+@    newButton("wait", "Click to start the experiment")
+@        .center()
+@        .print()
+@        .wait()
 +    ,
 +    newVar("ID")
 +        .global()
 +        .set(getTextInput("input_ID"))
-*)
-*
-*// Experimental trial
+@)
+@
+@// Experimental trial
 *Template("items.csv", row => 
-*    newTrial("experimental-trial",
-*    // code omitted in interest of space
-*    )
-*    .log("group", row.group)
-*    .log("item", row.item)
-*    .log("condition", row.inflection)
+@    newTrial("experimental-trial",
+@    // code omitted in interest of space
+@    )
+@    .log("group", row.group)
+@    .log("item", row.item)
+@    .log("condition", row.inflection)
 +    .log("ID", getVar("ID"))
-*)
-*
-*// code omitted in interest of space
+@)
+@
+@// code omitted in interest of space
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions %}

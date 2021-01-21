@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: timer
 title: Timer
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: timer
 thumbnail: timer.png
-syntax: newTimer("*ELEMENT_NAME*", TIMER_LENGTH)
-description: Creates a timer.
+parameters:
+  - name: TIMER_LENGTH
+    description: The length of the timer, in milliseconds.
+description: Represents a timer.
 ---
 
 ```javascript

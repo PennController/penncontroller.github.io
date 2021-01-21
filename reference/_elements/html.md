@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: html
 title: Html
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: html
 thumbnail: html.png
-syntax: to be filled in
-description: Inserts an HTML document.
+parameters:
+  - name: "HTML_FILE_NAME.HTML"
+    description: The name of the HTML document.
+description: Represents an HTML document.
 ---
 
 ```javascript

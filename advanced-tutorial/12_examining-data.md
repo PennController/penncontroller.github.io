@@ -21,19 +21,19 @@ We'll run the experiment to collect data that we can examine.
 + Save the `results` file as a CSV file named `results.csv`.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
-*// Type code below this line.
-*
-*// Remove command prefix
-*PennController.ResetPrefix(null)
-*
-*// Turn off debugger
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
+@// Turn off debugger
 !DebugOff()
-*
-*// Control trial sequence
+@
+@// Control trial sequence
 *Sequence("consent", "instructions", randomize("experimental-trial"), "completion_screen")
-*
-*// Instructions
-*// code omitted in the interest of space
+@
+@// Instructions
+@// code omitted in the interest of space
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
@@ -187,7 +187,7 @@ Tidyverse functions are designed to work with [tidy data](https://r4ds.had.co.nz
 
 The `results` tibble is not tidy, because every `"experimental-trial"` trial is split into 4 rows:
 1. Trial start
-2. Information logged from the `"side-by-side"` **Canvas**
+2. Information logged from the `"side-by-side"` `Canvas`
 3. Information logged from the `"selection"` **Selector**
 4. Trial end
 
@@ -195,7 +195,7 @@ Tidy the `results` tibble:
 
 {% capture content %}
 Add the following code block to your R script:
-  1. Keep only rows that log information about the `"side-by-side"` **Canvas** or `"selection"` **Selector**.
+  1. Keep only rows that log information about the `"side-by-side"` `Canvas` or `"selection"` **Selector**.
   2. Keep only the `ID`, `group`, `item`, `condition`, `PennElementName`, `Value`, and `EventTime` columns.
   3. Group by the `ID` and `item` variables.
   4. Create the `event` and `selection` columns, and coerce the `EventTime` column from a character vector to a double vector.

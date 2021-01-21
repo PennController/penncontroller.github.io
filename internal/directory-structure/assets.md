@@ -104,14 +104,14 @@ To use JS diff highlighting:
 <code>·</code> represents a space.
 <script type="text/plain" class="language-markup">
 <pre><code class="language-diff-javascript diff-highlight"> 
-*PennController.ResetPrefix(null)
-*
+@PennController.ResetPrefix(null)
+@
 +newTrial("first-trial",
 *····newText("instructions", "Press the F key if the image on the left matches the sentence. Press the K key if the image on the right matches the sentence.")
 -········.center()
 !········.italic()
 *········.print()
-*)
+@)
 </code></pre>
 </script>
 </div>
@@ -119,14 +119,14 @@ To use JS diff highlighting:
 <p class="text-delta"><b>result</b></p>
 <div class="px-4 pb-1">
 <pre><code class="language-diff-javascript diff-highlight"> 
-*PennController.ResetPrefix(null)
-*
+@PennController.ResetPrefix(null)
+@
 +newTrial("first-trial",
-*    newText("instructions", "Press the F key if the image on the left matches the sentence. Press the K key if the image on the right matches the sentence.")
+@    newText("instructions", "Press the F key if the image on the left matches the sentence. Press the K key if the image on the right matches the sentence.")
 -        .center()
 !        .italic()
-*        .print()
-*)
+@        .print()
+@)
 </code></pre>
 </div>
 </div>

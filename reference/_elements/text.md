@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: text
 title: Text
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: text
 thumbnail: text.png
-syntax: to be filled in
-description: Creates a line of text.
+parameters:
+  - name: '"TEXT"'
+    description: The text contained by the element.
+description: Represents text.
 ---
 
 ```javascript

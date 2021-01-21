@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Specific element commands
+title: Element-specific commands
 parent: Commands
 nav_order: 1
 blurb: Commands that are defined only for specific PennController element types, or that describe element-specific behavior.
@@ -13,11 +13,10 @@ blurb: Commands that are defined only for specific PennController element types,
 
 ---
 
-## Action commands 
+## Action commands
 
 {% include toc-command.html all_element_types=true action=true %}
 
-
-## Test commands 
+## Test commands
 
 {% include toc-command.html all_element_types=true test=true %}

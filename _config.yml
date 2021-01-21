@@ -19,6 +19,7 @@ aux_links_new_tab: true
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-include-cache
 
 # Announcements
 paginate: 10
@@ -167,6 +168,14 @@ defaults:
       layout: "tag"
       nav_exclude: true
       tag: false
+  - scope:
+      path: "reference/_elements"
+    values:
+      layout: "element"
+      parent: "Elements"
+      has_children: true
+      has_toc: false
+      children_code_font: true
   - scope:
       path: "reference/_deprecated"
     values:

@@ -27,7 +27,7 @@ newTrial(
 )
 ```
 
-1. Prints the `"instructions"` **Text** element to the screen.
-2. Creates the `"fj"` **Key** element and waits for the `F` or `J` key to be pressed.
+1. Prints the `"instructions"` `Text` element to the screen.
+2. Creates the `"fj"` `Key` element and waits for the `F` or `J` key to be pressed.
   + If `F` was pressed, end the trial immediately.
-  + Otherwise, print the `"continue"` **Text** element and wait for the `Spacebar` key to be pressed.
+  + Otherwise, print the `"continue"` `Text` element and wait for the `Spacebar` key to be pressed.

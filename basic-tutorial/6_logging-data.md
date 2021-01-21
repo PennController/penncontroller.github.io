@@ -18,50 +18,50 @@ The `log` command adds lines to the `results` file in the experiment project pag
 
 {% capture instructions %}
 + Uncomment the [`DebugOff`]({{site.baseurl}}/commands/global-commands/debugoff){:target="_blank"} command, since we are now ready to collect data.
-+ Call the [`log`]({{site.baseurl}}/elements/canvas/canvas-log){:target="_blank"} command on the `"side-by_side"` **Canvas** to log when the images are printed to the screen.
-+ Call the [`log`]({{site.baseurl}}/elements/key/key-log){:target="_blank"} command on the `"keypress"` **Key** to log information about the participant's keypress.
++ Call the [`log`]({{site.baseurl}}/elements/canvas/canvas-log){:target="_blank"} command on the `"side-by_side"` `Canvas` to log when the images are printed to the screen.
++ Call the [`log`]({{site.baseurl}}/elements/key/key-log){:target="_blank"} command on the `"keypress"` `Key` to log information about the participant's keypress.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
-*// Type code below this line.
-*
-*// Remove command prefix
-*PennController.ResetPrefix(null)
-*
-*// Turn off debugger
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
+@// Turn off debugger
 !DebugOff()
-*
-*// Instructions
-*// code omitted in interest of space
-*
-*// Experimental trial
-*newTrial("experimental-trial",
-*    newAudio("fish-audio", "2fishRoundTank.mp3")
-*        .play()
-*    ,
-*    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
-*        .center()
-*        .unfold(2676)
-*    ,
-*    newImage("fish-plural", "2fishRoundTank.png")    
-*        .size(200, 200)
-*    ,
-*    newImage("fish-singular", "1fishSquareTank.png")
-*        .size(200, 200)
-*    ,   
-*    newCanvas("side-by-side", 450,200)
-*        .add(  0, 0, getImage("fish-plural"))
-*        .add(250, 0, getImage("fish-singular"))
-*        .center()
-*        .print()
+@
+@// Instructions
+@// code omitted in interest of space
+@
+@// Experimental trial
+@newTrial("experimental-trial",
+@    newAudio("fish-audio", "2fishRoundTank.mp3")
+@        .play()
+@    ,
+@    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
+@        .center()
+@        .unfold(2676)
+@    ,
+@    newImage("fish-plural", "2fishRoundTank.png")    
+@        .size(200, 200)
+@    ,
+@    newImage("fish-singular", "1fishSquareTank.png")
+@        .size(200, 200)
+@    ,   
+@    newCanvas("side-by-side", 450,200)
+@        .add(  0, 0, getImage("fish-plural"))
+@        .add(250, 0, getImage("fish-singular"))
+@        .center()
+@        .print()
 +        .log()
-*    ,
-*    newKey("keypress", "FJ")
+@    ,
+@    newKey("keypress", "FJ")
 +        .log()
-*        .wait()
-*    ,
-*    getAudio("fish-audio")
-*        .wait("first")
-*)
+@        .wait()
+@    ,
+@    getAudio("fish-audio")
+@        .wait("first")
+@)
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
@@ -127,8 +127,8 @@ Relevant information contained in the five rows at the bottom:
 1. `"instructions"` trial: started at the timestamp `1603390891064`.
 2. `"instructions"` trial: ended at the timestamp `1603390892111`.
 3. `"experimental-trial"` trial: started at the timetamp `1603390892115`.
-4. `"side-by-side"` **Canvas** was printed at the timestamp `1603390892122`.
-5. `"keypress"` **Key**: the participant pressed the `F` key at the timestamp `1603390893835`.
+4. `"side-by-side"` `Canvas` was printed at the timestamp `1603390892122`.
+5. `"keypress"` `Key`: the participant pressed the `F` key at the timestamp `1603390893835`.
 6. `"experimental-trial"` trial: ended at the timestamp `1603390894815`.
 
 The timestamps are Unix timestamps in milliseconds, in other words the number of milliseconds since 00:00:00 UTC on January 1, 1970.

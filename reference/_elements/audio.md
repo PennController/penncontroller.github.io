@@ -1,14 +1,12 @@
 ---
-layout: element
-element_type: audio
 title: Audio
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: beta 0.3
+element_type: audio
 thumbnail: audio.png
-syntax: newAudio("ELEMENT_NAME", "AUDIO_FILE_NAME.MP3")
-description: Creates an audio stream.
+parameters:
+  - name: '"AUDIO_FILE_NAME.MP3"'
+    description: The name of the audio file.
+description: Creates an audio player.
 notes: true
 ---
 
@@ -22,7 +20,7 @@ information on audio streams, see [*HTML Audio*](https://www.w3schools.com/html/
 before the user has interacted with the page. Do not assume playback will
 automatically start, if this is the first thing that should happen when your participants
 open the experiment page. You should have a screen that asks participants to interact
-with the page, for example by clicking a **Button**, before playing any audio.
+with the page, for example by clicking a `Button`, before playing any audio.
 
 <!--more-->
 

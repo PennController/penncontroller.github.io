@@ -7,13 +7,13 @@ description: Bolds any text that appears in the element.
 ---
 
 <pre><code class="language-diff-javascript diff-highlight">
-*newText("bolded-text", "Hello, text!")
+@newText("bolded-text", "Hello, text!")
 $    .bold()
-*    .print()
+@    .print()
 *,
-*newButton("bolded-button", "Hello, button!")
+@newButton("bolded-button", "Hello, button!")
 $    .bold()
-*    .print()
+@    .print()
 </code></pre>
 
 ↳ Prints <code><strong>Hello, text!</strong></code> in bold, then prints a button

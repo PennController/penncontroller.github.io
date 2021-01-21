@@ -1,18 +1,22 @@
 ---
-layout: element
-element_type: canvas
 title: Canvas
+since: beta 0.3
 parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+element_type: canvas
 thumbnail: canvas.png
-syntax: newCanvas("*ELEMENT_NAME*", *WIDTH*, *HEIGHT*)
-description: Creates a rectangular surface to place elements onto.
+parameters:
+  - name: WIDTH
+    description: The width of the `Canvas`, in pixels.
+  - name: HEIGHT
+    description: The height of the `Canvas`, in pixels.
+description: Creates a rectangular surface that other elements can be placed onto.
 notes: true
 ---
 
-+ Use the [CanvasCreation tool](http://files.lab.florianschwarz.net/ibexfiles/CanvasCreation/) to help visualize **Canvas** layouts and generate code that you can use directly in a PCIbex experiment.
++ Use the
+[CanvasCreation tool](http://files.lab.florianschwarz.net/ibexfiles/CanvasCreation/){:target="_blank"}
+to help visualize `Canvas` layouts and generate code that can be added directly
+to a PennController script.
 
 <!--more-->
 
@@ -28,5 +32,5 @@ newCanvas("shapes", 800, 400)
     .add( 400, 0, getImage("triangle"))
     .print()
 ```
-> 1. Creates a 800x400px **Canvas**.
-> 2. Places the **Image** `"square"` at the (x=0, y=0) coordinate and the **Image** `"triangle"` at the (x=400, y=0) coordinate.
+> 1. Creates a 800x400px `Canvas`.
+> 2. Places the `Image` `"square"` at the (x=0, y=0) coordinate and the `Image` `"triangle"` at the (x=400, y=0) coordinate.

@@ -185,10 +185,10 @@ PennController.ResetPrefix(null)
 
 // Turn off debugger
 !// DebugOff()
-*//
-*// code omitted in interest of space
-*
-*// Experimental trial
+@//
+@// code omitted in interest of space
+@
+@// Experimental trial
 +Template("items.csv", row => 
 !    newTrial("experimental-trial",
 !        newAudio("audio", row.audio)
@@ -252,42 +252,43 @@ on the `"experimental-item"` trial to record the group, item number,
 and verbal inflection condition.
 
 <pre><code class="language-diff-javascript diff-highlight">
-*// code omitted in interest of space
-*
-*// Experimental trial
+@// code omitted in interest of space
+@
+@// Experimental trial
+
 *Template("items.csv", row => 
-*    newTrial("experimental-trial",
-*        newAudio("audio", row.audio)
-*            .play()
-*        ,
-*        newText("sentence", row.sentence)
-*            .center()
-*            .unfold(row.duration)
-*        ,
-*        newImage("plural", row.plural_image)
-*            .size(200, 200)
-*        ,
-*        newImage("singular", row.singular_image)
-*            .size(200, 200)
-*        ,
-*        newCanvas("side-by-side", 450,200)
-*            .add(  0, 0, getImage("plural"))
-*            .add(250, 0, getImage("singular"))
-*            .center()
-*            .print()
-*            .log()
-*        ,
-*        newKey("keypress", "FJ")
-*            .log()
-*            .wait()
-*        ,
-*        getAudio("audio")
-*            .wait("first")
-*    )
+@    newTrial("experimental-trial",
+@        newAudio("audio", row.audio)
+@            .play()
+@        ,
+@        newText("sentence", row.sentence)
+@            .center()
+@            .unfold(row.duration)
+@        ,
+@        newImage("plural", row.plural_image)
+@            .size(200, 200)
+@        ,
+@        newImage("singular", row.singular_image)
+@            .size(200, 200)
+@        ,
+@        newCanvas("side-by-side", 450,200)
+@            .add(  0, 0, getImage("plural"))
+@            .add(250, 0, getImage("singular"))
+@            .center()
+@            .print()
+@            .log()
+@        ,
+@        newKey("keypress", "FJ")
+@            .log()
+@            .wait()
+@        ,
+@        getAudio("audio")
+@            .wait("first")
+@    )
 +    .log("group", row.group)
 +    .log("item", row.item)
 +    .log("condition", row.inflection)
-*)
+@)
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions %}

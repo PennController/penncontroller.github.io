@@ -1,18 +1,22 @@
 ---
-layout: element
-element_type: mediarecorder
 title: MediaRecorder
-parent: Elements
-has_children: true
-has_toc: false
-children_code_font: true
+since: PennController 1.8
+element_type: mediarecorder
 thumbnail: mediarecorder.png
-syntax: to be filled in
-description: Collects audio and/or video samples.
+parameters:
+  - name: '"audio"'
+    optional: true
+    description: Records an audio stream.{:target="_blank"}
+  - name: '"video"'
+    optional: true
+    description: Records a video stream.
+description: Creates an audio and/or video recorder. 
+notes: true
 ---
+
++ If the `"audio"` or `"video"` parameter is not passed, collects
+an audio-video sample.
 
 ```javascript
 // To be filled in
 ```
-
-
