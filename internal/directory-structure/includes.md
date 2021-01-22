@@ -113,7 +113,7 @@ Adds custom content to the original
 
 As of October 27, 2020 `footer_custom.html` is the same as the original
 [Just the Docs `footer_custom.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/footer_custom.html){:target="_blank"} 
-with the addition of the line `<script src="/pcibex/assets/prism/prism.js"></script>`,
+with the addition of the line `<script src="/assets/prism/prism.js"></script>`,
 which is the source code for the
 [Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism){:target="_blank"}.
 
