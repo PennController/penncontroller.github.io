@@ -1,15 +1,13 @@
-{% for command in include.collection %}  
-  {% assign command_tag = command.title | downcase | slugify %}
+<div id="{{ include.id }}">
+{%- for command in include.collection -%}  
+  {% assign command_tag = command.title | slugify %}
   <h2 class="mt-2" id="{{ command_tag }}"> 
-    <a href="#{{ command_tag }}" aria-labelledby="{{ command_tag }}" class="anchor-heading">
-      <svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg>
-    </a>
     {% unless include.deprecated %}
       <a href="{{ site.baseurl}}{{ command.url }}" target="_blank">
     {% endunless %}
-      <code>{{ command.title }}</code>
+    <code>{{ command.title }}</code>
     {% unless include.deprecated %}
-    </a> 
+      </a> 
     {% endunless %}
   </h2> 
 
@@ -17,23 +15,31 @@
     {% include label-deprecated.html since=command.deprecated replacement=command.replacement %}
   {% endif %}
 
-  <div class="mb-6 pt-2">
-    <h4>syntax</h4>
-    <code>{{ command.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+  <div id="{{ command_tag }}-command-blurb" class="mb-6 pt-2">
+    <div id="{{ command_tag }}-syntax">
+      <p class="blurb-subheader">syntax</p>
+      <code>{{ command.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+    </div>
 
-    <h4>description</h4>
-    {{ command.description | markdownify }} 
+    <div id="{{ command_tag }}-description">
+      <p class="blurb-subheader">description</p>
+      <p class="mt-0">{{ command.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+    </div>
 
-    <h4>example</h4>
-    {% if command.notes %}
-      {% assign content = command.content | split: site.excerpt_separator | last %}
-    {% else %}  
-      {% assign content = command.content %}
-    {% endif %}
-    {% include collapsible-block.html content=content summary="click to expand" %}
+    <div id="{{ command_tag }}-example">
+      <p class="blurb-subheader">example</p>
+      {%- if command.notes -%}
+        {%- assign content = command.content | split: site.excerpt_separator | last | markdownify -%}
+      {%- else -%}  
+        {%- assign content = command.content | markdownify -%}
+      {%- endif -%}
+      {%- include collapsible-block.html content=content summary="click to expand" -%}
+    </div>
 
+    
     {%- if command.optional_parameters -%}
-      <h4>optional parameters</h4>
+    <div id="{{ command_tag }}-optional-parameters">
+      <p class="blurb-subheader">optional parameters</p>
       <ul>
         {%- for parameter in command.optional_parameters -%}
           <li>
@@ -41,32 +47,30 @@
           </li>
         {%- endfor -%}
       </ul>
-    {%- endif -%}
-  
-  {%- if command.related -%}
-    <h4>related</h4>
-    <ul>
-      {%- for related in command.related -%}
-        {% assign related_command = site[related.collection] | where: "title", related.command | first %}
-        <li>
-          <a href="{{ related_command.url | prepend: site.baseurl }}" target="_blank">
-            <code>{{ related_command.title }}</code>
-          </a>: {{ related_command.description }}
-        </li>
-        {% endfor %}
-        </ul>
     </div>
-    </details>
-    {% endif %}
+    {%- endif -%}
+    
+    {%- if command.related -%}
+    <div id="{{ command_tag }}-related-commands">
+      <p class="blurb-subheader">related commands</p>
+      <ul>
+        {%- for related in command.related -%}
+          {% assign related_command = site[related.collection] | where: "title", related.command | first %}
+          <li>
+            <a href="{{ related_command.url | prepend: site.baseurl }}" target="_blank">
+              <code>{{ related_command.title }}</code>
+            </a>: {{ related_command.description }}
+          </li>
+          {%- endfor -%}
+      </ul>
+    </div>
+    {%- endif -%}
 
-    <h4>example</h4>
-    {% capture content %}{{ command.content | markdownify }}{% endcapture %}
-    {% include collapsible-block.html content=content summary="click to expand" %}
+    <span class="text-delta" id="back-to-top"><a href="#">↑ back to top</a></span>
   </div>
 
-  <h4><a href="#">↑ back to top</a></h4>
-
-  {% if forloop.last == false %}
+  {%- if forloop.last == false -%}
   <hr>
-  {% endif %}
-{% endfor %}
+  {%- endif -%}
+{%- endfor -%}
+</div>

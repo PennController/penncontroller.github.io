@@ -230,3 +230,13 @@ a.overlay-link:hover{
 .page-title {
   white-space: pre-line;
 }
+
+// command blurb subheading style
+.blurb-subheader {
+  // emulate .text-delta
+  @include fs-2;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
+}
