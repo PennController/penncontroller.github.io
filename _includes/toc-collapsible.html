@@ -1,5 +1,6 @@
 <!-- Expandable / collapsible list of [element/global/special] commands -->
 <details markdown="block">
+<<<<<<< HEAD
 <summary class="text-delta">Click to expand/collapse</summary>
 <ul class="nav-list" id="{{ include.id }}">
   {%- for command in include.collection -%}
@@ -8,3 +9,13 @@
   {%- endfor -%}
 </ul>
 </details>
+=======
+<summary class="text-delta collapsible-block-title">Click to expand/collapse</summary>
+<ul class="nav-list" id="{{ include.id }}">
+  {%- for command in include.collection -%}
+  {% assign command_tag = command.title | downcase | slugify %}
+  <li><a href="{{ site.baseurl }}{{ command.url }}"><code>{{ command.title }}</code></a> </li>
+  {%- endfor -%}
+</ul>
+</details>
+>>>>>>> pcibex/master

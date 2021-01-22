@@ -1,0 +1,12 @@
+{% if include.outer-border %}<div class="dashed-grey-dk-000 px-4 pt-3 mb-4" markdown="1">{% endif %}
+<details markdown="block">
+<summary class="text-delta collapsible-block-title">{{include.summary}}</summary>
+{% if include.inner-border %}
+<div class="dashed-grey-lt-300 collapsible-block-inside" markdown="1">
+{% else %}
+<div class="collapsible-block-inside" markdown="1">
+{% endif %}
+  {{include.content}}
+</div>
+</details>
+{% if include.outer-border %}</div>{% endif %} 

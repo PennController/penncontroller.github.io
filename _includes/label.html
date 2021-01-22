@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 <div class="my-4 px-2 bg-grey-lt-100">
   <div class="mt-4 label label-{{ include.label-color}}">{{ include.label-title }}</div>
   <div class="pl-3 pb-2 fw-300 fs-3"> {{ include.label-body | markdownify }}</div>
+=======
+{% if include.indent %}
+<div class="ml-5 my-4 px-2 bg-grey-lt-100">
+{% else %}
+<div class="my-4 px-2 bg-grey-lt-100">
+{% endif %}
+  <div class="mt-4 label label-{{ include.label-color}}">{{ include.label-title }}</div>
+  <div class="pl-3 pb-2 fw-200"> {{ include.label-body | markdownify }}</div>
+>>>>>>> pcibex/master
 </div>

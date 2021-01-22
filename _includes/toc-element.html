@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <!-- Element command TOC for [layout: element] pages -->
  <div class="float-right py-4 px-4 bg-grey-lt-200" markdown="1">
   <b>Action commands</b>
@@ -16,3 +17,44 @@
   {%- endfor -%}
   </ul>
 </div>
+=======
+<div id="toc-element" class="float-right ml-4 py-4 px-4 bg-grey-lt-300" markdown="1">
+  <div>
+    <b>Action commands</b>
+    <ul class="nav-list">
+    {%- for command in include.element-action -%}
+      {% assign command_tag = command.title | downcase | slugify %}
+      <li><a href="#{{ command_tag }}"><code>{{ command.title }}</code></a></li>
+    {%- endfor -%}
+    {%- if include.standard-action.size > 0 -%}
+      </ul>
+      <hr class="mt-2 mb-2 bg-grey-dk-000">
+      <ul class="nav-list">
+    {%- endif -%}
+    {%- for command in include.standard-action -%}
+      {% assign command_tag = command.title | downcase | slugify %}
+      <li><a href="#{{ command_tag }}"><code>{{ command.title }}</code></a></li>
+    {%- endfor -%}
+    </ul>
+  </div>
+
+  <div class="mt-4">
+    <b>Test commands</b>
+    <ul class="nav-list">
+    {%- for command in include.element-test -%}
+      {% assign command_tag = command.title | downcase | slugify %}
+      <li><a href="#{{ command_tag }}"><code>{{ command.title }}</code></a></li>
+    {%- endfor -%}
+    {%- if include.element-test.size > 0 and include.standard-test.size > 0 -%}
+      </ul>
+      <hr class="mt-2 mb-2 bg-grey-dk-000"> 
+      <ul class="nav-list">
+    {%- endif -%}
+    {%- for command in include.standard-test -%}
+      {% assign command_tag = command.title | downcase | slugify %}
+      <li><a href="#{{ command_tag }}"><code>{{ command.title }}</code></a></li>
+    {%- endfor -%}
+    </ul>
+  </div>
+</div>
+>>>>>>> pcibex/master

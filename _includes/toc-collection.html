@@ -1,0 +1,22 @@
+<h2 class="text-delta">Table of contents</h2>
+{% if include.ordered %}
+  <ol>
+{% else %}
+  <ul>
+{% endif %}    
+{% for child in include.collection -%}
+  {% unless child.nav_exclude %}
+    <li>
+      {% if include.code-font %}<code>{% endif %}
+      <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">
+        {{ child.title }}
+      </a>
+      {% if include.code-font%}</code>{%endif%}
+    </li>
+  {% endunless %}
+{% endfor %}
+{% if include.ordered %}
+  </ol>
+{% else %}
+  </ul>
+{% endif %}  

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 layout: element
 title: EyeTracker element
 parent: Elements
@@ -12,3 +13,24 @@ description: Lorem *ipsum* dolor sit amet, consectetur adipiscing elit, sed do e
 ```javascript
 // example
 ```
+=======
+title: EyeTracker
+since: PennController 1.8
+element_type: eyetracker
+thumbnail: eyetracker.png
+parameters:
+  - name: OUT_OF
+    optional: true
+    description: To be filled in.
+  - name: LOOKED_AT
+    optional: true
+    description: To be filled in.
+description: Creates an eye-tracking data collector.
+---
+
+```javascript
+// To be filled in
+```
+
+
+>>>>>>> pcibex/master

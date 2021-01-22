@@ -1,81 +1,368 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: PCIbex Documentation
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+  PCIbex documentation
+baseurl: ""
+url: "" 
+excerpt_separator: <!--more-->
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
+# theme: just-the-docs
 logo: "/assets/images/pcibex-logo.png"
+# Aux links for the upper right navigation
 aux_links:
   "Go to the PCIbex Farm":
     - "https://expt.pcibex.net/"
+# Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: true
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
-# disable the Rouge syntax highlighter
+# Announcements
+paginate: 10
+paginate_path: "/announcements/page/:num/"
+
+# Disable Rouge syntax highlighter
 markdown: kramdown
 kramdown:
    syntax_highlighter_opts:
       disable : true
 
+# Footer: appears at the bottom of every page's main content
+footer_content: "<b>Contact us</b>&#58; <a href=\"mailto&#58; admin@pcibex.net\">admin@pcibex.net</a>"
+
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+
 # Collections
 collections_dir: reference
 collections:
-  core-concepts:
+  author:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /:collection/:name/
+  deprecated:
+    output: true
+    permalink: /:collection/:name/
   elements:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /:collection/:name/
   global-commands:
     output: true
-    permalink: /docs/:collection/:name/
-  special-commands:
-    output: true
-    permalink: /docs/:collection/:name/
-  action-commands:
-    output: true
-    permalink: /docs/:collection/:name/
-  test-commands:
-    output: true
-    permalink: /docs/:collection/:name/
+    permalink: /commands/:collection/:name/
   how-to-guides:
     output: true
     permalink: /docs/:collection/:name/
+  posts:
+    output: true
+    permalink: /announcements/:name/
+  special-commands:
+    output: true
+    permalink: /commands/:collection/:name/
+  standard-element-commands:
+    output: true
+    permalink: /commands/:collection/:name/
+  tag:
+    output: true
+    permalink: /:collection/:name/
+  audio:
+    output: true
+    permalink: /elements/:collection/:name/
+  button:
+    output: true
+    permalink: /elements/:collection/:name/
+  canvas:
+    output: true
+    permalink: /elements/:collection/:name/
+  controller:
+    output: true
+    permalink: /elements/:collection/:name/
+  dropdown:
+    output: true
+    permalink: /elements/:collection/:name/
+  eyetracker:
+    output: true
+    permalink: /elements/:collection/:name/
+  function:
+    output: true
+    permalink: /elements/:collection/:name/
+  html:
+    output: true
+    permalink: /elements/:collection/:name/
+  image:
+    output: true
+    permalink: /elements/:collection/:name/
+  key:
+    output: true
+    permalink: /elements/:collection/:name/
+  mediarecorder:
+    output: true
+    permalink: /elements/:collection/:name/
+  mousetracker:
+    output: true
+    permalink: /elements/:collection/:name/
+  scale:
+    output: true
+    permalink: /elements/:collection/:name/
+  selector:
+    output: true
+    permalink: /elements/:collection/:name/
+  text:
+    output: true
+    permalink: /elements/:collection/:name/
+  textinput:
+    output: true
+    permalink: /elements/:collection/:name/
+  timer:
+    output: true
+    permalink: /elements/:collection/:name/
+  tooltip:
+    output: true
+    permalink: /elements/:collection/:name/
+  var:
+    output: true
+    permalink: /elements/:collection/:name/
+  video:
+    output: true
+    permalink: /elements/:collection/:name/           
+  youtube:
+    output: true
+    permalink: /elements/:collection/:name/
 
-
+# Front matter defaults
+defaults:
+  - scope:
+      path: "advanced-tutorial"
+    values:
+      layout: "bottom-navbar-child"
+      parent: "Advanced Tutorial"
+      numbered_headings: true
+  - scope:
+      path: "basic-tutorial"
+    values:
+      layout: "bottom-navbar-child"
+      parent: "Basic Tutorial"
+      numbered_headings: true
+  - scope:
+      path: "core-concepts"
+    values:
+      layout: "bottom-navbar-child"
+      parent: "Core Concepts"
+      numbered_headings: true
+  - scope:
+      path: "deprecated"
+    values:
+      layout: "default"
+      parent: "⚠ Deprecated features"
+      exclude_permalink: true
+      has_children: true
+      has_toc: false
+      children_collection: deprecated
+      children_code_font: true
+  - scope:
+      path: "reference/_author"
+    values:
+      layout: "tag"
+      nav_exclude: true
+      tag: false
+  - scope:
+      path: "reference/_elements"
+    values:
+      layout: "element"
+      parent: "Elements"
+      has_children: true
+      has_toc: false
+      children_code_font: true
+  - scope:
+      path: "reference/_deprecated"
+    values:
+      layout: "command"
+      grand_parent: "⚠ Deprecated features"    
+  - scope:
+      path: "reference/_how-to-guides"
+    values:
+      layout: "how-to-guide"
+      parent: "How-to guides"
+  - scope:
+      path: "reference/_global-commands"
+    values:
+      layout: "command"
+      command_type: "global"
+      parent: "Global commands"
+      grand_parent: "Commands"
+  - scope:
+      path: "reference/_posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "reference/_special-commands"
+    values:
+      layout: "command"
+      command_type: "special"
+      parent: "Special commands"
+      grand_parent: "Commands"
+  - scope:
+      path: "reference/_standard-element-commands"
+    values:
+      layout: "command"
+      parent: "Standard element commands"
+      grand_parent: "Commands"
+  - scope:
+      path: "reference/_tag"
+    values:
+      layout: "tag"
+      nav_exclude: true
+  - scope:
+      path: "reference/_audio"
+    values:
+      layout: "command"
+      element_type: "audio"
+      parent: "Audio"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_button"
+    values:
+      layout: "command"
+      element_type: "button"
+      parent: "Button"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_canvas"
+    values:
+      layout: "command"
+      element_type: "canvas"
+      parent: "Canvas"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_controller"
+    values:
+      layout: "command"
+      element_type: "controller"
+      parent: "Controller"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_dropdown"
+    values:
+      layout: "command"
+      element_type: "dropdown"
+      parent: "DropDown"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_eyetracker"
+    values:
+      layout: "command"
+      element_type: "eyetracker"
+      parent: "EyeTracker"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_function"
+    values:
+      layout: "command"
+      element_type: "function"
+      parent: "Function"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_html"
+    values:
+      layout: "command"
+      element_type: "html"
+      parent: "Html"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_image"
+    values:
+      layout: "command"
+      element_type: "image"
+      parent: "Image"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_key"
+    values:
+      layout: "command"
+      element_type: "key"
+      parent: "Key"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_mediarecorder"
+    values:
+      layout: "command"
+      element_type: "mediarecorder"
+      parent: "MediaRecorder"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_mousetracker"
+    values:
+      layout: "command"
+      element_type: "mousetracker"
+      parent: "MouseTracker"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_scale"
+    values:
+      layout: "command"
+      element_type: "scale"
+      parent: "Scale"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_selector"
+    values:
+      layout: "command"
+      element_type: "selector"
+      parent: "Selector"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_text"
+    values:
+      layout: "command"
+      element_type: "text"
+      parent: "Text"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_textinput"
+    values:
+      layout: "command"
+      element_type: "textinput"
+      parent: "TextInput"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_timer"
+    values:
+      layout: "command"
+      element_type: "timer"
+      parent: "Timer"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_tooltip"
+    values:
+      layout: "command"
+      element_type: "tooltip"
+      parent: "Tooltip"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_var"
+    values:
+      layout: "command"
+      element_type: "var"
+      parent: "Var"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_video"
+    values:
+      layout: "command"
+      element_type: "video"
+      parent: "Video"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_youtube"
+    values:
+      layout: "command"
+      element_type: "youtube"
+      parent: "Youtube"
+      grand_parent: "Elements"
+      
 # Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
 exclude:
   - .sass-cache/
   - .jekyll-cache/

@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% assign first_child = site.html_pages | where: "parent", page.title | where: "nav_order", "1" | first %}
+
+{% include bottom-navbar.html previous=false next=first_child current=page.title %}

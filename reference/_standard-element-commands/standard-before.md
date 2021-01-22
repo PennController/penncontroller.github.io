@@ -1,0 +1,34 @@
+---
+title: standard.before
+command_type: action
+element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
+syntax: getX("*ELEMENT_NAME*").before(getX("*ARGUMENT_NAME*"))
+description: Takes an element as an argument, and adds that element's content to the left of the element that the command is called on.
+related:
+  - name: standard.after
+    collection: standard-element-commands
+---
+
+<pre><code class="language-diff-javascript diff-highlight">
+@// Option 1: Pass a new element as an argument
+@newTrial("option-1",
+@    newText("center", "BANANA")
+$        .before(newText("left", "apple"))
+@        .after(newText("right", "orange"))
+@        .print()
+@)
+@
+@// Option 2: Pass an existing element as an argument
+@newTrial("option-2",
+@    newText("left", "apple")
+@    ,
+@    newText("right", "orange")
+@    ,
+@    newText("center", "BANANA")
+$        .before(getText("left"))
+@        .after(getText("right"))
+@        .print()
+@)
+</code></pre>
+
+↳ Prints `appleBANANAorange` to the screen.

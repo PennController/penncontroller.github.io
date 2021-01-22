@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 layout: default
 title: Upload files through GitHub
 parent: How-to guides
@@ -7,6 +8,13 @@ parent: How-to guides
 # Uploading files through GitHub
 
 You can upload an entire GitHub repository to the PCIbex Farm. This is particularly useful if you would like to upload multiple files to the **Resources** folder, and do not want to upload each file one-by-one.
+=======
+title: Syncing with a GitHub repository
+nav_exclude: true
+---
+
+You can import an entire GitHub repository to the PCIbex Farm. This is particularly useful if you would like to upload multiple files to an experiment project page's **Resources** folder, and do not want to upload each file one-by-one.
+>>>>>>> pcibex/master
 
 The GitHub repository must have one or more of the following folders in the root directory:
 
@@ -27,6 +35,10 @@ github-repository
 └── js_includes
     └── newController.js
 ```
+<<<<<<< HEAD
+=======
+
+>>>>>>> pcibex/master
 Before uploading a GitHub repository, you should know that:
 
 - No Git repository is hosted on the PCIbex Farm server. The specified repository is checked out, and its files are uploaded to your experiment. 

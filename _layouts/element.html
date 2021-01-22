@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<<<<<<< HEAD
 <!-- VARIABLE ASSIGNMENT -->
 {% assign element-type = page.title | split: " " | first | downcase %}
 {% assign action-commands = site.action-commands | where_exp:"page", "page.title contains element-type" %}
@@ -37,3 +38,98 @@ layout: default
 <!-- Test command blurbs -->
 <h2 id="test-commands"> Test commands </h2>
 {% include command-blurbs.html collection=test-commands %}
+=======
+{% if page.deprecated %}
+  {% assign element-action = site.deprecated | where: "command_type", "action" | where: "parent", page.title %}
+  {% assign element-test = site.deprecated | where: "command_type", "test" | where: "parent", page.title %}
+{% else %}
+  {% assign element-action = site[page.element_type] | where: "command_type", "action" %}
+  {% assign element-test = site[page.element_type] | where: "command_type", "test" %}
+{% endif %}
+
+{% assign standard-action = site.standard-element-commands | where: "command_type", "action" | where_exp: "command", "command.element_type contains page.element_type" %}
+{% assign standard-test = site.standard-element-commands | where: "command_type", "test" | where_exp: "command", "command.element_type contains page.element_type" %}
+
+{% if page.deprecated %}
+  {% include label-deprecated.html since=page.deprecated replacement=page.replacement %}
+{% endif %}
+
+<h1 id="{{page.title}}"><code>{{ page.title }}</code> element</h1>
+
+<div id="element-description" style="display: flow-root;" markdown="1">
+  {% if page.element_type == "standard" %}
+    {% include toc-element.html element-action=element-action element-test=element-test %}
+  {% else %}
+    {% include toc-element.html element-action=element-action element-test=element-test standard-action=standard-action standard-test=standard-test %}
+  {% endif %}
+
+  <h4 id="since">since</h4>
+  {{ page.since }} 
+
+  <h4 id="description">description</h4>
+  {{ page.description | markdownify }} 
+
+  <h4 id="syntax">syntax</h4>
+  <code>
+    new{{- page.title -}}("<var>ELEMENT_NAME</var>"
+    {%- for parameter in page.parameters -%}
+      , {%- if parameter.optional -%}[{%- endif -%}<var>{{ parameter.name -}}</var>{%- if parameter.optional -%}]{%- endif -%}
+    {%- endfor -%}
+    )
+  </code>
+  <ul>
+    <li>
+      <code>"<var>ELEMENT_NAME</var>"</code>: The name of the newly-created element.
+    </li>
+    {%- for parameter in page.parameters -%}
+      <li>
+        <code>{%- if parameter.optional -%}[{%- endif -%}<var>
+          {{- parameter.name -}}
+        </var>{%- if parameter.optional -%}]{%- endif -%}</code>
+        {% if parameter.optional %} (optional){% endif %}: {{ parameter.description | markdownify | remove: '<p>' | remove: '</p>' }}
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  {% if page.notes %}
+    <h4 id="notes">note(s)</h4>
+    {{ page.excerpt }}
+  {% endif %}
+
+{% unless page.no_example %}
+  <hr>
+  <h4 id="example">example</h4>
+  {% if page.notes %}
+    {{ page.content | remove: page.excerpt }}
+  {% else %}
+    {{ page.content }}
+  {% endif %}
+{% endunless %}
+</div>
+
+<hr>
+
+<h2 id="action-commands">Action commands</h2>
+{%- if page.deprecated -%}
+  {%- include command-blurbs.html collection=element-action deprecated=true id="deprecated-action-command-blurbs" -%}
+{% else %}
+  {%- include command-blurbs.html collection=element-action id="element-action-command-blurbs" -%}
+  {%- unless page.element_type == "standard" -%}
+    <hr>
+    {%- include command-blurbs.html collection=standard-action id="standard-action-command-blurbs" -%}
+  {%- endunless -%}
+{%- endif -%}
+
+<hr>
+
+<h2 id="test-commands">Test commands</h2>
+{%- if page.deprecated -%}
+  {%- include command-blurbs.html collection=element-test deprecated=true id="deprecated-test-command-blurbs" -%}
+{%- else -%}  
+  {%- include command-blurbs.html collection=element-test id="element-test-command-blurbs" -%}
+  {%- unless page.element_type == "standard" -%}
+    <hr>
+    {%- include command-blurbs.html collection=standard-test id="standard-test-command-blurbs" -%}
+  {%- endunless -%}
+{%- endif -%}
+>>>>>>> pcibex/master

@@ -4,47 +4,58 @@ title: Home
 nav_order: 1
 ---
 
-# What is PCIbex?
+# PennController for Internet Based Experiments
 
-**PCIbex** ("PennController for Ibex"), or PennController, is a free, open-source, versatile, and user-friendly online experiment builder. It provides tools to implement familiar paradigms like self-paced reading or rating studies, and has the flexibility to create custom experimental paradigms. PCIbex is developed by [Jeremy Zehr](https://sites.google.com/site/jeremyezehr/home) within a project in [Florian Schwarz](https://www.florianschwarz.net/)’s [lab](http://lab.florianschwarz.net/). 
+A free, open-source, versatile, and user-friendly online experiment builder.
+{: .h1-blurb }
 
-PCIbex is an extension of [Ibex](https://github.com/addrummond/ibex/blob/master/docs/manual.md) ("Internet Based EXperiments"), a JavaScript-based platform developed by [Alex Drummond](https://adrummond.net/). PCIbex uses a stream-lined code interface and requires no background in JavaScript. Experiment templates can be directly imported from GitHub, making it easy to share and post experiments.
+<div class="desktop-only flex-row-wrap mt-4">
+  <div>
+    <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" class="btn btn-purple" target="_blank">TRY A DEMO</a>
+  </div>
+  <div>
+    <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
+  </div>
+  <div>
+    <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+  </div>
+</div>
 
-here's a demo experiment ([timed picture selection](https://expt.pcibex.net/ibexexps/example/TimedPictureSelection/experiment.html))
-
----
-
-## Browser information
-
-*Note: Update this section with compatibility for PennController 1.8*
-
-PennController 1.2 is compatible with:
-
-+  [Firefox](https://www.mozilla.org/en-US/firefox/new/) (desktop)
-+  [Chrome](https://www.google.com/chrome/) (desktop)
-+  [Safari](https://www.apple.com/safari/) (desktop)
-
-PennController 1.2 is not compatible with:
-
-+  Internet Explorer 
-+ Edge
-
----
-
-## The PCIbex Farm
-
-The [PCIbex Farm](https://expt.pcibex.net/) provides free hosting for PennController experiments. 
-
-You can create and host experiments on the PCIbex Farm by creating an account:
-
-1. Go to the [PCIbex Farm account creation page](https://expt.pcibex.net/login).
-2. In the "New user" box, enter the following information:
-   + In the "Username" field, enter the username that you want for your account.
-   + In the "Password" field, enter the password that you want for your account.
-   + In the "Verify password field", re-enter the password that you used in the "Password" field.
-   + (*Optional*) In the "Email" field, enter the email that you want to link your acccount to. PCIbex Farm does not share your email, and only sends emails for password retrieval purposes.
-3. Click **Create account**.
+<div class="mobile-only flex-column-wrap">
+  <div class="centered-100 py-2">
+    <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" class="btn btn-purple" target="_blank">TRY IT!</a>
+  </div>
+  <div class="centered-100 py-2">
+    <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
+  </div>
+  <div class="centered-100 py-2">
+    <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+  </div>
+</div>
 
 ---
 
-Hello from github
+## About
+
+**PennController for Internet Based Experiments** ("PennController" or "PCIbex"
+for short) provides the tools to build and run online experiments, from familiar
+paradigms like self-paced reading to completely custom-designed paradigms.
+Experiments can be uploaded to or imported from GitHub, making it easy to
+collaborate and share experiments.
+
+PennController was developed and is maintained by
+[Jeremy Zehr](https://sites.google.com/site/jeremyezehr/home){:target="_blank"}
+and [Florian Schwarz](https://www.florianschwarz.net/){:target="_blank"}
+as an extension of
+[Ibex](https://github.com/addrummond/ibex/blob/master/docs/manual.md){:target="_blank"},
+a JavaScript-based experiment platform by [Alex Drummond](https://adrummond.net/){:target="_blank"}.
+PennController uses a streamlined code interface and requires no background in JavaScript.
+
+PennController is under a BSD license, and its source code is
+[available on GitHub](https://github.com/PennController/penncontroller){:target="_blank"}.
+Its development was partly funded through a University Research Foundation
+Research Grant from the [University of Pennsylvania](https://www.upenn.edu/){:target="_blank"}
+and is currently supported by the
+[ILST initiative at MindCORE](https://web.sas.upenn.edu/langscience/){:target="_blank"}.
+
+This website was built by [Angelica Pan](https://angelica-pan.com){:target="_blank"}.

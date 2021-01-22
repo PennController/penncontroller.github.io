@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 layout: element
 title: HTML element
 parent: Elements
@@ -12,3 +13,20 @@ description: Lorem *ipsum* dolor sit amet, consectetur adipiscing elit, sed do e
 ```javascript
 // example
 ```
+=======
+title: Html
+since: beta 0.3
+element_type: html
+thumbnail: html.png
+parameters:
+  - name: "HTML_FILE_NAME.HTML"
+    description: The name of the HTML document.
+description: Represents an HTML document.
+---
+
+```javascript
+// To be filled in
+```
+
+
+>>>>>>> pcibex/master

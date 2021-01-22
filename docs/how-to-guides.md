@@ -1,14 +1,17 @@
 ---
 layout: default
 title: How-to guides
-has_children: true
 has_toc: false
-children_are_in_collection: true
+has_children: true
+children_collection: how-to-guides
+nav_order: 8
 ---
 
 # {{ page.title }}
 
+{{ page.blurb }}
+{:. h1-blurb }
+
 ---
 
-<!-- TOC -->
-{% include toc-different-page.html collection=site.how-to-guides ordered=false %}
+{% include toc-collection.html collection=site.how-to-guides %}

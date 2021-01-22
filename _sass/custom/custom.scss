@@ -1,3 +1,4 @@
+// _includes/instructions.html
 .tutorial-instruction {
   border: 1px dashed $grey-dk-000;
   margin-top: $sp-4;
@@ -6,6 +7,236 @@
   padding-right: $sp-2;
 }
 
-.border-grey-dk-000 {
+// _includes/collapsible-block.html
+.collapsible-block-title{
+  padding-top: $sp-1;
+  padding-bottom: $sp-1;
+  padding-left: $sp-2;
+  padding-right: $sp-2;
+  margin-top: $sp-1;
+  margin-bottom: $sp-4;
+  background-color: $grey-lt-000;
+  border-radius: $border-radius;
+}
+
+.collapsible-block-inside {
+  padding-top: $sp-1;
+  padding-bottom: 0;
+  padding-left: $sp-3;
+  padding-right: $sp-3;
+  margin-bottom: $sp-4;
+}
+
+// _includes/toc-command.html
+.command-table {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 100%;
+  border: 0.5px solid $grey-lt-100;
+  margin-top: $sp-2;
+  margin-bottom: $sp-6;
+}
+
+.command-table div {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-left: $sp-2;
+  padding-right: $sp-2;
+  height: 50px;
+  width: calc(100% / 3);
+  border: 0.5px solid $grey-lt-100;
+}
+
+.command-table .command-table-title {
+  width: 100%;
+  background-color: $grey-lt-200;
+}
+
+// element thumbnail display
+a.overlay-link:hover{
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: rgba($link-color, 0.2);
+}
+
+.overlay {
+  padding-top: $sp-4;
+  position: relative;
+}
+
+.overlay:hover .image {
+  opacity: 0.4;
+}
+
+.element-title {
+  padding-left: $sp-1;
+  padding-right: $sp-1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: no-wrap;
+}
+
+.element-description {
+  margin-top: $sp-3;
+  white-space: pre-wrap;
+}
+
+// blurb styling
+.h1-blurb {
+  font-size: $font-size-6;
+  font-weight: 300;
+}
+
+// flex container classes
+.flex-row-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-column-wrap {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-around;
+}
+
+.centered-third {
+  text-align: center; 
+  width: calc(100% / 3);
+}
+
+.centered-eighth {
+  text-align: center; 
+  width: 12.5%;
+  height: 12.5%;
+}
+
+.centered-25 {
+  text-align: center; 
+  width: 25%;
+  height: 25%;
+}
+
+.centered-50 {
+  text-align: center; 
+  width: 50%;
+  height: 50%;
+}
+
+.centered-100 {
+  text-align: center; 
+  width: 100%;
+  height: 100%;
+}
+
+.left-100 {
+  width: 100%;
+  height: 100%;
+}
+
+// custom border styles
+.dotted-grey-dk-000 {
   border: 1px dotted $grey-dk-000;
+}
+
+.dashed-grey-dk-000 {
+  border: 1px dashed $grey-dk-000;
+}
+
+.dashed-grey-lt-300 {
+  border: 1px dashed $grey-lt-300;
+}
+
+// modify spacing of tables
+.table-wrapper {
+  white-space: pre;
+  padding-top: $sp-1;
+  padding-left: $sp-1;
+  padding-right: $sp-1;
+  padding-bottom: $sp-1;
+  border: 1px solid $grey-lt-300;
+  box-shadow: none;
+}
+
+// custom label
+.label-grey-lt-200 {
+  background-color: $grey-lt-200;
+  color: black;
+}
+
+// desktop-only and mobile-only content
+.desktop-only {display: flex;}
+.mobile-only {display: none;}
+
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px){ 
+    .desktop-only {display: none;}
+    .mobile-only {display: flex;}
+}
+
+// under construction header
+.construction {
+  padding-left: $sp-8;
+  padding-right: $sp-8;
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  background-color: $grey-lt-100;
+  text-align: center;
+  position: -webkit-sticky; 
+  position: sticky; 
+  top:0;
+  z-index: 4;
+}
+
+// bottom navbar
+.bottom-navbar {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: $sp-6;
+  background-color: $grey-lt-200;
+}
+
+.previous-page {
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  padding-left: $sp-6;
+  padding-right: $sp-2;
+  text-align: left;
+  width: calc(100% / 3);
+}
+
+.next-page {
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  padding-left: $sp-2;
+  padding-right: $sp-6;
+  text-align: right;
+  width: calc(100% / 3);
+}
+
+.back-to-top {
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  text-align: center;
+  width: calc(100% / 3);
+}
+
+.page-title {
+  white-space: pre-line;
+}
+
+// command blurb subheading style
+.blurb-subheader {
+  // emulate .text-delta
+  @include fs-2;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
 }

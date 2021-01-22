@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 layout: element
 title: Function element
 parent: Elements
@@ -12,3 +13,20 @@ description: Lorem *ipsum* dolor sit amet, consectetur adipiscing elit, sed do e
 ```javascript
 // example
 ```
+=======
+title: Function
+since: beta 0.3
+element_type: function
+thumbnail: function.png
+parameters:
+  - name: FUNCTION
+    description: A JavaScript function.
+description: Embeds a JavaScript function.
+---
+
+```javascript
+// To be filled in
+```
+
+
+>>>>>>> pcibex/master
