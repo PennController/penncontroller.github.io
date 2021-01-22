@@ -1,22 +1,9 @@
 ---
-<<<<<<< HEAD
-layout: command
-title: end
-parent: Special commands
-grand_parent: Commands
-syntax: end()
-blurb: Ends a trial immediately.
----
-
-## Example
-
-=======
 title: end
 syntax: end()
 description: Ends a trial immediately.
 ---
 
->>>>>>> pcibex/master
 ```javascript
 PennController.ResetPrefix(null);
 
@@ -40,14 +27,7 @@ newTrial(
 )
 ```
 
-<<<<<<< HEAD
-> 1. Prints the `"instructions"` **Text** element to the screen.
-> 2. Creates the `"fj"` **Key** element and waits for the `F` or `J` key to be pressed.
->    + If `F` was pressed, end the trial immediately.
->    + Otherwise, print the `"continue"` **Text** element and wait for the `Spacebar` key to be pressed.
-=======
 1. Prints the `"instructions"` `Text` element to the screen.
 2. Creates the `"fj"` `Key` element and waits for the `F` or `J` key to be pressed.
   + If `F` was pressed, end the trial immediately.
   + Otherwise, print the `"continue"` `Text` element and wait for the `Spacebar` key to be pressed.
->>>>>>> pcibex/master

@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-<!-- Prints blurbs for [element/global/special] commands -->
-{% for command in include.collection %}
-  {% assign command_tag = command.title | downcase | slugify %}
-  <h2 id="{{ command_tag }}"> 
-    <a href="#{{ command_tag }}" aria-labelledby="{{ command_tag }}" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>
-    <a href="{{ site.baseurl}}{{ command.url }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a> 
-  </h2> 
-
-  <p class="text-delta mt-4">DESCRIPTION</p>
-  {{ command.blurb | | markdownify }}
-
-  {{ command.content | replace: "h2", "h4" | markdownify }}
-
-  <h4><a href="#">Back to top</a></h4>
-
-  <hr>
-{% endfor %}
-=======
 <div id="{{ include.id }}">
 {%- for command in include.collection -%}  
   {% assign command_tag = command.title | slugify %}
@@ -93,4 +74,3 @@
   {%- endif -%}
 {%- endfor -%}
 </div>
->>>>>>> pcibex/master

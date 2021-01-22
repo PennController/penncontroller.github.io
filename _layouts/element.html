@@ -2,43 +2,6 @@
 layout: default
 ---
 
-<<<<<<< HEAD
-<!-- VARIABLE ASSIGNMENT -->
-{% assign element-type = page.title | split: " " | first | downcase %}
-{% assign action-commands = site.action-commands | where_exp:"page", "page.title contains element-type" %}
-{% assign test-commands = site.test-commands | where_exp:"page", "page.title contains element-type" %}
-
-<!-- LAYOUT -->
-<h1> <b> {{ page.title }} </b></h1>
-
-<!-- Element creation, description, and command TOC -->
-<div style="display: flow-root;" markdown="1">
-  {% include toc-element.html actionCommands=action-commands testCommands=test-commands %}
-
-  <b>Creation: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
-    
-  {{ page.blurb | markdownify  }}
-
-  {{ page.extended_description | markdownify }}
-</div>
-
-<hr>
-
-<!-- Rest of element content -->
-{{ content }}
-
-<hr>
-
-<!-- Action command blurbs -->
-<h2 id="action-commands"> Action commands </h2>
-{% include command-blurbs.html collection=action-commands %}
-
-<hr>
-
-<!-- Test command blurbs -->
-<h2 id="test-commands"> Test commands </h2>
-{% include command-blurbs.html collection=test-commands %}
-=======
 {% if page.deprecated %}
   {% assign element-action = site.deprecated | where: "command_type", "action" | where: "parent", page.title %}
   {% assign element-test = site.deprecated | where: "command_type", "test" | where: "parent", page.title %}
@@ -132,4 +95,3 @@ layout: default
     {%- include command-blurbs.html collection=standard-test id="standard-test-command-blurbs" -%}
   {%- endunless -%}
 {%- endif -%}
->>>>>>> pcibex/master

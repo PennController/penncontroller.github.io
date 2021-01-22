@@ -2,16 +2,6 @@
 layout: default
 ---
 
-<<<<<<< HEAD
-<h1> <b> {{ page.title }} </b></h1>
-
-<b>Syntax: </b><pre class="d-inline"><code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code></pre>
-
-{{ page.blurb | markdownify }}
-
-{% if page.extended_description %}
-{{ page.extended_description }}
-=======
 {% if page.deprecated %}
   {% include label-deprecated.html since=page.deprecated replacement=page.replacement %}
 {% endif %}
@@ -118,13 +108,9 @@ layout: default
     </li>
   {% endfor %}  
   </ul>
->>>>>>> pcibex/master
 {% endif %}
 
 <hr>
 
-<<<<<<< HEAD
-=======
 {%- include heading-link.html header="example" h4=true -%}
->>>>>>> pcibex/master
 {{ content }}

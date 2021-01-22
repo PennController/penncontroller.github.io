@@ -1,23 +1,3 @@
-<<<<<<< HEAD
- <!-- Element command TOC for [layout: element] pages -->
- <div class="float-right py-4 px-4 bg-grey-lt-200" markdown="1">
-  <b>Action commands</b>
-  <ul class="nav-list">
-  {%- for command in include.actionCommands -%}
-  {% assign command_tag = command.title | downcase | slugify %}
-  <li><a href="#{{ command_tag }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a></li>
-  {%- endfor -%}
-  </ul>
-
-  <b>Test commands</b>
-  <ul class="nav-list">
-  {%- for command in include.testCommands -%}
-  {% assign command_tag = command.title | downcase | slugify %}
-  <li><a href="#{{ command_tag }}"><code class="language-plaintext highlighter-rouge">{{ command.title }}</code></a></li>
-  {%- endfor -%}
-  </ul>
-</div>
-=======
 <div id="toc-element" class="float-right ml-4 py-4 px-4 bg-grey-lt-300" markdown="1">
   <div>
     <b>Action commands</b>
@@ -57,4 +37,3 @@
     </ul>
   </div>
 </div>
->>>>>>> pcibex/master

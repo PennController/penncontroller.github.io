@@ -1,22 +1,9 @@
 ---
-<<<<<<< HEAD
-layout: command
-title: PennController.AddTable
-parent: Global commands
-grand_parent: Commands
-syntax: PennController.AddTable("id", csv_string)
-blurb: Defines a table to use with `PennController.Template`. As of PennController beta 0.4, you can directly upload a CSV file to the **Resources** or **chunk_includes** folders.
----
-
-## Example
-
-=======
 title: AddTable
 syntax: AddTable("id", csv_string)
 description: Defines a table to use with `PennController.Template`. As of PennController beta 0.4, you can directly upload a CSV file to the **Resources** or **chunk_includes** folders.
 ---
 
->>>>>>> pcibex/master
 ```javascript
 AddTable( "myTable",             // Name of the table
     "Type,Sentence\n"+           // Column names (mind the \n)
