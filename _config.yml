@@ -7,8 +7,8 @@ url: "https://doc.pcibex.net"
 excerpt_separator: <!--more-->
 
 # Build settings
-remote_theme: pmarsceill/just-the-docs
-# theme: just-the-docs
+# remote_theme: pmarsceill/just-the-docs
+theme: just-the-docs
 logo: "/assets/images/pcibex-logo.png"
 # Aux links for the upper right navigation
 aux_links:
@@ -19,6 +19,7 @@ aux_links_new_tab: true
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-include-cache
 
 # Announcements
 paginate: 10
