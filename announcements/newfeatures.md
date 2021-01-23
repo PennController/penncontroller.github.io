@@ -29,29 +29,25 @@
 
     Press "download a zip archive" in order to save the copy of the experiment to your computer.
     
-    <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new3.png" alt="{{ child.title }}" width="100" height="100" class="image">
+    <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new3.png" alt="{{ child.title }}" class="image">
    
    - STEP 2
    Start a project from the Empty Project on the new farm.
    
-   <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new2.png" alt="{{ child.title }}" width="100" height="100" class="image">
+   <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new2.png" alt="{{ child.title }}" w class="image">
 
   - STEP 3
   Drag and drop project files from your computer to the following section in the code editor on the farm:
  
-   <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new3.png" alt="{{ child.title }}" width="100" height="100" class="image">
+   <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new3.png" alt="{{ child.title }}"  class="image">
 
   - STEP 4
   Rename your project file!
   
-     <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new4.png" alt="{{ child.title }}" width="100" height="100" class="image">
+     <img src="https://github.com/PennController/penncontroller.github.io/blob/master/assets/images/new4.png" alt="{{ child.title }}" class="image">
 
   You are all set!
 
-
-
- 
-   
 
 
 
