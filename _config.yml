@@ -162,6 +162,17 @@ defaults:
       children_collection: deprecated
       children_code_font: true
   - scope:
+      path: "docs"
+    values:
+      layout: "default"
+      has_children: true
+      has_toc: false
+  - scope:
+      path: "support"
+    values:
+      layout: "default"
+      parent: "Support"
+  - scope:
       path: "reference/_author"
     values:
       layout: "tag"

@@ -2,8 +2,6 @@
 layout: bottom-navbar-parent
 title: Core Concepts
 permalink: /core-concepts/
-has_children: true
-has_toc: false
 nav_order: 3
 ---
 

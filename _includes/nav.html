@@ -99,6 +99,14 @@
                 </a>
               {%- elsif child.exclude_permalink -%}
                   <span class="nav-list-link text-purple-000">{{ child.title }}</span>
+              {%- elsif child.redirect_internal -%}
+                <a href="{{ child.redirect_internal | absolute_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">
+                  {{ child.title }}
+                </a>              
+              {%- elsif child.redirect_external-%}
+                <a href="{{ child.redirect_external }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}" target="_blank">
+                  {{ child.title }}
+                </a>
               {%- else -%}
                 <a href="{{ child.url | absolute_url }}" class="nav-list-link{% if page.url == child.url %} active{% endif %}">
                   {%- if node.children_code_font -%}<code class="fs-2">{%- endif -%}

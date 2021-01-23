@@ -1,7 +1,7 @@
 ---
-layout: default
 title: Support
-redirect_external: https://www.pcibex.net/forums/
-nav_order: 10
+permalink: /support/
+nav_order: 8
 ---
 
+# {{ page.title }}

@@ -1,7 +1,6 @@
 ---
-layout: default
 title: FAQs
-nav_order: 9
+nav_order: 1
 ---
 
 # {{ page.title }}

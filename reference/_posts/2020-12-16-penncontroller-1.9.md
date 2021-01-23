@@ -1,6 +1,5 @@
 ---
 title: PennController 1.9
-author: Jeremy
 tags: [versions]
 ---
 

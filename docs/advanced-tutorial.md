@@ -2,8 +2,6 @@
 layout: bottom-navbar-parent
 title: Advanced Tutorial
 permalink: /advanced-tutorial/
-has_children: true
-has_toc: false
 nav_order: 5
 ---
 

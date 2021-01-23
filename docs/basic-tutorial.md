@@ -2,8 +2,6 @@
 layout: bottom-navbar-parent
 title: Basic Tutorial
 permalink: /basic-tutorial/
-has_children: true
-has_toc: false
 nav_order: 4
 ---
 

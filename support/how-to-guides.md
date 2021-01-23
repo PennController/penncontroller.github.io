@@ -1,10 +1,7 @@
 ---
-layout: default
 title: How-to guides
-has_toc: false
-has_children: true
-children_collection: how-to-guides
-nav_order: 8
+nav_order: 2
+blurb: To be filled in
 ---
 
 # {{ page.title }}
