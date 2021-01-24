@@ -7,26 +7,28 @@ tags: [general]
 We've released a [new version of the PCIbex Farm](https://farm.pcibex.net/){:target="_blank"}.
 
 ## New Features
-
-+ Easier code navigation
-+ New and more stable code editor
-+ Built-in templates
-
-> IMPORTANT!
-> All the files from the old farm will not be migrated automatically to the new farm!
-> Make sure you migrate all your important experiments to the new farm!
-
-+ Easily accesible files
-+ Previewing the experiment on the same page
-+ Accessing the results of the experiment via code editor
   
-> IMPORTANT!
-> Make sure to create a new profile on the new farm and confirm it using email!
-> Otherwise your experiments won't be saved!
+### Easy way to create the experiments!
+
++ Built-in templates
++ New and more stable code editor
++ Code being updated automatically - No more troubles and headaches with SAVE button
+
+### All on a single page!
+
++ Easy file navigation
++ Previewing the experiment
++ Accessing the results of the experiment
+  
+### Executing the experiments has never been easier!
 
 + Sharing the experiment in a second
 + Easy download and git sync of the whole experiment
 + Support section available on farm
+
+## Is my code automatically migrated to the new platform? 
+
+Shortly, no. You have to migrate your experiments to the new farm. See below for the instructions on how to do it.
 
 ## How to migrate experiments to the new farm?
 
@@ -45,3 +47,7 @@ code editor on the farm:
     ![alt text]({{site.baseurl}}/assets/images/new4.png)
 
 You are all set!
+
+## My experiment is not being saved. What is causing the issue?
+
+Make sure to create a profile on the new farm and confirm it using email. 
