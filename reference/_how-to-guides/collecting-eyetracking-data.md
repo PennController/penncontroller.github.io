@@ -3,7 +3,7 @@ title: Collecting eye tracking data
 ---
 
 > Note!
-> <b>Failing calibration with a score of 0? </b> Upload [this file] (https://raw.githubusercontent.com/PennController/penncontroller/master/dev/js_includes/PennElement_eyetracker.js) to your project to overwrite the EyeTracker element (don’t mind the corresponding warning message in the Debug window)
+> <b>Failing calibration with a score of 0? </b> Upload [this file](https://raw.githubusercontent.com/PennController/penncontroller/master/dev/js_includes/PennElement_eyetracker.js) to your project to overwrite the EyeTracker element (don’t mind the corresponding warning message in the Debug window)
 
 
 > Note!
@@ -17,3 +17,7 @@ Note that in order to collect eye-tracking data, you need to have access to a se
 # The Experiment
 
 Create a new experiment from the <b>Empty Project</b> and in the <b>Git Sync</b> form, type https://github.com/PennController/Template choose <b>eyetracker</b> from the branch. 
+
+![alt text]({{site.baseurl}}/assets/images/githubsync.png)
+
+
