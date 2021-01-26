@@ -2,12 +2,12 @@
 title: Collecting eye tracking data
 ---
 
-> Note!
+> <b>Note!</b>
 > <b>Failing calibration with a score of 0? </b> Upload [this file](https://raw.githubusercontent.com/PennController/penncontroller/master/dev/js_includes/PennElement_eyetracker.js)
 to your project to overwrite the EyeTracker element (don’t mind the corresponding warning message in the Debug window).
 
 
-> Note!
+> <b>Note!</b>
 > The EyeTracker element is supported by a limited set of browsers. For best results, your participants should use Chrome desktop or Firefox desktop. Even so, calibrating is likely to fail for some of your participants for a number of reasons (ambient light, background shapes, facial characteristics, webcam position, etc.). Because chances are that several people will experience issues with eye-tracking, we advise awareness when recruiting participants. <b> If you recruit paid labor, set a time limit and be willing to pay participants who could not complete your experiment. </b>
 
 In this guide, we will design a simple eye-tracking experiment splitting the page in four quarters. Our ultimate goal will be to plot a graph reporting the timecourse of gazes to each quarter over time. If all goes well, looks should converge toward the quarter that was clicked at the end of the trial.
