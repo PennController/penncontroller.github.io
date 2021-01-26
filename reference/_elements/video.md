@@ -1,7 +1,7 @@
 ---
 title: Video
 since: beta 0.4
-element_type: video
+children_collection: video
 thumbnail: video.png
 parameters:
   - name: '"VIDEO_FILE_NAME"'

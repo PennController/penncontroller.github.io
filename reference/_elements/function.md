@@ -1,7 +1,7 @@
 ---
 title: Function
 since: beta 0.3
-element_type: function
+children_collection: function
 thumbnail: function.png
 parameters:
   - name: FUNCTION

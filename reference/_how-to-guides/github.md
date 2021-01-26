@@ -1,6 +1,5 @@
 ---
 title: Syncing with a GitHub repository
-nav_exclude: true
 ---
 
 You can import an entire GitHub repository to the PCIbex Farm. This is particularly useful if you would like to upload multiple files to an experiment project page's **Resources** folder, and do not want to upload each file one-by-one.

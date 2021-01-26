@@ -1,7 +1,7 @@
 ---
 title: TextInput
 since: beta 0.3
-element_type: textinput
+children_collection: textinput
 thumbnail: textinput.png
 parameters:
   - name: '"DEFAULT_TEXT"'

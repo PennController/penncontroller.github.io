@@ -1,7 +1,7 @@
 ---
 title: Html
 since: beta 0.3
-element_type: html
+children_collection: html
 thumbnail: html.png
 parameters:
   - name: "HTML_FILE_NAME.HTML"

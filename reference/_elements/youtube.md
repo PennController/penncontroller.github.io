@@ -1,7 +1,7 @@
 ---
 title: Youtube
 since: beta 0.3
-element_type: youtube
+children_collection: youtube
 thumbnail: youtube.png
 parameters:
   - name: '"YOUTUBE_REFERENCE_CODE"'

@@ -1,7 +1,7 @@
 ---
 title: Timer
 since: beta 0.3
-element_type: timer
+children_collection: timer
 thumbnail: timer.png
 parameters:
   - name: TIMER_LENGTH

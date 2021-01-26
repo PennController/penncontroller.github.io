@@ -1,7 +1,7 @@
 ---
 title: Scale
 since: beta 0.3
-element_type: scale
+children_collection: scale
 thumbnail: scale.png
 parameters:
   - name: NUMBER_OF_BUTTONS

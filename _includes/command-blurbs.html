@@ -17,17 +17,17 @@
 
   <div id="{{ command_tag }}-command-blurb" class="mb-6 pt-2">
     <div id="{{ command_tag }}-syntax">
-      <p class="blurb-subheader">syntax</p>
+      <p class="command-blurb-subheader">syntax</p>
       <code>{{ command.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
     </div>
 
     <div id="{{ command_tag }}-description">
-      <p class="blurb-subheader">description</p>
+      <p class="command-blurb-subheader">description</p>
       <p class="mt-0">{{ command.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
     </div>
 
     <div id="{{ command_tag }}-example">
-      <p class="blurb-subheader">example</p>
+      <p class="command-blurb-subheader">example</p>
       {%- if command.notes -%}
         {%- assign content = command.content | split: site.excerpt_separator | last | markdownify -%}
       {%- else -%}  
@@ -39,7 +39,7 @@
     
     {%- if command.optional_parameters -%}
     <div id="{{ command_tag }}-optional-parameters">
-      <p class="blurb-subheader">optional parameters</p>
+      <p class="command-blurb-subheader">optional parameters</p>
       <ul>
         {%- for parameter in command.optional_parameters -%}
           <li>
@@ -52,7 +52,7 @@
     
     {%- if command.related -%}
     <div id="{{ command_tag }}-related-commands">
-      <p class="blurb-subheader">related commands</p>
+      <p class="command-blurb-subheader">related commands</p>
       <ul>
         {%- for related in command.related -%}
           {% assign related_command = site[related.collection] | where: "title", related.command | first %}

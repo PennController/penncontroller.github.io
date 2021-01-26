@@ -1,7 +1,7 @@
 ---
 title: Key
 since: beta 0.3
-element_type: key
+children_collection: key
 thumbnail: key.png
 parameters:
   - name: "KEY_STRING"

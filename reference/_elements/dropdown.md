@@ -1,14 +1,14 @@
 ---
 title: DropDown
 since: PennController 1.2
-element_type: dropdown
+children_collection: dropdown
 thumbnail: dropdown.png
 description: Represents a drop-down list.
 parameters:
   - name: '"DEFAULT_TEXT"'
     description: To be filled in.
 notes: true
----
+--- 
 
 + By default, a **DropDown** element does not have any options. To add
 options, use the command `dropdown.add`.

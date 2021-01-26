@@ -1,7 +1,7 @@
 ---
 title: Button
 since: beta 0.3
-element_type: button
+children_collection: button
 thumbnail: button.png
 parameters:
   - name: '"BUTTON_TEXT"'

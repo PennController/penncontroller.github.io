@@ -1,7 +1,7 @@
 ---
 title: EyeTracker
 since: PennController 1.8
-element_type: eyetracker
+children_collection: eyetracker
 thumbnail: eyetracker.png
 parameters:
   - name: OUT_OF

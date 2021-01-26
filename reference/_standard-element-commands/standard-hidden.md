@@ -1,7 +1,7 @@
 ---
 title: standard.hidden
 command_type: action
-element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
+relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
 syntax: getX("*ELEMENT_NAME*").hidden()
 description: Hides an element. If the element is printed, it occupies space on the screen but its content is not visible.
 related:

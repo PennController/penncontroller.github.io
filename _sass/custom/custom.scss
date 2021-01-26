@@ -54,6 +54,27 @@
   background-color: $grey-lt-200;
 }
 
+// _includes/command-blurbs.html
+.command-blurb-subheader {
+  // emulate .text-delta
+  @include fs-2;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
+}
+
+// _layouts/command.html
+.optional-command-information-box {
+  background-color: $grey-lt-100;
+  padding-top: $sp-2;
+  padding-bottom: $sp-2;
+  padding-left: $sp-5;
+  padding-right: $sp-5;
+  margin-top: $sp-2;
+  margin-bottom: $sp-4;
+} 
+
 // element thumbnail display
 a.overlay-link:hover{
   text-decoration: underline;
@@ -180,7 +201,7 @@ a.overlay-link:hover{
     .mobile-only {display: flex;}
 }
 
-// under construction header
+// "under construction" header
 .construction {
   padding-left: $sp-8;
   padding-right: $sp-8;
@@ -229,14 +250,4 @@ a.overlay-link:hover{
 
 .page-title {
   white-space: pre-line;
-}
-
-// command blurb subheading style
-.blurb-subheader {
-  // emulate .text-delta
-  @include fs-2;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0;
 }

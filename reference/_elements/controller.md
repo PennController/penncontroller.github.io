@@ -1,7 +1,7 @@
 ---
 title: Controller
 since: PennController 1.7
-element_type: controller
+children_collection: controller
 thumbnail: controller.png
 parameters:
   - name: '"CONTROLLER"'
