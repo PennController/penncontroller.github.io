@@ -1,7 +1,7 @@
 ---
 title: Image
 since: beta 0.3
-element_type: image
+children_collection: image
 thumbnail: image.png
 parameters:
   - name: "IMAGE_FILE_NAME"

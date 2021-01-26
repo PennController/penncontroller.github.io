@@ -1,7 +1,7 @@
 ---
 title: Tooltip
 since: beta 0.3
-element_type: tooltip
+children_collection: tooltip
 thumbnail: tooltip.png
 parameters:
   - name: '"TOOLTIP_TEXT"'

@@ -7,46 +7,40 @@ layout: default
 {% endif %}
 
 {% if page.command_type == "global" and page.title != "PennController.ResetPrefix" %}
-  <h1><code>(PennController.){{ page.title }}</code></h1> 
+  <h1 id="{{ page.title }}"><code>(PennController.){{ page.title }}</code></h1> 
 {% else %}
-  <h1><code>{{ page.title }}</code></h1>
+  <h1 id="{{ page.title }}"><code>{{ page.title }}</code></h1>
 {% endif %}
 
-{% if page.element_type contains "standard" %}
-  <!-- <h4>Element types that this command
-    <a href="{{site.baseurl}}/core-concepts/3_commands#standard-and-element-specific-commands" target="_blank">
-      has an effect on
-    </a>
-  </h4> -->
-  {% for type in page.element_type %}
-    {% for element in site.elements %}
-      {% if element.element_type contains type %}
-        <span class="label bg-grey-lt-100 mt-2 ml-0">
-          <a href="{{ element.url | absolute_url }}" target="_blank">
-            {{ element.title }}
-          </a>
-        </span>
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
+{% if page.element_type == "standard" %}
+  <div id="relevant-elements">
+  {% for relevant_element_type in page.relevant_elements %}
+    {% assign relevant_element = site.elements | where: "title", relevant_element_type | first %}
+    <span id="{{  relevant_element.title }}" class="label bg-grey-lt-100 mt-2 ml-0">
+      <a href="{{ relevant_element.url | absolute_url }}" target="_blank">
+        {{ relevant_element.title }}
+      </a>
+    </span>
+  {% endfor %}  
+  </div>
 {% endif %}
 
 {% if page.since %}
-<h4>since</h4>
+<h4 id="since">since</h4>
   {{ page.since }}
 {% endif %}
 
-{% include heading-link.html header="syntax" h4=true %}
+<h4 id="syntax">syntax</h4>
 {% if page.command_type == "global" and page.title != "PennController.ResetPrefix" %}
   <code>(PennController.){{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-  <p class="text-delta">
+  <p id="penncontroller-prefix-meaning" class="text-delta">
     ↳ <a href="{{site.baseurl}}/docs/faqs#penncontroller-prefix" target="_blank">
     What does <code>(PennController.)</code> mean?
     </a>
   </p>
-{% elsif page.element_type contains "standard" %}
+{% elsif page.element_type == "standard" %}
 <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-  <p class="text-delta">
+  <p id="getX-meaning" class="text-delta">
     ↳ <a href="{{site.baseurl}}/docs/faqs#get-x" target="_blank">
     What does <code>getX()</code> mean?
     </a>
@@ -55,12 +49,12 @@ layout: default
   <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
 {% endif %}
 
-{% include heading-link.html header="description" h4=true %}
+<h4 id="description">description</h4>
 {{ page.description | markdownify }}
 
 {% if page.optional_parameters %}
-{% include heading-link.html header="optional parameters" h4=true %}
-<div class="bg-grey-lt-100 py-2 px-5 mt-2 mb-4" markdown=1>
+<h4 id="optional-parameters">optional parameters</h4>
+<div class="optional-command-information-box" markdown=1>
   <ul>
     {% for parameter in page.optional_parameters %}
     <li>
@@ -75,8 +69,8 @@ layout: default
 {% endif %}
 
 {% if page.methods %}
-{% include heading-link.html header="methods" h4=true %}
-<div class="bg-grey-lt-100 py-2 px-5 mt-2 mb-4" markdown=1>
+<h4 id="methods">methods</h4>
+<div class="optional-command-information-box" markdown=1>
   <ul>
     {% for method in page.methods %}
     <li>
@@ -97,7 +91,7 @@ layout: default
 {% endif %}
 
 {% if page.related %}
-{% include heading-link.html header="related" h4=true %}
+<h4 id="related-commands">related commands</h4>
   <ul>
   {% for related in page.related %}
     {% assign related_command = site[related.collection] | where: "title", related.command | first %}
@@ -112,5 +106,5 @@ layout: default
 
 <hr>
 
-{%- include heading-link.html header="example" h4=true -%}
+<h4 id="example">example</h4>
 {{ content }}

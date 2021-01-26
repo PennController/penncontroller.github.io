@@ -115,9 +115,7 @@
                 </a>
               {%- endif -%}
               {%- if child.has_children -%}
-                {%- if child.element_type -%}
-                  {%- assign grand_children_list = site.[child.element_type] | where: "parent", child.title -%}
-                {%- elsif child.children_collection -%}
+                {%- if child.children_collection -%}
                   {%- assign grand_children_list = site[child.children_collection] | where: "parent", child.title -%}
                 {%- else -%}
                   {%- assign grand_children_list = pages_list | where: "parent", child.title | where: "grand_parent", node.title -%}

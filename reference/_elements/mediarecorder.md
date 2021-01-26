@@ -1,7 +1,7 @@
 ---
 title: MediaRecorder
 since: PennController 1.8
-element_type: mediarecorder
+children_collection: mediarecorder
 thumbnail: mediarecorder.png
 parameters:
   - name: '"audio"'

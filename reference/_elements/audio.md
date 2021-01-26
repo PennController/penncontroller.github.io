@@ -1,7 +1,7 @@
 ---
 title: Audio
 since: beta 0.3
-element_type: audio
+children_collection: audio
 thumbnail: audio.png
 parameters:
   - name: '"AUDIO_FILE_NAME.MP3"'

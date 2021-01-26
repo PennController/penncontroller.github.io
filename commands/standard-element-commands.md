@@ -1,11 +1,9 @@
 ---
-layout: default
 title: Standard element commands
 has_children: true
 has_toc: false
 children_collection: standard-element-commands
 children_code_font: true
-parent: Commands
 nav_order: 2
 blurb: Commands that are defined for all PennController element types. 
 ---
@@ -21,9 +19,11 @@ blurb: Commands that are defined for all PennController element types.
 {% assign standard_test = site.standard-element-commands | where: "command_type", "test" %}
 
 ## Action commands
+
 {% include toc-command.html collection=standard_action same_page=true %}
 
 ## Test commands
+
 {% include toc-command.html collection=standard_test same_page=true %}
 
 ---

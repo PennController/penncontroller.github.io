@@ -1,7 +1,7 @@
 ---
 title: Text
 since: beta 0.3
-element_type: text
+children_collection: text
 thumbnail: text.png
 parameters:
   - name: '"TEXT"'

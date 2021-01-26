@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Global commands
-parent: Commands
 has_children: true
 has_toc: false
 children_collection: global-commands

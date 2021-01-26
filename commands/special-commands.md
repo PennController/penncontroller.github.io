@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Special commands
-parent: Commands
 has_children: true
 has_toc: false
 children_collection: special-commands

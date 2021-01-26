@@ -146,6 +146,11 @@ defaults:
       parent: "Basic Tutorial"
       numbered_headings: true
   - scope:
+      path: "commands"
+    values:
+      layout: "default"
+      parent: "Commands"
+  - scope:
       path: "core-concepts"
     values:
       layout: "bottom-navbar-child"
@@ -218,6 +223,7 @@ defaults:
       path: "reference/_standard-element-commands"
     values:
       layout: "command"
+      element_type: "standard"
       parent: "Standard element commands"
       grand_parent: "Commands"
   - scope:
@@ -229,147 +235,147 @@ defaults:
       path: "reference/_audio"
     values:
       layout: "command"
-      element_type: "audio"
+      element_type: "Audio"
       parent: "Audio"
       grand_parent: "Elements"
   - scope:
       path: "reference/_button"
     values:
       layout: "command"
-      element_type: "button"
+      element_type: "Button"
       parent: "Button"
       grand_parent: "Elements"
   - scope:
       path: "reference/_canvas"
     values:
       layout: "command"
-      element_type: "canvas"
+      element_type: "Canvas"
       parent: "Canvas"
       grand_parent: "Elements"
   - scope:
       path: "reference/_controller"
     values:
       layout: "command"
-      element_type: "controller"
+      element_type: "Controller"
       parent: "Controller"
       grand_parent: "Elements"
   - scope:
       path: "reference/_dropdown"
     values:
       layout: "command"
-      element_type: "dropdown"
+      element_type: "DropDown"
       parent: "DropDown"
       grand_parent: "Elements"
   - scope:
       path: "reference/_eyetracker"
     values:
       layout: "command"
-      element_type: "eyetracker"
+      element_type: "EyeTracker"
       parent: "EyeTracker"
       grand_parent: "Elements"
   - scope:
       path: "reference/_function"
     values:
       layout: "command"
-      element_type: "function"
+      element_type: "Function"
       parent: "Function"
       grand_parent: "Elements"
   - scope:
       path: "reference/_html"
     values:
       layout: "command"
-      element_type: "html"
+      element_type: "Html"
       parent: "Html"
       grand_parent: "Elements"
   - scope:
       path: "reference/_image"
     values:
       layout: "command"
-      element_type: "image"
+      element_type: "Image"
       parent: "Image"
       grand_parent: "Elements"
   - scope:
       path: "reference/_key"
     values:
       layout: "command"
-      element_type: "key"
+      element_type: "Key"
       parent: "Key"
       grand_parent: "Elements"
   - scope:
       path: "reference/_mediarecorder"
     values:
       layout: "command"
-      element_type: "mediarecorder"
+      element_type: "MediaRecorder"
       parent: "MediaRecorder"
       grand_parent: "Elements"
   - scope:
       path: "reference/_mousetracker"
     values:
       layout: "command"
-      element_type: "mousetracker"
+      element_type: "MouseTracker"
       parent: "MouseTracker"
       grand_parent: "Elements"
   - scope:
       path: "reference/_scale"
     values:
       layout: "command"
-      element_type: "scale"
+      element_type: "Scale"
       parent: "Scale"
       grand_parent: "Elements"
   - scope:
       path: "reference/_selector"
     values:
       layout: "command"
-      element_type: "selector"
+      element_type: "Selector"
       parent: "Selector"
       grand_parent: "Elements"
   - scope:
       path: "reference/_text"
     values:
       layout: "command"
-      element_type: "text"
+      element_type: "Text"
       parent: "Text"
       grand_parent: "Elements"
   - scope:
       path: "reference/_textinput"
     values:
       layout: "command"
-      element_type: "textinput"
+      element_type: "TextInput"
       parent: "TextInput"
       grand_parent: "Elements"
   - scope:
       path: "reference/_timer"
     values:
       layout: "command"
-      element_type: "timer"
+      element_type: "Timer"
       parent: "Timer"
       grand_parent: "Elements"
   - scope:
       path: "reference/_tooltip"
     values:
       layout: "command"
-      element_type: "tooltip"
+      element_type: "Tooltip"
       parent: "Tooltip"
       grand_parent: "Elements"
   - scope:
       path: "reference/_var"
     values:
       layout: "command"
-      element_type: "var"
+      element_type: "Var"
       parent: "Var"
       grand_parent: "Elements"
   - scope:
       path: "reference/_video"
     values:
       layout: "command"
-      element_type: "video"
+      element_type: "Video"
       parent: "Video"
       grand_parent: "Elements"
   - scope:
       path: "reference/_youtube"
     values:
       layout: "command"
-      element_type: "youtube"
+      element_type: "Youtube"
       parent: "Youtube"
       grand_parent: "Elements"
       

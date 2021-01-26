@@ -1,7 +1,7 @@
 ---
 title: standard.cssContainer
 command_type: action
-element_type: [standard, audio, button, canvas, controller, dropdown, html, image, mediarecorder, scale, text, textinput, tooltip, video, voicerecorder, youtube]
+relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
 syntax: getX("*ELEMENT_NAME*").cssContainer("*CSS_PROPERTY*", "*VALUE*")
 description: Applies the specified CSS property and value pair to the container of the element.
 optional_parameters: 

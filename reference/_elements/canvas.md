@@ -2,7 +2,7 @@
 title: Canvas
 since: beta 0.3
 parent: Elements
-element_type: canvas
+children_collection: canvas
 thumbnail: canvas.png
 parameters:
   - name: WIDTH

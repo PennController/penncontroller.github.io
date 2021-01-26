@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Element-specific commands
-parent: Commands
 nav_order: 1
 blurb: Commands that are defined only for specific PennController element types, or that describe element-specific behavior.
 ---

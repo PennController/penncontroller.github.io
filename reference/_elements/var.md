@@ -1,7 +1,7 @@
 ---
 title: Var
 since: beta 0.3
-element_type: var
+children_collection: var
 thumbnail: var.png
 parameters:
   - name: DEFAULT_VALUE
