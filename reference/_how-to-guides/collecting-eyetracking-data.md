@@ -3,7 +3,8 @@ title: Collecting eye tracking data
 ---
 
 > Note!
-> <b>Failing calibration with a score of 0? </b> Upload [this file](https://raw.githubusercontent.com/PennController/penncontroller/master/dev/js_includes/PennElement_eyetracker.js) to your project to overwrite the EyeTracker element (don’t mind the corresponding warning message in the Debug window)
+> <b>Failing calibration with a score of 0? </b> Upload [this file](https://raw.githubusercontent.com/PennController/penncontroller/master/dev/js_includes/PennElement_eyetracker.js)
+to your project to overwrite the EyeTracker element (don’t mind the corresponding warning message in the Debug window).
 
 
 > Note!
