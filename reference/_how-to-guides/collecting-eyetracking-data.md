@@ -2,30 +2,18 @@
 title: Collecting eye tracking data
 ---
 
-[Lorem ipsum](https://www.pcibex.net/wiki/collecting-eye-tracking-data/){:target="_blank"}
-dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+> Note!
+> <b>Failing calibration with a score of 0? </b> Upload [this file] (https://raw.githubusercontent.com/PennController/penncontroller/master/dev/js_includes/PennElement_eyetracker.js) to your project to overwrite the EyeTracker element (don’t mind the corresponding warning message in the Debug window)
 
-Cursus sit amet dictum sit amet justo donec enim. Porttitor massa id neque aliquam
-vestibulum morbi blandit cursus risus. Metus vulputate eu scelerisque felis imperdiet.
-Purus in massa tempor nec feugiat nisl pretium. Sit amet luctus venenatis lectus
-magna fringilla urna porttitor. Auctor elit sed vulputate mi sit amet mauris quis.
 
-Sed nisi lacus sed viverra tellus in hac. Diam donec adipiscing tristique risus.
-At varius vel pharetra vel turpis. Urna et pharetra pharetra massa massa.
-Cursus euismod quis viverra nibh cras. Nibh tellus molestie nunc non. Viverra
-orci sagittis eu volutpat odio facilisis mauris.
+> Note!
+> The EyeTracker element is supported by a limited set of browsers. For best results, your participants should use Chrome desktop or Firefox desktop. Even so, calibrating is likely to fail for some of your participants for a number of reasons (ambient light, background shapes, facial characteristics, webcam position, etc.). Because chances are that several people will experience issues with eye-tracking, we advise awareness when recruiting participants. <b> If you recruit paid labor, set a time limit and be willing to pay participants who could not complete your experiment. </b>
 
-Enim diam vulputate ut pharetra sit amet aliquam. Imperdiet proin fermentum leo
-vel orci porta. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit
-lectus. Semper auctor neque vitae tempus quam pellentesque. Urna porttitor rhoncus
-dolor purus non enim praesent. Morbi tincidunt augue interdum velit euismod in
-pellentesque. Egestas congue quisque egestas diam in.
+In this guide, we will design a simple eye-tracking experiment splitting the page in four quarters. Our ultimate goal will be to plot a graph reporting the timecourse of gazes to each quarter over time. If all goes well, looks should converge toward the quarter that was clicked at the end of the trial.
 
-Volutpat est velit egestas dui id ornare arcu odio ut. Hac habitasse platea dictumst
-quisque sagittis purus sit amet volutpat. Viverra maecenas accumsan lacus vel facilisis
-volutpat est velit. Ut aliquam purus sit amet luctus venenatis. Consequat nisl vel
-pretium lectus quam id leo. Et tortor at risus viverra adipiscing. Lacus vestibulum
-sed arcu non odio euismod lacinia at quis. In metus vulputate eu scelerisque felis
-imperdiet proin fermentum. Viverra vitae congue eu consequat ac felis donec.
+Note that in order to collect eye-tracking data, you need to have access to a server where you can upload and execute PHP scripts. <b> Platforms like DreamHost offer this service with minimal setup, and server providers like Linode require more advanced setup. Resource-sharing services like Dropbox or Google Drive do NOT support PHP scripts. </b>
+
+
+# The Experiment
+
+Create a new experiment from the <b>Empty Project</b> and in the <b>Git Sync</b> form, type https://github.com/PennController/Template choose <b>eyetracker</b> from the branch. 
