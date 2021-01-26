@@ -4,8 +4,7 @@ title: Adding custom CSS
 
 Multiple settings commands provide you with basic ways to play with the aesthetics of a given element within a trial’s script. If you want to customize your experiment’s visual rendering though, it is a good idea to consider defining general aesthetics for your experiment.
 
-Each element type comes with its own [CSS Classes](https://www.w3schools.com/Css/)
-CSS classes, so you can upload a file named PennController.css to your PCIbex Farm project’s folder.
+Each element type comes with its own [CSS Classes](https://www.w3schools.com/Css/), so you can upload a file named PennController.css to your PCIbex Farm project’s folder.
 
 If you want to add 10px above and below <b>each</b> Text element on the page, you can write this in your PennController.css file:
 
