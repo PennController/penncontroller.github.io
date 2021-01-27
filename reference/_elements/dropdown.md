@@ -5,7 +5,8 @@ children_collection: dropdown
 thumbnail: dropdown.png
 description: Represents a drop-down list.
 parameters:
-  - name: '"DEFAULT_TEXT"'
+  - name: DEFAULT_TEXT
+    type: string
     description: To be filled in.
 notes: true
 --- 

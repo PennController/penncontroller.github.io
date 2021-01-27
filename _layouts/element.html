@@ -22,31 +22,30 @@ layout: default
 <div id="element-description" style="display: flow-root;" markdown="1">
   {% include toc-element.html element-action=element-action element-test=element-test standard-action=standard-action standard-test=standard-test %}
 
-  <h4 id="since">since</h4>
-  {{ page.since }} 
-
   <h4 id="description">description</h4>
   {{ page.description | markdownify }} 
 
   <h4 id="syntax">syntax</h4>
   <code>
-    new{{- page.title -}}("<var>ELEMENT_NAME</var>"
+    new{{- page.title -}}(<var>ELEMENT_NAME</var>: string
     {%- for parameter in page.parameters -%}
-      , {%- if parameter.optional -%}[{%- endif -%}<var>{{ parameter.name -}}</var>{%- if parameter.optional -%}]{%- endif -%}
+      , {% if parameter.optional %}[{% endif %}<var>{{ parameter.name }}</var>{% if parameter.type %}: {{ parameter.type}}{% endif %}{% if parameter.optional %}]{% endif %}
     {%- endfor -%}
     )
   </code>
-  <ul>
-    <li>
-      <code>"<var>ELEMENT_NAME</var>"</code>: The name of the newly-created element.
+  <ul id="parameters">
+    <li id="element-name-parameter">
+      <code><var>ELEMENT_NAME</var></code>: The name of the newly-created element.
     </li>
     {%- for parameter in page.parameters -%}
-      <li>
-        <code>{%- if parameter.optional -%}[{%- endif -%}<var>
-          {{- parameter.name -}}
-        </var>{%- if parameter.optional -%}]{%- endif -%}</code>
-        {% if parameter.optional %} (optional){% endif %}: {{ parameter.description | markdownify | remove: '<p>' | remove: '</p>' }}
-      </li>
+    <li id="{{ parameter.name}}-parameter">
+      <code>
+        {%- if parameter.optional -%}[{%- endif -%}
+        <var>{{- parameter.name -}}</var>
+        {%- if parameter.optional -%}]{%- endif -%}
+      </code>
+      {% if parameter.optional %} (optional){% endif %}: {{ parameter.description | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>
     {%- endfor -%}
   </ul>
 
@@ -55,15 +54,18 @@ layout: default
     {{ page.excerpt }}
   {% endif %}
 
-{% unless page.no_example %}
-  <hr>
-  <h4 id="example">example</h4>
-  {% if page.notes %}
-    {{ page.content | remove: page.excerpt }}
-  {% else %}
-    {{ page.content }}
-  {% endif %}
-{% endunless %}
+  <h4 id="since">since</h4>
+  {{ page.since }} 
+
+  {% unless page.no_example %}
+    <hr>
+    <h4 id="example">example(s)</h4>
+    {% if page.notes %}
+      {{ page.content | remove: page.excerpt }}
+    {% else %}
+      {{ page.content }}
+    {% endif %}
+  {% endunless %}
 </div>
 
 <hr>

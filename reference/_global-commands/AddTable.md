@@ -1,6 +1,12 @@
 ---
 title: AddTable
-syntax: AddTable("id", csv_string)
+syntax: AddTable()
+parameters:
+  - name: ID
+    type: string
+    description: To be filled in
+  - name: CSV
+    description: to be filled in
 description: Defines a table to use with `PennController.Template`. As of PennController beta 0.4, you can directly upload a CSV file to the **Resources** or **chunk_includes** folders.
 ---
 

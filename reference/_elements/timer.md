@@ -5,6 +5,7 @@ children_collection: timer
 thumbnail: timer.png
 parameters:
   - name: TIMER_LENGTH
+    type: int
     description: The length of the timer, in milliseconds.
 description: Represents a timer.
 ---

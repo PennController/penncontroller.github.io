@@ -1,7 +1,12 @@
 ---
 title: SendResults
-syntax: to be filled in
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+syntax: SendResults()
+parameters:
+  - name: TRIAL_LABEL
+    type: string
+    description: To be filled in
+    optional: true
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
 
 ```javascript

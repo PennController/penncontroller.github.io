@@ -1,7 +1,11 @@
 ---
 title: AddHost
-syntax: AddHost("*URL*")
-description: Specifies a host URL to use as a source file for when calling creating a new `Audio`, `Image`, or **Video** element. The `"URL"` argument must end in `"/"`.
+syntax: AddHost
+parameters:
+  - name: URL
+    type: string
+    description: A URL.
+description: Specifies a host URL to use as a source file for when calling creating a new `Audio`, `Image`, or `Video` element. The `URL` argument must end in `"/"`.
 notes: true
 ---
 

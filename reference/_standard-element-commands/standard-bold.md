@@ -2,7 +2,7 @@
 title: standard.bold
 command_type: action
 relevant_elements: [Button, Controller, DropDown, Html, MediaRecorder, Scale, Text, Tooltip]
-syntax: getX("*ELEMENT_NAME*").bold()
+syntax: .bold()
 description: Bolds any text that appears in the element.
 ---
 
