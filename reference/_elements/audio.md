@@ -4,7 +4,8 @@ since: beta 0.3
 children_collection: audio
 thumbnail: audio.png
 parameters:
-  - name: '"AUDIO_FILE_NAME.MP3"'
+  - name: AUDIO_FILE_NAME
+    type: string
     description: The name of the audio file.
 description: Creates an audio player.
 notes: true

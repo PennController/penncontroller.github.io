@@ -4,9 +4,11 @@ since: PennController 1.7
 children_collection: controller
 thumbnail: controller.png
 parameters:
-  - name: '"CONTROLLER"'
+  - name: CONTROLLER
+    type: string
     description: The inserted Ibex controller.
-  - name: '"ARRAY"'
+  - name: KEY_VALUE_PAIRS
+    type: array
     description: An array of key-value pairs; see each individual Ibex controller for details.
 description: Embeds an Ibex controller.
 notes: true

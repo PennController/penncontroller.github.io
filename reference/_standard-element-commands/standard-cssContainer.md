@@ -2,10 +2,17 @@
 title: standard.cssContainer
 command_type: action
 relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
-syntax: getX("*ELEMENT_NAME*").cssContainer("*CSS_PROPERTY*", "*VALUE*")
+syntax: .cssContainer()
+parameters:
+  - name: CSS_PROPERTY
+    type: string
+    description: To be filled in
+  - name: VALUE
+    type: string
+    description: To be filled in
 description: Applies the specified CSS property and value pair to the container of the element.
-optional_parameters: 
-  - syntax: getX("*ELEMENT_NAME*").cssContainer({"*CSS_PROPERTY_1*":"*VALUE_1*", "*CSS_PROPERTY_2*":"*VALUE_2*"})
+alternates: 
+  - syntax: '.cssContainer({"*CSS_PROPERTY_1*":"*VALUE_1*", "*CSS_PROPERTY_2*":"*VALUE_2*"})'
     description: Apply multiple CSS property and value pairs by using curly brackets and colons.
 notes: true
 related:

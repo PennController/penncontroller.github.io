@@ -4,7 +4,8 @@ since: beta 0.3
 children_collection: text
 thumbnail: text.png
 parameters:
-  - name: '"TEXT"'
+  - name: TEXT
+    type: string
     description: The text contained by the element.
 description: Represents text.
 ---

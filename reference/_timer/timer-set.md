@@ -1,8 +1,8 @@
 ---
 title: timer.set
 command_type: action
-syntax: getTimer("ELEMENT_NAME").set()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+syntax: .set()
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
 
 ```javascript

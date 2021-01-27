@@ -1,16 +1,22 @@
 ---
 title: newTrial
-syntax: to be filled in
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+syntax: newTrial()
+parameters: 
+  - name: TRIAL_LABEL
+    type: string
+    description: To be filled in
+    optional: true
+  - name: COMMAND_SEQUENCE
+    description: To be filled in
 methods: 
-  - syntax: newTrial().log("COLUMN_NAME", VALUE)
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  - syntax: newTrial().log(COLUMN_NAME, VALUE)
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   - syntax: newTrial().noFooter()
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   - syntax: newTrial().noHeader()
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   - syntax: newTrial().setOption(OPTION, VALUE)
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
 
 ```javascript

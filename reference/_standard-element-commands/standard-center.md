@@ -2,7 +2,7 @@
 title: standard.center
 command_type: action
 relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
-syntax: getX("*ELEMENT_NAME*").center()
+syntax: .center()
 description: Horizontally centers the element.
 ---
 

@@ -2,11 +2,12 @@
 title: audio.disable
 command_type: action
 syntax: .disable()
+parameters:
+  - name: OPACITY
+    type: float
+    description: Prints a grey rectangular layer of specified opacity onto the audio player interface, where `0.01` is completely transparent and `1` is completey opaque.
+    optional: true
 description: Disables the audio player interface controls.
-optional_parameters:
-  - syntax: .disable(*OPACITY*)
-    description: Prints a grey rectangular layer of specified opacity onto the audio player interface. 
-    note: 
 ---
 
 <pre><code class="language-diff-javascript diff-highlight">

@@ -2,7 +2,10 @@
 title: standard.after
 command_type: action
 relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
-syntax: getX("*ELEMENT_NAME*").after(getX("*ARGUMENT_NAME*"))
+syntax: .after()
+parameters: 
+  - name: ELEMENT
+    description: To be filled in
 description: Takes an element as an argument, and adds that element's content to the right of the element that the command is called on.
 related:
   - name: standard.before
