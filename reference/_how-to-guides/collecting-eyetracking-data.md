@@ -44,5 +44,47 @@ The next EyeTrackerURL line specifies where to find the PHP script that will rec
 You may have noticed that this experiment does not contain a [Sequence command](https://penncontroller.github.io/commands/global-commands/sequence/): all the trials will therefore be executed in the top-down order in which they are defined, and accordingly no label is explicitly assigned to any trial. A real experiment would of course do things differently and need to assign labels so as to randomize the presentation of the different trials.
 
 
+# Welcome trial
+
+Most of it is pretty straightforward. Two things to note:
+
+* The <!--more-->
+```javascript 
+newEyeTracker("tracker").test.ready() 
+``` 
+test command inside the wait command in the button accomplishes two things: (1) it triggers a webcam-access request, and (2) it makes sure that the script’s execution is only released by a click on the button after access has been granted. This is a necessary step, you should always have this test command early in your experiment.
+
+* After we go fullscreen (which we do after the request, as the request exists fullscreen mode in some browsers) we calibrate the tracker with a label of 60%  <!--more-->
+```javascript 
+getEyeTracker("tracker").calibrate(60)
+```
+Because this is the first calibrate command in the experiment, this will launch a sequence of clicks on nine buttons aligned on the edges and corners of the page (=screen now that we are fullscreen) and one last click on a central button. The participant must fixate the button for 3 seconds to ensure that at least 60% of the estimated looks fall on the button. None of this is explicitly mentioned in this experiment, but you should add some instructions before that in your own experiment.
+
+Once the welcome trial is over, the eyetracker is calibrated, and subsequent calibrate commands will immediately jump to the 3-second central button and check that calibration is still over whatever value is passed to the calibrate command. If calibration has fallen under the passed threshold, the 9-button sequence starts over.
+
+Note that we insert a [CheckPreloaded](https://penncontroller.github.io/commands/global-commands/checkpreloaded/) trial after calibration to give the resources time to preload the background while setting up the tracker.
+
+
+# Experimental trials
+
+The [Template](https://penncontroller.github.io/commands/global-commands/template/) command generates trials using a subset of the rows from clefts.csv, thanks to [GetTable().filter](https://penncontroller.github.io/commands/global-commands/gettable/). The item column in clefts.csv going from 1 to 48 (plus 100* for a few practice trials) we effectively keep only half of the design, for the whole experiment would otherwise last too long for simple testing purposes.
+
+Note that the first thing we do in the experimental trials is to use calibrate again, to make sure that the tracker’s accuracy has not fallen under 60%. If it has, the command automatically invites the participant to follow the calibration procedure again.
+
+Most of the rest of the trial is pretty straightforward. Some highlights:
+
+* We create big Canvas elements: each is sized to 40% of the page’s width/height. Then we add smaller images inside each of them. This way, when the participant looks at the images, they are also necessarily looking at the containing Canvas element. By then tracking the Canvas elements rather than the images themselves, we are more likely to capture look estimates that are slighlty off the actual target.
+
+* This design does not shuffle the position of the elements, but keep in mind that we track the Canvas elements, which are therefore the elements you would want to [shuffle](https://penncontroller.github.io/advanced-tutorial/10_counterbalancing.html#shuffling-image-position). In order to keep track of which one ended on which quarter of the page, you would then need set (and log) Var elements after [testing their position](https://www.pcibex.net/wiki/selector-test-index/).
+
+* We start the tracker only after revealing the suits, because we are not interested in what happens before that. At this point however, participants are most likely no longer looking at the center of the screen. A better design solution would be to print a button at the center of the screen and reveal the suits only after the participant has clicked the button.
+
+* <b> We call log on the EyeTracker element: if we failed to do, we would effectively never collect the eye-tracking data. </b>
+
+* We also call log on the Selector element, because we will eventually compare the looks against which Canvas was clicked.
+
+* We stop collecting eye-data as soon as a Canvas is clicked in an effort to minimize the size of the data collected.
+
+
 
 
