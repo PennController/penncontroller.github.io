@@ -3,7 +3,7 @@ title: PCIbex Documentation
 description: >- # this means to ignore newlines until "baseurl:"
   PCIbex documentation
 baseurl: ""
-url: "" 
+url: "https://doc.pcibex.net" 
 excerpt_separator: <!--more-->
 
 # Build settings
