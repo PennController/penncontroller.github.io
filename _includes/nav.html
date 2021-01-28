@@ -85,7 +85,7 @@
           {%- else -%}
             {%- assign children_list = pages_list | where: "parent", node.title -%}
           {%- endif -%}
-          <ul class="nav-list ">
+          <ul class="nav-list">
           {%- for child in children_list -%}
             {%- unless child.nav_exclude -%}
             <li class="nav-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
@@ -109,9 +109,9 @@
                 </a>
               {%- else -%}
                 <a href="{{ child.url | absolute_url }}" class="nav-list-link{% if page.url == child.url %} active{% endif %}">
-                  {%- if node.children_code_font -%}<code class="fs-2">{%- endif -%}
+                  {%- if node.children_code_font or child.code_font -%}<code class="fs-2">{%- endif -%}
                   {{ child.title }}
-                  {%- if node.children_code_font -%}</code>{%- endif -%}
+                  {%- if node.children_code_font or child.code_font -%}</code>{%- endif -%}
                 </a>
               {%- endif -%}
               {%- if child.has_children -%}
@@ -131,9 +131,9 @@
                       </a>
                     {%- else -%}
                       <a href="{{ grand_child.url | absolute_url }}" class="nav-list-link{% if page.url == grand_child.url %} active{% endif %}">
-                        {%- if child.children_code_font -%}<code class="fs-2">{%- endif -%}
+                        {%- if child.children_code_font or grand_child.code_font -%}<code class="fs-2">{%- endif -%}
                         {{ grand_child.title }}
-                        {%- if child.children_code_font -%}</code>{%- endif -%}
+                        {%- if child.children_code_font or grand_child.code_font -%}</code>{%- endif -%}
                         </a>
                     {%- endif -%}
                   </li>
@@ -148,41 +148,37 @@
         {%- endif -%}
       </li>
       {%- endunless -%}
-      {% if node.nav_hide %}
-        {% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %}
+      {%- if node.nav_hide -%}
+        {%- if page.url == node.url or page.parent == node.title or page.grand_parent == node.title -%}
         <li class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
-          {% if node.has_children %}
+          {%- if node.has_children -%}
           <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
-          {% endif %}
+          {%- endif -%}
           <a href="{{ node.url | absolute_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
           {%- if node.has_children -%}
             {%- assign children_list = pages_list | where: "parent", node.title -%}
             <ul class="nav-list">
             {%- for child in children_list -%}
-              {%- unless child.nav_exclude -%}
-                <li class="nav-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
-                  {%- if child.has_children -%}
-                    <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
-                  {%- endif -%}
-                  <a href="{{ child.url | absolute_url }}" class="nav-list-link{%- if page.url == child.url -%} active{%- endif -%}">
-                    {{ child.title }}
-                  </a>
-                  {%- if child.has_children -%}
-                    {%- assign grand_children_list = pages_list | where: "parent", child.title | where: "grand_parent", node.title -%}
-                    <ul class="nav-list">
-                    {%- for grand_child in grand_children_list -%}
-                      {%- unless grand_child.nav_exclude -%}
-                      <li class="nav-list-item {%- if page.url == grand_child.url -%} active{%- endif -%}">
-                        <a href="{{ grand_child.url | absolute_url }}" class="nav-list-link{%- if page.url == grand_child.url -%} active{%- endif -%}">
-                          {{ grand_child.title }}
-                        </a>
-                      </li>
-                      {%- endunless -%}
-                    {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
-                </li>
-              {%- endunless -%}
+              <li class="nav-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
+                {%- if child.has_children -%}
+                  <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
+                {%- endif -%}
+                <a href="{{ child.url | absolute_url }}" class="nav-list-link{% if page.url == child.url %} active{% endif %}">
+                  {{ child.title }}
+                </a>
+                {%- if child.has_children -%}
+                  {%- assign grand_children_list = pages_list | where: "parent", child.title | where: "grand_parent", node.title -%}
+                  <ul class="nav-list">
+                  {%- for grand_child in grand_children_list -%}
+                    <li class="nav-list-item {% if page.url == grand_child.url %} active{% endif %}">
+                      <a href="{{ grand_child.url | absolute_url }}" class="nav-list-link{% if page.url == grand_child.url %} active{% endif %}">
+                        {{ grand_child.title }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
             {%- endfor -%}
             </ul>
           {%- endif -%}

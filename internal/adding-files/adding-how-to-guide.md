@@ -1,11 +1,14 @@
 ---
-layout: default
 title: Adding a how-to guide
-parent: Adding files
-grand_parent: Internal documentation
-nav_order: 3
 ---
 
 # {{ page.title}}
 
-*To be filled in*
+---
+
+To add a new how-to guide, follow these steps:
+
+1. To
+2. be
+3. filled
+4. in

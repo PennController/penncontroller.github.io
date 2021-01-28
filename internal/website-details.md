@@ -1,16 +1,28 @@
 ---
-title: Style guide
-nav_order: 4
+title: Website details
+nav_order: 1
+last_modified_date: january 25 2021
 ---
 
 # {{ page.title}}
 
-This page will provide guidelines for writing PennController documentation.
+This page will contain information about the `penncontroller.github.io` Jekyll website.
 {: .h1-blurb }
 
 ---
 
-## General
+## About
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+
+### Github Pages
+
+The
+[`penncontroller.github.io` website](https://penncontroller.github.io/)
+is a [GitHub Pages user site](https://docs.github.com/en/github/working-with-github-pages).
+
+### Jekyll
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -18,35 +30,16 @@ ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ---
 
-## Markdown
+## Building a local copy for testing {#building-local-copy}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Use `+` for unordered lists, `*` for italics, and `**` for bold.
 
 ---
 
-## YAML tags
+## Front matter defaults
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-+ If the value contains a colon, surround the value with single or double quote to
-escape the special colon character:
-
-    ```yaml
-    ---
-    example: 'This sentence contains a colon : and needs single quotes'
-    ---
-    ```
-+ If the value contains double quotes, surround the value with single quotes
-to escape the double quotes:
-
-    ```yaml
-    ---
-    example: '"first"'
-    ---
-    ```

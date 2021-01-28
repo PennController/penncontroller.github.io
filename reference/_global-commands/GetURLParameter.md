@@ -1,6 +1,6 @@
 ---
 title: GetURLParameter
-syntax: GetURLParameter
+syntax: GetURLParameter()
 parameters:
   - name: URL_PARAMETER
     type: string

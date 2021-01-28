@@ -12,8 +12,9 @@ parameters:
     description: To be filled in
 description: Applies the specified CSS property and value pair to the container of the element.
 alternates: 
-  - syntax: '.cssContainer({"*CSS_PROPERTY_1*":"*VALUE_1*", "*CSS_PROPERTY_2*":"*VALUE_2*"})'
-    description: Apply multiple CSS property and value pairs by using curly brackets and colons.
+  - name: 'PROPERTY_VALUE_ARRAY'
+    type: array
+    description: 'Apply multiple CSS properties at once by passing an array of property-value pairs in the format `{CSS_PROPERTY_1: VALUE_1, CSS_PROPERTY_2: VALUE_2}`'
 notes: true
 related:
   - name: standard.css

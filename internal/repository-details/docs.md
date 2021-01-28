@@ -1,14 +1,12 @@
 ---
-layout: default
 title: docs/
-parent: Directory structure
-grand_parent: Internal documentation
-last_modified_date: november 11 2020
+last_modified_date: november 26 2021
+nav_order: 3
 ---
 
 ## `{{ page.title}} `
 Pages that appear in the main sidebar.
-{: .mt-4}
+{: .h1-blurb }
 
 ---
 
@@ -17,16 +15,16 @@ Folder structure
 
 ```treeview
 docs/
-|-- advanced-tutorial/
-|-- basic-tutorial/
-|-- commands/
-|-- core-concepts/
-|-- support/
 |-- advanced-tutorial.md
+|-- all-versions.md
+|-- announcements.md
 |-- basic-tutorial.md
 |-- commands.md
 |-- core-concepts.md
+|-- current-version.md
+|-- deprecated.me
 |-- elements.md
-|-- how-to-guides.md
+|-- internal.md
 `-- support.md
  ```
+

@@ -1,10 +1,14 @@
 ---
-layout: default
 title: Adding an _includes file
-parent: Adding files
-grand_parent: Internal documentation
 ---
 
 # {{ page.title}}
 
-*To be filled in*
+---
+
+To add a new `_includes/` file, follow these steps:
+
+1. To
+2. be
+3. filled
+4. in

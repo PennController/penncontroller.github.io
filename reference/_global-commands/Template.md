@@ -1,6 +1,6 @@
 ---
 title: Template
-syntax: Template
+syntax: Template()
 parameters:
   - name: TABLE_NAME
     type: string

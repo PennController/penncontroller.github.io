@@ -13,11 +13,11 @@ related:
 @newText("hidden-text", "Surprise!")
 @    .hidden()
 @    .print()
-*,
+@,
 @newButton("reveal", "Click to reveal a surprise")
 @    .print()
 @    .wait()
-*,
+@,
 @getText("hidden-text")
 $    .visible()
 </code></pre>

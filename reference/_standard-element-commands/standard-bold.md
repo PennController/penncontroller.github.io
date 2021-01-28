@@ -10,7 +10,7 @@ description: Bolds any text that appears in the element.
 @newText("bolded-text", "Hello, text!")
 $    .bold()
 @    .print()
-*,
+@,
 @newButton("bolded-button", "Hello, button!")
 $    .bold()
 @    .print()

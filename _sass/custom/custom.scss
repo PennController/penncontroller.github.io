@@ -251,3 +251,13 @@ a.overlay-link:hover{
 .page-title {
   white-space: pre-line;
 }
+
+// Modify default spacing
+li > p {
+  margin-top: $sp-2;
+  margin-bottom: $sp-2;
+}
+
+h3 {
+  margin-bottom: $sp-3;
+}

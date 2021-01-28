@@ -1,6 +1,5 @@
 ---
 title: UploadRecordings
-since: PennController 1.8
 syntax: UploadRecordings()
 parameters:
   - name: TRIAL_LABEL
@@ -10,6 +9,7 @@ parameters:
     description: To be filled in
     optional: true
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+since: PennController 1.8
 ---
 
 ```javascript

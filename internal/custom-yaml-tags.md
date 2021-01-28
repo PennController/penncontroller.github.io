@@ -1,29 +1,31 @@
 ---
-layout: default
 title: Custom YAML tags
-parent: Adding files
-grand_parent: Internal documentation
+nav_order: 3
+last_modified_date: january 25 2021
 ---
 
 # {{page.title}}
 
+This page lists all of the custom YAML tags.
+{: .h1-blurb }
+
 ---
 
-## Bottom navigation
+## Numbered headings
 
 ### `numbered_headings`
-
----
 
 ### `start_heading`
 
 ---
 
+## Bottom navigation side bar
+
 ### `previous_page`
 
 ---
 
-## Navigation sidebar
+## Main navigation sidebar
 
 ### `nav_hide`
 
@@ -34,8 +36,6 @@ of said pages.
 + Example: The **Internal Documentation** page (`~/internal/internal-documentation.md`)
 and all of its (grand)children are hidden.
 
----
-
 ### `exclude_permalink`
 
 Lists a page on the main navigation sidebar, but does not provide a link
@@ -44,21 +44,11 @@ to the page's actual URL.
 + Example: The arrow next to the **Commands** page (`~/docs/commands.md`) expands
 to show the children pages, but the **Commands** page itself is not a link.
 
----
+### `redirect_internal`
 
-### `redirect`
-
-Redirects an entry on the main navigation sidebar to the specified URL.
-
-+ Example: The **Versions** page (`~/docs/versions.md`) links to the
-[`versions` tag page]({{site.baseurl}}/tag/versions){:target="_blank"}
-instead of the [actual **Versions** page]({{site.baseurl}}/docs/versions){:target="_blank"}.
-
----
+### `redirect_external`
 
 ### `element_type`
-
----
 
 ### `children_code_font`
 
@@ -66,8 +56,6 @@ Uses `code font` when listing all of the page's children on the main navigation 
 
 + Example: The children pages of the **Global Commands** page (~/commands/global-commmands.md)
 are listed in `code font`.
-
----
 
 ### `children_collection`
 
@@ -79,11 +67,7 @@ cannot use Jekyll collections to create (grand)children pages.
 + Example: The children pages of the **Elements** page (`~/docs/elements.md`)
 are created from the `elements` collection (`~/reference/_elements/`).
 
----
-
 ### `children_are_html_tags`
-
----
 
 ### `layout`
 
