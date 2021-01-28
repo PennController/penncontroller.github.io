@@ -9,7 +9,7 @@ nav_order: 4
 
 This tutorial is designed for people who prefer learning by doing. If you prefer
 to learn concept-by-concept, check out the
-[**Core Concepts**]({{site.baseurl}}/core-concepts){:target="_blank"}
+[**Core Concepts**]({{site.baseurl}}/core-concepts)
 section. You may find it useful to read both this tutorial and the
 **Core Concepts** section.
 {: .h1-blurb }
@@ -111,7 +111,7 @@ summary="Click to see the final experiment script" %}
 {% for child in children_list %}
   <li>
   {% assign modified_title = child.title | split: ". " | last %}
-    <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">
+    <a href="{{ child.url | prepend: site.baseurl }}">
       {{ modified_title }}
     </a>
     : {{ child.blurb }}

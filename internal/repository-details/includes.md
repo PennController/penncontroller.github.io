@@ -133,7 +133,7 @@ As of October 27, 2020 `footer_custom.html` is the same as the original
 [Just the Docs `footer_custom.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/footer_custom.html){:target="_blank"}
 with the addition of the line `<script src="/assets/prism/prism.js"></script>`,
 which is the source code for the
-[Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism){:target="_blank"}.
+[Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism).
 
 ---
 
@@ -146,7 +146,7 @@ Adds custom content to the original
 As of September 3, 2020 `head_custom.html` only contains the line
 `<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">`,
 which is used to style the
-[Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism){:target="_blank"}.
+[Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism).
 
 ---
 
@@ -154,7 +154,7 @@ which is used to style the
 
 Creates the <span class="text-delta">description</span> and <span class="text-delta">example</span>
 blocks used on this page. See the documentation for adding a 
-[new `_includes` file]({{site.baseurl}}/internal/adding-files/adding-includes){:target="_blank"}.
+[new `_includes` file]({{site.baseurl}}/internal/adding-files/adding-includes).
 {: .mt-4 }
 
 ---
@@ -163,8 +163,8 @@ blocks used on this page. See the documentation for adding a
 
 {% capture description %}
 Creates a <span class="label label-purple">instructions</span> block; used in the
-[Basic Tutorial]({{site.baseurl}}/docs/basic-tutorial){:target="_blank"} and
-[Advanced Tutorial]({{site.baseurl}}/docs/advanced-tutorial){:target="_blank"}.
+[Basic Tutorial]({{site.baseurl}}/docs/basic-tutorial) and
+[Advanced Tutorial]({{site.baseurl}}/docs/advanced-tutorial).
 {% endcapture %}
 
 {%- capture code -%}
@@ -276,7 +276,7 @@ description
 
 + Overrides the original
 [Just the Docs `./_includes/nav.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/nav.html){:target="_blank"}:
-+ Implements the [custom navigation YAML tags]({{site.baseurl}}/internal/adding-files/custom-yaml-tags#navigation-sidebar){:target="_blank"}.
++ Implements the [custom navigation YAML tags]({{site.baseurl}}/internal/adding-files/custom-yaml-tags#navigation-sidebar).
 + Adds a horizontal rule below the **Announcements**, **Advanced Tutorial**,
 and **Commands** pages.
 

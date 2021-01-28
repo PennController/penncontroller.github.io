@@ -8,9 +8,9 @@ nav_order: 5
 # {{ page.title }}
 
 This tutorial assumes familiarity with the knowledge introduced in the
-[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial){:target="_blank"}.
+[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial).
 If you prefer to learn concept-by-concept, check out the
-[**Core Concepts**]({{site.baseurl}}/core-concepts){:target="_blank"}
+[**Core Concepts**]({{site.baseurl}}/core-concepts)
 section. You may find it useful to read both the tutorials and the
 **Core Concepts** section.
 {: .fs-5 .fw-300 }
@@ -179,7 +179,7 @@ newTrial("completion_screen",
 {% for child in children_list %}
   <li>
   {% assign modified_title = child.title | split: ". " | last %}
-    <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">{{ modified_title }}</a>: {{ child.blurb }}
+    <a href="{{ child.url | prepend: site.baseurl }}">{{ modified_title }}</a>: {{ child.blurb }}
   </li>
 {% endfor %}
 </ol>

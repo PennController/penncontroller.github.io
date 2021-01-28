@@ -13,13 +13,13 @@ Elements are the basic unit of a PennController trial. They contain multimedia c
 
 As of PennController 1.8, there are 21 element types, including: 
 
-+ [`Text`]({{site.baseurl}}/elements/text){:target="_blank"}: Text content (multimedia).
-+ [`Image`]({{site.baseurl}}/elements/image){:target="_blank"}: Image content (multimedia).
-+ [`Key`]({{site.baseurl}}/elements/key){:target="_blank"}: Keyboard keypresses (interactive).
-+ [`Button`]({{site.baseurl}}/elements/button){:target="_blank"}: Clickable buttons (multimedia and interactive).
-+ [`Audio`]({{site.baseurl}}/elements/audio){:target="_blank"}: Audio content that can interact with the experiment script (multimedia and interactive).
++ [`Text`]({{site.baseurl}}/elements/text): Text content (multimedia).
++ [`Image`]({{site.baseurl}}/elements/image): Image content (multimedia).
++ [`Key`]({{site.baseurl}}/elements/key): Keyboard keypresses (interactive).
++ [`Button`]({{site.baseurl}}/elements/button): Clickable buttons (multimedia and interactive).
++ [`Audio`]({{site.baseurl}}/elements/audio): Audio content that can interact with the experiment script (multimedia and interactive).
 
-You can see a list of all element types and their descriptions on the [Elements]({{site.baseurl}}/elements){:target="_blank"} page.
+You can see a list of all element types and their descriptions on the [Elements]({{site.baseurl}}/elements) page.
 
 {% capture label %}
 We distinguish between the terms "element type" and "element":
@@ -44,15 +44,15 @@ Create an element by calling a <code>newX("<var>ELEMENT_NAME</var>",...)</code> 
 
 + `X` is an element type.
 + <code>"<var>ELEMENT_NAME</var>"</code> is the name of the element.
-+ `...` refers to subsequent parameters that depend on the element type. To see what arguments a specific element type requires, visit that element type's reference page under [Elements]({{site.baseurl}}/elements){:target="_blank"}.
++ `...` refers to subsequent parameters that depend on the element type. To see what arguments a specific element type requires, visit that element type's reference page under [Elements]({{site.baseurl}}/elements).
 
 Naming an element is technically optional, but **we recommend giving every element a name**,  Naming your elements will make it easier to debug an experiment, and only named elements can be accessed by a `getX()` function.
 
 {% capture instructions %}
 
-+ Create an [`Audio`]({{site.baseurl}}/elements/audio){:target="_blank"} named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
-+ Create a [`Text`]({{site.baseurl}}/elements/text){:target="_blank"} named `"fish-sentence"` that contains the string `"The fish swim in a tank which is perfectly round."`
-+ Create an [`Image`]({{site.baseurl}}/elements/image){:target="_blank"} named `"fish-plural"` that contains the image `2fishRoundTank.png`.
++ Create an [`Audio`]({{site.baseurl}}/elements/audio) named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
++ Create a [`Text`]({{site.baseurl}}/elements/text) named `"fish-sentence"` that contains the string `"The fish swim in a tank which is perfectly round."`
++ Create an [`Image`]({{site.baseurl}}/elements/image) named `"fish-plural"` that contains the image `2fishRoundTank.png`.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.

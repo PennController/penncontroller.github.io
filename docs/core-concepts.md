@@ -9,7 +9,7 @@ nav_order: 3
 
 This guide is designed for people who prefer learning concepts step by step.
 If you prefer to learn by doing, check out the
-[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial){:target="_blank"}.
+[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial).
 You may find it useful to read both this guide and the tutorial.
 {: .fs-5 .fw-300 }
 

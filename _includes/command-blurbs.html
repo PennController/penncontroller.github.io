@@ -3,7 +3,7 @@
   {% assign command_tag = command.title | slugify %}
   <h2 class="mt-2" id="{{ command_tag }}"> 
     {% unless include.deprecated %}
-      <a href="{{ site.baseurl}}{{ command.url }}" target="_blank">
+      <a href="{{ site.baseurl}}{{ command.url }}">
     {% endunless %}
     <code>{{ command.title }}</code>
     {% unless include.deprecated %}
@@ -55,7 +55,7 @@
         {%- for related in command.related -%}
           {% assign related_command = site[related.collection] | where: "title", related.name | first %}
           <li>
-            <a href="{{ related_command.url | prepend: site.baseurl }}" target="_blank">
+            <a href="{{ related_command.url | prepend: site.baseurl }}">
               <code>{{ related_command.title }}</code>
             </a>: {{ related_command.description }}
           </li>

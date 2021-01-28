@@ -7,7 +7,7 @@
         {% assign command_tag = command.title | downcase | slugify %}
         <a href="#{{ command_tag }}"><code>{{command.title}}</code></a>
       {% else %}
-        <a href="{{ command.url | absolute_url }}" target="_blank"><code>{{command.title}}</code></a>
+        <a href="{{ command.url | absolute_url }}"><code>{{command.title}}</code></a>
       {% endif %}
     </div>
     {% endfor %}
@@ -24,11 +24,11 @@
       {% endif %}
       {% if commands.size > 0 %}
         <div class="command-table-title">
-          <a href="{{site.baseurl}}/docs/elements/{{collection_name}}" target="_blank"><code>{{element}}</code> element</a> 
+          <a href="{{site.baseurl}}/docs/elements/{{collection_name}}"><code>{{element}}</code> element</a> 
         </div>
         {% for command in commands %}
           <div>
-          <a href="{{ command.url | absolute_url }}" target="_blank"><code>{{command.title}}</code></a> 
+          <a href="{{ command.url | absolute_url }}"><code>{{command.title}}</code></a> 
           </div>
         {% endfor %}
       {% endif %}
