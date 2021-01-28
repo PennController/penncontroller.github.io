@@ -12,7 +12,7 @@ exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 
 The easiest way to use PCIbex, or PennController, is to use the
-[PCIbex Farm](https://expt.pcibex.net/){:target="_blank"} server,
+[PCIbex Farm](https://farm.pcibex.net/){:target="_blank"} server,
 which provides free hosting for PennController experiments. The PCIbex Farm
 hosts and builds PennController experiments automatically, meaning that you
 don't have to worry about set up, and can focus on writing your experiment scripts.
@@ -35,13 +35,13 @@ the exceed-quota list.
 
 ## Creating a PCIbex Farm account
 
-1. Go to the PCIbex Farm [account creation page](https://expt.pcibex.net/login).
+1. Go to the PCIbex Farm [account creation page](https://farm.pcibex.net).
 2. In the "New user" box, enter the following information:
    + In the "Username" field, enter the username that you want for your account.
    + In the "Password" field, enter the password that you want for your account.
    + In the "Verify password field", re-enter the password that you used in the
    "Password" field.
-   + (*Optional*) In the "Email" field, enter the email that you want to link
+   +In the "Email" field, enter the email that you want to link
    your acccount to. PCIbex Farm does not share your email, and only sends emails
    for password retrieval purposes.
 3. Click **Create account**.
