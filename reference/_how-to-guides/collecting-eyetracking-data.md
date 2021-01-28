@@ -233,3 +233,192 @@ Make sure that the file has permission to create new folders in its directory, a
 This script will take care of receiving and storing encoding data lines in subfolders and one file per participant. It will also output back files where the lines have been decoded. You can directly visit it through your browser and type in the field that you see the “URL” key that was reported in your results file (something like httpsdomainofmyexperiment/pathtomyexperiment/vEry-l0ng-uniQu3-1dentif1er). Alternatively, you can directly append <b>key </b> at the end of the PHP script’s url (replacing <b>key</b> with the value from your results file) to get the output file — this is the method we will use in our analyses.
 
 
+# Analyses
+
+Do a few test runs of your experiment to generate some results, or [download the results file](https://raw.githubusercontent.com/PennController/Template/eyetracker-with-results/results/results.csv ) I generated (= two test runs).
+
+We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial](https://penncontroller.github.io/docs/how-to-guides/data-transformation/ ). Then we will require the packages ggplot2, dplyr, and tidyr:
+
+ <!--more-->
+```javascript 
+require("ggplot2")
+require("dplyr")
+require("tidyr")
+```
+
+Then we will tell our script where the PHP file is, and what time-window to use to bin the eye-tracking data points. In this example, we will compute the mean looks to each element over time-windows of 100ms:
+
+<!--more-->
+```javascript 
+# The URL where the data is stored; note the ?experiment= at the end
+ETURL = "http://files.lab.florianschwarz.net/ibexfiles/RecordingsFromIbex/EyeTracker.php?experiment="
+# Time-window to bin the looks
+BIN_DURATION = 100
+```
+
+Then we simply import our results file, and rename the Reception Time column “Participant” as this is what we’ll use to identify sessions (if, like me, you took the same experiment twice, all the lines have the same MD5 hash).
+
+<!--more-->
+```javascript 
+# We'll use Reception time to identify individual sessions
+results <- read.pcibex("results.csv")
+names(results)[1] <- 'Participant'
+```
+
+Now we’ll import the data from our PHP script. To do so, we’ll first subset our data frame to the EyeTracker rows that report the URL keys. Since there were 24 trials, the same key is repeated 24 times for each session, so we’ll also subset to the rows corresponding to the first item only. Then we simply read the CSV files that are output by our PHP script for each URL key, and append the output to our EyeTracker data frame:
+
+<!--more-->
+```javascript 
+# Read ET data file for each session and append output to ETdata
+ETdata = data.frame()
+filesDF <- subset(results, Parameter=="Filename"&Type=="Item-1")
+apply(filesDF, 1, function(row) {
+  data <- read.csv(paste(ETURL,as.character(row[['Value']]),sep=''))
+  data$Participant <- row[['Participant']]
+  ETdata <<- rbind(ETdata,data)
+})
+```
+
+At this point, the ETdata data frame contains individual data points, collected every tens of milliseconds (depending on the time resolution of the EyeTracker element upon runtime). Let us bin those in intervals of 100ms: 
+
+<!--more-->
+```javascript 
+# Bin the data
+ETdata$bin <- BIN_DURATION*floor(ETdata$times/BIN_DURATION)
+ETdata <- ETdata %>% group_by(Participant,trial,bin) %>% mutate(
+    top_female=mean(X_topFemaleIA),
+    bottom_female=mean(X_bottomFemaleIA),
+    top_male=mean(X_topMaleIA),
+    bottom_male=mean(X_bottomMaleIA),
+  )
+```
+
+Now the our data frame has four additional columns reporting the proportion of looks to each quarter of the page every 100ms.
+
+We also want to know which quarter the participant ended up selecting on each of the trial. That piece of information is stored in the results data frame, and we will now import it into the ETdata data frame (note that Item.number from results corresponds to trial from ETdata):
+
+<!--more-->
+```javascript 
+# Add final choice to ETdata
+answers <- results[results$Parameter=="Selection", c("Participant","Item.number","Value")]
+names(answers) <- c("Participant", "trial", "Selection")
+ETdata <- merge(ETdata,answers,by=c("Participant","trial"))
+```
+
+Before plotting a graph, we want to proceed to a few transformations of our data: right now each bin is repeated multiple times in ETdata, because each row is an individual data point, and each quarter is coded as a column. It is easier with ggplot to have only one row per bin per quarter instead. Here is how we can do this:
+
+<!--more-->
+```javascript 
+# Some transformations before plotting
+#  - only keep first row for each bin per participant+trial
+ETdata_toplot <- ETdata %>% group_by(Participant,trial,bin) %>% filter(row_number()==1)
+#  - from wide to long (see http://www.cookbook-r.com/Manipulating_data/Converting_data_between_wide_and_long_format/)
+ETdata_toplot <- gather(ETdata_toplot, focus, gaze, top_female:bottom_male)
+```
+
+We now have a data frame that is ready for plotting. We’ll look at the evolution of the mean proportion of gazes over time, depending on which quarter was selected:
+
+<!--more-->
+```javascript 
+# Plot the results
+ggplot(ETdata_toplot, aes(x=bin,y=gaze,color=focus)) + 
+  geom_line(stat="summary",fun.y="mean") +
+  facet_grid(Selection~.)
+```
+
+Note that the less often a quarter was selected, the fewer data points we got, and so the less smooth our lines are.
+
+This is reassuring: the looks converge toward the quarter that ended up being clicked:
+
+![alt text]({{site.baseurl}}/assets/images/looks.png)
+
+
+# Full R Script
+
+<!--more-->
+```javascript 
+# Imports
+read.pcibex <- function(filepath, auto.colnames=TRUE, fun.col=function(col,cols){cols[cols==col]<-paste(col,"Ibex",sep=".");return(cols)}) {
+  n.cols <- max(count.fields(filepath,sep=",",quote=NULL),na.rm=TRUE)
+  if (auto.colnames){
+    cols <- c()
+    con <- file(filepath, "r")
+    while ( TRUE ) {
+      line <- readLines(con, n = 1, warn=FALSE)
+      if ( length(line) == 0) {
+        break
+      }
+      m <- regmatches(line,regexec("^# (\\d+)\\. (.+)\\.$",line))[[1]]
+      if (length(m) == 3) {
+        index <- as.numeric(m[2])
+        value <- m[3]
+        if (index < length(cols)){
+          cols <- c()
+        }
+        if (is.function(fun.col)){
+          cols <- fun.col(value,cols)
+        }
+        cols[index] <- value
+        if (index == n.cols){
+          break
+        }
+      }
+    }
+    close(con)
+    return(read.csv(filepath, comment.char="#", header=FALSE, col.names=cols))
+  }
+  else{
+    return(read.csv(filepath, comment.char="#", header=FALSE, col.names=seq(1:n.cols)))
+  }
+}
+require("dplyr")
+require("ggplot2")
+require("tidyr")
+
+# The URL where the data is stored
+ETURL = "http://files.lab.florianschwarz.net/ibexfiles/RecordingsFromIbex/EyeTracker.php?experiment="
+# Time-window to bin the looks
+BIN_DURATION = 100
+
+# We'll use Reception time to identify individual sessions
+results <- read.pcibex("results.csv")
+names(results)[1] <- 'Participant'
+
+# Read ET data file for each session and append output to ETdata
+ETdata = data.frame()
+filesDF <- subset(results, Parameter=="Filename"&Type=="Item-1")
+apply(filesDF, 1, function(row) {
+  data <- read.csv(paste(ETURL,as.character(row[['Value']]),sep=''))
+  data$Participant <- row[['Participant']]
+  ETdata <<- rbind(ETdata,data)
+})
+
+# Bin the data
+ETdata$bin <- BIN_DURATION*floor(ETdata$times/BIN_DURATION)
+ETdata <- ETdata %>% group_by(Participant,trial,bin) %>% mutate(
+    top_female=mean(X_topFemaleIA),
+    bottom_female=mean(X_bottomFemaleIA),
+    top_male=mean(X_topMaleIA),
+    bottom_male=mean(X_bottomMaleIA),
+  )
+
+# Add final choice to ETdata
+answers <- results[results$Parameter=="Selection", c("Participant","Item.number","Value")]
+names(answers) <- c("Participant", "trial", "Selection")
+ETdata <- merge(ETdata,answers,by=c("Participant","trial"))
+
+# Some transformations before plotting
+#  - only keep first row for each bin per participant+trial
+ETdata_toplot <- ETdata %>% group_by(Participant,trial,bin) %>% filter(row_number()==1)
+#  - from wide to long (see http://www.cookbook-r.com/Manipulating_data/Converting_data_between_wide_and_long_format/)
+ETdata_toplot <- gather(ETdata_toplot, focus, gaze, top_female:bottom_male)
+
+# Plot the results
+ggplot(ETdata_toplot, aes(x=bin,y=gaze,color=focus)) + 
+  geom_line(stat="summary",fun.y="mean") +
+  facet_grid(Selection~.)
+```
+
+<b> Published by Jeremy </b>
+Researcher in semantics and pragmatics
+Programmer of PennController for IBEX
