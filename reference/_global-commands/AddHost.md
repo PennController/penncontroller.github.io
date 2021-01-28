@@ -1,6 +1,6 @@
 ---
 title: AddHost
-syntax: AddHost
+syntax: AddHost()
 parameters:
   - name: URL
     type: string

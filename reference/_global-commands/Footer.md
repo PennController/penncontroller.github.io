@@ -1,6 +1,6 @@
 ---
 title: Footer
-syntax: Footer
+syntax: Footer()
 parameters:
   - name: COMMAND_SEQUENCE
     description: To be filled in

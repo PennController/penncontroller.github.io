@@ -1,11 +1,13 @@
 ---
-title: Adding files
-has_children: true
-has_toc: false
-nav_order: 5
+title: Submitting a pull request
+nav_order: 6
 ---
 
-# {{ page.title}}
+# {{ page.title }}
+
+This page will explain how to submit a pull request to the `penncontroller.github.io`
+repository.
+{: .h1-blurb }
 
 ---
 

@@ -12,8 +12,9 @@ parameters:
     description: To be filled in
 description: Applies the specified CSS property and value pair to the element.
 alternates: 
-  - syntax: '.css({"*CSS_PROPERTY_1*":"*VALUE_1*", "*CSS_PROPERTY_2*":"*VALUE_2*"})'
-    description: Apply multiple CSS property and value pairs by using curly brackets and colons.
+  - name: PROPERTY_VALUE_ARRAY
+    type: array
+    description: 'Apply multiple CSS properties at once by passing an array of property-value pairs in the format `{CSS_PROPERTY_1: VALUE_1, CSS_PROPERTY_2: VALUE_2}`'
 related:
   - name: standard.cssContainer
     collection: standard-element-commands
@@ -23,7 +24,7 @@ related:
 @newText("framed-text", "Hello, text!")
 $    .css("border", "solid 1px red")
 @    .print()
-*,
+@,
 @newButton("orchid-smallcaps-button", "Hello, button!")
 $    .css({"background-color":"orchid", "font-variant":"small-caps"})
 @    .print()

@@ -1,9 +1,10 @@
 ---
 title: PennController.ResetPrefix
-syntax: PennController.ResetPrefix(null)
+syntax: PennController.ResetPrefix()
 description: Removes the default global command prefix `PennController.`
 alternates:
-  - syntax: 'PennController.ResetPrefix(PREFIX: string)'
+  - name: PREFIX
+    type: string
     description: Resets the default global command prefix from `PennController.` to `PREFIX`.
 ---
 

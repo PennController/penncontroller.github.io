@@ -1,9 +1,7 @@
 ---
-layout: default
-title: _includes/
-parent: Directory structure
-grand_parent: Internal documentation
-last_modified_date: january 6 2021
+title: "_includes/"
+last_modified_date: january 2 2021
+nav_order: 1
 ---
 
 # `{{ page.title }}`
@@ -19,30 +17,42 @@ Folder structure
 
 ```treeview
 _includes/
+|-- bottom-navbar.html
 |-- collapsible-block.html
+|-- collect-tags.html
 |-- command-blurbs.html
 |-- footer_custom.html
 |-- head_custom.html
 |-- include-example.html
 |-- instructions.html
+|-- label-deprecated.html
 |-- label-note.html
-|-- label-recommended.html
+|-- label-technical.html
 |-- label.html
 |-- nav.html
+|-- post-excerpt.html
 |-- toc-collapsible.html
 |-- toc-collection.html
+|-- toc-command,html
 |-- toc-element.html
 `-- toc-same-page.html
 ```
 
 ---
 
-#### Table of Contents
-
-{: .no_toc }
+Table of Contents
+{: .text-delta }
 
 + TOC
 {:toc}
+
+---
+
+## `bottom-navbar.html`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ---
 
@@ -82,6 +92,14 @@ code=code extra=extra result=result %}
 
 ---
 
+## `collect-tags.html`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+---
+
 ## `command-blurbs.html`
 
 {% capture description %}
@@ -108,11 +126,11 @@ link and a horizontal rule.
 
 ## `footer_custom.html`
 
-Adds custom content to the original 
+Adds custom content to the original
 [Just the Docs `./_layouts/default.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_layouts/default.html){:target="_blank"}.
 
 As of October 27, 2020 `footer_custom.html` is the same as the original
-[Just the Docs `footer_custom.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/footer_custom.html){:target="_blank"} 
+[Just the Docs `footer_custom.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/footer_custom.html){:target="_blank"}
 with the addition of the line `<script src="/assets/prism/prism.js"></script>`,
 which is the source code for the
 [Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism){:target="_blank"}.
@@ -122,10 +140,10 @@ which is the source code for the
 ## `head_custom.html`
 
 Adds custom content to the original
-[Just the Docs `./_includes/head.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/head.html){:target="_blank"}. 
+[Just the Docs `./_includes/head.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/head.html){:target="_blank"}.
 {: .mt-4 }
 
-As of September 3, 2020 `head_custom.html` only contains the line 
+As of September 3, 2020 `head_custom.html` only contains the line
 `<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">`,
 which is used to style the
 [Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism){:target="_blank"}.
@@ -177,6 +195,14 @@ Click **main.js** to open `main.js` in the script editor:
 
 --
 
+## `label-deprecated.html`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+---
+
 ## `label-note.html`
 
 {% capture description %}
@@ -204,30 +230,11 @@ This is a note.
 
 ---
 
-## `label-recommended.html`
+## `label-technical.html`
 
-{% capture description %}
-Uses `./_includes/label.html` as a base; creates a green label that says
-<span class="text-delta">recommended</span>.
-{% endcapture %}
-
-{%- capture code -%}
-{% raw %}
-{% capture label %}
-It is recommended to...
-{% endcapture %}
-{% include label-recommended.html label-body=label %}
-{% endraw %}
-{%- endcapture -%}
-
-{% capture result %}
-{% capture label %}
-It is recommended to...
-{% endcapture %}
-{% include label-recommended.html label-body=label %}
-{% endcapture %}
-
-{% include include-example.html description=description code=code result=result %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ---
 
@@ -272,6 +279,14 @@ description
 + Implements the [custom navigation YAML tags]({{site.baseurl}}/internal/adding-files/custom-yaml-tags#navigation-sidebar){:target="_blank"}.
 + Adds a horizontal rule below the **Announcements**, **Advanced Tutorial**,
 and **Commands** pages.
+
+---
+
+## `post-excerpt.html`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ---
 
@@ -328,6 +343,14 @@ for code font.
 
 {% include include-example.html description=description code=code
 extra=extra result=result %}
+
+---
+
+## `toc-command.html`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ---
 

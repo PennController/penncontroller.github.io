@@ -1,9 +1,8 @@
 ---
 layout: default
 title: internal/
-parent: Directory structure
-grand_parent: Internal documentation
 last_modified_date: october 27 2020
+nav_order: 4
 ---
 
 ## `{{ page.title}} `

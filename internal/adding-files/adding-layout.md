@@ -1,10 +1,14 @@
 ---
-layout: default
-title: Adding a custom layout
-parent: Adding files
-grand_parent: Internal documentation
+title: Adding a _layouts file
 ---
 
 # {{ page.title}}
 
-*To be filled in*
+---
+
+To add a new `_layout/s`, follow these steps:
+
+1. To
+2. be
+3. filled
+4. in

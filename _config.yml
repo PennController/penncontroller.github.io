@@ -173,6 +173,24 @@ defaults:
       has_children: true
       has_toc: false
   - scope:
+      path: "internal"
+    values:
+      layout: "default"
+      parent: "Internal documentation"
+  - scope:
+      path: "internal/adding-files"
+    values:
+      layout: "default"
+      parent: "Adding files"
+      grand_parent: "Internal documentation"
+  - scope:
+      path: "internal/repository-details"
+    values:
+      layout: "default"
+      parent: "Repository details"
+      grand_parent: "Internal documentation"
+      code_font: true
+  - scope:
       path: "support"
     values:
       layout: "default"
