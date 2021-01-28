@@ -419,6 +419,6 @@ ggplot(ETdata_toplot, aes(x=bin,y=gaze,color=focus)) +
   facet_grid(Selection~.)
 ```
 
-<b> Published by Jeremy </b>
-Researcher in semantics and pragmatics
+<b> Published by Jeremy </b>,
+Researcher in semantics and pragmatics,
 Programmer of PennController for IBEX
