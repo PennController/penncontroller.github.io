@@ -17,7 +17,7 @@ layout: default
   {% for relevant_element_type in page.relevant_elements %}
     {% assign relevant_element = site.elements | where: "title", relevant_element_type | first %}
     <span id="{{  relevant_element.title }}" class="label bg-grey-lt-100 mt-2 ml-0">
-      <a href="{{ relevant_element.url | absolute_url }}" target="_blank">
+      <a href="{{ relevant_element.url | absolute_url }}">
         {{ relevant_element.title }}
       </a>
     </span>
@@ -140,7 +140,7 @@ layout: default
   {% for related in page.related %}
     {% assign related_command = site[related.collection] | where: "title", related.name | first %}
     <li>
-      <a href="{{ related_command.url | prepend: site.baseurl }}" target="_blank">
+      <a href="{{ related_command.url | prepend: site.baseurl }}">
         <code>{{ related_command.title }}</code>
       </a>: {{ related_command.description }}
     </li>

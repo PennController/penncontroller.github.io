@@ -13,7 +13,7 @@ builds and hosts PennController experiments for you, meaning that you can focus
 on writing your experiment scripts.
 
 For more information, see
-[Core Concepts > PCIbex Farm]({{site.baseurl}}/core-concepts/4_pcibex-farm){:target="_blank"}.
+[Core Concepts > PCIbex Farm]({{site.baseurl}}/core-concepts/4_pcibex-farm).
 
 ### Creating a PCIbex Farm account
 
@@ -69,7 +69,7 @@ from GitHub.
 project page's**Script** or **Resources** folders, and briefly flash red.
 
 To learn more about importing files from GitHub, see
-[Syncing with a GitHub repository]({{site.baseurl}}/docs/how-to-guides/github/){:target="_blank"}.
+[Syncing with a GitHub repository]({{site.baseurl}}/docs/how-to-guides/github/).
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
@@ -105,7 +105,7 @@ The script editor has the following features:
 ## Creating a trial
 
 Create a trial by calling the
-[<code>PennController.newTrial("<var>TRIAL_LABEL</var>,...")</code>]({{site.baseurl}}/global-commands/newtrial){:target="_blank"}
+[<code>PennController.newTrial("<var>TRIAL_LABEL</var>,...")</code>]({{site.baseurl}}/global-commands/newtrial)
 command, where:
 
 + <code>"<var>TRIAL_LABEL</var>"</code> is the label/name of the trial (optional,
@@ -135,7 +135,7 @@ If you run the experiment, it'll end immediately with the message
 
 All PennController commands begin with the prefix `PennController.`, in order to
 avoid naming conflicts with other JavaScript modules. The command
-[`PennController.ResetPrefix(null)`]({{site.baseurl}}/global-commands/resetprefix){:target="_blank"}
+[`PennController.ResetPrefix(null)`]({{site.baseurl}}/global-commands/resetprefix)
 removes the prefix for all subsequent commands. You can also pass a string
 instead of `null` as an argument, which will reset the `PennController.` prefix
 to the aforementioned string for all subsequent commands. 
@@ -173,7 +173,7 @@ the `PennController.` prefix when it's first called.
 ## Using the debugger
 
 PennController comes with a
-[built-in debugger]({{site.baseurl}}/core-concepts/debugger){:target="_blank"}
+[built-in debugger]({{site.baseurl}}/core-concepts/debugger)
 that helps detect typos, syntax errors, and other issues.
 
 It appears as a small window in the bottom-right corner of the screen when you
@@ -195,11 +195,11 @@ but the important part to know is that **you should use the debugger as you buil
 You'll inevitably face problems, and the debugger will make it easier to solve them.
 
 Turn off the debugger with the
-[`DebugOff`]({{site.baseurl}}/commands/global-commands/debugoff){:target="_blank"}
+[`DebugOff`]({{site.baseurl}}/commands/global-commands/debugoff)
 command when you're ready to publish your experiment and collect experimental data.
 
 We recommend reading the
-[Debugger documentation]({{site.baseurl}}/core-concepts/4_pcibex-farm#debugger){:target="_blank"}
+[Debugger documentation]({{site.baseurl}}/core-concepts/4_pcibex-farm#debugger)
 after you've completed this tutorial and the
-[**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial){:target="_blank"},
+[**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial),
 and are more familiar with PennController experiments.

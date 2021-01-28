@@ -13,7 +13,7 @@ nav_order: 6
 <div class="flex-row-wrap mb-8">
 {% for child in site.elements %}
   <div class="centered-25 pb-4">
-    <a href="{{ child.url | absolute_url }}" class="overlay-link" target="_blank">
+    <a href="{{ child.url | absolute_url }}" class="overlay-link">
     <div class="overlay">
       <img src="{{ site.baseurl }}/assets/elements/{{ child.thumbnail }}" alt="{{ child.title }}" width="100" height="100" class="image">
       <br>

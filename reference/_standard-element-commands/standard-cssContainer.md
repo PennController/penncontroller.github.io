@@ -23,9 +23,9 @@ related:
 
 This command affects the *container* of the element that it is called on,
 meaning that any elements added to an element through a call to
-[`standard.after`]({{site.baseurl}}/commands/standard-element-commands/standard-after){:target="_blank"}
+[`standard.after`]({{site.baseurl}}/commands/standard-element-commands/standard-after)
 or
-[`standard.before`]({{site.baseurl}}/commands/standard-element-commands/standard-before){:target="_blank"}
+[`standard.before`]({{site.baseurl}}/commands/standard-element-commands/standard-before)
 are also affected.
 
 <!--more-->

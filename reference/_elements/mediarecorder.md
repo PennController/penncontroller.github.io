@@ -5,7 +5,7 @@ children_collection: mediarecorder
 thumbnail: mediarecorder.png
 parameters:
   - name: '"audio"'
-    description: Records an audio stream.{:target="_blank"}
+    description: Records an audio stream.
     optional: true
   - name: '"video"'
     description: Records a video stream.

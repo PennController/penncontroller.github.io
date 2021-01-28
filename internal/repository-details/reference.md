@@ -87,7 +87,7 @@ Contains .md files for global commands.
 description
 {: .text-delta .mt-4}
 
-Contains .md files for the [How-to guides]({{site.baseurl}}/docs/how-to-guides){:target="_blank"} page.
+Contains .md files for the [How-to guides]({{site.baseurl}}/docs/how-to-guides) page.
 
 ---
 
@@ -113,6 +113,6 @@ Contains .md files for standard element commands.
   <h2 id="_{{tag}}"><a href="#_{{tag}}" class="anchor-heading" aria-labelledby="_{{tag}}"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a><code>_{{tag}}</code></h2> 
 
   <p class="text-delta mt-4">description</p>
-  <p> Contains .md files for the <a href="{{ element.url | absolute_url}}" target="_blank">{{ element.title }}</a>.<p>
+  <p> Contains .md files for the <a href="{{ element.url | absolute_url}}">{{ element.title }}</a>.<p>
 
 {% endfor %}

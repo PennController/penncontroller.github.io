@@ -32,7 +32,7 @@ To add a new element command reference page, follow these steps:
     ```
 
     For example, here's part of the front matter for the
-    [`audio.disable`]({{site.baseurl}}/elements/audio/audio-disable){:target="_blank"}
+    [`audio.disable`]({{site.baseurl}}/elements/audio/audio-disable)
     command:
 
     ```yaml
@@ -99,7 +99,7 @@ parameters:
 ```
 
 For example, the
-[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css){:target="_blank"}
+[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css)
 command has two parameters, `CSS_PROPERTY` and `VALUE`:
 
 ```yaml
@@ -134,7 +134,7 @@ alternates:
 ```
 
 The
-[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css){:target="_blank"}
+[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css)
 command has two obligatory parameters, and one optional alternate, `PROPERTY_VALUE_ARRAY`.
 
 ```yaml
@@ -149,7 +149,7 @@ alternates:
 An important distinction between the `parameters` and `alternates` tags is
 that alternates must be called by themselves.
 
-For example, the [`audio.wait`]({{site.baseurl}}/elements/audio/audio-wait){:target="_blank"}
+For example, the [`audio.wait`]({{site.baseurl}}/elements/audio/audio-wait)
 command arguments `"first"` and `TEST_COMMAND` must be called separately: you
 can call `.wait("first")` or `.wait(TEST_COMMAND)`, but not
 `.wait("first", TEST_COMMAND)`.
@@ -200,9 +200,9 @@ related:
 ```
 
 For example, the
-[`standard.after`]({{site.baseurl}}/commands/standard-element-commands/standard-after){:target="_blank"}
+[`standard.after`]({{site.baseurl}}/commands/standard-element-commands/standard-after)
 command is related to the
-[`standard.before`]({{site.baseurl}}/commands/standard-element-commands/standard-before){:target="_blank"}
+[`standard.before`]({{site.baseurl}}/commands/standard-element-commands/standard-before)
 command:
 
 ```yaml

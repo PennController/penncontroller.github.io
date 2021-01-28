@@ -12,18 +12,18 @@ to give participants time to interact with the screen.
 
 ## Some h2
 
-+ [`audio.wait`]({{site.baseurl}}/elemnts/audio/audio-wait){:target="_blank"}:
++ [`audio.wait`]({{site.baseurl}}/elements/audio/audio-wait):
 Pauses experiment script execution until audio playback finishes.
-+ [`key.wait`]({{site.baseurl}}/elements/key/key-wait){:target="_blank"}:
++ [`key.wait`]({{site.baseurl}}/elements/key/key-wait):
 Pauses experiment script execution until a valid keypress.
-+ Also: [`button.wait`]({{site.baseurl}}/elements/button/button-wait){:target="_blank"},
-[`controller.wait`]({{site.baseurl}}/elements/controller/controller-wait){:target="_blank"},
-[`dropdown.wait`]({{site.baseurl}}/elements/dropdown/dropdown-wait){:target="_blank"},
++ Also: [`button.wait`]({{site.baseurl}}/elements/button/button-wait),
+[`controller.wait`]({{site.baseurl}}/elements/controller/controller-wait),
+[`dropdown.wait`]({{site.baseurl}}/elements/dropdown/dropdown-wait),
 and more.
 
 {% capture instructions %}
-1. Create a [`Key`]({{site.baseurl}}/elements/key){:target="_blank"} named `"keypress"` that "listens" for a press of the `F` or `J` key.
-2. Call the [`wait`]({{site.baseurl}}/elements/key/key-wait){:target="_blank"} command on the `"keypress"` `Key` to pause experiment script execution until the participant presses a valid key, in this case the `F` or `J` key.
+1. Create a [`Key`]({{site.baseurl}}/elements/key) named `"keypress"` that "listens" for a press of the `F` or `J` key.
+2. Call the [`wait`]({{site.baseurl}}/elements/key/key-wait) command on the `"keypress"` `Key` to pause experiment script execution until the participant presses a valid key, in this case the `F` or `J` key.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
@@ -63,7 +63,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 
 **Option 1: End trial and stop audio playback after a valid keypress**
 
-+ Call the [`stop`]({{site.baseurl}}/elements/audio/audio-stop){:target="_blank"} command on the `"fish-audio"` `Audio` to stop audio playback.
++ Call the [`stop`]({{site.baseurl}}/elements/audio/audio-stop) command on the `"fish-audio"` `Audio` to stop audio playback.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
@@ -96,7 +96,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 
 **Option 2: End trial after audio playback finishes, instead of after a valid keypress**
 
-+ Call the [`wait`]({{site.baseurl}}/elements/audio/audio-wait){:target="_blank"} command on the `"fish-audio"` `Audio` (instead of on the `"keypress"` `Key`) to pause experiment script execution until audio playback finishes.
++ Call the [`wait`]({{site.baseurl}}/elements/audio/audio-wait) command on the `"fish-audio"` `Audio` (instead of on the `"keypress"` `Key`) to pause experiment script execution until audio playback finishes.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
@@ -134,7 +134,7 @@ To end the trial after audio playback finishes or after a valid keypress, whiche
 
 {% capture instructions %}
 
-+ Call the [`wait("first")`]({{site.baseurl}}/elements/audio/audio-wait#optional-arguments){:target="_blank"} command on the `"fish-audio"` `Audio` to pause experiment script execution until an end-of-audio-playback event.
++ Call the [`wait("first")`]({{site.baseurl}}/elements/audio/audio-wait#optional-arguments) command on the `"fish-audio"` `Audio` to pause experiment script execution until an end-of-audio-playback event.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
