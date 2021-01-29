@@ -2,31 +2,85 @@
 title: Transforming data in R
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut consequat
-semper viverra nam libero justo laoreet sit amet. Morbi blandit cursus risus at
-ultrices mi tempus imperdiet nulla. Fermentum posuere urna nec tincidunt praesent.
+# Starting with a clean slate
 
-Cursus sit amet dictum sit amet justo donec enim. Porttitor massa id neque aliquam
-vestibulum morbi blandit cursus risus. Metus vulputate eu scelerisque felis imperdiet.
-Purus in massa tempor nec feugiat nisl pretium. Sit amet luctus venenatis lectus
-magna fringilla urna porttitor. Auctor elit sed vulputate mi sit amet mauris quis.
+You probably tested your experiment at multiple steps along the way, at which your were recording different pieces of information in the results file. Now that you have a final design, press the right side of <b>Results</b> button on the farm interface to load more options, and then press the button to delete all the previous results.
 
-Sed nisi lacus sed viverra tellus in hac. Diam donec adipiscing tristique risus.
-At varius vel pharetra vel turpis. Urna et pharetra pharetra massa massa.
-Cursus euismod quis viverra nibh cras. Nibh tellus molestie nunc non. Viverra
-orci sagittis eu volutpat odio facilisis mauris. 
+Then take your experiment at least twice, entering different IDs, to generate some results. Press the left sideof the <b>Results</b> button to see new result file.
 
-Enim diam vulputate ut pharetra sit amet aliquam. Imperdiet proin fermentum leo
-vel orci porta. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit
-lectus. Semper auctor neque vitae tempus quam pellentesque. Urna porttitor rhoncus
- dolor purus non enim praesent. Morbi tincidunt augue interdum velit euismod in
- pellentesque. Egestas congue quisque egestas diam in. 
+Save your results file in a folder that you will be able to access from an R script.
 
-Volutpat est velit egestas dui id ornare arcu odio ut. Hac habitasse platea dictumst
-quisque sagittis purus sit amet volutpat. Viverra maecenas accumsan lacus vel facilisis
-volutpat est velit. Ut aliquam purus sit amet luctus venenatis. Consequat nisl vel
-pretium lectus quam id leo. Et tortor at risus viverra adipiscing. Lacus vestibulum
-sed arcu non odio euismod lacinia at quis. In metus vulputate eu scelerisque felis
-imperdiet proin fermentum. Viverra vitae congue eu consequat ac felis donec.
+
+# Load your results file in R
+
+Add the function below to your R script so you can read your results file in R as a CSV file, and automatically name the columns using the comments lines:
+
+<!--more-->
+```javascript 
+read.pcibex <- function(filepath, auto.colnames=TRUE, fun.col=function(col,cols){cols[cols==col]<-paste(col,"Ibex",sep=".");return(cols)}) {
+  n.cols <- max(count.fields(filepath,sep=",",quote=NULL),na.rm=TRUE)
+  if (auto.colnames){
+    cols <- c()
+    con <- file(filepath, "r")
+    while ( TRUE ) {
+      line <- readLines(con, n = 1, warn=FALSE)
+      if ( length(line) == 0) {
+        break
+      }
+      m <- regmatches(line,regexec("^# (\\d+)\\. (.+)\\.$",line))[[1]]
+      if (length(m) == 3) {
+        index <- as.numeric(m[2])
+        value <- m[3]
+        if (index < length(cols)){
+          cols <- c()
+        }
+        if (is.function(fun.col)){
+         cols <- fun.col(value,cols)
+        }
+        cols[index] <- value
+        if (index == n.cols){
+          break
+        }
+      }
+    }
+    close(con)
+    return(read.csv(filepath, comment.char="#", header=FALSE, col.names=cols))
+  }
+  else{
+    return(read.csv(filepath, comment.char="#", header=FALSE, col.names=seq(1:n.cols)))
+  }
+}
+```
+
+Then all you need to do to read your results file is <!--more-->
+```javascript results <- read.pcibex("results")``` (assuming your saved your results file in your R working directory under the name results). 
+
+You can then take a look at the first lines of your table, and their column names, using <!--more--> 
+```javascript head(results)``` .
+
+By default, when the R-function above finds more than one column with the same label in the comments of the results file, it suffixes the first column name with .Ibex. Since the native IBEX format already inserts two columns in the results file described as Item and Group, and assuming you used <!--more-->
+```javascript .log( "Item" , variable.Item )``` and <!--more-->
+```javascript .log( "Group" , variable.Group )``` on your table-generated trials, this behavior ensures that the Ibex-native columns (which appear first) are named Item.Ibex and Group.Ibex while the columns you added using the .log commands are indeed named Item and Group.
+
+
+# Compare RTs
+
+You can easily take a look at response times using the dplyr package:
+<!--more-->
+```javascript
+require(dplyr)
+
+results %>%
+  filter(Ending %in% c("No-s","-s") & (Parameter == "Selection" | Value == "Start")) %>%
+  mutate(Accurate = rep(Value[Parameter=="Selection"]==gsub("No-s","two", gsub("-s", "one", Ending[Parameter=="Selection"])), each=2)) %>%
+  group_by(Accurate, Ending, Group, ID) %>%
+  summarise( RT = mean(EventTime[Parameter=="Selection"] - EventTime[Value=="Start"]) , N = length(Value)/2 )
+```
+
+Our filter only keeps rows which report No-s or -s (the welcome-trial rows) and corresponding to an image selection or to the start of a trial.
+
+The function mutate adds a column Accurate indicating whether the Value for the Selection rows matches the condition identifier encoded in Ending.
+
+We then group our rows by Accurate and Ending to get a clear idea of the effect of our manipulation (presence vs absence of -s) and also by Group and ID to get individual observations.
+
+Finally we report the mean differences between the EventTime of the Selection minus the Start rows, along with the number of observations (two rows per trial, Start and Selection, call for a division by 2).
