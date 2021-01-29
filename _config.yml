@@ -219,6 +219,7 @@ defaults:
     values:
       layout: "how-to-guide"
       parent: "How-to guides"
+      grand_parent: "Support"
   - scope:
       path: "reference/_global-commands"
     values:
