@@ -122,7 +122,7 @@ Every experiment should have instructions.
 
 You can use HTML tags to style text inside a `Text` element.
 
-For example, `<p></p>`, `<b></b>`, and `<br>` are HTML tags that [define a paragraph](https://www.w3schools.com/tags/tag_p.asp){:target="_blank"}, [define bolded text](https://www.w3schools.com/tags/tag_b.asp){:target="_blank"}, and [define a line break](https://www.w3schools.com/tags/tag_br.asp){:target="_blank"}, respectively.
+For example, `<p></p>`, `<b></b>`, and `<br>` are HTML tags that [define a paragraph](https://www.w3schools.com/tags/tag_p.asp){:target="_newtab"}, [define bolded text](https://www.w3schools.com/tags/tag_b.asp){:target="_blank"}, and [define a line break](https://www.w3schools.com/tags/tag_br.asp){:target="_newtab"}, respectively.
 
 + With HTML tags:
   <img class="mt-2 dotted-grey-dk-000" src="{{site.baseurl}}/assets/tutorials/with-html.png">
