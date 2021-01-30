@@ -11,7 +11,7 @@ You can change this behavior and control <b>when</b> and <b>which</b> resources 
 ```javascript
 CheckPreloaded()
 ```  
-creates a PennController trial which, when executed, will pause the experiment until all the resources are preloaded. You can also be more specific and only target resources used by PennController trials with certain labels: 
+It creates a PennController trial which, when executed, will pause the experiment until all the resources are preloaded. You can also be more specific and only target resources used by PennController trials with certain labels: 
 
 <!--more--> 
 
