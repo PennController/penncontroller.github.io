@@ -36,7 +36,7 @@ For more information, see
 
 {% capture instructions %}
 
-1. Go to the [PCIbex Farm home page](https://pcibex.net/){:target="_blank"}.
+1. Go to the [PCIbex Farm home page](https://farm.pcibex.net/){:target="_blank"}.
 2. Click **Empty Project**.
 3. In the "Name" field, enter "Tutorial".
 4. Begin editing.
