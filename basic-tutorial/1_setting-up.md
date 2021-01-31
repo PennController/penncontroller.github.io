@@ -32,43 +32,11 @@ For more information, see
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Creating a new experiment
+### Starting the experiment
 
 {% capture instructions %}
 
-1. Go to the [PCIbex Farm home page](https://farm.pcibex.net/){:target="_blank"}.
-2. Click **Empty Project**.
-3. In the "Name" field, enter "Tutorial".
-4. Begin editing.
-{% endcapture %}
-{% include instructions.html text=instructions%}
-
-### Importing resource files
-
-The **Basic Tutorial** uses the images
-[`1fishSquareTank.png`]({{site.baseurl}}/assets/tutorials/1fishSquareTank.png){:target="_blank"}
-and
-[`2fishRoundTank.png`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.png){:target="_blank"},
-the audio file
-[`2fishRoundTank.mp3`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.mp3){:target="_blank"},
-and the starter experiment script
-[`main.js`]({{site.baseurl}}/assets/tutorials/main.js){:target="_blank"}.
-
-We'll import these files, as well as resource files for the **Advanced Tutorial**,
-from GitHub.
-
-{% capture instructions %}
-
-1. Click **Github Sync »**, under **Experiment 'Tutorial'**.
-2. In the “repo url” field, enter `https://github.com/angelica-pan/BasicTutorial`
-3. Click **Sync**.
-4. If the import was successful, the imported files will appear in the experiment
-project folder
-
-To learn more about importing files from GitHub, see
-[Syncing with a GitHub repository]({{site.baseurl}}/docs/how-to-guides/github/){:target="_blank"}.
-{% endcapture %}
-{% include instructions.html text=instructions%}
+Go to the [PCIbex Farm code editor](https://farm.pcibex.net/experiments/new?from=aplwij){:target="_blank"}.
 
 ### Editing an experiment
 
@@ -79,11 +47,6 @@ Run an experiment by clicking "Open in new tab".
 
 The script editor has the following features:
 
-+ Autocomplete
-  1. Start typing within the script editor.
-  2. A modular window with suggested command names for autocompletion will pop up.
-  3. Navigate the autocomplete suggestions with the **Up** and **Down** arrow keys,
-  and press **Enter/Return** to select a suggestion.
 + Two buttons at the bottom
   + **Refresh**: Save changes and see changes without closing the script editor.
   + **Open in new tab**: Preview experiment in the new tab.
