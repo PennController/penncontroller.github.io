@@ -1,19 +1,19 @@
 ---
-layout: default
 title: Adding an asset
-parent: Adding files
-grand_parent: Internal documentation
-nav_order: 4
+last_modified_date: january 25 2021
 ---
 
 # {{ page.title}}
 
+---
+
 Images and other static resource files go in the [`assets/`]({{site.baseurl}}/internal/directory-structure/assets) folder. 
 
-As of September 3, 2020 there are two subfolders:
+As of <span class="d-inline-block">{{ page.last_modified_date | date: site.last_edit_time_format }}</span>
+there are five subfolders:
 
-+ `assets/elements/`: Contains the element type thumbnail PNG files.
-+ `assets/images/`: Contains all other images files.
-+ `assets/prism/`: Contains the JS script and CSS style sheet for the Prism syntax highlighter.
-
-Other subfolders may be added as needed.
++ to
++ be
++ filled
++ in
++ eventually

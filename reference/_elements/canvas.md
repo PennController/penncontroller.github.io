@@ -6,8 +6,10 @@ children_collection: canvas
 thumbnail: canvas.png
 parameters:
   - name: WIDTH
+    type: int
     description: The width of the `Canvas`, in pixels.
   - name: HEIGHT
+    type: int
     description: The height of the `Canvas`, in pixels.
 description: Creates a rectangular surface that other elements can be placed onto.
 notes: true

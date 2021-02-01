@@ -3,7 +3,7 @@
   {% assign command_tag = command.title | slugify %}
   <h2 class="mt-2" id="{{ command_tag }}"> 
     {% unless include.deprecated %}
-      <a href="{{ site.baseurl}}{{ command.url }}" target="_blank">
+      <a href="{{ site.baseurl}}{{ command.url }}">
     {% endunless %}
     <code>{{ command.title }}</code>
     {% unless include.deprecated %}
@@ -19,6 +19,18 @@
     <div id="{{ command_tag }}-syntax">
       <p class="command-blurb-subheader">syntax</p>
       <code>{{ command.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+
+      {%- if command.alternate -%}
+      <ul id="alternates">
+        {%- for alternate in command.alternates -%}
+          <li id="alternate-item">
+            <code>get{{- command.element_type -}}{{- alternate.syntax -}}</code>: {{ alternate.description }}
+          </li>
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+
+
     </div>
 
     <div id="{{ command_tag }}-description">
@@ -35,29 +47,15 @@
       {%- endif -%}
       {%- include collapsible-block.html content=content summary="click to expand" -%}
     </div>
-
-    
-    {%- if command.optional_parameters -%}
-    <div id="{{ command_tag }}-optional-parameters">
-      <p class="command-blurb-subheader">optional parameters</p>
-      <ul>
-        {%- for parameter in command.optional_parameters -%}
-          <li>
-            <code>{{ parameter.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-    {%- endif -%}
     
     {%- if command.related -%}
     <div id="{{ command_tag }}-related-commands">
       <p class="command-blurb-subheader">related commands</p>
       <ul>
         {%- for related in command.related -%}
-          {% assign related_command = site[related.collection] | where: "title", related.command | first %}
+          {% assign related_command = site[related.collection] | where: "title", related.name | first %}
           <li>
-            <a href="{{ related_command.url | prepend: site.baseurl }}" target="_blank">
+            <a href="{{ related_command.url | prepend: site.baseurl }}">
               <code>{{ related_command.title }}</code>
             </a>: {{ related_command.description }}
           </li>

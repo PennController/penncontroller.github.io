@@ -200,7 +200,7 @@ Add the following code block to your R script:
   3. Group by the `ID` and `item` variables.
   4. Create the `event` and `selection` columns, and coerce the `EventTime` column from a character vector to a double vector.
   5. Drop the `PennElementName` and `Value` columns (necessary for `pivot_wider()`).
-  6. "Widen" the tibble. For a more in-depth explanation, see [Transforming data in R]({{site.baseurl}}/docs/how-to-guides/data-transformation){:target="_blank"}.
+  6. "Widen" the tibble. For a more in-depth explanation, see [Transforming data in R]({{site.baseurl}}/docs/how-to-guides/data-transformation).
   7. Save the tidied data as a new tibble named `tidied_results`.
 
 ```r

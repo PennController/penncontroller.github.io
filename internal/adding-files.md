@@ -1,11 +1,14 @@
 ---
-layout: default
 title: Adding files
-parent: Internal documentation
 has_children: true
 has_toc: false
+nav_order: 5
 ---
 
 # {{ page.title}}
 
-*To be filled in*
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.

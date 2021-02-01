@@ -17,7 +17,7 @@ layout: default
   {% for relevant_element_type in page.relevant_elements %}
     {% assign relevant_element = site.elements | where: "title", relevant_element_type | first %}
     <span id="{{  relevant_element.title }}" class="label bg-grey-lt-100 mt-2 ml-0">
-      <a href="{{ relevant_element.url | absolute_url }}" target="_blank">
+      <a href="{{ relevant_element.url | absolute_url }}">
         {{ relevant_element.title }}
       </a>
     </span>
@@ -25,42 +25,84 @@ layout: default
   </div>
 {% endif %}
 
-{% if page.since %}
-<h4 id="since">since</h4>
-  {{ page.since }}
-{% endif %}
+<h4 id="description">description</h4>
+{{ page.description | markdownify }}
 
 <h4 id="syntax">syntax</h4>
-{% if page.command_type == "global" and page.title != "PennController.ResetPrefix" %}
-  <code>(PennController.){{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-  <p id="penncontroller-prefix-meaning" class="text-delta">
+{% if page.command_type  == "global" and page.title != "PennController.ResetPrefix" %}
+  {%- assign prefix = "(PennController.)" -%}
+  {% capture message %}
+  <p id="penncontroller-prefix-meaning" class="text-delta mt-2 mb-1">
     ↳ <a href="{{site.baseurl}}/docs/faqs#penncontroller-prefix" target="_blank">
     What does <code>(PennController.)</code> mean?
     </a>
   </p>
+  {% endcapture %}
+{% elsif page.grand_parent == "Elements" %}
+  {%- capture prefix -%}
+  get{{- page.element_type -}}(<var>ELEMENT_NAME</var>)
+  {%- endcapture -%}
 {% elsif page.element_type == "standard" %}
-<code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-  <p id="getX-meaning" class="text-delta">
+  {%- assign prefix = "getX(<var>ELEMENT_NAME</var>)" -%}
+  {% capture message %}
+  <p id="getX-meaning" class="text-delta mt-2 mb-1">
     ↳ <a href="{{site.baseurl}}/docs/faqs#get-x" target="_blank">
     What does <code>getX()</code> mean?
     </a>
   </p>
-{% else %}
-  <code>{{ page.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
+  {% endcapture %}
 {% endif %}
 
-<h4 id="description">description</h4>
-{{ page.description | markdownify }}
+{% if page.parameters %}
+  <code id="command-syntax-parameters">
+    {{- prefix -}}{{- page.syntax | remove_first: ")" -}}
+    {%- for parameter in page.parameters -%}
+      {% unless forloop.first %}, {% endunless %}
+      {%- if parameter.optional -%} [ {%- endif -%}
+      <var>{{- parameter.name -}}</var>
+      {%- if parameter.type -%}: {{ parameter.type }}{%- endif -%}
+      {%- if parameter.optional -%} ] {%- endif -%}
+    {%- endfor -%}
+    )
+  </code>
+  {{ message }}
+  <ul id="parameters">
+  {%- for parameter in page.parameters -%}
+    <li id="parameter">
+      <code>
+        {%- if parameter.optional -%} [ {%- endif -%}
+        <var>{{ parameter.name }}</var>
+        {%- if parameter.optional -%} ] {%- endif -%}
+      </code>
+      {% if parameter.optional %} (optional){% endif %}: {{ parameter.description | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>
+  {%- endfor -%}
+  </ul>
+{% else %}
+  {%- if page.title == "PennController.ResetPrefix" -%}
+    <code id="command-syntax-no-parameters">{{- page.syntax | remove_first: ")" -}}null)</code>
+  {%- else -%}
+    <code id="command-syntax-no-parameters">{{- prefix -}}{{- page.syntax -}}</code>
+  {{ message }}
+  {%- endif -%}
+{% endif %}
 
-{% if page.optional_parameters %}
-<h4 id="optional-parameters">optional parameters</h4>
-<div class="optional-command-information-box" markdown=1>
-  <ul>
-    {% for parameter in page.optional_parameters %}
-    <li>
-      <code>{{ parameter.syntax | markdownify | remove: '<p>' | remove: '</p>' }}</code>
-      <p class="fw-300 fs-3">
-        {{ parameter.description | markdownify | remove: '<p>' | remove: '</p>'}}
+{% if page.alternates %}
+<h4 id="alternates">alternate(s)</h4>
+<div class="optional-command-information-box">
+  <ul id="alternate-list" class="mt-2 mb-2">
+    {% for alternate in page.alternates %}
+    <li id="alternate">
+      <code>
+        {{- prefix -}}{{- page.syntax | remove_first: ")" -}}
+        {{- alternate.name -}}
+        {%- if alternate.type -%}
+        : {{ alternate.type -}}
+        {%- endif -%}
+        )
+      </code>
+      <p class="mt-1 mb-2 fw-300 fs-3">
+        {{ alternate.description | markdownify | remove: '<p>' | remove: '</p>'}}
       </p>
     </li>
     {% endfor %}
@@ -70,12 +112,14 @@ layout: default
 
 {% if page.methods %}
 <h4 id="methods">methods</h4>
-<div class="optional-command-information-box" markdown=1>
-  <ul>
+<div class="optional-command-information-box">
+  <ul id="method-list" class="mt-2 mb-2">
     {% for method in page.methods %}
-    <li>
-      <p><code>{{ method.syntax }}</code></p>
-      <p class="fw-300 fs-3">{{ method.description }}</p>
+    <li id="method">
+      <code>{{ method.syntax }}</code>
+      <p class="mt-1 mb-2 fw-300 fs-3">
+        {{ method.description | markdownify | remove: '<p>' | remove: '</p>'}}
+      </p>
     </li>
     {% endfor %}
   </ul>
@@ -83,7 +127,7 @@ layout: default
 {% endif %}
 
 {% if page.notes %}
-  {%- include heading-link.html header="note(s)" h4=true -%}
+  <h4 id="notes">notes</h4>
   {{ page.excerpt }}
   {% assign content = page.content | remove: page.excerpt %}
 {% else %}
@@ -94,9 +138,9 @@ layout: default
 <h4 id="related-commands">related commands</h4>
   <ul>
   {% for related in page.related %}
-    {% assign related_command = site[related.collection] | where: "title", related.command | first %}
+    {% assign related_command = site[related.collection] | where: "title", related.name | first %}
     <li>
-      <a href="{{ related_command.url | prepend: site.baseurl }}" target="_blank">
+      <a href="{{ related_command.url | prepend: site.baseurl }}">
         <code>{{ related_command.title }}</code>
       </a>: {{ related_command.description }}
     </li>
@@ -104,7 +148,12 @@ layout: default
   </ul>
 {% endif %}
 
+{% if page.since %}
+<h4 id="since">since</h4>
+  {{ page.since }}
+{% endif %}
+
 <hr>
 
-<h4 id="example">example</h4>
+<h4 id="example">example(s)</h4>
 {{ content }}

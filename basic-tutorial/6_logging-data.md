@@ -12,14 +12,14 @@ blurb: How to collect and examine experimental data.
 
 ## Some h2
 
-By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/commands/standard-element-commands/standard-log){:target="_blank"} command to collect any other information.
+By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/commands/standard-element-commands/standard-log) command to collect any other information.
 
-The `log` command adds lines to the `results` file in the experiment project page's **Results** folder. The information that is added depends on the element type that the `log` command is called on. To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/elements){:target="_blank"}.
+The `log` command adds lines to the `results` file in the experiment project page's **Results** folder. The information that is added depends on the element type that the `log` command is called on. To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/elements).
 
 {% capture instructions %}
-+ Uncomment the [`DebugOff`]({{site.baseurl}}/commands/global-commands/debugoff){:target="_blank"} command, since we are now ready to collect data.
-+ Call the [`log`]({{site.baseurl}}/elements/canvas/canvas-log){:target="_blank"} command on the `"side-by_side"` `Canvas` to log when the images are printed to the screen.
-+ Call the [`log`]({{site.baseurl}}/elements/key/key-log){:target="_blank"} command on the `"keypress"` `Key` to log information about the participant's keypress.
++ Uncomment the [`DebugOff`]({{site.baseurl}}/commands/global-commands/debugoff) command, since we are now ready to collect data.
++ Call the [`log`]({{site.baseurl}}/elements/canvas/canvas-log) command on the `"side-by_side"` `Canvas` to log when the images are printed to the screen.
++ Call the [`log`]({{site.baseurl}}/elements/key/key-log) command on the `"keypress"` `Key` to log information about the participant's keypress.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
@@ -139,4 +139,4 @@ The timestamps are Unix timestamps in milliseconds, in other words the number of
 
 You can compare timestamps to determine response times or event duration. For example, subtract the canvas timestamp from the keypress timestamp to determine how long it took for the participant to press a valid key: `1603390893835`-`1603390892122`=`1713` means that the participant took 2753ms to press the `F` key.
 
-We recommend using the canvas and keypress timestamps to calculate response time, instead of using the trial start and keypress timestamp. We'll [add a one-second delay trial delay]({{site.baseurl}}/advanced-tutorial#adding-a-trial-delay){:target="_blank"} in the **Advanced Tutorial**, meaning that using the trial start timestamp would artificially inflate the response time by at least 1000ms.
+We recommend using the canvas and keypress timestamps to calculate response time, instead of using the trial start and keypress timestamp. We'll [add a one-second delay trial delay]({{site.baseurl}}/advanced-tutorial#adding-a-trial-delay) in the **Advanced Tutorial**, meaning that using the trial start timestamp would artificially inflate the response time by at least 1000ms.

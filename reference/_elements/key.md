@@ -4,7 +4,8 @@ since: beta 0.3
 children_collection: key
 thumbnail: key.png
 parameters:
-  - name: "KEY_STRING"
+  - name: VALIDATING_KEYS
+    type: string
     description: A string of keyboard keys that validate the `Key` element.
 description: Creates a keypress detector.
 notes: true

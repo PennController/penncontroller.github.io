@@ -7,14 +7,14 @@ previous_page: Advanced Tutorial
 ---
 
 The **Advanced Tutorial** continues directly from the
-[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial){:target="_blank"}. 
+[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial). 
 {: .h1-blurb }
 
 ---
 
 ## Experimental design
 
-In the [**Basic Tutorial**]({{site.baseurl}}/basic-tutorial){:target="_blank"},
+In the [**Basic Tutorial**]({{site.baseurl}}/basic-tutorial),
 we created a simple picture matching "experiment" with a single trial and
 no real research question. In the **Advanced Tutorial**, we add our research question:
 
@@ -92,7 +92,7 @@ copy-and-pasted trial must be updated individually.
 + Greatly increases overall length of experiment script.
 
 Instead, we'll use the global command
-[`Template`]({{site.baseurl}}/commands/global-commands/template){:target="_blank"}
+[`Template`]({{site.baseurl}}/commands/global-commands/template)
 to define a trial template.
 
 A trial template, as its name suggests, is a template for creating trials.
@@ -104,7 +104,7 @@ PennController fills in the value of the variables with values from a specified 
 Tables are CSV (comma separated value) files imported into an experiment page's
 **Resources** folder, or defined within an experiment script
 (read the global command
-[`AddTable`]({{site.baseurl}}/commands/global-commands/addtable){:target="_blank"}).
+[`AddTable`]({{site.baseurl}}/commands/global-commands/addtable).
 
 ### Trial template syntax
 
@@ -239,7 +239,7 @@ the trial that the `log` method is called on.
 + `VALUE` is the value that will be added to each row of the `results` file,
 in the column created by `"COLUMN_NAME"`.
 
-The [`log` method]({{site.baseurl}}/global-commands/newtrial#methods){:target="_blank"}
+The [`log` method]({{site.baseurl}}/global-commands/newtrial#methods){
 and the [`log` command]({{site.baseurl}}/basic-tutorial/#logging-data)
 are similar, but differ in important ways:
 
@@ -247,7 +247,7 @@ are similar, but differ in important ways:
 + The `log` method is called on a trial, the `log` command is called on an element.
 
 {% capture instructions %}
-Use the [`log` method]({{site.baseurl}}/commands/global-commands/newtrial#methods){:target="_blank"}
+Use the [`log` method]({{site.baseurl}}/commands/global-commands/newtrial#methods)
 on the `"experimental-item"` trial to record the group, item number,
 and verbal inflection condition.
 

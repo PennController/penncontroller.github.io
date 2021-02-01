@@ -37,14 +37,14 @@ causes an error.
 
 Throughout this documentation, you'll see commands with the prefix `standard.`,
 like
-[`standard.print`]({{site.baseurl}}/commands/standard-element-commands/standard-print){:target="_blank"}
+[`standard.print`]({{site.baseurl}}/commands/standard-element-commands/standard-print)
 or
-[`standard.center`]({{site.baseurl}}/commands/standard-element-commands/standard-center){:target="_blank"}.
+[`standard.center`]({{site.baseurl}}/commands/standard-element-commands/standard-center).
 You'll also see commands with the prefix `X.`, where `X` is a type of element,
 like
-[`timer.start`]({{site.baseurl}}/elements/timer/timer-start){:target="_blank"}
+[`timer.start`]({{site.baseurl}}/elements/timer/timer-start)
 or
-[`button.once`]({{site.baseurl}}/elements/button/button-once){:target="_blank"}.
+[`button.once`]({{site.baseurl}}/elements/button/button-once).
 
 The `standard.` prefix indicates that the command is a standard element command,
 and the `X.` prefix indicates that the command is an element-specific command.
@@ -68,7 +68,7 @@ Action commands do at least one of three things:
 
 Examples of action commands:
 
-+ [`standard.print`]({{site.baseurl}}/commands/standard-element-commands/standard-print){:target="_blank"}:
++ [`standard.print`]({{site.baseurl}}/commands/standard-element-commands/standard-print):
 Prints the element to the screen (manipulates visual content). By default, the element
 is aligned with the left edge of the screen.
     <pre><code class="language-diff-javascript diff-highlight">
@@ -76,14 +76,14 @@ is aligned with the left edge of the screen.
     $    .print()
     </code></pre>
 
-+ [`timer.start`]({{site.baseurl}}/elements/timer/timer-start){:target="_blank"}:
++ [`timer.start`]({{site.baseurl}}/elements/timer/timer-start):
 Starts the Timer element (triggers an event).
     <pre><code class="language-diff-javascript diff-highlight">
     @newTimer("timer", 1000)
     $    .start()
     </code></pre>
 
-+ [`button.wait`]({{site.baseurl}}/elements/button/button-wait){:target="_blank"}:
++ [`button.wait`]({{site.baseurl}}/elements/button/button-wait):
 Pauses experiment script execution until the participant clicks the Button element.
 (controls participant interaction).
     <pre><code class="language-diff-javascript diff-highlight">
@@ -95,7 +95,7 @@ Pauses experiment script execution until the participant clicks the Button eleme
 In the third example, we called `standard.print` and `button.wait` on the
 `Button` element, and we crucically called `standard.print` *before* calling
 `button.wait`. Remember, PennController scripts are
-[evaluated and executed from top to bottom]({{site.baseurl}}/core-concepts/1_experiment#flow-of-evaluation){:target="_blank"}.
+[evaluated and executed from top to bottom]({{site.baseurl}}/core-concepts/1_experiment#flow-of-evaluation).
 
 Printing the Button element before pausing experiment script execution means that
 there is in fact a Button for the participant to click. If we call
@@ -116,7 +116,7 @@ the `success` keyword.
 the `failure` keyword.
 
 For example, the test command
-[`button.test.clicked`]({{site.baseurl}}/elements/button/button-test-clicked){:target="_blank"}
+[`button.test.clicked`]({{site.baseurl}}/elements/button/button-test-clicked)
 tests whether the Button it is called on has ever been clicked. It succeeds
 if, at the time of testing, the Button has been clicked at least once. It fails if
 the Button has never been clicked:
@@ -167,9 +167,9 @@ ennController creates a new `Text` element named `"failure"`, and prints the str
     $    .failure(newText("failure", "You didn't click the big red button").print())
     </code></pre>
 + This example also introduces the standard action commands
-[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css){:target="_blank"}
+[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css)
 and
-[`standard.center`]({{site.baseurl}}/commands/standard-element-commands/standard-center){:target="_blank"}.
+[`standard.center`]({{site.baseurl}}/commands/standard-element-commands/standard-center).
 
   The `standard.css` command applies the specified CSS styles to the element. In this
   example it sets the `"big-red-button"` Button's

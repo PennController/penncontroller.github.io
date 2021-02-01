@@ -13,11 +13,11 @@ Elements contain content that can be manipulated with commands.
 
 There are three main types of commands:
 
-+ [Element commands]({{site.baseurl}}/core-concepts/3_commands#element-commands){:target="_blank"}:
++ [Element commands]({{site.baseurl}}/core-concepts/3_commands#element-commands):
 Used within a trial and called on an element.
-+ [Global commands]({{site.baseurl}}/core-concepts/3_commands#global-commands){:target="_blank"}:
++ [Global commands]({{site.baseurl}}/core-concepts/3_commands#global-commands):
 Used outside of a trial.
-+ [Special commands]({{site.baseurl}}/core-concepts/3_commands#special-commands){:target="_blank"}:
++ [Special commands]({{site.baseurl}}/core-concepts/3_commands#special-commands):
 Used within a trial, but not called on an element.
 
 Element commands can be further categorized as an action command or test command:
@@ -77,13 +77,13 @@ newTrial("TRIAL_LABEL",
 )
 ```
 
-To learn about calling other types of commands, read the [Commands documentation page]({{site.baseurl}}/core-concepts/3_commands){:target="_blank"}.
+To learn about calling other types of commands, read the [Commands documentation page]({{site.baseurl}}/core-concepts/3_commands).
 
 ### Calling a command
 
 {% capture instructions %}
-+ Call the [`play`]({{site.baseurl}}/elements/audio/audio-play){:target="_blank"} command on the `"fish-audio"` `Audio` to start audio playback.
-+ Call the [`print`]({{site.baseurl}}/commands/standard-element-commands/standard-print){:target="_blank"} command on the `"fish-sentence"` `Text` and `"fish-plural"` `Image` to print them to the screen.
++ Call the [`play`]({{site.baseurl}}/elements/audio/audio-play) command on the `"fish-audio"` `Audio` to start audio playback.
++ Call the [`print`]({{site.baseurl}}/commands/standard-element-commands/standard-print) command on the `"fish-sentence"` `Text` and `"fish-plural"` `Image` to print them to the screen.
 
 <pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
@@ -127,7 +127,7 @@ experiment script, the execution is as follows:
 results are logged in its project page's **Results** folder.
   + PennController automatically sends results after all other trials have ended.
   To control when results are sent, see the global command
-  [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults){:target="_blank"}.
+  [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults).
   + PennController automatically logs when a trial starts and ends.
   To log other information, see [6. Logging data]({{site.baseurl}}/basic-tutorial/6_logging-data).
   

@@ -3,7 +3,7 @@ title: PCIbex Documentation
 description: >- # this means to ignore newlines until "baseurl:"
   PCIbex documentation
 baseurl: ""
-url: "" 
+url: "https://doc.pcibex.net" 
 excerpt_separator: <!--more-->
 
 # Build settings
@@ -173,6 +173,24 @@ defaults:
       has_children: true
       has_toc: false
   - scope:
+      path: "internal"
+    values:
+      layout: "default"
+      parent: "Internal documentation"
+  - scope:
+      path: "internal/adding-files"
+    values:
+      layout: "default"
+      parent: "Adding files"
+      grand_parent: "Internal documentation"
+  - scope:
+      path: "internal/repository-details"
+    values:
+      layout: "default"
+      parent: "Repository details"
+      grand_parent: "Internal documentation"
+      code_font: true
+  - scope:
       path: "support"
     values:
       layout: "default"
@@ -201,6 +219,7 @@ defaults:
     values:
       layout: "how-to-guide"
       parent: "How-to guides"
+      grand_parent: "Support"
   - scope:
       path: "reference/_global-commands"
     values:

@@ -18,7 +18,7 @@ hosts and builds PennController experiments automatically, meaning that you
 don't have to worry about set up, and can focus on writing your experiment scripts.
 
 You can also set up your own server by following the instructions in the
-[Using an external server]({{site.baseurl}}/docs/how-to-guides/setting-up-server){:target="_blank"}
+[Using an external server]({{site.baseurl}}/docs/how-to-guides/setting-up-server)
 how-to guide.
 
 Each PCIbex Farm account has a **64MB storage quota**, meaning that the total size

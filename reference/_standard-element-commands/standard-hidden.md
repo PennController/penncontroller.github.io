@@ -2,7 +2,7 @@
 title: standard.hidden
 command_type: action
 relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
-syntax: getX("*ELEMENT_NAME*").hidden()
+syntax: .hidden()
 description: Hides an element. If the element is printed, it occupies space on the screen but its content is not visible.
 related:
   - name: standard.visible
@@ -13,11 +13,11 @@ related:
 @newText("hidden-text", "Surprise!")
 $    .hidden()
 @    .print()
-*,
+@,
 @newButton("reveal", "Click to reveal a surprise")
 @    .print()
 @    .wait()
-*,
+@,
 @getText("hidden-text")
 @    .visible()
 </code></pre>

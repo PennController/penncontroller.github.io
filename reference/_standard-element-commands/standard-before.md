@@ -2,7 +2,10 @@
 title: standard.before
 command_type: action
 relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
-syntax: getX("*ELEMENT_NAME*").before(getX("*ARGUMENT_NAME*"))
+syntax: .before()
+parameters:
+  - name: ELEMENT
+    description: To be filled in
 description: Takes an element as an argument, and adds that element's content to the left of the element that the command is called on.
 related:
   - name: standard.after

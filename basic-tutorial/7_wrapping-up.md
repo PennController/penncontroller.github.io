@@ -89,7 +89,7 @@ newTrial("experimental-trial",
 
 ## Next steps
 
-Now that you've learned the basics of PennController, we recommend reading the [**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial){:target="_blank"}, where you'll learn how to do things like:
+Now that you've learned the basics of PennController, we recommend reading the [**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial), where you'll learn how to do things like:
 
 + Create a trial template and use tables.
 + Implement a trial timeout and trial delay.
@@ -99,4 +99,4 @@ Now that you've learned the basics of PennController, we recommend reading the [
 + Create obligatory checkboxes and global variables.
 + Examine PennController results files.
 
-You can also jump right in and [start creating your own experiments](https://farm.pcibex.net/){:target="_blank"}. If you have questions, visit the [**Troubleshooting**]({{site.baseurl}}/docs/troubleshooting){:target="_blank"} page, check out our [**How-to guides**]({{site.baseurl}}/docs/how-to-guides){:target="_blank"}, or post a question on our [support forum](https://www.pcibex.net/forums/){:target="_blank"}.
+You can also jump right in and [start creating your own experiments](https://expt.pcibex.net/){:target="_blank"}. If you have questions, visit the [**Troubleshooting**]({{site.baseurl}}/docs/troubleshooting) page, check out our [**How-to guides**]({{site.baseurl}}/docs/how-to-guides), or post a question on our [support forum](https://www.pcibex.net/forums/){:target="_blank"}.

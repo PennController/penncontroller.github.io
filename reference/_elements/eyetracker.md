@@ -5,11 +5,13 @@ children_collection: eyetracker
 thumbnail: eyetracker.png
 parameters:
   - name: OUT_OF
-    optional: true
+    type: int
     description: To be filled in.
+    optional: true
   - name: LOOKED_AT
-    optional: true
+    type: int
     description: To be filled in.
+    optional: true
 description: Creates an eye-tracking data collector.
 ---
 

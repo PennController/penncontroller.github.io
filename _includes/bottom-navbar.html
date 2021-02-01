@@ -1,6 +1,6 @@
-<div class ="bottom-navbar">
+<div id="bottom-navbar" class="bottom-navbar">
   {% if include.previous %}
-    <div class="previous-page">
+    <div id="bottom-navbar-left" class="previous-page">
       {% if include.paginator %}
         <a href="{{ include.previous | prepend: site.baseurl }}">
           <span class="text-delta">← older posts</span>
@@ -14,9 +14,9 @@
       {% endif %}
     </div>
   {% else %}
-    <div class="centered-third"></div>
+    <div id="bottom-navbar-left" class="centered-third"></div>
   {% endif %}
-  <div class="back-to-top">
+  <div id="bottom-navbar-middle" class="back-to-top">
     {% if include.paginator %}
       <span class="text-delta">page {{include.page}} of {{include.total}}</span>
     {% else %}
@@ -28,7 +28,7 @@
     {% endif %}
   </div>
   {% if include.next %}
-    <div class="next-page">
+    <div id="bottom-navbar-right" class="next-page">
       {% if include.paginator %}
         <a href="{{ include.next | prepend: site.baseurl }}">
           <span class="text-delta"> newer posts →</span>
@@ -42,6 +42,6 @@
       {% endif %}
     </div>
   {% else %}
-    <div class="centered-third"></div>
+    <div id="bottom-navbar-right" class="centered-third"></div>
   {% endif %}
 </div>

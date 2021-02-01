@@ -1,16 +1,12 @@
 ---
 title: PennController.ResetPrefix
-syntax: PennController.ResetPrefix(null)
+syntax: PennController.ResetPrefix()
 description: Removes the default global command prefix `PennController.`
-optional_parameters: 
-  - syntax: PennController.ResetPrefix("*PREFIX*")
-    description: Resets the default global command prefix from `PennController.` to <code>"<var>PREFIX</var>"</code>
-notes: true
+alternates:
+  - name: PREFIX
+    type: string
+    description: Resets the default global command prefix from `PennController.` to `PREFIX`.
 ---
-
-+ something about `PennController.Elements.`
-
-<!--more-->
 
 ```javascript
 // example

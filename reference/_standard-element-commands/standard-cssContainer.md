@@ -2,11 +2,19 @@
 title: standard.cssContainer
 command_type: action
 relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
-syntax: getX("*ELEMENT_NAME*").cssContainer("*CSS_PROPERTY*", "*VALUE*")
+syntax: .cssContainer()
+parameters:
+  - name: CSS_PROPERTY
+    type: string
+    description: To be filled in
+  - name: VALUE
+    type: string
+    description: To be filled in
 description: Applies the specified CSS property and value pair to the container of the element.
-optional_parameters: 
-  - syntax: getX("*ELEMENT_NAME*").cssContainer({"*CSS_PROPERTY_1*":"*VALUE_1*", "*CSS_PROPERTY_2*":"*VALUE_2*"})
-    description: Apply multiple CSS property and value pairs by using curly brackets and colons.
+alternates: 
+  - name: 'PROPERTY_VALUE_ARRAY'
+    type: array
+    description: 'Apply multiple CSS properties at once by passing an array of property-value pairs in the format `{CSS_PROPERTY_1: VALUE_1, CSS_PROPERTY_2: VALUE_2}`'
 notes: true
 related:
   - name: standard.css
@@ -15,9 +23,9 @@ related:
 
 This command affects the *container* of the element that it is called on,
 meaning that any elements added to an element through a call to
-[`standard.after`]({{site.baseurl}}/commands/standard-element-commands/standard-after){:target="_blank"}
+[`standard.after`]({{site.baseurl}}/commands/standard-element-commands/standard-after)
 or
-[`standard.before`]({{site.baseurl}}/commands/standard-element-commands/standard-before){:target="_blank"}
+[`standard.before`]({{site.baseurl}}/commands/standard-element-commands/standard-before)
 are also affected.
 
 <!--more-->

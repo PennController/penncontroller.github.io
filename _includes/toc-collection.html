@@ -8,7 +8,7 @@
   {% unless child.nav_exclude %}
     <li>
       {% if include.code-font %}<code>{% endif %}
-      <a href="{{ child.url | prepend: site.baseurl }}" target="_blank">
+      <a href="{{ child.url | prepend: site.baseurl }}">
         {{ child.title }}
       </a>
       {% if include.code-font%}</code>{%endif%}
