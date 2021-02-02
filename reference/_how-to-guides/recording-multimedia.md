@@ -2,7 +2,7 @@
 title: Recording audio or video
 ---
 
-This page describes the configuration you need to set up to record and collect audio and/or video samples with your project. Once you have set up your configuration, use the [MediaRecorder element](https://doc.pcibex.net/elements/mediarecorder/) to let your participants record audio samples.
+This page describes the configuration you need to set up to record and collect audio and/or video samples with your project. Once you have set up your configuration, use the [MediaRecorder element]({{site.baseurl}}/elements/mediarecorder/) to let your participants record audio samples.
 
 > <b>Note!</b>
 > Recording audio/video requires hosting your experiment on a secure domain. You can set up a project on either the PCIbex Farm or the original IBEX Farm, but you will need a personal server (with a secure domain too) to save the collected samples.
@@ -80,7 +80,7 @@ selfInvoker();
 
 # Project setup
 
-You need to tell your experiment where to upload the recordings before any [MediaRecorder command](https://doc.pcibex.net/elements/mediarecorder/) gets evaluated. To this end, you should create a trial using the command [InitiateRecorder](https://doc.pcibex.net/commands/global-commands/initiaterecorder/). Make sure that the trial is run before any trial using a MediaRecorder element (use the .label command if needed). This is pretty simple in practice:
+You need to tell your experiment where to upload the recordings before any [MediaRecorder command]({{site.baseurl}}/elements/mediarecorder/) gets evaluated. To this end, you should create a trial using the command [InitiateRecorder]({{site.baseurl}}/commands/global-commands/initiaterecorder/). Make sure that the trial is run before any trial using a MediaRecorder element (use the .label command if needed). This is pretty simple in practice:
 
 <!--more--> 
 
