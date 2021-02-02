@@ -41,7 +41,7 @@ The three PreloadZip lines import the images and the audio files that we will us
 
 The next EyeTrackerURL line specifies where to find the PHP script that will receive the eye-tracking data, and that will also take care of decoding the lines and serving them as CSV files at the analyses step. You should set up your own PHP script when running your own experiments, as this is where your participants’ data will be stored. We will come back to the PHP setup procedure below, but for the purpose of this experiment we can keep the provided URL.
 
-You may have noticed that this experiment does not contain a [Sequence command](https://penncontroller.github.io/commands/global-commands/sequence/): all the trials will therefore be executed in the top-down order in which they are defined, and accordingly no label is explicitly assigned to any trial. A real experiment would of course do things differently and need to assign labels so as to randomize the presentation of the different trials.
+You may have noticed that this experiment does not contain a [Sequence command]({{site.baseurl}}/commands/global-commands/sequence/): all the trials will therefore be executed in the top-down order in which they are defined, and accordingly no label is explicitly assigned to any trial. A real experiment would of course do things differently and need to assign labels so as to randomize the presentation of the different trials.
 
 
 # Welcome trial
@@ -62,12 +62,12 @@ Because this is the first calibrate command in the experiment, this will launch 
 
 Once the welcome trial is over, the eyetracker is calibrated, and subsequent calibrate commands will immediately jump to the 3-second central button and check that calibration is still over whatever value is passed to the calibrate command. If calibration has fallen under the passed threshold, the 9-button sequence starts over.
 
-Note that we insert a [CheckPreloaded](https://penncontroller.github.io/commands/global-commands/checkpreloaded/) trial after calibration to give the resources time to preload the background while setting up the tracker.
+Note that we insert a [CheckPreloaded]({{site.baseurl}}/commands/global-commands/checkpreloaded/) trial after calibration to give the resources time to preload the background while setting up the tracker.
 
 
 # Experimental trials
 
-The [Template](https://penncontroller.github.io/commands/global-commands/template/) command generates trials using a subset of the rows from clefts.csv, thanks to [GetTable().filter](https://penncontroller.github.io/commands/global-commands/gettable/). The item column in clefts.csv going from 1 to 48 (plus 100* for a few practice trials) we effectively keep only half of the design, for the whole experiment would otherwise last too long for simple testing purposes.
+The [Template]({{site.baseurl}}/commands/global-commands/template/) command generates trials using a subset of the rows from clefts.csv, thanks to [GetTable().filter]({{site.baseurl}}/commands/global-commands/gettable/). The item column in clefts.csv going from 1 to 48 (plus 100* for a few practice trials) we effectively keep only half of the design, for the whole experiment would otherwise last too long for simple testing purposes.
 
 Note that the first thing we do in the experimental trials is to use calibrate again, to make sure that the tracker’s accuracy has not fallen under 60%. If it has, the command automatically invites the participant to follow the calibration procedure again.
 
@@ -75,7 +75,7 @@ Most of the rest of the trial is pretty straightforward. Some highlights:
 
 + We create big Canvas elements: each is sized to 40% of the page’s width/height. Then we add smaller images inside each of them. This way, when the participant looks at the images, they are also necessarily looking at the containing Canvas element. By then tracking the Canvas elements rather than the images themselves, we are more likely to capture look estimates that are slighlty off the actual target.
 
-+ This design does not shuffle the position of the elements, but keep in mind that we track the Canvas elements, which are therefore the elements you would want to [shuffle](https://penncontroller.github.io/advanced-tutorial/10_counterbalancing.html#shuffling-image-position). In order to keep track of which one ended on which quarter of the page, you would then need set (and log) Var elements after [testing their position](https://www.pcibex.net/wiki/selector-test-index/).
++ This design does not shuffle the position of the elements, but keep in mind that we track the Canvas elements, which are therefore the elements you would want to [shuffle]({{site.baseurl}}/advanced-tutorial/10_counterbalancing.html#shuffling-image-position). In order to keep track of which one ended on which quarter of the page, you would then need set (and log) Var elements after [testing their position](https://www.pcibex.net/wiki/selector-test-index/).
 
 + We start the tracker only after revealing the suits, because we are not interested in what happens before that. At this point however, participants are most likely no longer looking at the center of the screen. A better design solution would be to print a button at the center of the screen and reveal the suits only after the participant has clicked the button.
 
@@ -88,7 +88,7 @@ Most of the rest of the trial is pretty straightforward. Some highlights:
 
 # Final trials
 
-Nothing special here: we [SendResults](https://penncontroller.github.io/commands/global-commands/sendresults/) after the last experimental trial—the eye-tracking data have been independently sent to our PHP script after each trial. After sending the data, we exit fullscreen mode and show a final message on the page. We use the dummy-element-wait method to stay on the page forever (that is, until the participant decides to close the tab).
+Nothing special here: we [SendResults]({{site.baseurl}}/commands/global-commands/sendresults/) after the last experimental trial—the eye-tracking data have been independently sent to our PHP script after each trial. After sending the data, we exit fullscreen mode and show a final message on the page. We use the dummy-element-wait method to stay on the page forever (that is, until the participant decides to close the tab).
 
 
 # PHP Script
@@ -237,7 +237,7 @@ This script will take care of receiving and storing encoding data lines in subfo
 
 Do a few test runs of your experiment to generate some results, or [download the results file](https://raw.githubusercontent.com/PennController/Template/eyetracker-with-results/results/results.csv ) I generated (= two test runs).
 
-We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial](https://penncontroller.github.io/docs/how-to-guides/data-transformation/ ). Then we will require the packages ggplot2, dplyr, and tidyr:
+We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial]({{site.baseurl}}/docs/how-to-guides/data-transformation/ ). Then we will require the packages ggplot2, dplyr, and tidyr:
 
  <!--more-->
 ```javascript 
