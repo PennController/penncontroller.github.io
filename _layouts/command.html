@@ -95,7 +95,7 @@ layout: default
     <li id="alternate">
       <code>
         {{- prefix -}}{{- page.syntax | remove_first: ")" -}}
-        {{- alternate.name -}}
+        <var>{{- alternate.name -}}</var>
         {%- if alternate.type -%}
         : {{ alternate.type -}}
         {%- endif -%}

@@ -6,29 +6,43 @@ description: Disables the audio player interface controls.
 alternates:
   - name: OPACITY
     type: float from 0.01 to 1
-    description: Prints a grey rectangular layer of specified opacity onto the audio player interface, where `0.01` is completely transparent and `1` is completey opaque.
+    description: Prints a rectangular layer of specified value onto the audio player interface, where `0.01` is white and `1` is dark grey.
+notes: true
+related:
+  - name: standard.disable
+    collection: standard-element-commands
 ---
 
++ Some browsers display disabled interfaces as a plain gray rectangle.
+
+<!--more-->
+
 <pre><code class="language-diff-javascript diff-highlight">
-@// Option 1:
+@// Example 1:
 @newAudio("sentence", "test.mp3")
 @    .print()
+$    .disable()
 @    .play()
 @    .wait()
-$    .disable()
 @
-@// Option 2:
+@// Example 2:
 @newAudio("sentence", "test.mp3")
 @    .print()
-$    .disable()
+$    .disable(0.01)
 @    .play()
 @    .wait()
+@
+@// Example 3:
+@newAudio("sentence", "test.mp3")
+@    .print()
+@    .wait()
+$    .disable()
 </code></pre>
 
-↳ Option 1: lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-↳ Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-<https://www.pcibex.net/wiki/audio-settings-disable/>
++ Example 1: Prints a disabled audio player interface and then plays the file
+*`test.mp3`*.
++ Example 2: Prints a disabed audio player interface and then plays the file
+*`test.mp3`*. The disabled audio player is displayed as a solid white rectangle.
++ Example 3: Prints an audio player interface but does not play it; the participant
+must click the play button to start audio playback. After audio playback finishes,
+the audio player interface is disabled.

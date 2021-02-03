@@ -39,7 +39,7 @@ newText("center", "BANANA")
     .print()
 ```
 
-↳ Prints `appleBANANAorange` to the screen. The substring `BANANA` has a
++ Prints `appleBANANAorange` to the screen. The substring `BANANA` has a
 [red](https://www.w3schools.com/colors/color_tryit.asp?hex=FF0000){:target="_blank"}
 [text color](https://www.w3schools.com/cssref/pr_text_color.asp){:target="_blank"},
 and the entire string has an

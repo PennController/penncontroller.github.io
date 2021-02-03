@@ -34,4 +34,4 @@ $        .before(getText("left"))
 @)
 </code></pre>
 
-↳ Prints `appleBANANAorange` to the screen.
++ Prints `appleBANANAorange` to the screen.

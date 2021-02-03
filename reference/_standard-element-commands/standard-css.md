@@ -30,7 +30,7 @@ $    .css({"background-color":"orchid", "font-variant":"small-caps"})
 @    .print()
 </code></pre>
 
-↳ Prints `Hello, text!` surrounded by a 1px solid red
++ Prints `Hello, text!` surrounded by a 1px solid red
 [border](https://www.w3schools.com/cssref/pr_border.asp){:target="_blank"}.
 On a new line, prints a button with an
 [orchid](https://www.w3schools.com/colors/color_tryit.asp?color=Orchid){:target="_blank"}

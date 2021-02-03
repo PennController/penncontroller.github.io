@@ -1,4 +1,4 @@
-<div id="{{ include.id }}">
+<div id="{{ include.id }}" class="mt-4">
 {%- for command in include.collection -%}  
   {% assign command_tag = command.title | slugify %}
   <h2 class="mt-2" id="{{ command_tag }}"> 

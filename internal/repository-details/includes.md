@@ -1,6 +1,6 @@
 ---
 title: "_includes/"
-last_modified_date: january 2 2021
+last_modified_date: february 1 2021
 nav_order: 1
 ---
 
@@ -21,9 +21,9 @@ _includes/
 |-- collapsible-block.html
 |-- collect-tags.html
 |-- command-blurbs.html
+|-- code-example.html
 |-- footer_custom.html
 |-- head_custom.html
-|-- include-example.html
 |-- instructions.html
 |-- label-deprecated.html
 |-- label-note.html
@@ -31,11 +31,9 @@ _includes/
 |-- label.html
 |-- nav.html
 |-- post-excerpt.html
-|-- toc-collapsible.html
 |-- toc-collection.html
 |-- toc-command,html
-|-- toc-element.html
-`-- toc-same-page.html
+`-- toc-element.html
 ```
 
 ---
@@ -50,77 +48,132 @@ Table of Contents
 
 ## `bottom-navbar.html`
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### Description
+{: .no_toc }
+
+Creates a bottom navigation bar with three sections. By default, the left and
+right sections are empty, and the middle section contains a
+<span class="text-delta"><a href="#">↑ back to top</a></span> link.
+
+### Parameters
+{: .no_toc }
+
++ *`paginator=true`*: Turns the bottom navbar into a
+[paginator](https://jekyllrb.com/docs/pagination/){:target="_blank"}.
+  + If `paginator=true`, the <code><var>page</var>: int</code> and
+  <code><var>total</var>: int</code> parameters must also be included.
+  The middle section text is
+  {% raw %}`page {{ page }} of {{ total }}`{% endraw %}
+  + If you do not want a paginator bottom navbar, omit the `paginator` parameter
+  completely. You do not need to include `paginator=false`.
++ <code><var>previous</var>: page</code>: The page that the left section links to.
+  + If `paginator=true`, the left section links to `previous`, and its text is
+  `← older posts`.
+  + If the `paginator` parameter is omitted, the left section links to `previous`
+  and its text is
+  {% raw %}`← previous page {{ previous.title }}`{% endraw %}.
++ <code><var>next</var>: page</code>: The page that the right section links to.
+  + If `paginator=true`, the right section links to `next`, and its text is
+  `newer posts →`.
+  + If the `paginator` parameter is omitted, the right section links to `next`
+  and its text is
+  {% raw %}`next page → {{ next.title }}`{% endraw %}.
++ <code><var>current</var>: string</code>: The title of the current page.
+  + If `paginator=true`, the `current` parameter does not do anything.
+  + If the `paginator` parameter is omitted, the middle section text is
+  {% raw %}`↑ back to top {{ current }}`{% endraw %}.
+
+### Example
+{: .no_toc }
+
+{% capture raw %}
+  {% raw %}
+  {% assign previous_page = site.html_pages | where: "title", "Core Concepts" | first %}
+  {% assign next_page = site.html_pages | where: "title", "Elements" | first %}
+  {% include bottom-navbar.html previous=previous_page next=next_page current="Hello" %}
+  {% endraw %}
+{% endcapture %}
+
+{% capture code %}
+  {% assign previous_page = site.html_pages | where: "title", "Core Concepts" | first %}
+  {% assign next_page = site.html_pages | where: "title", "Elements" | first %}
+  {% include bottom-navbar.html previous=previous_page next=next_page current="Hello" %}
+{% endcapture %}
+
+{% include code-example.html raw=raw code=code %}
 
 ---
 
 ## `collapsible-blocks.html`
 
-{% capture description %}
-Creates a expandable/collapsible block using the HTML tag 
-[\<details\>](https://www.w3schools.com/tags/tag_details.asp){:target="_blank"} tag.
-{% endcapture %}
+### Description
+{: .no_toc }
 
-{%- capture code -%}
+Creates an expandable and collapsible block.
+
+### Parameters
+{: .no_toc }
+
+### Example
+{: .no_toc }
+
+{% capture raw %}
   {% raw %}
   {% capture content %}
   Surprise!
   {% endcapture %}
-  {% include collapsible-block.html content=content
-  summary="Click for more details" inner-border=true outer-border=true %}
+  {% include collapsible-block.html content=content summary="Click for more details" inner-border=true outer-border=true %}
   {% endraw %}
-{%- endcapture -%}
-
-{% capture extra %}
-+ Include `inner-border=true` argument to create a border inside the expanded block.
-+ Include `outer-border=true` argument to create a border around the summary.
-+ By default there are no borders.
 {% endcapture %}
 
-{% capture result %}
+{% capture code %}
   {% capture content %}
   Surprise!
   {% endcapture %}
-  {% include collapsible-block.html content=content
-  summary="Click for more details" inner-border=true outer-border=true %}
+  {% include collapsible-block.html content=content summary="Click for more details" inner-border=true outer-border=true %}
 {% endcapture %}
 
-{% include include-example.html description=description
-code=code extra=extra result=result %}
+{% include code-example.html raw=raw code=code %}
+
++ Include `inner-border=true` argument to create a border inside the expanded block.
++ Include `outer-border=true` argument to create a border around the summary.
++ By default there are no borders.
 
 ---
 
 ## `collect-tags.html`
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-ullamco laboris nisi ut aliquip ex ea commodo consequat.
+[Implements tagging without using a plugin.](https://longqian.me/2017/02/09/github-jekyll-tag/){:target="_blank"}
 
 ---
 
 ## `command-blurbs.html`
 
-{% capture description %}
-Creates blurbs for a Collection or array of PennController commands.
-Ends with a <span class="text-delta"><a href="#">Back to top</a></span> 
-link and a horizontal rule.
+Creates blurbs for each item in the `collection` argument array. Each blurb
+ends with a <span class="text-delta"><a href="#">Back to top</a></span> link.
+
+If the blurb is not the last commmand in the collection, it prints a horizontal
+rule after the "Back to top" link.
+
+{% capture raw %}
+  {% raw %}
+  {% assign clear-command = site.special-commands | where_exp:"page", "page.title contains 'clear'" %}
+  {% include command-blurbs.html collection=clear-command %}
+  {% endraw %}
 {% endcapture %}
 
-{%- capture code -%}
-{% raw %}
-{% assign clear-command = site.special-commands | where_exp:"page", "page.title contains 'clear'" %}
-{% include command-blurbs.html collection=clear-command %}
-{% endraw %}
-{%- endcapture -%}
-
-{% capture result %}
-{% assign clear-command = site.special-commands | where_exp:"page", "page.title contains 'clear'" %}
-{% include command-blurbs.html collection=clear-command %}
+{% capture code %}
+  {% assign clear-command = site.special-commands | where_exp:"page", "page.title contains 'clear'" %}
+  {% include command-blurbs.html collection=clear-command %}
 {% endcapture %}
 
-{% include include-example.html description=description code=code result=result %}
+{% include code-example.html raw=raw code=code %}
+
+---
+
+## `code-example.html`
+
+To be filled in
 
 ---
 
@@ -141,59 +194,42 @@ which is the source code for the
 
 Adds custom content to the original
 [Just the Docs `./_includes/head.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/head.html){:target="_blank"}.
-{: .mt-4 }
-
-As of September 3, 2020 `head_custom.html` only contains the line
-`<link rel="stylesheet" href="{{ "/assets/prism/prism.css" | prepend: site.baseurl }}">`,
-which is used to style the
-[Prism syntax highlighter]({{site.baseurl}}/internal/directory-structure/assets#prism).
-
----
-
-## `include-example.html`
-
-Creates the <span class="text-delta">description</span> and <span class="text-delta">example</span>
-blocks used on this page. See the documentation for adding a 
-[new `_includes` file]({{site.baseurl}}/internal/adding-files/adding-includes).
-{: .mt-4 }
 
 ---
 
 ## `instructions.html`
 
-{% capture description %}
-Creates a <span class="label label-purple">instructions</span> block; used in the
-[Basic Tutorial]({{site.baseurl}}/docs/basic-tutorial) and
-[Advanced Tutorial]({{site.baseurl}}/docs/advanced-tutorial).
-{% endcapture %}
+Creates a <span class="label label-purple">instructions</span> block.
 
-{%- capture code -%}
-{% raw %}
-{% capture instructions %}
-Click **main.js** to open `main.js` in the script editor:
-```javascript
-// This is the BasicTutorial experiment.
-// Type code below this line.
-```
-{% endcapture %}
-{% include instructions.html text=instructions %}
-{% endraw %}
+{%- capture raw -%}
+  {% raw %}
+  {% capture instructions %}
+  Click **main.js** to open `main.js` in the script editor:
+
+  ```javascript
+  // Type code below this line.
+  ```
+
+  {% endcapture %}
+  {% include instructions.html text=instructions %}
+  {% endraw %}
 {%- endcapture -%}
 
-{% capture result %}
-{% capture instructions %}
-Click **main.js** to open `main.js` in the script editor:
-```javascript
-// This is the BasicTutorial experiment.
-// Type code below this line.
-```
-{% endcapture %}
-{% include instructions.html text=instructions%}
+{% capture code %}
+  {% capture instructions %}
+  Click **main.js** to open `main.js` in the script editor:
+
+  ```javascript
+  // Type code below this line.
+  ```
+
+  {% endcapture %}
+  {% include instructions.html text=instructions%}
 {% endcapture %}
 
-{% include include-example.html description=description code=code result=result %}
+{% include code-example.html raw=raw code=code %}
 
---
+---
 
 ## `label-deprecated.html`
 
@@ -205,28 +241,43 @@ ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ## `label-note.html`
 
-{% capture description %}
-Uses `./_includes/label.html` as a base; creates a yellow label that says
-<span class="text-delta">note</span>.
+Creates a <span class="label label-blue">note</span> block.
+
+{% capture raw %}
+  {% raw %}
+  {% capture label %}
+  This is an example note. Notes support Markdown syntax, meaning that you can
+  freely *italicize* and **bold** text, and even create lists:
+
+  1. Lorem
+  2. Ipsum
+  3. Dolor
+
+  + Consectetur
+  + Adipsicing
+  + Elit
+  {% endcapture %}
+  {% include label-note.html label-body=label %}
+  {% endraw %}
 {% endcapture %}
 
-{%- capture code -%}
-{% raw %}
-{% capture label %}
-This is a note.
-{% endcapture %}
-{% include label-note.html label-body=label %}
-{% endraw %}
-{%- endcapture -%}
+{% capture code %}
+  {% capture label %}
+  This is an example note. Notes support Markdown syntax, meaning that you can
+  freely *italicize* and **bold** text, and even create lists:
 
-{% capture result %}
-{% capture label %}
-This is a note.
-{% endcapture %}
-{% include label-note.html label-body=label %}
+  1. Lorem
+  2. Ipsum
+  3. Dolor
+
+  + Consectetur
+  + Adipsicing
+  + Elit
+  {% endcapture %}
+  {% include label-note.html label-body=label %}
 {% endcapture %}
 
-{% include include-example.html description=description code=code result=result %}
+{% include code-example.html raw=raw code=code %}
 
 ---
 
@@ -240,45 +291,38 @@ ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ## `label.html`
 
-{% capture description %}
-Creates a [label](https://pmarsceill.github.io/just-the-docs/docs/ui-components/labels/){:target="_blank"}
-with some body text on a
-[`grey-lt-100`](https://pmarsceill.github.io/just-the-docs/docs/utilities/color/){:target="_blank"}
-background.
+Creates a
+[label](https://pmarsceill.github.io/just-the-docs/docs/ui-components/labels/){:target="_blank"}
+block.
+
+{% capture raw %}
+  {% raw %}
+  {% capture label %}
+  This is a label.
+  {% endcapture %}
+  {% include label.html label-color="purple" label-title="new label" label-body=label %}
+  {% endraw %}
 {% endcapture %}
 
-{%- capture code -%}
-{% raw %}
-{% capture label %}
-This is a label.
-{% endcapture %}
-{% include label.html label-color="purple" label-title="new label"
-label-body=label %}
-{% endraw %}
-{%- endcapture -%}
-
-{% capture result %}
-{% capture label %}
-This is a label.
-{% endcapture %}
-{% include label.html label-color="purple" label-title="new label"
-label-body=label %}
+{% capture code %}
+  {% capture label %}
+  This is a label.
+  {% endcapture %}
+  {% include label.html label-color="purple" label-title="new label" label-body=label %}
 {% endcapture %}
 
-{% include include-example.html description=description code=code result=result %}
+{% include code-example.html raw=raw code=code %}
 
 ---
 
 ## `nav.html`
 
-description
-{: .text-delta .mt-4}
-
 + Overrides the original
 [Just the Docs `./_includes/nav.html` file](https://github.com/pmarsceill/just-the-docs/blob/master/_includes/nav.html){:target="_blank"}:
 + Implements the [custom navigation YAML tags]({{site.baseurl}}/internal/adding-files/custom-yaml-tags#navigation-sidebar).
 + Adds a horizontal rule below the **Announcements**, **Advanced Tutorial**,
-and **Commands** pages.
+and **Commands** sections.
++ Adds hidden navigation for **Internal Documentation** section.
 
 ---
 
@@ -290,123 +334,54 @@ ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ---
 
-## `toc-collapsible.html`
-
-{% capture description %}
-Creates an expandable/collapsible **Table of Contents** for a Collection
-or array.
-
-+ TOC entries are links to another page.
-{% endcapture %}
-
-{%- capture code -%}
-{% raw %}
-{% include toc-collapsible.html collection=site.special-commands
-id=special-commands %}
-{% endraw %}
-{%- endcapture -%}
-
-{% capture result %}
-{% include toc-collapsible.html collection=site.special-commands
-id=special-commands %}
-{% endcapture %}
-
-{% include include-example.html description=description code=code result=result %}
-
----
-
 ## `toc-collection.html`
 
-{% capture description %}
-Creates a **Table of Contents** for a Collection or array.
+Creates a **Table of Contents** list. The items in the list are taken from the
+`collection` argument array.
 
-+ TOC entries are links to another page.
+{% capture raw %}
+  {% raw %}
+  {% include toc-collection.html collection=site.special-commands code-font=true %}
+  {% endraw %}
 {% endcapture %}
 
-{% capture code %}
-{% raw %}
-{% include toc-collection.html collection=site.core-concepts ordered=true %}
-{% endraw %}
-{% endcapture %}
-
-{% capture extra %}
+{% include code-example.html raw=raw no-output=true %}
 
 + TOC is an unordered list by default; include `ordered=true` argument
 for an ordered list.
 + TOC entries are text font by default; include `code-font=true` argument
 for code font.
-{% endcapture %}
-
-{% capture result %}
-{% include toc-collection.html collection=site.core-concepts ordered=true %}
-{% endcapture %}
-
-{% include include-example.html description=description code=code
-extra=extra result=result %}
 
 ---
 
 ## `toc-command.html`
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Creates a **Table of Contents** table. The items in the table are taken from the
+`collection` argument array.
+
+{% capture raw %}
+  {% raw %}
+  {% include toc-command.html collection=site.special-commands same-page=true %}
+  {% endraw %}
+{% endcapture %}
+
+{% include code-example.html raw=raw no-output=true %}
 
 ---
 
 ## `toc-element.html`
 
-{% capture description %}
-Creates a right-floating **Table of Contents** for an element type's
-element-specific commnds.
+Creates a **Table of Contents** block with a list of action command and a list of
+test commands.
+
+The items in the action command list are taken from the `element-action`
+and `standard-action` argument arrays, and the items in the test command list are
+taken from the `element-test` and `standard-test` argument arrays.
+
+{% capture raw %}
+  {% raw %}
+  {% include toc-element.html element-action=element-action element-test=element-test standard-action=standard-action standard-test=standard-test %}
+  {% endraw %}
 {% endcapture %}
 
-{%- capture code -%}
-{% raw %}
-{% assign action-commands = site.action-commands | where_exp:"page", "page.title contains 'button'" %}
-{% assign test-commands = site.test-commands | where_exp:"page", "page.title contains 'button'" %}
-{% include toc-element.html actionCommands=action-commands
-testCommands=test-commands %}
-{% endraw %}
-{%- endcapture -%}
-
-{% capture result %}
-{% assign action-commands = site.action-commands | where_exp:"page", "page.title contains 'button'" %}
-{% assign test-commands = site.test-commands | where_exp:"page", "page.title contains 'button'" %}
-<div style="display: flow-root;">
-{% include toc-element.html actionCommands=action-commands
-testCommands=test-commands %}
-</div>
-{% endcapture %}
-
-{% include include-example.html description=description code=code result=result %}
-
----
-
-## `toc-same-page.html`
-
-{% capture description %}
-Creates a **Table of Contents** for a Collection or array.
-
-+ TOC entries are links to sections on the same page.
-{% endcapture %}
-
-{%- capture code -%}
-{% raw %}
-{% include toc-same-page.html collection=site.special-commands code-font=true %}
-{% endraw %}
-{%- endcapture -%}
-
-{% capture extra %}
-+ TOC is an unordered list by default; include `ordered=true` argument
-for an ordered list.
-+ TOC entries are text font by default; include `code-font=true` argument
-for code font.
-{% endcapture %}
-
-{% capture result %}
-{% include toc-same-page.html collection=site.special-commands code-font=true %}
-{% endcapture %}
-
-{% include include-example.html description=description code=code extra=extra
-result=result %}
+{% include code-example.html raw=raw no-output=true %}
