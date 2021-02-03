@@ -163,7 +163,7 @@ RewriteRule ^(.*)$ $1 [R=200,L,E=HTTP_ORIGIN:%{HTTP:ORIGIN}]]
 
 # In your IBEX Project
 
-Simply refer to the ZIP files uploaded on your server by using the command [PreloadZip](https://doc.pcibex.net/commands/global-commands/preloadzip/). in your experiment’s script:
+Simply refer to the ZIP files uploaded on your server by using the command [PreloadZip]({{site.baseurl}}/commands/global-commands/preloadzip/). in your experiment’s script:
 
 <!--more--> 
 
