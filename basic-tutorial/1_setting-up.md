@@ -8,7 +8,7 @@ previous_page: Basic Tutorial
 ## The PCIbex Farm
 
 The easiest way to use PennController is by using the free
-[PCIbex Farm](https://expt.pcibex.net/){:target="_blank"} server. The PCIbex Farm
+[PCIbex Farm](https://farm.pcibex.net/){:target="_blank"} server. The PCIbex Farm
 builds and hosts PennController experiments for you, meaning that you can focus
 on writing your experiment scripts.
 
@@ -19,57 +19,23 @@ For more information, see
 
 {% capture instructions %}
 
-1. Go to the PCIbex Farm [account creation page](https://expt.pcibex.net/login).
+1. Go to the PCIbex Farm [account creation page](https://farm.pcibex.net).
 2. In the "New user" box, enter the following information:
    + In the "Username" field, enter the username that you want for your account.
    + In the "Password" field, enter the password that you want for your account.
    + In the "Verify password field", re-enter the password that you used in the
    "Password" field.
-   + (*Optional*) In the "Email" field, enter an email that you want to link your
+   + In the "Email" field, enter an email that you want to link your
    acccount to. PCIbex Farm does not share your email, and only sends emails for
    password retrieval purposes.
 3. Click **Create account**.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Creating a new experiment
+### Starting the experiment
 
 {% capture instructions %}
-
-1. Go to the [PCIbex Farm home page](https://expt.pcibex.net/){:target="_blank"}.
-2. Click **Design experiments**.
-3. Enter your login information and click **login**.
-4. Click **Create a new experiment**.
-5. In the "Name" field, enter "Tutorial".
-6. Click **Create**.
-7. Click **Tutorial** to open its experiment project page and begin editing.
-{% endcapture %}
-{% include instructions.html text=instructions%}
-
-### Importing resource files
-
-The **Basic Tutorial** uses the images
-[`1fishSquareTank.png`]({{site.baseurl}}/assets/tutorials/1fishSquareTank.png){:target="_blank"}
-and
-[`2fishRoundTank.png`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.png){:target="_blank"},
-the audio file
-[`2fishRoundTank.mp3`]({{site.baseurl}}/assets/tutorials/2fishRoundTank.mp3){:target="_blank"},
-and the starter experiment script
-[`main.js`]({{site.baseurl}}/assets/tutorials/main.js){:target="_blank"}.
-
-We'll import these files, as well as resource files for the **Advanced Tutorial**,
-from GitHub.
-
-{% capture instructions %}
-
-1. Click **Update from git repo »**, under **Experiment 'Tutorial'**.
-2. In the “repo url” field, enter `https://github.com/angelica-pan/BasicTutorial`
-3. Click **Sync**.
-4. If the import was successful, the imported files will appear in the experiment
-project page's**Script** or **Resources** folders, and briefly flash red.
-
-To learn more about importing files from GitHub, see
-[Syncing with a GitHub repository]({{site.baseurl}}/docs/how-to-guides/github/).
+Go to the [PCIbex Farm code editor](https://farm.pcibex.net/experiments/new?from=aplwij){:target="_blank"}.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
@@ -78,28 +44,20 @@ To learn more about importing files from GitHub, see
 The **Script** folder contains the file `main.js`, the experiment script. Update
 your experiment by editing `main.js` in the script editor and saving your changes.
 
-Run an experiment by clicking the link at the top of the experiment's page:
-`https://expt.pcibex.net/ibexexps/USER_NAME/EXPERIMENT_NAME/experiment.html`
+Run an experiment by clicking "Open in new tab".
 
 The script editor has the following features:
 
-+ Two links at the top for easy access
-  + [PennController docs](https://www.pcibex.net/documentation/){:target="_blank"}:
-  Links to PCIbex documentation.
-  + [ibex docs](https://github.com/addrummond/ibex/blob/master/docs/manual.md){:target="_blank"}:
-  Links to the original Ibex documentation.
-+ Autocomplete
-  1. Start typing within the script editor.
-  2. A modular window with suggested command names for autocompletion will pop up.
-  3. Navigate the autocomplete suggestions with the **Up** and **Down** arrow keys,
-  and press **Enter/Return** to select a suggestion.
-+ Four buttons at the bottom
-  + **Discard changes**: Close the script editor without saving any changes.
-  + **Save changes**: Save changes without closing the script editor.
-  + **Save and close**: Save changes and close the script editor.
-  + **Save and test**: Save changes and open the updated experiment in a new tab
-  or window.
-
++ Two buttons at the bottom
+  + **Refresh**: Save changes and see changes without closing the script editor.
+  + **Open in new tab**: Preview experiment in the new tab.
++ Six buttons on the right side
+  + **Publish**: To publish the experiment
+  + **Share**: To share the experiment with others
+  + **Download**: To save your project locally
+  + **Git Sync**: To import already existing experiment
+  + **Settings**: Customize the settings such as if your project can be cloned, or add a description to your project.
+  
 ---
 
 ## Creating a trial

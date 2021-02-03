@@ -21,7 +21,7 @@ github-repository
 │   ├── image1.png
 │   └── image2.png
 └── js_includes
-    └── newController.js
+    └── pennController.js
 ```
 Before uploading a GitHub repository, you should know that:
 
@@ -41,11 +41,9 @@ Before uploading a GitHub repository, you should know that:
 
 To upload through Github:
 
-1. Under **Experiment 'EXPERIMENT_NAME'**, click **Update from git repo >>**.
-2. In the grey text input box, enter the following information:
-   + In the "repo url" field, enter the URL of the GitHub repository that you are copying.
-   + In the "branch/revision" field, enter the branch of the GitHub repository that you are copying.
-3. Click **Sync**.
-4. If the uploading was successful, the uploaded files will appear in the appropriate folder(s) and briefly flash red.
+1. Press Git Sync button on project code interface. 
+2. In the input box, enter the URL of the GitHub repository that you are copying.
+3. Choose the branch that you want to use from branch dropdown.
+4. If the uploading was successful, the uploaded files will appear in the appropriate folder(s).
 
 
