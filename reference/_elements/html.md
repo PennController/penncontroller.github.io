@@ -4,9 +4,9 @@ since: beta 0.3
 children_collection: html
 thumbnail: html.png
 parameters:
-  - name: HTML_FILE_NAME
+  - name: URL
     type: string
-    description: The name of the HTML document.
+    description: The URL of the HTML document.
 description: Represents an HTML document.
 ---
 

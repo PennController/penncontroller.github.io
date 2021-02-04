@@ -16,5 +16,5 @@ $    .bold()
 @    .print()
 </code></pre>
 
-↳ Prints <code><strong>Hello, text!</strong></code> in bold, then prints a button
++ Prints <code><strong>Hello, text!</strong></code> in bold, then prints a button
 that says <code><strong>Hello, button!</strong></code> in bold on a new line.

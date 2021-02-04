@@ -13,9 +13,14 @@
   </p>
 </header>
 
-{% if page.numbered_headings %}
+{%- if page.numbered_headings -%}
 <link rel="stylesheet" href="{{site.baseurl}}/assets/css/numbered_headings.css">
-{% endif %}
+  {%- unless page.start_heading -%}
+    <div class="initialize" style="--h1counter-value: {{page.nav_order}};"></div>
+  {%- else -%}
+    <div class="initialize" style="--h1counter-value: {{page.start_heading}};"></div>
+  {%- endunless -%}
+{%- endif -%}
 
 {% if site.tags != "" %}
   {% include collect-tags.html %}

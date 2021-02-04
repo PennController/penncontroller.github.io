@@ -1,0 +1,18 @@
+<div id="example" class="mt-2 mb-5">
+  <div id="input" class="text-delta example-title">input</div>
+  <div id="example-input">   
+    <pre class="language-md my-0" style="border: 1px solid #eeebee;"><code class="language-md">
+      {% if include.raw %}
+        {{- include.raw -}}
+      {%- else -%}
+        {{- include.code -}}
+      {% endif %}
+    </code></pre>
+  </div>
+  {% unless include.no-output %}
+  <div id="output" class="text-delta example-title">output</div>
+  <div id="example-output" class="example-output" markdown="1">
+      {{- include.code -}}
+  </div>
+  {% endunless %}
+</div>

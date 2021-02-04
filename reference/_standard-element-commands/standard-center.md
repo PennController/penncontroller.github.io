@@ -12,4 +12,4 @@ $    .center()
 @    .print()
 </code></pre>
 
-↳ Prints a horizontally centered button that says `Hello, button!`.
++ Prints a horizontally centered button that says `Hello, button!`.
