@@ -3,7 +3,7 @@ title: Elements
 permalink: /elements/
 children_collection: elements
 children_code_font: true
-nav_order: 6
+nav_order: 7
 ---
 
 # {{ page.title }}
