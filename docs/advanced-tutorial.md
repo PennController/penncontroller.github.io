@@ -39,7 +39,7 @@ In the **Advanced Tutorial**, you'll learn how to make a picture matching experi
 Preview the **AdvancedTutorial** experiment:
 
 <p class="text-delta collapsible-block-title">
-  <a href="https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html" target="_blank">Click to take the experiment</a>
+  <a href="https://farm.pcibex.net/r/AeTXMk/experiment.html" target="_blank">Click to take the experiment</a>
 </p> 
 
 {% capture content %}

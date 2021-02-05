@@ -207,7 +207,7 @@ Other options for controlling group assignment:
 To modify the experiment URL, replace `experiment.html` with `server.py?withsquare=N`, where `N` is a number from 0 to number-of-groups-minus-one. This method is useful if you are sending the URL around for data collection but want to control which group your participants end up in.
 
 For example, the **AdvancedTutorial** experiment has two groups.  
-  + If a participant clicks the default URL `https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html`, then they will be assigned to group `A` or `B` depending on the internal counter.
-  + If a participant clicks the link `https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/server.py?withsquare=0`, then they will be assigned to group `A`.
-  + If a participant clicks the link `https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/server.py?withsquare=1`, then they will be assigned to group `B`.
+  + If a participant clicks the default URL `https://farm.pcibex.net/p/qkybME/experiment.html`, then they will be assigned to group `A` or `B` depending on the internal counter.
+  + If a participant clicks the link `https://farm.pcibex.net/p/qkybME/server.py?withsquare=0`, then they will be assigned to group `A`.
+  + If a participant clicks the link `https://farm.pcibex.net/p/qkybME/server.py?withsquare=1`, then they will be assigned to group `B`.
 
