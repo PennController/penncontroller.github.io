@@ -11,7 +11,7 @@ A free, open-source, versatile, and user-friendly online experiment builder.
 
 <div class="desktop-only flex-row-wrap mt-4">
   <div>
-    <a href="https://farm.pcibex.net/experiments/gXFqsd/edit" class="btn btn-purple" target="_blank">TRY A DEMO</a>
+    <a href="https://farm.pcibex.net/r/AeTXMk/" class="btn btn-purple" target="_blank">TRY A DEMO</a>
   </div>
   <div>
     <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
@@ -23,7 +23,7 @@ A free, open-source, versatile, and user-friendly online experiment builder.
 
 <div class="mobile-only flex-column-wrap">
   <div class="centered-100 py-2">
-    <a href="https://farm.pcibex.net/experiments/gXFqsd/edit" class="btn btn-purple" target="_blank">TRY IT!</a>
+    <a href="https://farm.pcibex.net/r/AeTXMk/" class="btn btn-purple" target="_blank">TRY IT!</a>
   </div>
   <div class="centered-100 py-2">
     <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
