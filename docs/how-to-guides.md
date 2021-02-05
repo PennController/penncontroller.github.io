@@ -1,6 +1,7 @@
 ---
 title: How-to guides
-nav_order: 2
+permalink: /how-to/
+nav_order: 6
 has_children: true
 has_toc: false
 children_collection: how-to-guides

@@ -2,8 +2,8 @@
 layout: default
 title: ⚠ Deprecated features
 permalink: /deprecated/
-nav_order: 9
 blurb: This page lists deprecated elements and commands.
+nav_order: 11
 ---
 
 # {{ page.title }}
