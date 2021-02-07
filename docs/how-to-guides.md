@@ -2,8 +2,6 @@
 title: How-to guides
 permalink: /how-to/
 nav_order: 6
-has_children: true
-has_toc: false
 children_collection: how-to-guides
 blurb: To be filled in
 ---

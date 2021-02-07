@@ -87,7 +87,7 @@ Contains .md files for global commands.
 description
 {: .text-delta .mt-4}
 
-Contains .md files for the [How-to guides]({{site.baseurl}}/docs/how-to-guides) page.
+Contains .md files for the [How-to guides]({{site.baseurl}}/how-to-guides) page.
 
 ---
 

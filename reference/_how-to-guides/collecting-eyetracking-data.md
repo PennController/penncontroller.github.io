@@ -237,7 +237,7 @@ This script will take care of receiving and storing encoding data lines in subfo
 
 Do a few test runs of your experiment to generate some results, or [download the results file](https://raw.githubusercontent.com/PennController/Template/eyetracker-with-results/results/results.csv ) I generated (= two test runs).
 
-We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial]({{site.baseurl}}/docs/how-to-guides/data-transformation/ ). Then we will require the packages ggplot2, dplyr, and tidyr:
+We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial]({{site.baseurl}}/how-to-guides/data-transformation/ ). Then we will require the packages ggplot2, dplyr, and tidyr:
 
  <!--more-->
 ```javascript 

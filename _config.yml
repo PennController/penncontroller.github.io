@@ -45,7 +45,7 @@ collections:
     permalink: /:collection/:name/
   deprecated:
     output: true
-    permalink: /:collection/:name/
+    permalink: /support/:collection/:name/
   elements:
     output: true
     permalink: /:collection/:name/
@@ -54,7 +54,7 @@ collections:
     permalink: /commands/:collection/:name/
   how-to-guides:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /:collection/:name/
   posts:
     output: true
     permalink: /announcements/:name/
@@ -157,16 +157,6 @@ defaults:
       parent: "Core Concepts"
       numbered_headings: true
   - scope:
-      path: "deprecated"
-    values:
-      layout: "default"
-      parent: "⚠ Deprecated features"
-      exclude_permalink: true
-      has_children: true
-      has_toc: false
-      children_collection: deprecated
-      children_code_font: true
-  - scope:
       path: "docs"
     values:
       layout: "default"
@@ -195,6 +185,12 @@ defaults:
     values:
       layout: "default"
       parent: "Support"
+  - scope:
+      path: "support/deprecated"
+    values:
+      layout: "default"
+      parent: "⚠ Deprecated features"
+      grand_parent: "Support"
   - scope:
       path: "reference/_author"
     values:
