@@ -1,5 +1,6 @@
 ---
 title: Standard element commands
+permalink: /standard-element-commands/
 has_children: true
 has_toc: false
 children_collection: standard-element-commands

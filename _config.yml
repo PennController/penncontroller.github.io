@@ -48,10 +48,10 @@ collections:
     permalink: /support/:collection/:name/
   elements:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:name/
   global-commands:
     output: true
-    permalink: /commands/:collection/:name/
+    permalink: /:collection/:name/
   how-to-guides:
     output: true
     permalink: /:collection/:name/
@@ -60,76 +60,76 @@ collections:
     permalink: /announcements/:name/
   special-commands:
     output: true
-    permalink: /commands/:collection/:name/
+    permalink: /:collection/:name/
   standard-element-commands:
     output: true
-    permalink: /commands/:collection/:name/
+    permalink: /:collection/:name/
   tag:
     output: true
     permalink: /:collection/:name/
   audio:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   button:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   canvas:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   controller:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   dropdown:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   eyetracker:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   function:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   html:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   image:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   key:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   mediarecorder:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   mousetracker:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   scale:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   selector:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   text:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   textinput:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   timer:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   tooltip:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   var:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   video:
     output: true
-    permalink: /elements/:collection/:name/           
+    permalink: /:collection/:name/           
   youtube:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
 
 # Front matter defaults
 defaults:

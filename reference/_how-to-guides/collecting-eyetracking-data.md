@@ -41,7 +41,7 @@ The three PreloadZip lines import the images and the audio files that we will us
 
 The next EyeTrackerURL line specifies where to find the PHP script that will receive the eye-tracking data, and that will also take care of decoding the lines and serving them as CSV files at the analyses step. You should set up your own PHP script when running your own experiments, as this is where your participants’ data will be stored. We will come back to the PHP setup procedure below, but for the purpose of this experiment we can keep the provided URL.
 
-You may have noticed that this experiment does not contain a [Sequence command]({{site.baseurl}}/commands/global-commands/sequence/): all the trials will therefore be executed in the top-down order in which they are defined, and accordingly no label is explicitly assigned to any trial. A real experiment would of course do things differently and need to assign labels so as to randomize the presentation of the different trials.
+You may have noticed that this experiment does not contain a [Sequence command]({{site.baseurl}}/global-commands/sequence/): all the trials will therefore be executed in the top-down order in which they are defined, and accordingly no label is explicitly assigned to any trial. A real experiment would of course do things differently and need to assign labels so as to randomize the presentation of the different trials.
 
 
 # Welcome trial
@@ -62,12 +62,12 @@ Because this is the first calibrate command in the experiment, this will launch 
 
 Once the welcome trial is over, the eyetracker is calibrated, and subsequent calibrate commands will immediately jump to the 3-second central button and check that calibration is still over whatever value is passed to the calibrate command. If calibration has fallen under the passed threshold, the 9-button sequence starts over.
 
-Note that we insert a [CheckPreloaded]({{site.baseurl}}/commands/global-commands/checkpreloaded/) trial after calibration to give the resources time to preload the background while setting up the tracker.
+Note that we insert a [CheckPreloaded]({{site.baseurl}}/global-commands/checkpreloaded/) trial after calibration to give the resources time to preload the background while setting up the tracker.
 
 
 # Experimental trials
 
-The [Template]({{site.baseurl}}/commands/global-commands/template/) command generates trials using a subset of the rows from clefts.csv, thanks to [GetTable().filter]({{site.baseurl}}/commands/global-commands/gettable/). The item column in clefts.csv going from 1 to 48 (plus 100* for a few practice trials) we effectively keep only half of the design, for the whole experiment would otherwise last too long for simple testing purposes.
+The [Template]({{site.baseurl}}/global-commands/template/) command generates trials using a subset of the rows from clefts.csv, thanks to [GetTable().filter]({{site.baseurl}}/global-commands/gettable/). The item column in clefts.csv going from 1 to 48 (plus 100* for a few practice trials) we effectively keep only half of the design, for the whole experiment would otherwise last too long for simple testing purposes.
 
 Note that the first thing we do in the experimental trials is to use calibrate again, to make sure that the tracker’s accuracy has not fallen under 60%. If it has, the command automatically invites the participant to follow the calibration procedure again.
 
@@ -88,7 +88,7 @@ Most of the rest of the trial is pretty straightforward. Some highlights:
 
 # Final trials
 
-Nothing special here: we [SendResults]({{site.baseurl}}/commands/global-commands/sendresults/) after the last experimental trial—the eye-tracking data have been independently sent to our PHP script after each trial. After sending the data, we exit fullscreen mode and show a final message on the page. We use the dummy-element-wait method to stay on the page forever (that is, until the participant decides to close the tab).
+Nothing special here: we [SendResults]({{site.baseurl}}/global-commands/sendresults/) after the last experimental trial—the eye-tracking data have been independently sent to our PHP script after each trial. After sending the data, we exit fullscreen mode and show a final message on the page. We use the dummy-element-wait method to stay on the page forever (that is, until the participant decides to close the tab).
 
 
 # PHP Script

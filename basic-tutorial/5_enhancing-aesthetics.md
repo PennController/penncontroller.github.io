@@ -14,9 +14,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 PennController has a variety of commands that manipulate the display of multimedia content.
 
 For example:
-+ [`center`]({{site.baseurl}}/commands/standard-element-commands/standard-center): Centers a printed element on its horizontal axis.
-+ [`unfold`]({{site.baseurl}}/elements/text/text-unfold): "Unfolds" a `Text` element in a specified number of milliseconds, instead of printing it to the screen immediately.
-+ [`size`]({{site.baseurl}}/commands/standard-element-commands/standard-size): Resizes a printed element to a specified width by height in pixels.
++ [`center`]({{site.baseurl}}/standard-element-commands/standard-center): Centers a printed element on its horizontal axis.
++ [`unfold`]({{site.baseurl}}/text/text-unfold): "Unfolds" a `Text` element in a specified number of milliseconds, instead of printing it to the screen immediately.
++ [`size`]({{site.baseurl}}/standard-element-commands/standard-size): Resizes a printed element to a specified width by height in pixels.
 
 ### Enhancing aesthetics
 
@@ -64,12 +64,12 @@ For example:
 
 By default, every printed element is printed on a new line. For other layouts:
 
-+ [Pass coordinates to the `print` command]({{site.baseurl}}/commands/standard-element-commands/standard-print#optional-arguments) to control where the element is printed on the screen; or
-+ Create a [`Canvas`]({{site.baseurl}}/elements/canvas), which defines a transparent surface onto which elements can be placed at specific coordinates.
++ [Pass coordinates to the `print` command]({{site.baseurl}}/standard-element-commands/standard-print#optional-arguments) to control where the element is printed on the screen; or
++ Create a [`Canvas`]({{site.baseurl}}/canvas), which defines a transparent surface onto which elements can be placed at specific coordinates.
 
 {% capture instructions %}
 + Create a centered `Canvas` named `"side-by-side"` that is 450x200 px (width x height).
-  1. Call the [`add`]({{site.baseurl}}/elements/canvas/canvas-add) command to add the `"fish-plural"` and `"fish-singular"` `Image` elements at the `(x=0, y=0)` and `(x=250, y=0)` coordinates, respectively.
+  1. Call the [`add`]({{site.baseurl}}/canvas/canvas-add) command to add the `"fish-plural"` and `"fish-singular"` `Image` elements at the `(x=0, y=0)` and `(x=250, y=0)` coordinates, respectively.
   2. Print the `Canvas`. You do not need to call the `print` command on the `"fish-plural"` and `"fish-singular"` `Image` elements.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
@@ -131,7 +131,7 @@ For example, `<p></p>`, `<b></b>`, and `<br>` are HTML tags that [define a parag
 
 {% capture instructions%}
 1. Create a trial labeled `"instructions"` with centered `Text` instructions. 
-2. Create a centered [`Button`]({{site.baseurl}}/elements/button) named `"wait"` that pauses experiment script execution until the participant clicks it.
+2. Create a centered [`Button`]({{site.baseurl}}/button) named `"wait"` that pauses experiment script execution until the participant clicks it.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
@@ -178,7 +178,7 @@ Every element type has a corresponding default object, for example `defaultText`
 Any commands that are called on an element type's default object are called on all subsequent instances of that element type **within the same trial**. Instances of that element type in other trials are not affected.
 
 {% capture instructions%}
-Call the [`center`]({{site.baseurl}}/commands/standard-element-commands/standard-center) and [`print`]({{site.baseurl}}/commands/standard-element-commands/standard-print) commands on the `defaultText` object in the `"instructions"` trial:
+Call the [`center`]({{site.baseurl}}/standard-element-commands/standard-center) and [`print`]({{site.baseurl}}/standard-element-commands/standard-print) commands on the `defaultText` object in the `"instructions"` trial:
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 

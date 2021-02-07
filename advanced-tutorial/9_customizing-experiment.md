@@ -12,18 +12,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Selecting an image with a mouse click
 
-The participant selects an image by pressing the `F` or `J` key. We'll include the option of clicking on an image to select it by using a [**Selector**]({{site.baseurl}}/elements/selector). 
+The participant selects an image by pressing the `F` or `J` key. We'll include the option of clicking on an image to select it by using a [**Selector**]({{site.baseurl}}/selector). 
 
 A **Selector** creates a group of elements, where (by default) each member can be selected with a mouse click. We can then associate a key to each member, so that a keypress will also select the desired element. 
 
 {% capture instructions %}
 + Remove the `"keypress"` `Key`.
-+ Create a [**Selector**]({{site.baseurl}}/elements/selector) named `"selection"`.
-  1. Call the [`add`]({{site.baseurl}}/elements/selector/selector-add) command to add the `"singular"` and `"plural"` `Image` elements
-  2. Call the [`keys`]({{site.baseurl}}/elements/selector/selector-keys) command to associate the `F` and `J` keys to the singular image and plural image, respectively. 
-  3. Call the [`log`]({{site.baseurl}}/elements/selector/selector-log) command to log information about the participant's selection.
-  4. Call the [`once`]({{site.baseurl}}/elements/selector/selector-once) command so that only the first image selection is valid (without the `once` command, the participant can change the selected image, up until the trial ends).
-  5. Call the [`wait`]({{site.baseurl}}/elements/selector/selector-wait) command to pause experiment script execution until the participant selects an element.
++ Create a [**Selector**]({{site.baseurl}}/selector) named `"selection"`.
+  1. Call the [`add`]({{site.baseurl}}/selector/selector-add) command to add the `"singular"` and `"plural"` `Image` elements
+  2. Call the [`keys`]({{site.baseurl}}/selector/selector-keys) command to associate the `F` and `J` keys to the singular image and plural image, respectively. 
+  3. Call the [`log`]({{site.baseurl}}/selector/selector-log) command to log information about the participant's selection.
+  4. Call the [`once`]({{site.baseurl}}/selector/selector-once) command so that only the first image selection is valid (without the `once` command, the participant can change the selected image, up until the trial ends).
+  5. Call the [`wait`]({{site.baseurl}}/selector/selector-wait) command to pause experiment script execution until the participant selects an element.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 <pre><code class="language-diff-javascript diff-highlight"> 
@@ -87,10 +87,10 @@ In other words, the participant has until the audio playback finishes to press a
 
 {% capture instructions %}
 + Create a timeout:
-  1. Create and start a [`Timer`]({{site.baseurl}}/elements/timer) named `"timeout"` that is `row.duration` ms long.
-  2. Call the [`callback`]({{site.baseurl}}/elements/selector/selector-callback) command on the `"selection"` **Selector**. When an image is selected, the `callback` command will stop the `"timeout"` `Timer`. Remove the `once` and `wait` commands.
-  3. Call the [`wait`]({{site.baseurl}}/elements/timer/timer-wait) command on the `"timeout"` `Timer` to pause experiment script execution until the timer stops.
-  4. Call the [`stop`]({{site.baseurl}}/elements/audio/audio-stop) command on the `"audio"` `Audio` to stop audio playback when the timer stops. Remove the `wait("first")` command.
+  1. Create and start a [`Timer`]({{site.baseurl}}/timer) named `"timeout"` that is `row.duration` ms long.
+  2. Call the [`callback`]({{site.baseurl}}/selector/selector-callback) command on the `"selection"` **Selector**. When an image is selected, the `callback` command will stop the `"timeout"` `Timer`. Remove the `once` and `wait` commands.
+  3. Call the [`wait`]({{site.baseurl}}/timer/timer-wait) command on the `"timeout"` `Timer` to pause experiment script execution until the timer stops.
+  4. Call the [`stop`]({{site.baseurl}}/audio/audio-stop) command on the `"audio"` `Audio` to stop audio playback when the timer stops. Remove the `wait("first")` command.
 
 *If you are copy and pasting this code, delete any lines highlighted with a red background.*
 
@@ -165,7 +165,7 @@ The timeout is created as follows:
 Each trial begins as soon as the previous trial ends. This might be overwhelming for participants, so we'll create a one-second pause between trials. 
 
 {% capture instructions %}
-Create and start a `Timer` named `"break"` that is 1000ms long. Call the [`wait`]({{site.baseurl}}/elements/timer/timer-wait) command to pause experiment script execution until the timer stops:
+Create and start a `Timer` named `"break"` that is 1000ms long. Call the [`wait`]({{site.baseurl}}/timer/timer-wait) command to pause experiment script execution until the timer stops:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// code omitted in interest of space
@@ -224,11 +224,11 @@ Create and start a `Timer` named `"break"` that is 1000ms long. Call the [`wait`
 
 ## Using CSS styles
 
-The [`css`]({{site.baseurl}}/commands/standard-element-commands/standard-css){:target=":blank"} and [`cssContainer`]({{site.baseurl}}/commands/standard-element-commands/standard-csscontainer){:target=":blank"} commands are equivalent to using [inline CSS](https://www.w3schools.com/html/html_css.asp){:target="_blank"} to apply a style or styles. The `css` command applies the CSS style(s) to the specified element, and the `cssContainer` command applies the CSS style(s) to the container of the specified element.
+The [`css`]({{site.baseurl}}/standard-element-commands/standard-css){:target=":blank"} and [`cssContainer`]({{site.baseurl}}/standard-element-commands/standard-csscontainer){:target=":blank"} commands are equivalent to using [inline CSS](https://www.w3schools.com/html/html_css.asp){:target="_blank"} to apply a style or styles. The `css` command applies the CSS style(s) to the specified element, and the `cssContainer` command applies the CSS style(s) to the container of the specified element.
 
 {% capture instructions %}
 + Update the instructions to reflect the changes in the `"experimental-trial"` trial.
-+ Call the [`cssContainer`]({{site.baseurl}}/commands/standard-element-commands/standard-csscontainer){:target=":blank"} command on the `defaultText` object to add a 1em bottom margin to every `Text` element container. 
++ Call the [`cssContainer`]({{site.baseurl}}/standard-element-commands/standard-csscontainer){:target=":blank"} command on the `defaultText` object to add a 1em bottom margin to every `Text` element container. 
 + Remove the `<p></p>` tags.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
@@ -320,7 +320,7 @@ With the `cssContainer` command:
 
 We'll add a completion screen trial to the end of the experiment.
 
-By default, PennController sends the experiment results to the PCIbex Farm server after all the trials have ended. Use the global command [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults) to manually control when PennController sends results, and send results *before* the completion screen trial begins. This will help ensure that participants don't close their web browser before the experiment results are sent and saved.
+By default, PennController sends the experiment results to the PCIbex Farm server after all the trials have ended. Use the global command [`SendResults`]({{site.baseurl}}/global-commands/sendresults) to manually control when PennController sends results, and send results *before* the completion screen trial begins. This will help ensure that participants don't close their web browser before the experiment results are sent and saved.
 
 We'll create a `Button` and call the `wait` command on it to pause experiment script execution, so that participants have time to read the completion screen trial. 
 
@@ -330,7 +330,7 @@ However, there is no need for participants to go beyond this trial; the experime
 + Call the [`SendResults`]({{site.baseurl}}/global-commands/sendresults) global command and label it `"send"`.
 + Create a new trial labeled `"completion_screen"`.
   + Create and print a centered `Text` named `"thanks"`.
-  + Create a new `Button` named `"void"`. Call the [`wait`]({{site.baseurl}}/elements/button/button-wait) command on it, but do *not* print it to the screen.
+  + Create a new `Button` named `"void"`. Call the [`wait`]({{site.baseurl}}/button/button-wait) command on it, but do *not* print it to the screen.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// code omitted in interest of space

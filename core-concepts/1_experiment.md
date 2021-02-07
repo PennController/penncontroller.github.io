@@ -16,7 +16,7 @@ PennController.newTrial()
 
 When you run a PennController script, its commands are evaluated and executed in
 sequential order, from top to bottom. In this basic script, the only command is the
-[`PennController.newTrial`]({{site.baseurl}}/commands/global-commands/newtrial)
+[`PennController.newTrial`]({{site.baseurl}}/global-commands/newtrial)
 command, which creates and starts a trial.
 
 Once a trial starts, it ends when all of the commands within the trial finish
@@ -102,12 +102,12 @@ but for now the important parts to know are that:
 PennController global commands are commands that used outside of a trial.
 By default, all global commands begin with the prefix `PennController.` in order
 to avoid naming conflicts with other JavaScript modules. For example,
-[`PennController.newTrial`]({{site.baseurl}}/commands/global-commands/newtrial)
+[`PennController.newTrial`]({{site.baseurl}}/global-commands/newtrial)
 is a global command that creates a trial. In addition, the `newX()`
 and `getX()` functions have the prefix `PennController.Elements.`
 
 The global command
-[`PennController.ResetPrefix(null)`]({{site.baseurl}}/commands/global-commands/resetprefix)
+[`PennController.ResetPrefix(null)`]({{site.baseurl}}/global-commands/resetprefix)
 removes the `PennController.(Elements.)` prefix for all subsequent calls
 of a global command and instances of a `newX` or `getX()` function.
 You can also pass a string instead of `null`, which resets the prefix to
@@ -149,7 +149,7 @@ the given string.
     </code></pre>
 
 From this point forward, this guide assumes that
-[`PennController.ResetPrefix(null)`]({{site.baseurl}}/commands/global-commands/resetprefix)
+[`PennController.ResetPrefix(null)`]({{site.baseurl}}/global-commands/resetprefix)
 has been called, and the `PennController.(Elements.)` prefix removed.
 
 For example, in prose we'll say "the `newTrial` command" instead of
@@ -158,13 +158,13 @@ an explicit call to `PennController.ResetPrefix`, but may include such a call
 for additional clarity.
 
 However, the `PennController.` prefix is always included when referring to the
-[`PennController.ResetPrefix`]({{site.baseurl}}/commands/global-commands/resetprefix)
+[`PennController.ResetPrefix`]({{site.baseurl}}/global-commands/resetprefix)
 command itself, because the command must include the prefix when it is first
 called.
 
 {% capture label %}
 **We recommend calling**
-[`PennController.ResetPrefix(null)`]({{site.baseurl}}/commands/global-commands/resetprefix)
+[`PennController.ResetPrefix(null)`]({{site.baseurl}}/global-commands/resetprefix)
 **at the start of every experiment script for readability and convenience**.
 Not having to type the `PennController.(Elements.)` prefix quickly adds up
 once you start writing a script with multiple trials and elements!

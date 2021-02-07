@@ -32,7 +32,7 @@ title: Adding a command
     ---
     ```
 
-    Example - Part of the [`audio.disable`]({{site.baseurl}}/elements/audio/audio-disable)
+    Example - Part of the [`audio.disable`]({{site.baseurl}}/audio/audio-disable)
     front matter:
     {: .text-delta }
 
@@ -49,7 +49,7 @@ title: Adding a command
 of PennController elements that are relevant to the command.
 
     Example - Part of the
-    [`standard.disable`]({{site.baseurl}}/commands/standard-element-commands/standard-disable)
+    [`standard.disable`]({{site.baseurl}}/standard-element-commands/standard-disable)
     front matter:
     {: .text-delta }
 
@@ -206,7 +206,7 @@ prefix. For example, *`AddHost.md`* and *`AddTable.md`*.
     ---
     ```
 
-    Example - Part of the [`AddHost`]({{site.baseurl}}/commands/global-commands/addhost)
+    Example - Part of the [`AddHost`]({{site.baseurl}}/global-commands/addhost)
     front matter:
     {: .text-delta }
 
@@ -275,7 +275,7 @@ folder.
     ---
     ```
 
-    Example - The [`clear`]({{site.baseurl}}/commands/special-commands/clear)
+    Example - The [`clear`]({{site.baseurl}}/special-commands/clear)
     front matter:
     {: .text-delta }
 
@@ -327,7 +327,7 @@ parameters:
 ```
 
 Example - The
-[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css)
+[`standard.css`]({{site.baseurl}}/standard-element-commands/standard-css)
 command has two parameters:
 {: .text-delta }
 
@@ -363,7 +363,7 @@ alternates:
 ```
 
 Example - The
-[`standard.css`]({{site.baseurl}}/commands/standard-element-commands/standard-css)
+[`standard.css`]({{site.baseurl}}/standard-element-commands/standard-css)
 command has one alternate:
 {: .text-delta }
 
@@ -379,7 +379,7 @@ alternates:
 An important distinction between the `parameters` and `alternates` tags is
 that alternates must be called by themselves.
 
-For example, the [`audio.wait`]({{site.baseurl}}/elements/audio/audio-wait)
+For example, the [`audio.wait`]({{site.baseurl}}/audio/audio-wait)
 command arguments `"first"` and `TEST_COMMAND` must be called separately: you
 can call `.wait("first")` or `.wait(TEST_COMMAND)`, but not
 `.wait("first", TEST_COMMAND)`.
@@ -411,7 +411,7 @@ If you create a Notes section, you must include the excerpt seperator
 the content that precedes the excerpt seperator. Everything below the excerpt
 seperator is included in the Example section.
 
-Example: The [`audio.disable`]({{site.baseurl}}/elements/audio/audio-disable)
+Example: The [`audio.disable`]({{site.baseurl}}/audio/audio-disable)
 command has a notes section:
 {: .text-delta }
 

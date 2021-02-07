@@ -138,10 +138,10 @@ Do *not* hardcode the website url, as in `[LINK_TEXT](https://doc.pcibex.net/PAG
 
 A page's page path is likely different from its file path. For example, the
 file path for the
-[`standard.after`]({{site.baseurl}}/commands/standard-element-commands/standard-after)
+[`standard.after`]({{site.baseurl}}/standard-element-commands/standard-after)
 command is
 [`reference/_standard-element-commands/standard-after.md`](https://github.com/PennController/penncontroller.github.io/blob/master/reference/_standard-element-commands/standard-after.md){:target="_blank"},
-but its page path is `/commands/standard-element-commands/standard-after`.
+but its page path is `/standard-element-commands/standard-after`.
 
 If you are not sure what a page's page path is, open that page and check its URL
 in the address bar of your web browser.

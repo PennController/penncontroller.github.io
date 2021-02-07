@@ -12,11 +12,11 @@ of the two.
 
 As of PennController 1.9, PennController has 21 types of elements, including:
 
-+ [`Text`]({{site.baseurl}}/elements/text):
++ [`Text`]({{site.baseurl}}/text):
 Text content (multimedia)
-+ [`Timer`]({{site.baseurl}}/elements/timer):
++ [`Timer`]({{site.baseurl}}/timer):
 A timer (interactive)
-+ [`Button`]({{site.baseurl}}/elements/button):
++ [`Button`]({{site.baseurl}}/button):
 A clickable button (multimedia and interactive)
 
 For a complete list of all the elements, see the

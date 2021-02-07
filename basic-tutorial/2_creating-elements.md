@@ -13,11 +13,11 @@ Elements are the basic unit of a PennController trial. They contain multimedia c
 
 As of PennController 1.8, there are 21 element types, including: 
 
-+ [`Text`]({{site.baseurl}}/elements/text): Text content (multimedia).
-+ [`Image`]({{site.baseurl}}/elements/image): Image content (multimedia).
-+ [`Key`]({{site.baseurl}}/elements/key): Keyboard keypresses (interactive).
-+ [`Button`]({{site.baseurl}}/elements/button): Clickable buttons (multimedia and interactive).
-+ [`Audio`]({{site.baseurl}}/elements/audio): Audio content that can interact with the experiment script (multimedia and interactive).
++ [`Text`]({{site.baseurl}}/text): Text content (multimedia).
++ [`Image`]({{site.baseurl}}/image): Image content (multimedia).
++ [`Key`]({{site.baseurl}}/key): Keyboard keypresses (interactive).
++ [`Button`]({{site.baseurl}}/button): Clickable buttons (multimedia and interactive).
++ [`Audio`]({{site.baseurl}}/audio): Audio content that can interact with the experiment script (multimedia and interactive).
 
 You can see a list of all element types and their descriptions on the [Elements]({{site.baseurl}}/elements) page.
 
@@ -50,9 +50,9 @@ Naming an element is technically optional, but **we recommend giving every eleme
 
 {% capture instructions %}
 
-+ Create an [`Audio`]({{site.baseurl}}/elements/audio) named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
-+ Create a [`Text`]({{site.baseurl}}/elements/text) named `"fish-sentence"` that contains the string `"The fish swim in a tank which is perfectly round."`
-+ Create an [`Image`]({{site.baseurl}}/elements/image) named `"fish-plural"` that contains the image `2fishRoundTank.png`.
++ Create an [`Audio`]({{site.baseurl}}/audio) named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
++ Create a [`Text`]({{site.baseurl}}/text) named `"fish-sentence"` that contains the string `"The fish swim in a tank which is perfectly round."`
++ Create an [`Image`]({{site.baseurl}}/image) named `"fish-plural"` that contains the image `2fishRoundTank.png`.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.

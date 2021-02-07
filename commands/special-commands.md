@@ -1,5 +1,6 @@
 ---
 title: Special commands
+permalink: /special-commands/
 has_children: true
 has_toc: false
 children_collection: special-commands
