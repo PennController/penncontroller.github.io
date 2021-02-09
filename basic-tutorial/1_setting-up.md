@@ -153,7 +153,7 @@ but the important part to know is that **you should use the debugger as you buil
 You'll inevitably face problems, and the debugger will make it easier to solve them.
 
 Turn off the debugger with the
-[`DebugOff`]({{site.baseurl}}/commands/global-commands/debugoff)
+[`DebugOff`]({{site.baseurl}}/global-commands/debugoff)
 command when you're ready to publish your experiment and collect experimental data.
 
 We recommend reading the

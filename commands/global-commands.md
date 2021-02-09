@@ -1,5 +1,6 @@
 ---
 title: Global commands
+permalink: /global-commands/
 has_children: true
 has_toc: false
 children_collection: global-commands

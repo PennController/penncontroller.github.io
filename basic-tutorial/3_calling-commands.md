@@ -82,8 +82,8 @@ To learn about calling other types of commands, read the [Commands documentation
 ### Calling a command
 
 {% capture instructions %}
-+ Call the [`play`]({{site.baseurl}}/elements/audio/audio-play) command on the `"fish-audio"` `Audio` to start audio playback.
-+ Call the [`print`]({{site.baseurl}}/commands/standard-element-commands/standard-print) command on the `"fish-sentence"` `Text` and `"fish-plural"` `Image` to print them to the screen.
++ Call the [`play`]({{site.baseurl}}/audio/audio-play) command on the `"fish-audio"` `Audio` to start audio playback.
++ Call the [`print`]({{site.baseurl}}/standard-element-commands/standard-print) command on the `"fish-sentence"` `Text` and `"fish-plural"` `Image` to print them to the screen.
 
 <pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
@@ -127,7 +127,7 @@ experiment script, the execution is as follows:
 results are logged in its project page's **Results** folder.
   + PennController automatically sends results after all other trials have ended.
   To control when results are sent, see the global command
-  [`SendResults`]({{site.baseurl}}/commands/global-commands/sendresults).
+  [`SendResults`]({{site.baseurl}}/global-commands/sendresults).
   + PennController automatically logs when a trial starts and ends.
   To log other information, see [6. Logging data]({{site.baseurl}}/basic-tutorial/6_logging-data).
   

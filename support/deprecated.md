@@ -1,6 +1,8 @@
 ---
-title: Troubleshooting
-nav_order: 2
+title: ⚠ Deprecated features
+has_children: true
+has_toc: false
+nav_order: 4
 ---
 
 # {{ page.title }}

@@ -12,14 +12,14 @@ blurb: How to collect and examine experimental data.
 
 ## Some h2
 
-By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/commands/standard-element-commands/standard-log) command to collect any other information.
+By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/standard-element-commands/standard-log) command to collect any other information.
 
 The `log` command adds lines to the `results` file in the experiment project page's **Results** folder. The information that is added depends on the element type that the `log` command is called on. To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/elements).
 
 {% capture instructions %}
-+ Uncomment the [`DebugOff`]({{site.baseurl}}/commands/global-commands/debugoff) command, since we are now ready to collect data.
-+ Call the [`log`]({{site.baseurl}}/elements/canvas/canvas-log) command on the `"side-by_side"` `Canvas` to log when the images are printed to the screen.
-+ Call the [`log`]({{site.baseurl}}/elements/key/key-log) command on the `"keypress"` `Key` to log information about the participant's keypress.
++ Uncomment the [`DebugOff`]({{site.baseurl}}/global-commands/debugoff) command, since we are now ready to collect data.
++ Call the [`log`]({{site.baseurl}}/canvas/canvas-log) command on the `"side-by_side"` `Canvas` to log when the images are printed to the screen.
++ Call the [`log`]({{site.baseurl}}/key/key-log) command on the `"keypress"` `Key` to log information about the participant's keypress.
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
