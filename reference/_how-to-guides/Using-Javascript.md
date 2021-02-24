@@ -24,7 +24,7 @@ newFunction("Checker" , () => { Palette.test.color("MyCanvas", "white");})
  .failure( newText("Nope!").css("font-size","2em").print() )
 ```
 
- # How can I still use plain JavaScript in my code?
+# How can I still use plain JavaScript in my code?
  
  There are some occasions in which you can still use plain Javascript in your code, and they are as follows:
 
