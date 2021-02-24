@@ -13,7 +13,7 @@ logo: "/assets/images/pcibex-logo.png"
 # Aux links for the upper right navigation
 aux_links:
   "Go to the PCIbex Farm":
-    - "https://expt.pcibex.net/"
+    - "https://farm.pcibex.net/"
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: true
 plugins:
@@ -45,91 +45,91 @@ collections:
     permalink: /:collection/:name/
   deprecated:
     output: true
-    permalink: /:collection/:name/
+    permalink: /support/:collection/:name/
   elements:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:name/
   global-commands:
     output: true
-    permalink: /commands/:collection/:name/
+    permalink: /:collection/:name/
   how-to-guides:
     output: true
-    permalink: /docs/:collection/:name/
+    permalink: /:collection/:name/
   posts:
     output: true
     permalink: /announcements/:name/
   special-commands:
     output: true
-    permalink: /commands/:collection/:name/
+    permalink: /:collection/:name/
   standard-element-commands:
     output: true
-    permalink: /commands/:collection/:name/
+    permalink: /:collection/:name/
   tag:
     output: true
     permalink: /:collection/:name/
   audio:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   button:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   canvas:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   controller:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   dropdown:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   eyetracker:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   function:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   html:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   image:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   key:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   mediarecorder:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   mousetracker:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   scale:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   selector:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   text:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   textinput:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   timer:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   tooltip:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   var:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
   video:
     output: true
-    permalink: /elements/:collection/:name/           
+    permalink: /:collection/:name/           
   youtube:
     output: true
-    permalink: /elements/:collection/:name/
+    permalink: /:collection/:name/
 
 # Front matter defaults
 defaults:
@@ -156,16 +156,6 @@ defaults:
       layout: "bottom-navbar-child"
       parent: "Core Concepts"
       numbered_headings: true
-  - scope:
-      path: "deprecated"
-    values:
-      layout: "default"
-      parent: "⚠ Deprecated features"
-      exclude_permalink: true
-      has_children: true
-      has_toc: false
-      children_collection: deprecated
-      children_code_font: true
   - scope:
       path: "docs"
     values:
@@ -196,6 +186,12 @@ defaults:
       layout: "default"
       parent: "Support"
   - scope:
+      path: "support/deprecated"
+    values:
+      layout: "default"
+      parent: "⚠ Deprecated features"
+      grand_parent: "Support"
+  - scope:
       path: "reference/_author"
     values:
       layout: "tag"
@@ -213,13 +209,13 @@ defaults:
       path: "reference/_deprecated"
     values:
       layout: "command"
-      grand_parent: "⚠ Deprecated features"    
+      grand_parent: "⚠ Deprecated features"
   - scope:
       path: "reference/_how-to-guides"
     values:
       layout: "how-to-guide"
       parent: "How-to guides"
-      grand_parent: "Support"
+      # grand_parent: "Support"
   - scope:
       path: "reference/_global-commands"
     values:

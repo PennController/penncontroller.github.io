@@ -92,7 +92,7 @@ copy-and-pasted trial must be updated individually.
 + Greatly increases overall length of experiment script.
 
 Instead, we'll use the global command
-[`Template`]({{site.baseurl}}/commands/global-commands/template)
+[`Template`]({{site.baseurl}}/global-commands/template)
 to define a trial template.
 
 A trial template, as its name suggests, is a template for creating trials.
@@ -104,7 +104,7 @@ PennController fills in the value of the variables with values from a specified 
 Tables are CSV (comma separated value) files imported into an experiment page's
 **Resources** folder, or defined within an experiment script
 (read the global command
-[`AddTable`]({{site.baseurl}}/commands/global-commands/addtable).
+[`AddTable`]({{site.baseurl}}/global-commands/addtable).
 
 ### Trial template syntax
 
@@ -247,7 +247,7 @@ are similar, but differ in important ways:
 + The `log` method is called on a trial, the `log` command is called on an element.
 
 {% capture instructions %}
-Use the [`log` method]({{site.baseurl}}/commands/global-commands/newtrial#methods)
+Use the [`log` method]({{site.baseurl}}/global-commands/newtrial#methods)
 on the `"experimental-item"` trial to record the group, item number,
 and verbal inflection condition.
 

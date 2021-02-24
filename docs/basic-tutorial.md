@@ -32,7 +32,7 @@ experiment with the following structure:
 Preview the **BasicTutorial** experiment:
 
 <p class="text-delta collapsible-block-title">
-  <a href="https://expt.pcibex.net/ibexexps/angelicapan/BasicTutorial/experiment.html" target="_blank">
+  <a href="https://farm.pcibex.net/r/QuFrkC/experiment.html" target="_blank">
     Click to take the experiment
   </a>
 </p>

@@ -4,9 +4,9 @@ since: beta 0.4
 children_collection: video
 thumbnail: video.png
 parameters:
-  - name: VIDEO_FILE_NAME
+  - name: URL
     type: string
-    description: The video file name, including the video file format.
+    description: The URL of the video file.
 description: Creates a media player that supports video playback.
 ---
 

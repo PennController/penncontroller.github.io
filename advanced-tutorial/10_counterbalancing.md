@@ -17,7 +17,7 @@ In the current experimental design, the plural image is always printed on the le
 It's possible that participants are simply always faster at choosing images on the left (or on the right). This reaction time advantage would create a confound that could lead to an incorrect conclusion about morphological processing.
 
 {% capture instructions %}
-Call the [`shuffle`]({{site.baseurl}}/elements/selector/selector-shuffle) command on the `"selection"` **Selector** to shuffle the horizontal position of the `"plural"` and `"singular"` `Image` elements. 
+Call the [`shuffle`]({{site.baseurl}}/selector/selector-shuffle) command on the `"selection"` **Selector** to shuffle the horizontal position of the `"plural"` and `"singular"` `Image` elements. 
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// code omitted in interest of space
@@ -161,7 +161,7 @@ Another way of counterbalancing is to explicitly set half of the items to displa
 
 ## Randomizing item order
 
-By default, PennController executes experiment scripts from top to bottom. The global command [`Sequence`]({{site.baseurl}}/commands/global-commands/sequence), which is a handler for the Ibex [shuffleSequence variable](https://github.com/addrummond/ibex/blob/master/docs/manual.md#shuffle-sequences), allows you to specify a shuffle sequence instead. 
+By default, PennController executes experiment scripts from top to bottom. The global command [`Sequence`]({{site.baseurl}}/global-commands/sequence), which is a handler for the Ibex [shuffleSequence variable](https://github.com/addrummond/ibex/blob/master/docs/manual.md#shuffle-sequences), allows you to specify a shuffle sequence instead. 
 
 A shuffle sequence is a way to sequence or randomize an array of items, in this case the PennController trials. Randomizing the order of the experimental items is a way to control for order effects. 
 
@@ -175,7 +175,7 @@ For the **AdvancedTutorial** experiment, the important parts to know are that:
 + Trials that do not match a `PREDICATE` are not run.
 
 {% capture instructions %}
-Use the [`Sequence`]({{site.baseurl}}/commands/global-commands/sequence)` global command to run the four `"experimental-trial"` trials in a random order:
+Use the [`Sequence`]({{site.baseurl}}/global-commands/sequence)` global command to run the four `"experimental-trial"` trials in a random order:
 
 <pre><code class="language-diff-javascript diff-highlight"> 
 @// Type code below this line.
@@ -201,13 +201,13 @@ Use the [`Sequence`]({{site.baseurl}}/commands/global-commands/sequence)` global
 PennController uses an internal counter to counterbalance group assignment. By default, the counter increases by one at the end of an experiment, which rotates which experimental item group is run.
 
 Other options for controlling group assignment:
-+ Use the global command [`SetCounter`]({{site.baseurl}}/commands/global-commands/setcounter) to manually control the internal counter.
++ Use the global command [`SetCounter`]({{site.baseurl}}/global-commands/setcounter) to manually control the internal counter.
 + Modify the experiment URL to force assignment to a specific group.
 
 To modify the experiment URL, replace `experiment.html` with `server.py?withsquare=N`, where `N` is a number from 0 to number-of-groups-minus-one. This method is useful if you are sending the URL around for data collection but want to control which group your participants end up in.
 
 For example, the **AdvancedTutorial** experiment has two groups.  
-  + If a participant clicks the default URL `https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/experiment.html`, then they will be assigned to group `A` or `B` depending on the internal counter.
-  + If a participant clicks the link `https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/server.py?withsquare=0`, then they will be assigned to group `A`.
-  + If a participant clicks the link `https://expt.pcibex.net/ibexexps/angelicapan/AdvancedTutorial/server.py?withsquare=1`, then they will be assigned to group `B`.
+  + If a participant clicks the default URL `https://farm.pcibex.net/p/qkybME/experiment.html`, then they will be assigned to group `A` or `B` depending on the internal counter.
+  + If a participant clicks the link `https://farm.pcibex.net/p/qkybME/server.py?withsquare=0`, then they will be assigned to group `A`.
+  + If a participant clicks the link `https://farm.pcibex.net/p/qkybME/server.py?withsquare=1`, then they will be assigned to group `B`.
 

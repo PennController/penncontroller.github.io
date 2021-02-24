@@ -1,5 +1,6 @@
 ---
 title: Element-specific commands
+permalink: /element-specific-commands/
 nav_order: 1
 blurb: Commands that are defined only for specific PennController element types, or that describe element-specific behavior.
 ---

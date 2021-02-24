@@ -1,20 +1,20 @@
 ---
 title: standard.bold
-command_type: action
+command_type: "action"
 relevant_elements: [Button, Controller, DropDown, Html, MediaRecorder, Scale, Text, Tooltip]
 syntax: .bold()
-description: Bolds any text that appears in the element.
+description: "Makes any text in the element appear boldfaced."
 ---
 
-<pre><code class="language-diff-javascript diff-highlight">
-@newText("bolded-text", "Hello, text!")
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@
+@newText("warnning", "NOTE: this text is a warning!")
 $    .bold()
-@    .print()
-@,
-@newButton("bolded-button", "Hello, button!")
-$    .bold()
+@    .italic()
+@    .color("red")
 @    .print()
 </code></pre>
 
-↳ Prints <code><strong>Hello, text!</strong></code> in bold, then prints a button
-that says <code><strong>Hello, button!</strong></code> in bold on a new line.
++ Prints a text in boldface, italic and red.		

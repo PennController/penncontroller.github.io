@@ -1,3 +1,21 @@
+// _includes/code-example.html
+.example-title {
+  padding-left: 0.75rem;
+  margin-top: $sp-2;
+  border: 1px solid #eeebee;
+  border-bottom: 0;
+  overflow: auto;
+}
+
+.example-output {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-bottom: 0.75rem;
+  overflow: auto;
+  border: 1px solid #eeebee;
+}
+
+
 // _includes/instructions.html
 .tutorial-instruction {
   border: 1px dashed $grey-dk-000;
@@ -220,6 +238,7 @@ a.overlay-link:hover{
   display: flex;
   flex-flow: row wrap;
   margin-top: $sp-6;
+  margin-bottom: $sp-1;
   background-color: $grey-lt-200;
 }
 
@@ -258,6 +277,6 @@ li > p {
   margin-bottom: $sp-2;
 }
 
-h3 {
+h2, h3 {
   margin-bottom: $sp-3;
 }

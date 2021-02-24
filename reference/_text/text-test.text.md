@@ -1,10 +1,12 @@
 ---
 title: text.test.text
-command_type: test
+command_type: "test"
 syntax: .test.text()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+parameters:
+  - name:  string 
+description: "Tests whether the text matches the string (identical, case-sensitive) or the regular expression."
+alternates:
+  - name: " /RegExp/ "
 ---
 
-```javascript
-// example
-```
+<!--more-->

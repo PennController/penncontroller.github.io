@@ -1,37 +1,32 @@
 ---
 title: standard.after
-command_type: action
-relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
+command_type: "action"
+relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, VoiceRecorder, Youtube]
 syntax: .after()
-parameters: 
-  - name: ELEMENT
-    description: To be filled in
-description: Takes an element as an argument, and adds that element's content to the right of the element that the command is called on.
-related:
-  - name: standard.before
-    collection: standard-element-commands
+parameters:
+  - name:  getElement(id) 
+description: "Adds some content to the right of the element."
 ---
 
-<pre><code class="language-diff-javascript diff-highlight">
-@// Option 1: Pass a new element as an argument
-@newTrial("option-1",
-@    newText("center", "BANANA")
-@        .before(newText("left", "apple"))
-$        .after(newText("right", "orange"))
-@        .print()
-@)
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
 @
-@// Option 2: Pass an existing element as an argument
-@newTrial("option-2",
-@    newText("left", "apple")
-@    ,
-@    newText("right", "orange")
-@    ,
-@    newText("center", "BANANA")
-@        .before(getText("left"))
-$        .after(getText("right"))
-@        .print()
-@)
+@newImage("bad", "no.png")
+@,
+@newImage("good", "ya.png")
+@,
+@newText("left label", "Bad")
+@    .before( getImage("bad") )
+@,
+@newText("right label", "Good")
+$    .after( getImage("good") )
+@,
+@newScale("judgment", 5)
+@    .before( getText("left label") )
+$    .after( getText("right label") )
+@    .print()
+@    .wait()
 </code></pre>
 
-↳ Prints `appleBANANAorange` to the screen.
++ Creates two image and two text elements and prints a 5-point radio-button scale, with the text *Bad* preceded by the image *no.png* on its left, and the text *Good* followed by the image *ya.png* on its right.		

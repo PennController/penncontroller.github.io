@@ -1,10 +1,8 @@
 ---
 title: youtube.test.playing
-command_type: test
+command_type: "test"
 syntax: .test.playing()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "Tests whether the video is currently playing."
 ---
 
-```javascript
-// example
-```
+<!--more-->

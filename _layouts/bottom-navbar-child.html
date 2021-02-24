@@ -2,12 +2,6 @@
 layout: default
 ---
 
-{% if page.start_heading %}
-  <div class="initialize" style="--h1counter-value: {{page.start_heading}};"></div>
-{% else %}
-  <div class="initialize" style="--h1counter-value: {{page.nav_order}};"></div>
-{% endif %}
-
 {% assign modified_title = page.title | split: ". " | last %}
 
 <h1>{{modified_title}}</h1>

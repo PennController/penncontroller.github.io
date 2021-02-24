@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# PennController for Internet Based Experiments
+# PennController for <abbr title="Internet Based Experiments">IBEX</abbr>
 
 A free, open-source, versatile, and user-friendly online experiment builder.
 {: .h1-blurb }
@@ -23,7 +23,7 @@ A free, open-source, versatile, and user-friendly online experiment builder.
 
 <div class="mobile-only flex-column-wrap">
   <div class="centered-100 py-2">
-    <a href="https://farm.pcibex.net/r/AeTXMk/" class="btn btn-purple" target="_blank">TRY IT!</a>
+    <a href="https://farm.pcibex.net/r/AeTXMk/" class="btn btn-purple" target="_blank">TRY A DEMO</a>
   </div>
   <div class="centered-100 py-2">
     <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
@@ -40,14 +40,20 @@ A free, open-source, versatile, and user-friendly online experiment builder.
 **PennController for Internet Based Experiments** ("PennController" or "PCIbex"
 for short) provides the tools to build and run online experiments, from familiar
 paradigms like self-paced reading to completely custom-designed paradigms.
-Experiments can be uploaded to or imported from GitHub, making it easy to
-collaborate and share experiments.
+<!-- Experiments can be uploaded to or imported from GitHub, making it easy to 
+collaborate and share experiments.-->
+
+[The **PCIbex Farm**](https://farm.pcibex.net/){:target="_blank"}'s interface comes with [many features]({{site.baseurl}}/announcements/2021-01-22-new-pcibex-farm/)
+to help you design and run your experiments, including:
++ a streamlined *editor*, with a *preview* window
++ the possibility to *share* and *copy* projects in a single click ([try it!](https://farm.pcibex.net/r/QuFrkC/){:target="_blank"})
++ and [many more]({{site.baseurl}}/announcements/2021-01-22-new-pcibex-farm/)
 
 PennController was developed and is maintained by
 [Jeremy Zehr](https://sites.google.com/site/jeremyezehr/home){:target="_blank"}
 and [Florian Schwarz](https://www.florianschwarz.net/){:target="_blank"}
 as an extension of
-[Ibex](https://github.com/addrummond/ibex/blob/master/docs/manual.md){:target="_blank"},
+[Ibex](https://ibex.spellout.net/){:target="_blank"},
 a JavaScript-based experiment platform by [Alex Drummond](https://adrummond.net/){:target="_blank"}.
 PennController uses a streamlined code interface and requires no background in JavaScript.
 

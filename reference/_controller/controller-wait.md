@@ -1,10 +1,28 @@
 ---
 title: controller.wait
-command_type: action
+command_type: "action"
 syntax: .wait()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "Waits until the controller has been completed."
+alternates:
+  - name: " test "
 ---
 
-```javascript
-// example
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newButton("Start reading")
+@    .print()
+@    .wait()
+@    .remove()
+@,
+@newController("DashedSentence", {s: "The mouse that the cat that the dog is petting is hugging is happy"} )
+@    .print()
+@    .log()
+@    .wait()
+$    .remove()
+@,
+@newText("Good job!")
+@    .print()
+</code></pre>
+
++ 		

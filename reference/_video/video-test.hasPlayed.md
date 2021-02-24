@@ -1,10 +1,8 @@
 ---
 title: video.test.hasPlayed
-command_type: test
+command_type: "test"
 syntax: .test.hasPlayed()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "Tests whether the video stream has played at least once before in the trial."
 ---
 
-```javascript
-// example
-```
+<!--more-->

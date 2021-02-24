@@ -1,34 +1,25 @@
 ---
 title: audio.disable
-command_type: action
+command_type: "action"
 syntax: .disable()
-description: Disables the audio player interface controls.
+description: "Will disable the controls interface. Note that some browsers might be render disabled interfaces as a plain gray rectangle with no controls visible whatsoever."
 alternates:
-  - name: OPACITY
-    type: float from 0.01 to 1
-    description: Prints a grey rectangular layer of specified opacity onto the audio player interface, where `0.01` is completely transparent and `1` is completey opaque.
+  - name: "opacity"
+notes: true
 ---
 
-<pre><code class="language-diff-javascript diff-highlight">
-@// Option 1:
-@newAudio("sentence", "test.mp3")
-@    .print()
-@    .play()
-@    .wait()
-$    .disable()
-@
-@// Option 2:
-@newAudio("sentence", "test.mp3")
-@    .print()
-$    .disable()
-@    .play()
-@    .wait()
++ If you pass no parameter, a 50% opaque layer will be printed on top of the interface. You can pass a value from 0.01 (fully transparent*******) to 1 (fully opaque) to control the aspect of the layer.
+
++ ******* the value 0 is mistreated as no-parameter by PennController 1.6, hence the need to use a non-null value close to 0.
+
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newAudio("test.mp3")
+@  .print()
+@  .disable()
+$  .play()
+@  .wait()
 </code></pre>
 
-↳ Option 1: lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-↳ Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-<https://www.pcibex.net/wiki/audio-settings-disable/>
++ Prints a disabled interface for the audio *test.mp3* and starts playing it.		

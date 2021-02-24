@@ -1,15 +1,11 @@
 ---
-layout: command
 title: voicerecorder.test.hasPlayed
-parent: VoiceRecorder
-command_type: test
-syntax: getVoiceRecorder("ELEMENT_NAME").test.hasPlayed()
-deprecated: PennController 1.8
-replacement: mediarecorder.test.hasPlayed
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-nav_exclude: true
+command_type: "test"
+syntax: .test.hasPlayed()
+description: "Tests whether the recording was ever played back."
+notes: true
 ---
 
-```javascript
-// example
-```
++ The `VoiceRecorder` element is deprecated since PennController 1.8. See mediarecorder.test.hasPlayed instead.
+
+<!--more-->
