@@ -2,29 +2,31 @@
 title: AddTable
 syntax: AddTable()
 parameters:
-  - name: ID
-    type: string
-    description: To be filled in
-  - name: CSV
-    description: to be filled in
-description: Defines a table to use with `PennController.Template`. As of PennController beta 0.4, you can directly upload a CSV file to the **Resources** or **chunk_includes** folders.
+  - name:  name
+  - name:  csv_string 
+description: "You can use this command to manually define a table to use with `Template`. You normally do not need to use this command since, as of PennController beta 0.4, you can directly upload your CSV file under *Resources* / *chunk_includes*."
 ---
 
-```javascript
-AddTable( "myTable",             // Name of the table
-    "Type,Sentence\n"+           // Column names (mind the \n)
-    "practice,Hello world!\n"+   // First row (mind the \n)
-    "test,Bye world!"            // Second row
-);
+<!--more-->
 
-Template( "myTable" , row => 
-    newTrial(
-        newText("type", row.Type)
-            .print()
-        ,
-        newButton("sentence", row.Sentence)
-            .print()
-            .wait()
-    )
-);
-```
+<pre><code class="language-diff-javascript diff-highlight try-data">
+@
+$AddTable( "myTable",  // Name of the table
+$    "Type,Sentence\n"+           // Column names (mind the \n)
+$    "practice,Hello world!\n"+   // First row (mind the \n)
+$    "test,Bye world!"            // Second row
+$);
+@
+@Template( "myTable" , row => 
+@    newTrial(
+@        newText("type", row.Type)
+@            .print()
+@        ,
+@        newButton("sentence", row.Sentence)
+@            .print()
+@            .wait()
+@    )
+@);
+</code></pre>
+
++ 		

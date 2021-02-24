@@ -1,15 +1,23 @@
 ---
-layout: command
 title: voicerecorder.once
-parent: VoiceRecorder
-command_type: action
-syntax: getVoiceRecorder("ELEMENT_NAME").once()
-deprecated: PennController 1.8
-replacement: mediarecorder.once
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-nav_exclude: true
+command_type: "action"
+syntax: .once()
+description: "Disables the button to record after the first recording. You can still record using the action command `record`."
 ---
 
-```javascript
-// example
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-data">
+@InitiateRecorder("https://myserver/upload.php");
+@
+@newTrial(
+@    newVoiceRecorder("recorder")
+@        .once()
+$        .print()
+@        .wait()
+@        .play()
+@        .wait("playback")
+@);
+</code></pre>
+
++ Adds a recording and a playback button to the page, and when the recording button is clicked for the second time (i.e., recording is over) the buttons become disabled and the audio automatically plays back.		

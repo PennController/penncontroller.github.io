@@ -1,48 +1,25 @@
 ---
 title: audio.disable
-command_type: action
+command_type: "action"
 syntax: .disable()
-description: Disables the audio player interface controls.
+description: "Will disable the controls interface. Note that some browsers might be render disabled interfaces as a plain gray rectangle with no controls visible whatsoever."
 alternates:
-  - name: OPACITY
-    type: float from 0.01 to 1
-    description: Prints a rectangular layer of specified value onto the audio player interface, where `0.01` is white and `1` is dark grey.
+  - name: "opacity"
 notes: true
-related:
-  - name: standard.disable
-    collection: standard-element-commands
 ---
 
-+ Some browsers display disabled interfaces as a plain gray rectangle.
++ If you pass no parameter, a 50% opaque layer will be printed on top of the interface. You can pass a value from 0.01 (fully transparent*******) to 1 (fully opaque) to control the aspect of the layer.
+
++ ******* the value 0 is mistreated as no-parameter by PennController 1.6, hence the need to use a non-null value close to 0.
 
 <!--more-->
 
-<pre><code class="language-diff-javascript diff-highlight">
-@// Example 1:
-@newAudio("sentence", "test.mp3")
-@    .print()
-$    .disable()
-@    .play()
-@    .wait()
-@
-@// Example 2:
-@newAudio("sentence", "test.mp3")
-@    .print()
-$    .disable(0.01)
-@    .play()
-@    .wait()
-@
-@// Example 3:
-@newAudio("sentence", "test.mp3")
-@    .print()
-@    .wait()
-$    .disable()
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newAudio("test.mp3")
+@  .print()
+@  .disable()
+$  .play()
+@  .wait()
 </code></pre>
 
-+ Example 1: Prints a disabled audio player interface and then plays the file
-*`test.mp3`*.
-+ Example 2: Prints a disabed audio player interface and then plays the file
-*`test.mp3`*. The disabled audio player is displayed as a solid white rectangle.
-+ Example 3: Prints an audio player interface but does not play it; the participant
-must click the play button to start audio playback. After audio playback finishes,
-the audio player interface is disabled.
++ Prints a disabled interface for the audio *test.mp3* and starts playing it.		

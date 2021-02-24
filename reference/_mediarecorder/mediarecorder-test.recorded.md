@@ -1,10 +1,8 @@
 ---
 title: mediarecorder.test.recorded
-command_type: test
+command_type: "test"
 syntax: .test.recorded()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "Tests whether a recording was completed."
 ---
 
-```javascript
-// example
-```
+<!--more-->

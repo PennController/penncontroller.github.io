@@ -1,20 +1,12 @@
 ---
 title: standard.disable
-command_type: action
-relevant_elements: [Audio, Button, Controller, DropDown, Key, MediaRecorder, Scale, Selector, TextInput, Timer, Tooltip, Video, Youtube]
+command_type: "action"
+relevant_elements: [Audio, Button, Controller, DropDown, Key, MediaRecorder, Scale, Selector, TextInput, Timer, Tooltip, Video, VoiceRecorder, Youtube]
 syntax: .disable()
-description: Disables any interactive feature of the element.
-related:
-  - name: standard.enable
-    collection: standard-element-commands
-  - command: audio.disable
-    collection: audio
-  - name: selector.disableClicks
-    collection: selector
-  - command: video.disable
-    collection: video
+description: "Disables any interactive feature of the element."
+notes: true
 ---
 
-<pre><code class="language-diff-javascript diff-highlight">
-@// example
-</code></pre>
++ **Note:** this does not prevent an element that is part of a Selector element
+
+<!--more-->

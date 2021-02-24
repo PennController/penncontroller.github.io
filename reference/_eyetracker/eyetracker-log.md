@@ -1,10 +1,11 @@
 ---
 title: eyetracker.log
-command_type: action
+command_type: "action"
 syntax: .log()
-description: This describes element-specific behavior of the standard command `standard.log`.
+description: "Tell the EyeTracker element to send the collected data points to the PHP script provided by `EyeTrackerURL` at the end of the trial."
+notes: true
 ---
 
-```javascript
-// example
-```
++ If you do not call `log` on the EyeTracker element, your server will never receive the eye-tracking data.
+
+<!--more-->

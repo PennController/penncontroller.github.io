@@ -1,15 +1,34 @@
 ---
-layout: command
 title: voicerecorder.stop
-parent: VoiceRecorder
-command_type: action
-syntax: getVoiceRecorder("ELEMENT_NAME").stop()
-deprecated: PennController 1.8
-replacement: mediarecorder.stop
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-nav_exclude: true
+command_type: "action"
+syntax: .stop()
+description: "Stop recording audio / playing last recording."
 ---
 
-```javascript
-// example
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-data">
+@InitiateRecorder("https://myserver/upload.php");
+@
+@newTrial(
+@    newVoiceRecorder("recorder")
+@        .record()
+@    ,
+@    newTimer("recording", 3000)
+@        .start()
+@        .wait()
+@    ,
+@    getVoiceRecorder("recorder")
+@        .stop()
+$        .play()
+@    ,
+@    newTimer("preview", 1000)
+@        .start()
+@        .wait()
+@    ,
+@    getVoiceRecorder("recorder")
+@        .stop()
+$);
+</code></pre>
+
++ Will start recording audio and stop recording after 2s, then play back the first second of the recording and stop the playback.		
