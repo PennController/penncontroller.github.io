@@ -52,4 +52,20 @@ the exceed-quota list.
 
 ### Script editor
 
+To be filled in
+
 ### Debugger
+
+To be filled in
+
+It is **strongly** recommended that you keep the Debug window *on* until you actually start collecting data from external participants and are no longer editing your project; you should keep it on even for you last test-runs. The debugger can provide you with helpful error and log messages which will save you a valuable amount of time and efforts in troubleshooting your experiments.
+
+Once you are ready to collect data and are no longer editing your project, turn the debugger off by using the command [`DebugOff`]({{site.baseurl}}/global-commands/debugoff).
+
+#### Tabs
+
++ **Info**: Displays information about the current trial (label, index, etc.)
++ **Sequence**: Lists all trials, and allows you to skip to any particular trial using the *Reach* button
++ **Tables**: Lists all tables. Double-click a table to open a preview tab
++ **Errors**: Presents any error messages. The error messages will help you identify what to fix in your script
++ **Logs**: Reports whenever a command is executed on an element, or whenever a resource is successfully preloaded. It also includes a _Next command_ button in case the current command crashed, and a _Next trial_ button in case the current trial crashed

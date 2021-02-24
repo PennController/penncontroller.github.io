@@ -1,15 +1,28 @@
 ---
-layout: command
 title: voicerecorder.play
-parent: VoiceRecorder
-command_type: action
-syntax: getVoiceRecorder("ELEMENT_NAME").play()
-deprecated: PennController 1.8
-replacement: mediarecorder.play
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-nav_exclude: true
+command_type: "action"
+syntax: .play()
+description: "Starts playing the last recording (if any)."
 ---
 
-```javascript
-// example
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-data">
+@InitiateRecorder("https://myserver/upload.php");
+@
+@newTrial(
+@    newVoiceRecorder("recorder")
+@        .record()
+@    ,
+@    newTimer("recording", 2000)
+@        .start()
+@        .wait()
+@    ,
+@    getVoiceRecorder("recorder")
+@        .stop()
+@        .play()
+$        .wait("playback")
+@);
+</code></pre>
+
++ Will record audio for 2s and then play it back.		

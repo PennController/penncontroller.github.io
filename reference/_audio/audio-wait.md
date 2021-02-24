@@ -1,16 +1,27 @@
 ---
 title: audio.wait
-command_type: action
+command_type: "action"
 syntax: .wait()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 alternates:
-  - name: '"first"'
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  - name: TEST_COMMAND
-    type: test command
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - name: "\"first\""
+  - name: "test"
 ---
 
-```javascript
-// example
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newAudio("sentence", "test.mp3")
+@    .play()
+@,
+@newButton("validation", "Validate")
+@    .print()
+@    .wait()
+@,
+@getAudio("sentence")
+@    .wait("first")
+$,
+@newText("thanks", "Thank you for listening")
+@    .print()
+</code></pre>
+
++ Starts playing the file *test.mp3* and adds a button onto the screen. If the button is clicked before the audio is done playing for the first time, it waits until the end before printing the text *Thank you for listening*.		

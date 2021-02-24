@@ -1,10 +1,10 @@
 ---
 title: selector.shuffle
-command_type: action
+command_type: "action"
 syntax: .shuffle()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "*See the **action** command `shuffle`*"
+alternates:
+  - name: " element1, element2, ... "
 ---
 
-```javascript
-// example
-```
+<!--more-->

@@ -1,10 +1,16 @@
 ---
 title: video.play
-command_type: action
+command_type: "action"
 syntax: .play()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "Starts playing the video file."
 ---
 
-```javascript
-// example
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newVideo("beep", "skate.mp4")
+@    .print()
+@    .play()
+</code></pre>
+
++ Starts playing the file *skate.mp4*.		

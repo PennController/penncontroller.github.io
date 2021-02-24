@@ -1,10 +1,23 @@
 ---
 title: youtube.pause
-command_type: action
+command_type: "action"
 syntax: .pause()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "Pauses the video."
 ---
 
-```javascript
-// example
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newYoutube("mcgurk", "aFPtc8BVdJk")
+@    .print()
+@    .play()
+@,
+@newTimer("preview", 1000)
+@    .start()
+@    .wait()
+@,
+@getYoutube("mcgurk")
+@    .pause()
+</code></pre>
+
++ Starts playing a mind-blowing video demonstrating the McGurk effect, waits 1 second and pauses the video.		

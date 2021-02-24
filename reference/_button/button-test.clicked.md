@@ -1,18 +1,8 @@
 ---
 title: button.test.clicked
-command_type: test
+command_type: "test"
 syntax: .test.clicked()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: "Tests whether the button was ever clicked before."
 ---
 
-```javascript
-newButton("print", "Print the buttons' words")
-    .print()
-    .wait()
-    .remove()
-,
-getButton("top")
-    .test.printed()
-    .success( newText("top word", "hello").print() )
-
-```
+<!--more-->

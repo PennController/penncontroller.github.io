@@ -2,12 +2,13 @@
 title: PreloadZip
 syntax: PreloadZip()
 parameters:
-  - name: URL
-    type: string
-    description: To be filled in
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - name:  url 
+description: "Instead of fetching audio and images from a distant URL for every single one of your PennController trials using one, you can choose to store them in ZIP archives that you upload on your server. Use `PreloadZip` to tell where to look the ZIP archives up."
+alternates:
+  - name: " url1 , url2, ... "
+notes: true
 ---
 
-```javascript
-// example
-```
++ See this page for more details.
+
+<!--more-->

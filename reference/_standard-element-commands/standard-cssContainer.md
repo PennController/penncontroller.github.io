@@ -1,47 +1,29 @@
 ---
 title: standard.cssContainer
-command_type: action
-relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
+command_type: "action"
+relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, VoiceRecorder, Youtube]
 syntax: .cssContainer()
 parameters:
-  - name: CSS_PROPERTY
-    type: string
-    description: To be filled in
-  - name: VALUE
-    type: string
-    description: To be filled in
-description: Applies the specified CSS property and value pair to the container of the element.
-alternates: 
-  - name: 'PROPERTY_VALUE_ARRAY'
-    type: array
-    description: 'Apply multiple CSS properties at once by passing an array of property-value pairs in the format `{CSS_PROPERTY_1: VALUE_1, CSS_PROPERTY_2: VALUE_2}`'
+  - name: "styleName"
+  - name:  "style"
+description: "Applies the CSS style(s) to the container's element."
+alternates:
+  - name: "{\"style name 1\": \"style 1\", \"style name 2\": \"style 2\"}"
 notes: true
-related:
-  - name: standard.css
-    collection: standard-element-commands
 ---
 
-This command affects the *container* of the element that it is called on,
-meaning that any elements added to an element through a call to
-[`standard.after`]({{site.baseurl}}/standard-element-commands/standard-after)
-or
-[`standard.before`]({{site.baseurl}}/standard-element-commands/standard-before)
-are also affected.
++ This will affect both the element itself and any element wrapping it as added via `.before` or `.after`.
+
++ This command often more closely accomplishes what you want to achieve than the `.css` command.
 
 <!--more-->
 
-```javascript
-newText("center", "BANANA")
-    .before(newText("left", "apple"))
-    .after(newText("right", "orange"))
-    .css("color", "red")
-    .cssContainer("background-color", "aqua")
-    .print()
-```
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newText("frame", " world")
+@    .before( newText("Hello ") )
+@    .css("border", "solid 1px black")
+@    .cssContainer("border", "solid 1px red")
+$    .print()
+</code></pre>
 
-+ Prints `appleBANANAorange` to the screen. The substring `BANANA` has a
-[red](https://www.w3schools.com/colors/color_tryit.asp?hex=FF0000){:target="_blank"}
-[text color](https://www.w3schools.com/cssref/pr_text_color.asp){:target="_blank"},
-and the entire string has an
-[aqua](https://www.w3schools.com/colors/color_tryit.asp?color=Aqua){:target="_blank"}
-[background color](https://www.w3schools.com/cssref/pr_background-color.asp){:target="_blank"}.
++ Prints the text *world* preceded with the text *Hello* and adds a black frame around *world* and a red frame around the whole *Hello world* text.		

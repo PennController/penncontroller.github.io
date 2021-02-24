@@ -1,15 +1,18 @@
 ---
 title: standard.center
-command_type: action
-relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, Youtube]
+command_type: "action"
+relevant_elements: [Audio, Button, Canvas, Controller, DropDown, Html, Image, MediaRecorder, Scale, Text, TextInput, Tooltip, Video, VoiceRecorder, Youtube]
 syntax: .center()
-description: Horizontally centers the element.
+description: "Makes the element appear centered on the horizontal axis."
 ---
 
-<pre><code class="language-diff-javascript diff-highlight">
-@newButton("centered-button", "Hello, button!")
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@
+@newText("helloworld", "Hello world")
 $    .center()
 @    .print()
 </code></pre>
 
-+ Prints a horizontally centered button that says `Hello, button!`.
++ Prints *Hello world* onto the screen, horizontally centered.		
