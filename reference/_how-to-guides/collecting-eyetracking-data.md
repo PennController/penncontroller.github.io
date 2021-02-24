@@ -64,10 +64,11 @@ Once the welcome trial is over, the eyetracker is calibrated, and subsequent cal
 
 Note that we insert a [CheckPreloaded]({{site.baseurl}}/global-commands/checkpreloaded/) trial after calibration to give the resources time to preload the background while setting up the tracker.
 
-
 # Experimental trials
 
+
 The [Template]({{site.baseurl}}/global-commands/template/) command generates trials using a subset of the rows from clefts.csv, thanks to [GetTable().filter]({{site.baseurl}}/global-commands/gettable/). The item column in clefts.csv going from 1 to 48 (plus 100* for a few practice trials) we effectively keep only half of the design, for the whole experiment would otherwise last too long for simple testing purposes.
+
 
 Note that the first thing we do in the experimental trials is to use calibrate again, to make sure that the tracker’s accuracy has not fallen under 60%. If it has, the command automatically invites the participant to follow the calibration procedure again.
 
@@ -89,7 +90,6 @@ Most of the rest of the trial is pretty straightforward. Some highlights:
 # Final trials
 
 Nothing special here: we [SendResults]({{site.baseurl}}/global-commands/sendresults/) after the last experimental trial—the eye-tracking data have been independently sent to our PHP script after each trial. After sending the data, we exit fullscreen mode and show a final message on the page. We use the dummy-element-wait method to stay on the page forever (that is, until the participant decides to close the tab).
-
 
 # PHP Script
 

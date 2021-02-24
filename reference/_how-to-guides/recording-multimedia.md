@@ -4,6 +4,7 @@ title: Recording audio or video
 
 This page describes the configuration you need to set up to record and collect audio and/or video samples with your project. Once you have set up your configuration, use the [MediaRecorder element]({{site.baseurl}}/mediarecorder/) to let your participants record audio samples.
 
+
 > <b>Note!</b>
 > Recording audio/video requires hosting your experiment on a secure domain. You can set up a project on either the PCIbex Farm or the original IBEX Farm, but you will need a personal server (with a secure domain too) to save the collected samples.
 
