@@ -131,15 +131,15 @@ the `PennController.` prefix when it's first called.
 ## Using the debugger
 
 PennController comes with a
-[built-in debugger]({{site.baseurl}}/core-concepts/debugger)
+[built-in debugger]({{site.baseurl}}/core-concepts/4_pcibex-farm#debugger)
 that helps detect typos, syntax errors, and other issues.
 
-It appears as a small window in the bottom-right corner of the screen when you
+It appears as a small window in the top-right corner of the screen when you
 run an experiment:
 
 ![debugger]({{site.baseurl}}/assets/images/debugger.png)
 
- The debugger window has five tabs:
+The debugger window has five tabs (click the debugger to unfold them):
 
 + **Info**: Displays information about the current trial.
 + **Sequence**: Lists all trials, and allows you to skip to any particular trial.
