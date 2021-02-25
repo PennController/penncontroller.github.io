@@ -40,7 +40,7 @@ If a test, global or special command is intended, the term "test command",
 
 ## Commands
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Commands are your way to interact with the elements and to choose what to do them. Read down below to learn more about how to use the commands in your code or select commands from the left toolbar in order to learn more about a specific command. 
 
 ### Command syntax
 
