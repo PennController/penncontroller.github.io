@@ -1,11 +1,10 @@
 ---
 title: 5. Adding experiment details
 nav_order: 5
-blurb: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-{: .h1-blurb }
+In the following article you will learn how to enhance the aesthetics of your experiment.
 
 ---
 
