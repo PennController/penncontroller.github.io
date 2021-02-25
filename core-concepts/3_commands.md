@@ -199,11 +199,6 @@ from action commands.
 ~)
 </code></pre>
 
-#### Keywords
-
-To be filled in
-
-
 
 ### Default commands
 
@@ -236,14 +231,16 @@ newTrial("trial-three",
 
 ## Global commands
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Global commands are the commands used outside of the trial and are regarded to the whole experiment.
+With the help of global commands, you can initiate recorder, add a sequence and much more.
+Check out more under the commands tab to find the specific command you need for your experiment.
+If you still couldn't find specific command, check out support tab.
+
 
 ---
 
 ## Special commands
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Special commands are used within a trial, but not called on an element.
+Currently there are four special commands: clear, end, exitFullscreen, and fullscreen.
+

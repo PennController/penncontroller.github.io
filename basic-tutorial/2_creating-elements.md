@@ -36,8 +36,7 @@ For example, "a `Text` element" or "a `Text`" means "an instance of the `Text` e
 
 ## Elements
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
+Elements are the basic building blocks of your experiment. They are essentially things displayed on the participant's screen. Scroll down below to learn more about using the elements or check out the elements tab from the left toolbar to learn more about different elements.
 ### Creating an element
 
 Create an element by calling a <code>newX("<var>ELEMENT_NAME</var>",...)</code> function, where:

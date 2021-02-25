@@ -3,9 +3,7 @@ title: 4. PCIbex Farm
 nav_order: 4
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+[PCIbex Farm](https://farm.pcibex.net/) allows you to build and share your experiment easily with public.
 {: .h1-blurb }
 
 ---
@@ -52,11 +50,26 @@ the exceed-quota list.
 
 ### Script editor
 
-To be filled in
+Use the already givent templates or create the new code in the codespace.
+Every experiment is automatically saved and in order to preview it you can click either <b>Refresh</b> to see it right in the same tab or the button <b>Open in new tab</b> to see it in the new tab.
+
+Use resources tab to add a new csv table or html file, scripts tab to add a new javascript file, aesthetics to add the design to your experiment by adding css files. PennController is located in the modules tab.
+
+### Actions
+
+Actions are located on the right side of your script editor and they have following functions:
+
++ **Results**: To preview your results file
++ **Share**: To share either demonstration link or data-collection link to other users and participants
++ **Download**: To download project to your device
++ **Git sync**: To import existing git repository to your project
++ **Settings**: To add a description to your experiment and to change whether the project can be cloned or not
+
+
 
 ### Debugger
 
-To be filled in
+Debug window will show all the potential errors in your code/development. 
 
 It is **strongly** recommended that you keep the Debug window *on* until you actually start collecting data from external participants and are no longer editing your project; you should keep it on even for you last test-runs. The debugger can provide you with helpful error and log messages which will save you a valuable amount of time and efforts in troubleshooting your experiments.
 

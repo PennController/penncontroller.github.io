@@ -2,11 +2,10 @@
 title: 9. Customizing an experiment
 nav_order: 2
 start_heading: 9
-blurb: How to increase the complexity of a trial.
+
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-{: .h1-blurb }
+In the following article you will learn how to further customize your experiment. You will learn how to add options for selecting an image with a mouse click, creating a timeout, adding a trial delay, using CSS styles, and adding a completion screen. {: .h1-blurb }
 
 ---
 
