@@ -4,7 +4,7 @@ nav_order: 6
 blurb: How to collect and examine experimental data.
 ---
 
- how to collect and examine experimental data
+ How to collect and examine experimental data
   + Reading a PennController results file.
   + Comparing timestamps to calculate response time.
 
