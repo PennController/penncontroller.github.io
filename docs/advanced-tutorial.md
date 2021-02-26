@@ -188,7 +188,7 @@ newTrial("completion_screen",
 
 ## How to follow the tutorial
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+After following each step, try out editing provided code in the farm code editor. In case you have any trouble, visit Support page.
 
 ### Prerequisites
 
@@ -196,8 +196,8 @@ PennController does not require any background in JavaScript. However, you shoul
 
 In particular, you should be familiar with the following terms and concepts:
 + Calling a command, command parameters
-+ Strings, integers, truth values, code comments,
-+ Experimental items, trials, 
++ Strings, integers, truth values, code comments
++ Experimental items, trials
 
 ### Technical notes
 
@@ -208,7 +208,7 @@ This is an example of a technical note.
 {% endcapture %}
 {% include label-technical.html label-body=label %}
 
-**Reading technical notes is optional**, but you 
+**Reading technical notes is optional**
 
 ### Instruction blocks
 
