@@ -2,11 +2,9 @@
 title: 11. Collecting participant information
 nav_order: 4
 start_heading: 11
-blurb: How to elicit and log participant responses.
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
+In the following article you will learn how to collect participant information, such as obtaining participant's consent, and recording participant's ID.
 {: .h1-blurb }
 
 --- 
