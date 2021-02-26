@@ -123,19 +123,13 @@ summary="Click to see the final experiment script" %}
 
 ## How to follow the tutorial
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
+After reading each step, try editing the file provided in the code editor and familiarize yourself with the environment. In case you have a trouble, visit the support page on the farm. 
 
 ### Prerequisites
 
 PennController does not require any background in JavaScript. However, you should
 have some general knowledge of programming and experimental design.
 
-In particular, you should be familiar with the following terms and concepts:
-
-+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-+ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-+ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
 
 ### Instruction blocks
 
