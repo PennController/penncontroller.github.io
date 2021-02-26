@@ -3,7 +3,7 @@ title: How-to guides
 permalink: /how-to/
 nav_order: 6
 children_collection: how-to-guides
-blurb: To be filled in
+blurb: Check out our how-to guides from the left toolbar!
 ---
 
 # {{ page.title }}
