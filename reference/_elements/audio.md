@@ -28,5 +28,5 @@ For more information on web browser support, see
 <!--more-->
 
 ```javascript
-// example
+newAudio(row.audio).play().wait() 
 ```
