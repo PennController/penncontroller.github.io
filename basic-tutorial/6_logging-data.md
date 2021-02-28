@@ -1,34 +1,38 @@
 ---
 title: 6. Logging data
 nav_order: 6
-blurb: How to collect and examine experimental data.
+blurb: How to collect and examine results.
 ---
 
- How to collect and examine experimental data
-  + Reading a PennController results file.
-  + Comparing timestamps to calculate response time.
+In this section, we'll collect and examine actual experimental results.
+{: .h1-blurb }
 
 ---
 
-## Some h2
+## Collecting information from elements
 
-By default, PennController logs only when a trial starts and when it ends. Use the [`log`]({{site.baseurl}}/standard-element-commands/standard-log) command to collect any other information.
-
-The `log` command adds lines to the `results` file in the experiment project page's **Results** folder. The information that is added depends on the element type that the `log` command is called on. To learn what information is added by calling `log` on a specific element type, visit that element type’s reference page under [Elements]({{site.baseurl}}/elements).
+When you run an experiment, by default PennController logs only when each trial
+starts and ends. You must call the
+[`log`]({{site.baseurl}}/standard-element-commands/standard-log)
+command on each element that you're interested in in order to collect information
+about it.
 
 {% capture instructions %}
-+ Uncomment the [`DebugOff`]({{site.baseurl}}/global-commands/debugoff) command, since we are now ready to collect data.
-+ Call the [`log`]({{site.baseurl}}/canvas/canvas-log) command on the `"side-by_side"` `Canvas` to log when the images are printed to the screen.
-+ Call the [`log`]({{site.baseurl}}/key/key-log) command on the `"keypress"` `Key` to log information about the participant's keypress.
+1. Call the [`log`]({{site.baseurl}}/canvas/canvas-log) command on the
+`"side-by-side"` Canvas to log when it's printed to the screen.
+2. Call the [`log`]({{site.baseurl}}/key/key-log) command on the
+`"keypress"` Key to log information about the participant's keypress.
+3. Add the [`DebugOff`]({{site.baseurl}}/global-commands/debugoff) command
+to turn off the debugger, since we're now done writing the experiment script.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
 @
 @// Remove command prefix
 @PennController.ResetPrefix(null)
 @
-@// Turn off debugger
-!DebugOff()
++// Turn off debugger
++DebugOff()
 @
 @// Instructions
 @// code omitted in interest of space
@@ -42,12 +46,12 @@ The `log` command adds lines to the `results` file in the experiment project pag
 @        .center()
 @        .unfold(2676)
 @    ,
-@    newImage("fish-plural", "2fishRoundTank.png")    
+@    newImage("fish-plural", "2fishRoundTank.png")
 @        .size(200, 200)
 @    ,
 @    newImage("fish-singular", "1fishSquareTank.png")
 @        .size(200, 200)
-@    ,   
+@    ,
 @    newCanvas("side-by-side", 450,200)
 @        .add(  0, 0, getImage("fish-plural"))
 @        .add(250, 0, getImage("fish-singular"))
@@ -66,28 +70,27 @@ The `log` command adds lines to the `results` file in the experiment project pag
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-### Collecting data
+---
+
+## Running the experiment
+
+We're finally ready to run the experiment and collect some data!
 
 {% capture instructions %}
-Run the experiment to log data and look at the logged data:
-
-1. Save and close the `main.js` file.
-2. In the **Results** folder, delete any existing files.
-3. Click the link at the top of the experiment project page to run the experiment.
-4. Complete the experiment.
-5. Click the **Results** folder refresh icon.
-6. Open the `results` file:
-   + Click on *results* to open the `results` file as a pop-up window in the experiment project page; or
-   + Click on the eye icon under *results* to open the `results` file in a new tab; or
-   + Right-click on the eye icon, click *Save Link As...*, enter `"results.csv"` in the "Save As:" field, and click **Save** to save the `results` file as a comma-separated value (CSV) file.
+1. Click the **Unpublished** toggle in the **Actions** panel to change the
+experiment from unpublished to published.
+2. Click **Share** and copy the link in the **Data-collection link** field.
+3. Paste the experiment link into a new tab to run the experiment.
+4. Click **Results** to open the results file.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
 ### Examining experimental results
 
-The `results` file should look like the following:
+The results file should look like this:
 
 <pre><code class="language-none" style="white-space:pre;">
+# Published experiment
 #
 # Results on...
 # USER...
@@ -115,28 +118,32 @@ The `results` file should look like the following:
 1603390913,SOME_MD5_HASH,PennController,1,0,experimental-trial,NULL,PennController,1,_Trial_,End,1603390894815,NULL
 </code></pre>
 
-Rows that begin with the pound symbol `#` are either:
+We're interested in the five rows at the bottom, which tell us that:
 
-+ Comments that either provide logging meta-information; or
-+ Column names for the comma-separated values. 
+1. The `"instructions"` trial started at the timestamp `1603390891064`.
+2. The `"instructions"` trial ended at the timestamp `1603390892111`.
+3. The `"experimental-trial"` trial started at the timetamp `1603390892115`.
+4. The `"side-by-side"` `Canvas` was printed at the timestamp `1603390892122`.
+5. The `"keypress"` `Key` had a value of `F` at the timestamp `1603390893835`.
+6. The `"experimental-trial"` trial ended at the timestamp `1603390894815`.
 
-Rows that do not begin with the pound symbol are logged information.
-
-Relevant information contained in the five rows at the bottom:
-
-1. `"instructions"` trial: started at the timestamp `1603390891064`.
-2. `"instructions"` trial: ended at the timestamp `1603390892111`.
-3. `"experimental-trial"` trial: started at the timetamp `1603390892115`.
-4. `"side-by-side"` `Canvas` was printed at the timestamp `1603390892122`.
-5. `"keypress"` `Key`: the participant pressed the `F` key at the timestamp `1603390893835`.
-6. `"experimental-trial"` trial: ended at the timestamp `1603390894815`.
-
-The timestamps are Unix timestamps in milliseconds, in other words the number of milliseconds since 00:00:00 UTC on January 1, 1970.
+The timestamps are Unix timestamps in milliseconds, the number of milliseconds
+since 00:00:00 UTC on January 1, 1970.
 
 ---
 
 ## Calculating response times
 
-You can compare timestamps to determine response times or event duration. For example, subtract the canvas timestamp from the keypress timestamp to determine how long it took for the participant to press a valid key: `1603390893835`-`1603390892122`=`1713` means that the participant took 2753ms to press the `F` key.
+In general, we aren't interested in the value of a single timestamp, but rather
+in the difference between timestamps. This difference can help us determine
+response times or event durations.
 
-We recommend using the canvas and keypress timestamps to calculate response time, instead of using the trial start and keypress timestamp. We'll [add a one-second delay trial delay]({{site.baseurl}}/advanced-tutorial#adding-a-trial-delay) in the **Advanced Tutorial**, meaning that using the trial start timestamp would artificially inflate the response time by at least 1000ms.
+For example, we can subtract the Canvas timestamp from the Key timestamp to
+determine how long it took for the participant to press a valid key. In this
+experiment, the participant took 1713ms to press the `F` key
+(`1603390893835`-`1603390892122`=`1713`).
+
+This experiment only has a single trial and run, so it's hard to analyse the
+results. In the
+[**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial),
+we'll add more trials and runs, and perform more interesting analyses.

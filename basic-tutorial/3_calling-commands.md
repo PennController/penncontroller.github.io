@@ -4,14 +4,14 @@ nav_order: 3
 blurb: How to manipulate elements with commands.
 ---
 
-Elements contain content that can be manipulated with commands.
+Commands can manipulate elements and the content they contain.
 {: .h1-blurb }
 
 ---
 
 ## Types of commands
 
-There are three main types of commands:
+PennController has three main types of commands:
 
 + [Element commands]({{site.baseurl}}/core-concepts/3_commands#element-commands):
 Used within a trial and called on an element.
@@ -20,19 +20,16 @@ Used outside of a trial.
 + [Special commands]({{site.baseurl}}/core-concepts/3_commands#special-commands):
 Used within a trial, but not called on an element.
 
-Element commands can be further categorized as an action command or test command:
+Element commands have two subtypes:
 
-+ Element commands
-  + Action command:
-  Directly manipulates an element
-  + Test command (PennController equivalent of a conditional statement):
-  Runs a test on an element, and executes different code blocks depending on
-  the success or failure of the test.
++ Action command: Directly manipulates an element.
++ Test command (PennController equivalent of a conditional statement):
+Runs a test on an element, and executes different code blocks depending on the
+success or failure of the test.
 
 {% capture label %}
-**This tutorial uses the term “command” as shorthand for “action command”.**
-If a test, global or special command is intended, the term "test command",
-“global command”, or "special command" will be used.
+In the **BasicTutorial** experiment, we'll only use action commands, which
+we'll refer to just as "commands".
 {% endcapture %}
 {% include label-note.html label-body=label %}
 
@@ -40,50 +37,32 @@ If a test, global or special command is intended, the term "test command",
 
 ## Commands
 
-Commands are your way to interact with the elements and to choose what to do them. Read down below to learn more about how to use the commands in your code or select commands from the left toolbar in order to learn more about a specific command. 
+Commands do at least one of three things:
 
-### Command syntax
++ Manipulate an element's visual content
++ Trigger an element-related event
++ Control an element's interaction with the participant
 
-To call a command, the command:
-
-+ Must be surrounded with `.` and `()`, for example `.print()`. The surrounding `.` and `()` are dropped when referring to a command in prose outside of a code block, for example "the `print` command".
-+ Must be called on an element, in other words on an instance of the `newX` or `getX` functions. Multiple commands can be called on a single element; commands are evaluated in the order in which they are called.
-
-Call each command on an indented new line for maximum readability:
-
-```javascript
-PennController.ResetPrefix(null)
-
-newTrial("TRIAL_LABEL",
-    newX("ELEMENT_1", ...)
-        .COMMAND_1()
-        .COMMAND_2()
-        .COMMAND_3()
-    ,
-    newX("ELEMENT_2", ...)
-        .COMMAND_4()
-)
-```
-
-However, it is also valid to call multiple commands on a single line:
-
-```javascript
-PennController.ResetPrefix(null)
-
-newTrial("TRIAL_LABEL",
-  newX("ELEMENT_1", ...).COMMAND_1().COMMAND_2().COMMAND_3()
-  ,
-  newX("ELEMENT_2", ...).COMMAND_4()
-)
-```
-
-To learn about calling other types of commands, read the [Commands documentation page]({{site.baseurl}}/core-concepts/3_commands).
+For example, the
+[`print`]({{site.baseurl}}/standard-element-commands/standard-print)
+command prints an element to the screen (manipulates visual content), and the
+[`play`]({{site.baseurl}}/audio/audio-play) command causes an element
+to start playing (triggers element-related event).
 
 ### Calling a command
 
 {% capture instructions %}
-+ Call the [`play`]({{site.baseurl}}/audio/audio-play) command on the `"fish-audio"` `Audio` to start audio playback.
-+ Call the [`print`]({{site.baseurl}}/standard-element-commands/standard-print) command on the `"fish-sentence"` `Text` and `"fish-plural"` `Image` to print them to the screen.
+1. Call the
+[`play`]({{site.baseurl}}/audio/audio-play)
+command on the `"fish-audio"` Audio element to start audio playback.
+2. Call the
+[`print`]({{site.baseurl}}/standard-element-commands/standard-print)
+command on the `"fish-sentence"` Text element and `"fish-plural"` Image
+element to print them to the screen.
+3. Click **Refresh** or **Open in new tab** to run the experiment.
+
+When you call a command, you must precede it with a period `.` and follow
+it with a pair of parentheses `()`.
 
 <pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
@@ -93,7 +72,7 @@ To learn about calling other types of commands, read the [Commands documentation
 @
 @// Experimental trial
 @newTrial("experimental-trial",
-@    newAudio("fish-audio", "2fishRoundTank.mp3
+@    newAudio("fish-audio", "2fishRoundTank.mp3")
 +        .play()
 @    ,
 @    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
@@ -103,35 +82,32 @@ To learn about calling other types of commands, read the [Commands documentation
 +        .print()
 @)
 </code></pre>
-
-Click **Save and test** in the script editor to run the experiment.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
 ### Evaluating an experiment script
 
-You may be surprised by the results. When you run the experiment, you hear the
-audio file, but only see the message
-`"The results were successfully sent to the server. Thanks!".`
+If you run the experiment, it once again immediately ends and displays the
+message "The results were successfully sent to the server. Thanks!".
 
-PennController executes experiment scripts sequentially. According to the current
-experiment script, the execution is as follows:
+That's odd, didn't we add elements *and* commands?
+
+This reveals a crucial aspect of PennController: it executes experiment scripts
+sequentially and continuously, unless it's told to pause.
+
+The current experiment script is executed as follows:
 
 1. Remove the command prefix for all commands.
 2. Start the `"experimental-trial"` trial.
-3. Create the `"fish-audio`" `Audio` and play it.
-4. Create the `"fish-sentence"` `Text` and print it.
-5. Create the `"fish-plural"` `Image` and print it.
+3. Create the `"fish-audio`" Audio element and play it.
+4. Create the `"fish-sentence"` Text element and print it.
+5. Create the `"fish-plural"` Image element and print it.
 6. End the `"experimental-trial"` trial.
-7. (*Default*): Send experiment results to the server, the PCIbex Farm. An experiment's
-results are logged in its project page's **Results** folder.
-  + PennController automatically sends results after all other trials have ended.
-  To control when results are sent, see the global command
-  [`SendResults`]({{site.baseurl}}/global-commands/sendresults).
-  + PennController automatically logs when a trial starts and ends.
-  To log other information, see [6. Logging data]({{site.baseurl}}/basic-tutorial/6_logging-data).
-  
-As the `"fish-audio"` `Audio` is playing, all of the other commands are executed.
-When there are no more commands to execute, the trial ends. When there are no more
-trials to start, the experiment sends its results and ends. And all of this occurred
-within a few milliseconds!
+
+When the `"experimental-trial"` trial ends, the whole experiment ends because
+there are no more trials, and the experiment sends its results to the server
+(the PCIbex Farm). All of this occurred within a few milliseconds!
+
+In order to give a participant time to actually interact with an experiment,
+your experiment must include elements and commands that explictly pause
+experiment script execution.
