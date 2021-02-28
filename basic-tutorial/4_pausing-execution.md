@@ -4,28 +4,25 @@ nav_order: 4
 blurb: How to let participants interact with an experiment.
 ---
 
-Interactive elements and commands can pause experiment script execution, in order
-to give participants time to interact with the screen.
+Interactive elements and commands can pause experiment script execution.
 {: .h1-blurb }
 
 ---
 
-## Some h2
+## Pause experiment until a valid keypress
 
-+ [`audio.wait`]({{site.baseurl}}/audio/audio-wait):
-Pauses experiment script execution until audio playback finishes.
-+ [`key.wait`]({{site.baseurl}}/key/key-wait):
-Pauses experiment script execution until a valid keypress.
-+ Also: [`button.wait`]({{site.baseurl}}/button/button-wait),
-[`controller.wait`]({{site.baseurl}}/controller/controller-wait),
-[`dropdown.wait`]({{site.baseurl}}/dropdown/dropdown-wait),
-and more.
+We'll use a [`wait`]({{site.baseurl}}/key/key-wait) command on a
+[Key]({{site.baseurl}}/key) element to pause experiment script execution until
+the participant presses a valid key.
 
 {% capture instructions %}
-1. Create a [`Key`]({{site.baseurl}}/key) named `"keypress"` that "listens" for a press of the `F` or `J` key.
-2. Call the [`wait`]({{site.baseurl}}/key/key-wait) command on the `"keypress"` `Key` to pause experiment script execution until the participant presses a valid key, in this case the `F` or `J` key.
+1. Create a Key element named `"keypress"` that is validated by a press of
+the `F` or `J` key.
+2. Call the [`wait`]({{site.baseurl}}/key/key-wait) command on the `"keypress"`
+Key to pause the trial until the participant presses a valid
+key, in this case the `F` or `J` key.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
 @
 @// Remove command prefix
@@ -38,7 +35,7 @@ and more.
 @    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 @        .print()
 @    ,
-@    newImage("fish-plural", "2fishRoundTank.png")    
+@    newImage("fish-plural", "2fishRoundTank.png")
 @        .print()
 +    ,
 +    newKey("keypress", "FJ")
@@ -48,24 +45,31 @@ and more.
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-If the participant presses the `F` or `J` key while the audio file is still playing, the trial ends and the experiment sends its results while the audio file continues playing. 
+### Pause experiment until audio playback finishes
 
-However, you might want a different sequence of events:
+The `wait` command on the `"keypress"` Key pauses the trial until a valid
+keypress. However, you might want to pause the trial until audio playback
+finishes.
 
-+ **Option 1**: End trial and stop audio playback after a valid keypress.
-+ **Option 2**: End trial after audio playback finishes, instead of after a valid keypress.
-+ **Option 3**: End trial after audio playback finishes or after a valid keypress, whichever comes second.
+We won't actually use this option in the **BasicTutorial** experiment, but
+we provide its code as a reference.
 
-In this experiment we'll use [**Option 3**](#option-3), but provide all options for reference.
+<i>Optional - Think about what the code should look like, and then check to see
+if you're right!  
+(Hint: You'll need to
+[refer back]({{site.baseurl}}/basic-tutorial/2_creating-elements#referring-back-to-an-element)
+to the `"fish-audio"` Audio)</i>
 
 <div class="dotted-grey-dk-000 px-4 pt-3" markdown="1">
 {% capture content %}
 
-**Option 1: End trial and stop audio playback after a valid keypress**
+1. Remove the `wait` command on the `"keypress"` Key.
+2. [Refer back]({{site.baseurl}}/basic-tutorial/2_creating-elements#referring-back-to-an-element)
+to the `"fish-audio"` Audio with `getAudio`.
+3. Call a [`wait`]({{site.baseurl}}/audio/audio-wait) command on the
+`"fish-audio"` Audio.
 
-+ Call the [`stop`]({{site.baseurl}}/audio/audio-stop) command on the `"fish-audio"` `Audio` to stop audio playback.
-
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
 @
 @// Remove command prefix
@@ -79,40 +83,7 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 @    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 @        .print()
 @    ,
-@    newImage("fish-plural", "2fishRoundTank.png")    
-@        .print()
-@    ,
-@    newKey("keypress", "FJ")
-@        .wait()
-+    ,
-+    getAudio("fish-audio")
-+        .stop()
-@)
-</code></pre>
-{% endcapture %}
-{% include collapsible-block.html content=content summary="Option 1: click for more details" %}
-
-{% capture content %}
-
-**Option 2: End trial after audio playback finishes, instead of after a valid keypress**
-
-+ Call the [`wait`]({{site.baseurl}}/audio/audio-wait) command on the `"fish-audio"` `Audio` (instead of on the `"keypress"` `Key`) to pause experiment script execution until audio playback finishes.
-
-<pre><code class="language-diff-javascript diff-highlight"> 
-@// Type code below this line.
-@
-@// Remove command prefix
-@PennController.ResetPrefix(null)
-@
-@// Experimental trial
-@newTrial("experimental-trial",
-@    newAudio("fish-audio", "2fishRoundTank.mp3")
-@        .play()
-@    ,
-@    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
-@        .print()
-@    ,
-@    newImage("fish-plural", "2fishRoundTank.png")    
+@    newImage("fish-plural", "2fishRoundTank.png")
 @        .print()
 @    ,
 @    newKey("keypress", "FJ")
@@ -123,20 +94,54 @@ In this experiment we'll use [**Option 3**](#option-3), but provide all options 
 @)
 </code></pre>
 {% endcapture %}
-{% include collapsible-block.html content=content summary="Option 2: click for more details" %}
+{% include collapsible-block.html content=content summary="Pause trial until audio playback finishes" %}
 </div>
 
 ---
 
-## End trial after audio playback finishes or valid keypress {#option-3}
+## Pause experiment until a valid keypress *or* audio playback finishes
 
-To end the trial after audio playback finishes or after a valid keypress, whichever comes second, pause the experiment script execution at the `"keypress"` `Key` *and* at the `"fish-audio"` `Audio`.
+The experiment pauses until a valid keypress, meaning that if a participant
+presses a valid key before audio playback finishes, it ends audio playback
+early because when the experiment unpauses, the trial (and experiment) ends.
 
-{% capture instructions %}
+If we want audio playback to finish before the trial ends, we have to also
+pause experiment execution at the Audio element. However, simply calling a `wait`
+command on the `"fish-audio"` Audio will not work as intended.
 
-+ Call the [`wait("first")`]({{site.baseurl}}/audio/audio-wait#optional-arguments) command on the `"fish-audio"` `Audio` to pause experiment script execution until an end-of-audio-playback event.
+<pre><code class="language-diff-javascript diff-highlight">
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
+@// Experimental trial
+@newTrial("experimental-trial",
+@    newAudio("fish-audio", "2fishRoundTank.mp3")
+@        .play()
+$        .wait()
+@    ,
+@    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
+@        .print()
+@    ,
+@    newImage("fish-plural", "2fishRoundTank.png")
+@        .print()
+@    ,
+@    newKey("keypress", "FJ")
+@        .wait()
+@)
+</code></pre>
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+The `wait` command here actually prevents the printing of the `"fish-sentence"`
+and `"fish-plural"` elements until the `"fish-audio"` Audio finishes playing,
+because PennController executes experiment scripts from top to bottom.
+
+To get around this, we can use the `getAudio()` function to
+[refer back]({{site.baseurl}}/basic-tutorial/2_creating-elements#referring-back-to-an-element)
+to the `"fish-audio"` Audio at a later part of the script, and call the `wait`
+command there.
+
+<pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
 @
 @// Remove command prefix
@@ -150,7 +155,60 @@ To end the trial after audio playback finishes or after a valid keypress, whiche
 @    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
 @        .print()
 @    ,
-@    newImage("fish-plural", "2fishRoundTank.png")    
+@    newImage("fish-plural", "2fishRoundTank.png")
+@        .print()
+@    ,
+@    newKey("keypress", "FJ")
+@        .wait()
+@    ,
+$    getAudio("fish-audio")
+$        .wait()
+@)
+</code></pre>
+
+But calling the `wait` command here doesn't work as intended either! This experiment
+"freezes" if the participant presses a valid key after audio playback
+finishes.
+
+The `wait` command on the `"keypress"` Key pauses the experiment until a valid
+keypress, at which point PennController evaluates the `wait` command on the
+`"fish-audio"` Audio. This command, like all `wait` commands, pauses the experiment
+until a certain event occurs.
+
+However, by default PennController starts waiting for the event *after* the `wait`
+command is evaluated. In other words, since audio playback finished before
+the `wait` command on the `"fish-audio"` Audio was evaluated, it doesn't qualify
+as an event that unpauses the experiment. As a result, the experiment pauses without
+a way to ever unpause it.
+
+The solution is to add the `"first"` parameter, which tells PennController to
+pause the experiment until the event *has occurred*. If the event occurs
+before the `wait("first)` command is evaluated, when the `wait("first")` command
+is actually evaluated the experiment pauses and immediately unpauses, as if it
+didn't pause at all.
+
+{% capture instructions %}
+1. [Refer back]({{site.baseurl}}/basic-tutorial/2_creating-elements#referring-back-to-an-element)
+to the `"fish-audio"` Audio with `getAudio`.
+2. Call the
+[`wait("first")`]({{site.baseurl}}/audio/audio-wait#optional-arguments)
+command on the `"fish-audio"` Audio.
+
+<pre><code class="language-diff-javascript diff-highlight">
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
+@// Experimental trial
+@newTrial("experimental-trial",
+@    newAudio("fish-audio", "2fishRoundTank.mp3")
+@        .play()
+@    ,
+@    newText("fish-sentence", "The fish swim in a tank which is perfectly round.")
+@        .print()
+@    ,
+@    newImage("fish-plural", "2fishRoundTank.png")
 @        .print()
 @    ,
 @    newKey("keypress", "FJ")
@@ -162,24 +220,3 @@ To end the trial after audio playback finishes or after a valid keypress, whiche
 </code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
-
-### Some h3
-
-When called on an `Audio` element, the `wait("first")` command and the plain `wait` command differ in an important way:
-
-+ `wait("first")`: tells PennController to wait for *any* end-of-audio-playback event.
-+ `wait`: tells PennController to *start* waiting for an end-of-audio-playback event.
-
-This difference is important in the situation where audio playback finishes before the participant presses a valid key:
-
-+ Using the `wait("first")` command:
-  1. Audio playback finishes.
-  2. The `wait` command on the `"keypress"` `Key` pauses experiment script execution. The participant presses a valid key.
-  3. The `wait("first")` command on the `"fish-audio"` `Audio` pauses experiment script execution. PennController waits for *any* end-of-audio-playback event.
-  4. Audio playback has already finished, which satisfies the `wait("first")` command. Experiment script execution continues immediately and the trial ends.
-+ Using the plain `wait` command:
-  1. Audio playback finishes.
-  2. The `wait` command on the `"keypress"` `Key` pauses experiment script execution. The participant presses a valid key.
-  3. The basic `wait` command on the `"fish-audio"` `Audio` pauses experiment script execution. PennController *starts* waiting for an end-of-audio-playback event.
-  4. However, audio playback has already finished, and PennController will never detect an end-of-audio-playback event. The basic `wait` command cannot be satisfied, and **experiment script execution pauses indefinitely**.
-  
