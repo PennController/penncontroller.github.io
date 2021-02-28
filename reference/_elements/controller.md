@@ -17,13 +17,13 @@ notes: true
 The currently supported Ibex controllers are:
 
 + [AcceptabilityJudgment](https://github.com/addrummond/ibex/blob/master/docs/manual.md#acceptabilityjudgment){:target="_blank"}:
-*To be filled in*
+makes it straightforward to present a sentence together with a rating scale; it is a combination of the FlashSentence and Message controllers - press above to see more information
 + [DashedAcceptabilityJudgment](https://github.com/addrummond/ibex/blob/master/docs/manual.md#dashedacceptabilityjudgment){:target="_blank"}:
-*To be filled in*
+like AcceptabilityJudgment, but it uses DashedSentence instead of FlashSentence; this is useful for running speeded acceptability judgment tasks (which otherwise require some rather creative use of shuffle sequences) - press above to see more information
 + [DashedSentence](https://github.com/addrummond/ibex/blob/master/docs/manual.md#dashedsentence){:target="_blank"}:
-*To be filled in*
+The sentence is displayed as a sequence of dashes - press above to see more information
 + [FlashSentence](https://github.com/addrummond/ibex/blob/master/docs/manual.md#flashsentence){:target="_blank"}:
-*To be filled in*
+
 + [Form](https://github.com/addrummond/ibex/blob/master/docs/manual.md#form){:target="_blank"}
 *To be filled in*
 + [Message](https://github.com/addrummond/ibex/blob/master/docs/manual.md#message){:target="_blank"}:
