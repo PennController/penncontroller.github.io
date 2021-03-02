@@ -12,8 +12,8 @@ description: "Disables the buttons to play/pause the audio right after its first
 @    .print()
 @,
 @newAudio("sentence", "test.mp3")
-@    .once()
-$    .print()
+$    .once()
+@    .print()
 @    .wait()
 @,
 @newButton("validation", "Validate")
