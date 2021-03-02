@@ -2,10 +2,9 @@
 title: 10. Counterbalancing
 nav_order: 3
 start_heading: 10
-blurb: How to include counterbalancing in the experimental design.
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+In the following article you will learn how to control randomization in your experiment. Specifically you will learn how to shuffle image position, randomize item order, and control group assignment. 
 {: .h1-blurb }
 
 ---

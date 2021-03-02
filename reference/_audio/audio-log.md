@@ -2,6 +2,7 @@
 title: audio.log
 command_type: "action"
 syntax: .log()
+description: "Will log the time/results of the action to your results file."
 alternates:
   - name: "\"play\""
   - name: "\"pause\""

@@ -5,6 +5,8 @@ syntax: .wait()
 alternates:
   - name: "\"first\""
   - name: "test"
+description: "It waits until the previous command or command specified is executed or the specified time runs out before moving onto the next command.
+
 ---
 
 <!--more-->

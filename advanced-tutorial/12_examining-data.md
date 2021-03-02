@@ -2,10 +2,10 @@
 title: 12. Examining data
 nav_order: 5
 start_heading: 12
-blurb: How to use R to read in a results file.
+
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+In the following article you will learn how to examine the date from your experiment. Specifically you will learn how to collect the data, read results, and tidy and analyze the data.
 {: .h1-blurb }
 
 ---
