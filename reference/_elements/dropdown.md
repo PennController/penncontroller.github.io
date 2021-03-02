@@ -7,7 +7,7 @@ description: Represents a drop-down list.
 parameters:
   - name: DEFAULT_TEXT
     type: string
-    description: To be filled in.
+    description: represents default text displayed
 notes: true
 --- 
 
