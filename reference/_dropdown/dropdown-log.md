@@ -12,3 +12,12 @@ notes: true
 + If you pass *"first"* as the argument, it will report the option selected upon first selection, ignoring further selections. If you pass *"all"* as the argument, it will add a line for each single occurrence of a selection. By default (no argument) it will only add a line for the value selected at the end of the trial.
 
 <!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-">
+@newDropDown("language" , "First language")
+@    .add( "English" , "French" , "Tagalog" )
+@    .print()
+@    .log()
+</code></pre>
+
++ Adds a line for the value selected from the dropdown at the end of the trial.	
