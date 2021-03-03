@@ -21,8 +21,8 @@ notes: true
 @    ,
 @    getEyeTracker("tracker").add( getText("Left") , getText("Right") ).showFeedback().start()
 @    ,
-@    newTimer(1000).callback( getEyeTracker("tracker").stop() ).start()
-$    ,
+$    newTimer(1000).callback( getEyeTracker("tracker").stop() ).start()
+@    ,
 @    newSelector().add( getText("Left") , getText("Right") ).wait()
 @)
 </code></pre>
