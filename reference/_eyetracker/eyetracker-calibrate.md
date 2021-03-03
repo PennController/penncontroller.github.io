@@ -23,8 +23,8 @@ since: PennController 1.8
 @newTrial( newButton("Start").print().wait(newEyeTracker().test.ready()) )
 @
 @newTrial(
-@    newEyeTracker("tracker").calibrate(70)
-$    ,
+$    newEyeTracker("tracker").calibrate(70)
+@    ,
 @    newText("Left").css("padding","20vw").print("20vw", "40vh"),
 @    newText("Right").css("padding","20vw").print("60vw", "40vh")
 @    ,
@@ -34,8 +34,8 @@ $    ,
 @)
 @
 @newTrial(
-@    newEyeTracker("tracker").calibrate(70)
-$    ,
+$    newEyeTracker("tracker").calibrate(70)
+@    ,
 @    newText("Right").css("padding","20vw").print("20vw", "40vh"),
 @    newText("Left").css("padding","20vw").print("60vw", "40vh")
 @    ,
