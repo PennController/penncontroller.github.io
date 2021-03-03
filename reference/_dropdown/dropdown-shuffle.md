@@ -15,8 +15,8 @@ notes: true
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newDropDown("warmth", "")
 @    .add("hot", "lukewarm", "cold")
-@    .shuffle()
-$,
+$    .shuffle()
+@,
 @newText("Spring in Colorado is ")
 @    .after( getDropDown("warmth") )
 @    .print()
