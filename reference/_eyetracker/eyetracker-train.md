@@ -20,8 +20,8 @@ notes: true
 @newTrial(
 @    newEyeTracker("tracker")
 @        .calibrate(70)
-@        .train(true)
-$    ,
+$        .train(true)
+@    ,
 @    newButton("Click here first").print("20vw","40vh").wait().remove(), 
 @    newButton("Now Click here").print("60vw","40vh").wait().remove()
 @    ,
