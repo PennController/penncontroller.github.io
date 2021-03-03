@@ -230,10 +230,17 @@ pre > code.diff-highlight .token.incorrect:not(.prefix) {
   visibility: visible;
   color: red;
 }
+
 .token.prefix.inserted::before {
 	content: '+';
   visibility: visible;
   color: green;
+}
+
+.token.prefix.unchanged::before,
+.token.prefix.highlighed::before {
+	content: ' ';
+  visibility: hidden;
 }
 
 

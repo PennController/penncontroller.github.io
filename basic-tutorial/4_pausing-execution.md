@@ -99,7 +99,7 @@ to the `"fish-audio"` Audio with `getAudio`.
 
 ---
 
-## Pause experiment until a valid keypress *or* audio playback finishes
+## Pause experiment until a valid keypress *or* audio playback finishes {#pause-experiment}
 
 The experiment pauses until a valid keypress, meaning that if a participant
 presses a valid key before audio playback finishes, it ends audio playback

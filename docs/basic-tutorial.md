@@ -25,16 +25,15 @@ section!
 ## Table of contents
 
 {% assign children_list = site.html_pages | where: "parent", page.title %}
-<ol>
+<ul>
 {% for child in children_list %}
   <li>
-  {% assign modified_title = child.title | split: ". " | last %}
     <a href="{{ child.url | prepend: site.baseurl }}">
-      {{ modified_title -}}
+      {{ child.title -}}
     </a>: {{ child.blurb }}
   </li>
 {% endfor %}
-</ol>
+</ul>
 
 ---
 

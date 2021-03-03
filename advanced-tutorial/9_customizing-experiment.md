@@ -5,31 +5,43 @@ start_heading: 9
 
 ---
 
-In the following article you will learn how to further customize your experiment. You will learn how to add options for selecting an image with a mouse click, creating a timeout, adding a trial delay, using CSS styles, and adding a completion screen. {: .h1-blurb }
+In this section, we'll add the option of selecting an image with a mouse click,
+use CSS styles, create a trial timeout and a trial delay, and add a completion
+screen.
+{: .h1-blurb }
 
 ---
 
 ## Selecting an image with a mouse click
 
-The participant selects an image by pressing the `F` or `J` key. We'll include the option of clicking on an image to select it by using a [**Selector**]({{site.baseurl}}/selector). 
+Currently, the participant can only select an image by pressing the `F` or `J`
+key. We'll use a [Selector]({{site.baseurl}}/selector) element to include the
+option of clicking on an image to select it.
 
-A **Selector** creates a group of elements, where (by default) each member can be selected with a mouse click. We can then associate a key to each member, so that a keypress will also select the desired element. 
+A Selector creates a group of elements, where (by default) each member can be
+selected by a mouse click. We can then associate a key to each member, so that
+a keypress also selects the desired element.
 
 {% capture instructions %}
-+ Remove the `"keypress"` `Key`.
-+ Create a [**Selector**]({{site.baseurl}}/selector) named `"selection"`.
-  1. Call the [`add`]({{site.baseurl}}/selector/selector-add) command to add the `"singular"` and `"plural"` `Image` elements
-  2. Call the [`keys`]({{site.baseurl}}/selector/selector-keys) command to associate the `F` and `J` keys to the singular image and plural image, respectively. 
-  3. Call the [`log`]({{site.baseurl}}/selector/selector-log) command to log information about the participant's selection.
-  4. Call the [`once`]({{site.baseurl}}/selector/selector-once) command so that only the first image selection is valid (without the `once` command, the participant can change the selected image, up until the trial ends).
-  5. Call the [`wait`]({{site.baseurl}}/selector/selector-wait) command to pause experiment script execution until the participant selects an element.
+1. Remove the `"keypress"` Key.
+2. Create a [Selector]({{site.baseurl}}/selector) named `"selection"`.
+3. [`Add`]({{site.baseurl}}/selector/selector-add) the `"singular"` and
+`"plural"` Image elements to the Selector.
+4. Call the [`keys`]({{site.baseurl}}/selector/selector-keys) command to
+associate the `F` and `J` keys to the singular and plural images, respectively.
+5. [`Log`]({{site.baseurl}}/selector/selector-log) information about the
+Selector element.
+6. Call the [`once`]({{site.baseurl}}/selector/selector-once) command so that
+only the first image selection is valid (without the `once` command, the
+participant can change which image they select).
+7. Call the [`wait`]({{site.baseurl}}/selector/selector-wait) command to pause
+experiment script execution until the participant selects an element.
 
-*If you are copy and pasting this code, delete any lines highlighted with a red background.*
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// code omitted in interest of space
 @
 @// Experimental trial
-*Template("items.csv", row => 
+@Template("items.csv", row => 
 @    newTrial("experimental-trial",
 @        newAudio("audio", row.audio)
 @            .play()
@@ -73,31 +85,88 @@ A **Selector** creates a group of elements, where (by default) each member can b
 
 ---
 
-## Creating a timeout
+## Using CSS styles for vertical spacing
 
-The `"experimental-trial"` trial ends after audio playback finishes or a valid keypress, [whichever comes second]({{site.baseurl}}/basic-tutorial/#option3).
-
-We'll modify the trial so that it ends after whichever comes *first*:
-
-+ If the participant presses a valid key while audio playback is still ongoing, the trial ends after the keypress.
-+ If audio playback finishes before the participant presses a valid key, the trial ends after audio playback finishes.
-
-In other words, the participant has until the audio playback finishes to press a valid key, otherwise the trial times out and ends. 
+We'll update the instructions to reflect the clicking option. We'll also use the
+[`cssContainer`]({{site.baseurl}}/standard-element-commands/standard-csscontainer)
+command to replace the `<p></p>` HTML tags on some Text elements with a 1em bottom
+margin on all Text elements.
 
 {% capture instructions %}
-+ Create a timeout:
-  1. Create and start a [`Timer`]({{site.baseurl}}/timer) named `"timeout"` that is `row.duration` ms long.
-  2. Call the [`callback`]({{site.baseurl}}/selector/selector-callback) command on the `"selection"` **Selector**. When an image is selected, the `callback` command will stop the `"timeout"` `Timer`. Remove the `once` and `wait` commands.
-  3. Call the [`wait`]({{site.baseurl}}/timer/timer-wait) command on the `"timeout"` `Timer` to pause experiment script execution until the timer stops.
-  4. Call the [`stop`]({{site.baseurl}}/audio/audio-stop) command on the `"audio"` `Audio` to stop audio playback when the timer stops. Remove the `wait("first")` command.
+1. Create a new Text element named `"instructions-5"`.
+2. Call the
+[`cssContainer`]({{site.baseurl}}/standard-element-commands/standard-csscontainer)
+command on the `defaultText` object to add a 1em bottom margin to every Text
+element container.
+3. Remove the `<p></p>` tags from the `"instructions-2"` and `"instructions-4"`
+Text elements.
 
-*If you are copy and pasting this code, delete any lines highlighted with a red background.*
+<pre><code class="language-diff-javascript diff-highlight">
+@// code omitted in interest of space
+@
+@// Instructions
+@newTrial("instructions",
+@    defaultText
++        .cssContainer({"margin-bottom":"1em"})
+@        .center()
+@        .print()
+@    ,
+@    newText("instructions-1", "Welcome!")
+@    ,
+!    newText("instructions-2", "In this experiment, you will hear and read a sentence, and see two images.")
+@    ,
+@    newText("instructions-3", "&lt;b&gt;Select the image that better matches the sentence:&lt;/b&gt;")
+@    ,
+!    newText("instructions-4", "Press the &lt;b&gt;F&lt;/b&gt; key to select the image on the left.&lt;br&gt;Press the &lt;b&gt;J&lt;/b&gt; key to select the image on the right.&lt;br&gt;You can also click on an image to select it.")
++    ,
++    newText("instructions-5", "If you do not select an image by the time the audio finishes playing,&lt;br&gt;the experiment will skip to the next sentence.")
+@    ,
+@    newButton("wait", "Click to start the experiment")
+@        .center()
+@        .print()
+@        .wait()
+@)
+@
+@// code omitted in interest of space
+</code></pre>
+{% endcapture %}
+{% include instructions.html text=instructions %}
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+---
+
+## Creating a timeout
+
+Currently, the `"experimental-trial"` trial ends after audio playback finishes
+or an image is selected,
+[whichever comes second]({{site.baseurl}}/basic-tutorial/#pause-experiment).
+
+We'll modify the trial so that it ends after whichever comes *first*. In other
+words, the participant has until the audio playback finishes to select an
+image before the trial times out and ends.
+
+The timeout uses a [Timer]({{site.baseurl}}/timer) element and a `callback`
+command. A `callback` command specifies an element with some command(s), and when
+the `callback` command is evaluated it triggers the execution of the specified
+command(s) on the specified element.
+
+{% capture instructions %}
+1. Create a [Timer]({{site.baseurl}}/timer) named `"timeout"` that is
+`row.duration` ms long.
+2. [Start]({{site.baseurl}}/timer/timer-start) the Timer.
+3. Remove the `once` and `wait` commands on the `"selection"` Selector.
+4. Call the [`callback`]({{site.baseurl}}/selector/selector-callback) command
+on the `"selection"` Selector. When an image is selected, the `callback`
+command will stop the `"timeout"` Timer.
+5. Refer back to the `"timeout"` Timer and call the
+[`wait`]({{site.baseurl}}/timer/timer-wait) command to pause experiment script
+execution until the Timer stops.
+6. Remove the `getAudio("audio").wait("first")` block.
+
+<pre><code class="language-diff-javascript diff-highlight">
 @// code omitted in interest of space
 @
 @// Experimental trial
-*Template("items.csv", row => 
+@Template("items.csv", row =>
 @    newTrial("experimental-trial",
 @        newAudio("audio", row.audio)
 @            .play()
@@ -132,9 +201,8 @@ In other words, the participant has until the audio playback finishes to press a
 +        getTimer("timeout")
 +            .wait()
 @        ,
-@        getAudio("audio")
+-        getAudio("audio")
 -            .wait("first)
-+            .stop()
 @    )
 @    .log("group", row.group)
 @    .log("item", row.item)
@@ -146,31 +214,35 @@ In other words, the participant has until the audio playback finishes to press a
 
 The timeout is created as follows:
 
-1. The `"timeout"` `Timer` starts right after the `"audio"` `Audio` starts playing. The `"timeout"` `Timer` and the `"audio"` `Audio` are both `row.duration` ms long.
-2. Experiment script execution continues until it reaches the `wait` command on the `"timeout"` `Timer` element. The `wait` command pauses experiment script execution until PennController detects an end-of-timer event.
-3. If the participant selects an image before audio playback finishes:
-    + The participant selects an image. The `callback` command on the `"selection"` **Seleector** triggers the execution of `getTimer("timeout").stop()`, which stops the `"timeout"` `Timer` element and validates the `wait` command.
-    
-    *OR*
-    
-    If audio playback finishes before the participant selects an image:
-    + The `"timeout"` `Timer` element stops naturally and validates the `wait` command.
-4. Experiment script execution continues. The `stop` command is called on the `"audio"` `Audio` element. There are no more commands, so the trial "times out" and ends.
+1. The `"timeout"` Timer starts after the `"audio"` Audio starts playing. Both
+elements are `row.duration` ms long.
+2. Experiment script execution continues as normal until PennController reaches
+the `wait` command on the `"timeout"` Timer. The `wait` command pauses experiment
+script execution until PennController detects an end-of-timer event.
+    + If the participant selects an image before audio playback finishes, the
+    image selection calls the `callback` command on the `"selection"` Selector,
+    which triggers the execution of `getTimer("timeout").stop()`. The Timer stops,
+    and validates the `wait` command.
+    + If audio playback finishes before the participant selects an image, the
+    `"timeout"` Timer stops naturally, and validates the `wait` command.
 
 ---
 
 ## Adding a trial delay
 
-Each trial begins as soon as the previous trial ends. This might be overwhelming for participants, so we'll create a one-second pause between trials. 
+Each trial begins as soon as the previous trial ends. This might be overwhelming
+for participants, so we'll create a one-second pause between trials.
 
 {% capture instructions %}
-Create and start a `Timer` named `"break"` that is 1000ms long. Call the [`wait`]({{site.baseurl}}/timer/timer-wait) command to pause experiment script execution until the timer stops:
+1. Create and start a Timer named `"break"` that is 1000ms long.
+2. Call the [`wait`]({{site.baseurl}}/timer/timer-wait) command on the `"break"`
+Timer to pause experiment script execution until the timer stops.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// code omitted in interest of space
 @
 @// Experimental trial
-*Template("items.csv", row => 
+@Template("items.csv", row => 
 @    newTrial("experimental-trial",
 +        newTimer("break", 1000)
 +            .start()
@@ -207,9 +279,6 @@ Create and start a `Timer` named `"break"` that is 1000ms long. Call the [`wait`
 @        ,
 @        getTimer("timeout")
 @            .wait()
-@        ,
-@        getAudio("audio")
-@            .stop()
 @    )
 @    .log("group", row.group)
 @    .log("item", row.item)
@@ -221,121 +290,42 @@ Create and start a `Timer` named `"break"` that is 1000ms long. Call the [`wait`
 
 ---
 
-## Using CSS styles
-
-The [`css`]({{site.baseurl}}/standard-element-commands/standard-css){:target=":blank"} and [`cssContainer`]({{site.baseurl}}/standard-element-commands/standard-csscontainer){:target=":blank"} commands are equivalent to using [inline CSS](https://www.w3schools.com/html/html_css.asp){:target="_blank"} to apply a style or styles. The `css` command applies the CSS style(s) to the specified element, and the `cssContainer` command applies the CSS style(s) to the container of the specified element.
-
-{% capture instructions %}
-+ Update the instructions to reflect the changes in the `"experimental-trial"` trial.
-+ Call the [`cssContainer`]({{site.baseurl}}/standard-element-commands/standard-csscontainer){:target=":blank"} command on the `defaultText` object to add a 1em bottom margin to every `Text` element container. 
-+ Remove the `<p></p>` tags.
-
-<pre><code class="language-diff-javascript diff-highlight"> 
-@// code omitted in interest of space
-@
-@// Instructions
-@newTrial("instructions",
-@    defaultText
-+        .cssContainer({"margin-bottom":"1em"})
-@        .center()
-@        .print()
-@    ,
-@    newText("instructions-1", "Welcome!")
-@    ,
-!    newText("instructions-2", "In this experiment, you will hear and read a sentence, and see two images.")
-@    ,
-@    newText("instructions-3", "&lt;b&gt;Select the image that better matches the sentence:&lt;/b&gt;")
-@    ,
-!    newText("instructions-4", "Press the &lt;b&gt;F&lt;/b&gt; key to select the image on the left.&lt;br&gt;Press the &lt;b&gt;J&lt;/b&gt; key to select the image on the right.&lt;br&gt;You can also click on an image to select it.")
-+    ,
-+    newText("instructions-5", "If you do not select an image by the time the audio finishes playing,&lt;br&gt;the experiment will skip to the next sentence.")
-@    ,
-@    newButton("wait", "Click to start the experiment")
-@        .center()
-@        .print()
-@        .wait()
-@)
-@
-@// code omitted in interest of space
-</code></pre>
-{% endcapture %}
-{% include instructions.html text=instructions %}
-
-We're calling the `cssContainer` command instead of using the `<p></p>` HTML tags in order to better control the vertical line spacing.
-
-{% capture content %}
-It's possible to use `<p></p>` tags instead of calling the `cssContainer` command:
-
-<pre><code class="language-diff-javascript diff-highlight"> 
-* // code omitted in interest of space
-@
-@// Instructions
-@newTrial("instructions",
-@    defaultText
-@        .center()
-@        .print()
-@    ,
-@    newText("instructions-1", "Welcome!")
-@    ,
-@    newText("instructions-2", "&lt;p&gt;In this experiment, you will hear and read a sentence, and see two images.&lt;/p&gt;")
-@    ,
-@    newText("instructions-3", "&lt;b&gt;Select the image that better matches the sentence:&lt;/b&gt;")
-@    ,
-!    newText("instructions-4", "&lt;p&gt;Press the &lt;b&gt;F&lt;/b&gt; key to select the image on the left.&lt;br&gt;Press the &lt;b&gt;J&lt;/b&gt; key to select the image on the right.&lt;br&gt;You can also click on an image to select it.&lt;/p&gt;")
-+    ,
-+    newText("instructions-5", "&lt;p&gt;If you do not select an image by the time the audio finishes playing,&lt;br&gt;the experiment will skip to the next sentence.&lt;/p&gt;")
-@    ,
-@    newButton("wait", "Click to start the experiment")
-@        .center()
-@        .print()
-@        .wait()
-@)
-@
-@// code omitted in interest of space
-</code></pre>
-
-However, if you add `<p></p>` HTML tags to the `"instructions-5"` `Text`, then there will be two lines of space in between the `"instructions-4"` and `"instructions-5"` `Text` elements, because the `"instructions-4"` `Text` also has `<p></p>` tags.
-
-If you don't add the `<p></p>` tags, then there won't be a line of space between the `"instructions-5"` `Text` and `"wait"` `Button`:
-
-<div class="d-flex mb-4" style="flex-flow: row wrap; justify-content: space-around;">
-  <div class="centered-50">
-    <img class="dotted-grey-dk-000" src="{{site.baseurl}}/assets/tutorials/double-p.png" alt="double-p">with <code>&lt;p&gt;&lt;/p&gt;</code> tags on <code>"instructions-5"</code>
-  </div>
-  <div class="centered-50">
-    <img class="dotted-grey-dk-000" src="{{site.baseurl}}/assets/tutorials/no-p.png" alt="no-p">without <code>&lt;p&gt;&lt;/p&gt;</code> tags on <code>"instructions-5"</code>
-  </div>
-</div>
-
-With the `cssContainer` command:
-<img class="mt-2 dotted-grey-dk-000" src="{{site.baseurl}}/assets/tutorials/margin-bottom.png" alt="margin-bottom">
-
-{% endcapture %}
-{% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
-
----
-
 ## Adding a completion screen
 
-We'll add a completion screen trial to the end of the experiment.
+By default, PennController sends an experiment's results to the PCIbex Farm
+server after all the trials have ended. However, we can use the global command
+[`SendResults`]({{site.baseurl}}/global-commands/sendresults) to manually control
+when results are sent.
 
-By default, PennController sends the experiment results to the PCIbex Farm server after all the trials have ended. Use the global command [`SendResults`]({{site.baseurl}}/global-commands/sendresults) to manually control when PennController sends results, and send results *before* the completion screen trial begins. This will help ensure that participants don't close their web browser before the experiment results are sent and saved.
+We'll add a completion screen to the end of the experiment, and send results right
+before the completion screen trial actually begins. Since the completion screen is
+still part of the experiment, this will help ensure that participants don't close
+their web browser before the results from the experimental trials are sent to
+the server.
 
-We'll create a `Button` and call the `wait` command on it to pause experiment script execution, so that participants have time to read the completion screen trial. 
+As usual, we'll use a Button and a `wait` command to pause experiment script
+execution during the completion screen, so that participants have time to read it.
+This time though, we'll force the experiment to pause indefinitely by not printing
+the Button; since the participant can't click the Button, the `wait` command is
+never satisifed.
 
-However, there is no need for participants to go beyond this trial; the experiment is already over, and the results have already been sent. Pause experiment script execution indefinitely by calling the `wait` command on the `Button` *without* printing it. The participant will never be able to click the button, and the `wait` command will never be satisfied.
+You can use this trick whenever you want to permanently stop a participant from
+continuing!
 
 {% capture instructions %}
-+ Call the [`SendResults`]({{site.baseurl}}/global-commands/sendresults) global command and label it `"send"`.
-+ Create a new trial labeled `"completion_screen"`.
-  + Create and print a centered `Text` named `"thanks"`.
-  + Create a new `Button` named `"void"`. Call the [`wait`]({{site.baseurl}}/button/button-wait) command on it, but do *not* print it to the screen.
+1. Call the [`SendResults`]({{site.baseurl}}/global-commands/sendresults) global
+command and label it `"send"`.
+2. Create a new trial labeled `"completion_screen"`.
+3. Create and print a centered Text named `"thanks"`.
+4. Create a new Button named `"void"`. Call the
+[`wait`]({{site.baseurl}}/button/button-wait) command on it, but do *not* print
+it to the screen.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// code omitted in interest of space
 @
 @// Experimental trial
-*Template("items.csv", row => 
+@Template("items.csv", row => 
 @    // code omitted in interest of space
 @)
 @
