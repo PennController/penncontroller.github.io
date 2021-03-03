@@ -192,7 +192,8 @@ After following each step, try out editing provided code in the farm code editor
 
 ### Prerequisites
 
-PennController does not require any background in JavaScript. However, you should have some general knowledge of programming and experimental design.
+PennController does not require any background in JavaScript. 
+However, you should have some general knowledge of experimental design.
 
 In particular, you should be familiar with the following terms and concepts:
 + Calling a command, command parameters

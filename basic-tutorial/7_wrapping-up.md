@@ -106,6 +106,6 @@ You can also jump right in and
 If you have questions, visit the
 [**Troubleshooting**]({{site.baseurl}}/support/troubleshooting)
 page, check out our
-[**How-to guides**]({{site.baseurl}}/docs/how-to-guides),
+[**How-to guides**]({{site.baseurl}}/how-to),
 or post a question on our
 [support forum](https://farm.pcibex.net/experiments/new){:target="_blank"}.

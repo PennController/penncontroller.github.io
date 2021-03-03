@@ -40,8 +40,8 @@ section!
 
 ## Prerequisites
 
-PennController does not require any background in JavaScript. However, you should
-have some general knowledge of programming and experimental design.
+PennController does not require any background in JavaScript. 
+However, you should have some general knowledge of experimental design.
 
 ---
 
