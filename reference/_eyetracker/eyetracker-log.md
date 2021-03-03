@@ -22,7 +22,8 @@ newTrial(
     ,
     getEyeTracker("tracker")
         .add( getText("Left") , getText("Right") )
-        .callback(function(x,y){ getText("lookedAt").text(`Looking at ${this.id} (${x},${y})`)._runPromises(); })
+        .callback(function(x,y){ getText("lookedAt")
+                                 .text(`Looking ${this.id} (${x},${y})`)._runPromises(); })
         .start()
     ,
     newSelector().add( getText("Left") , getText("Right") ).wait()
