@@ -85,9 +85,9 @@ Elements must be created inside a trial:
 ~)
 </code></pre>
 
-### Element names
-
-*To be filled in*
+<!-- ### Element names -->
+<!--  -->
+<!-- *To be filled in* -->
 
 ---
 

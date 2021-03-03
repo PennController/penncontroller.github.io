@@ -16,7 +16,7 @@ hosts and builds PennController experiments automatically, meaning that you
 don't have to worry about set up, and can focus on writing your experiment scripts.
 
 You can also set up your own server by following the instructions in the
-[Using an external server]({{site.baseurl}}/docs/how-to-guides/setting-up-server)
+[Using an external server]({{site.baseurl}}/how-to-guides/setting-up-server)
 how-to guide.
 
 Each PCIbex Farm account has a **64MB storage quota**, meaning that the total size
@@ -33,16 +33,17 @@ the exceed-quota list.
 
 ## Creating a PCIbex Farm account
 
-1. Go to the PCIbex Farm [account creation page](https://farm.pcibex.net).
-2. In the "New user" box, enter the following information:
+1. Go to [the PCIbex Farm](https://farm.pcibex.net){:target="_blank"}.
+2. Click "_Sign up_" in the top bar
+3. A modal window pops up:
    + In the "Username" field, enter the username that you want for your account.
    + In the "Password" field, enter the password that you want for your account.
-   + In the "Verify password field", re-enter the password that you used in the
+   + In the "Password confirmation", re-enter the password that you used in the
    "Password" field.
-   +In the "Email" field, enter the email that you want to link
+   + In the "Email address" field, enter the email that you want to link
    your acccount to. PCIbex Farm does not share your email, and only sends emails
-   for password retrieval purposes.
-3. Click **Create account**.
+   for password retrieval purposes or server-maintenance-related announcements.
+3. Click **Sign up**.
 
 ---
 
@@ -60,7 +61,11 @@ Use resources tab to add a new csv table or html file, scripts tab to add a new 
 Actions are located on the right side of your script editor and they have following functions:
 
 + **Results**: To preview your results file
-+ **Share**: To share either demonstration link or data-collection link to other users and participants
++ **Share**: Your projects come with a demonstration link so you can share them with people,
+whether it be to get feedback or help with troubleshooting, or to let readers of your publications
+take your experiment and easily replicate your study.<br>
+Once you are ready to collect data, give the data-collection link to your participants:
+the results will be saved separately.
 + **Download**: To download project to your device
 + **Git sync**: To import existing git repository to your project
 + **Settings**: To add a description to your experiment and to change whether the project can be cloned or not
@@ -73,7 +78,7 @@ Debug window will show all the potential errors in your code/development.
 
 It is **strongly** recommended that you keep the Debug window *on* until you actually start collecting data from external participants and are no longer editing your project; you should keep it on even for you last test-runs. The debugger can provide you with helpful error and log messages which will save you a valuable amount of time and efforts in troubleshooting your experiments.
 
-Once you are ready to collect data and are no longer editing your project, turn the debugger off by using the command [`DebugOff`]({{site.baseurl}}/global-commands/debugoff).
+Once you are ready to collect data and are no longer editing your project, turn the debugger off by using the command [`DebugOff()`]({{site.baseurl}}/global-commands/debugoff).
 
 #### Tabs
 

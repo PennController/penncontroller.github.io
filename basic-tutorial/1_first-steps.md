@@ -31,7 +31,7 @@ We take care of the server, which means that you can focus on writing your
 experiment script!
 
 {% capture label %}
-By the way, we tend to say "PennController" instead of "PCIbex", but feel free to
+By the way, we generally use "PennController" and "PCIbex" interchangeably; feel free to
 use whichever term you prefer.
 {% endcapture %}
 {% include label-note.html %}

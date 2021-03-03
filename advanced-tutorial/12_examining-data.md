@@ -15,26 +15,12 @@ In the following article you will learn how to examine the date from your experi
 We'll run the experiment to collect data that we can examine.
 
 {% capture instructions %}
-+ Uncomment the `DebugOff` command, since we are now ready to collect data:
-+ Delete any files that already exist in the experiment project page's **Results** folder.
++ Make sure your project is still _**Un**published_
+<!-- + Uncomment the `DebugOff` command, since we are now ready to collect data: -->
++ Delete any files that already exist in the experiment project page's **Results** folder 
+(make sure the dropdown list says _**UN**published_)
 + Run the experiment at least twice.
 + Save the `results` file as a CSV file named `results.csv`.
-
-<pre><code class="language-diff-javascript diff-highlight"> 
-@// Type code below this line.
-@
-@// Remove command prefix
-@PennController.ResetPrefix(null)
-@
-@// Turn off debugger
-!DebugOff()
-@
-@// Control trial sequence
-*Sequence("consent", "instructions", randomize("experimental-trial"), "completion_screen")
-@
-@// Instructions
-@// code omitted in the interest of space
-</code></pre>
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
@@ -200,7 +186,7 @@ Add the following code block to your R script:
   3. Group by the `ID` and `item` variables.
   4. Create the `event` and `selection` columns, and coerce the `EventTime` column from a character vector to a double vector.
   5. Drop the `PennElementName` and `Value` columns (necessary for `pivot_wider()`).
-  6. "Widen" the tibble. For a more in-depth explanation, see [Transforming data in R]({{site.baseurl}}/docs/how-to-guides/data-transformation).
+  6. "Widen" the tibble. For a more in-depth explanation, see [Transforming data in R]({{site.baseurl}}/how-to-guides/data-transformation).
   7. Save the tidied data as a new tibble named `tidied_results`.
 
 ```r
@@ -311,3 +297,39 @@ You can analyze the tidied data in a variety of ways, for example:
 
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for more details" inner-border=true %}
+
+## Collecting actual data
+
+Once you have examined and successfully analyzed the data from your test runs,
+you will no longer edit your project. At this point (and not sooner)
+you are ready to publish your experiment:
+
+{% capture instructions %}
+1. Add the [`DebugOff`]({{site.baseurl}}/global-commands/debugoff) command
+to turn off the debugger, since we're now done writing the experiment script.  
+2. Click the **Unpublished** toggle in the **Actions** panel to change the
+experiment from unpublished to published.
+3. Click **Share** and copy the link in the **Data-collection link** field.
+4. Paste the experiment link into a new tab to take one final test-run
+to make sure publishing your experiment did not introduce new issues
+(it should not)
+5. Click **Results** to open the data-collection results file and analyze it one more time
+
+<pre><code class="language-diff-javascript diff-highlight"> 
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
+@// Turn off debugger
+!DebugOff()
+@
+@// Control trial sequence
+@Sequence("consent", "instructions", randomize("experimental-trial"), "completion_screen")
+@
+@// Instructions
+@// code omitted in the interest of space
+</code></pre>
+
+{% endcapture %}
+{% include instructions.html text=instructions%}

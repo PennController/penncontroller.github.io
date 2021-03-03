@@ -22,17 +22,12 @@ about it.
 `"side-by-side"` Canvas to log when it's printed to the screen.
 2. Call the [`log`]({{site.baseurl}}/key/key-log) command on the
 `"keypress"` Key to log information about the participant's keypress.
-3. Add the [`DebugOff`]({{site.baseurl}}/global-commands/debugoff) command
-to turn off the debugger, since we're now done writing the experiment script.
 
 <pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
 @
 @// Remove command prefix
 @PennController.ResetPrefix(null)
-@
-+// Turn off debugger
-+DebugOff()
 @
 @// Instructions
 @// code omitted in interest of space
@@ -77,10 +72,14 @@ to turn off the debugger, since we're now done writing the experiment script.
 We're finally ready to run the experiment and collect some data!
 
 {% capture instructions %}
-1. Click the **Unpublished** toggle in the **Actions** panel to change the
-experiment from unpublished to published.
-2. Click **Share** and copy the link in the **Data-collection link** field.
-3. Paste the experiment link into a new tab to run the experiment.
+1. Click **...** to the right of **Results** to open a modal window.
+<!-- 1. Click the **Unpublished** toggle in the **Actions** panel to change the -->
+<!-- experiment from unpublished to published. -->
+2. Make sure the dropdown list says _**UN**published_, check the box to the left of "Delete anyway"
+and click **Delete all results** to start with a clean slate.
+<!-- 2. Click **Share** and copy the link in the **Data-collection link** field. -->
+3. Click **Open in new tab** and take a full run of the experiment.
+<!-- 3. Paste the experiment link into a new tab to run the experiment. -->
 4. Click **Results** to open the results file.
 {% endcapture %}
 {% include instructions.html text=instructions%}
@@ -147,3 +146,35 @@ This experiment only has a single trial and run, so it's hard to analyse the
 results. In the
 [**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial),
 we'll add more trials and runs, and perform more interesting analyses.
+
+## Collecting actual data
+
+Once you have examined and successfully analyzed the data from your test runs,
+you will no longer edit your project. At this point (and not sooner)
+you are ready to publish your experiment:
+
+{% capture instructions %}
+1. Add the [`DebugOff`]({{site.baseurl}}/global-commands/debugoff) command
+to turn off the debugger, since we're now done writing the experiment script.  
+2. Click the **Unpublished** toggle in the **Actions** panel to change the
+experiment from unpublished to published.
+3. Click **Share** and copy the link in the **Data-collection link** field.
+4. Paste the experiment link into a new tab to take one final test-run
+to make sure publishing your experiment did not introduce new issues
+(it should not)
+5. Click **Results** to open the data-collection results file and analyze it one more time
+
+<pre><code class="language-diff-javascript diff-highlight">
+@// Type code below this line.
+@
+@// Remove command prefix
+@PennController.ResetPrefix(null)
+@
++// Turn off debugger
++DebugOff()
+@
+@// code omitted in interest of space
+</code></pre>
+
+{% endcapture %}
+{% include instructions.html text=instructions%}
