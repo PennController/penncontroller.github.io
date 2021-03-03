@@ -420,7 +420,7 @@ $newTrial("example-trial",
 
 Note that embedding the example above as is inside a 
 [`Template`]({{site.baseurl}}/global-commands/template) command will 
-generate multiple trials that all share the label `"example-trial":
+generate multiple trials that all share the label `"example-trial"`:
 
 <pre><code class="language-diff-javascript diff-highlight">
 +Template( row =>
