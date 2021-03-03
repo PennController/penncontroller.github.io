@@ -35,8 +35,8 @@ since: PennController 1.8
 @    ,
 @    getEyeTracker("tracker")
 @        .stopTraining()
-@        .add( getText("Left") , getText("Right") )
-$    ,
+$        .add( getText("Left") , getText("Right") )
+@    ,
 @    newSelector().add( getText("Left") , getText("Right") ).wait()
 @)
 </code></pre>
