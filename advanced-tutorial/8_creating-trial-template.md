@@ -2,35 +2,46 @@
 title: 8. Creating a trial template
 nav_order: 1
 start_heading: 8
-blurb: How to reuse PennController code.
+blurb: How to use tables of experimental items.
 previous_page: Advanced Tutorial
 ---
 
-The **Advanced Tutorial** continues directly from the
-[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial). 
+Trial templates are an efficient way of creating experimental trials.
 {: .h1-blurb }
 
 ---
 
-## Experimental design
+## The AdvancedTutorial experiment
 
-In the [**Basic Tutorial**]({{site.baseurl}}/basic-tutorial),
-we created a simple picture matching "experiment" with a single trial and
-no real research question. In the **Advanced Tutorial**, we add our research question:
+In the [**Basic Tutorial**]({{site.baseurl}}/basic-tutorial), we created a
+simple picture matching experiment with a single trial. In the
+**Advanced Tutorial**, we'll (sort of) add a research question:
 
-> What is the time course of interpreting English agreement morphology, 
- n particular the third person singular inflectional morpheme *-s*?
+> What is the time course of interpreting English agreement morphology,
+> in particular the third person singular inflectional morpheme *-s*?
 
-Experimental design:
+Ultimately, this question is beyond the scope of this tutorial, but we can use
+it as a starting point.
+
+We'll use nouns that have identical singular and plural forms to create sentences
+that disambiguate only at the verb, such as "*The fish swims...*" vs
+"*The fish swim...*". Participants will hear an initially ambiguous sentence, and
+must choose as quickly as possible between an image with one animal and an image
+with two animals.
+
+### Experimental design
+
+We'll use a **within-item, within-participant** design with
+**2 conditions**:
 
 + 2 conditions: singular verb inflection and plural verb inflection
-+ 4 experimental items per condition: 8 items total
 + Within-item: across participants, each item occurs in both conditions
 + Within-participant: every participant sees items from both conditions
 
-The within-item, within-participant design results in an experiment with two lists/groups.
+### Experimental items
 
-**Experimental items**: 
+In this example experiment we'll use 4 experimental items and no fillers. The
+within-item, within-participant design results in 2 lists of items:
 
 | group | item | sentence                                         | inflection |
 |-------|------|--------------------------------------------------|------------|
@@ -45,8 +56,6 @@ The within-item, within-participant design results in an experiment with two lis
 | B     | 2    | The deer run in a wood which is extremely sparse   | plural     |
 | B     | 3    | The sheep roams in a pen which is strikingly red   | singular   |
 | B     | 4    | The moose walk in a park which is visibly old      | plural     |
-
-**The corresponding images**:
 
 <div class="flex-row-wrap mb-4">
   <div class="centered-eighth">
@@ -79,8 +88,8 @@ The within-item, within-participant design results in an experiment with two lis
 
 ## Trial templates
 
-Each iteration of the **Tutorial** experiment has four items and thus
-four trials. 
+Each iteration of the **AdvancedTutorial** experiment has four items and thus
+four experimental trials.
 
 We could copy-and-paste the `"experimental-trial"` trial code multiple times
 and change variable names as necessary, but this method is not recommended
@@ -95,55 +104,19 @@ Instead, we'll use the global command
 [`Template`]({{site.baseurl}}/global-commands/template)
 to define a trial template.
 
-A trial template, as its name suggests, is a template for creating trials.
-In other words, a trial template is a sample trial that is partially complete,
-and has some values that will be added in "later". In the trial template,
-these values are represented by variables. During the actual script evaluation,
-PennController fills in the value of the variables with values from a specified table.
+A trial template is a template for creating trials: it's a trial that's partially
+complete, with some values (represented by variables) to be added in "later".
+During script evaluation, PennController fills in the variables with values from
+a specified table.
 
-Tables are CSV (comma separated value) files imported into an experiment page's
-**Resources** folder, or defined within an experiment script
-(read the global command
-[`AddTable`]({{site.baseurl}}/global-commands/addtable).
-
-### Trial template syntax
-
-The `Template` global command has the following syntax:
-<pre><code class="language-javascript">
-PennController.ResetPrefix(null)
-
-Template("<var>TABLE_NAME</var>", <var>row</var> => 
-    newTrial("TRIAL_LABEL",
-        newX("ELEMENT_1", row.<var>COLUMN_NAME</var>)
-            .COMMAND_1()
-    )
-)
-</code></pre>
-
-+ <code>"<var>TABLE_NAME</var>"</code> is the name of a table.
-  + If no table is specified, PennController defaults to the table whose name
-  comes first in alphanumeric order.  
-  + If there are no tables, the entire trial template is skipped during
-  experiment script evaluation. If the debugger is on, it will display an error message.
-+ <code><var>row</var></code> is an array variable that contains the values
-of a table row.
-  + This tutorial names the array variable `row`, but you can use
-  the name of your choice.
-  + PennController creates trials iteratively. In the first iteration,
-  `row` contains the values of the first table row. In the second iteration,
-  `row` contains the values of the second table row, and so on.
-+ <code><var>COLUMN_NAME</var></code> is the name of a column in the table
-specified by <code>"<var>TABLE_NAME</var>"</code>
-  + `row.COLUMN_NAME` is a variable whose value is the value in the specified
-  table column, for a given iteration/row.
-  + Use `row["COLUMN_NAME"]` instead of `row.COLUMN_NAME` if the column name
-  contains special characters like spaces, commas, periods, or dashes.
+Tables are CSV (comma separated value) files that are either imported into an
+experiment page's **Resources** folder, or defined within an experiment script.
 
 ### Using a table
 
-We'll use the `items.csv` table, imported as a resource file in
-[1.1.3 Importing resource files]({{site.baseurl}}/basic-tutorial/1_setting-up#importing-resource-files),
-to fill in our trial template:
+We'll use the `items.csv` table, which was included during the
+[set up]({{site.baseurl}}/basic-tutorial/1_first-step#setting-up-the-basictutorial-experiment)
+of the **BasicTutorial** experiment.
 
 *Note: You may need to scroll to the right to see all the columns.*
 
@@ -158,24 +131,37 @@ to fill in our trial template:
 | B     | 3    | The sheep roams in a pen which is strikingly red   | singular   | 1sheepRedPen.mp3    | 2755     | 1sheepRedPen.png    | 2sheepBluePen.png   |
 | B     | 4    | The moose walk in a park which is visibly old      | plural     | 2mooseOldPark.mp3   | 2441     | 1mooseNewPark.png   | 2mooseOldPark.png   |
 
-PennController automatically detects if a table has a column named `group`
-or `list` (case-insensitive). If such a column exists, PennController uses
-its values to subset the table rows into groups. If no such column exists,
-all of the table rows form a single group. 
-
-PennController's internal counter determines which group is run, and by default
-the counter increases by one at the end of an experiment. The **Tutorial**
-experiment has two groups, meaning that the `A` and `B` groups are run
-in alternating order.
-
-Although the `items.csv` table has eight rows (excluding the header),
-a participant sees only four trials, generated from either the `A` group or `B` group.
+If a table contains a column named `group` or `row`, PennController will automatically
+alternate which group of items is run! In this case, there are two groups, so every
+odd-numbered participant will only see the 4 items from the `A` group, and every
+even-numbered participant will only see the 4 items from the `B` group (or vice versa).
 
 ### Creating a trial template
 
+A trial template is basically a regular trial surrounded by `Template()`:
+
+<pre><code class="language-diff-javascript diff-highlight">
++Template(<var>TABLE_NAME</var>, <var>row</var> =>
+@    newTrial("TRIAL_LABEL",
+!        newX("ELEMENT_1", row.<var>COLUMN_NAME</var>)
+@            .COMMAND_1()
+@    )
++)
+</code></pre>
+
++ <code><var>TABLE_NAME</var></code> is the name of a table.
++ <code><var>row</var></code> is an array variable.
+  + In the first iteration of an experiment, `row` contains the values of the
+  table's first row. In the second iteration, `row` contains the values of the
+  table's second row, and so on.
+
+Within the trial, turn values into variables by replacing the specified value
+with <code>row.<var>COLUMN_NAME</var></code>, where <code><var>COLUMN_NAME</var></code>
+is the name of a column in the specified table.
+
 {% capture instructions %}
 1. Comment out the `DebugOff` command to re-enable the debugger.
-2. Create a trial template using the `items.csv` table.
+2. Turn the `"experimental-trial"` trial into a trial template.
 
 <pre><code class="language-diff-javascript diff-highlight">
 // Type code below this line.
@@ -186,38 +172,39 @@ PennController.ResetPrefix(null)
 // Turn off debugger
 !// DebugOff()
 @//
+@// Instructions
 @// code omitted in interest of space
 @
 @// Experimental trial
-+Template("items.csv", row => 
-!    newTrial("experimental-trial",
++Template("items.csv", row =>
+@    newTrial("experimental-trial",
 !        newAudio("audio", row.audio)
-!            .play()
-!        ,
+@            .play()
+@        ,
 !        newText("sentence", row.sentence)
-!            .center()
+@            .center()
 !            .unfold(row.duration)
-!        ,
+@        ,
 !        newImage("plural", row.plural_image)
-!            .size(200, 200)
-!        ,
+@            .size(200, 200)
+@        ,
 !        newImage("singular", row.singular_image)
-!            .size(200, 200)
-!        ,
-!        newCanvas("side-by-side", 450,200)
-!            .add(  0, 0, getImage("plural"))
-!            .add(250, 0, getImage("singular"))
-!            .center()
-!            .print()
-!            .log()
-!        ,
-!        newKey("keypress", "FJ")
-!            .log()
-!            .wait()
-!        ,
-!        getAudio("audio")
-!            .wait("first)
-!    )
+@            .size(200, 200)
+@        ,
+@        newCanvas("side-by-side", 450,200)
+@            .add(  0, 0, getImage("plural"))
+@            .add(250, 0, getImage("singular"))
+@            .center()
+@            .print()
+@            .log()
+@        ,
+@        newKey("keypress", "FJ")
+@            .log()
+@            .wait()
+@        ,
+@        getAudio("audio")
+@            .wait("first)
+@    )
 +)
 </code></pre>
 {% endcapture %}
@@ -227,36 +214,39 @@ PennController.ResetPrefix(null)
 
 ## Logging trial details
 
-When we [examine the collected data](#examining-data), it will be important
-to know which group was run, which lines in the `results` file belong
-to which items, and which verbal inflection condition each item had.
+When we examine the results in
+[12. Examining data]({{site.baseurl}}/advanced-tutorial/12_examining-data),
+it'll be critical to know which group was run for which iteration, which lines
+in the results file belong to which items, and which verbal inflection condition
+each item had.
 
-Use the `log("COLUMN_NAME", VALUE)` method to add a column to an experiment's
-`results` file. The column is only added to rows that log information about
-the trial that the `log` method is called on.
+We'll use the `log` method to add columns to an experiment's results file. The `log`
+method is conceptually very similar to the `log` command, but differs in scope
+and result:
 
-+ `"COLUMN_NAME"` is the name of the column that will be added to the `results` file.
-+ `VALUE` is the value that will be added to each row of the `results` file,
-in the column created by `"COLUMN_NAME"`.
++ The `log` command is called on an element, and logs information as a row in
+the results file.
++ The `log` method is called on a trial, and logs informationas a column in the
+results file.
 
-The [`log` method]({{site.baseurl}}/global-commands/newtrial#methods){
-and the [`log` command]({{site.baseurl}}/basic-tutorial/#logging-data)
-are similar, but differ in important ways:
+The <code>log(<var>NAME</var>, <var>VALUE</var>)</code> method has two parameters:
 
-+ The `log` method adds columns, the `log` command adds rows.
-+ The `log` method is called on a trial, the `log` command is called on an element.
++ <code><var>NAME</var></code>: the name of the column added to the results file
++ <code><var>VALUE</var></code>: the value added to each row of the results file,
+in the column indicated by <code><var>NAME</var></code>
 
 {% capture instructions %}
-Use the [`log` method]({{site.baseurl}}/global-commands/newtrial#methods)
-on the `"experimental-item"` trial to record the group, item number,
-and verbal inflection condition.
+Use the `log` method to log information about
+
+1. The group
+2. The item number
+3. The verbal inflection condition
 
 <pre><code class="language-diff-javascript diff-highlight">
 @// code omitted in interest of space
 @
 @// Experimental trial
-
-*Template("items.csv", row => 
+@Template("items.csv", row =>
 @    newTrial("experimental-trial",
 @        newAudio("audio", row.audio)
 @            .play()
@@ -296,8 +286,14 @@ and verbal inflection condition.
 If you run the experiment and open the `results` file, it should look like the following:
 
 {% capture content %}
-*Note: You may need to scroll to the right to see all the columns.*
+The sections that log information about the `"instructions"` and `"experimental-trial"`
+trials have a different number of columns:
 
++ The `"instructions"` trial section has the 13 default columns.
++ The `"experimental-trial"` trial section has the default columns, as well as the
+`group`, `item`, and `condition` columns.
+
+*Note: You may need to scroll to the right to see all the columns.*
 <pre><code class="language-none" style="white-space:pre;">
 # Columns below this comment are as follows:
 # 1. Time results were received.
@@ -345,13 +341,5 @@ If you run the experiment and open the `results` file, it should look like the f
 1602519682,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,Key,keypress,PressedKey,F,1602519662437,B,4,plural,Wait success
 1602519682,SOME_MD5_HASH,PennController,4,0,experimental-trial,NULL,PennController,4,_Trial_,End,1602519663248,B,4,plural,NULL
 </code></pre>
-
-The sections that log information about the `"instructions"` and `"experimental-trial"`
-trial objects contain a different number of columns:
-
-+ The `"instructions"` trial section contains only the 13 default columns.
-+ The `"experimental-trial"` trial section contains the default columns,
-as well as the `group`, `item`, and `condition` columns added by the `log` method.
-
 {% endcapture %}
 {% include collapsible-block.html content=content summary="click to expand" inner-border=true %}

@@ -7,43 +7,69 @@ nav_order: 5
 
 # {{ page.title }}
 
-This tutorial assumes familiarity with the knowledge introduced in the
-[**Basic Tutorial**]({{site.baseurl}}/basic-tutorial).
-If you prefer to learn concept-by-concept, check out the
-[**Core Concepts**]({{site.baseurl}}/core-concepts)
-section. You may find it useful to read both the tutorials and the
-**Core Concepts** section.
-{: .fs-5 .fw-300 }
+The **Advanced Tutorial** is a continuation of the **Basic Tutorial**. You'll
+learn how to use a table to create trial items, counterbalance, add an informed
+consent section, and more.
+{: .h1-blurb }
+
+{% capture label %}
+The Basic and Advanced Tutorials are a learning-by-doing introduction to
+PCIbex: you'll learn how to use PCIbex by creating an actual experiment.
+
+If you prefer learning things concept-by-concept, check out the
+understanding-oriented [**Core Concepts**]({{site.baseurl}}/core-concepts)
+section!
+{% endcapture %}
+{% include label-note.html label-body=label %}
 
 ---
 
-## Goal
+## Table of contents
 
-In the **Advanced Tutorial**, you'll learn how to make a picture matching experiment with the following structure:
+{% assign children_list = site.html_pages | where: "parent", page.title | sort: "start_heading" %}
+<ul>
+{% for child in children_list %}
+  <li>
+    <a href="{{ child.url | prepend: site.baseurl }}">
+      {{ child.title -}}
+    </a>
+  </li>
+{% endfor %}
+</ul>
 
-1. Consent form with:
+---
+
+## Objective
+
+In the **Advanced Tutorial**, we'll create a picture matching experiment with the
+following structure:
+
+1. Consent form trial:
     + Checkbox to indicate consent
     + Button to continue
-2. Instructions screen with:
+2. Instructions trial:
     + Text input box for participants to enter their ID
     + Button to start the experiment
-2. Four experimental trials:
-    1. One-second delay
+3. Four experimental trials:
+    1. One-second delay.
     2. A sentence plays as audio and unfolds as text on the screen.
     3. Two images are printed to the screen next to each other.
     4. Participant clicks on an image or presses a key to select an image.
-    5. Trial timeout (trial ends if the participant does not select an image before audio playback finishes).
-3. Exit screen
+    5. Trial timeout (trial ends if the participant does not select an image
+    before audio playback finishes).
+4. Exit screen
 
 <div class="dotted-grey-dk-000 px-4" markdown="1">
 Preview the **AdvancedTutorial** experiment:
 
 <p class="text-delta collapsible-block-title">
-  <a href="https://farm.pcibex.net/r/AeTXMk/experiment.html" target="_blank">Click to take the experiment</a>
-</p> 
+  <a href="https://farm.pcibex.net/r/AeTXMk/experiment.html" target="_blank">
+    Click to take the experiment
+  </a>
+</p>
 
 {% capture content %}
-```js
+```javascript
 // Type code below this line.
 
 // Remove command prefix
@@ -143,9 +169,6 @@ Template("items.csv", row =>
         ,
         getTimer("timeout")
             .wait()
-        ,
-        getAudio("audio")
-            .stop()
     )
     .log("group", row.group)
     .log("item", row.item)
@@ -169,64 +192,3 @@ newTrial("completion_screen",
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click to see the final experiment script" inner-border=true %}
 </div>
-
----
-
-## Table of contents
-
-{% assign children_list = site.html_pages | where: "parent", page.title %}
-<ol start="8">
-{% for child in children_list %}
-  <li>
-  {% assign modified_title = child.title | split: ". " | last %}
-    <a href="{{ child.url | prepend: site.baseurl }}">{{ modified_title }}</a>: {{ child.blurb }}
-  </li>
-{% endfor %}
-</ol>
-
----
-
-## How to follow the tutorial
-
-After following each step, try out editing provided code in the farm code editor. In case you have any trouble, visit Support page.
-
-### Prerequisites
-
-PennController does not require any background in JavaScript. 
-However, you should have some general knowledge of experimental design.
-
-In particular, you should be familiar with the following terms and concepts:
-+ Calling a command, command parameters
-+ Strings, integers, truth values, code comments
-+ Experimental items, trials
-
-### Technical notes
-
-Blocks that are labeled with <span class="label">technical notes</span> contain extra information about PennController. 
-
-{% capture label %}
-This is an example of a technical note.
-{% endcapture %}
-{% include label-technical.html label-body=label %}
-
-**Reading technical notes is optional**
-
-### Instruction blocks
-
-Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span> blocks:
-
-{% capture instructions %}
-1. *Step one*
-2. *Step two*
-3. *Step three*
-
-```javascript
-// Lines that begin with a + sign and that have a green background indicate newly-added lines.
-
-// Lines that begin with a - sign and that have a red background indicate newly-deleted lines.
-
-// Lines that begin with a ! sign and that have a yellow background indicate lines that have been modified.
-```
-{% endcapture %}
-{% include instructions.html text=instructions %}
-

@@ -4,14 +4,14 @@ nav_order: 6
 start_heading: 13
 ---
 
-Congratulations, you're done!
+Congratulations, you're done with both tutorials!
 {: .h1-blurb }
 
 ---
 
 ## Summary
 
-In the **Advanced Tutorial** you’ve learned how to:
+You learned how to:
 
 + Create a trial template and use tables.
 + Implement a trial timeout and trial delay.
@@ -122,9 +122,6 @@ Template("items.csv", row =>
         ,
         getTimer("timeout")
             .wait()
-        ,
-        getAudio("audio")
-            .stop()
     )
     .log("group", row.group)
     .log("item", row.item)
