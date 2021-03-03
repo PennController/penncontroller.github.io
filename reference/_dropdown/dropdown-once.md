@@ -9,8 +9,8 @@ description: "Will disable the DropDown element after selection occurs."
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newText("I saw Erika talk to Nate.")
-@    .after( newDropDown("").add("He","She").once() )
-$    .after( newText("seemed anxious.") )
+$    .after( newDropDown("").add("He","She").once() )
+@    .after( newText("seemed anxious.") )
 @    .print()
 </code></pre>
 
