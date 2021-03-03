@@ -9,8 +9,8 @@ description: "Adds a line to the results file each time the button is clicked."
 
 <pre><code class="language-diff-javascript diff-highlight try-">
 @newButton("word", "It's a word!")
-@    .log()
-$    .once()
+$    .log()
+@    .once()
 @    .print()
 @,
 @newAudio("sound", "sound.wav")
