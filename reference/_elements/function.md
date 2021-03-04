@@ -19,6 +19,6 @@ description: Embeds a JavaScript function.
 @                  .call()
 </code></pre>
 
-+ This function color the background of elements with the id secret in yellow.
++ This function colors the background of elements with the id "secret" to yellow.
 
 
