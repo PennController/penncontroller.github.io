@@ -25,7 +25,7 @@ notes: true
 @        getFunction("timestampMultipleOfThree")
 $            .testNot.is()
 $            .success( getText("missed").remove() )
-@            .failure( getText("missed").print() )
+$            .failure( getText("missed").print() )
 @    )
 </code></pre>
 
