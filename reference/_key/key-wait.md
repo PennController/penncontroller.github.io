@@ -22,8 +22,8 @@ notes: true
 @    .print()
 @,
 @newKey("space", " ")
-@    .wait()
-$,
+$    .wait()
+@,
 @newText("thanks", "Thank you!")
 @    .print()
 </code></pre>
