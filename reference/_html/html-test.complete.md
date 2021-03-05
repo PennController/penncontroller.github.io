@@ -14,7 +14,7 @@ description: "Tests whether all the obligatory fields form the HTML document hav
 @newButton("continue", "Continue to the next page")
 @    .print()
 @    .wait(
-@        getHtml("demographics").test.complete()
+$        getHtml("demographics").test.complete()
 $            .failure( getHtml("demographics").warn() )
 @    )
 </code></pre>
