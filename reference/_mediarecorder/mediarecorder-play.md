@@ -22,8 +22,8 @@ description: "Starts playing the last recording (if any)."
 @        .stop()
 @        .print()
 @        .disable()
-@        .play()
-$        .wait("playback")
+$        .play()
+@        .wait("playback")
 @);
 </code></pre>
 
