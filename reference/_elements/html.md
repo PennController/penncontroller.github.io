@@ -10,8 +10,12 @@ parameters:
 description: Represents an HTML document.
 ---
 
-```javascript
-// To be filled in
-```
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newHtml("intro", "example_intro.html")
+@    .print()
+</code></pre>
+
++ Prints the content of the html file to the page.
+
 
 
