@@ -14,8 +14,8 @@ notes: true
 
 <pre><code class="language-diff-javascript diff-highlight try-">
 @newMediaRecorder("recorder")
-@    .log()
-$    .print()
+$    .log()
+@    .print()
 @    .wait()
 </code></pre>
 
