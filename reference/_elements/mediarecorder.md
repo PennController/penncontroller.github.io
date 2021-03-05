@@ -17,6 +17,14 @@ notes: true
 + If the `"audio"` or `"video"` parameter is not passed, collects
 an audio-video sample.
 
-```javascript
-// To be filled in
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newMediaRecorder("recorder", "audio")
+@  .log()
+@  .once()
+@  .record()
+@  .wait()
+</code></pre>
+
++ Initiates audio recorder. 
