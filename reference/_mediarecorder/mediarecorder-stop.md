@@ -29,8 +29,8 @@ $        .disable()
 @        .wait()
 @    ,
 @    getMediaRecorder("recorder")
-@        .stop()
-$);
+$        .stop()
+@);
 </code></pre>
 
 + Will start recording a video and stop recording after 2s, then play back the first second of the recording and stop the playback.		
