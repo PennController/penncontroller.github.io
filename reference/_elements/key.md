@@ -20,7 +20,10 @@ elements, for example `"newKey("answer", "FJ", "Escape")`.
 
 <!--more-->
 
-```javascript
-// To be filled in
-```
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newKey("FJ")
+@  .log()
+@  .wait()
+</code></pre>
 
++ Waits until the key is pressed and logs which key was pressed
