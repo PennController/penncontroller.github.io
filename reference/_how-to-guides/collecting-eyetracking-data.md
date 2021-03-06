@@ -2,26 +2,19 @@
 title: Collecting eye tracking data
 ---
 
-> <b>Note!</b>
-> <b>Failing calibration with a score of 0? </b> Upload [this file](https://raw.githubusercontent.com/PennController/penncontroller/master/dev/js_includes/PennElement_eyetracker.js)
-to your project to overwrite the EyeTracker element (don’t mind the corresponding warning message in the Debug window).
-
-
-> <b>Note!</b>
-> The EyeTracker element is supported by a limited set of browsers. For best results, your participants should use Chrome desktop or Firefox desktop. Even so, calibrating is likely to fail for some of your participants for a number of reasons (ambient light, background shapes, facial characteristics, webcam position, etc.). Because chances are that several people will experience issues with eye-tracking, we advise awareness when recruiting participants. <b> If you recruit paid labor, set a time limit and be willing to pay participants who could not complete your experiment. </b>
+{% capture label %}
+The EyeTracker element is supported by a limited set of browsers. For best results, your participants should use Chrome desktop or Firefox desktop. Even so, calibrating is likely to fail for some of your participants for a number of reasons (ambient light, background shapes, facial characteristics, webcam position, etc.). Because chances are that several people will experience issues with eye-tracking, we advise awareness when recruiting participants. **If you recruit paid labor, set a time limit and be willing to pay participants who could not complete your experiment.**
+{% endcapture %}
+{% include label-note.html %}
 
 In this guide, we will design a simple eye-tracking experiment splitting the page in four quarters. Our ultimate goal will be to plot a graph reporting the timecourse of gazes to each quarter over time. If all goes well, looks should converge toward the quarter that was clicked at the end of the trial.
 
-Note that in order to collect eye-tracking data, you need to have access to a server where you can upload and execute PHP scripts. <b> Platforms like DreamHost offer this service with minimal setup, and server providers like Linode require more advanced setup. Resource-sharing services like Dropbox or Google Drive do NOT support PHP scripts. </b>
+Note that in order to collect eye-tracking data, you need to have access to a server where you can upload and execute PHP scripts. **Platforms like DreamHost offer this service with minimal setup, and server providers like Linode require more advanced setup. Resource-sharing services like Dropbox or Google Drive do NOT support PHP scripts.**
 
 
 # The Experiment
 
-Create a new experiment from the <b>Empty Project</b> and in the <b>Git Sync</b> form, type https://github.com/PennController/Template, and then choose <b>eyetracker</b> from the branch dropdown. 
-
-![alt text]({{site.baseurl}}/assets/images/githubsync.png)
-
-This will import all we need to run our experiment:
+Create a new experiment using [the EyeTracking starter experiment](https://farm.pcibex.net/experiments/new?from=wkbbpO){:target="_blank"}. This will import the necessary resources:
 
 + A table file named clefts.csv that describes the different conditions of our design
 + An aesthetics file named PennController.css that will take care of adding a frame around the element being looked at
@@ -37,7 +30,7 @@ On each trial, independent of the other trials, the participant is presented wit
 
 This section gives an overview of the file main.js.
 
-The three PreloadZip lines import the images and the audio files that we will use from a distant server. See the guide [Zipped Resources](https://www.pcibex.net/wiki/zipped-resources/) to learn more about it. 
+The three PreloadZip lines import the images and the audio files that we will use from a distant server. See the guide [Zipped Resources]({{site.baseurl}}/how-to-guides/managing-resources/#zipped-resources) to learn more about it.
 
 The next EyeTrackerURL line specifies where to find the PHP script that will receive the eye-tracking data, and that will also take care of decoding the lines and serving them as CSV files at the analyses step. You should set up your own PHP script when running your own experiments, as this is where your participants’ data will be stored. We will come back to the PHP setup procedure below, but for the purpose of this experiment we can keep the provided URL.
 
@@ -48,17 +41,9 @@ You may have noticed that this experiment does not contain a [Sequence command](
 
 Most of it is pretty straightforward. Two things to note:
 
-* The <!--more-->
-```javascript 
-newEyeTracker("tracker").test.ready() 
-``` 
-test command inside the wait command in the button accomplishes two things: (1) it triggers a webcam-access request, and (2) it makes sure that the script’s execution is only released by a click on the button after access has been granted. This is a necessary step, you should always have this test command early in your experiment.
++ The `newEyeTracker("tracker").test.ready()` test command inside the wait command in the button accomplishes two things: (1) it triggers a webcam-access request, and (2) it makes sure that the script’s execution is only released by a click on the button after access has been granted. This is a necessary step, you should always have this test command early in your experiment.
 
-* After we go fullscreen (which we do after the request, as the request exists fullscreen mode in some browsers) we calibrate the tracker with a label of 60%  <!--more-->
-```javascript 
-getEyeTracker("tracker").calibrate(60)
-```
-Because this is the first calibrate command in the experiment, this will launch a sequence of clicks on nine buttons aligned on the edges and corners of the page (=screen now that we are fullscreen) and one last click on a central button. The participant must fixate the button for 3 seconds to ensure that at least 60% of the estimated looks fall on the button. None of this is explicitly mentioned in this experiment, but you should add some instructions before that in your own experiment.
++ After we go fullscreen (which we do after the request, as the request exists fullscreen mode in some browsers) we calibrate the tracker with a label of 60% (`getEyeTracker("tracker").calibrate(60)`). Because this is the first calibrate command in the experiment, this will launch a sequence of clicks on nine buttons aligned on the edges and corners of the page (=screen now that we are fullscreen) and one last click on a central button. The participant must fixate the button for 3 seconds to ensure that at least 60% of the estimated looks fall on the button. None of this is explicitly mentioned in this experiment, but you should add some instructions before that in your own experiment.
 
 Once the welcome trial is over, the eyetracker is calibrated, and subsequent calibrate commands will immediately jump to the 3-second central button and check that calibration is still over whatever value is passed to the calibrate command. If calibration has fallen under the passed threshold, the 9-button sequence starts over.
 
@@ -66,21 +51,17 @@ Note that we insert a [CheckPreloaded]({{site.baseurl}}/global-commands/checkpre
 
 # Experimental trials
 
-
-The [Template]({{site.baseurl}}/global-commands/template/) command generates trials using a subset of the rows from clefts.csv, thanks to [GetTable().filter]({{site.baseurl}}/global-commands/gettable/). The item column in clefts.csv going from 1 to 48 (plus 100* for a few practice trials) we effectively keep only half of the design, for the whole experiment would otherwise last too long for simple testing purposes.
-
-
 Note that the first thing we do in the experimental trials is to use calibrate again, to make sure that the tracker’s accuracy has not fallen under 60%. If it has, the command automatically invites the participant to follow the calibration procedure again.
 
 Most of the rest of the trial is pretty straightforward. Some highlights:
 
 + We create big Canvas elements: each is sized to 40% of the page’s width/height. Then we add smaller images inside each of them. This way, when the participant looks at the images, they are also necessarily looking at the containing Canvas element. By then tracking the Canvas elements rather than the images themselves, we are more likely to capture look estimates that are slighlty off the actual target.
 
-+ This design does not shuffle the position of the elements, but keep in mind that we track the Canvas elements, which are therefore the elements you would want to [shuffle]({{site.baseurl}}/advanced-tutorial/10_counterbalancing.html#shuffling-image-position). In order to keep track of which one ended on which quarter of the page, you would then need set (and log) Var elements after [testing their position](https://www.pcibex.net/wiki/selector-test-index/).
++ This design does not shuffle the position of the elements, but keep in mind that we track the Canvas elements, which are therefore the elements you would want to [shuffle]({{site.baseurl}}/advanced-tutorial/10_counterbalancing.html#shuffling-image-position). In order to keep track of which one ended on which quarter of the page, you would then need set (and log) Var elements after [testing their position]({{site.baseurl}}/selector/selector-test-index/).
 
 + We start the tracker only after revealing the suits, because we are not interested in what happens before that. At this point however, participants are most likely no longer looking at the center of the screen. A better design solution would be to print a button at the center of the screen and reveal the suits only after the participant has clicked the button.
 
-+ <b> We call log on the EyeTracker element: if we failed to do, we would effectively never collect the eye-tracking data. </b>
++ **We call log on the EyeTracker element: if we failed to do, we would effectively never collect the eye-tracking data.**
 
 + We also call log on the Selector element, because we will eventually compare the looks against which Canvas was clicked.
 
@@ -95,8 +76,7 @@ Nothing special here: we [SendResults]({{site.baseurl}}/global-commands/sendresu
 
 Create a new PHP file on your servers with the following content:
 
- <!--more-->
-```javascript 
+```php
 <?php
   header("Access-Control-Allow-Methods: GET, PUT, OPTIONS");
   header("Access-Control-Allow-Headers: authorization, x-requested-with, content-type, access-control-allow-methods");
@@ -235,12 +215,12 @@ This script will take care of receiving and storing encoding data lines in subfo
 
 # Analyses
 
-Do a few test runs of your experiment to generate some results, or [download the results file](https://raw.githubusercontent.com/PennController/Template/eyetracker-with-results/results/results.csv ) I generated (= two test runs).
+Do a few test runs of your experiment to generate some results, or [download the results file](https://raw.githubusercontent.com/PennController/Template/eyetracker-with-results/results/results.csv){:target="_blank"} I generated (= two test runs).
 
-We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial]({{site.baseurl}}/how-to-guides/data-transformation/ ). Then we will require the packages ggplot2, dplyr, and tidyr:
+We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial]({{site.baseurl}}/how-to-guides/data-transformation/). Then we will require the packages ggplot2, dplyr, and tidyr:
 
- <!--more-->
-```javascript 
+ 
+```ruby
 require("ggplot2")
 require("dplyr")
 require("tidyr")
@@ -248,8 +228,8 @@ require("tidyr")
 
 Then we will tell our script where the PHP file is, and what time-window to use to bin the eye-tracking data points. In this example, we will compute the mean looks to each element over time-windows of 100ms:
 
-<!--more-->
-```javascript 
+
+```ruby
 # The URL where the data is stored; note the ?experiment= at the end
 ETURL = "http://files.lab.florianschwarz.net/ibexfiles/RecordingsFromIbex/EyeTracker.php?experiment="
 # Time-window to bin the looks
@@ -258,8 +238,8 @@ BIN_DURATION = 100
 
 Then we simply import our results file, and rename the Reception Time column “Participant” as this is what we’ll use to identify sessions (if, like me, you took the same experiment twice, all the lines have the same MD5 hash).
 
-<!--more-->
-```javascript 
+
+```ruby
 # We'll use Reception time to identify individual sessions
 results <- read.pcibex("results.csv")
 names(results)[1] <- 'Participant'
@@ -267,8 +247,8 @@ names(results)[1] <- 'Participant'
 
 Now we’ll import the data from our PHP script. To do so, we’ll first subset our data frame to the EyeTracker rows that report the URL keys. Since there were 24 trials, the same key is repeated 24 times for each session, so we’ll also subset to the rows corresponding to the first item only. Then we simply read the CSV files that are output by our PHP script for each URL key, and append the output to our EyeTracker data frame:
 
-<!--more-->
-```javascript 
+
+```ruby
 # Read ET data file for each session and append output to ETdata
 ETdata = data.frame()
 filesDF <- subset(results, Parameter=="Filename"&Type=="Item-1")
@@ -281,8 +261,8 @@ apply(filesDF, 1, function(row) {
 
 At this point, the ETdata data frame contains individual data points, collected every tens of milliseconds (depending on the time resolution of the EyeTracker element upon runtime). Let us bin those in intervals of 100ms: 
 
-<!--more-->
-```javascript 
+
+```ruby
 # Bin the data
 ETdata$bin <- BIN_DURATION*floor(ETdata$times/BIN_DURATION)
 ETdata <- ETdata %>% group_by(Participant,trial,bin) %>% mutate(
@@ -297,8 +277,8 @@ Now the our data frame has four additional columns reporting the proportion of l
 
 We also want to know which quarter the participant ended up selecting on each of the trial. That piece of information is stored in the results data frame, and we will now import it into the ETdata data frame (note that Item.number from results corresponds to trial from ETdata):
 
-<!--more-->
-```javascript 
+
+```ruby
 # Add final choice to ETdata
 answers <- results[results$Parameter=="Selection", c("Participant","Item.number","Value")]
 names(answers) <- c("Participant", "trial", "Selection")
@@ -307,8 +287,8 @@ ETdata <- merge(ETdata,answers,by=c("Participant","trial"))
 
 Before plotting a graph, we want to proceed to a few transformations of our data: right now each bin is repeated multiple times in ETdata, because each row is an individual data point, and each quarter is coded as a column. It is easier with ggplot to have only one row per bin per quarter instead. Here is how we can do this:
 
-<!--more-->
-```javascript 
+
+```ruby
 # Some transformations before plotting
 #  - only keep first row for each bin per participant+trial
 ETdata_toplot <- ETdata %>% group_by(Participant,trial,bin) %>% filter(row_number()==1)
@@ -318,8 +298,8 @@ ETdata_toplot <- gather(ETdata_toplot, focus, gaze, top_female:bottom_male)
 
 We now have a data frame that is ready for plotting. We’ll look at the evolution of the mean proportion of gazes over time, depending on which quarter was selected:
 
-<!--more-->
-```javascript 
+
+```ruby
 # Plot the results
 ggplot(ETdata_toplot, aes(x=bin,y=gaze,color=focus)) + 
   geom_line(stat="summary",fun.y="mean") +
@@ -335,8 +315,8 @@ This is reassuring: the looks converge toward the quarter that ended up being cl
 
 # Full R Script
 
-<!--more-->
-```javascript 
+
+```ruby
 # Imports
 read.pcibex <- function(filepath, auto.colnames=TRUE, fun.col=function(col,cols){cols[cols==col]<-paste(col,"Ibex",sep=".");return(cols)}) {
   n.cols <- max(count.fields(filepath,sep=",",quote=NULL),na.rm=TRUE)
@@ -418,7 +398,3 @@ ggplot(ETdata_toplot, aes(x=bin,y=gaze,color=focus)) +
   geom_line(stat="summary",fun.y="mean") +
   facet_grid(Selection~.)
 ```
-
-<b> Published by Jeremy </b>,
-Researcher in semantics and pragmatics,
-Programmer of PennController for IBEX

@@ -4,9 +4,10 @@ title: Recording audio or video
 
 This page describes the configuration you need to set up to record and collect audio and/or video samples with your project. Once you have set up your configuration, use the [MediaRecorder element]({{site.baseurl}}/mediarecorder/) to let your participants record audio samples.
 
-
-> <b>Note!</b>
-> Recording audio/video requires hosting your experiment on a secure domain. You can set up a project on either the PCIbex Farm or the original IBEX Farm, but you will need a personal server (with a secure domain too) to save the collected samples.
+{% capture label %}
+Recording audio/video requires hosting your experiment on a secure domain. You can set up a project on either the PCIbex Farm or the original IBEX Farm, but you will need a personal server (with a secure domain too) to save the collected samples.
+{% endcapture %}
+{% include label-note.html %}
 
 # Server setup
 
@@ -22,7 +23,7 @@ This page describes the configuration you need to set up to record and collect a
 
 <!--more--> 
 
-```javascript
+```php
 <?php
 // via: https://github.com/muaz-khan/RecordRTC/blob/master/RecordRTC-to-PHP/save.php
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
@@ -70,13 +71,14 @@ selfInvoker();
 ?>
 ```  
 
-> <b>Note!</b>
-> If your experiment is not hosted on the PCIbex Farm, modify the domain in the fourth line (https://farm.pcibex.net) accordingly. You can also replace it with * and the PHP script will accept upload requests from any domain, but this might not be the best idea. Read more about CORS permissions here. It is a good idea to either comment out the line or remove the PHP file from the server altogether after data collection to prevent any malicious attempt to externally upload files on your server.
+{% capture label %}
++ If your experiment is not hosted on the PCIbex Farm, modify the domain in the fourth line (https://farm.pcibex.net) accordingly. You can also replace it with * and the PHP script will accept upload requests from any domain, but this might not be the best idea. Read more about CORS permissions here. It is a good idea to either comment out the line or remove the PHP file from the server altogether after data collection to prevent any malicious attempt to externally upload files on your server.
 
-<b> For maximal security, remove the PHP file from your server as soon as your are done collecting recordings. </b>
++ **For maximal security, remove the PHP file from your server as soon as your are done collecting recordings.**
 
-> <b>Note!</b>
-> If you are still experiencing upload problems, make sure your PHP configuration has no open_basedir restriction at all, or that [open_basedir gives your PHP script permission to write in the uploads folder](https://stackoverflow.com/questions/13291185/how-to-set-for-specific-directory-open-basedir/13291257#13291257).
++ If you are still experiencing upload problems, make sure your PHP configuration has no open_basedir restriction at all, or that [open_basedir gives your PHP script permission to write in the uploads folder](https://stackoverflow.com/questions/13291185/how-to-set-for-specific-directory-open-basedir/13291257#13291257){:target="_blank"}.
+{% endcapture %}
+{% include label-note.html %}
 
 
 # Project setup
