@@ -1,3 +1,19 @@
 .site-nav {
   padding-top: 1.5rem !important;
 }
+
+#main-content div.btn-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: -0.6em;
+  transform: translateY(-50%);
+  visibility: hidden;
+}
+#main-content div:hover div.btn-overlay {
+  visibility: visible;
+}
+#main-content div.btn-overlay a:hover {
+  background-color: #7253ed;
+  color: white;
+}

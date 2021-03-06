@@ -7,21 +7,49 @@ nav_order: 4
 
 # {{ page.title }}
 
-This tutorial is designed for people who prefer learning by doing. If you prefer
-to learn concept-by-concept, check out the
-[**Core Concepts**]({{site.baseurl}}/core-concepts)
-section. You may find it useful to read both this tutorial and the
-**Core Concepts** section.
+Learn how to create a picture matching experiment.
 {: .h1-blurb }
+
+{% capture label %}
+The Basic and Advanced Tutorials are a learning-by-doing introduction to
+PCIbex: you'll learn how to use PCIbex by creating an actual experiment.
+
+If you prefer learning things concept-by-concept, check out the
+understanding-oriented [**Core Concepts**]({{site.baseurl}}/core-concepts)
+section!
+{% endcapture %}
+{% include label-note.html label-body=label %}
 
 ---
 
-## Goal
+## Table of contents
 
-In the **Basic Tutorial**, you'll learn how to create a simple picture matching
-experiment with the following structure:
+{% assign children_list = site.html_pages | where: "parent", page.title %}
+<ul>
+{% for child in children_list %}
+  <li>
+    <a href="{{ child.url | prepend: site.baseurl }}">
+      {{ child.title -}}
+    </a>: {{ child.blurb }}
+  </li>
+{% endfor %}
+</ul>
 
-1. Instructions screen with button to start the experiment
+---
+
+## Prerequisites
+
+PennController does not require any background in JavaScript. 
+However, you should have some general knowledge of experimental design.
+
+---
+
+## Objective
+
+In the **Basic Tutorial**, we'll create a picture matching experiment with the
+following structure:
+
+1. Instructions trial with button to start the experiment
 2. Experimental trial:
     1. A sentence plays as audio and unfolds as text on the screen.
     2. Two images are printed to the screen next to each other.
@@ -82,7 +110,7 @@ newTrial("experimental-trial",
     newImage("fish-singular", "1fishSquareTank.png")
         .size(200, 200)
     ,
-   	newCanvas("side-by-side", 450,200)
+    newCanvas("side-by-side", 450,200)
         .add(  0, 0, getImage("fish-plural"))
         .add(250, 0, getImage("fish-singular"))
         .center()
@@ -101,54 +129,3 @@ newTrial("experimental-trial",
 {% include collapsible-block.html content=content
 summary="Click to see the final experiment script" %}
 </div>
-
----
-
-## Table of contents
-
-{% assign children_list = site.html_pages | where: "parent", page.title %}
-<ol>
-{% for child in children_list %}
-  <li>
-  {% assign modified_title = child.title | split: ". " | last %}
-    <a href="{{ child.url | prepend: site.baseurl }}">
-      {{ modified_title }}
-    </a>
-    : {{ child.blurb }}
-  </li>
-{% endfor %}
-</ol>
-
----
-
-## How to follow the tutorial
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
-
-### Prerequisites
-
-PennController does not require any background in JavaScript. However, you should
-have some general knowledge of programming and experimental design.
-
-In particular, you should be familiar with the following terms and concepts:
-
-+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-+ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-+ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-
-### Instruction blocks
-
-Follow the tutorial by completing the tasks in the <span class="label label-purple">instructions</span>
-blocks:
-
-{% capture instructions %}
-1. *Step one*
-2. *Step two*
-3. *Step three*
-
-```javascript
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-```
-{% endcapture %}
-{% include instructions.html text=instructions %}

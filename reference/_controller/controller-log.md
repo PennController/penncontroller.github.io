@@ -12,6 +12,10 @@ description: "Logs the time when controller is envoked"
 @newController("DashedSentence", {s: "The mouse is happy"} )
 @   .print()
 $   .log()
+=======
+@newController("DashedSentence", {s: "The mouse that the cat that the dog is petting is hugging is happy"} )
+@   .print()
+@   .log()
 @   .wait()
 @   .remove()
 </code></pre>

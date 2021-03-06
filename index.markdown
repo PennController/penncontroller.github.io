@@ -18,6 +18,10 @@ A free, open-source, versatile, and user-friendly online experiment builder.
   </div>
   <div>
     <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+    <div class="btn-overlay">
+      <a class="btn" href="/basic-tutorial" target="_blank">READ THE TUTORIAL</a>
+      <a class="btn" href="https://youtu.be/KuYHiZJmTUw" target="_blank">WATCH THE TUTORIAL</a>
+    </div>
   </div>
 </div>
 
@@ -29,7 +33,11 @@ A free, open-source, versatile, and user-friendly online experiment builder.
     <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
   </div>
   <div class="centered-100 py-2">
-    <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+    <p>TAKE THE TUTORIAL:</p>
+    <div>
+      <a class="btn" href="/basic-tutorial" target="_blank">READ THE TUTORIAL</a>
+      <a class="btn" href="https://youtu.be/KuYHiZJmTUw" target="_blank">WATCH THE TUTORIAL</a>
+    </div>
   </div>
 </div>
 
@@ -59,9 +67,20 @@ PennController uses a streamlined code interface and requires no background in J
 
 PennController is under a BSD license, and its source code is
 [available on GitHub](https://github.com/PennController/penncontroller){:target="_blank"}.
-Its development was partly funded through a University Research Foundation
-Research Grant from the [University of Pennsylvania](https://www.upenn.edu/){:target="_blank"}
-and is currently supported by the
-[ILST initiative at MindCORE](https://web.sas.upenn.edu/langscience/){:target="_blank"}.
+
+## Acknowledgments
 
 This website was built by [Angelica Pan](https://angelica-pan.com){:target="_blank"}.
+
+PCIbex and the PCIbex farm are maintained by Jeremy Zehr. Initial development of preliminary versions of many of the tools that are part of PennController took place as part of work on NSF-grant BCS-1349009 to Florian Schwarz. The first stages of the full library and first farm were made possible through a grant from Penn's University Research Foundation, titled 'Building a Comprehensive Library for Online Experiments in IBEX.'
+
+## Support PCIbex
+
+Hosting of [the new PCIbex](https://farm.pcibex.net/){:target="_blank"} farm is made possible through generous support by [MindCORE](https://mindcore.sas.upenn.edu/){:target="_blank"} - Penn's hub for the integrative study of the mind. Please consider [making a donation](https://giving.apps.upenn.edu/fund?program=SAS&fund=630307){:target="_blank"} to ensure long-term support of this setup, specifying 'PCIbex' under 'special reason' to designate the funds to support PCIbex hosting.
+
+[![MindCORE]({{site.baseurl}}/assets/images/mindCORE_Logo_FINAL_Color.png "MindCORE Logo")](https://mindcore.sas.upenn.edu/){:target="_blank"}
+
+
+## Cite us
+
++ Zehr, J., & Schwarz, F. (2018). PennController for Internet Based Experiments (IBEX). https://doi.org/10.17605/OSF.IO/MD832

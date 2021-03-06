@@ -44,3 +44,4 @@ $newController("DashedSentence", {s: "This is an example sentence."} )
 @   .wait()
 @   .remove()
 </code></pre>
+

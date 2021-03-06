@@ -5,22 +5,22 @@ blurb: Summary of tutorial, and next steps.
 next_page: Advanced Tutorial
 ---
 
-Congratulations, you're done!
+Congrats, you're done with the **Basic Tutorial**!
 {: .h1-blurb }
 
 ---
 
 ## Summary
 
-In the **Basic Tutorial**, you learned how to:
+You learned how to:
 
-+ Create experiments and trials on the PCIbex Farm.
-+ Use multimedia and interactive elements.
-+ Manipulate elements with commands.
-+ Combine interactive elements.
-+ Change elements visually.
-+ Set trial-wide commands with default objects.
-+ Log experimental data.
++ Create experiments and trials on the PCIbex Farm
++ Use multimedia and interactive elements
++ Manipulate elements with commands
++ Combine interactive elements
++ Change elements visually
++ Set trial-wide commands with default objects
++ Log experimental data
 
 {% capture content %}
 ```javascript
@@ -67,7 +67,7 @@ newTrial("experimental-trial",
     newImage("fish-singular", "1fishSquareTank.png")
         .size(200, 200)
     ,
-   	newCanvas("side-by-side", 450,200)
+    newCanvas("side-by-side", 450,200)
         .add(  0, 0, getImage("fish-plural"))
         .add(250, 0, getImage("fish-singular"))
         .center()
@@ -89,7 +89,9 @@ newTrial("experimental-trial",
 
 ## Next steps
 
-Now that you've learned the basics of PennController, we recommend reading the [**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial), where you'll learn how to do things like:
+Now that you've learned the basics of PennController, we recommend reading the
+[**Advanced Tutorial**]({{site.baseurl}}/advanced-tutorial),
+where you'll learn how to do things like:
 
 + Create a trial template and use tables.
 + Implement a trial timeout and trial delay.
@@ -99,4 +101,11 @@ Now that you've learned the basics of PennController, we recommend reading the [
 + Create obligatory checkboxes and global variables.
 + Examine PennController results files.
 
-You can also jump right in and [start creating your own experiments](https://farm.pcibex.net/){:target="_blank"}. If you have questions, visit the [**Troubleshooting**]({{site.baseurl}}/docs/troubleshooting) page, check out our [**How-to guides**]({{site.baseurl}}/docs/how-to-guides), or post a question on our [support forum](https://farm.pcibex.net/experiments/new){:target="_blank"}.
+You can also jump right in and
+[start creating your own experiments](https://farm.pcibex.net/){:target="_blank"}.
+If you have questions, visit the
+[**Troubleshooting**]({{site.baseurl}}/support/troubleshooting)
+page, check out our
+[**How-to guides**]({{site.baseurl}}/how-to),
+or post a question on our
+[support forum](https://farm.pcibex.net/experiments/new){:target="_blank"}.

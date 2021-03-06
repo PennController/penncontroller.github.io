@@ -4,21 +4,28 @@ nav_order: 3
 start_heading: 10
 ---
 
-In the following article you will learn how to control randomization in your experiment. Specifically you will learn how to shuffle image position, randomize item order, and control group assignment. 
+
+In this section, we'll shuffle image positions, randomize item order, and control
+group assignment.
 {: .h1-blurb }
 
 ---
 
 ## Shuffling image position
 
-In the current experimental design, the plural image is always printed on the left and the singular image is always printed on the right. 
+Currently, the plural image is always printed on the left and the singular image
+is always printed on the right. This might create an confound that could lead to
+incorrect conclusions about morphological processing, because it's possible that
+participants are simply always faster at choosing images on the left (or on the
+right).
 
-It's possible that participants are simply always faster at choosing images on the left (or on the right). This reaction time advantage would create a confound that could lead to an incorrect conclusion about morphological processing.
+We'll address this potential confound by randomly shuffling the image positions.
 
 {% capture instructions %}
-Call the [`shuffle`]({{site.baseurl}}/selector/selector-shuffle) command on the `"selection"` **Selector** to shuffle the horizontal position of the `"plural"` and `"singular"` `Image` elements. 
+1. [Shuffle]({{site.baseurl}}/selector/selector-shuffle) the `"selection"`
+Selector.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// code omitted in interest of space
 @
 @// Experimental trial
@@ -73,22 +80,35 @@ Call the [`shuffle`]({{site.baseurl}}/selector/selector-shuffle) command on the 
 </code></pre>
 
 {% capture label %}
-Call the `shuffle` command **before** calling the `keys` command, so that the `F` key is associated with whichever image is printed on the left, and the `J` key is associated with whichever image is printed on the right. 
+Be sure to call the `shuffle` command **before** calling the `keys` command!
 
-If you call the `keys` command before calling the `shuffle` command, it is possible that the `F` key becomes associated with the image on the right, and the `J` key with the image on the left.
+This ensures that the `F` key is associated with whichever image is printed on
+the left, and that the `J` key is associated with whichever image is printed on
+the right.
+
+If you associate keys before shuffling, the image that ends up on the right might
+be associated with the `F` key, and the image that ends up on the left might be
+association with the `J` key.
 {% endcapture %}
 {% include label-note.html label-body=label %}
 
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-The `shuffle` command shuffles the image positions for every `"experimental-item"` trial independently, meaning that within an iteration of the **AdvancedTutorial** experiment it's still possible for the plural image to be printed on the left for all four experimental items.
+The `shuffle` command shuffles the image positions for every `"experimental-item"`
+trial independently, meaning that within an iteration of the **AdvancedTutorial**
+experiment it's still possible for the plural image to be printed on the left
+for all four experimental items.
 
-Another way of counterbalancing is to explicitly set half of the items to display the plural image on the left, and the other half to display the plural image on the right. In this experiment, we use the `shuffle` command, but include the hardcoded counterbalancing for reference:
+You could also counterbalance by explicitly setting half of the items to display
+the plural image on the left, and the other half to display the plural image on
+the right. In this experiment, we use the `shuffle` command, but include the
+hardcoded counterbalancing for reference:
 
 {% capture content %}
 
-*Note: The `singular_image` and `plural_image` columns have been changed to `left_image` and `right_image`.*
+<i>Note: The `singular_image` and `plural_image` columns have been changed to
+`left_image` and `right_image`.</i>
 
 | group | item | sentence                                           | inflection | audio                | duration | left_image          | right_image         |
 |-------|------|----------------------------------------------------|------------|---------------------|----------|---------------------|---------------------|
@@ -101,11 +121,11 @@ Another way of counterbalancing is to explicitly set half of the items to displa
 | B     | 3    | The sheep roams in a pen which is strikingly red   | singular   | 1sheepRedPen.mp3    | 2755     | 2sheepBluePen.png   | 1sheepRedPen.png    |
 | B     | 4    | The moose walk in a park which is visibly old      | plural     | 2mooseOldPark.mp3   | 2441     | 1mooseNewPark.png   | 2mooseOldPark.png   |
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// code omitted in interest of space
 @
 @// Experimental trial
-*Template("items.csv", row => 
+*Template("items.csv", row =>
 @    newTrial("experimental-trial",
 @        newTimer("break", 1000)
 @            .start()
@@ -160,23 +180,27 @@ Another way of counterbalancing is to explicitly set half of the items to displa
 
 ## Randomizing item order
 
-By default, PennController executes experiment scripts from top to bottom. The global command [`Sequence`]({{site.baseurl}}/global-commands/sequence), which is a handler for the Ibex [shuffleSequence variable](https://github.com/addrummond/ibex/blob/master/docs/manual.md#shuffle-sequences), allows you to specify a shuffle sequence instead. 
-
-A shuffle sequence is a way to sequence or randomize an array of items, in this case the PennController trials. Randomizing the order of the experimental items is a way to control for order effects. 
-
-The `Sequence` global command can create a wide variety of shuffle sequences using type predicates (predicates, for short), and the functions `seq`, `randomize`, `shuffle`, and `rshuffle`.
+The global command
+[`Sequence`]({{site.baseurl}}/global-commands/sequence) uses type predicates
+(predicates for short) and the functions `seq`, `randomize`, `shuffle`, and
+`rshuffle` to create shuffle sequences. A shuffle sequence is a way of sequencing
+or randomizing an array of items, in this case the PennController trials.
+Randomizing experimental item order is one way of controlling for order effects.
 
 For the **AdvancedTutorial** experiment, the important parts to know are that:
 
-+ Predicates can be trial labels. 
-+ `Sequence(PREDICATE_1, PREDICATE_2, ...)` creates a sequence in which all trials that match `PREDICATE_1` precede all trials that match `PREDICATE_2`, and so on. 
-+ `randomize(PREDICATE)` creates a sequence in which all trials that match `PREDICATE` are randomly ordered. 
++ Predicates can be trial labels.
++ `Sequence(PREDICATE_1, PREDICATE_2, ...)` creates a sequence in which all trials
+that match `PREDICATE_1` precede all trials that match `PREDICATE_2`, and so on.
++ `randomize(PREDICATE)` creates a sequence in which all trials that match
+`PREDICATE` are randomly ordered.
 + Trials that do not match a `PREDICATE` are not run.
 
 {% capture instructions %}
-Use the [`Sequence`]({{site.baseurl}}/global-commands/sequence)` global command to run the four `"experimental-trial"` trials in a random order:
+1. Use the [`Sequence`]({{site.baseurl}}/global-commands/sequence) global command
+to run the four `"experimental-trial"` trials in a random order.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+<pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
 @
 @// Remove command prefix
@@ -197,16 +221,30 @@ Use the [`Sequence`]({{site.baseurl}}/global-commands/sequence)` global command 
 
 ## Controlling group assignment
 
-PennController uses an internal counter to counterbalance group assignment. By default, the counter increases by one at the end of an experiment, which rotates which experimental item group is run.
+PennController uses an internal counter to counterbalance group assignment.
+By default, the counter increases by one at the end of an experiment, which
+rotates which experimental item group is run.
 
 Other options for controlling group assignment:
-+ Use the global command [`SetCounter`]({{site.baseurl}}/global-commands/setcounter) to manually control the internal counter.
+
++ Use the global command
+[`SetCounter`]({{site.baseurl}}/global-commands/setcounter)
+to manually control the internal counter.
 + Modify the experiment URL to force assignment to a specific group.
 
-To modify the experiment URL, replace `experiment.html` with `server.py?withsquare=N`, where `N` is a number from 0 to number-of-groups-minus-one. This method is useful if you are sending the URL around for data collection but want to control which group your participants end up in.
+To modify the experiment URL, replace `experiment.html` with `server.py?withsquare=N`,
+where `N` is a number from 0 to number-of-groups-minus-one. This method is
+useful if you're sending the URL around for data collection but want to control
+which group participants end up in.
 
-For example, the **AdvancedTutorial** experiment has two groups.  
-  + If a participant clicks the default URL `https://farm.pcibex.net/p/qkybME/experiment.html`, then they will be assigned to group `A` or `B` depending on the internal counter.
-  + If a participant clicks the link `https://farm.pcibex.net/p/qkybME/server.py?withsquare=0`, then they will be assigned to group `A`.
-  + If a participant clicks the link `https://farm.pcibex.net/p/qkybME/server.py?withsquare=1`, then they will be assigned to group `B`.
+For example, the **AdvancedTutorial** experiment has two groups:
 
++ If a participant clicks the default URL
+`https://farm.pcibex.net/p/qkybME/experiment.html`, they'll be assigned
+to group `A` or `B` depending on the internal counter.
++ If a participant clicks the link
+`https://farm.pcibex.net/p/qkybME/server.py?withsquare=0`, they'll be assigned
+to group `A`.
++ If a participant clicks the link 
+`https://farm.pcibex.net/p/qkybME/server.py?withsquare=1`, they'll be assigned
+to group `B`.

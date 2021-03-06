@@ -1,66 +1,74 @@
 ---
 title: 2. Creating elements
 nav_order: 2
-blurb: How to use elements, the basic unit of a PennController experiment.
+blurb: How to use elements, the basic unit of a PennController trial.
 ---
 
-Elements are the basic unit of a PennController trial. They contain multimedia content, interactive content, or some combination of the two.
+Elements contain multimedia content, interactive content, or some combination
+of the two.
 {: .h1-blurb }
 
 ---
 
 ## Element types
 
-As of PennController 1.8, there are 21 element types, including: 
+As of PennController 1.9, PennController has 21 types of
+[elements]({{site.baseurl}}/elements), including:
 
-+ [`Text`]({{site.baseurl}}/text): Text content (multimedia).
-+ [`Image`]({{site.baseurl}}/image): Image content (multimedia).
-+ [`Key`]({{site.baseurl}}/key): Keyboard keypresses (interactive).
-+ [`Button`]({{site.baseurl}}/button): Clickable buttons (multimedia and interactive).
-+ [`Audio`]({{site.baseurl}}/audio): Audio content that can interact with the experiment script (multimedia and interactive).
++ [`Text`]({{site.baseurl}}/text):
+Text content (multimedia).
++ [`Image`]({{site.baseurl}}/image):
+Image content (multimedia).
++ [`Key`]({{site.baseurl}}/key):
+Keyboard keypresses (interactive).
++ [`Button`]({{site.baseurl}}/button):
+A clickable button (multimedia and interactive).
++ [`Audio`]({{site.baseurl}}/audio):
+Audio content that can interact with the experiment script (multimedia and
+interactive).
 
-You can see a list of all element types and their descriptions on the [Elements]({{site.baseurl}}/elements) page.
-
-{% capture label %}
-We distinguish between the terms "element type" and "element":
-+ Element type: *to be filled in*
-+ Element: An instance of an element type
-
-We use `code font` when referring to element types, and use **bold font** when referring to elements. 
-
-For example, "a `Text` element" or "a `Text`" means "an instance of the `Text` element type".
-{% endcapture %}
-{% include label-technical.html label-body=label %}
+We'll use these five elements in the **BasicTutorial** experiment.
 
 ---
 
-## Elements
+## Creating an element
 
-Elements are the basic building blocks of your experiment. They are essentially things displayed on the participant's screen. Scroll down below to learn more about using the elements or check out the elements tab from the left toolbar to learn more about different elements.
-### Creating an element
+Create an element by calling a <code>newX(<var>ELEMENT_NAME</var>, ...)</code>
+function, where:
 
-Create an element by calling a <code>newX("<var>ELEMENT_NAME</var>",...)</code> function, where:
++ `X` is a type of element
++ <code><var>ELEMENT_NAME</var></code> is the name of the element
++ `...` are additional parameters that depend on the element type. For example,
+if you create an Audio or Image element you'll also need to specify the name
+of its source file.
 
-+ `X` is an element type.
-+ <code>"<var>ELEMENT_NAME</var>"</code> is the name of the element.
-+ `...` refers to subsequent parameters that depend on the element type. To see what arguments a specific element type requires, visit that element type's reference page under [Elements]({{site.baseurl}}/elements).
-
-Naming an element is technically optional, but **we recommend giving every element a name**,  Naming your elements will make it easier to debug an experiment, and only named elements can be accessed by a `getX()` function.
+{% capture label %}
+Naming an element is technically optional, but <strong>we recommend giving
+every element a name</strong>.  Naming your elements will make it easier to
+debug an experiment, and only named elements can be accessed by a
+[`getX()` function](#referring-back-to-an-element).
+{% endcapture %}
+{% include label-note.html label-body=label %}
 
 {% capture instructions %}
+1. Create an [Audio]({{site.baseurl}}/audio) element named `"fish-audio"`
+that contains the audio file `2fishRoundTank.mp3`.
+2. Create a [Text]({{site.baseurl}}/text) element named `"fish-sentence"`
+that contains the string `"The fish swim in a tank which is perfectly round."`
+3. Create an [Image]({{site.baseurl}}/image) element named `"fish-plural"`
+that contains the image `2fishRoundTank.png`.
 
-+ Create an [`Audio`]({{site.baseurl}}/audio) named `"fish-audio"` that contains the audio file `2fishRoundTank.mp3`.
-+ Create a [`Text`]({{site.baseurl}}/text) named `"fish-sentence"` that contains the string `"The fish swim in a tank which is perfectly round."`
-+ Create an [`Image`]({{site.baseurl}}/image) named `"fish-plural"` that contains the image `2fishRoundTank.png`.
+In PennController, all line breaks, tabs, and spaces are optional and purely
+for human readability, because PennController does not care about whitespace.
 
-<pre><code class="language-diff-javascript diff-highlight"> 
+However, you **must** add a comma in between elements. You must also add a
+comma in between a trial label and the following element.
+
+<pre><code class="language-diff-javascript diff-highlight">
 @// Type code below this line.
 @
 @// Remove command prefix
-@*PennController.ResetPrefix(null)
-@
-@// Turn off debugger
-@// DebugOff()
+@PennController.ResetPrefix(null)
 @
 @// Experimental trial
 !newTrial("experimental-trial",
@@ -74,16 +82,20 @@ Naming an element is technically optional, but **we recommend giving every eleme
 {% endcapture %}
 {% include instructions.html text=instructions%}
 
-At this point, we've created a trial with several elements, but not yet done anything with the elements. If you run the experiment, it'll end immediately with the message "The results were successfully sent to the server. Thanks!".
+We've added some elements, but the trial still doesn't "do" anything because it
+doesn't have any commands. We'll add some commands soon!
 
-### Referring back to an element
+## Referring back to an element
 
-Refer back to an element by calling a <code>getX("<var>ELEMENT_NAME</var>")</code> function, where:
+Once you create an element, you can refer back to it by calling a
+<code>getX(<var>ELEMENT_NAME</var>)</code> function, where:
 
-+ `X` is an element type.
-+ <code>"<var>ELEMENT_NAME</var>"</code> is the name of the element.
++ `X` is an element type
++ <code><var>ELEMENT_NAME</var></code> is the name of the element
 
-We won't use a `getX()` function until **4. Pausing experiment execution**, but here's a preview of what that'll look like:
+We won't use a `getX()` function until
+[**4. Pausing experiment execution**]({{site.baseurl}}/basic-tutorial/4_pausing-execution)
+but here's a preview:
 
 ```javascript
 PennController.ResetPrefix(null)
@@ -91,34 +103,8 @@ PennController.ResetPrefix(null)
 newTrial("experimental-trial",
     newAudio("fish-audio", "2fishRoundTank.mp3")
     ,
-    // ...
+    // Do some things
     ,
     getAudio("fish-audio")
 )
 ```
-
-### Element syntax
-
-+ Call a `newX()` or `getX()` function within the opening and closing parentheses of a `newTrial` command. 
-+ Use a comma to separate instances of a `newX()` or `getX()` function.
-+ (*Recommended*): Call each instance of a `newX()` function, `getX()` function, or comma, on an indented new line.
-
-All line breaks, tabs, and spaces are optional and purely for human readability; PennController does not care about whitespace.
-
-For example, the two code blocks below are functionally equivalent:
-
-+ ```javascript
-    PennController.ResetPrefix(null)
-
-    newTrial("TRIAL_LABEL",
-        newX("ELEMENT_1", ...)
-        ,
-        newX("ELEMENT_2", ...)
-        ,
-        getX("ELEMENT_1")
-    )
-    ```
-+   ```javascript
-    PennController.ResetPrefix(null)
-    newTrial("TRIAL_LABEL",newX("ELEMENT_1", ...),newX("ELEMENT_2", ...),getX("ELEMENT_1"))
-    ```

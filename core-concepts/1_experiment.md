@@ -403,7 +403,75 @@ $    <var>SPECIAL_COMMAND()</var>
 
 ### Trial labels
 
-*To be filled in*
+Trial labels are essential to control which trials should be part of your experiment, 
+and in which order they should appear. 
+
+Trial labels are simple strings that may or may not be shared by multiple trials.
+
+PennController provides multiple ways of specificying a trial's label,
+the most common one consisting in passing it as the first argument of the 
+[`newTrial`]({{site.baseurl}}/global-commands/newtrial) command
+
+<pre><code class="language-diff-javascript diff-highlight">
+$newTrial("example-trial",
+@    // ...
+@)
+</code></pre>
+
+Note that embedding the example above as is inside a 
+[`Template`]({{site.baseurl}}/global-commands/template) command will 
+generate multiple trials that all share the label `"example-trial"`:
+
+<pre><code class="language-diff-javascript diff-highlight">
++Template( row =>
+$    newTrial("example-trial",
+@        // ...
+@    )
++)
+</code></pre>
+
+Because cells from tables are strings, you can reference a column to provide
+a trial label. For example, if you have a column named _Condition_ in your table
+that alternates between _test_ and _filler_, the following will generate trials
+that will be labeled `"test"` and trials that will be labeled `"filler"`:
+
+<pre><code class="language-diff-javascript diff-highlight">
+@Template( row =>
+~    newTrial( row.Condition ,
+@        // ...
+@    )
+@)
+</code></pre>
+
+Another way of specifying a label is to use the 
+[`label`]({{site.baseurl}}/global-commands/newtrial-label) command on
+the closing parenthesis of the trial:
+
+<pre><code class="language-diff-javascript diff-highlight">
+@newTrial("example-trial",
+@    // ...
+@)
+$.label("example-trial")
+</code></pre>
+
+The `label` command is most useful with commands that generate trials but
+do not accept a string argument to label the generated trial. For example,
+the command [`CheckPreloaded`]({{site.baseurl}}/global-commands/checkpreloaded/) 
+generates a trial which, when run, will proceed only once the resources have preloaded,
+but you cannot give it a string argument to label the generated trial.
+The solution is to use the `label` command:
+
+<pre><code class="language-diff-javascript diff-highlight">
+@CheckPreloaded( 
+@    "test" ,
+@    "filler"
+@)
+$.label("check-test-filler")
+</code></pre>
+
+Once you have labeled your trials, you can control the order in which they will
+be executed using the command [`Sequence`]({{site.baseurl}}/global-commands/sequence).
+
 
 ---
 

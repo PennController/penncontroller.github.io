@@ -4,19 +4,22 @@ nav_order: 4
 start_heading: 11
 ---
 
-In the following article you will learn how to collect participant information, such as obtaining participant's consent, and recording participant's ID.
+
+In this section, we'll add a consent form and a section for participants to
+input their ID.
 {: .h1-blurb }
 
---- 
+---
 
 ## Obtaining participant consent
 
-An [**Html** element]({{site.baseurl}}/html) lets you
-insert an existing HTML document in a PennController experiment. This can be useful
-for displaying an informed consent form; instead of creating and printing many
-`Text` elements, you can print a single **Html**.
+An [Html]({{site.baseurl}}/html) element lets you insert an existing HTML document
+into a PennController experiment. This can be useful for displaying an informed
+consent form; instead of creating and printing many Text elements, you can print
+a single Html element.
 
-We'll use the mock consent form [`consent.html`]({{site.baseurl}}/assets/tutorials/consent.html){:target="_blank"}.
+We'll use the mock consent form
+[`consent.html`]({{site.baseurl}}/assets/tutorials/consent.html){:target="_blank"}.
 
 {% capture label %}
 `consent.html` is only for illustrative purposes and is not a real consent form.
@@ -71,9 +74,9 @@ Test commands are used in two ways:
 + Within a `wait` command to modify its success condition(s).
 
 We'll pass the test command `test.complete` as an argument to a `wait` command
-on a `Button` element. 
+on a Button element. 
 
-Normally, if the `wait` command is called on a `Button`, experiment script execution
+Normally, if the `wait` command is called on a Button, experiment script execution
 pauses until the `wait` command's success condition is fulfilled, in other words
 until the participant clicks the button. When a test command is passed as an argument,
 the `wait` command's success condition is modified. 
@@ -92,9 +95,9 @@ clicks the button.
   command to set the container width to 720px.
   2. Call the [`checkboxWarning`]({{site.baseurl}}/html/html-checkboxwarning)
   command to define an error message for an unfilled obligatory checkbox.
-+ Create and print a centered `Button` named `"continue"`.
++ Create and print a centered Button named `"continue"`.
   1. Call the [`wait`]({{site.baseurl}}/button/button-wait)
-  command on the `"continue"` `Button` and pass the `test.complete` test command
+  command on the `"continue"` Button and pass the `test.complete` test command
   on the `"consent_form"` **Html** as an argument. This pauses experiment script
   execution until the participant clicks the button *and* all obligatory fields
   are filled out.
@@ -135,30 +138,30 @@ clicks the button.
 
 ## Recording participant IDs
 
-A [**TextInput** element]({{site.baseurl}}/textinput)
+A [TextInput element]({{site.baseurl}}/textinput)
 creates a text input box that can collect participant input,
 like an ID number or experiment feedback. 
 
 We'll ask participants to enter a name or ID number before they start the experiment,
-and use the `log` method to record the content of the **TextInput** as
+and use the `log` method to record the content of the TextInput as
 a new column in the `results` file. 
 
-However, you cannot directly pass the content of a **TextInput** as an argument
-to the `log` method. Create a [**Var** element]({{site.baseurl}}/var),
-make it a global variable, and set its value to the content of the **TextInput**.
+However, you cannot directly pass the content of a TextInput as an argument
+to the `log` method. Create a [Var element]({{site.baseurl}}/var),
+make it a global variable, and set its value to the content of the TextInput.
 A global variable can be accessed in subsequent trial objects;
 a non-global variable can only be accessed in the trial that it's created in.
-Then, you can pass the **Var** as an argument to the `log` method.
+Then, you can pass the Var as an argument to the `log` method.
 
 {% capture instructions %}
 + Update the instructions.
-+ Create and print a [**TextInput**]({{site.baseurl}}/textinput)
++ Create and print a [TextInput]({{site.baseurl}}/textinput)
 named `"input_ID"` that is centered and has a 1em bottom margin.
-+ Create a [**Var**]({{site.baseurl}}/var) named `"ID"`.
++ Create a [Var]({{site.baseurl}}/var) named `"ID"`.
   + Call the [`global`]({{site.baseurl}}/var/var-global)
   command to make it a global variable.
   + Call the [`set`]({{site.baseurl}}/var/var-set)
-  command to set its value to the content of the `"input_ID"` **TextInput**.
+  command to set its value to the content of the `"input_ID"` TextInput.
 + Use the [`log` method]({{site.baseurl}}/global-commands/newtrial#methods)
 on the `"experimental-item"` trial to record the participant ID.
 
