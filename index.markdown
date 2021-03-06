@@ -18,6 +18,10 @@ A free, open-source, versatile, and user-friendly online experiment builder.
   </div>
   <div>
     <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+    <div class="btn-overlay">
+      <a class="btn" href="/basic-tutorial" target="_blank">READ THE TUTORIAL</a>
+      <a class="btn" href="https://youtu.be/KuYHiZJmTUw" target="_blank">WATCH THE TUTORIAL</a>
+    </div>
   </div>
 </div>
 
@@ -29,7 +33,11 @@ A free, open-source, versatile, and user-friendly online experiment builder.
     <a href="{{site.baseurl}}/core-concepts" class="btn" target="_blank">GET STARTED</a>
   </div>
   <div class="centered-100 py-2">
-    <a href="{{site.baseurl}}/basic-tutorial" class="btn" target="_blank">TAKE THE TUTORIAL</a>
+    <p>TAKE THE TUTORIAL:</p>
+    <div>
+      <a class="btn" href="/basic-tutorial" target="_blank">READ THE TUTORIAL</a>
+      <a class="btn" href="https://youtu.be/KuYHiZJmTUw" target="_blank">WATCH THE TUTORIAL</a>
+    </div>
   </div>
 </div>
 
