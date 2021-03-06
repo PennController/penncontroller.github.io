@@ -76,7 +76,7 @@ Nothing special here: we [SendResults]({{site.baseurl}}/global-commands/sendresu
 
 Create a new PHP file on your servers with the following content:
 
-```liquid
+```php
 <?php
   header("Access-Control-Allow-Methods: GET, PUT, OPTIONS");
   header("Access-Control-Allow-Headers: authorization, x-requested-with, content-type, access-control-allow-methods");
@@ -220,7 +220,7 @@ Do a few test runs of your experiment to generate some results, or [download the
 We will use R to analyze the results file. First we will copy the read.pcibex function from [this page of the tutorial]({{site.baseurl}}/how-to-guides/data-transformation/). Then we will require the packages ggplot2, dplyr, and tidyr:
 
  
-```r
+```ruby
 require("ggplot2")
 require("dplyr")
 require("tidyr")
@@ -229,7 +229,7 @@ require("tidyr")
 Then we will tell our script where the PHP file is, and what time-window to use to bin the eye-tracking data points. In this example, we will compute the mean looks to each element over time-windows of 100ms:
 
 
-```r
+```ruby
 # The URL where the data is stored; note the ?experiment= at the end
 ETURL = "http://files.lab.florianschwarz.net/ibexfiles/RecordingsFromIbex/EyeTracker.php?experiment="
 # Time-window to bin the looks
@@ -239,7 +239,7 @@ BIN_DURATION = 100
 Then we simply import our results file, and rename the Reception Time column “Participant” as this is what we’ll use to identify sessions (if, like me, you took the same experiment twice, all the lines have the same MD5 hash).
 
 
-```r
+```ruby
 # We'll use Reception time to identify individual sessions
 results <- read.pcibex("results.csv")
 names(results)[1] <- 'Participant'
@@ -248,7 +248,7 @@ names(results)[1] <- 'Participant'
 Now we’ll import the data from our PHP script. To do so, we’ll first subset our data frame to the EyeTracker rows that report the URL keys. Since there were 24 trials, the same key is repeated 24 times for each session, so we’ll also subset to the rows corresponding to the first item only. Then we simply read the CSV files that are output by our PHP script for each URL key, and append the output to our EyeTracker data frame:
 
 
-```r
+```ruby
 # Read ET data file for each session and append output to ETdata
 ETdata = data.frame()
 filesDF <- subset(results, Parameter=="Filename"&Type=="Item-1")
@@ -262,7 +262,7 @@ apply(filesDF, 1, function(row) {
 At this point, the ETdata data frame contains individual data points, collected every tens of milliseconds (depending on the time resolution of the EyeTracker element upon runtime). Let us bin those in intervals of 100ms: 
 
 
-```r
+```ruby
 # Bin the data
 ETdata$bin <- BIN_DURATION*floor(ETdata$times/BIN_DURATION)
 ETdata <- ETdata %>% group_by(Participant,trial,bin) %>% mutate(
@@ -278,7 +278,7 @@ Now the our data frame has four additional columns reporting the proportion of l
 We also want to know which quarter the participant ended up selecting on each of the trial. That piece of information is stored in the results data frame, and we will now import it into the ETdata data frame (note that Item.number from results corresponds to trial from ETdata):
 
 
-```r
+```ruby
 # Add final choice to ETdata
 answers <- results[results$Parameter=="Selection", c("Participant","Item.number","Value")]
 names(answers) <- c("Participant", "trial", "Selection")
@@ -288,7 +288,7 @@ ETdata <- merge(ETdata,answers,by=c("Participant","trial"))
 Before plotting a graph, we want to proceed to a few transformations of our data: right now each bin is repeated multiple times in ETdata, because each row is an individual data point, and each quarter is coded as a column. It is easier with ggplot to have only one row per bin per quarter instead. Here is how we can do this:
 
 
-```r
+```ruby
 # Some transformations before plotting
 #  - only keep first row for each bin per participant+trial
 ETdata_toplot <- ETdata %>% group_by(Participant,trial,bin) %>% filter(row_number()==1)
@@ -299,7 +299,7 @@ ETdata_toplot <- gather(ETdata_toplot, focus, gaze, top_female:bottom_male)
 We now have a data frame that is ready for plotting. We’ll look at the evolution of the mean proportion of gazes over time, depending on which quarter was selected:
 
 
-```r
+```ruby
 # Plot the results
 ggplot(ETdata_toplot, aes(x=bin,y=gaze,color=focus)) + 
   geom_line(stat="summary",fun.y="mean") +
@@ -316,7 +316,7 @@ This is reassuring: the looks converge toward the quarter that ended up being cl
 # Full R Script
 
 
-```r
+```ruby
 # Imports
 read.pcibex <- function(filepath, auto.colnames=TRUE, fun.col=function(col,cols){cols[cols==col]<-paste(col,"Ibex",sep=".");return(cols)}) {
   n.cols <- max(count.fields(filepath,sep=",",quote=NULL),na.rm=TRUE)
