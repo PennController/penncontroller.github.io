@@ -15,8 +15,8 @@ notes: true
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newAudio("test", "test.mp3")
-@    .play()
-$    .wait()
+$    .play()
+@    .wait()
 </code></pre>
 
 + Starts playing the file *test.mp3* (nothing is added onto the screen).		

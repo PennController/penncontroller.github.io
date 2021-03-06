@@ -19,7 +19,7 @@ since: PennController 1.5
 @    .print()
 @,
 @getDropDown("temp")
-@    .callback(
+@$   .callback(
 $        getDropDown("temp")
 $            .test.selected("warm").success( 
 $                getText("implicature").text("implicates that the weather is not hot") 
@@ -30,7 +30,7 @@ $            )
 $            .test.selected("cold").success( 
 $                getText("implicature").text("implies that the weather is not even warm") 
 $            )
-$    )
+@    )
 </code></pre>
 
 + Prints *The weather is ... implies that the weather is ...* onto the page, where the first occurrence of *...* is a drop-down list containing the options *cold*, *warm* and *hot*. Upon selection of the option, the continuation will be modified accordingly to the selected option.		

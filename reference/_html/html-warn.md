@@ -15,8 +15,8 @@ description: "Displays an error message for each of the obligatory fields from t
 @    .print()
 @    .wait(
 @        getHtml("demographics").test.complete()
-@            .failure( getHtml("demographics").warn() )
-$    )
+$            .failure( getHtml("demographics").warn() )
+@    )
 </code></pre>
 
 + Prints the content of *example*intro.html_ onto the page and adds a *Continue* button below it. The button is validated only when all the obligatory fields from *example*intro.html_ have been filled.

@@ -30,8 +30,7 @@ newTrial(
         .callback(function(x,y){ getText("lookedAt").text(`Looking at ${this.id} (${x},${y})`)._runPromises(); })
         .start()
     ,
-    newSelector().add( getText("Left") , getText("Right") ).wait()
-)
+    newSelector().add( getText("Left") , getText("Right") ).wait())
 ```
 
 + Will initiate eyetrackekr and display the name of the element being looked-at, along with the X and Y coordinates.

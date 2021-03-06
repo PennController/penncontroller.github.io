@@ -18,7 +18,7 @@ alternates:
 @newVar("word", 0)
 @,
 @newKey("control", " \n\r")
-@    .callback(
+$    .callback(
 $        getText("sentence")
 $            .color("red")
 $        ,

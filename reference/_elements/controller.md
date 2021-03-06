@@ -37,9 +37,11 @@ makes it possible to combine multiple controllers to form a single controller - 
 
 <!--more-->
 
-```javascript
- newController("DashedSentence", {s: "This is an example sentence"})
-        .print()
-        .log()
-        .wait()
-        .remove()```
+<pre><code class="language-diff-javascript diff-highlight try-">
+$newController("DashedSentence", {s: "This is an example sentence."} )
+@   .print()
+@   .log()
+@   .wait()
+@   .remove()
+</code></pre>
+

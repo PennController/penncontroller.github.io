@@ -26,8 +26,8 @@ notes: true
 @    .print()
 @,
 @newKey("anyKey", "")
-@    .log()
-$    .wait()
+$    .log()
+@    .wait()
 @,
 @newText("thanks", "Thank you!")
 @    .print()

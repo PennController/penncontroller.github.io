@@ -17,11 +17,11 @@ description: "It waits until the previous command or command specified is execut
 @,
 @newButton("validation", "Validate")
 @    .print()
-@    .wait()
+$    .wait()
 @,
 @getAudio("sentence")
-@    .wait("first")
-$,
+$    .wait("first")
+@,
 @newText("thanks", "Thank you for listening")
 @    .print()
 </code></pre>

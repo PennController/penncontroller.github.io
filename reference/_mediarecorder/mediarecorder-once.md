@@ -12,8 +12,8 @@ description: "Disables the button to record after the first recording. You can s
 @
 @newTrial(
 @    newMediaRecorder("recorder")
-@        .once()
-$        .print()
+$        .once()
+@        .print()
 @        .wait()
 @        .play()
 @        .wait("playback")

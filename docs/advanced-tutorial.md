@@ -192,3 +192,4 @@ newTrial("completion_screen",
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click to see the final experiment script" inner-border=true %}
 </div>
+

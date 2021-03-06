@@ -16,8 +16,8 @@ alternates:
 @    newEyeTracker("tracker")
 @        .calibrate(70)
 @        .train(true)
-@        .trainOnMouseMove(false)
-$    ,
+$        .trainOnMouseMove(false)
+@    ,
 @    newButton("Click here first").print("20vw","40vh").wait().remove(), 
 @    newButton("Now Click here").print("60vw","40vh").wait().remove()
 @    ,

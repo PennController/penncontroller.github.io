@@ -9,8 +9,8 @@ description: "Will add a line at the end of the trial for each `<textarea>`, `<i
 
 <pre><code class="language-diff-javascript diff-highlight try-">
 @newHtml("feedback", "Feedback.html")
-@    .log()
-$    .print()
+$    .log()
+@    .print()
 @,
 @newButton("send", "Send")
 @    .print()

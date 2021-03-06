@@ -28,7 +28,7 @@ description: "Removes a single option from the list. Nothing happens if the opti
 @            .failure( 
 @                getDropDown("value")
 $                    .remove("Other") 
-$            )
+@            )
 @    )
 @    .print()
 </code></pre>

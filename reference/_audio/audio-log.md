@@ -18,8 +18,8 @@ alternates:
 @,
 @newAudio("sentence", "test_sentence.ogg")
 @    .once()
-@    .log()
-$    .print()
+$    .log()
+@    .print()
 @    .wait()
 @,
 @newButton("validation", "Validate")

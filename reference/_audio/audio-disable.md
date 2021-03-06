@@ -17,8 +17,8 @@ notes: true
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newAudio("test.mp3")
 @  .print()
-@  .disable()
-$  .play()
+$  .disable()
+@  .play()
 @  .wait()
 </code></pre>
 

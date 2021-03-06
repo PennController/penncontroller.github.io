@@ -12,8 +12,8 @@ description: "Starts recording."
 @
 @newTrial(
 @    newMediaRecorder("recorder","audio")
-@        .record()
-$    ,
+$        .record()
+@    ,
 @    newTimer("recording", 2000)
 @        .start()
 @        .wait()

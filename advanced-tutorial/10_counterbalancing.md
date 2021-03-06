@@ -4,6 +4,7 @@ nav_order: 3
 start_heading: 10
 ---
 
+
 In this section, we'll shuffle image positions, randomize item order, and control
 group assignment.
 {: .h1-blurb }

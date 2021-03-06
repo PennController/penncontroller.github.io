@@ -16,12 +16,12 @@ alternates:
 @    .print()
 @,
 @newButton("(Re)play")
-@    .callback( 
+$    .callback( 
 $        getVideo("skate")
-$            .stop()
+$           .stop()
 $            .play()
 $    )
-$    .print()
+@    .print()
 </code></pre>
 
 + Adds onto the page a video and a button which, whenever clicked, starts or restarts playing the video from the beginning.		

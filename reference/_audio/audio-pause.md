@@ -16,8 +16,8 @@ description: "Pauses the audio file."
 @    .wait()
 @,
 @getAudio("sentence")
-@    .pause()
-$    .print()
+$    .pause()
+@    .print()
 @    .wait()
 </code></pre>
 

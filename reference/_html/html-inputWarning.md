@@ -12,8 +12,8 @@ description: "Defines the error message that gets displayed if an obligatory inp
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newHtml("intro", "example_intro.html")
 @    .checkboxWarning("It is highly recommended that you check the '%name%' box before continuing")
-@    .inputWarning("We would like you to type some text in these fields")
-$    .radioWarning("Please consider selecting an option for '%name%'")
+$    .inputWarning("We would like you to type some text in these fields")
+@    .radioWarning("Please consider selecting an option for '%name%'")
 @    .print()
 @,
 @newButton("I have completed the form")

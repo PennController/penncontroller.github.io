@@ -12,8 +12,8 @@ description: "Selects an option in the drop-down list. Nothing happens if the op
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newDropDown("warmth", "")
 @    .add("hot", "lukewarm", "cold")
-@    .select( "lukewarm" )
-$,
+$    .select( "lukewarm" )
+@,
 @newText("Spring in Colorado is ")
 @    .after( getDropDown("warmth") )
 @    .print()

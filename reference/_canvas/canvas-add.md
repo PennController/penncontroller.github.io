@@ -26,9 +26,9 @@ notes: true
 @,
 @newCanvas("shape", 200, 200)
 @    .center()
-@    .add( 0, 0, newText("description","This is a square") )
+$    .add( 0, 0, newText("description","This is a square") )
 $    .add( "center at 50%", "middle at 50%", getImage("square") )
-$    .print()
+@    .print()
 </code></pre>
 
 + Adds a `<div>` surface of size 200x200px to the horizontal center of the page and places a description *This is a square* at its top-left corner and a 50x50px image of `square.png` centered horizontally and vertically onto the surface.		

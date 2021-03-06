@@ -15,14 +15,14 @@ alternates:
 @    .wait()
 @    .remove()
 @,
-@newController("DashedSentence", {s: "The mouse that the cat that the dog is petting is hugging is happy"} )
+@newController("DashedSentence", {s: "The mouse is happy"} )
 @    .print()
 @    .log()
-@    .wait()
-$    .remove()
+$    .wait()
+@    .remove()
 @,
 @newText("Good job!")
 @    .print()
 </code></pre>
 
-+ 		
+

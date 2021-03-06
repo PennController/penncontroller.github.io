@@ -25,8 +25,8 @@ notes: true
 @    newText("Right").css("padding","20vw").print("60vw", "40vh")
 @    ,
 @    getEyeTracker("tracker")
-@        .stopTraining()
-$        .add( getText("Left") , getText("Right") )
+$        .stopTraining()
+@        .add( getText("Left") , getText("Right") )
 @    ,
 @    newSelector().add( getText("Left") , getText("Right") ).wait()
 @)

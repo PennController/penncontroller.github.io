@@ -9,8 +9,16 @@ parameters:
 description: Embeds a JavaScript function.
 ---
 
-```javascript
-// To be filled in
-```
++ Passes a Javascript function to the controller.
+
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newFunction(()=>$(".secret")
+@                  .css("background","yellow") )
+@                  .call()
+</code></pre>
+
++ This function colors the background of elements with the id "secret" to yellow.
 
 

@@ -23,9 +23,9 @@ notes: true
 @    .wait()
 @,
 @getKey("forj")
-@    .test.pressed("F")
+$    .test.pressed("F")
 $    .success( newText("success", "You're right!").print() )
-@    .failure( newText("failure", "You're wrong, 0.999... and 1 do refer to the same number").print() )
+$    .failure( newText("failure", "You're wrong, 0.999... and 1 do refer to the same number").print() )
 </code></pre>
 
 + Will print the success message if the key that was pressed was F. Will print the failure message otherwise (i.e., if it was J).		
