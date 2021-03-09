@@ -13,8 +13,8 @@ notes: true
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newScale("slider",   100)
 @    .slider()
-@    .vertical()
-$    .print()
+$    .vertical()
+@    .print()
 </code></pre>
 
 + Adds a 100-point vertical slider to the page and a button to validate.		
