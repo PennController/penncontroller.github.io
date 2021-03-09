@@ -19,7 +19,7 @@ description: "Makes it possible to select by clicking (default)."
 @    .add( getImage("square") , getImage("triangle") )
 @    .keys(     "F"           ,        "J"           )
 @    .wait()
-@    .enableClicks()
+$    .enableClicks()
 </code></pre>
 
 + Adds two images side by side and waits for a selection by pressing either the F key or the J key, after which it becomes possible to select by clicking again.		
