@@ -16,8 +16,10 @@ notes: true
 @  .wait()
 @  .remove()
 @,
-@newMouseTracker("mouse").log().start()
-$,
+@newMouseTracker("mouse")
+@  .log()
+$  .start()
+@,
 @newCanvas("left", "40vw", "40vh")
 @  .css("background","red")
 @  .print("center at 25vw","center at 50vh")
