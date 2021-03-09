@@ -21,8 +21,8 @@ description: "Makes it possible to select the elements by pressing the specified
 @newSelector("shapes")
 @    .disableClicks()
 @    .add( getImage("square") , getImage("triangle") )
-@    .keys(     "F"           ,        "J"           )
-$    .wait()
+$    .keys(     "F"           ,        "J"           )
+@    .wait()
 </code></pre>
 
 + Adds two images side by side and waits for a selection by pressing either the F key or the J key.		
