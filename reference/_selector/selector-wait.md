@@ -24,7 +24,7 @@ notes: true
 @,
 @newSelector("shapes")
 @    .add( getImage("square") , getImage("triangle") )
-@    .wait()
+$    .wait()
 </code></pre>
 
 + Adds two images side by side and waits for a click on either one of them.		
