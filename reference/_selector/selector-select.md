@@ -18,10 +18,10 @@ description: "Selects the specified element."
 @,
 @newSelector("shapes")
 @    .add( getImage("square") , getImage("triangle") )
-@    .select( getImage("square") )
-$    .wait()
+$    .select( getImage("square") )
+@    .wait()
 </code></pre>
 
 + Adds two images side by side, selects the image *square* by default, and waits for a click on either one of them.
 
-+ 		
+ 		
