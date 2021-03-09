@@ -9,8 +9,8 @@ description: "Makes the buttons of the scale appear as clickable text buttons th
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newScale("score", 6)
-@    .button()
-$    .before( newText("score label", "Score: ") )
+$    .button()
+@    .before( newText("score label", "Score: ") )
 @    .after( newText("score text", " / 5") )
 @    .print()
 @    .wait()
