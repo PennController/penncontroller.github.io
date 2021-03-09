@@ -24,10 +24,10 @@ notes: true
 @    newMediaRecorder("recorder")
 @        .once()
 @        .print()
-@        .wait()
-$        .play()
-@        .wait("playback")
-$)
+$        .wait()
+@        .play()
+$        .wait("playback")
+@)
 </code></pre>
 
 + Adds a media player and a recording button to the page, and automatically plays back the video once it is recorded.		
