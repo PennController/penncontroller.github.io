@@ -15,8 +15,8 @@ description: "Makes it impossible to select by clicking. If no `.keys` command i
 @    .print()
 @,
 @newSelector("shapes")
-@    .disableClicks()
-$    .add( getImage("square") , getImage("triangle") )
+$    .disableClicks()
+@    .add( getImage("square") , getImage("triangle") )
 @    .keys(     "F"           ,        "J"           )
 @    .wait()
 </code></pre>
