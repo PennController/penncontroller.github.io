@@ -17,18 +17,18 @@ notes: true
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newScale("grade",  "A", "B", "C", "D", "E", "F")
 @    .labelsPosition("top")
-@    .keys()
-$    .print()
+$    .keys()
+@    .print()
 @,
 @newScale(9)
 @    .before( newText("Confidence:") )
-@    .keys()
-$    .print()
+$    .keys()
+@    .print()
 @,
 @newScale("role",  "TA", "Professor")
 @    .labelsPosition("right")
-@    .keys("T", "P")
-$    .print()
+$    .keys("T", "P")
+@    .print()
 </code></pre>
 
 + Will add three scales onto the screen. Pressing *A*, *B*, *C*, *D*, *E* or *F* will select an option on the first scale, pressing a numeric key from 1 to 9 will select an option on the second scale, and pressing *T* or *P* will select an option on the third scale.		
