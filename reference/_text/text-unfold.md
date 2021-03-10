@@ -12,8 +12,8 @@ since: PennController 1.3
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newText("Hello world")
-@    .unfold( 3000 )
-$,
+$    .unfold( 3000 )
+@,
 @newTimer(3000)
 @    .start()
 @    .wait()
