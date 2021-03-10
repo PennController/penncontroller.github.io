@@ -27,8 +27,8 @@ notes: true
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newTextInput("feedback", "Leave your feedback comments here.")
-@    .log()
-$    .lines(0)
+$    .log()
+@    .lines(0)
 @    .size(400, 200)
 @    .print()
 @,
@@ -38,5 +38,4 @@ $    .lines(0)
 </code></pre>
 
 + Adds a 400x200px multiple-line input box containg the text *Leave your feedback comments here* to the screen above a *Send* button and waits for a click on the button. At least two lines will be added to the results file: one reporting the text in the box at the end of the trial, and one reporting the first key press. Additionally, you will see one line for each time the enter/return key was pressed.
-
-+ 		
+		
