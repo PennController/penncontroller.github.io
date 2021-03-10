@@ -13,8 +13,8 @@ notes: true
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newTextInput("poem", "")
 @    .before( newText("flowers", "Violets are blue, roses are red, ") )
-@    .once()
-$    .print()
+$    .once()
+@    .print()
 @    .wait()
 </code></pre>
 
