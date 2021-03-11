@@ -12,8 +12,8 @@ description: "Starts the timer."
 @    .print()
 @,
 @newTimer("wait", 1000)
-@    .start()
-$    .wait()
+$    .start()
+@    .wait()
 @,
 @getText("pleasewait")
 @    .remove()
