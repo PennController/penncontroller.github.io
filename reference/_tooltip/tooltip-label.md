@@ -25,8 +25,8 @@ since: beta 0.3
 @    .enable()
 @,
 @getTooltip("instruction")
-@    .label("OK")
-$    .enable()
+$    .label("OK")
+@    .enable()
 @    .wait()
 </code></pre>
 
