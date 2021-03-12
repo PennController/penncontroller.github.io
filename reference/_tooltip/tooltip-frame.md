@@ -17,8 +17,8 @@ notes: true
 @    .print()
 @,
 @newTooltip("myTooltip", "This is a square")
-@    .frame()
-$    .print( getImage("myImage") )
+$    .frame()
+@    .print( getImage("myImage") )
 @    .wait()
 </code></pre>
 
