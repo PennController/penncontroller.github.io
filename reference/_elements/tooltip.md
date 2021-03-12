@@ -14,8 +14,16 @@ parameters:
 description: Represents a tooltip.
 ---
 
-```javascript
-// To be filled in
-```
 
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newImage("myImage", "square.png")
+@    .print()
+@,
+$newTooltip("myTooltip", "This is a square")
+$   .print( getImage("myImage") )
+</code></pre>
+
++ Adds an image to the page and places a box with the text This is a square to its bottom-right corner, which disappears when a validation button (reading OK by default) is clicked. 
 
