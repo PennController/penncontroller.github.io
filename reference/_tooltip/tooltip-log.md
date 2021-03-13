@@ -14,8 +14,8 @@ description: "Will add a line in the results file each time the tooltip is valid
 @    .print()
 @,
 @newTooltip("instructions", "Use this interface to replay the audio as many times as you want")
-@    .log()
-$    .print( getAudio("sentence") )
+$    .log()
+@    .print( getAudio("sentence") )
 @    .wait()
 </code></pre>
 
