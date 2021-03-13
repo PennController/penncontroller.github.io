@@ -32,9 +32,9 @@ since: beta 0.3
 @            .text( getVar("trialsLeft") )
 @          ,
 @          getVar("trialsLeft") // Disable guess if 0 attempt left
-@            .test.is(0)
+$            .test.is(0)
 $            .success( getTextInput("guess").disable() )
-$        )   
+@        )   
 @    )
 </code></pre>
 
