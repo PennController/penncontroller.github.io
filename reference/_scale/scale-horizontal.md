@@ -18,8 +18,8 @@ description: "Makes the buttons and labels of the scale appear horizontally. Thi
 @    .print()
 @    .wait()
 @,
-$getScale("slider")
-@    .horizontal()
+@getScale("slider")
+$    .horizontal()
 @    .print()
 </code></pre>
 

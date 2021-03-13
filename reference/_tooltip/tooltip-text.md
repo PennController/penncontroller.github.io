@@ -25,7 +25,7 @@ since: beta 0.3
 @    .wait()
 @,
 @getTooltip("instructions")
-@    .text("Feel free to replay if you want")
+$    .text("Feel free to replay if you want")
 </code></pre>
 
 + Shows an interface to play the audio *test.mp3* and attaches a tooltip at its bottom-right corner. The text will be updated after the audio has played, if the tooltip has not been validated, and therefore has not disappeared from the screen in the meantime.		

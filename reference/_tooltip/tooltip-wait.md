@@ -21,12 +21,12 @@ notes: true
 @,
 @newTooltip("playAudio", "Play this audio file before proceeding")
 @    .print( getAudio("sentence") )
-@    .wait( 
+$    .wait( 
 $        getAudio("sentence")
 $            .test.hasPlayed()
 $            .failure( getTooltip("playAudio").print(getAudio("sentence")) )
 $    )
-$,
+@,
 @newText("confirmation", "Now you can proceed")
 @    .print()
 </code></pre>

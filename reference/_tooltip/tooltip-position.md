@@ -22,8 +22,8 @@ since: beta 0.3
 @    .print()
 @,
 @newTooltip("myTooltip", "This is a square")
-@    .position("top center")
-$    .print( getImage("myImage") )
+$    .position("top center")
+@    .print( getImage("myImage") )
 @    .wait()
 </code></pre>
 

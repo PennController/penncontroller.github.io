@@ -22,7 +22,7 @@ notes: true
 @    .before( newText("left", "Right now, I am... very hungry ") )
 @    .after( newText("right", " not hungry at all") )
 @    .print()
-@    .wait()
+$    .wait()
 </code></pre>
 
 + Adds a 5-point radio scale to the screen and waits for a click on one of its buttons.		

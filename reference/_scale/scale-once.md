@@ -14,8 +14,8 @@ notes: true
 @newScale("hunger", 5)
 @    .before( newText("left", "Right now, I am... very hungry ") )
 @    .after( newText("right", " not hungry at all") )
-@    .once()
-$    .print()
+$    .once()
+@    .print()
 @    .wait()
 </code></pre>
 

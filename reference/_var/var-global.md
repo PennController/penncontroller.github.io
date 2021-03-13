@@ -13,8 +13,8 @@ notes: true
 <pre><code class="language-diff-javascript diff-highlight try-">
 @PennController(
 @    newVar("participantsName", "")
-@        .global()
-$    ,
+$        .global()
+@    ,
 @    newTextInput("name", "Please write your name")
 @        .print()
 @        .wait()

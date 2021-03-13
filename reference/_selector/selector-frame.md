@@ -18,8 +18,8 @@ description: "Defines the style of the frame around the selected element. By def
 @,
 @newSelector("shapes")
 @    .add( getImage("square") , getImage("triangle") )
-@    .frame("dashed 3px violet")
-$    .wait()
+$    .frame("dashed 3px violet")
+@    .wait()
 </code></pre>
 
 + Adds two images side by side, waits for a click on either one of them and then prints a button. Until the button is clicked, the selected image appears in a dashed, violet, 3px-wide frame.		

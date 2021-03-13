@@ -12,8 +12,8 @@ since: beta 0.3
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newTextInput("haiku", "hatsu shigure\nsaru mo komino o\nhoshige nari")
-@    .length(45)
-$    .lines(3)
+$    .length(45)
+@    .lines(3)
 @    .print()
 </code></pre>
 

@@ -19,8 +19,8 @@ description: "Adds as many elements to the selector. By default, selection is do
 @    .print()
 @,
 @newSelector("shapes")
-@    .add( getImage("square") , getImage("triangle") )
-$    .wait()
+$    .add( getImage("square") , getImage("triangle") )
+@    .wait()
 </code></pre>
 
 + Adds two images side by side and waits for a click on either one of them.		

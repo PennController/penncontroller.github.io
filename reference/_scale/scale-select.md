@@ -39,8 +39,8 @@ notes: true
 @    )
 @,
 @getScale("answer")
-@    .select("JavaScript")
-$    .disable()
+$    .select("JavaScript")
+@    .disable()
 </code></pre>
 
 + Adds a question, a scale with four options and a button onto the page, then waits until the button is clicked while an option is selected. Once the button is clicked, prints a different feedback message depending on whether *JavaScript* is selected, then selects the *JavaScript* option (the correct answer) and disables the scale.

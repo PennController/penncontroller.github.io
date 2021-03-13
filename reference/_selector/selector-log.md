@@ -25,8 +25,8 @@ notes: true
 @,
 @newSelector("shapes")
 @    .add( getImage("square") , getImage("triangle") )
-@    .log()
-$,
+$    .log()
+@,
 @newButton("validation", "Validate")
 @    .print()
 @    .wait()

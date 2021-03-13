@@ -20,8 +20,8 @@ notes: true
 @    .print()
 @,
 @newTooltip("myTooltip", "This is a square")
-@    .print( getImage("myImage") )
-$    .wait()
+$    .print( getImage("myImage") )
+@    .wait()
 </code></pre>
 
 + Adds an image to the page and places a box with the text *This is a square* to its bottom-right corner, which disappears when a validation button (reading *OK* by default) is clicked.		

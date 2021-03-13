@@ -21,8 +21,8 @@ notes: true
 @    .print()
 @,
 @newTooltip("myTooltip", "Press enter/return when you are done admiring this beautiful square")
-@    .key(13, "no click")
-$    .print( getImage("myImage") )
+$    .key(13, "no click")
+@    .print( getImage("myImage") )
 @    .wait()
 </code></pre>
 

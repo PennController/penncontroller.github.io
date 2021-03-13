@@ -29,8 +29,8 @@ since: beta 0.3
 @newKey("firstKey", "")
 @,
 @getVar("firstKeyPressed")
-@    .set( getKey("firstKey") )
-$,
+$    .set( getKey("firstKey") 
+@,
 @newText("printFirstKey", "")
 @    .text( getVar("firstKeyPressed") )
 @,

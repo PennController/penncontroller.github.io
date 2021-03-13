@@ -28,7 +28,8 @@ notes: true
 @,
 @newSelector("choice").add(getCanvas("left"),getCanvas("right")).log().wait()
 @,
-@getMouseTracker("mouse").stop()
+@getMouseTracker("mouse")
+$  .stop()
 </code></pre>
 
 + Will start tracking mouse movements after a click on *Start* and stop once one of the two Canvas elements is clicked.		

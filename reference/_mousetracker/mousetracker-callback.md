@@ -23,14 +23,14 @@ notes: true
 @newCanvas("box", 100, 100).css("background", "black")
 @,
 @newMouseTracker("mouse")
-@  .callback(
+$  .callback(
 $    getCanvas("box").test.printed()
 $      .success( newText("Good job!").print() )
 $      .failure( newText("Missed it!").print() )
 $    ,
 $    getMouseTracker("mouse").stop()
 $  )
-$  .start()
+@  .start()
 @,
 @newTimer( 200+800*Math.random() ).start().wait()
 @,

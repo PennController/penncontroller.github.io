@@ -4,9 +4,7 @@ parent: ⚠ Element commands
 deprecated: PennController 1.0
 replacement: scale.labelsPosition
 syntax: .labels()
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+description: Deprecated since version 1.0. Use the settings command labelsPosition instead.
 ---
 
-```javascript
-// example
-```
+

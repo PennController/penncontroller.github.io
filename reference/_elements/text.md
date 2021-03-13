@@ -10,8 +10,13 @@ parameters:
 description: Represents text.
 ---
 
-```javascript
-// To be filled in
-```
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newText("helloworld", "Hello world.")
+@    .print()
+</code></pre>
+
++ The code above adds the text Hello world. to the screen.
 
 

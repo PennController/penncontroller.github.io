@@ -20,8 +20,8 @@ notes: true
 @newScale("hunger", 5)
 @    .before( newText("left", "Right now, I am... very hungry ") )
 @    .after( newText("right", " not hungry at all") )
-@    .log("first", "last")
-$    .print()
+$    .log("first", "last")
+@    .print()
 @    .wait()
 @,
 @newButton("validation", "Validate")

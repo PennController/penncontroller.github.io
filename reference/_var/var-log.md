@@ -15,8 +15,8 @@ notes: true
 
 <pre><code class="language-diff-javascript diff-highlight try-">
 @newVar("image", "none")
-@    .log("final", "set")
-$,
+$    .log("final", "set")
+@,
 @newText("instructions", "Press any key")
 @    .print()
 @,

@@ -20,8 +20,8 @@ alternates:
 @,
 @newSelector("shapes")
 @    .add( getImage("square") , getImage("triangle") )
-@    .callback( getSelector("shapes").shuffle() )
-$    .wait()
+$    .callback( getSelector("shapes").shuffle() )
+@    .wait()
 </code></pre>
 
 + Adds two images side by side. The positions of the images are shuffled anytime either image is clicked.		

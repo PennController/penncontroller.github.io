@@ -10,8 +10,8 @@ description: "Makes the buttons of the scales appear as radio buttons."
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newScale("score",   "Terrible", "Bad", "Good", "Terrific")
 @    .before( newText("left", "The last movie I saw was ") )
-@    .radio()
-$    .labelsPosition("top")
+$    .radio()
+@    .labelsPosition("top")
 @    .print()
 @    .wait()
 </code></pre>

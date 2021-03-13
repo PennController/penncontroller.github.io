@@ -21,7 +21,7 @@ notes: true
 @newTextInput("poem", "")
 @    .before( newText("flowers", "Violets are blue, roses are red, ") )
 @    .print()
-@    .wait()
+$    .wait()
 </code></pre>
 
 + Adds a one-line input box to the screen preceded with *Violets are blue, roses are red,* on its left and waits for a press on the enter/return key.		
