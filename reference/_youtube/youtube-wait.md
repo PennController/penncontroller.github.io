@@ -25,8 +25,8 @@ notes: true
 @    .wait()
 @,
 @getYoutube("mcgurk")
-@    .wait("first")
-$,
+$    .wait("first")
+@,
 @newButton("thanks", "Thank you for watching")
 @    .print()
 @    .wait()
