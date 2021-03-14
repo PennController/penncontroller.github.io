@@ -21,7 +21,7 @@ notes: true
 @    .wait()
 @,
 @getText("helloworld")
-@    .left()
+$    .left()
 </code></pre>
 
 + Prints *Hello world* onto the screen, horizontally aligned to the left.		
