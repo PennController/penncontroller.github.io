@@ -26,8 +26,8 @@ notes: true
 @
 @Sequence("counter", "trial");
 @
-@SetCounter("counter", "inc", 1);
-$
+$SetCounter("counter", "inc", 1);
+@
 @Template( "myTable" , row => 
 @  newTrial( "trial" ,
 @    newButton( "greetings" , row.Button )
