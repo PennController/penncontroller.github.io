@@ -14,8 +14,8 @@ notes: true
 <!--more-->
 
 <pre><code class="language-diff-javascript diff-highlight try-data">
-@Sequence( "hello" , "world" , SendResults() , "bye" )
-$
+$Sequence( "hello" , "world" , SendResults() , "bye" )
+@
 @newTrial( "hello" ,
 @    newButton("Hello")
 @        .log()
