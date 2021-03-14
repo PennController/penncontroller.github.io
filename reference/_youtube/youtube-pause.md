@@ -17,7 +17,7 @@ description: "Pauses the video."
 @    .wait()
 @,
 @getYoutube("mcgurk")
-@    .pause()
+$    .pause()
 </code></pre>
 
 + Starts playing a mind-blowing video demonstrating the McGurk effect, waits 1 second and pauses the video.		
