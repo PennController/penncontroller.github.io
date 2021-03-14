@@ -13,6 +13,13 @@ parameters:
 description: Creates a YouTube video player. 
 ---
 
-```javascript
-// To be filled in
-```
++ Youtube elements use Youtube’s IFrame player API. Support might vary across browsers (e.g., preloading seems more efficient on Firefox than on Chrome).
+
+<!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newYoutube("myVideo", "aFPtc8BVdJk")
+</code></pre>
+
++ Youtube elements let you add youtube videos to the page using their reference code (what comes after watch?v= in the video’s URL) as seen above
+
