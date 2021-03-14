@@ -13,8 +13,8 @@ description: "Makes the element invisible. Note that when printed, a hidden elem
 @    .print()
 @,
 @newImage("fruit", "pear.png")
-@    .hidden()
-$    .print()
+$    .hidden()
+@    .print()
 @,
 @newButton("reveal", "Reveal fruit")
 @    .print()
