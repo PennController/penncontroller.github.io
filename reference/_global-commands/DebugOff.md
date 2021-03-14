@@ -7,4 +7,31 @@ notes: true
 
 + Check the tutorial for a rapid overview of the Debugger.
 
++ Use `PennController.DebugOff()` (since PennController 1.4) before running the final version of your experiment (the `items` variable will then be undefined during runtime).
+
 <!--more-->
+
+<pre><code class="language-diff-javascript diff-highlight try-data">
+$PennController.DebugOff()
+@
+@PennController(
+@    newButton("hello", "Hello world")
+@        .print()
+@        .wait()
+@)
+@
+@PennController.AddTable( "Words" ,
+@    "item,Word\n"  +
+@       "1,Hello\n" +
+@       "2,World"
+@)
+@
+@PennController.Template( "Words" ,
+@    row => PennController(
+@        newButton(row.Word)
+@            .print()
+@            .wait()
+@    )
+@)
+</code></pre>
+
