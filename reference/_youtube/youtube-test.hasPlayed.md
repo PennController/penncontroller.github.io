@@ -8,7 +8,7 @@ description: "Tests whether the end of the video was reached at least once. Note
 <!--more-->
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
-@newVideo("myVideo", "file.mp4")
+@newYoutube("myYoutube", "aFPtc8BVdJk")
 @  .print()
 @,
 @newButton("Next")
