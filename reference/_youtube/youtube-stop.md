@@ -17,9 +17,7 @@ description: "Pauses the video and moves it back to the beginning (position = 0s
 @    .wait()
 @,
 @getYoutube("mcgurk")
-@    .stop()
+$    .stop()
 </code></pre>
 
-+ Starts playing a mind-blowing video demonstrating the McGurk effect, waits 2 seconds and stops the video. The video will start over from the beginning next time it is played.
-
-+ 		
++ Starts playing a mind-blowing video demonstrating the McGurk effect, waits 2 seconds and stops the video. The video will start over from the beginning next time it is played.		
