@@ -12,7 +12,7 @@ notes: true
 <!--more-->
 
 <pre><code class="language-diff-javascript diff-highlight try-data">
-@Sequence( "hello" , randomize("world") )
+$Sequence( "hello" , randomize("world") )
 @
 @newTrial( "world" ,
 @    newButton("world", "Earth")
