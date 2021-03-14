@@ -9,8 +9,8 @@ description: "Will disable the Youtube video after it has finished playing."
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newYoutube("myYoutube", "aFPtc8BVdJk")
-@    .once()
-$    .print()
+$    .once()
+@    .print()
 @    .play()
 @    .wait()
 @,
