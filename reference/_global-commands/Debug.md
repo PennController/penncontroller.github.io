@@ -14,8 +14,8 @@ notes: true
 <!--more-->
 
 <pre><code class="language-diff-javascript diff-highlight try-data">
-@PennController.Debug()
-$
+$PennController.Debug()
+@
 @PennController(
 @    newButton("hello", "Hello world")
 @        .print()
