@@ -26,8 +26,8 @@ $)
 @InitiateRecorder("https://my.server/path/to/uploadScript.php")
 @  .label("intro")
 @
-@UploadRecordings("sendAsync", "noblock")
-$
+$UploadRecordings("sendAsync", "noblock")
+@
 @newTrial("recordTrial", 
 @  newText("Please act out happiness").print()
 @  ,
