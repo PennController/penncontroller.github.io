@@ -17,8 +17,8 @@ description: "Enables any interactive feature of the element that was previously
 @newKey("secret key", "R")
 @    .wait()
 @,
-$getAudio("sentence")
-@    .enable()
+@getAudio("sentence")
+$    .enable()
 </code></pre>
 
 + Prints buttons to play/pause the audio file *test_sentence.ogg*, and disables those buttons when the file has played through (see `audio.once`).		

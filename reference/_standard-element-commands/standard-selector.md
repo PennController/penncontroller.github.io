@@ -16,11 +16,11 @@ alternates:
 @newSelector("shapes")
 @,
 @newImage("square", "square.png")
-@    .selector("shapes")
-$,
+$    .selector("shapes")
+@,
 @newImage("triangle", "triangle.png")
-@    .selector("shapes")
-$,
+$    .selector("shapes")
+@,
 @newCanvas("shapes canvas", 825, 400)
 @    .add(  0, 0, getImage("square") )
 @    .add(425, 0, getImage("triangle") )

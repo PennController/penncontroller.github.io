@@ -9,6 +9,4 @@ alternates:
 notes: true
 ---
 
-+ See this page for more details.
-
-<!--more-->
++ Click here [https://doc.pcibex.net/how-to-guides/managing-resources/] for the detailed guide. 

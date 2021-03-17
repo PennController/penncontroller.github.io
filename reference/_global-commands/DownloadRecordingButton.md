@@ -36,8 +36,8 @@ since: PennController 1.8
 @                .print()
 @        )
 @    ,
-@    newText("download", DownloadRecordingButton("Click here to download an archive of your recordings.") )
-$        .print()
+$    newText("download", DownloadRecordingButton("Click here to download an archive of your recordings.") )
+@        .print()
 @    ,
 @    newTimer("inifinite", 0)
 @        .wait()
@@ -45,5 +45,3 @@ $        .print()
 </code></pre>
 
 + Invites the participant to make a video recording and sends the results to the server. In this case, we specified a dummy URL, so uploading the recordings will fail, and `PennController.uploadRecordingsError` will accordingly be defined. The last screen will inform the participant of the error (since `PennController.uploadRecordingsError` is **not** void/undefined) and will show a button to download an archive of the recordings.
-
-+ 		

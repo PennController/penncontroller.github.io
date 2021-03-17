@@ -21,7 +21,7 @@ description: "Makes the element visible (again). This is useful if you previousl
 @    .wait()
 @,
 @getImage("fruit")
-@    .visible()
+$    .visible()
 </code></pre>
 
 + Adds some text to the page, a blank space below it and a button below the blank space which, when clicked, reveals an image of a pear.

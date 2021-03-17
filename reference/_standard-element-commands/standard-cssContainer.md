@@ -22,8 +22,8 @@ notes: true
 @newText("frame", " world")
 @    .before( newText("Hello ") )
 @    .css("border", "solid 1px black")
-@    .cssContainer("border", "solid 1px red")
-$    .print()
+$    .cssContainer("border", "solid 1px red")
+@    .print()
 </code></pre>
 
 + Prints the text *world* preceded with the text *Hello* and adds a black frame around *world* and a red frame around the whole *Hello world* text.		

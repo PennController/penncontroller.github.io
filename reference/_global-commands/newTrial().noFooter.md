@@ -26,7 +26,7 @@ description: "Will not run the footer sequence at the end of the trial."
 @        .print()
 @        .wait()
 @)
-@.noFooter();
+$.noFooter();
 </code></pre>
 
 + The first trial (labeled *with footer*) will show a radio-button scale on the screen and reveal a button reading *Got it!* to be clicked when a radio button is selected. The second trial (labeled *without footer*) will end right after a radio button is selected.

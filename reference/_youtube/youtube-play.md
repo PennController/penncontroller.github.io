@@ -10,8 +10,8 @@ description: "Starts playing the video. If you did not use `print` before, the v
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newYoutube("mcgurk", "aFPtc8BVdJk")
 @    .print()
-@    .play()
-$    .wait()
+$    .play()
+@    .wait()
 </code></pre>
 
 + Plays a mind-blowing video demonstrating the McGurk effect.		

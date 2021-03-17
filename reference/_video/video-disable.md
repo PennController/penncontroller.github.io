@@ -17,8 +17,8 @@ notes: true
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newVideo("skate.mp4")
 @  .print()
-@  .disable(0.01)
-$  .play()
+$  .disable(0.01)
+@  .play()
 @  .wait()
 </code></pre>
 

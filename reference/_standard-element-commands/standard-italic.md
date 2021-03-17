@@ -11,8 +11,8 @@ description: "Makes any text in the element appear in italic."
 <pre><code class="language-diff-javascript diff-highlight try-true">
 @newText("warnning", "NOTE: this text is a warning!")
 @    .bold()
-@    .italic()
-$    .color("red")
+$    .italic()
+@    .color("red")
 @    .print()
 </code></pre>
 

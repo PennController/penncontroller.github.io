@@ -25,8 +25,8 @@ notes: true
 @    .wait()
 @,
 @getVideo("skate")
-@    .wait("first")
-$,
+$    .wait("first")
+@,
 @newText("thanks", "Thank you for watching")
 @    .print()
 </code></pre>

@@ -21,8 +21,8 @@ notes: true
 
 <pre><code class="language-diff-javascript diff-highlight try-">
 @newYoutube("myYoutube", "code")
-@    .log("play", "buffer")
-$    .play()
+$    .log("play", "buffer")
+@    .play()
 @    .wait()
 </code></pre>
 

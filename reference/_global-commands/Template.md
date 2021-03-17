@@ -28,9 +28,9 @@ notes: true
 @    "Filler,This is a triangle,triangle.png,pear.png"
 @);
 @
-@Template( "mytable" , row => 
-$    newTrial( row.Type ,
-$        newText("sentence", row.Sentence)
+$Template( "mytable" , row => 
+$   newTrial( row.Type ,
+@        newText("sentence", row.Sentence)
 @            .print()
 @        ,
 @        newSelector("choice")

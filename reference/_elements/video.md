@@ -10,8 +10,11 @@ parameters:
 description: Creates a media player that supports video playback.
 ---
 
-```javascript
-// To be filled in
-```
+<!--more-->
 
+<pre><code class="language-diff-javascript diff-highlight try-true">
+@newVideo("myVideo", "http://myserver/video.mp4")
+</code></pre>
+
++ Creates a <video> tag in the cache.
 
