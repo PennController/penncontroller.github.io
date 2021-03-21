@@ -5,6 +5,7 @@ title: Using JavaScript
 # What should I keep in mind when using plain JavaScript?
 
 PennController commands are executed upon runtime, whereas all JavaScript code (unless embedded in a newFunction element) is executed at the very beginning of the experiment. In the other words, using plain JavaScript code in your experiment might cause experiment being incorrect, as the JavaScript code is executed at the beginning, not the runtime.
+Furthermore, all the newElements are evaluated at the beginning of the experiment, regardless of whether/when their stack of commands (print, wait, etc.) ends up being executed at runtime.
 
 # Does that mean that I cannot use if statements in my PennController code?
 
@@ -20,8 +21,11 @@ newFunction("Checker" , () => { Palette.test.color("MyCanvas", "white");})
  Using if statements as plain JavaScript will be wrong, because the if statement will be executed even before the participant reaches the Trial. Furthermore, using an if statement inside a newTrial command just like that is invalid syntax: as far as JavaScript is concerned, newTrial is a function and the commands passed to it are simple function arguments - passing an if statement as an argument to a JavaScript function is wrong. However, there is a way how you can use if syntax by using the ternary syntax as follows:
 
 ```javascript
- .success( newText("Good job!").css("font-size","2em").print() )
- .failure( newText("Nope!").css("font-size","2em").print() )
+newText( row.Question ).print()
+,
+...( row.ShowImage == "Yes" ? [
+    newImage( row.Image ).print() 
+] : [] )
 ```
 
 # How can I still use plain JavaScript in my code?
