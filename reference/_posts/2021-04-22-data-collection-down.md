@@ -1,3 +1,8 @@
+---
+title: Public farm data collection temporarily suspended
+tags: [status update]
+---
+
 Dear PCIbex users,
 
 As you may have noticed, we have been facing repeated outages on the public farm 
