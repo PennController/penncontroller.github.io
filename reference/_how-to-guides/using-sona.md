@@ -4,6 +4,7 @@ title: Using SONA
 
 To credit participants automatically via PCIbex for doing the experiments, <b> follow these steps exactly, and in order:</b>
 
+
     
 1. The Study Information on your SONA Systems displays a linked button labeled "Sample Link with Embedded ID Code".
 
