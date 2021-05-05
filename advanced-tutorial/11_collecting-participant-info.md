@@ -48,7 +48,7 @@ Prints a defined error message for every unfilled obligatory field.
 Tests whether all obligatory fields have been filled out.
 
 The `test.complete` command is a 
-test command]({{site.baseurl}}/core-concepts/3_commands#test-commands).
+[test command]({{site.baseurl}}/core-concepts/3_commands#test-commands).
 Test commands have the prefix `test.`, and test some aspect of the element they
 are called on. The `success` and `failure` keywords define a block of commands
 that are executed upon success or failure of the test, respectively:

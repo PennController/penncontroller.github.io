@@ -4,23 +4,9 @@ title: Using SONA
 
 To credit participants automatically via PCIbex for doing the experiments, <b> follow these steps exactly, and in order:</b>
 
-1. Firstly press "Change study information" option on your experiment page as follows:
 
-   ![alt text]({{site.baseurl}}/assets/images/sona1.png)
-
-    Then scroll to the section with changing study URL:
     
-    ![alt text]({{site.baseurl}}/assets/images/sona2.png)
-    
-    Change the Study URL so it includes ?id=%SURVEY_CODE% in the URL. 
-    If the Qualtrics URL for example (Anonymous Survey Link) is:
-    https://yourschool.qualtrics.com/jfe/form/SV_b9ZD41hMZaqE
-    then change it to :
-    https://yourschool.qualtrics.com/jfe/form/SV_b9ZD41hMZaqE?id=%SURVEY_CODE% (Note: "id" must be in lower-case)
-    
-    <b>Note</b>: If Qualtrics URL has "/SE/" in it, like https://yourschool.qualtrics.com/SE/?SID=SV_b9ZD41hMZaqE then this is the old style of Qualtrics URL. You can either find the new style of URL for Anonymous Link, or instead of adding ?id=%SURVEY_CODE% change it to &id=%SURVEY_CODE% (change the ? to &).
-    
-2. Having completed Step 1, the Study Information on your SONA Systems site now displays a linked button labeled "Sample Link with Embedded ID Code".
+1. The Study Information on your SONA Systems displays a linked button labeled "Sample Link with Embedded ID Code".
 
      ![alt text]({{site.baseurl}}/assets/images/sona3.png)
      
@@ -33,7 +19,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
      .log( "sonaID" , GetURLParameter("id") )
      ```
 
-3. Add a final page to your experiment after sending results that redirects to the Completion URL (client-side) provided in SONA. Copy and paste the entire URL from there to get the correct experiment_id and credit_token and replace the final ‘XXXX’ bit with "+ GetURLParameter("id")+" (including the straight double quotation marks), as illustrated below. You can copy & paste the following code:
+2. Add a final page to your experiment after sending results that redirects to the Completion URL (client-side) provided in SONA. Copy and paste the entire URL from there to get the correct experiment_id and credit_token and replace the final ‘XXXX’ bit with "+ GetURLParameter("id")+" (including the straight double quotation marks), as illustrated below. You can copy & paste the following code:
 
     ```javascript
     newTrial( "final" ,

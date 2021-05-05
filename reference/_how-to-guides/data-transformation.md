@@ -31,9 +31,6 @@ read.pcibex <- function(filepath, auto.colnames=TRUE, fun.col=function(col,cols)
       if (length(m) == 3) {
         index <- as.numeric(m[2])
         value <- m[3]
-        if (index < length(cols)){
-          cols <- c()
-        }
         if (is.function(fun.col)){
          cols <- fun.col(value,cols)
         }
