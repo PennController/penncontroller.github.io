@@ -1,6 +1,8 @@
 ---
 title: Sending recordings to an S3 bucket
 ---
+
+<b> Note </b> : Wherever https://farm.pcibex.net occurs (eg. the bucket's CORS policy, the code of the lambda function), if the experiment is not run from the PCIbexfarm , then that link needs to be edited to match the origin of the server where the experiment is run.
     
 To send a recording to an S3 bucket using AWS and PCIbex, <b> follow these steps exactly, and in order:</b>
 
@@ -15,6 +17,8 @@ To send a recording to an S3 bucket using AWS and PCIbex, <b> follow these steps
 2. Press on your bucket, then go to permissions tab, scroll down to see CORS Configuration
 
     In the body of CORS configuration (code editor) enter the following:
+    
+    <b>Note:</b> Change the origin to match your origin!
     
     ```javascript
     [
@@ -42,7 +46,9 @@ To send a recording to an S3 bucket using AWS and PCIbex, <b> follow these steps
 
    ![alt text]({{site.baseurl}}/assets/images/amazon2.png)
 
-   Now, scroll down to see code editor where you will enter this code (replace the name of the bucket with your name of the bucket):
+   Now, scroll down to see code editor where you will enter this code:
+   
+   <b>Note</b> : Replace the name of the bucket with your name of the bucket!
    
 ```javascript
     /*global crypto*/
@@ -119,18 +125,8 @@ module.exports.getPresignedPost = async (event,context) => {
 };
 ```
 
-
-4. Edit environmental variables
-
-   Press configuration tab next to the code tab, and then from the left toolbar choose environmental variables.
    
-   Edit your variables to reflect this following picture:
-   
-   ![alt text]({{site.baseurl}}/assets/images/amazon3.png)
-
-   Remember to change the name of your bucket as remembered from the step 2 and step 3. 
-   
-5. Edit policies attached to your Lambda function
+4. Edit policies attached to your Lambda function
 
    Press on the configuration tab again. From the left toolbar click on Permissions tab. You will see clickable role name as follows:
    
@@ -139,6 +135,9 @@ module.exports.getPresignedPost = async (event,context) => {
     Click on it.
     
     Now press "attach policies" button in the new tab that is opened. Then click "create policy". Press JSON tab after that and enter the following code in it:
+    
+    <b>Note:</b> Change the origin to match your origin!
+
     
     ```javascript
     {
@@ -162,29 +161,39 @@ module.exports.getPresignedPost = async (event,context) => {
     
     Now, again go back to your Lambda function.  Press on the configuration tab again. From the left toolbar click on Permissions tab. You will see clickable role name. Click on it. Press "attach policies" button in the new tab that is opened. Now search for the policy that you have just created and attach it.
     
-6. Change the handler
+5. Change the handler
 
    The handler should be set to index.getPresignedPost under Runtime settings.
    
-7. Deploying Lambda function
+   Runtime settings are located under your function code as shown below: 
+   
+   ![alt text]({{site.baseurl}}/assets/images/amazon3.png)
+   
+6. Deploying Lambda function
 
    Go back to your Lambda function. Press button deploy on your code editor to deploy your Lambda function. 
 
-8. Add API trigger
+7. Add API trigger
 
-   Press add API trigger above the code editor of your function. Create an HTTP API. In additional settings allow CORS. Click add.
+   Press add API trigger above the code editor of your function. Create an HTTP API. Click add.
    
 8. Test your function in PCIbex.
 
-   First of all, press on your Lambda function. Click on API gateways, and then click on details of your API. Copy the endpoint URL. In our case it was:  https://v3admu6ep6.execute-api.us-east-2.amazonaws.com/default/getPresignedURL .
+   First of all, press on your Lambda function. Click on API gateways, and then click on details of your API. Copy the endpoint URL. In our case it was:          
+   https://v3admu6ep6.execute-api.us-east-2.amazonaws.com/default/getPresignedURL . The location is as seen below:
+   
+   ![alt text]({{site.baseurl}}/assets/images/amazon5.png)
    
    Now, enter your PCIbex code on the farm. 
    
    Write the following line in your code:
    
+   ```javascript
    InitiateRecorder("https://v3admu6ep6.execute-api.us-east-2.amazonaws.com/default/getPresignedURL").label("init")
-   
-   (Remember to replace the URL with one that points to your S3 bucket)
+   ```
+   You can as well copy the [Media Recorder template at PCIbex](https://farm.pcibex.net/experiments/yyPfNP/edit), and change the link when initiating recorder to 
+   the code of your own API gateway).
+   (Remember to replace the URL with one that points to your API)
    
    Enter your S3 bucket to see saved items after running the experiment.
    
