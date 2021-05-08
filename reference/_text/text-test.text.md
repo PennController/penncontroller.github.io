@@ -9,7 +9,9 @@ alternates:
   - name: " /RegExp/ "
 ---
 
+<!--more-->
 
+<pre><code class="language-diff-javascript diff-highlight try-true">
 @Template( row => 
 @  newTrial(
 @    newText("sentence", row.Text ).print()
