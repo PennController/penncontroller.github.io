@@ -2,15 +2,6 @@
 title: Using JavaScript
 ---
 
-# What should I keep in mind when using plain JavaScript?
-
-PennController commands are executed upon runtime, whereas all JavaScript code (unless embedded in a newFunction element) is executed at the very beginning of the experiment. In the other words, using plain JavaScript code in your experiment might cause experiment being incorrect, as the JavaScript code is executed at the beginning, not the runtime.
-Furthermore, all the newElements are evaluated at the beginning of the experiment, regardless of whether/when their stack of commands (print, wait, etc.) ends up being executed at runtime.
-
-# Does that mean that I cannot use if statements in my PennController code?
-
-We strongly encourage you to use the command test instead of if statement as follows:
-=======
 This page describes the differences between plain JavaScript code and PennController commands,
 and discusses a non-exhaustive list of situations which may or may not require injecting
 plain JavaScript code into PennController code.
@@ -18,7 +9,7 @@ plain JavaScript code into PennController code.
 * TOC
 {:toc}
 
-# JavaScrit is immediate, PennController is delayed
+# JavaScript is immediate, PennController is delayed
 
 The scripts in your projects are `.js` files and, as such, they contain JavaScript code. 
 That code is evaluated as soon as a participant opens your experiment.
