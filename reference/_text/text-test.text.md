@@ -9,20 +9,7 @@ alternates:
   - name: " /RegExp/ "
 ---
 
-<!--more-->
 
-<pre><code class="language-diff-javascript diff-highlight try-true">
-@newTrial(
-@  newText("q1", "What's up?")
-@    .print()
-@  ,
-@  getText(q1)
-$  .test.text( "Hi" )
-@)
-</code></pre>
-
-+ Adds a text to the screen and then tests if it is equal to the string "Hi" .
-=======
 @Template( row => 
 @  newTrial(
 @    newText("sentence", row.Text ).print()
