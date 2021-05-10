@@ -18,7 +18,7 @@ plain JavaScript code into PennController code.
 * TOC
 {:toc}
 
-# JavaScrit is immediate, PennController is delayed
+# JavaScript is immediate, PennController is delayed
 
 The scripts in your projects are `.js` files and, as such, they contain JavaScript code. 
 That code is evaluated as soon as a participant opens your experiment.
@@ -132,14 +132,6 @@ $] : [] )
 
 This will include the `newImage` command in the code and evaluate it
 only when `row.Image` is a not an empty string.
-
-```javascript
-newText( row.Question ).print()
-,
-...( row.ShowImage == "Yes" ? [
-    newImage( row.Image ).print() 
-] : [] )
-```
 
 # How can I still use plain JavaScript in my code?
  
