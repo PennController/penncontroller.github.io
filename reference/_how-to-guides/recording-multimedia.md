@@ -88,10 +88,12 @@ You need to tell your experiment where to upload the recordings before any [Medi
 <!--more--> 
 
 ```javascript
-// Indicate where to look for the PHP file you uploaded on you server
-InitiateRecorder("https://my.server/myExperiment/myFile.php");
+Sequence("init","trial","upload");
 
-newTrial(
+// Indicate where to look for the PHP file you uploaded on you server
+InitiateRecorder("https://my.server/myExperiment/myFile.php").label("init");
+
+newTrial( "trial",
   newText("instructions", "Please record a sample and proceed.")
       .print()
   ,
@@ -102,5 +104,7 @@ newTrial(
       .print()
       .wait()
 );
+
+UploadRecordings("upload")
 ```  
 

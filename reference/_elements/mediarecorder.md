@@ -17,6 +17,8 @@ notes: true
 + If the `"audio"` or `"video"` parameter is not passed, collects
 an audio-video sample.
 
++ The filename of the media file in the uploaded zip archives will be based on the MediaRecorder element's name
+
 <!--more-->
 
 <pre><code class="language-diff-javascript diff-highlight try-true">
@@ -24,7 +26,8 @@ an audio-video sample.
 @  .log()
 @  .once()
 @  .record()
+@  .print()
 @  .wait()
 </code></pre>
 
-+ Initiates audio recorder. 
++ Creates an audio recorder, starts recording, prints an interface and wait until the participant stops the recorder
