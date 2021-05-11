@@ -15,6 +15,8 @@ notes: true
 
 <pre><code class="language-diff-javascript diff-highlight try-data">
 @
+@Sequence("first_trial", "second-trial")
+@
 $InitiateRecorder(
 $    "https://myserver/uploadVoices/saveRecordings.php"
 $    ,
