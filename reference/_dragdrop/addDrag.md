@@ -13,7 +13,7 @@ notes: true
 @        .log()
 @        // listOfWords is a dropzone as well as the gaps are
 @        .addDrop( getCanvas("listOfWords") , getCanvas("gap-0") , getCanvas("gap-1") )
-@        .addDrag( getText("sentence") , getText("illustrate") , getText("dummy") )
+$        .addDrag( getText("sentence") , getText("illustrate") , getText("dummy") )
 @        // dropping a word on gap-0 or gap-1 will swap any word already present
 @        .swap( getCanvas("gap-0"), getCanvas("gap-1") )
 @        // words will have a 0.5em horizonal offset from the left edge of the gap Canvas elements
