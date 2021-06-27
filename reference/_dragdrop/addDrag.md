@@ -1,7 +1,7 @@
 ---
 title: dragdrop.addDrag
 command_type: "action"
-syntax: .disable()
+syntax: .addDrag()
 description: "Adding a feature to the element to be draggable."
 notes: true
 ---
