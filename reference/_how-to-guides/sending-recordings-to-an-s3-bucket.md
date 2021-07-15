@@ -3,61 +3,61 @@ title: Sending recordings to an S3 bucket
 ---
 
 {% capture label %}
-Wherever https://farm.pcibex.net occurs (eg. the bucket's CORS policy, the code of the lambda function), if the experiment is not run from the PCIbexfarm, then that link needs to be edited to match the origin of the server where the experiment is run.
+Make sure to replace all occurrences of `https://farm.pcibex.net` with your server's origin in the code snippets below (eg. the bucket's CORS policy, the code of the lambda function, etc.) if you are not running your experiment from the PCIbex Farm.
 {% endcapture %}
 {% include label-note.html label-body=label %}
     
-To send a recording to an S3 bucket using AWS and PCIbex, <b>follow these steps exactly, and in order:</b>
+To send a recording to an S3 bucket using AWS and PCIbex, **follow the steps below in this exact order:**
 
-1. Create S3 Bucket in the AWS Management Console
+### 1. Create an S3 Bucket in the AWS Management Console
 
-     Firstly, enter the name of your bucket as follows (in our example the name of the bucket is 4examplebucket123 - you need to remember the name of your bucket for later):
-     
-     ![alt text]({{site.baseurl}}/assets/images/amazon1.png)
-     
-     Remember to press block all public access. 
+ Enter the name of your bucket as follows (in our example the name of the bucket is `4examplebucket123`---you need to remember the name of your bucket for later): 
 
-2. Press on your bucket, then go to permissions tab, scroll down to see CORS Configuration
+ ![alt text]({{site.baseurl}}/assets/images/amazon1.png)
+ 
+ Remember to click _Block all public access_. 
 
-    In the body of CORS configuration (code editor) enter the following:
-    
-    {% capture label %}
-    Change the origin to match your origin!
-    {% endcapture %}
-    {% include label-note.html label-body=label %}
-    
-    ```javascript
-    [
-    {
-        "AllowedHeaders": [
-            "*"
-        ],
-        "AllowedMethods": [
-            "POST"
-        ],
-        "AllowedOrigins": [
-            "https://farm.pcibex.net"
-        ],
-        "ExposeHeaders": [],
-        "MaxAgeSeconds": 3000
-    }
-    ]
-     ```
-    
-    Press save. 
+### 2. Click on your bucket and go to the _Permissions_ tab, scroll down to see _CORS Configuration_
 
-3. Create Lambda function
+ In the body of CORS configuration (code editor) enter the following:
   
-   After you click create Lambda function, you should see a screen like this:
+ {% capture label %}
+ Make sure that `AllowedOrigins` matches your origin
+ {% endcapture %}
+ {% include label-note.html label-body=label %}
+    
+```javascript
+[
+  {
+    "AllowedHeaders": [
+        "*"
+    ],
+    "AllowedMethods": [
+        "POST"
+    ],
+    "AllowedOrigins": [
+        "https://farm.pcibex.net"
+    ],
+    "ExposeHeaders": [],
+    "MaxAgeSeconds": 3000
+  }
+]
+```
 
-   ![alt text]({{site.baseurl}}/assets/images/amazon2.png)
+ Click _Save_. 
 
-   Now, scroll down to see code editor where you will enter this code:
-   
-   {% capture label %}
-   Replace the name of the bucket with your name of the bucket!
-   {% endcapture %}
-  {% include label-note.html label-body=label %}
+### 3. Create a Lambda function
+  
+ After you click create Lambda function, you should see a screen like this:
+
+ ![alt text]({{site.baseurl}}/assets/images/amazon2.png)
+
+ Now, scroll down to see code editor where you will enter this code:
+  
+ {% capture label %}
+ Make sure to replace `4examplebucket123` with your bucket's name, and that `Access-Control-Allow-Origin` matches the origin of the server running your experiment
+ {% endcapture %}
+ {% include label-note.html label-body=label %}
    
 ```javascript
     /*global crypto*/
@@ -69,12 +69,12 @@ const CreateUUID = () =>
 const S3 = require("aws-sdk/clients/s3");
 
 /**
- * Use AWS SDK to create pre-signed POST data.
- * We also put a file size limit (100B - 10MB).
- * @param key
- * @param contentType
- * @returns {Promise<object>}
- */
+* Use AWS SDK to create pre-signed POST data.
+* We also put a file size limit (100B - 10MB).
+* @param key
+* @param contentType
+* @returns {Promise<object>}
+*/
 const createPresignedPost = ({ key, contentType }) => {
   const s3 = new S3();
   console.log("key",key,"contentType",contentType);
@@ -97,9 +97,9 @@ const createPresignedPost = ({ key, contentType }) => {
   });
 };
 /**
- * We need to respond with adequate CORS headers.
- * @type {{"Access-Control-Allow-Origin": string, "Access-Control-Allow-Credentials": boolean}}
- */
+* We need to respond with adequate CORS headers.
+* @type {{"Access-Control-Allow-Origin": string, "Access-Control-Allow-Credentials": boolean}}
+*/
 const headers = {
   "Access-Control-Allow-Origin": "https://farm.pcibex.net",
   "Access-Control-Allow-Credentials": true,
@@ -133,80 +133,66 @@ module.exports.getPresignedPost = async (event,context) => {
   }
 };
 ```
-
    
-4. Edit policies attached to your Lambda function
+### 4. Edit the policies attached to your Lambda function
 
-   Press on the configuration tab again. From the left toolbar click on Permissions tab. You will see clickable role name as follows:
-   
-   ![alt text]({{site.baseurl}}/assets/images/amazon4.png)
+ Click on the configuration tab again. From the left toolbar click on Permissions tab. You will see clickable role name as follows:
+  
+ ![alt text]({{site.baseurl}}/assets/images/amazon4.png)
 
-    Click on it.
+ Click on it.
+  
+ Now click _Attach Policies_ in the new tab that is opened. Then click _Create Policy_. Click on _JSON_ and enter the following code:
+  
+ {% capture label %}
+ Make sure to replace `4examplebucket123` with your bucket's name
+ {% endcapture %}
+ {% include label-note.html label-body=label %}
     
-    Now press "attach policies" button in the new tab that is opened. Then click "create policy". Press JSON tab after that and enter the following code in it:
-    
-    {% capture label %}
-    Change the origin to match your origin!
-    {% endcapture %}
-    {% include label-note.html label-body=label %}
-    
-    ```javascript
+```javascript
+{
+"Version": "2012-10-17",
+"Statement": [
     {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "s3:PutObject",
-                "s3:GetObject",
-                "s3:PutObjectAcl"
-            ],
-            "Resource": "arn:aws:s3:::4examplebucket123/*"
-        }
-                  ]   
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
+            "s3:PutObject",
+            "s3:GetObject",
+            "s3:PutObjectAcl"
+        ],
+        "Resource": "arn:aws:s3:::4examplebucket123/*"
     }
-    ```
+  ]   
+}
+```
     
-    Press next until your policy is saved. 
+ Click _Next_ until your policy is saved. 
+ 
+ Now, again go back to your Lambda function.  Click the _Configuration_ tab again. From the left toolbar click on _Permissions_. You will see a clickable role name. Click on it. Click _Attach Policies_ in the new tab. Now search for the policy that you have just created and attach it.
     
-    Now, again go back to your Lambda function.  Press on the configuration tab again. From the left toolbar click on Permissions tab. You will see clickable role name. Click on it. Press "attach policies" button in the new tab that is opened. Now search for the policy that you have just created and attach it.
-    
-5. Change the handler
+### 5. Change the handler
 
-   The handler should be set to `index.getPresignedPost` under Runtime settings.
+ The handler should be set to `index.getPresignedPost` under the _Runtime_ settings.
+  
+ ![Set index.getPresignedPost in Handler in the settings]({{site.baseurl}}/assets/images/amazon6.png)
    
-   Runtime settings are located under your function code as shown below: 
-   
-   ![Set index.getPresignedPost in Handler in the settings]({{site.baseurl}}/assets/images/amazon3.png)
-   
-6. Deploying Lambda function
+### 6. Deploy the Lambda function
 
-   Go back to your Lambda function. Press button deploy on your code editor to deploy your Lambda function. 
+ Go back to your Lambda function. Click the _Deploy_ button above the code editor to deploy your Lambda function. 
 
-7. Add API trigger
+### 7. Add an API trigger
 
-   Press add API trigger above the code editor of your function. Create an HTTP API. Click add.
+ Click _Add API trigger_ above the code editor of your function. Create an **HTTP API**. Click _Add_.
    
-8. Test your function in PCIbex.
+### 8. Test your function in PCIbex
 
-   First of all, press on your Lambda function. Click on API gateways, and then click on details of your API. Copy the endpoint URL. In our case it was:          
-   https://v3admu6ep6.execute-api.us-east-2.amazonaws.com/default/getPresignedURL. The location is as seen below:
+ First of all, click on your Lambda function, then on API gateways, and then click on the details of your API. Copy the endpoint URL (in our case, as visible on the screenshot below, the URL is `https://v3admu6ep6.execute-api.us-east-2.amazonaws.com/default/getPresignedURL`)
    
-   ![The URL can be copied from API endpoint]({{site.baseurl}}/assets/images/amazon5.png)
+ ![The URL can be copied from API endpoint]({{site.baseurl}}/assets/images/amazon5.png)
    
-   Now, enter your PCIbex code on the farm. 
+ Copy the [MediaRecorder template at PCIbex](https://farm.pcibex.net/experiments/new?from=OAHoDO), and change the URL in `InitiateRecorder` with the one from your own API gateway
    
-   Write the following line in your code:
-   
-   ```javascript
-   InitiateRecorder("https://v3admu6ep6.execute-api.us-east-2.amazonaws.com/default/getPresignedURL").label("init")
-   ```
-
-   You can as well copy the [Media Recorder template at PCIbex](https://farm.pcibex.net/experiments/new?from=OAHoDO),
-   and change the URL in `InitiateRecorder` with the one from your own API gateway.
-   
-   Take a full test-run of your project and then visit your S3 bucket: if everything was properly set up,
-   you should see now zip archives in your bucket
-   
-   You are all done!
+ Take a full test-run of your project and then visit your S3 bucket: if everything was properly set up, you should see now zip archives in your bucket
+  
+ You are all done!

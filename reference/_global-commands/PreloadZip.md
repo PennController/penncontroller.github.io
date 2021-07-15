@@ -9,4 +9,4 @@ alternates:
 notes: true
 ---
 
-+ Click here [https://doc.pcibex.net/how-to-guides/managing-resources/] for the detailed guide. 
++ Click [here]({{site.baseurl}}/how-to-guides/managing-resources/) for a detailed guide. 

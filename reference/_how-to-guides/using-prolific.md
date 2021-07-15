@@ -12,7 +12,8 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
     
     ![alt text]({{site.baseurl}}/assets/images/prolific1.png)
 
-    You should each of the three possible IDs on your picture based on your need. Note that the PROLIFIC_ID in our example is the unique ID for each participant.
+    You should change each of the three possible IDs based on your need. Note that the PROLIFIC_ID in our example is the unique ID for each 
+    participant.
 
 4. Choose the method to confirm participants have to completed your study
    
@@ -23,34 +24,33 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
 6. Now go to the PCIbex platform and enter the following code (remember to change the links to your own links obtained in the previous steps):
 
      ```javascript
-     PennController.ResetPrefix(null) // Keep here
 
-Sequence("trials", "prolific-consent", "confirmation-prolific", SendResults())
+         PennController.ResetPrefix(null) // Keep here
+         Sequence("trials", "prolific-consent", "confirmation-prolific", SendResults())
+         newTrial("prolific-consent",
+         newHtml("prolific-consent.html").print()
+         ,
+         newButton("I consent").print().wait()
+          )
 
-newTrial("prolific-consent",
-  newHtml("prolific-consent.html").print()
-  ,
-  newButton("I consent").print().wait()
-)
+        newTrial( "trials" ,
+          newButton("This is a mock trial")
+          .print()
+          .wait()
+        )
 
-newTrial( "trials" ,
-  newButton("This is a mock trial")
-  .print()
-  .wait()
-)
-
-newTrial( "confirmation-prolific" ,
-    newText("<p>Thank you for your participation!</p>")
-        .center()
-        .print()
-    ,
-   // This is where you should put the link from the last step.
-    newText("<p><a href='https://app.prolific.co/submissions/complete?cc=2RRF5B4I'>Click here to validate your submission</a></p>")
-        .center()
-        .print()
-    ,
-    newButton("void")
-        .wait()
-)
+        newTrial( "confirmation-prolific" ,
+            newText("<p>Thank you for your participation!</p>")
+                .center()
+                .print()
+            ,
+           // This is where you should put the link from the last step.
+            newText("<p><a href='https://app.prolific.co/submissions/complete?cc=2RRF5B4I'>Click here to validate your submission</a></p>")
+                .center()
+                .print()
+            ,
+            newButton("void")
+                .wait()
+        )
      ```
 
