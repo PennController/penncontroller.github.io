@@ -24,6 +24,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
 6. Now go to the PCIbex platform and enter the following code (remember to change the links to your own links obtained in the previous steps):
 
      ```javascript
+
          PennController.ResetPrefix(null) // Keep here
          Sequence("trials", "prolific-consent", "confirmation-prolific", SendResults())
          newTrial("prolific-consent",
