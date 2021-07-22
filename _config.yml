@@ -79,6 +79,9 @@ collections:
   controller:
     output: true
     permalink: /:collection/:name/
+  dragdrop:
+    output: true
+    permalink: /:collection/:name/
   dropdown:
     output: true
     permalink: /:collection/:name/
@@ -273,6 +276,13 @@ defaults:
       layout: "command"
       element_type: "Controller"
       parent: "Controller"
+      grand_parent: "Elements"
+  - scope:
+      path: "reference/_dragdrop"
+    values:
+      layout: "command"
+      element_type: "DragDrop"
+      parent: "DragDrop"
       grand_parent: "Elements"
   - scope:
       path: "reference/_dropdown"
