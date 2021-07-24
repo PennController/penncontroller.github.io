@@ -15,7 +15,7 @@ notes: true
 $        .removeDrag(getCanvas("dot"),getCanvas("otherdot"))
 @        .offset(0, getCanvas("start"))
 @        .offset(50, getCanvas("end"))
-@        .drop(getCanvas('dot'),getCanvas('start')) // start dropped by default
+@        .drop(getCanvas('dot'),getCanvas('start')) 
 @        .callback(
 @            newText("feedback","Good job! Now make sure that Red is on Start and Blue is on End")
 @                .css("background-color","lightgray")
