@@ -24,7 +24,7 @@ description: "Will log the time/results of the action to your results file."
 @            ,
 @            getText("feedback").remove()
 @        )
-$        .log("all") // Log every drag event and every drop event
+$        .log("all") 
 @        .wait()
 </code></pre>
 

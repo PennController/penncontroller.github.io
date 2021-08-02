@@ -15,7 +15,7 @@ notes: true
 $        .swap(getCanvas("word1"),getCanvas("word2"),getCanvas("word3"),getCanvas("word4"))
 @        .offset('0.5em')
 @        .offset('unset', getCanvas("reservoir"))
-@        .wait( // make sure all 'word*' dropzones have an element on them
+@        .wait( 
 @            self.test.dropped(getCanvas("word1"),getCanvas("word2"),getText("hello"),getCanvas("word4"))
 @        )
 </code></pre>

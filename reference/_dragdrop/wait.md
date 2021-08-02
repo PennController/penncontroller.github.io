@@ -12,7 +12,7 @@ notes: true
 @    newDragDrop("dd")
 @        .addDrag(getCanvas("dot"))
 @        .addDrop(getCanvas("start"),getCanvas("end"))
-@        .offset(25) // will pin the elements to (25,25) from the top-left edge of the dropzone
+@        .offset(25) 
 @        .single()
 @        .log()
 $        .wait()
