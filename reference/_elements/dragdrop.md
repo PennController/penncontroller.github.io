@@ -1,5 +1,5 @@
 ---
-title: Drag Drop 
+title: DragDrop 
 since: beta 2.0
 children_collection: dragdrop
 thumbnail: dragdrop.png
