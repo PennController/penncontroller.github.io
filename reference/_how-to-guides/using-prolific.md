@@ -14,18 +14,56 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
 
     You should change each of the three possible IDs based on your need. Note that the PROLIFIC_ID in our example is the unique ID for each 
     participant.
+    
+4. In PCIbex, include the following at the top of your experiment, below PennController.ResetPrefix(null) (search for [Header](https://doc.pcibex.net/global-commands/header/){:target="_blank"} , [log](https://doc.pcibex.net/standard-element-commands/standard-log/){:target="_blank"} , or [GetURLParameter](https://doc.pcibex.net/global-commands/geturlparameter/){:target="_blank"} for more details) to add the participant’s Prolific ID to your results file (this can also be used to double check participation manually when needed):
+     
+     ```javascript
+     Header(
+     // void
+     )
+     .log( "PROLIFIC_ID" , GetURLParameter("id") )
+     ```
 
-4. Choose the method to confirm participants have to completed your study
+5. Choose the method to confirm participants have to completed your study
    
-   We recommend directing participants using an URL. Remember that URL because we will need it in our PCIbex code. 
+   We recommend directing participants using an URL. 
+   
+    ![alt text]({{site.baseurl}}/assets/images/prolific2.png)
+   
+   Add a final page to your experiment after sending results that redirects to the Completion URL (client-side) provided. Copy and paste the entire URL from there to get the correct redirection. You can copy & paste the following code:
+   
+   ```javascript
+    newTrial( "final" ,
+         newText("<p>Thank you for your participation!</p>")
+                    .center()
+               .print()
+        ,
+        newText("<p><a href='https://app.prolific.co/submissions/complete?cc=CODE'+ GetURLParameter("id")+"' target='_blank'>Click here to confirm your participation on Prolific.</a></p> <p>This is a necessary step in order for you to receive participation credit!</p>")
+        .center()
+        .print()
+        ,
+        newButton("void")
+        .wait()
+        )
+    ```   
+    
+    (Note: the use of final ‘newButton’ command here ensures that participants cannot navigate past this page to avoid them accidentally missing the link to receive credit on Prolific)
+    
+    Following this process will automatically credit participants who take web study.  
 
 5. Configure other options as well and then press save.
 
-6. Now go to the PCIbex platform and enter the following code (remember to change the links to your own links obtained in the previous steps):
+6. Your final code should look like this:
 
      ```javascript
 
          PennController.ResetPrefix(null) // Keep here
+         
+          Header(
+     // void
+     )
+     .log( "PROLIFIC_ID" , GetURLParameter("id") )
+     
          Sequence("trials", "prolific-consent", "confirmation-prolific", SendResults())
          newTrial("prolific-consent",
          newHtml("prolific-consent.html").print()
