@@ -85,7 +85,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
                 .print()
             ,
            // This is where you should put the link from the last step.
-            newText("<p><a href='https://app.prolific.co/submissions/complete?cc=2RRF5B4I'>Click here to validate your submission</a></p>")
+            newText("<p><a href='https://app.prolific.co/submissions/complete?cc=CODE>Click here to validate your submission</a></p>")
                 .center()
                 .print()
             ,
