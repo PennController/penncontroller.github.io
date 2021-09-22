@@ -10,12 +10,12 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
 
 3. Now you need to edit the study link after filling out the previous information as seen in the following picture.
     
-    ![alt text]({{site.baseurl}}/assets/images/prolific1.png)
+    ![After entering Prolific page for creating the new study, you need to edit/take a look the study link. Study link will usually contain PRILIFIC_ID, STUDY_ID and SESSION_ID. STUDY_ID and SESSION_ID are optional.]({{site.baseurl}}/assets/images/prolific1.png)
 
     You should change each of the three possible IDs based on your need. Note that the PROLIFIC_ID in our example is the unique ID for each 
     participant.
     
-4. In PCIbex, include the following at the top of your experiment, below PennController.ResetPrefix(null) (search for [Header](https://doc.pcibex.net/global-commands/header/){:target="_blank"} , [log](https://doc.pcibex.net/standard-element-commands/standard-log/){:target="_blank"} , or [GetURLParameter](https://doc.pcibex.net/global-commands/geturlparameter/){:target="_blank"} for more details) to add the participant’s Prolific ID to your results file (this can also be used to double check participation manually when needed):
+4. In PCIbex, include the following at the top of your experiment, below PennController.ResetPrefix(null) (search for [Header]({{site.baseurl}}/global-commands/header/){:target="_blank"} , [log]({{site.baseurl}}/standard-element-commands/standard-log/){:target="_blank"} , or [GetURLParameter]({{site.baseurl}}/global-commands/geturlparameter/){:target="_blank"} for more details) to add the participant’s Prolific ID to your results file (this can also be used to double check participation manually when needed):
      
      ```javascript
      Header(
@@ -28,7 +28,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
    
    We recommend directing participants using an URL. 
    
-    ![alt text]({{site.baseurl}}/assets/images/prolific2.png)
+    ![Scrolling down, you will see the section which asks you to choose how you want to direct participants. We recommend choosing an URL, since the URL can be copied in PCIbex code down below. ]({{site.baseurl}}/assets/images/prolific2.png)
    
    Add a final page to your experiment after sending results that redirects to the Completion URL (client-side) provided. Copy and paste the entire URL from there to get the correct redirection. You can copy & paste the following code:
    
@@ -47,13 +47,15 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
         )
     ```   
     
+    However, your redirection URL may differ. It can include your own written code instead of CODE portion in https://app.prolific.co/submissions/complete?cc=CODE. The most important part is to include your redirection link (however it looks like on Prolific page) at the end of the experiment under the final trial. 
+    
     (Note: the use of final ‘newButton’ command here ensures that participants cannot navigate past this page to avoid them accidentally missing the link to receive credit on Prolific)
     
     Following this process will automatically credit participants who take web study.  
 
-5. Configure other options as well and then press save.
+6. Configure other options as well and then press save.
 
-6. Your final code should look like this:
+7. Your final code should look like this:
 
      ```javascript
 
