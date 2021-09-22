@@ -30,7 +30,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
    
     ![Scrolling down, you will see the section which asks you to choose how you want to direct participants. We recommend choosing an URL, since the URL can be copied in PCIbex code down below. ]({{site.baseurl}}/assets/images/prolific2.png)
    
-   Add a final page to your experiment after sending results that redirects to the Completion URL (client-side) provided. Copy and paste the entire URL from there to get the correct redirection. You can copy & paste the following code:
+   Add a final page to your experiment after sending results that redirects to the Completion URL (client-side) provided. Copy and paste the entire URL from there to get the correct redirection. You can copy & paste the following code and change the redirection URL to match the redirection URL on your Prolific page:
    
    ```javascript
     newTrial( "final" ,
