@@ -203,7 +203,7 @@ PennController.ResetPrefix(null)
 @            .wait()
 @        ,
 @        getAudio("audio")
-@            .wait("first)
+@            .wait("first")
 @    )
 +)
 </code></pre>
