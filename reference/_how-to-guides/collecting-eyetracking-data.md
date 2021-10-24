@@ -11,6 +11,8 @@ In this guide, we will design a simple eye-tracking experiment splitting the pag
 
 Note that in order to collect eye-tracking data, you need to have access to a server where you can upload and execute PHP scripts. **Platforms like DreamHost offer this service with minimal setup, and server providers like Linode require more advanced setup. Resource-sharing services like Dropbox or Google Drive do NOT support PHP scripts.**
 
+Note: **PHP extension mbstring must be enabled on the server for the PHP script to run successfully.**
+
 
 # The Experiment
 
