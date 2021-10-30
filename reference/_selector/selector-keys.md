@@ -9,6 +9,8 @@ parameters:
 description: "Makes it possible to select the elements by pressing the specified keys. The keys are associated to the element in the order in which they were added, if no shuffle took place in the meantime."
 ---
 
++ Accepts special keys as arguments as well, such as (Enter, Escape, ArrowLeft, LeftShift, etc).
+
 <!--more-->
 
 <pre><code class="language-diff-javascript diff-highlight try-true">

@@ -7,6 +7,7 @@ notes: true
 ---
 
 + See the discussion and example script on the MouseTracker element page for more information about the format of the string reporting the coordinates.
++ Additionally you can log click by writing the command: mousetracker.log("click") .
 
 <!--more-->
 
