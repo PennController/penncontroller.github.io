@@ -7,6 +7,8 @@ alternates:
 notes: true
 ---
 
++ <b> Update </b> : It is now possible to send the results to a custom URL by using SendResults as an in-trial command.
+
 1. On its own, it creates a trial whose sole function will be to send the results to the server when it is run. You can give a label to the trial by passing a string as an argument to SendResults and then refer to it in Sequence in order to send the results early.
 
 2. Alternatively, you can use it directly inside Sequence in place of a reference to a label, with the same effect as above (but lifting the need to come up with a dedicated label)
