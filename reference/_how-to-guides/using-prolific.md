@@ -66,7 +66,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
      )
      .log( "PROLIFIC_ID" , GetURLParameter("id") )
      
-         Sequence("trials", "prolific-consent", "confirmation-prolific", SendResults())
+         Sequence("prolific-consent", "trials", SendResults(), "confirmation-prolific")
          newTrial("prolific-consent",
          newHtml("prolific-consent.html").print()
          ,
