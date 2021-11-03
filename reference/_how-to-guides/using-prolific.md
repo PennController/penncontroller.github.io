@@ -61,17 +61,17 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
 
          PennController.ResetPrefix(null) // Keep here
          
-          Header(
-     // void
-     )
-     .log( "PROLIFIC_ID" , GetURLParameter("id") )
+         Header(
+          // void
+         )
+         .log( "PROLIFIC_ID" , GetURLParameter("id") )
      
          Sequence("prolific-consent", "trials", SendResults(), "confirmation-prolific")
-         newTrial("prolific-consent",
-         newHtml("prolific-consent.html").print()
-         ,
-         newButton("I consent").print().wait()
-          )
+          newTrial("prolific-consent",
+          newHtml("prolific-consent.html").print()
+          ,
+          newButton("I consent").print().wait()
+         )
 
         newTrial( "trials" ,
           newButton("This is a mock trial")
@@ -85,7 +85,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
                 .print()
             ,
            // This is where you should put the link from the last step.
-            newText("<p><a href='https://app.prolific.co/submissions/complete?cc=CODE>Click here to validate your submission</a></p>")
+            newText("<p><a href='https://app.prolific.co/submissions/complete?cc=CODE>Click here to validate your submission'</a></p>")
                 .center()
                 .print()
             ,
