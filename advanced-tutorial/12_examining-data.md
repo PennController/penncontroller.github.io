@@ -83,6 +83,7 @@ results <- read.pcibex("results.csv")
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for base R version" outer-border=true %}
 
+<!-- 
 {% capture content %}
 ```r
 # Set working directory to source file location
@@ -130,7 +131,7 @@ results <- read.pcibex("results.csv")
 ```
 {% endcapture %}
 {% include collapsible-block.html content=content summary="Click for tidyverse version" outer-border=true %}
-
+ -->
 {% endcapture %}
 {% include instructions.html text=instructions %}
 
