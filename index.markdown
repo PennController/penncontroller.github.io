@@ -78,7 +78,7 @@ PCIbex and the PCIbex farm are maintained by Jeremy Zehr. Initial development of
 
 Hosting of [the new PCIbex](https://farm.pcibex.net/){:target="_blank"} farm is made possible through generous support by [MindCORE](https://mindcore.sas.upenn.edu/){:target="_blank"} - Penn's hub for the integrative study of the mind. Please consider [making a donation](https://giving.apps.upenn.edu/fund?program=SAS&fund=630307){:target="_blank"} to ensure long-term support of this setup, specifying 'PCIbex' under 'special reason' to designate the funds to support PCIbex hosting.
 
-[![MindCORE]({{site.baseurl}}/assets/images/mindCORE_Logo_FINAL_Color.png "MindCORE Logo")](https://mindcore.sas.upenn.edu/){:target="_blank"}
+[![MindCORE]({{site.baseurl}}/assets/images/mindCORE_Logo_FINAL_Color.png)](https://mindcore.sas.upenn.edu/){:target="_blank"}
 
 
 ## Cite us
