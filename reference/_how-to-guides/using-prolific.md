@@ -2,6 +2,11 @@
 title: Using PROLIFIC
 ---
 
+{% capture label %}
+Before collecting data from participants, make sure you understand how group assignment works in PCIbex experiments. See [this page from the advanced tutorial]({{site.baseurl}}/advanced-tutorial/10_counterbalancing.html#controlling-group-assignment) for some explanations.
+{% endcapture %}
+{% include label-note.html %}
+
 To credit participants automatically via PCIbex for doing the experiments, <b> follow these steps exactly, and in order:</b>
     
 1. Visit the [Prolific website](https://www.prolific.co){:target="_blank"} and login to your account.  

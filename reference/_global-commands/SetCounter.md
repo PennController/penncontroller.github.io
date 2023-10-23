@@ -11,7 +11,7 @@ alternates:
 notes: true
 ---
 
-+ Ibex has an internal counter which keeps track of how many people participated in your experiment in order to automatically handle group designs. By default, the counter is incremented at the end of the experiment, which has the undesirable effect of assigning the same group to all the participants who click your link before anyone has completed your experiment. You can choose to run [js]SetCounter("inc", 1)[/js] at the very beginning of your experiment instead.
++ Ibex has an internal counter which keeps track of how many people participated in your experiment in order to automatically handle group designs. By default, the counter is incremented at the end of the experiment, which has the undesirable effect of assigning the same group to all the participants who click your link before anyone has completed your experiment. You can choose to run [js]SetCounter("inc", 1)[/js] at the very beginning of your experiment instead, or manually control group assignment in the URL, [as described in the advanced tutorial](({{site.baseurl}}/advanced-tutorial/10_counterbalancing.html#controlling-group-assignment))
 
 + You can pass a label as the first argument, which you can then use in [yadawiki link="PennController.Sequence" show="[js]Sequence[/js]"]: this way you can make it the first item to run and therefore increment the counter at each click---provided you passed `"inc"` too. Note that, in the absence of `"inc"`, if you pass a number then the counter will be *set* to that value.
 
