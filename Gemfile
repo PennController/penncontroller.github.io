@@ -7,7 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.9.0"
+# gem "jekyll", "~> 3.9.0"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima", "~> 2.5"
@@ -32,7 +32,7 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # "Just the Docs" theme
-gem "just-the-docs"
+# gem "just-the-docs"
 
 # update for additional security
 gem "nokogiri", ">= 1.11.0.rc4"
