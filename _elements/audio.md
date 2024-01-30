@@ -1,6 +1,7 @@
 ---
 title: Audio
 since: beta 0.3
+parent: Elements
 children_collection: audio
 thumbnail: audio.png
 parameters:

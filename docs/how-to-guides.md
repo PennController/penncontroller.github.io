@@ -1,16 +1,11 @@
 ---
 title: How-to guides
-permalink: /how-to/
+permalink: /how-to-guides/
 nav_order: 6
-children_collection: how-to-guides
-blurb: Check out our how-to guides from the left toolbar!
 ---
 
 # {{ page.title }}
 
-{{ page.blurb }}
-{:. h1-blurb }
+{% assign how-to-guides = site.html_pages | where: "parent", "How-to guides" %}
 
----
-
-{% include toc-collection.html collection=site.how-to-guides %}
+{% include toc-collection.html collection=how-to-guides %}

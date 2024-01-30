@@ -2,6 +2,7 @@
 title: Internal documentation
 permalink: /internal/
 nav_hide: true
+nav_exclude: true
 ---
 
 # {{ page.title }}

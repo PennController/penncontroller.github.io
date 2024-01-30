@@ -98,7 +98,6 @@ const createPresignedPost = ({ key, contentType }) => {
 };
 /**
 * We need to respond with adequate CORS headers.
-* @type {{"Access-Control-Allow-Origin": string, "Access-Control-Allow-Credentials": boolean}}
 */
 const headers = {
   "Access-Control-Allow-Origin": "https://farm.pcibex.net",

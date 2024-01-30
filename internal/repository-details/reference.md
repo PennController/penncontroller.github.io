@@ -20,7 +20,7 @@ Folder structure
 reference/
 |-- _elements/
 |-- _global-commands/
-|-- _how-to-guides/
+|-- how-to-guides/
 |-- _special-commands/
 |-- _standard-element-commands/
 |-- _audio/
@@ -54,7 +54,7 @@ Table of contents
 <div class="command-table mt-2 mb-6">
   <div><a href="#_elements"><code>_elements</code></a></div>
   <div><a href="#_global-commands"><code>_global-commands</code></a></div>
-  <div><a href="#_how-to-guides"><code>_how-to-guides</code></a></div>
+  <div><a href="#how-to-guides"><code>how-to-guides</code></a></div>
   <div><a href="#_special-commands"><code>_special-commands</code></a></div>
   <div><a href="#_standard-element-commands"><code>_standard-element-commands</code></a></div>
   {% for element in site.elements %}
@@ -83,11 +83,11 @@ Contains .md files for global commands.
 
 ---
 
-## `_how-to-guides`
+## `how-to-guides`
 description
 {: .text-delta .mt-4}
 
-Contains .md files for the [How-to guides]({{site.baseurl}}/how-to) page.
+Contains .md files for the [How-to guides]({{site.baseurl}}/how-to-guides) page.
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Elements
 permalink: /elements/
+has_children: true
 children_collection: elements
 children_code_font: true
 nav_order: 7

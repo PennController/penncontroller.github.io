@@ -183,10 +183,11 @@
             </ul>
           {%- endif -%}
         </li>
-        {% endif %}
-      {% endif %}
+        {%- endif -%}
+      {%- endif -%}
     {%- endif -%}
-    {%- if  node.title == "Announcements" or node.title == "How-to guides" or node.title == "Commands" -%}
+    <div>{{ node.title }}</div>
+    {%- if node.title == "Announcements" or node.title == "How-to guides" or node.title == "Commands" -%}
       <hr class="mt-2 mb-2 ml-3 mr-3">
     {%- endif -%}
   {%- endfor -%}
