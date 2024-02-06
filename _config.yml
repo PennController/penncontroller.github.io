@@ -7,8 +7,8 @@ url: "https://doc.pcibex.net"
 excerpt_separator: <!--more-->
 
 # Build settings
-theme: just-the-docs
-# remote_theme: just-the-docs/just-the-docs
+# theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 logo: "/assets/images/pcibex-logo.png"
 # Aux links for the upper right navigation
 aux_links:
