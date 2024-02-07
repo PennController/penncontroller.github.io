@@ -1,6 +1,7 @@
 ---
 title: MediaRecorder
 since: PennController 1.8
+parent: Elements
 children_collection: mediarecorder
 thumbnail: mediarecorder.png
 parameters:

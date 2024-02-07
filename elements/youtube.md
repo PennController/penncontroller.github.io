@@ -1,6 +1,7 @@
 ---
 title: Youtube
 since: beta 0.3
+parent: Elements
 children_collection: youtube
 thumbnail: youtube.png
 parameters:

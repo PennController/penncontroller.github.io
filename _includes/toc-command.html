@@ -13,7 +13,7 @@
     {% endfor %}
   {% endif %}
   {% if include.all_element_types %}
-    {% assign element_types = site.elements | map: "title" %}
+    {% assign element_types = site.html_pages | where: "parent", "Elements" | map: "title" %}
     {% for element in element_types %}
       {% assign collection_name = element | downcase | slugify %}
       {% if include.action %}

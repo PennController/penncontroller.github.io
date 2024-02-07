@@ -38,7 +38,7 @@ last_edit_timestamp: true # show or hide edit time - page must have `last_modifi
 last_edit_time_format: "%b %e %Y" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
 # Collections
-# collections_dir: reference
+collections_dir: reference
 collections:
   author:
     output: true
@@ -74,7 +74,7 @@ collections:
     permalink: /:collection/:name/
   audio:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:name/
   button:
     output: true
     permalink: /:collection/:name/
@@ -179,6 +179,11 @@ defaults:
       has_children: true
       has_toc: false
   - scope:
+      path: "elements"
+    values:
+      layout: "element"
+      has_children: true
+  - scope:
       path: "internal"
     values:
       layout: "default"
@@ -214,7 +219,7 @@ defaults:
       nav_exclude: true
       tag: false
   - scope:
-      path: "_elements/"
+      path: "reference/"
     values:
       layout: "element"
       parent: "Elements"

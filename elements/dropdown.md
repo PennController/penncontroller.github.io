@@ -1,6 +1,7 @@
 ---
 title: DropDown
 since: PennController 1.2
+parent: Elements
 children_collection: dropdown
 thumbnail: dropdown.png
 description: Represents a drop-down list.

@@ -12,7 +12,8 @@ nav_order: 7
 ---
 
 <div class="flex-row-wrap mb-8">
-{% for child in site.elements %}
+{% assign elements = site.html_pages | where: "parent", "Elements" %}
+{% for child in elements %}
   <div class="centered-25 pb-4">
     <a href="{{ child.url | absolute_url }}" class="overlay-link">
     <div class="overlay">

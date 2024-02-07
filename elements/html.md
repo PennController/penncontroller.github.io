@@ -1,6 +1,7 @@
 ---
 title: Html
 since: beta 0.3
+parent: Elements
 children_collection: html
 thumbnail: html.png
 parameters:

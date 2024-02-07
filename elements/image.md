@@ -1,6 +1,7 @@
 ---
 title: Image
 since: beta 0.3
+parent: Elements
 children_collection: image
 thumbnail: image.png
 parameters:

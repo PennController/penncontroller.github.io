@@ -1,6 +1,7 @@
 ---
 title: Tooltip
 since: beta 0.3
+parent: Elements
 children_collection: tooltip
 thumbnail: tooltip.png
 parameters:

@@ -1,6 +1,7 @@
 ---
 title: Video
 since: beta 0.4
+parent: Elements
 children_collection: video
 thumbnail: video.png
 parameters:

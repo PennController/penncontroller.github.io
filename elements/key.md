@@ -1,6 +1,7 @@
 ---
 title: Key
 since: beta 0.3
+parent: Elements
 children_collection: key
 thumbnail: key.png
 parameters:

@@ -1,6 +1,7 @@
 ---
 title: Timer
 since: beta 0.3
+parent: Elements
 children_collection: timer
 thumbnail: timer.png
 parameters:

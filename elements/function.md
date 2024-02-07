@@ -1,6 +1,7 @@
 ---
 title: Function
 since: beta 0.3
+parent: Elements
 children_collection: function
 thumbnail: function.png
 parameters:

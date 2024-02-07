@@ -1,6 +1,7 @@
 ---
 title: Text
 since: beta 0.3
+parent: Elements
 children_collection: text
 thumbnail: text.png
 parameters:

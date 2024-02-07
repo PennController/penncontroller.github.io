@@ -15,7 +15,7 @@ layout: default
 {% if page.element_type == "standard" %}
   <div id="relevant-elements">
   {% for relevant_element_type in page.relevant_elements %}
-    {% assign relevant_element = site.elements | where: "title", relevant_element_type | first %}
+    {% assign relevant_element = site.html_pages | where: "parent", "Elements" | where: "title", relevant_element_type | first %}
     <span id="{{  relevant_element.title }}" class="label bg-grey-lt-100 mt-2 ml-0">
       <a href="{{ relevant_element.url | absolute_url }}">
         {{ relevant_element.title }}

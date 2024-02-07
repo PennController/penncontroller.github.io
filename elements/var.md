@@ -1,6 +1,7 @@
 ---
 title: Var
 since: beta 0.3
+parent: Elements
 children_collection: var
 thumbnail: var.png
 parameters:

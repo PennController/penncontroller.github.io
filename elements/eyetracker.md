@@ -1,6 +1,7 @@
 ---
 title: EyeTracker
 since: PennController 1.8
+parent: Elements
 children_collection: eyetracker
 thumbnail: eyetracker.png
 parameters:

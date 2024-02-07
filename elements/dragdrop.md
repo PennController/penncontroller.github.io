@@ -1,6 +1,7 @@
 ---
 title: DragDrop 
 since: beta 2.0
+parent: Elements
 children_collection: dragdrop
 thumbnail: dragdrop.png
 description: Allows dragging elements into the specific space.

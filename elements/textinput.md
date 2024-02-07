@@ -1,6 +1,7 @@
 ---
 title: TextInput
 since: beta 0.3
+parent: Elements
 children_collection: textinput
 thumbnail: textinput.png
 parameters:

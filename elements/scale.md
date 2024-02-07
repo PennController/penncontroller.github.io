@@ -1,6 +1,7 @@
 ---
 title: Scale
 since: beta 0.3
+parent: Elements
 children_collection: scale
 thumbnail: scale.png
 parameters:
