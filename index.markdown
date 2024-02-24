@@ -58,7 +58,7 @@ to help you design and run your experiments, including:
 + and [many more]({{site.baseurl}}/announcements/2021-01-22-new-pcibex-farm/)
 
 PennController was developed and is maintained by
-[Jeremy Zehr](https://sites.google.com/site/jeremyezehr/home){:target="_blank"}
+[Jeremy Zehr](https://jeremyzehr.github.io/){:target="_blank"}
 and [Florian Schwarz](https://www.florianschwarz.net/){:target="_blank"}
 as an extension of
 [Ibex](https://ibex.spellout.net/){:target="_blank"},
