@@ -24,7 +24,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
      
      ```javascript
      Header(
-     // void
+        // void
      )
      .log( "PROLIFIC_ID" , GetURLParameter("id") )
      ```
@@ -39,16 +39,16 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
    
    ```javascript
     newTrial( "final" ,
-         newText("<p>Thank you for your participation!</p>")
-                    .center()
-               .print()
+        newText("<p>Thank you for your participation!</p>")
+            .center()
+            .print()
         ,
-        newText("<p><a href='https://app.prolific.co/submissions/complete?cc=CODE'+ GetURLParameter("id")+"' target='_blank'>Click here to confirm your participation on Prolific.</a></p> <p>This is a necessary step in order for you to receive participation credit!</p>")
-        .center()
-        .print()
+        newText("<p><a href='https://app.prolific.co/submissions/complete?cc=CODE'"+ GetURLParameter("id")+"' target='_blank'>Click here to confirm your participation on Prolific.</a></p> <p>This is a necessary step in order for you to receive participation credit!</p>")
+            .center()
+            .print()
         ,
         newButton("void")
-        .wait()
+            .wait()
         )
     ```   
     
@@ -64,24 +64,25 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
 
      ```javascript
 
-         PennController.ResetPrefix(null) // Keep here
+        PennController.ResetPrefix(null) // Keep here
          
-          Header(
-     // void
-     )
-     .log( "PROLIFIC_ID" , GetURLParameter("id") )
+        Header(
+            // void
+        )
+        .log( "PROLIFIC_ID" , GetURLParameter("id") )
      
-         Sequence("trials", "prolific-consent", "confirmation-prolific", SendResults())
-         newTrial("prolific-consent",
-         newHtml("prolific-consent.html").print()
-         ,
-         newButton("I consent").print().wait()
-          )
+        Sequence("trials", "prolific-consent", SendResults(), "confirmation-prolific")
+
+        newTrial("prolific-consent",
+            newHtml("prolific-consent.html").print()
+            ,
+            newButton("I consent").print().wait()
+        )
 
         newTrial( "trials" ,
-          newButton("This is a mock trial")
-          .print()
-          .wait()
+            newButton("This is a mock trial")
+                .print()
+                .wait()
         )
 
         newTrial( "confirmation-prolific" ,
@@ -89,7 +90,7 @@ To credit participants automatically via PCIbex for doing the experiments, <b> f
                 .center()
                 .print()
             ,
-           // This is where you should put the link from the last step.
+            // This is where you should put the link from the last step.
             newText("<p><a href='https://app.prolific.co/submissions/complete?cc=CODE'>Click here to validate your submission</a></p>")
                 .center()
                 .print()
